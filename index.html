@@ -12,7 +12,36 @@
       display: none;
       width: 300px; /* Puedes ajustar el tamaño de la imagen */
     }
+
   </style>
+    <style>
+      #miImagen2 {
+        display: none;
+        width: 200px; /* Puedes ajustar el tamaño de la imagen */
+      }
+  
+    </style>
+    <style>
+      #miImagen3 {
+        display: none;
+        width: 200px; /* Puedes ajustar el tamaño de la imagen */
+      }
+  
+    </style>
+    <style>
+      #miImagen4 {
+        display: none;
+        width: 200px; /* Puedes ajustar el tamaño de la imagen */
+      }
+  
+    </style>
+    <style>
+      #miImagen5 {
+        display: none;
+        width: 200px; /* Puedes ajustar el tamaño de la imagen */
+      }
+  
+    </style>
   <style>
     * {box-sizing:border-box}
     body {font-family: Verdana,sans-serif;}
@@ -131,8 +160,11 @@
 
               <div class="skill">
                 <p>
-                  Auditor Interno en Sistema de Gestión de la
-                    Seguridad de la Información ISO 27001:2013  <br>
+                  <a href="#" onclick="toggleImagen()">Auditor Interno en Sistema de Gestión de la
+                    Seguridad de la Información ISO 27001:2013 </a>
+                  <img id="miImagen" src="DAuditorSGSI.jpg" alt="titulo Auditor Interno">
+
+                     <br>
 
                   <strong> Medellín, Colombia| SGS | 2019</strong>
                  </p>
@@ -140,7 +172,9 @@
 
               <div class="skill">
                 <p>
-                 Diplomado Seguridad de la Información<br>
+                  <a href="#" onclick="toggleImagen2()">Diplomado Seguridad de la Información</a>
+                  <img id="miImagen2" src="DSGSI.jpg" alt="titulo Diplomado Seguridad de la nformación">
+                 <br>
 
                 <strong>Medellín, Colombia | SGS | 2018</strong>
                 </p>
@@ -148,8 +182,10 @@
               </div>
 
               <div class="skill">
-                <p>
-                  Diplomado Scrum Master<br>
+                <p>                    <a href="#" onclick="toggleImagen3()"> Diplomado Scrum Master</a>
+                  <img id="miImagen3" src="DScrumMaster.jpg" alt="titulo Diplomado Scrum Master<">
+
+                 <br>
                   <strong>Medellín, Colombia | EAFIT | 2017</strong>                    
                 </p>
 
@@ -157,7 +193,10 @@
 
               <div class="skill">
                 <p>
-                  Diplomado Fortalecimiento Empresarial<br>
+                  
+                  <a href="#" onclick="toggleImagen4()">Diplomado Fortalecimiento Empresarial</a>
+                  <img id="miImagen4" src="DFortalecimientoEmpresarial.jpg" alt="Diplomado Fortalecimiento Empresarial">
+                  <br>
                 <strong>Medellín, Colombia | EAFIT | 2014</strong>
                 </p>
 
@@ -165,8 +204,11 @@
 
 
                 <div class="skill">
+
                   <p>
-                    Ingeniero Informático<br>
+                    <a href="#" onclick="toggleImagen5()">Ingeniero Informático</a>
+                    <img id="miImagen5" src="IngInformático.jpg" alt="titulo IngInformático">
+                    <br>
                   <strong>Medellín, Colombia | Politécnico JIC | 2013</strong>
                   </p>
                 </div>
@@ -190,7 +232,8 @@
             <div class="smallText">
               <p>
                 <i class="fa fa-phone contactIcon" aria-hidden="true"></i>
-                (+57)<strong> 311 755 93 65</strong>
+                <a href="https://wa.me/573117559365?text=Hola,%20este%20es%20mi%20perfil">(+57)<strong> 311 755 93 65</strong></a>              
+                
               </p>
               <p>
                 <i class="fa fa-envelope contactIcon" aria-hidden="true"></i>
@@ -508,7 +551,7 @@
   
   <div class="mySlides fade">
       <div class="numbertext">4 / 5</div>
-      <img src="DSGSI.jpg" style="width:40%">
+      <img src=DSGSI.jpg" style="width:40%">
       <br>
       <div class="text">Diplomado Seguridad <br>De la Información | SGS</div>
     </div>
@@ -552,10 +595,51 @@
       setTimeout(showSlides, 5000); // Change image every 2 seconds
   }
   </script>
-<!-- <img id="miImagen" src="1.jpg" alt="Descripción de la imagen"> -->
+<!--  -->
   <script>
     function toggleImagen() {
       var imagen = document.getElementById('miImagen');
+      if (imagen.style.display === 'none') {
+        imagen.style.display = 'block';
+      } else {
+        imagen.style.display = 'none';
+      }
+    }
+    </script>
+
+  <script>
+    function toggleImagen2() {
+      var imagen = document.getElementById('miImagen2');
+      if (imagen.style.display === 'none') {
+        imagen.style.display = 'block';
+      } else {
+        imagen.style.display = 'none';
+      }
+    }
+    </script>
+  <script>
+    function toggleImagen3() {
+      var imagen = document.getElementById('miImagen3');
+      if (imagen.style.display === 'none') {
+        imagen.style.display = 'block';
+      } else {
+        imagen.style.display = 'none';
+      }
+    }
+    </script>
+  <script>
+    function toggleImagen4() {
+      var imagen = document.getElementById('miImagen4');
+      if (imagen.style.display === 'none') {
+        imagen.style.display = 'block';
+      } else {
+        imagen.style.display = 'none';
+      }
+    }
+    </script>
+  <script>
+    function toggleImagen5() {
+      var imagen = document.getElementById('miImagen5');
       if (imagen.style.display === 'none') {
         imagen.style.display = 'block';
       } else {
