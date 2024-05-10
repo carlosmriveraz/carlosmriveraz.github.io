@@ -161,13 +161,13 @@ page[size="A4"] {
 }
 
 .leftPanel img {
-  width: 4cm;
-  height: 4cm;
+  width: 6cm;
+  height: 10cm;
   margin-bottom: 0.7cm;
-  border-radius: 50%;
+
   border: 0.15cm solid white;
   object-fit: cover;
-  object-position: 50% 50%;
+
 }
 
 .leftPanel .details {
