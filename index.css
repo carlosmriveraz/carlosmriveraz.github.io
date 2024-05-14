@@ -1,4 +1,5 @@
 /* Fonts */
+/* Fonts */
 
 /* Family */
 h1 { 
@@ -66,19 +67,19 @@ h2 {
 
 .leftPanel, 
 .leftPanel a {
-  font-size: 0.38cm;
+  font-size: 0.36cm;
 }
 
 .projectName span, 
 .jobPosition span {
-  font-size: 0.35cm;
+  font-size: 0.33cm;
 }
 
 .smallText, 
 .smallText span, 
 .smallText p, 
 .smallText a {
-  font-size: 0.35cm;
+  font-size: 0.33cm;
 }
 
 .leftPanel .smallText, 
@@ -161,11 +162,11 @@ page[size="A4"] {
 }
 
 .leftPanel img {
-  width: 6cm;
-  height: 10cm;
-  margin-bottom: 0.7cm;
+  width: 10cm;
+  height: 7m;
+  margin-bottom: 0.3cm;
 
-  border: 0.15cm solid white;
+  border: 0.10cm solid white;
   object-fit: cover;
 
 }
@@ -235,8 +236,8 @@ page[size="A4"] {
   background-size: contain;
   left: -0.09cm;
   top: 0;
-  width: 0.35cm;
-  height: 0.35cm;
+  width: 0.33cm;
+  height: 0.33cm;
 }
 
 .jobPosition {
