@@ -2,6 +2,9 @@
 <html>
 
 <head>
+    <!-- esta es mi hoja de vida, la cual desarrollé en HTML para practicar
+
+Proximamente, lo voy a desarrollar en react y ordenaré para que tome las imagenes de la carpeta imagenes ya que no sabia como hacerlo desde GIT. -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,17 +12,32 @@
     <link rel="stylesheet" href="index.css">
 
     <style>
+        .enlace {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .enlace .imagen {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .enlace:hover .imagen {
+            display: block;
+        }
+    </style>
+
+    <style>
         #miImagen {
             display: none;
             width: 200px;
-            /* Puedes ajustar el tamaño de la imagen */
         }
     </style>
     <style>
         #miImagen2 {
             display: none;
             width: 200px;
-            /* Puedes ajustar el tamaño de la imagen */
         }
     </style>
     <style>
@@ -40,59 +58,66 @@
             width: 200px;
         }
     </style>
+    <!-- style slider -->
     <style>
-        * {
-            box-sizing: border-box
-        }
-        
-        body {
-            font-family: Verdana, sans-serif;
-        }
-        
-        .mySlides {
-            display: none
-        }
-        /* Slideshow container */
-        
         .slideshow-container {
-            max-width: 1000px;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            /* Centra verticalmente */
             margin: auto;
+            max-width: 100%;
+            /* Ajusta el ancho máximo al 100% del contenedor padre */
+            width: 100%;
+            /* Ajusta el ancho al 100% del contenedor padre */
         }
-        /* Caption text */
+        /* Asegúrate de que el texto no se sobreponga a la imagen */
         
         .text {
-            color: #000000;
-            font-size: 15px;
-            padding: 10px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
+            position: relative;
+            /* Cambia a relative para que no se sobreponga */
+            margin: 0;
+            /* Remueve márgenes adicionales */
+            padding: 10px;
+            /* Ajusta el padding según sea necesario */
+            width: auto;
+            /* Ajusta el ancho automáticamente */
         }
-        /* Number text (1/3 etc) */
+        /* Ajustes para el tamaño del texto y la posición */
         
         .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
+            position: relative;
+            /* Cambia a relative para que no se sobreponga */
+            /* Fondo semi-transparente para el número */
         }
-        /* The dots/bullets/indicators */
+        /* Ajustes para la animación de desvanecimiento */
+        
+        .fade {
+            animation-fill-mode: both;
+            /* Asegura que la propiedad se aplique antes y después de la animación */
+        }
+        /* Ajustes para pantallas más pequeñas */
+        
+        @media only screen and (max-width: 500px) {
+            .text {
+                font-size: 11px;
+                /* Ajusta el tamaño del texto para pantallas pequeñas */
+            }
+        }
         
         .dot {
-            height: 13px;
-            width: 13px;
-            margin: 0 2px;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
+            height: 13px;
+            margin: 0 2px;
             transition: background-color 0.6s ease;
+            width: 13px;
         }
         
         .active {
-            background-color: #717171;
+            background-color: #099620;
         }
         /* Fading animation */
         
@@ -159,11 +184,7 @@
 
                             <div class="skill">
                                 <p>Auditor Interno en Sistema de Gestión de la Seguridad de la Información ISO 27001:2013
-                                    <!-- <a href="#" onclick="toggleImagen()"> -->
-                                    <!--  </a>
-                  <img id="miImagen" src="DAuditorSGSI.jpg" alt="titulo Auditor Interno"
 
-                     -->
                                     <br>
                                     <strong>SGS | 2019</strong>
                                 </p>
@@ -230,9 +251,9 @@
                                     </a>
                             </p>
 
-
                             <i class="fa fa-map-marker contactIcon" aria-hidden="true"></i>
-                            <a href="#" onclick="toggleMapa()">Medellín, Colombia(Mostrar/Ocultar Mapa</a>
+                            <a href="#" onclick="toggleMapa()">Medellín,
+                                    Colombia(Mostrar/Ocultar Mapa</a>
 
                             <div id="mapa" style="display: none;">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7932.367887568446!2d-75.6042382!3d6.2394709!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46827504b899bf%3A0x8c671edbd00c3ee9!2s050023%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1715371809628!5m2!1ses-419!2sco"
@@ -255,9 +276,10 @@
                     <h2>
                         CARLOS MARIO RIVERA ZULUAGA
                     </h2>
+
                     <div class="smallText">
                         <h5>
-                            DESARROLLADOR DE SOFTWARE | ARQUITECTO DE SOLUCIONES | INTELIGENCIA DE NEGOCIOS
+                            INTELIGENCIA DE NEGOCIOS | DESARROLLADOR DE SOFTWARE | ARQUITECTO DE SOLUCIONES
                         </h5>
                     </div>
                 </div>
@@ -270,19 +292,19 @@
                     <div class="jobPosition">
 
                         <span class="bolded">
-                            VSDC                                
-                              </span>
+                                VSDC
+                            </span>
                         <span>
-                                 Octubre 2012 - Marzo 2024
-                              </span>
+                                Octubre 2012 - Marzo 2024
+                            </span>
 
                     </div>
 
                     <div class="jobPosition">
                         <span class="bolded">
-                            <h3>
-                                Responsabilidades:
-                            </h3>
+                                <h3>
+                                    Responsabilidades:
+                                </h3>
                             </span>
                     </div>
                     <ul>
@@ -382,7 +404,17 @@
                                         </li>
                                         <li>
                                             <p>
-                                                Utilizar Metodologías agiles (SCRUM, DevOps).
+                                                Utilizar Metodologías agiles (
+
+                                                <span>
+                                            <a class="enlace" href="#">
+                                                SCRUM
+                                                <img class="imagen" width="400"
+                                                    src="DScrumMaster.jpg"
+                                                    alt="cusros SCRUM master">
+                                            </a>
+
+                                        </span>, DevOps).
                                             </p>
                                         </li>
                                     </ul>
@@ -399,7 +431,13 @@
                             <li>
                                 <p>
                                     <span class="bolded">
-                                            AWS:
+
+                                            <a class="enlace" href="#">
+                                                AWS:
+                                                <img class="imagen" width="400"
+                                                    src="AWS.jpg"
+                                                    alt="Imagen sobre Curiosidades de AWS ">
+                                            </a>
                                         </span> RDS. MYSQL. MariaDB, S3, EC2.,QuickSight Inteligencia Artificial Bedrock, CloudWatch.
 
                                 </p>
@@ -415,9 +453,16 @@
                                 <p>
                                     <span class="bolded">
                                             Interoperabilidad:
-                                        </span> Webservice SOAP – API Rest. Postman.
+                                        </span> Webservice SOAP –
+                                    <span>
+                                            <a class="enlace" href="#">
+                                                API RestFul.
+                                                <img class="imagen" width="400"
+                                                    src="CursoMasterApi.jpg"
+                                                    alt="Titulos Api RestFul con ASp .net Core ">
+                                            </a>
 
-                                </p>
+                                        </span> Postman. </p>
                             </li>
                             <li>
                                 <p>
@@ -471,7 +516,15 @@
                             </li>
                             <li>
                                 <p>
-                                    Contribuí para que nuestra empresa se consolidara entre los 10 Proveedores tecnológicos con más documentos electrónicos emitidos ante la DIAN.
+
+                                    <a class="enlace" href="#">
+                                                Contribuí para que nuestra empresa se consolidara entre los 10 Proveedores tecnológicos con más documentos electrónicos emitidos ante la DIAN.
+                                                <img class="imagen" width="400"
+                                                    src="CursoAtencionAlCliente.jpg"
+                                                    alt="Curso Atencion Al Cliente .net Core ">
+                                            </a>
+
+
                                 </p>
                             </li>
                             <li>
@@ -486,13 +539,6 @@
             </div>
         </div>
     </page>
-    <!--   <page size="A4">
-    <div class="container">
-      <div class="leftPanel">
-      </div>
-      <div class="rightPanel">
-      </div>
-  </page>  -->
 
     <h2>Titulos Profesionales</h2>
     <p>Cambio de imagen automático cada 2 segundos:</p>
@@ -507,132 +553,136 @@
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 5</div>
-            <img src="DFortalecimientoEmpresarial.jpg" style="width:35%">
-            <div class="text">Diplomado Fortalecimiento<br>Empresarial | EAFIT
+            <img src="DFortalecimientoEmpresarial.jpg" style="width:50%" alt="Diplomado Fortalecimiento Empresarial">
+            <div class=" text ">Diplomado Fortalecimiento<br>Empresarial | EAFIT
             </div>
         </div>
 
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 5</div>
-            <img src="DScrumMaster.jpg" style="width:35%">
-            <div class="text">Diplomado Scrum Master<br>EAFIT
+        <div class="mySlides fade ">
+            <div class="numbertext ">3 / 5</div>
+            <img src="DScrumMaster.jpg " style="width:50%" alt="Diplomado Scrum Master">
+            <div class="text ">Diplomado Scrum Master<br>EAFIT
             </div>
         </div>
 
-        <div class="mySlides fade">
-            <div class="numbertext">4 / 5</div>
-            <img src="DSGSI.jpg" style="width:40%">
+        <div class="mySlides fade ">
+            <div class="numbertext ">4 / 5</div>
+            <img src="DSGSI.jpg " style="width:50% " alt="Diplomado Seguridad<br>De la Información">
             <br>
-            <div class="text">Diplomado Seguridad<br>De la Información | SGS
+            <div class="text ">Diplomado Seguridad<br>De la Información | SGS
             </div>
         </div>
 
-        <div class="mySlides fade">
-            <div class="numbertext">5 / 5</div>
-            <img src="DAuditorSGSI.jpg" style="width:40%">
+        <div class="mySlides fade ">
+            <div class="numbertext ">5 / 5</div>
+            <img src="DAuditorSGSI.jpg " style="width:40% " alt="Auditor Interno SGSI ISO 27001:2013">
             <br>
-            <div class="text">Auditor Interno SGSI <br> ISO 27001:2013 <br> SGS
+            <div class="text ">Auditor Interno SGSI <br> ISO 27001:2013 <br> SGS
             </div>
         </div>
 
     </div>
     <br>
     <br>
-    <div style="text-align:center">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+    <div style="text-align:center ">
+        <span class="dot "></span>
+        <span class="dot "></span>
+        <span class="dot "></span>
+        <span class="dot "></span>
+        <span class="dot "></span>
     </div>
+    <div class="Scripts">
 
-    <script>
-        var slideIndex = 0;
-        showSlides();
+        <script>
+            var slideIndex = 0;
+            showSlides();
 
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides ");
+                var dots = document.getElementsByClassName("dot ");
+                for (i = 0; i <
+                    slides.length; i++) {
+                    slides[i].style.display = "none ";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                for (i = 0; i <
+                    dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active ", " ");
+                }
+                slides[slideIndex - 1].style.display = "block ";
+                dots[slideIndex - 1].className += " active ";
+                setTimeout(showSlides,
+                    5000); // Change image every 2 seconds 
             }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 2 seconds
-        }
-    </script>
-    <!--  -->
-    <script>
-        function toggleImagen() {
-            var imagen = document.getElementById('miImagen');
-            if (imagen.style.display === 'none') {
-                imagen.style.display = 'block';
-            } else {
-                imagen.style.display = 'none';
-            }
-        }
-    </script>
+        </script>
 
-    <script>
-        function toggleImagen2() {
-            var imagen = document.getElementById('miImagen2');
-            if (imagen.style.display === 'none') {
-                imagen.style.display = 'block';
-            } else {
-                imagen.style.display = 'none';
+        <script>
+            function toggleImagen() {
+                var imagen = document.getElementById('miImagen');
+                if (imagen.style.display === 'none') {
+                    imagen.style.display = 'block';
+                } else {
+                    imagen.style.display = 'none';
+                }
             }
-        }
-    </script>
-    <script>
-        function toggleImagen3() {
-            var imagen = document.getElementById('miImagen3');
-            if (imagen.style.display === 'none') {
-                imagen.style.display = 'block';
-            } else {
-                imagen.style.display = 'none';
-            }
-        }
-    </script>
-    <script>
-        function toggleImagen4() {
-            var imagen = document.getElementById('miImagen4');
-            if (imagen.style.display === 'none') {
-                imagen.style.display = 'block';
-            } else {
-                imagen.style.display = 'none';
-            }
-        }
-    </script>
-    <script>
-        function toggleImagen5() {
-            var imagen = document.getElementById('miImagen5');
-            if (imagen.style.display === 'none') {
-                imagen.style.display = 'block';
-            } else {
-                imagen.style.display = 'none';
-            }
-        }
-    </script>
+        </script>
 
-    <script>
-        function toggleMapa() {
-            var mapa = document.getElementById('mapa');
-            if (mapa.style.display === 'none') {
-                mapa.style.display = 'block';
-            } else {
-                mapa.style.display = 'none';
+        <script>
+            function toggleImagen2() {
+                var imagen = document.getElementById('miImagen2');
+                if (imagen.style.display === 'none') {
+                    imagen.style.display = 'block';
+                } else {
+                    imagen.style.display = 'none';
+                }
             }
-        }
-    </script>
+        </script>
+        <script>
+            function toggleImagen3() {
+                var imagen = document.getElementById('miImagen3');
+                if (imagen.style.display === 'none') {
+                    imagen.style.display = 'block';
+                } else {
+                    imagen.style.display = 'none';
+                }
+            }
+        </script>
+        <script>
+            function toggleImagen4() {
+                var imagen = document.getElementById('miImagen4');
+                if (imagen.style.display === 'none') {
+                    imagen.style.display = 'block';
+                } else {
+                    imagen.style.display = 'none';
+                }
+            }
+        </script>
+        <script>
+            function toggleImagen5() {
+                var imagen = document.getElementById('miImagen5');
+                if (imagen.style.display === 'none') {
+                    imagen.style.display = 'block';
+                } else {
+                    imagen.style.display = 'none';
+                }
+            }
+        </script>
 
+        <script>
+            function toggleMapa() {
+                var mapa = document.getElementById('mapa');
+                if (mapa.style.display === 'none') {
+                    mapa.style.display = 'block';
+                } else {
+                    mapa.style.display = 'none';
+                }
+            }
+        </script>
+    </div>
 </body>
 
 </html>
