@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
     <meta name="description" content="Personal Portfolio website of Carlos Mario Rivera . A mobile dev designer.">
 
     <!-- FAVICON -->
-
     <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
@@ -36,14 +34,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="CSS/general.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/queries.css">
-    <link rel="stylesheet" href="CSS/cookie_consent.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="css/cookie_consent.css">
+    <link rel="stylesheet" href="css/scrollefects.css">
+    <link rel="stylesheet" href="css/slideraws.css">
+    <link rel="stylesheet" href="css/silder2aws.css">
 
     <!-- JavaScript -->
-    <script src="JavaScript/index.js"></script>
-
 
 </head>
 
@@ -51,40 +50,18 @@
 
     <header class="section-header">
         <nav class="nav flex-row">
-
-            <a href="HTML/curriculum.html" class="logo-link"><img src="Img/logo.jpg" alt="carlosmaiorivera Logo" class="logo" /></a>
-
-
-
-
-
-
+            <a href="img/logo.jpg" class="logo-link"><img src="img/logo.jpg" alt="carlosmaiorivera Logo"
+                    class="logo" /></a>
             <div class="nav-menu">
                 <ul class="nav-list">
-
-                    <li>
-                        <a href="#about" class="link main-nav-link">Acerca
-                            de mi <span>&nbsp;&frasl;&gt;</span></a>
+                    <li><a href="#about" class="link main-nav-link">Acerca de mi </a></li>
+                    <li><a href="#skills" class="link main-nav-link">Mis Habilidades <span>&nbsp;&frasl;&gt;</span></a>
                     </li>
-
-                    <li>
-                        <a href="#skills" class="link main-nav-link">Mis Habilidades
-                            <span>&nbsp;&frasl;&gt;</span></a>
-                    </li>
-
-                    <li>
-                        <a href="HTML/curriculum.html" class="link main-nav-link">Curriculum
-                            <span>&nbsp;&frasl;&gt;</span></a>
-                    </li>
-
-                    <li>
-                        <a href="#contact" class="link main-nav-link">Contacto
-                            <span>&nbsp;&frasl;&gt;</span></a>
-                    </li>
-
+                    <li><a href="HTML/curriculum.html" class="link main-nav-link">Curriculum
+                            <span>&nbsp;&frasl;&gt;</span></a></li>
+                    <li><a href="#contact" class="link main-nav-link">Contacto <span>&nbsp;&frasl;&gt;</span></a></li>
                 </ul>
             </div>
-
             <div class="nav-toggle">
                 <ion-icon name="menu-outline" class="nav-icon"></ion-icon>
                 <ion-icon name="close-outline" class="nav-icon"></ion-icon>
@@ -92,27 +69,22 @@
         </nav>
     </header>
 
-    <!-- HOME SECTION -->
     <main>
-
-
         <section class="section-home flex-row-center" id="section-home">
             <div class="container">
                 <div class="side-social-links--left">
                     <ul class="social-links social-links--side">
-
                         <li>
-                            <a href="https://www.linkedin.com/in/bi-aws-carlosmariorivera" class="social-link" target="_blank">
+                            <a href="https://www.linkedin.com/in/carlosmaiorivera" class="social-link" target="_blank">
                                 <ion-icon class="link social-icon" name="logo-linkedin"></ion-icon>
                             </a>
                         </li>
-
                         <li>
-                            <a href="https://github.com/carlosmriveraz/CurriculumHTML_CArlosRivera" class="social-link" target="_blank">
+                            <a href="https://github.com/carlosmriveraz/CurriculumHTML_CArlosRivera" class="social-link"
+                                target="_blank">
                                 <ion-icon class="link social-icon" name="logo-github"></ion-icon>
                             </a>
                         </li>
-
                     </ul>
                 </div>
                 <div class="side-social-links--rigth">
@@ -128,27 +100,20 @@
                         <div class="hero-text-box flex-col">
                             <div class="hero-main-title-box">
                                 <p class="enter-text">Bienvenido al
-                                    <a href="HTML/Aboutpage/about.html" target="_blank">Universo
-                                    </a> de
+                                    <a href="HTML/Aboutpage/about.html" target="_blank">Universo </a> de
                                 </p>
-
                                 <h1 class="heading-primary">CarlosMarioRivera.com</h1>
                                 <p class="hero-subheading">
                                     <span class="animate-subheading"></span>
                                 </p>
                             </div>
-
                             <div class="description-box slide-left">
-                                <p class="description">
-                                <p> Desarrollo de Software y BI.
+                                <p class="description">Desarrollo de Software y BI.
                                     <br><br>Mi objetivo es proporcionar soluciones robustas y de gran utilidad a las
                                     personas
                                 </p>
-                                </p>
-
                                 <a href="HTML/curriculum.html" class="link btn btn-outline" target="_blank">Mi
-                                    Curriculum Ya!</a>
-
+                                    Curriculum</a>
                             </div>
                         </div>
                     </div>
@@ -156,7 +121,6 @@
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
         <section class="section-about" id="about">
             <div class="container">
                 <div class="container-md">
@@ -168,318 +132,184 @@
                     <div class="about-box">
                         <div class="about-box--text">
                             <div class="flex-col about-me-text text">
-                                <p>
-
-                                    Desarrollador de software con más de 12 años de experiencia, apasionado por la
+                                <p>Desarrollador de software con más de 12 años de experiencia, apasionado por la
                                     creación de aplicaciones robustas y escalables.<br> En desarrollo de aplicaciones,
-                                    he trabajado en proyectos desde la etapa de diseño hasta
-                                    la implementación.
+                                    he trabajado en proyectos desde la etapa de diseño hasta la implementación.
+                                </p>
                                 <p>Experto en inteligencia de negocios. <br>Mi objetivo es crear soluciones eficientes
                                     que mejoren la experiencia del usuario.<br> <br> Arquitecto de soluciones con
-                                    experiencia en diseño, implementación y optimización
-                                    de infraestructuras en la nube. <br><br>Auditor interno ISO 27001 <br><br>
-                                </p>
+                                    experiencia en diseño, implementación y optimización de infraestructuras en la nube.
+                                    <br><br>Auditor interno ISO 27001 <br><br>
                                 </p>
                             </div>
-
                         </div>
                         <div class="about-box--img">
-                            <img src="Img/logo.jpg" alt="Photo of carlosmaiorivera" class="about-img" />
+                            <img src="img/logo.jpg" alt="Photo of carlosmaiorivera" class="about-img" />
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- SKILLS SECTION -->
         <section class="section-skills padd-section" id="skills">
+
             <div class="container">
                 <div class="container-md">
                     <div class="heading-secondary--right">
-                        <h2 class="heading-secondary">
-                            <span> &lt;&frasl;&nbsp;</span>Mis habilidades
-                        </h2>
+                        <h2 class="heading-secondary">Mis habilidades</h2>
                     </div>
-                    <div class="fullstack-skills">
 
-                        <div class="skills-group">
-                            <p class="skills-title">Frontend</p>
-                            <div class="skills-data-box">
-                                <ul class="skills-data-list">
-
-                                    <li class="skills-name">
-                                        <ion-icon class="skills-icon" name="checkmark-circle-outline"></ion-icon>
-                                        <p>HTML</p>
-                                    </li>
-
-                                    <li class="skills-name">
-                                        <ion-icon class="skills-icon" name="checkmark-circle-outline"></ion-icon>
-                                        <p>CSS</p>
-                                    </li>
-
-                                    <li class="skills-name">
-                                        <ion-icon class="skills-icon" name="checkmark-circle-outline"></ion-icon>
-                                        <p>Javascript</p>
-                                    </li>
-                                </ul>
+                    <div class="slider">
+                        <div class="slider-track">
+                            <div class="slide">
+                                <img src="img/Aws/aws_s3.png" alt="Logo S3" class="slide-img">
+                                <p>Almacenamiento de objetos escalable en la nube.</p>
                             </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_ec2.png" alt="Logo EC2" class="slide-img">
+                                <p>Servicio de computación en la nube seguro y redimensionable.</p>
+                            </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_qs.png" alt="Logo QuickSight" class="slide-img">
+                                <p>Servicio de análisis de negocios rápido, fácil de usar y completamente administrado.
+                                </p>
+                            </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_rds.png" alt="Logo RDS" class="slide-img">
+                                <p>Servicio web que facilita la configuración, operación y escalabilidad de una base de
+                                    datos relacional en la nube.</p>
+                            </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_athena.svg" alt="Logo Athena" class="slide-img">
+                                <p>Servicio de consultas interactivas que facilita el análisis de datos en Amazon S3
+                                    mediante SQL estándar.</p>
+                            </div>
+
                         </div>
-
-                        <div class="skills-group">
-                            <p class="skills-title">Backend</p>
-                            <div class="skills-data-box">
-                                <ul class="skills-data-list">
-                                    <li class="skills-name">
-                                        <ion-icon class="skills-icon" name="checkmark-circle-outline"></ion-icon>
-                                        <p>Python</p>
-                                    </li>
-                                    <li class="skills-name">
-                                        <ion-icon class="skills-icon" name="checkmark-circle-outline"></ion-icon>
-                                        <p>MySQL</p>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="slider-controls">
+                            <button class="prev-btn">&lt;</button>
+                            <button class="next-btn">&gt;</button>
                         </div>
-
-                    </div>
-
-                    <!-- Other skills -->
-<!--                     <div class="flex-col other-skills-box">
-                        <p class="skills-title">Other skills</p>
-                        <ul class="flex-col other-skills-list text">
-
-                            <li class="other-skills-item">
-                                <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
-                                <p>Extración de datos con Web Scraping</p>
-                            </li>
-
-                            <li class="other-skills-item">
-                                <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
-                                <p>Administración y creación de bases de datos SQL</p>
-                            </li>
-
-                            <li class="other-skills-item">
-                                <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
-                                <p>Normalización de datos, optimización de consultas
-                                </p>
-                            </li>
-
-                            <li class="other-skills-item">
-                                <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
-                                <p>Capacidades básicas de Data Scientist y Data Analyst</p>
-                            </li>
-
-                            <li class="other-skills-item">
-                                <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
-                                <p>Principios de diseño de interficies de usuario y experiencia de uso</p>
-                            </li>
-
-                            <li class="other-skills-item">
-                                <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
-                                <p>Fundamentos del diseño y color</p>
-                            </li>
-
-                            <li class="other-skills-item">
-                                <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
-                                <p>Habilidades de diseño con Figma</p>
-                            </li>
-
-                        </ul>
-                    </div> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- RECENT WORKS -->
-        <section class="section-works padd-section" id="works">
-            <div class="container">
-                <div class="container-md">
-                    <div class="heading-secondary--left">
-                        <h2 class="heading-secondary">
-                            Mi Curriculum
-                            <span>&nbsp;&frasl;&gt;</span>
-                        </h2>
-                    </div>
-                    <div class="works-container">
-
-<!--                         <div class="work">
-                            <a href="https://play.google.com/store/apps/details?id=com.webserveis.app.lightprice"
-                                target="_blank">
-                                <img src="img/projects/precio_luz_app.webp" alt="Precio de la luz" class="work-img" />
-                            </a>
-                            <div class="work-text-container text">
-                                <p class="work-title"></p>
-                                <p class="work-description">
-                    
-                                </p>
-                                <ul class="work-tags-list">
-
-                                <li class="work-tag-item">Kotlin</li -->>
-
-                    <!--               <li class="work-tag-item">Android Vi -->
-                    <!--               </li> -->
-
-                    <!--               <li class="work-tag-item">PHP Slim</ -->
-
-                    <!--               <li class="work-tag-item">MySQL</li> -->
-                    <!-- 
-                                </ul>
-                            </div>
-                            <div class="work-links">
-                                <ul class="work-links-list">
-
-                                    <li class="work-links-item">
-                                        <a href="https://play.google.com/store/apps/details?id=com.webserveis.app.lightprice"
-                                            class="link work-link" target="_blank">
-                                            <ion-icon name="open-outline"></ion-icon>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> -->
-
-                        <!--     <div class="work">
-                            <a href="https://apps.apple.com/us/app/time-kit/id6477182932" target="_blank">
-                                <img src="img/projects/timekit_app.png" alt="Time Kit" class="work-img" />
-                            </a>
-                            <div class="work-text-container text">
-                                <p class="work-title">Time Kit</p>
-                                <p class="work-description">
-                                    Time Kit es una aplicación que te permite convertir los horarios de tus eventos
-                                    streaming a las zonas horarias de tu audiencia. Así, todos podrán verlos en su
-                                    franja horaria.
-                                </p>
-                                <ul class="work-tags-list">
-
-                                    <li class="work-tag-item">Swift</li>
-
-                                    <li class="work-tag-item">SwiftUI</li>
-
-                                    <li class="work-tag-item">SwifData</li>
-
-                                </ul>
-                            </div>
-                            <div class="work-links">
-                                <ul class="work-links-list">
-
-                                    <li class="work-links-item">
-                                        <a href="https://apps.apple.com/us/app/time-kit/id6477182932"
-                                            class="link work-link" target="_blank">
-                                            <ion-icon name="open-outline"></ion-icon>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> -->
-
-
-
-                    </div>
-                    <div class="see-more-btn-box">
-                        <a href="HTML/Aboutpage/about.html"
-                            class="link btn btn-outline" target="_blank">Ver
-                            mucho más</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
-<!--         <section class="section-contact" id="contact">
+
+
+
+
+
+        <!--         <section class="section-skills padd-section" id="skills">
             <div class="container">
                 <div class="container-md">
-                    <div class="contact-container">
-                        <h2 class="heading-secondary">
-                            <span>&lt;&frasl;&nbsp;</span>
-
-                        </h2>
-                        <div class="contact-info-container">
-                            <p class="contact-title">carlosmaiorivera en la red
-                            </p>
-                            <p class="text">
-                                ¡Me puedes encontrar y seguir en varias plataformas en línea! Mi nombre de usuario en
-                                las redes es @carlosmaiorivera, donde comparto actualizaciones sobre mis proyectos y
-                                consejos y trucos para el desarrollo de aplicaciones para Android.
-                            </p>
+                    <div class="heading-secondary--right">
+                        <h2 class="heading-secondary">Mis habilidades</h2>
+                    </div>
+                    <div class="slider">
+                        <div class="slider-track">
+                            <div class="slide">
+                                <img src="img/Aws/aws_s3.png" alt="Logo S3" class="slide-img">
+                                <p>Almacenamiento de objetos escalable en la nube.</p>
+                            </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_ec2.png" alt="Logo EC2" class="slide-img">
+                                <p>Servicio de computación en la nube seguro y redimensionable.</p>
+                            </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_qs.png" alt="Logo QuickSight" class="slide-img">
+                                <p>Servicio de análisis de negocios rápido, fácil de usar y completamente administrado.
+                                </p>
+                            </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_rds.png" alt="Logo RDS" class="slide-img">
+                                <p>Servicio web que facilita la configuración, operación y escalabilidad de una base de
+                                    datos
+                                    relacional en la nube.</p>
+                            </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_athena.png" alt="Logo Athena" class="slide-img">
+                                <p>Servicio de consultas interactivas que facilita el análisis de datos en Amazon S3
+                                    mediante
+                                    SQL estándar.</p>
+                            </div>
+                            <div class="slide">
+                                <img src="img/Aws/aws_dynamo.png" alt="Logo DynamoDB" class="slide-img">
+                                <p>Servicio de base de datos NoSQL completamente administrado que admite estructuras de
+                                    datos de
+                                    documento y de clave-valor.</p>
+                            </div>
                         </div>
-                        <a href="https://dev4phones.wordpress.com/" class="link btn btn-full">Ver mi blog</a>
+                        <div class="slider-controls">
+                            <button class="prev-btn">Anterior</button>
+                            <button class="next-btn">Adelante</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section> -->
+
+
+        <section class="section-contact padd-section" id="contact">
+            <div class="container">
+                <div class="container-md">
+                    <div class="heading-secondary--left">
+                        <h2 class="heading-secondary">
+                            Contacto <span>&nbsp;&frasl;&gt;</span>
+                        </h2>
+                    </div>
+                    <div class="contact-box">
+                        <div class="contact-box--text">
+                            <p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo electrónico a la
+                                siguiente dirección:</p>
+                            <a href="mailto:carlosmrz100@hotmail.com" class="link">carlosmrz100@hotmail.com</a>
+                        </div>
+                        <div class="carousel">
+                            <div class="wrap">
+                                <ul>
+                                    <li> <img
+                                            src="https://cdn.pixabay.com/photo/2016/10/13/00/03/girl-1736419__340.jpg" />
+                                    </li>
+                                    <li> <img
+                                            src="http://ppcdn.500px.org/72233281/5e145f8f95427805045dbaf1ec2cf17bcb4b25b3/3.jpg" />
+                                    </li>
+                                    <li> <img
+                                            src="http://ppcdn.500px.org/72190239/1ac03d25646f92afd4d80ed8e6f2c1cfc78635b5/4.jpg" />
+                                    </li>
+                                    <li> <img
+                                            src="http://ppcdn.500px.org/58739696/b0c33312552e8581ef457720bb924f16421dcec8/3.jpg" />
+                                    </li>
+                                    <li> <img
+                                            src="http://ppcdn.500px.org/43028892/84b059f25810f07962ae46e63c44c625b2f9b9e6/2048.jpg" />
+                                    </li>
+                                    <li> <img
+                                            src="https://cdn.pixabay.com/photo/2017/09/21/07/47/girl-2771001__340.jpg" />
+                                    </li>
+                                    <li> <img
+                                            src="https://cdn.pixabay.com/photo/2018/03/12/12/32/woman-3219507__340.jpg" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contact-box--img">
+                            <img src="img/logo.jpg" alt="Photo of carlosmaiorivera" class="contact-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="section-footer">
-        <div class="container">
-            <div class="container-md">
-                <div class="container-social-links">
-                    <ul class="social-links">
-
-                        <li>
-                            <a href="https://www.linkedin.com/in/bi-aws-carlosmariorivera" 
-                                target="_blank">
-                                <ion-icon class="link social-icon" name="logo-linkedin"></ion-icon>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://github.com/carlosmriveraz/CVHTMLCLEAN.git" class="social-link"
-                                target="_blank">
-                                <ion-icon class="link social-icon" name="logo-github"></ion-icon>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <p class="copyright">
-                    Designed & Built by Carlos Mario Rivera &copy;
-                    <span class="year"></span>
-                </p>
-                <p>
-                <ul id="eula-list">
-
-                    <li>
-                        <a href="https://carlosmaiorivera.github.io/eula.html" target="_blank">Privacy Policy</a>
-                    </li>
-
-                    <li>
-                        <a href="https://carlosmaiorivera.github.io/eula.html" target="_blank">Cookies Policy</a>
-                    </li>
-
-                    <li>
-                        <a href="https://carlosmaiorivera.github.io/eula.html" target="_blank">Terms of Use</a>
-                    </li>
-
-                </ul>
-
-                </p>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2024 Carlos Mario Rivera. Todos los derechos reservados.</p>
     </footer>
-    <!--     <section id="cookie-consent-popup" style="display:none">
-        <p>Este sitio web utiliza tecnologías como cookies para habilitar la funcionalidad esencial del sitio, así como para fines de análisis, personalización y publicidad dirigida. Puedes cambiar la configuración en cualquier momento, o aceptar la configuración
-            predeterminada. Puede cerrar este banner para continuar con solo las cookies esenciales <a href="https://carlosmaiorivera.github.io/eula.html" target="_blank">Política de cookies</a></p>
-        <button id="cookie-consent-decline">Declinar</button>
-        <button id="cookie-consent-accept">Aceptar</button>
-    </section> -->
-    <!-- ICONS -->
+
+    <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <!-- ANIMATED TEXT -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="js/typedText.js" type="module"></script>
-    <!-- COOKIE CONSENT -->
-    <!--  <script src="js/cookie_consent.js"></script> -->
-    <script>
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            document.body.appendChild(star);
-        }
-    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="js/slider2aws.js"></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/slideraws.js" defer></script>
 </body>
 
 </html>
