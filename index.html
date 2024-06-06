@@ -11,16 +11,7 @@
     <meta name="description" content="Personal Portfolio website of Carlos Mario Rivera . A mobile dev designer.">
 
     <!-- FAVICON -->
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -39,8 +30,9 @@
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="css/cookie_consent.css">
     <link rel="stylesheet" href="css/scrollefects.css">
-    <link rel="stylesheet" href="css/slideraws.css">
-    <link rel="stylesheet" href="css/silder2aws.css">
+    <!--     <link rel="stylesheet" href="css/slideraws.css">
+    <link rel="stylesheet" href="css/silder2aws.css"> -->
+    <link rel="stylesheet" href="css/styles3.css">
 
     <!-- JavaScript -->
 
@@ -50,8 +42,7 @@
 
     <header class="section-header">
         <nav class="nav flex-row">
-            <a href="img/logo.jpg" class="logo-link"><img src="img/logo.jpg" alt="carlosmaiorivera Logo"
-                    class="logo" /></a>
+            <a href="#" class="logo-link"><img src="img/logo.jpg" alt="carlosmaiorivera Logo" class="logo" /></a>
             <div class="nav-menu">
                 <ul class="nav-list">
                     <li><a href="#about" class="link main-nav-link">Acerca de mi </a></li>
@@ -75,7 +66,8 @@
                 <div class="side-social-links--left">
                     <ul class="social-links social-links--side">
                         <li>
-                            <a href="https://www.linkedin.com/in/carlosmaiorivera" class="social-link" target="_blank">
+                            <a href="https://www.linkedin.com/in/bi-aws-carlosmariorivera" class="social-link"
+                                target="_blank">
                                 <ion-icon class="link social-icon" name="logo-linkedin"></ion-icon>
                             </a>
                         </li>
@@ -150,103 +142,128 @@
                 </div>
             </div>
         </section>
-        <section class="section-skills padd-section" id="skills">
 
+        <!-- SKILLS SECTION -->
+        <section class="section-skills padd-section" id="skills">
             <div class="container">
                 <div class="container-md">
                     <div class="heading-secondary--right">
-                        <h2 class="heading-secondary">Mis habilidades</h2>
+                        <h2 class="heading-secondary">
+                            <span> &lt;&frasl;&nbsp;</span>Mis habilidades
+                        </h2>
+                    </div>
+                    <div class="fullstack-skills">
+
+
+                        <div class="skills-group">
+                            <p class="skills-title">Frontend</p>
+                            <div class="skills-data-box">
+                                <ul class="skills-data-list">
+
+                                    <li class="skills-name">
+                                        <img src="img/frontend/html.png" width="25px"><img />
+                                        <p>EC2</p>
+                                    </li>
+                                    <li class="skills-name">
+                                        <img src="img/frontend/css3.png" width="25px"><img />
+                                        <p>css3</p>
+                                    </li>
+                                    <li class="skills-name">
+                                        <img src="img/frontend/js.png" width="25px"><img />
+                                        <p>JavaScript</p>
+                                    </li>
+                                    <li class="skills-name">
+                                        <img src="img/frontend/react.png" width="25px"><img />
+                                        <p>React</p>
+                                    </li>
+                                    <li class="skills-name">
+                                        <img src="img/frontend/angular.png" width="25px"><img />
+                                        <p>Angular</p>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="skills-group">
+                            <p class="skills-title">AWS</p>
+                            <div class="skills-data-box">
+                                <ul class="skills-data-list">
+
+                                    <li class="skills-name">
+                                        <img src="img/Aws/ec2.png" width="25px" alt="ec2"><img />
+                                        <p>EC2</p>
+                                    </li>
+
+
+                                    <li class="skills-name">
+                                        <img src="img/Aws/s3.png" width="25px" alt="s3"></img>
+                                        <p>S3</p>
+                                    </li>
+
+
+                                    <li class="skills-name">
+                                        <img src="img/Aws/rds.png" width="25px" alt="RDS"></img>
+                                        <p>RDS</p>
+                                    </li>
+
+
+                                    <li class="skills-name">
+                                        <img src="img/Aws/qs.png" width="25px" alt="Quick Sight"></img>
+                                        <p>Quick Sight</p>
+                                    </li>
+                                    <li class="skills-name">
+                                        <img src="img/Aws/Athena.png" width="25px" alt="Athena"></img>
+                                        <p>Athena</p>
+                                    </li>
+                                    <li class="skills-name">
+                                        <img src="img/Aws/Glue.png" width="25px" alt="Glue"></img>
+                                        <p>Glue</p>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+
                     </div>
 
-                    <div class="slider">
-                        <div class="slider-track">
-                            <div class="slide">
-                                <img src="img/Aws/aws_s3.png" alt="Logo S3" class="slide-img">
-                                <p>Almacenamiento de objetos escalable en la nube.</p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_ec2.png" alt="Logo EC2" class="slide-img">
-                                <p>Servicio de computación en la nube seguro y redimensionable.</p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_qs.png" alt="Logo QuickSight" class="slide-img">
-                                <p>Servicio de análisis de negocios rápido, fácil de usar y completamente administrado.
-                                </p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_rds.png" alt="Logo RDS" class="slide-img">
-                                <p>Servicio web que facilita la configuración, operación y escalabilidad de una base de
-                                    datos relacional en la nube.</p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_athena.svg" alt="Logo Athena" class="slide-img">
-                                <p>Servicio de consultas interactivas que facilita el análisis de datos en Amazon S3
-                                    mediante SQL estándar.</p>
-                            </div>
+                    <!-- Other skills -->
+                    <!-- Other habilidades -->
+                    <p class="skills-title"><strong>Otras habilidades</strong> (descubre).</p>
+                    <ul class="flex-col other-skills-list text">
+                        <li class="other-skills-item">
+                            <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                            <p><strong>Desarrollo de Software:</strong> .NET(C#,VB), Versionamiento en GitHub,
+                                SubVersion.</p>
+                        </li>
+                        <li class="other-skills-item">
+                            <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                            <p><strong>Bases de Datos:</strong> SQL Server, MySQL, MariaDB</p>
+                        </li>
+                        <li class="other-skills-item">
+                            <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                            <p><strong>Interoperabilidad:</strong> Webservice SOAP – API Rest. Postman.</p>
+                        </li>
+                        <li class="other-skills-item">
+                            <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                            <p><strong>Metodologías ágiles:</strong> SCRUM, DevOps.</p>
+                        </li>
+                        <li class="other-skills-item">
+                            <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                            <p><strong>Facturación electrónica:</strong> UBL, XML, JSON.</p>
+                        </li>
+                    </ul>
 
-                        </div>
-                        <div class="slider-controls">
-                            <button class="prev-btn">&lt;</button>
-                            <button class="next-btn">&gt;</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
 
 
-
-
-
-        <!--         <section class="section-skills padd-section" id="skills">
-            <div class="container">
-                <div class="container-md">
-                    <div class="heading-secondary--right">
-                        <h2 class="heading-secondary">Mis habilidades</h2>
-                    </div>
-                    <div class="slider">
-                        <div class="slider-track">
-                            <div class="slide">
-                                <img src="img/Aws/aws_s3.png" alt="Logo S3" class="slide-img">
-                                <p>Almacenamiento de objetos escalable en la nube.</p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_ec2.png" alt="Logo EC2" class="slide-img">
-                                <p>Servicio de computación en la nube seguro y redimensionable.</p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_qs.png" alt="Logo QuickSight" class="slide-img">
-                                <p>Servicio de análisis de negocios rápido, fácil de usar y completamente administrado.
-                                </p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_rds.png" alt="Logo RDS" class="slide-img">
-                                <p>Servicio web que facilita la configuración, operación y escalabilidad de una base de
-                                    datos
-                                    relacional en la nube.</p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_athena.png" alt="Logo Athena" class="slide-img">
-                                <p>Servicio de consultas interactivas que facilita el análisis de datos en Amazon S3
-                                    mediante
-                                    SQL estándar.</p>
-                            </div>
-                            <div class="slide">
-                                <img src="img/Aws/aws_dynamo.png" alt="Logo DynamoDB" class="slide-img">
-                                <p>Servicio de base de datos NoSQL completamente administrado que admite estructuras de
-                                    datos de
-                                    documento y de clave-valor.</p>
-                            </div>
-                        </div>
-                        <div class="slider-controls">
-                            <button class="prev-btn">Anterior</button>
-                            <button class="next-btn">Adelante</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
 
 
         <section class="section-contact padd-section" id="contact">
@@ -263,44 +280,29 @@
                                 siguiente dirección:</p>
                             <a href="mailto:carlosmrz100@hotmail.com" class="link">carlosmrz100@hotmail.com</a>
                         </div>
-                        <div class="carousel">
-                            <div class="wrap">
-                                <ul>
-                                    <li> <img
-                                            src="https://cdn.pixabay.com/photo/2016/10/13/00/03/girl-1736419__340.jpg" />
-                                    </li>
-                                    <li> <img
-                                            src="http://ppcdn.500px.org/72233281/5e145f8f95427805045dbaf1ec2cf17bcb4b25b3/3.jpg" />
-                                    </li>
-                                    <li> <img
-                                            src="http://ppcdn.500px.org/72190239/1ac03d25646f92afd4d80ed8e6f2c1cfc78635b5/4.jpg" />
-                                    </li>
-                                    <li> <img
-                                            src="http://ppcdn.500px.org/58739696/b0c33312552e8581ef457720bb924f16421dcec8/3.jpg" />
-                                    </li>
-                                    <li> <img
-                                            src="http://ppcdn.500px.org/43028892/84b059f25810f07962ae46e63c44c625b2f9b9e6/2048.jpg" />
-                                    </li>
-                                    <li> <img
-                                            src="https://cdn.pixabay.com/photo/2017/09/21/07/47/girl-2771001__340.jpg" />
-                                    </li>
-                                    <li> <img
-                                            src="https://cdn.pixabay.com/photo/2018/03/12/12/32/woman-3219507__340.jpg" />
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="contact-box--img">
-                            <img src="img/logo.jpg" alt="Photo of carlosmaiorivera" class="contact-img" />
-                        </div>
                     </div>
+
                 </div>
+            </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Carlos Mario Rivera. Todos los derechos reservados.</p>
+        <p class="flex-row-center">&copy; 2024 Carlos Mario Rivera. Todos los derechos reservados.</p>
+        <nav class="nav flex-row">
+            <a href="#" class="logo-link"><img src="img/logo.jpg" alt="carlosmaiorivera Logo" class="logo" /></a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="HTML/Aboutpage/about.html" target="_blank">Hobbies </a></li>
+                    <li><a href="#about" class="link main-nav-link">Acerca de mi </a></li>
+                    <li><a href="#skills" class="link main-nav-link">Mis Habilidades </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
     </footer>
 
     <!-- Ionicons -->

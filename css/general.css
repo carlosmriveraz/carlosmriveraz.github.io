@@ -88,7 +88,7 @@ section {
 }
 
 .padd-section {
-  padding: 9.6rem 0;
+  padding: 5.6rem 0;
 }
 
 /* TEXT */
@@ -293,4 +293,25 @@ section {
 .social-icon:hover,
 .social-icon:active {
   transform: translateY(-5px);
+}links--side {
+  flex-direction: column;
+}
+
+.social-links--side::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 20rem;
+  margin: 0 auto;
+  background-color: var(--color-tertiary);
+}
+
+.social-link {
+  padding: 0.12rem;
+}
+
+.social-icon {
+  font-size: 2.4rem;
+  color: var(--color-secondary);
+  transition: transform 0.3s;
 }
