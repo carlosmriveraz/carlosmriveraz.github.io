@@ -17,23 +17,22 @@ Small: 4px
 Medium: 8px
 
 */
-
 html {
   font-size: 62.5%;
 }
 
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: var(--body-font);
-  font-weight: 400;
-  font-size: 1.8rem;
   background-color: var(--color-surface);
   color: var(--color-on-surface);
+  font-family: var(--body-font);
+  font-size: 1.8rem;
+  font-weight: 400;
   overflow-x: hidden;
 }
 
@@ -154,14 +153,14 @@ section {
 .btn,
 .btn:link,
 .btn:visited {
+
+
+  border-radius: var(--border-radius-sm);
+  border: 2px solid;
+  color: var(--color-primary);
   cursor: pointer;
   display: inline-block;
   padding: 1rem 3rem;
-
-  color: var(--color-primary);
-  border-radius: var(--border-radius-sm);
-  border: 2px solid;
-
   transition: all 0.4s;
 }
 
@@ -178,9 +177,9 @@ section {
 
 .btn-full:link,
 .btn-full:visited {
-  color: var(--color-surface);
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+  color: var(--color-surface);
 }
 
 .btn-full:hover,
@@ -192,17 +191,17 @@ section {
 /* ********** HEADINGS *********** */
 
 .heading-primary {
-  font-weight: 600;
-  font-size: 5.2rem;
-  line-height: 1.1;
-  letter-spacing: 3px;
   color: var(--color-primary);
+  font-size: 5.2rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.1;
 }
 
 .heading-secondary {
   color: var(--color-primary);
-  font-size: 3rem;
   flex: none;
+  font-size: 3rem;
 }
 
 .heading-secondary span {
@@ -211,8 +210,8 @@ section {
 
 .heading-secondary--left,
 .heading-secondary--right {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 1.5rem;
   margin-bottom: 3.2rem;
 }
@@ -223,11 +222,11 @@ section {
 
 .heading-secondary--left::after,
 .heading-secondary--right::before {
+  background-color: var(--color-tertiary);
   content: '';
   display: block;
-  width: 100%;
   height: 1px;
-  background-color: var(--color-tertiary);
+  width: 100%;
 }
 
 /* ********* SIDE-LINKS ********* */
@@ -293,17 +292,19 @@ section {
 .social-icon:hover,
 .social-icon:active {
   transform: translateY(-5px);
-}links--side {
+}
+
+links--side {
   flex-direction: column;
 }
 
 .social-links--side::after {
+  background-color: var(--color-tertiary);
   content: '';
   display: block;
-  width: 1px;
   height: 20rem;
   margin: 0 auto;
-  background-color: var(--color-tertiary);
+  width: 1px;
 }
 
 .social-link {
@@ -311,7 +312,7 @@ section {
 }
 
 .social-icon {
-  font-size: 2.4rem;
   color: var(--color-secondary);
+  font-size: 2.4rem;
   transition: transform 0.3s;
 }
