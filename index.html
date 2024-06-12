@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
         content="Portafolio profesional de Carlos Mario Rivera, especialista en BI, Big Data, AWS y data pipelines.">
     <meta property="og:image" content="URL de tu imagen profesional">
     <meta property="og:title" content="Carlos Mario Rivera - Experto en BI y Big Data">
-    <meta property="og:url" content="http://carlosmariorivera.com">
+
 
     <!-- Title -->
     <title>Carlos Mario Rivera - Portafolio</title>
@@ -50,7 +50,7 @@
 <body>
     <!-- Header -->
     <header class="section-header">
-        <nav class="navflexrow">
+        <nav class="navflexrow" aria-label="nav-menu">
             <div class="nav-menu" id="nav-menu">
                 <a href="#" class="logo">
                     <img src="assets/images/logo.jpg" alt="carlosmariorivera" class="logo" />
@@ -156,6 +156,8 @@
             </div>
         </section>
         <!-- SKILLS SECTION -->
+
+
         <section class="section-skills padd-section" id="skills">
             <div class="container">
                 <div class="container-md">
@@ -167,14 +169,21 @@
                     <div class="fullstack-skills">
 
 
+                        <!-- Contenido de Frontend -->
+
+
                         <div class="skills-group">
                             <p class="skills-title">Frontend</p>
                             <div class="skills-data-box">
                                 <ul class="skills-data-list">
 
                                     <li class="skills-name">
-                                        <img src="assets/images/frontend/html.webp" width="25px" alt="logo de html" />
-                                        <p>HTML</p>
+                                        <div class="fullstack-skills" id="frontend-container">
+                                            </class>
+                                            <img src="assets/images/frontend/html.webp" width="25px"
+                                                alt="logo de html" />
+                                            <p>HTML</p>
+                                        </div>
                                     </li>
                                     <li class="skills-name">
                                         <img src="assets/images/frontend/css3.webp" width="25px" alt="logo de cc3" />
@@ -233,7 +242,7 @@
                                         <p>Athena</p>
                                     </li>
                                     <li class="skills-name">
-                                        <img src="assets/images/aws/glue.png" width="25px" alt="Glue"></img>
+                                        <img src="assets/images/aws/ec2.png" width="25px" alt="Glue"></img>
                                         <p>Glue</p>
                                     </li>
 
@@ -241,9 +250,29 @@
                                 </ul>
                             </div>
                         </div>
-
+                        <div class="skills-group">
+                            <p class="skills-title">Backend</p>
+                            <div class="skills-data-box">
+                                <ul class="skills-data-list">
+                                    <li class="skills-name">
+                                        <img src="URL_LOGO_API" width="25px" alt="Logo de API">
+                                        <p>API</p>
+                                    </li>
+                                    <li class="skills-name">
+                                        <img src="URL_LOGO_MYSQL" width="25px" alt="Logo de MySQL">
+                                        <p>MySQL</p>
+                                    </li>
+                                    <li class="skills-name">
+                                        <img src="URL_LOGO_PYTHON" width="25px" alt="Logo de Python">
+                                        <p>Python</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
                     </div>
+
+
 
                     <!-- Other skills -->
                     <!-- Other habilidades -->
@@ -329,18 +358,20 @@
     <footer class="section-footer">
         <div id="nav-menu">
             <!-- Navegación del footer -->
-            <nav  id="footer.nav-menu">
+            <article>
+                <nav aria-label="footernav-menu""> 
                 <!-- Logo -->
-                <a href="#" class="logo-link">
+                <a href=" #" class="logo-link">
                     <img src="assets/images/logo.jpg" alt="Logo de Carlos Mario Rivera" class="logo" />
-                </a>
-                <!-- Lista de navegación -->
-                <ul id="footernav-menu">
-                    <li><a href="html/Aboutpage/about.html" target="_blank">Hobbies</a></li>
-                    <li><a href="#about" class="footersocial-links">Acerca de mí</a></li>
-                    <li><a href="#skills" class="footersocial-links">Mis Habilidades</a></li>
-                </ul>
-            </nav>
+                    </a>
+                    <!-- Lista de navegación -->
+                    <ul id="footernav-menu">
+                        <li><a href="html/Aboutpage/about.html" target="_blank">Hobbies</a></li>
+                        <li><a href="#about" class="footersocial-links">Acerca de mí</a></li>
+                        <li><a href="#skills" class="footersocial-links">Mis Habilidades</a></li>
+                    </ul>
+                </nav>
+            </article>
             <!-- Derechos de autor -->
             <p class="copyright">
                 © 2024 Carlos Mario Rivera. Todos los derechos reservados.

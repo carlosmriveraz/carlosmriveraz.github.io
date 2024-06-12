@@ -9,10 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 
-
     <style>
-
-
         #business-intelligence {
             padding: 5px;
             font-family: Arial, sans-serif;
@@ -45,7 +42,6 @@
             border-collapse: collapse;
             margin-bottom: 5px;
             font-size: 0.7em;
-
         }
 
         table,
@@ -84,10 +80,6 @@
             margin-top: 5px;
         }
 
- 
-
-
-
         #kpi p {
             font-size: 1.1em;
         }
@@ -102,6 +94,10 @@
 
         #avg-value {
             color: rgb(184, 96, 96);
+        }
+
+        #api-value {
+            color: orange;
         }
 
         #kpi p span {
@@ -122,59 +118,81 @@
                     <p style="color:blue;">Valor Mínimo: <span id="min-value"></span></p>
                     <p style="color:green;">Valor Máximo: <span id="max-value"></span></p>
                     <p style="color:red;">Valor Promedio: <span id="avg-value"></span></p>
+                    <p style="color:orange;">Valor Calculado via API: <span id="api-value"></span></p>
                 </div>
 
                 <h2>Estadísticas
-                <label for="months">Ingrese el número de meses para el
-                    cálculo (máximo 12 meses):</label>
-                <input type="number" id="months" name="months" value="3" min="1" max="12">
-                <button onclick="generateStatistics()">Generar
-                    Estadísticas</button>
-</h2>
+                    <label for="months">Ingrese el número de meses para el
+                        cálculo (máximo 12 meses):</label>
+                    <input type="number" id="months" name="months" value="3" min="1" max="12">
+                    <button onclick="generateStatistics()">Generar
+                        Estadísticas</button>
+                </h2>
                 <div id="charts">
-                    <h2>Estadísticas Generadas</h2>
-                    <canvas id="lineChart"></canvas>
+                    <div id="charts">
+                        <h2>Estadísticas Generadas</h2>
+                        <canvas id="lineChart"></canvas>
+                        <canvas id="barChart"></canvas>
+                        <canvas id="pieChart"></canvas>
+                    </div>
                 </div>
             </div>
 
             <div id="table-container">
                 <h2>Valores del Dólar en Colombia
-                <table id="dollar-values" class="sortable">
+                    <table id="dollar-values" class="sortable">
+                        <thead>
+                            <tr>
+                                <th data-sort="date">Fecha</th>
+                                <th data-sort="number">Valor en Pesos Colombianos
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos se rellenarán aquí -->
+                        </tbody>
+                    </table>
+                </h2>
+            </div>
+        </div>
+        <div id="stats-and-table">
+            <h2>Predicciones para los Próximos Dos Días
+                <p>Nota: Estas predicciones son estimaciones realizadas por inteligencia artificial y no son fijas.</p>
+                <table id="predictions" class="sortable">
                     <thead>
                         <tr>
-                            <th data-sort="date">Fecha</th>
-                            <th data-sort="number">Valor en Pesos Colombianos
-                            </th>
+                            <th>Fecha</th>
+                            <th>Valor Predicho en Pesos Colombianos</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Los datos se rellenarán aquí -->
                     </tbody>
                 </table>
-                </h2>
-            </div>
-        </div>
-   <div id="stats-and-table">
-        <h2>Predicciones para los Próximos Dos Días
-        <p>Nota: Estas predicciones son estimaciones realizadas por inteligencia artificial y no son fijas.</p>
-        <table id="predictions" class="sortable">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Valor Predicho en Pesos Colombianos</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Los datos se rellenarán aquí -->
-            </tbody>
-        </table>
-        </h2>
+            </h2>
         </div>
     </section>
- <script>
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
             loadCSVData();
+            fetchApiValue(); // Llama a la función para obtener el valor desde la API
         });
+
+        function fetchApiValue() {
+            // Reemplaza con tu propia API key
+            const apiUrl = `https://v6.exchangerate-api.com/v6/cfd2eebb13ae7c9ab9898b21/latest/USD`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const rate = data.conversion_rates.COP;
+                    document.getElementById('api-value').textContent = rate.toFixed(2);
+                })
+                .catch(error => {
+                    console.error('Error fetching API value:', error);
+                    document.getElementById('api-value').textContent = 'Error';
+                });
+        }
 
         function loadCSVData() {
             const csvFilePath = 'valordolarhistorico.csv';
@@ -207,7 +225,7 @@
             const lines = csvText.trim().split('\n');
             const data = lines.slice(1).map(line => {
                 const [Fecha, Precio] = line.split(',');
-                return { Fecha, Precio: parseFloat(Precio) };
+                return {Fecha, Precio: parseFloat(Precio)};
             });
             return data;
         }
@@ -221,7 +239,7 @@
                 date.setDate(startDate.getDate() + i);
                 const formattedDate = date.toISOString().split('T')[0];
                 const randomValue = (3000 + Math.random() * 1000).toFixed(2);
-                data.push({ Fecha: formattedDate, Precio: parseFloat(randomValue) });
+                data.push({Fecha: formattedDate, Precio: parseFloat(randomValue)});
             }
             return data;
         }
@@ -365,26 +383,34 @@
         }
 
         function generatePredictions(data) {
-            const lastDate = new Date(data[data.length - 1].Fecha);
             const predictions = [];
-
-            for (let i = 1; i <= 10; i++) {
+            const lastDate = new Date(data[data.length - 1].Fecha);
+            for (let i = 1; i <= 2; i++) {
                 const nextDate = new Date(lastDate);
                 nextDate.setDate(lastDate.getDate() + i);
                 const formattedDate = nextDate.toISOString().split('T')[0];
-                const predictedValue = (data[data.length - 1].Precio * (1 + Math.random() * 0.05)).toFixed(2);
-                predictions.push({ Fecha: formattedDate, Precio: parseFloat(predictedValue) });
+                const randomPrediction = (data[data.length - 1].Precio + Math.random() * 50 - 25).toFixed(2);
+                predictions.push({Fecha: formattedDate, Precio: parseFloat(randomPrediction)});
             }
 
             const table = document.getElementById('predictions');
             const tbody = table.querySelector('tbody');
+
+            tbody.innerHTML = '';
 
             predictions.forEach(row => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `<td>${row.Fecha}</td><td>${row.Precio}</td>`;
                 tbody.appendChild(tr);
             });
+
+            new Sortable(table, {
+                animation: 150,
+                handle: 'th',
+                dataIdAttr: 'data-id'
+            });
         }
     </script>
 </body>
+
 </html>
