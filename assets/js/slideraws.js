@@ -49,3 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
     showSlide(currentSlide);
     startAutoSlide();
 });
+
+
+const frontendContainer = document.getElementById('frontend-container');
+
+frontendContainer.addEventListener('mouseenter', function () {
+    this.classList.add('flipped');
+});
+
+frontendContainer.addEventListener('mouseleave', function () {
+    this.classList.remove('flipped');
+});

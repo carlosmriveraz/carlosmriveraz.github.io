@@ -382,3 +382,26 @@ html[data-theme='dark'] {
 #eula-list li a:hover {
   color: var(--color-primary);
 }
+
+
+
+#frontend-container:hover {
+    transform: rotateY(180deg);
+    transition: transform 0.5s ease;
+}
+
+#frontend-container.flipped .skills-title {
+    display: none;
+}
+
+#frontend-container.flipped .skills-data-list {
+    display: none;
+}
+
+#frontend-container.flipped .flipped-text {
+    display: block;
+}
+
+.flipped-text {
+    display: none;
+}
