@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ https://github.com/carlosmriveraz/carlosmriveraz.github.io }}
+      url: ${{https://carlosmriveraz.github.io/CurriculumHTML_CArlosRivera/}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
