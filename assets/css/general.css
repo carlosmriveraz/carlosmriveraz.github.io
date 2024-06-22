@@ -52,7 +52,6 @@ li {
 .container-md {
     max-width: 70%;
     width: 100%;
-    /* background-color: red; */
     margin: 0 auto;
 }
 
@@ -76,13 +75,6 @@ li {
 
 .description-box.slide-left {
     animation-delay: 1s;
-}
-
-
-/* SECTION */
-
-section {
-    transition: transform 1s, opacity 1s;
 }
 
 .section--hidden {
@@ -318,4 +310,27 @@ section {
     /* Color de fondo oscuro */
     color: #ecf0f1;
     /* Color de texto para el tema oscuro */
+}
+
+iframe {
+    border: none;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2), 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+iframe:hover {
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 255, 0.5), 0px 5px 10px 5px rgba(0, 0, 255, 0.3);
+}
+
+
+/* SECTION */
+
+section {
+    border: none;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2), 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 0px 0px 15px 5px rgba(183, 183, 234, 0.5), 0px 5px 10px 5px rgba(0, 0, 255, 0.3);
 }
