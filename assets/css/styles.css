@@ -24,8 +24,8 @@ html[data-theme='dark'] {
     --color-tertiary: #d4bee5;
     --color-on-tertiary-container: #f0dbff;
     --body-font: 'Montserrat', sans-serif;
-    --border-radius-md: .8em;
-    --border-radius-sm: .8em;
+    --border-radius-md: .4em;
+    --border-radius-sm: .4em;
 }
 
 
@@ -79,6 +79,10 @@ html[data-theme='dark'] {
     border-radius: var(--border-radius-md);
     transform: translate(-50%);
     transition: all 0.4s;
+}
+
+.nav-menu li:hover {
+    background-color: #576a76;
 }
 
 .show-menu .nav-menu {
@@ -309,23 +313,31 @@ html[data-theme='dark'] {
 
 .works-container {
     display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+    align-items: stretch;
 }
 
 .work {
-    padding: 2.4rem;
+    padding: 1rem;
     border-radius: var(--border-radius-sm);
     background-color: var(--color-surface-variant);
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 0.4rem;
     color: var(--color-on-surface);
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
 }
 
 .work-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     max-width: 100%;
-    height: auto;
     border-radius: var(--border-radius-sm);
 }
 

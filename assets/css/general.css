@@ -35,7 +35,7 @@ body {
     background-color: var(--color-surface);
     color: var(--color-on-surface);
     overflow-x: hidden;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.9s, color 0.3s;
     /* Transiciones para tema claro/oscuro */
 }
 
@@ -44,14 +44,27 @@ li {
 }
 
 .container {
-    max-width: 140rem;
+    max-width: 180rem;
     width: 100%;
     margin: 0 auto;
 }
 
+.image-container {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    /* Agrega una transición suave */
+}
+
+.image-container:hover {
+    transform: scale(1.2);
+    background-image: url("assets/images/work/fe.wepb");
+    /* Aumenta el tamaño al pasar el mouse */
+}
+
 .container-md {
-    max-width: 70%;
-    width: 100%;
+    max-width: 78%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -240,12 +253,12 @@ li {
 }
 
 .side-social-links--left {
-    left: 4rem;
+    left: 3rem;
     right: auto;
 }
 
 .side-social-links--rigth {
-    right: 4rem;
+    right: 3rem;
     left: auto;
 }
 
@@ -263,7 +276,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .social-links--side {
@@ -274,17 +287,17 @@ li {
     content: '';
     display: block;
     width: 1px;
-    height: 20rem;
+    height: 15rem;
     margin: 0 auto;
     background-color: var(--color-tertiary);
 }
 
 .social-link {
-    padding: 0.12rem;
+    padding: 0.10rem;
 }
 
 .social-icon {
-    font-size: 2.4rem;
+    font-size: 1.4rem;
     color: var(--color-secondary);
     transition: transform 0.3s;
 }
