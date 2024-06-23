@@ -1,6 +1,3 @@
-
-
-
 # Licencia de Usuario Final (EULA)
 
 Este es un acuerdo de licencia entre usted, el usuario final, y el propietario del software (el "Licenciante"). Al descargar, instalar o utilizar este software, usted acepta estar sujeto a los términos de esta licencia.
