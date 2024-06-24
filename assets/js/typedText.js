@@ -1,6 +1,6 @@
 const options = {
     strings: [
-        'Desarrollador de Softare',
+        'Desarrollador de Software',
         'Ingeniero de Datos',
         'Arquitecto de Soluciones',
     ],

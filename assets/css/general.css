@@ -246,7 +246,7 @@ li {
 /* ********* SIDE-LINKS ********* */
 
 .side-social-links--left,
-.side-social-links--rigth {
+.side-social-links--right {
     display: none;
     position: fixed;
     bottom: 0;
@@ -257,18 +257,18 @@ li {
     right: auto;
 }
 
-.side-social-links--rigth {
+.side-social-links--right {
     right: 3rem;
     left: auto;
 }
 
-.side-social-links--rigth a {
+.side-social-links--right a {
     color: inherit;
     writing-mode: vertical-rl;
 }
 
-.side-social-links--rigth a:hover,
-.side-social-links--rigth a:active {
+.side-social-links--right a:hover,
+.side-social-links--right a:active {
     transform: translateY(-3px);
 }
 

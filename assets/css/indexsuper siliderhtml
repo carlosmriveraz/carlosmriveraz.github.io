@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title -->
+    <title>Carlos Mario Rivera - Experto en BI y Big Data</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/images/favicon/favicon128.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon16.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon/favicon64.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/queries.css">
+
+    <!-- JavaScript -->
+    <script src="assets/js/index.js"></script>
+</head>
+
+
+<body>
+    <header class="section-header">
+        <nav class="nav flex-row">
+            <a href="#" class="logo-link"><img src="assets/images/logo.webp" alt="Carlos Rivera Logo"
+                    class="logo" /></a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+
+
+                    <li>
+                        <a href="#about" class="link main-nav-link">About <span>&nbsp;&frasl;&gt;</span></a>
+                    </li>
+
+                    <li>
+                        <a href="#skills" class="link main-nav-link">Skills <span>&nbsp;&frasl;&gt;</span></a>
+                    </li>
+
+                    <li>
+                        <a href="#works" class="link main-nav-link">Work <span>&nbsp;&frasl;&gt;</span></a>
+                    </li>
+
+                    <li>
+
+                        <a href="#contact" class="link main-nav-link">Contact <span>&nbsp;&frasl;&gt;</span></a>
+                    </li>
+                    <li>
+                        <div class="theme-selector" onclick="toggleTheme();" onKeyDown="toggleTheme();">
+                            <spam>??/??</spam>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="nav-toggle">
+                <ion-icon name="menu-outline" class="nav-icon"></ion-icon>
+                <ion-icon name="close-outline" class="nav-icon"></ion-icon>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section class="section-home flex-row-center" id="section-home">
+            <div class="container">
+                <div class="side-social-links--left">
+                    <ul class="social-links social-links--side">
+
+
+
+                        <li>
+                            <a href="https://www.linkedin.com/in/dev-bi-carlosmariorivera" class="social-link"
+                                target="_blank" rel="noopener">
+                                <ion-icon class="link social-icon" name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com/carlosmriveraz" class="social-link" target="_blank"
+                                rel="noopener">
+                                <ion-icon class="link social-icon" name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="side-social-links--rigth">
+                    <ul class="social-links social-links--side" rel="noopener">
+                        <li>
+                            <a href="mailto:carlosmrz100@hotmail.com"
+                                class="link social-link">carlosmrz100@hotmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container-md">
+                    <div class="hero slide-left">
+                        <div class="hero-text-box flex-col">
+                            <div class="hero-main-title-box">
+                                <p class="enter-text">Bienvenido a</p>
+                                <h1 class="heading-primary">CarlosMarioRivera.com</h1>
+                                <p class="hero-subheading">
+                                    <span class="animate-subheading"></span> - j-
+                                </p>
+                            </div>
+
+                            <div class="description-box slide-left">
+                                <p class="description">
+                                <p>Desarrollo de Software y BI.<br><br>Apasionado por la tecnología y el desarrollo de
+                                    software.
+                                </p>
+                                </p>
+
+                                <a href="html/curriculum.html" class="link btn btn-outline" target="_blank">Mi
+                                    Curriculum !</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="section-about" id="about">
+            <div class="container">
+                <div class="container-md">
+                    <div class="heading-secondary--left">
+                        <h2 class="heading-secondary">
+                            Soy Carlos Mario Rivera: <span>&nbsp;&frasl;&gt;</span>
+                        </h2>
+                    </div>
+                    <div class="about-box">
+                        <div class="about-box--text">
+                            <div class="flex-col about-me-text text">
+                                <p>
+                                <p>Desarrollador de software con mas de 12 anos de experiencia, apasionado por la
+                                    creación de aplicaciones robustas y escalables. En el desarrollo de aplicaciones.
+                                    <br><br>He trabajado en proyectos desde la etapa de diseño hasta la implementación.
+                                    Experto en inteligencia de negocios. Mi objetivo es crear soluciones eficientes que
+                                    mejoren la experiencia del usuario.
+                                    <br><br> Arquitecto de soluciones con experiencia en diseño, implementación y
+                                    optimización de infraestructuras en la nube. Auditor interno ISO 27001.>
+                                </p>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="about-box--img">
+                            <img src="assets/images/logo.webp" alt=" carlosrivera logo " class="about-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="section-skills padd-section" id="skills">
+            <div class="container">
+                <div class="container-md">
+                    <div class="heading-secondary--right">
+                        <h2 class="heading-secondary">
+                            <span> &lt;&frasl;&nbsp;</span>Mis habilidades
+                        </h2>
+                    </div>
+                    <div class="fullstack-skills">
+                        <!-- Frontend Skills -->
+                        <div class="slider">
+                            <div class="card">
+                                <img src="D"
+                                    alt="" />
+                                <div class="copy">
+                                    <h1>Lorem, ipsum.</h1>
+                                </div>
+                            </div>
+
+
+
+                            <div class="card">
+                                <img src="aws.png" alt="" />
+                                <div class="copy">
+                                    <h1>Lorem, qw.</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+        <!-- Other Skills -->
+        <section class="other-skills" id="oskills">
+            <div class="container-md">
+                <p class="skills-title"><strong>Otras habilidades</strong> (descubre).</p>
+                <ul class="other-skills-list text">
+                    <!-- Lista de otras habilidades -->
+                    <li class="other-skills-item">
+                        <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                        <p><strong>Desarrollo de Software:</strong> .NET(C#,VB), Versionamiento en GitHub, SubVersion.
+                        </p>
+                    </li>
+                    <li class="other-skills-item">
+                        <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                        <p><strong>Interoperatividad:</strong> Webservice SOAP �V API Rest. Postman.
+                        </p>
+                    </li>
+                    <li class="other-skills-item">
+                        <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                        <p><strong>Metodologías ágiles:</strong> SCRUM, DevOps.</p>
+                    </li>
+                    <li class="other-skills-item">
+                        <ion-icon class="other-skills-icon" name="chevron-forward-outline"></ion-icon>
+                        <p><strong>Facturación electronica:</strong> UBL, XML, JSON.</p>
+
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- woks -->
+        <section class="section-works padd-section" id="works">
+            <div class="container">
+                <div class="container-md">
+                    <div class="heading-secondary--left">
+                        <h2 class="heading-secondary">
+                            Proyectos <span>&nbsp;&frasl;&gt;</span>
+                        </h2>
+                    </div>
+                    <div class="works-container">
+                        <div class="work image-container">
+                            <p class="work-title">Facturación Elecrónica</p>
+                            <a href="https://micrositios.dian.gov.co/sistema-de-facturación-electronica/factura-electronica/"
+                                target="_blank" rel="noopener">
+                                <img src="assets/images/work/feproceso.webp" alt="Facturación Elecrónica"
+                                    class="work-img image-container" height="250px" weight="500px" />
+                            </a>
+                            <div class="work-text-container text">
+
+
+                                <p class="work-description">
+                                    Un proyecto de factura electrónica a nivel global implica la adopción de estándares
+                                    comunes para la emisión, recepción y procesamiento de facturas electrónicas en todo
+                                    el mundo. Busca garantizar la autenticidad, integridad y eficiencia en las
+                                    transacciones
+                                    comerciales, reduciendo el uso de papel y mejorando la interoperatividad entre
+                                    distintas administraciones y empresas.
+                                </p>
+                                <ul class="work-tags-list">
+
+                                    <li class="work-tag-item">AWS</li>
+
+                                    <li class="work-tag-item">C#</li>
+
+                                    <li class="work-tag-item">API</li>
+
+                                    <li class="work-tag-item">BD</li>
+
+                                </ul>
+                            </div>
+                            <div class="work-links">
+                                <ul class="work-links-list">
+
+                                    <li class="work-links-item">
+                                        <a href="https://play.google.com/store/apps/details?id=com.webserveis.app.lightprice"
+                                            class="link work-link" target="_blank" rel="noopener">
+                                            <ion-icon name="open-outline"></ion-icon>
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="work image-container">
+                            <p class="work-title">Business Intelligence</p>
+                            <a href="html/bi/bi.html" target="_blank" rel="noopener">
+                                <img src="assets/images/work/lawsglue.webp" alt="Business Intelligence" class="work-img"
+                                    height="250px" weight="500px" />
+                            </a>
+                            <div class="work-text-container text">
+
+                                <p class="work-description">
+                                    Muestra los precios históricos del dólar y hace una predicción de <strong>
+                                        IA</strong> Business Intelligence
+                                </p>
+                                <ul class="work-tags-list">
+
+                                    <li class="work-tag-item">AWS</li>
+
+                                    <li class="work-tag-item">Frontend</li>
+
+                                    <li class="work-tag-item">Bases de datos</li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="see-more-btn-box">
+                        <a href="#bi" class="link btn btn-outline" target="_blank" rel="noopener">Ver mucho más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- bi -->
+        <section id="bi" class="container container-md flex-col">
+            <div class="heading-secondary--left">
+                <h2 class="heading-secondary">
+                    Business Intelligence<span>&nbsp;&frasl;&gt;</span>
+                </h2>
+            </div>
+
+            <a href="html/universo/about.html" class="link btn btn-outline" target="_blank" rel="noopener">Página web
+                generada por IA<img src="html/universo/body.webp" alt="universo" height="100px" height="100px"
+                    class="image-container"></a>
+
+
+            <div class="flex-col">
+
+                <div class="image-container">
+
+
+                    <iframe title="bi" name="bi frame" src="html/bi/bi.html" width="90%" height="800" rel="noopener">
+                    </iframe>
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section-contact" id="contact">
+            <div class="container">
+                <div class="container-md">
+                    <div class="contact-container">
+                        <h2 class="heading-secondary">
+                            <span>&lt;&frasl;&nbsp;</span> Contácteme
+                        </h2>
+                        <div class="contact-info-container">
+                            <p class="contact-title">Carlos Mario</p>
+                            <p class="text">
+                                Si deseas contactarme para cualquier consulta o proyecto, puedes escribirme a
+                                <a
+                                    href="mailto:carlosmrz100@hotmail.com?subject=Correo de contacto de Carlos Rivera&body=Bune dia, este correo se genera desde la pagina web  e Carlos Riveray te  contacto ">Enviar
+                                    correo electrónico</a>
+
+
+                                <button id="copyEmailButton">Copiar Email</button>
+
+                            </p>
+                        </div>
+                        <a href="https://github.com/carlosmriveraz/carlosmriveraztest/blob/main/blog.html"
+                            class="link btn btn-full">Ver mi blog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section-footer">
+        <div class="container">
+            <div class="container-md">
+                <div class="container-social-links">
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/bi-aws-carlosmariorivera" class="social-link"
+                                target="_blank" rel="noopener">
+                                <ion-icon class="link social-icon" name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/carlosmriveraz" class="social-link" target="_blank"
+                                rel="noopener">
+                                <ion-icon class="link social-icon" name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="copyright">
+                    Designed & Built by carlosmrz100@hotmail.com &copy;
+                    <span class="year"></span>
+                </p>
+                <p>
+                <ul id="eula-list">
+
+
+
+
+
+
+                </ul>
+
+                </p>
+            </div>
+        </div>
+    </footer>
+    <section id="cookie-consent-popup" style="display:none">
+        <p>Este sitio web utiliza tecnologías como cookies para habilitar la funciónalidad esencial del sitio, asi como
+            para fines de análisis, personalización y publicidad dirigida. Puedes cambiar la configuración en cualquier
+            momento, o aceptar la configuración
+            predeterminada. Puede cerrar este banner para continuar con solo las cookies esenciales <a
+                href="https://github.com/carlosmriveraz/carlosmriveraz/index.com" target="_blank"
+                rel="noopener">Política de cookies</a></p>
+        <button id="cookie-consent-decline">Declinar</button>
+        <button id="cookie-consent-accept">Aceptar</button>
+    </section>
+    <!-- ICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- ANIMATED TEXT -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="assets/js/typedText.js" type="module"></script>
+    <!-- COOKIE CONSENT -->
+    <script src="assets/js/cookie_consent.js"></script>
+    <script>
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            document.body.appendChild(star);
+        }
+    </script>
+
+
+    <script>
+        document.getElementById('copyEmailButton').addEventListener('click', function () {
+            var email = document.getElementById('emailToCopy');
+            email.select();
+            document.execCommand('copy');
+
+            // Opcional: Feedback al usuario
+            this.textContent = '!Email Copiado!';
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+    </script>
+    <!--    <script>
+        document.body.addEventListener('mousemove', function(e) {
+            var x = e.clientX / window.innerWidth * 100;
+            var y = e.clientY / window.innerHeight * 100;
+            this.style.background = `radial-gradient(circle at ${x}% ${y}%, #ff7e5f, #feb47b)`;
+        });
+        document.body.addEventListener('mouseleave',
+            function(e) {
+                this.style.background = '';
+            });
+    </script> -->
+</body>
+
+</html>
