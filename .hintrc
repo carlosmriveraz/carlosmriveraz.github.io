@@ -7,6 +7,7 @@
     "axe/name-role-value": "off",
     "apple-touch-icons": "off",
     "axe/forms": "off",
-    "axe/structure": "off"
+    "axe/structure": "off",
+    "manifest-file-extension": "off"
   }
 }

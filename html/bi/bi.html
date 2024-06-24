@@ -15,91 +15,91 @@
             font-family: Arial, sans-serif;
             background-color: var(--color-on-primary-container);
         }
-
+        
         h1,
         h2,
         p {
             color: #9acbff;
         }
-
+        
         #stats-and-table {
             display: flex;
             justify-content: space-between;
         }
-
+        
         #statistics {
             width: 45%;
         }
-
+        
         #table-container {
             width: 50%;
             max-height: 400px;
             overflow-y: auto;
         }
-
+        
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 5px;
             font-size: 0.7em;
         }
-
+        
         table,
         th,
         td {
             border: 1px solid #ddd;
         }
-
+        
         th,
         td {
             padding: 5px;
             text-align: left;
         }
-
+        
         th {
             background-color: var(--color-on-surface);
             cursor: pointer;
             color: #3832a9;
         }
-
+        
         td:hover {
             background-color: rgb(186, 206, 226);
             color: #87acd4;
         }
-
+        
         tr.hidden {
             display: none;
         }
-
+        
         canvas {
             margin-top: 5px;
         }
-
+        
         #predictions {
             font-size: 0.5em;
             margin-top: 5px;
         }
-
+        
         #kpi p {
             font-size: 1.1em;
         }
-
+        
         #min-value {
             color: rgb(152, 152, 219);
         }
-
+        
         #max-value {
             color: rgb(106, 137, 106);
         }
-
+        
         #avg-value {
             color: rgb(184, 96, 96);
         }
-
+        
         #api-value {
             color: orange;
         }
-
+        
         #kpi p span {
             font-weight: bold;
         }
@@ -225,7 +225,10 @@
             const lines = csvText.trim().split('\n');
             const data = lines.slice(1).map(line => {
                 const [Fecha, Precio] = line.split(',');
-                return {Fecha, Precio: parseFloat(Precio)};
+                return {
+                    Fecha,
+                    Precio: parseFloat(Precio)
+                };
             });
             return data;
         }
@@ -239,7 +242,10 @@
                 date.setDate(startDate.getDate() + i);
                 const formattedDate = date.toISOString().split('T')[0];
                 const randomValue = (3000 + Math.random() * 1000).toFixed(2);
-                data.push({Fecha: formattedDate, Precio: parseFloat(randomValue)});
+                data.push({
+                    Fecha: formattedDate,
+                    Precio: parseFloat(randomValue)
+                });
             }
             return data;
         }
@@ -390,7 +396,10 @@
                 nextDate.setDate(lastDate.getDate() + i);
                 const formattedDate = nextDate.toISOString().split('T')[0];
                 const randomPrediction = (data[data.length - 1].Precio + Math.random() * 50 - 25).toFixed(2);
-                predictions.push({Fecha: formattedDate, Precio: parseFloat(randomPrediction)});
+                predictions.push({
+                    Fecha: formattedDate,
+                    Precio: parseFloat(randomPrediction)
+                });
             }
 
             const table = document.getElementById('predictions');
