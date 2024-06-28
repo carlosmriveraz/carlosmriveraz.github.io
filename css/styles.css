@@ -37,7 +37,7 @@ html[data-theme="dark"] {
     top: 0;
     left: 0;
     background-color: inherit;
-     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 999;
 }
 
@@ -78,14 +78,15 @@ html[data-theme="dark"] {
     top: -100%;
     left: 50%;
     width: 95%;
-    background-color: var(--color-surface-variant);
+    background-color:     (var(--color-tertiary));;
     border-radius: var(--border-radius-md);
     transform: translate(-50%);
     transition: all 0.4s;
 }
 
 .nav-menu li:hover {
-    background-color: #576a76;
+    background-color: var(--color-primary);;
+    color: (0,0,0,.2);
 }
 
 .show-menu .nav-menu {
@@ -164,6 +165,7 @@ html[data-theme="dark"] {
 
 .section-about {
     padding: 9rem 1rem;
+
 }
 
 .about-box--text .link {
@@ -184,7 +186,9 @@ html[data-theme="dark"] {
 .about-box {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 4rem;
+    row-gap: 2rem;
+    align-items: stretch;
+    justify-items: center;
 }
 
 /************* CONTACT SECTION **************/
@@ -303,16 +307,19 @@ html[data-theme="dark"] {
         opacity: 0;
         transform: translateY(0);
     }
+
     100% {
         opacity: 1;
         transform: translateY(-100vh);
     }
 }
+
 @keyframes fadeInLeft {
     from {
         opacity: 0;
         transform: translateX(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);

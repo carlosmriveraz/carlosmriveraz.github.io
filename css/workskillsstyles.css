@@ -29,10 +29,20 @@
     padding: 0;
 }
 
+
+
+
 .skills-name {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    perspective: 1000px; /* Establece una perspectiva para el efecto 3D */
+   transition: all 0.4s;
+}
+.skills-name:hover {
+    transform: scale(1.5);
+    background-image: url("images/work/feproceso.web");
+      transition: all 0.4s; /* Aumenta el tamaño al pasar el mouse */
 }
 
 .skills-name img {
@@ -43,9 +53,29 @@
 }
 
 .skills-name p {
-    font-size: 1rem;
-    margin: 0;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    text-align: center;
 }
+
+.skills-name:hover img {
+    transform: rotateY(180deg); /* Voltea la imagen en el eje Y al hacer hover */
+}
+
+.skills-name:hover p {
+    display: block; /* Muestra la descripción al hacer hover */
+}
+
+
 
 
 /* Corrección de desbordamiento en el iframe */
@@ -173,7 +203,7 @@ justify-content: flex-start;
     align-items: center;
     background-color: var(--color-surface-variant);
     border-radius: var(--border-radius-sm);
-    color: var(--color-on-surface);
+    color:  var(--color-primary);
     display: flex;
     flex-direction: column;
     gap: .2rem;
@@ -184,6 +214,7 @@ justify-content: flex-start;
 
 /* Título del trabajo */
 .work-title {
+      color:  var(--color-primary);
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -199,6 +230,7 @@ justify-content: flex-start;
 
 /* Descripción del trabajo */
 .work-description {
+      color:  var(--color-secondary);
     text-align: justify;
     width: 90%;
     max-width:90%;
