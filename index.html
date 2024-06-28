@@ -9,7 +9,6 @@
     <title>Carlos Mario Rivera - Experto en BI y Big Data</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="128x128" href="images/favicon/favicon128.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon16.png">
 
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon32.png">
@@ -27,8 +26,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/generalcopy.css">
+    <link rel="stylesheet" href="css/workskillsstyles.css">
     <link rel="stylesheet" href="css/styles.css">
+
     <link rel="stylesheet" href="css/queries.css">
 
     <!-- JavaScript -->
@@ -37,27 +38,29 @@
 
 
 <body>
+
+
     <header class="section-header">
         <nav class="nav flex-row">
             <a href="#" class="logo-link"><img src="images/logo.webp" alt="Carlos Rivera Logo" class="logo" /></a>
             <div class="nav-menu">
                 <ul class="nav-list">
                     <li>
-                        <a href="#about" class="link main-nav-link">Sobre Mi <span>&nbsp;&frasl;&gt;</span></a>
+                        <a href="#about" class="link main-nav-link">Sobre Mi<span>&nbsp;&frasl;&gt;</span></a>
                     </li>
                     <li>
-                        <a href="#skills" class="link main-nav-link">herramientas <span>&nbsp;&frasl;&gt;</span></a>
+                        <a href="#skills" class="link main-nav-link">Tecnologías<span>&nbsp;&frasl;&gt;</span></a>
                     </li>
                     <li>
-                        <a href="#work" class="link main-nav-link">Proyectos <span>&nbsp;&frasl;&gt;</span></a>
+                        <a href="#work" class="link main-nav-link">Proyectos<span>&nbsp;&frasl;&gt;</span></a>
                     </li>
                     <li>
 
-                        <a href="#contact" class="link main-nav-link">Contacto <span>&nbsp;&frasl;&gt;</span></a>
+                        <a href="#contact" class="link main-nav-link">Contacto<span>&nbsp;&frasl;&gt;</span></a>
                     </li>
                     <li>
                         <div class="theme-selector" onclick="toggleTheme();" onKeyDown="toggleTheme();">
-                            <spam>-.-. .... <img src="images/theme.svg" alt="cambiar theme">.. .- .-</spam>
+                            <spam> <img src="images/theme.svg" alt="cambiar theme"></spam>
                         </div>
                     </li>
                 </ul>
@@ -70,20 +73,21 @@
     </header>
     <main>
         <!-- HOME SECTION -->
-        <section class="section-home flex-row-center" id="section-home">
+        <section class="section-home flex-row-center slide-in" id="section-home">
             <div class="container">
                 <div class="side-social-links--left">
                     <ul class="social-links social-links--side">
                         <li>
                             <a href="https://www.linkedin.com/in/dev-bi-carlosmariorivera" class="social-link"
                                 target="_blank" rel="noopener">
-                                <ion-icon class="link social-icon" name="logo-linkedin"></ion-icon>
+                                <img src="images/favicon/linkedin.svg" alt="linkedin" class="social-icon">
+
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/carlosmriveraz" class="social-link" target="_blank"
                                 rel="noopener">
-                                <ion-icon class="link social-icon" name="logo-github"></ion-icon>
+                                <img src="images/favicon/github.svg" alt="">
                             </a>
                         </li>
                     </ul>
@@ -128,7 +132,7 @@
         </section>
 
         <!-- ABOUT SECTION -->
-        <section class="section-about" id="about">
+        <section class="section-about slide-in" id="about">
             <div class="container">
                 <div class="container-md">
                     <div class="heading-secondary--left">
@@ -152,7 +156,7 @@
                             </div>
 
                         </div>
-                        <div class="about-box--img">
+                        <div class="about-box--img ">
                             <img src="images/logo.webp" alt=" carlosrivera logo " class="about-img" />
                         </div>
                     </div>
@@ -166,7 +170,7 @@
                 <div class="container-md">
                     <div class="heading-secondary--right">
                         <h2 class="heading-secondary">
-                            <span> &lt;&frasl;&nbsp;</span>Mis habilidades-.-. .... .. .- .-
+                            <span> &lt;&frasl;&nbsp;</span>Tecnologías-. .... .. .- .-
                         </h2>
                     </div>
                     <div class="fullstack-skills">
@@ -225,19 +229,19 @@
                             <p class="skills-title">Backend</p>
                             <div class="skills-data-box">
                                 <ul class="skills-data-list" rel="noopener">
-                                    <li>
+                                    <li class="skills-name">
                                         <img src="images/backend/aspnet.webp" alt="ASP.NET Core ( c#, vb)" />
                                         <p>ASP.NET Core ( c#, vb)</p>
                                     </li>
-                                    <li>
+                                    <li class="skills-name">
                                         <img src="images/backend/python.svg" alt="logo de python" />
                                         <p>Python</p>
                                     </li>
-                                    <li>
+                                    <li class="skills-name">
                                         <img src="images/backend/api.svg" alt="logo de python" />
                                         <p>API Rest</p>
                                     </li>
-                                    <li>
+                                    <li class="skills-name">
                                         <img src="images/backend/csharp_m.svg" " alt=" logo de c# " />
                                         <p>c#</p>
                                     </li>
@@ -250,24 +254,20 @@
                                         <p class=" skills-title ">Data Base</p>
                                         <div class=" skills-data-box">
                                         <ul class="skills-data-list ">
-                                            <li>
+                                            <li class="skills-name">
                                                 <img src=" images/db/mysql.svg " alt=" mysql " />
                                                 <p>MySQL </p>
                                             </li>
-                                            <li>
+                                            <li class="skills-name">
                                                 <img src="images/db/maria.svg" alt=" maria db " />
                                                 <p>Maria DB</p>
                                             </li>
-                                            <li>
+                                            <li class="skills-name">
                                                 <img src=" images/db/file_type_sql_icon_130152.svg "
                                                     alt=" Sql server " />
                                                 <p>SQL Server</p>
                                             </li>
-                                            <li>
-                                                <img src=" images/db/file_type_sql_icon_130152.svg "
-                                                    alt=" Sql server " />
-                                                <p>SQL Server</p>
-                                            </li>
+
                                         </ul>
 
                             </div>
@@ -313,94 +313,49 @@
         <!-- works -->
         <section class=" section-works " id="work">
             <div class=" container-md ">
-                <div class=" heading-secondary--left ">
-                    <h2 class=" heading-secondary ">
-                        -.-. .... Proyectos <span>&nbsp;&frasl;&gt;</span>
-                    </h2>
-                </div>
-                <div class=" works-container ">
-                    <div class=" work image-container ">
-                        <p class=" work-title ">Facturación Elecrónica</p>
-                        <a href=" https://micrositios.dian.gov.co/sistema-de-facturación-electronica/factura-electronica/ "
-                            target=" _blank " rel=" noopener ">
-                            <img src=" images/work/feproceso.webp " alt=" Facturación Elecrónica "
-                                class=" work-img image-container " height=" 250px " weight=" 500px " />
-                        </a>
-                        <div class=" work-text-container text ">
-
-
-                            <p class=" work-description ">
-                                Un proyecto de factura electrónica a nivel global implica la adopción de estándares
-                                comunes para la emisión, recepción y procesamiento de facturas electrónicas en todo el
-                                mundo. Busca garantizar la autenticidad, integridad y eficiencia en las transacciones
-                                comerciales, reduciendo el uso de papel y mejorando la interoperatividad entre distintas
-                                administraciones y empresas. En este proyecto trabajé con la mayoria herramientas que he
-                                trabajado puesto
+                <div class="works-container">
+                    <div class="work">
+                        <h2 class="work-title">Facturación Elecrónica</h2>
+                        <img src="images/work/feproceso.webp" alt="Project 1" class="work-img">
+                        <div class="work-description">
+                            Un proyecto de factura electrónica a nivel global implica la adopción de estándares
+                            comunes para la emisión, recepción y procesamiento de facturas electrónicas en todo
+                            el
+                            mundo.
+                            <br>
+                            En este proyecto trabajé con la mayoria herramientas
+                            descritas en la sección de Tecnologías. <br><br>
                             </p>
-                            <ul class=" work-tags-list ">
-
-                                <li class=" work-tag-item ">AWS</li>
-
-                                <li class=" work-tag-item ">C#</li>
-
-                                <li class=" work-tag-item ">API</li>
-
-                                <li class=" work-tag-item ">BD</li>
-
-                            </ul>
+                            <p>
+                            Tecnologías: 
+                            <br>
+                            </p> HTML, CSS, JavaScript
                         </div>
-                        <div class=" work-links ">
-                            <ul class=" work-links-list ">
-
-                                <li class=" work-links-item ">
-                                    <a href=" " class=" link work-link " target=" _blank " rel=" noopener ">
-                                        <ion-icon name=" open-outline "></ion-icon>
-                                    </a>
-                                </li>
-                            </ul>
-
-
-                        </div>
-
                     </div>
-
-                    <div class=" work image-container ">
-                        <p class=" work-title ">Business Intelligence</p>
-                        <a href=" html/bi/bi.html " target=" _blank " rel=" noopener ">
-                            <img src=" images/work/lawsglue.webp " alt=" Business Intelligence " class=" work-img "
-                                height=" 250px " weight=" 500px " />
-                        </a>
-                        <div class=" work-text-container text ">
-
-                            <p class=" work-description ">
-                                Muestra los precios históricos del dólar y hace una predicción de <strong>
-                                    IA</strong> Business Intelligence
-                            </p>
-                            <ul class=" work-tags-list ">
-
-                                <li class=" work-tag-item ">AWS</li>
-
-                                <li class=" work-tag-item ">Frontend</li>
-
-                                <li class=" work-tag-item ">Bases de datos</li>
-
-                            </ul>
+                    <div class="work">
+                        <h2 class="work-title">Business Intelligence</h2>
+                        <img src="images/work/lawsglue.webp" alt="Project 2" class="work-img">
+                        <div class="work-description">
+                            Muestra los precios históricos del dólar y hace una predicción de <strong>
+                                IA</strong> Business Intelligence.<br><br><br><br><br>
+                            <strong>Tecnologías:</strong>
+                             Python, SQL,
                         </div>
-
                     </div>
-
-
-
+                    <div class=" see-more-btn-box ">
+                        <a href=" #bi " class=" link btn btn-outline " target=" _blank " rel=" noopener ">Ver mucho
+                            más</a>
+                    </div>
                 </div>
-                <div class=" see-more-btn-box ">
-                    <a href=" #bi " class=" link btn btn-outline " target=" _blank " rel=" noopener ">Ver mucho más</a>
-                </div>
+
+
             </div>
-            </div>
+
+
         </section>
 
         <!-- bi -->
-        <section class=" container container-md flex-col " id=" bi ">
+        <section class=" container container-md flex-col " id="bi">
             <div class=" heading-secondary--left ">
                 <h2 class=" heading-secondary ">
                     Business Intelligence<span>&nbsp;&frasl;&gt;</span>
@@ -415,10 +370,12 @@
 
                 <div class=" image-container ">
 
+                    <div class="iframe-container">
 
-                    <iframe title="bi" name=" bi frame " src=" html/bi/bi.html " width=" 80% " height=" 700 "
-                        rel=" noopener ">
-                    </iframe>
+                        <iframe title="bi" name=" bi frame " src=" html/bi/bi.html " width=" 80% " height=" 700 "
+                            rel=" noopener ">
+                        </iframe>
+                    </div>
                 </div>
 
 
@@ -428,7 +385,7 @@
         </section>
 
         <!-- CONTACT SECTION -->
-        <section class=" section-contact " id=" contact ">
+        <section class=" section-contact " id="contact">
             <div class=" container ">
                 <div class=" container-md ">
                     <div class=" contact-container ">
@@ -496,16 +453,11 @@
         <button id=" cookie-consent-decline ">Declinar</button>
         <button id=" cookie-consent-accept ">Aceptar</button>
     </section>
-    <!-- ICONS -->
-    <script type=" module " src=" https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js "></script>
-    <script nomodule src=" https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js "></script>
 
-    <!-- ANIMATED TEXT -->
-    <script src=" https://cdn.jsdelivr.net/npm/typed.js@2.0.12 "></script>
-
-    <script src=" js/typedText.js " type=" module "></script>
     <!-- COOKIE CONSENT -->
     <script src=" js/cookie_consent.js "></script>
+
+        <!-- animacion de estrellas -->
     <script>
         for (let i = 0; i < 100; i++) {
             const star = document.createElement('div');

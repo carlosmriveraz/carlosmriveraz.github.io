@@ -77,3 +77,15 @@ allSectionsEl.forEach((section) => {
     sectionObserver.observe(section);
     section.classList.add("section--hidden");
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navIcons = document.querySelectorAll('.nav-icon');
+
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navIcons.forEach(icon => icon.classList.toggle('active'));
+    });
+});

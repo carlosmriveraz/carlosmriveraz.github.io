@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Animación de Frases</title>
+</head>
+<body>
+    <div class="animation-container">
+        <span class="phrase">Frase 1</span>...
+    </div>
     <style>
-        .btn {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
         }
-        
-        .btn:hover {
-            background-color: #0056b3;
-        }
-        
-        .section-contact {
-            padding: 20px;
-        }
-        
-        .heading-secondary {
+
+        .animation-container {
             font-size: 24px;
-            margin-bottom: 20px;
+            animation: changePhrase 6s infinite;
         }
-        
-        .contact-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .text {
-            font-size: 16px;
-            margin-bottom: 10px;
+
+        /* !asdf 
+ * ¡ problema
+
+*/
+        /*  Keyframes para cambiar las frases */
+        @keyframes changePhrase {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            5%,
+            95% {
+                opacity: 1;
+            }
+
+            10%,
+            30% {
+                content: "Frase 2";
+            }
+
+            40%,
+            60% {
+                content: "Frase 3";
+            }
+
+            70%,
+            90% {
+                content: "Frase 1";
+            }
         }
     </style>
-</head>
 
-<body>
-    <section class="section-contact" id="contact">
-        <div class="container">
-            <div class="container-md">
-                <div class="contact-container">
-                    <h2 class="heading-secondary">
-                        <span>&lt;&frasl;&nbsp;</span> Contactame
-                    </h2>
-                    <div class="contact-info-container">
-                        <p class="contact-title">Carlos Mario</p>
-                        <p class="text">
-                            Si deseas contactarme para cualquier consulta o proyecto, puedes escribirme a
-                            <a class="btn" href="mailto:carlosmrz100@hotmail.com?subject=Correo de contacto de Carlos Rivera&body=Buen dia, este correo se genera desde la pagina web de Carlos Rivera y te contacto">Enviar correo electrónico</a>
-                            <button id="copyEmailButton" class="btn">Copiar Email</button>
-                        </p>
-                    </div>
-                    <a href="html/Aboutpage/about.html" class="link btn btn-full">Ver mi blog</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    //** sdfa**adfas **dsf*a sd**
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const email = "carlosmrz100@hotmail.com";
-            const copyEmailButton = document.getElementById("copyEmailButton");
+        const phrases = ["Soy creativo", "Aprendo Rápido"];
+        const phraseContainer = document.querySelector(".phrase");
 
-            copyEmailButton.addEventListener("click", function() {
-                navigator.clipboard.writeText(email).then(() => {
-                    alert("Correo electrónico copiado al portapapeles.");
-                });
-            });
-        });
+        function changePhrase() {
+            let index = 0;
+            setInterval(() => {
+                index = (index + 1) % phrases.length;
+                phraseContainer.textContent = phrases[index];
+            }, 2000); // Cambia cada 2 segundos
+        }
+
+        changePhrase();
     </script>
 </body>
-
 </html>

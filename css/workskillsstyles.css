@@ -1,0 +1,240 @@
+
+
+/* Estilo para la sección de habilidades */
+.skills-group {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.skills-data-box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.skills-data-list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-name {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-name img {
+    height: 100px; /* Tamaño fijo para las imágenes */
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+    width: 100px; /* Tamaño fijo para las imágenes */
+}
+
+.skills-name p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+/* Corrección de desbordamiento en el iframe */
+.iframe-container {
+    background-color: #f9f9f9; /* Color de fondo opcional */
+    border-radius: 8px; /* Radio de borde opcional */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    height: 0;
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    position: relative;
+    width: 100%;
+}
+
+.iframe-container iframe {
+    border: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* Estilo para contenedor de proyectos */
+.project {
+    margin-bottom: 2rem;
+}
+
+/* Estilo para íconos sociales */
+.social-links {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-link {
+    padding: 0.5rem;
+}
+
+.social-icon {
+    color: var(--color-secondary);
+    font-size: 2rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover,
+.social-icon:active {
+    color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+
+
+/************* Ohrt skill **************//* Estilo para la sección de trabajos */
+
+.other-skills-list {
+    list-style: none;
+    padding: 0;
+    animation: fadeInLeft 0.5s forwards;
+}
+
+.other-skills-item {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+    gap: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+}
+
+.other-skills-item:hover {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.other-skills-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.other-skills-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.other-skills-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.other-skills-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.other-skills-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.other-skills-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+/************* WORKS SECTION **************//* Estilo para la sección de trabajos */
+/* Estilo para la sección de trabajos */
+.section-works {
+    transition: all 0.4s;
+}
+
+/* Contenedor de trabajos */
+.works-container {
+   margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+justify-content: flex-start;
+    align-items: stretch; /* Asegura que los elementos hijos se estiren */
+}
+
+/* Estilo para cada trabajo */
+.work {
+    align-items: center;
+    background-color: var(--color-surface-variant);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-on-surface);
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    justify-content: stretch;
+    padding: .2rem;
+    flex: 1; /* Asegura que los elementos hijos se estiren uniformemente */
+}
+
+/* Título del trabajo */
+.work-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Imagen del trabajo */
+.work-img {
+    width: 100%;
+    max-width: 60%;
+    object-fit: contain;
+    padding: 0.2rem;
+}
+
+/* Descripción del trabajo */
+.work-description {
+    text-align: justify;
+    width: 90%;
+    max-width:90%;
+    padding: 1rem;
+}
+
+.work-description li{
+    justify-self: center;
+    justify-content: space-between;
+    display:flex;
+}
+/* Contenedor de habilidades del trabajo */
+
+
+
+
+/* Estilo para contenedor de proyectos */
+.project {
+    margin-bottom: 1rem;
+}
+
+/* Corrección de desbordamiento en el iframe */
+.iframe-container {
+    background-color: #f9f9f9; /* Color de fondo opcional */
+    border-radius: 8px; /* Radio de borde opcional */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    height: 0;
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    position: relative;
+    width: 100%;
+}
+
+.iframe-container iframe {
+    border: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
