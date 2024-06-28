@@ -1,6 +1,8 @@
-
-
 /* Estilo para la sección de habilidades */
+.section-skills{
+        padding: 9rem 1rem;
+    transition: all 0.4s;
+    }
 .skills-group {
     margin: 2rem 0;
     text-align: center;
@@ -100,7 +102,7 @@
 
 
 
-/************* Ohrt skill **************//* Estilo para la sección de trabajos */
+/*************other skill **************//* Estilo para la sección de trabajos */
 
 .other-skills-list {
     list-style: none;
@@ -152,6 +154,7 @@
 /************* WORKS SECTION **************//* Estilo para la sección de trabajos */
 /* Estilo para la sección de trabajos */
 .section-works {
+        padding: 9rem 1rem;
     transition: all 0.4s;
 }
 
