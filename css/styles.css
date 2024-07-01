@@ -1,5 +1,5 @@
 :root {
-    --color-surface: #9acbff;
+    --color-surface: #d5dde6;
     --color-on-surface: #1a1c1e;
     --color-surface-variant: #dee3eb;
     --color-on-surface-variant: #42474e;
@@ -7,7 +7,7 @@
     --color-on-primary-container: #001d34;
     --color-secondary: #526070;
     --color-tertiary: #9acbff;
-    --color-on-tertiary-container: #f0dbff;
+    --color-on-tertiary-container: #8da2ee;
     --body-font: "Roboto", sans-serif, "Montserrat", sans-serif, "Playwrite US Trad", cursive, "Roboto Condensed", sans-serif;
     --border-radius-md: 0.8em;
     --border-radius-sm: 0.8em;
@@ -22,8 +22,8 @@ html[data-theme="dark"] {
     --color-on-primary-container: #cfe5ff;
     --color-secondary: #bac8da;
     --color-tertiary: #d4bee5;
-    --color-on-tertiary-container: #f0dbff;
-    --body-font: "Roboto Condensed", sans-serif, "Roboto", sans-serif, "Montserrat", sans-serif, "Playwrite US Trad", cursive;
+    --color-on-tertiary-container: #a9a9f9;
+    --body-font:  "Roboto", sans-serif, "Montserrat", sans-serif, "Playwrite US Trad", cursive;
     --border-radius-md: 0.4em;
     --border-radius-sm: 0.8em;
 }
@@ -33,7 +33,7 @@ html[data-theme="dark"] {
 
 .section-header {
     position: fixed;
-    width: 90%;
+    width: 80%;
     top: 0;
     left: 0;
     background-color: inherit;
@@ -51,7 +51,7 @@ html[data-theme="dark"] {
 
 .main-nav-link {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: bold;
     padding: 10px 15px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -78,15 +78,15 @@ html[data-theme="dark"] {
     top: -100%;
     left: 50%;
     width: 95%;
-    background-color:     (var(--color-tertiary));;
+    background-color:(var(--color-tertiary));
     border-radius: var(--border-radius-md);
     transform: translate(-50%);
     transition: all 0.4s;
 }
 
 .nav-menu li:hover {
-    background-color: var(--color-primary);;
-    color: (0,0,0,.2);
+    background-color: var(--color-primary);
+    color: (0,0,0,.8);
 }
 
 .show-menu .nav-menu {
@@ -168,27 +168,31 @@ html[data-theme="dark"] {
 
 }
 
-.about-box--text .link {
+.about-box-text .link {
     margin-top: 3.5rem;
 }
 
-.about-me-text {
-    text-align: start;
-    gap: 2.5rem;
-    color: var(--color-on-surface);
-}
 
-.about-img {
+.about-box-img {
     width: 100%;
     border-radius: var(--border-radius-md);
 }
 
 .about-box {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 2rem;
-    align-items: stretch;
-    justify-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.about-text, .about-skills {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-skills {
+    display: flex;
+    justify-content: center;
 }
 
 /************* CONTACT SECTION **************/
@@ -224,12 +228,12 @@ html[data-theme="dark"] {
 
 
 .section-footer {
-    padding-top: 4.8rem;
-    margin-bottom: 1.2rem;
+    padding-top: 3.8rem;
+    margin-bottom: 1rem;
 }
 
-.footer social-links {
-    width: 50%;
+.footer-social-links {
+    width: 40%;
     margin: 0 auto;
     transition: width 0.4s;
 }

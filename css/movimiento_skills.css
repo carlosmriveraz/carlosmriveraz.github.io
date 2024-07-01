@@ -1,0 +1,71 @@
+
+#movimiento_skills{
+    background-image: url('./images/logo.webp');
+    background-size: cover;
+    border-radius: 20%;
+    padding: 50px 0;
+    perspective: 1000px;
+    text-align: center;
+    justify-content: center;
+}
+
+.movimiento_skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movimiento_skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 1s;
+}
+
+.movimiento_skills-grid-skill {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+}
+
+
+.movimiento_skills-grid-skill img {
+    width: 35px;
+    height: 35px;
+
+}
+
+.movimiento_skills-grid-skill-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: inherit;
+    color:var(--color-primary);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    font-size: 8px;
+}
+
+.movimiento_skills-grid-skill img:hover  {
+    opacity: 1;
+   color: #000;
+}
+
+.movimiento_skills-grid-skill-tooltip:hover  {
+    opacity: 1;
+   color: #000;
+}
+
+
+

@@ -1,8 +1,9 @@
 /* Estilo para la sección de habilidades */
-.section-skills{
-        padding: 9rem 1rem;
+.section-skills {
+    padding: 9rem 1rem;
     transition: all 0.4s;
-    }
+}
+
 .skills-group {
     margin: 2rem 0;
     text-align: center;
@@ -36,20 +37,25 @@
     position: relative;
     display: inline-block;
     margin: 10px;
-    perspective: 1000px; /* Establece una perspectiva para el efecto 3D */
-   transition: all 0.4s;
+    perspective: 1000px;
+    /* Establece una perspectiva para el efecto 3D */
+    transition: all 0.4s;
 }
+
 .skills-name:hover {
     transform: scale(1.5);
     background-image: url("images/work/feproceso.web");
-      transition: all 0.4s; /* Aumenta el tamaño al pasar el mouse */
+    transition: all 0.4s;
+    /* Aumenta el tamaño al pasar el mouse */
 }
 
 .skills-name img {
-    height: 100px; /* Tamaño fijo para las imágenes */
+    height: 100px;
+    /* Tamaño fijo para las imágenes */
     margin-bottom: 0.5rem;
     object-fit: contain;
-    width: 100px; /* Tamaño fijo para las imágenes */
+    width: 100px;
+    /* Tamaño fijo para las imágenes */
 }
 
 .skills-name p {
@@ -63,16 +69,19 @@
     padding: 10px;
     border-radius: 5px;
     font-size: 14px;
-    width: 200px; /* Ajusta el ancho según sea necesario */
+    width: 200px;
+    /* Ajusta el ancho según sea necesario */
     text-align: center;
 }
 
 .skills-name:hover img {
-    transform: rotateY(180deg); /* Voltea la imagen en el eje Y al hacer hover */
+    transform: rotateY(180deg);
+    /* Voltea la imagen en el eje Y al hacer hover */
 }
 
 .skills-name:hover p {
-    display: block; /* Muestra la descripción al hacer hover */
+    display: block;
+    /* Muestra la descripción al hacer hover */
 }
 
 
@@ -80,15 +89,19 @@
 
 /* Corrección de desbordamiento en el iframe */
 .iframe-container {
-    background-color: #f9f9f9; /* Color de fondo opcional */
-    border-radius: 8px; /* Radio de borde opcional */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    background-color: inherit;
+    /* Color de fondo opcional */
+    border-radius: 8px;
+    /* Radio de borde opcional */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra opcional */
     height: 0;
-    max-width: 100%;
+    max-width: 90%;
     overflow: hidden;
-    padding-bottom: 56.25%; /* Proporción 16:9 */
+    padding-bottom: 56.25%;
+    /* Proporción 16:9 */
     position: relative;
-    width: 100%;
+    width: 90%;
 }
 
 .iframe-container iframe {
@@ -132,7 +145,8 @@
 
 
 
-/*************other skill **************//* Estilo para la sección de trabajos */
+/*************other skill **************/
+/* Estilo para la sección de trabajos */
 
 .other-skills-list {
     list-style: none;
@@ -181,21 +195,23 @@
     color: var(--color-primary);
 }
 
-/************* WORKS SECTION **************//* Estilo para la sección de trabajos */
+/************* WORKS SECTION **************/
+/* Estilo para la sección de trabajos */
 /* Estilo para la sección de trabajos */
 .section-works {
-        padding: 9rem 1rem;
+    padding: 9rem 1rem;
     transition: all 0.4s;
 }
 
 /* Contenedor de trabajos */
 .works-container {
-   margin: auto;
+    align-items: stretch;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 1rem;
-justify-content: flex-start;
-    align-items: stretch; /* Asegura que los elementos hijos se estiren */
+    grid-template-columns: 2fr ;
+    justify-content: flex-start;
+    margin: auto;
+    /* Asegura que los elementos hijos se estiren */
 }
 
 /* Estilo para cada trabajo */
@@ -203,18 +219,19 @@ justify-content: flex-start;
     align-items: center;
     background-color: var(--color-surface-variant);
     border-radius: var(--border-radius-sm);
-    color:  var(--color-primary);
+    color: var(--color-primary);
     display: flex;
-    flex-direction: column;
+flex-direction: column;
     gap: .2rem;
     justify-content: stretch;
     padding: .2rem;
-    flex: 1; /* Asegura que los elementos hijos se estiren uniformemente */
+    flex: 1;
+    /* Asegura que los elementos hijos se estiren uniformemente */
 }
 
 /* Título del trabajo */
 .work-title {
-      color:  var(--color-primary);
+    color: var(--color-primary);
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -230,46 +247,12 @@ justify-content: flex-start;
 
 /* Descripción del trabajo */
 .work-description {
-      color:  var(--color-secondary);
+    color: var(--color-secondary);
     text-align: justify;
     width: 90%;
-    max-width:90%;
+    max-width: 90%;
     padding: 1rem;
 }
 
-.work-description li{
-    justify-self: center;
-    justify-content: space-between;
-    display:flex;
-}
+
 /* Contenedor de habilidades del trabajo */
-
-
-
-
-/* Estilo para contenedor de proyectos */
-.project {
-    margin-bottom: 1rem;
-}
-
-/* Corrección de desbordamiento en el iframe */
-.iframe-container {
-    background-color: #f9f9f9; /* Color de fondo opcional */
-    border-radius: 8px; /* Radio de borde opcional */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-    height: 0;
-    max-width: 100%;
-    overflow: hidden;
-    padding-bottom: 56.25%; /* Proporción 16:9 */
-    position: relative;
-    width: 100%;
-}
-
-.iframe-container iframe {
-    border: none;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
