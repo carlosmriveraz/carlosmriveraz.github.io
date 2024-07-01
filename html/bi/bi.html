@@ -16,11 +16,11 @@
             justify-content: stretch;
             align-items: flex-start;
             gap: 2px;
-            padding:20px;
+            padding: 20px;
             font-family: Arial, sans-serif;
             background-color: inherit;
-            margin: 5px,5px,5px,5px;
-            color:white;
+            margin: 5px, 5px, 5px, 5px;
+            color: white;
         }
 
         h1,
@@ -34,6 +34,17 @@
             flex: 1;
             padding: 5px;
             box-sizing: border-box;
+        }
+
+        .column1 {
+            flex-basis: 50%;
+            /* Ancho del 50% */
+            /* Otros estilos si es necesario */
+        }
+
+        .column2 {
+            flex-basis: 50%;
+            /* Otros estilos si es necesario */
         }
 
         /* Ajustes para la tabla */
@@ -51,7 +62,7 @@
         table,
         th,
         td {
-            border: 1px solid  var(--color-secondary);
+            border: 1px solid var(--color-secondary);
             color: white;
         }
 
@@ -107,6 +118,7 @@
 </head>
 <body>
     <section id="business-intelligence">
+    <div class="column1">
         <div class="column">
             <h1>Business Intelligence</h1>
             <h2>KPI</h2>
@@ -116,36 +128,38 @@
                 <p style="color:red;">Valor Promedio: <span id="avg-value"></span></p>
                 <p style="color:orange;">Valor Calculado via API: <span id="api-value"></span></p>
             </div>
-            <div class="column">
-                <h2>Estadísticas:</h2>
-                <label for="months">Ingrese el número de meses para el cálculo (máximo 12 meses):</label>
-                <input type="number" id="months" name="months" value="3" min="1" max="12">
-                <button onclick="generateStatistics()">Generar Estadísticas</button>
-                <div id="charts">
-                    <canvas id="lineChart"></canvas>
-                    <canvas id="barChart"></canvas>
-                    <canvas id="pieChart"></canvas>
-                </div>
-
-            </div>
         </div>
-
         <div class="column">
-            <h2>Valores del Dólar en Colombia</h2>
-            <div id="table-container">
-                <table id="dollar-values" class="sortable">
-                    <thead>
-                        <tr>
-                            <th data-sort="date">Fecha</th>
-                            <th data-sort="number">Valor en Pesos Colombianos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Los datos se rellenarán aquí -->
-                    </tbody>
-                </table>
+            <h2>Estadísticas:</h2>
+            <label for="months">Ingrese el número de meses para el cálculo (máximo 12 meses):</label>
+            <input type="number" id="months" name="months" value="3" min="1" max="12">
+            <button onclick="generateStatistics()">Generar Estadísticas</button>
+            <div id="charts">
+                <canvas id="lineChart"></canvas>
+                <canvas id="barChart"></canvas>
+                <canvas id="pieChart"></canvas>
             </div>
-            <div>
+
+        </div>
+ </div>
+        <div class="column2">
+            <div class="column">
+                <h2>Valores del Dólar en Colombia</h2>
+                <div id="table-container">
+                    <table id="dollar-values" class="sortable">
+                        <thead>
+                            <tr>
+                                <th data-sort="date">Fecha</th>
+                                <th data-sort="number">Valor en Pesos Colombianos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos se rellenarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="column">
                 <h2>Predicciones para los Próximos Dos Días</h2>
                 <p>Nota: Estas predicciones son estimaciones realizadas por inteligencia artificial y no son fijas.</p>
                 <table id="predictions" class="sortable">
@@ -160,6 +174,7 @@
                     </tbody>
                 </table>
             </div>
+        </div>
         </div>
 
 
