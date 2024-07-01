@@ -207,10 +207,11 @@
 .works-container {
     align-items: stretch;
     display: grid;
-    gap: 1rem;
-    grid-template-columns: 2fr ;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr ;
     justify-content: flex-start;
     margin: auto;
+    border-radius: 20%;
     /* Asegura que los elementos hijos se estiren */
 }
 

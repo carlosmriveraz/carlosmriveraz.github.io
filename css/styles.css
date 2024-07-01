@@ -23,7 +23,7 @@ html[data-theme="dark"] {
     --color-secondary: #bac8da;
     --color-tertiary: #d4bee5;
     --color-on-tertiary-container: #a9a9f9;
-    --body-font:  "Roboto", sans-serif, "Montserrat", sans-serif, "Playwrite US Trad", cursive;
+    --body-font: "Roboto", sans-serif, "Montserrat", sans-serif, "Playwrite US Trad", cursive;
     --border-radius-md: 0.4em;
     --border-radius-sm: 0.8em;
 }
@@ -78,7 +78,7 @@ html[data-theme="dark"] {
     top: -100%;
     left: 50%;
     width: 95%;
-    background-color:(var(--color-tertiary));
+    background-color: (var(--color-tertiary));
     border-radius: var(--border-radius-md);
     transform: translate(-50%);
     transition: all 0.4s;
@@ -86,7 +86,7 @@ html[data-theme="dark"] {
 
 .nav-menu li:hover {
     background-color: var(--color-primary);
-    color: (0,0,0,.8);
+    color: (0, 0, 0, .8);
 }
 
 .show-menu .nav-menu {
@@ -180,19 +180,23 @@ html[data-theme="dark"] {
 
 .about-box {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
 }
 
 
-.about-text, .about-skills {
+.about-text,
+.about-skills {
     flex: 1;
     padding: 20px;
+    font-stretch: expanded;
+    text-align: justify;
 }
 
 .about-skills {
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
 }
 
 /************* CONTACT SECTION **************/
