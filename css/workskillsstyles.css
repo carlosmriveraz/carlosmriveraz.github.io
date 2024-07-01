@@ -101,13 +101,14 @@
     padding-bottom: 56.25%;
     /* Proporción 16:9 */
     position: relative;
-    width: 90%;
+    width:90%;
+    justify-items: flex-start;
 }
 
 .iframe-container iframe {
     border: none;
-    height: 100%;
-    left: 0;
+    height: 90%;
+    left: 90px;
     position: absolute;
     top: 0;
     width: 100%;

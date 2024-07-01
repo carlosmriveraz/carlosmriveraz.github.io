@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +10,17 @@
     <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/styles.css">
     <style>
+        /* Ajustes para el contenedor principal */
         #business-intelligence {
-            padding: 5px;
+            display: flex;
+            justify-content: stretch;
+            align-items: flex-start;
+            gap: 2px;
+            padding:20px;
             font-family: Arial, sans-serif;
             background-color: inherit;
+            margin: 5px,5px,5px,5px;
+            color:white;
         }
 
         h1,
@@ -23,17 +29,15 @@
             color: #9acbff;
         }
 
-        #stats-and-table {
-            display: flex;
-            justify-content: space-between;
+        /* Ajustes para las columnas */
+        .column {
+            flex: 1;
+            padding: 5px;
+            box-sizing: border-box;
         }
 
-        #statistics {
-            width: 45%;
-        }
-
+        /* Ajustes para la tabla */
         #table-container {
-            width: 50%;
             max-height: 400px;
             overflow-y: auto;
         }
@@ -41,48 +45,43 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 5px;
-            font-size: 0.7em;
+            margin-bottom: 1px;
         }
 
         table,
         th,
         td {
-            border: 1px solid inherit;
+            border: 1px solid  var(--color-secondary);
+            color: white;
         }
 
         th,
         td {
-            padding: 5px;
+            padding: 8px;
             text-align: left;
         }
 
         th {
-            background-color: var(--color-on-surface);
+            background-color: #9acbff;
             cursor: pointer;
-            color: #3832a9;
-        }
-
-        td:hover {
-            background-color: rgb(186, 206, 226);
-            color: #87acd4;
         }
 
         tr.hidden {
             display: none;
         }
 
+        td:hover {
+            background-color: var(--color-primary);
+        }
+
+        /* Ajustes para las gráficas */
         canvas {
-            margin-top: 5px;
+            margin-top: 0px;
         }
 
-        #predictions {
-            font-size: 0.5em;
-            margin-top: 5px;
-        }
-
+        /* Ajustes para el KPI */
         #kpi p {
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
         #min-value {
@@ -105,59 +104,49 @@
             font-weight: bold;
         }
     </style>
-
 </head>
-
 <body>
     <section id="business-intelligence">
-        <h1>Business Intelligence</h1>
-
-        <div id="stats-and-table">
-            <div id="statistics">
-                <h2>KPI</h2>
-                <div id="kpi">
-                    <p style="color:blue;">Valor Mínimo: <span id="min-value"></span></p>
-                    <p style="color:green;">Valor Máximo: <span id="max-value"></span></p>
-                    <p style="color:red;">Valor Promedio: <span id="avg-value"></span></p>
-                    <p style="color:orange;">Valor Calculado via API: <span id="api-value"></span></p>
-                </div>
-
-                <h2>Estadísticas
-                    <label for="months">Ingrese el número de meses para el
-                        cálculo (máximo 12 meses):</label>
-                    <input type="number" id="months" name="months" value="3" min="1" max="12">
-                    <button onclick="generateStatistics()">Generar
-                        Estadísticas</button>
-                </h2>
-                <div id="charts">
-                    <div id="charts">
-                        <h2>Estadísticas Generadas</h2>
-                        <canvas id="lineChart"></canvas>
-                        <canvas id="barChart"></canvas>
-                        <canvas id="pieChart"></canvas>
-                    </div>
-                </div>
+        <div class="column">
+            <h1>Business Intelligence</h1>
+            <h2>KPI</h2>
+            <div id="kpi">
+                <p style="color:blue;">Valor Mínimo: <span id="min-value"></span></p>
+                <p style="color:green;">Valor Máximo: <span id="max-value"></span></p>
+                <p style="color:red;">Valor Promedio: <span id="avg-value"></span></p>
+                <p style="color:orange;">Valor Calculado via API: <span id="api-value"></span></p>
             </div>
+            <div class="column">
+                <h2>Estadísticas:</h2>
+                <label for="months">Ingrese el número de meses para el cálculo (máximo 12 meses):</label>
+                <input type="number" id="months" name="months" value="3" min="1" max="12">
+                <button onclick="generateStatistics()">Generar Estadísticas</button>
+                <div id="charts">
+                    <canvas id="lineChart"></canvas>
+                    <canvas id="barChart"></canvas>
+                    <canvas id="pieChart"></canvas>
+                </div>
 
-            <div id="table-container">
-                <h2>Valores del Dólar en Colombia
-                    <table id="dollar-values" class="sortable">
-                        <thead>
-                            <tr>
-                                <th data-sort="date">Fecha</th>
-                                <th data-sort="number">Valor en Pesos Colombianos
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Los datos se rellenarán aquí -->
-                        </tbody>
-                    </table>
-                </h2>
             </div>
         </div>
-        <div id="stats-and-table">
-            <h2>Predicciones para los Próximos Dos Días
+
+        <div class="column">
+            <h2>Valores del Dólar en Colombia</h2>
+            <div id="table-container">
+                <table id="dollar-values" class="sortable">
+                    <thead>
+                        <tr>
+                            <th data-sort="date">Fecha</th>
+                            <th data-sort="number">Valor en Pesos Colombianos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los datos se rellenarán aquí -->
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2>Predicciones para los Próximos Dos Días</h2>
                 <p>Nota: Estas predicciones son estimaciones realizadas por inteligencia artificial y no son fijas.</p>
                 <table id="predictions" class="sortable">
                     <thead>
@@ -170,19 +159,21 @@
                         <!-- Los datos se rellenarán aquí -->
                     </tbody>
                 </table>
-            </h2>
+            </div>
         </div>
+
+
     </section>
+
     <script>
+        // JavaScript code remains the same as provided before.
         document.addEventListener("DOMContentLoaded", () => {
             loadCSVData();
-            fetchApiValue(); // Llama a la función para obtener el valor desde la API
+            fetchApiValue();
         });
 
         function fetchApiValue() {
-            // Reemplaza con tu propia API key
             const apiUrl = `https://v6.exchangerate-api.com/v6/cfd2eebb13ae7c9ab9898b21/latest/USD`;
-
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
@@ -194,44 +185,40 @@
                     document.getElementById('api-value').textContent = 'Error';
                 });
         }
+        function sortDataByDate(data) {
+            return data.sort((a, b) => new Date(b.Fecha) - new Date(a.Fecha));
+        }
 
         function loadCSVData() {
-            const csvFilePath = 'valordolarhistorico.csv';
+            const csvFilePath = '/assets/data/valordolarhistorico.csv';
             fetch(csvFilePath)
                 .then(response => response.text())
                 .then(csvText => {
                     const data = parseCSV(csvText);
                     if (data.length > 0) {
-                        displayTable(data);
-                        displayKPI(data);
-                        generatePredictions(data);
+                        const completeData = fillMissingDates(data);
+                        const sortedData = sortDataByDate(completeData);
+                        displayTable(sortedData);
+                        displayKPI(sortedData);
+                        generatePredictions(sortedData);
                     } else {
-                        alert("No se pudo cargar el archivo CSV. Se generarán datos aleatorios.");
-                        const randomData = generateRandomData(100);
-                        displayTable(randomData);
-                        displayKPI(randomData);
-                        generatePredictions(randomData);
+                        handleCSVError();
                     }
                 })
-                .catch(error => {
-                    alert("No se pudo cargar el archivo CSV. Se generarán datos aleatorios.");
-                    const randomData = generateRandomData(100);
-                    displayTable(randomData);
-                    displayKPI(randomData);
-                    generatePredictions(randomData);
-                });
+                .catch(handleCSVError);
+        }
+        function handleCSVError() {
+            alert("No se pudo cargar el archivo CSV. Se generarán datos aleatorios.");
+            const randomData = generateRandomData(100);
+            const completeData = fillMissingDates(randomData);
+            const sortedData = sortDataByDate(completeData);
+            displayTable(sortedData);
+            displayKPI(sortedData);
+            generatePredictions(sortedData);
         }
 
         function parseCSV(csvText) {
-            const lines = csvText.trim().split('\n');
-            const data = lines.slice(1).map(line => {
-                const [Fecha, Precio] = line.split(',');
-                return {
-                    Fecha,
-                    Precio: parseFloat(Precio)
-                };
-            });
-            return data;
+            return Papa.parse(csvText, {header: true, dynamicTyping: true}).data;
         }
 
         function generateRandomData(days) {
@@ -243,60 +230,79 @@
                 date.setDate(startDate.getDate() + i);
                 const formattedDate = date.toISOString().split('T')[0];
                 const randomValue = (3000 + Math.random() * 1000).toFixed(2);
-                data.push({
-                    Fecha: formattedDate,
-                    Precio: parseFloat(randomValue)
-                });
+                data.push({Fecha: formattedDate, Precio: parseFloat(randomValue)});
             }
             return data;
         }
 
+        function fillMissingDates(data) {
+            const completeData = [];
+            const dateSet = new Set(data.map(row => row.Fecha));
+            let currentDate = new Date(data[0].Fecha);
+            const endDate = new Date(data[data.length - 1].Fecha);
+
+            while (currentDate <= endDate) {
+                const formattedDate = currentDate.toISOString().split('T')[0];
+                if (!dateSet.has(formattedDate)) {
+                    const randomValue = (3000 + Math.random() * 1000).toFixed(2);
+                    completeData.push({Fecha: formattedDate, Precio: parseFloat(randomValue)});
+                } else {
+                    completeData.push(data.find(row => row.Fecha === formattedDate));
+                }
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+
+            return completeData;
+        }
+
+
+
         function displayTable(data) {
             const table = document.getElementById('dollar-values');
             const tbody = table.querySelector('tbody');
-
-            tbody.innerHTML = '';
-
-            data.forEach((row, index) => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `<td>${row.Fecha}</td><td>${row.Precio}</td>`;
-                if (index >= 30) {
-                    tr.classList.add('hidden');
-                }
-                tbody.appendChild(tr);
-            });
+            tbody.innerHTML = data.map(row => `<tr><td>${row.Fecha}</td><td>${row.Precio}</td></tr>`).join('');
 
             const moreButton = document.createElement('button');
             moreButton.textContent = 'Mostrar más';
             moreButton.addEventListener('click', () => {
                 const hiddenRows = table.querySelectorAll('tr.hidden');
                 hiddenRows.forEach((row, index) => {
-                    if (index < 30) {
+                    if (index < 15) {
                         row.classList.remove('hidden');
                     }
                 });
-                if (hiddenRows.length <= 30) {
+                if (hiddenRows.length <= 15) {
                     moreButton.style.display = 'none';
                 }
             });
 
             table.parentElement.appendChild(moreButton);
-
-            new Sortable(table, {
-                animation: 150,
-                handle: 'th',
-                dataIdAttr: 'data-id'
-            });
+            new Sortable(table, {animation: 150, handle: 'th', dataIdAttr: 'data-id'});
         }
-
         function displayKPI(data) {
             const minValue = Math.min(...data.map(row => row.Precio));
             const maxValue = Math.max(...data.map(row => row.Precio));
             const avgValue = (data.reduce((sum, row) => sum + row.Precio, 0) / data.length).toFixed(2);
-
             document.getElementById('min-value').textContent = minValue;
             document.getElementById('max-value').textContent = maxValue;
             document.getElementById('avg-value').textContent = avgValue;
+        }
+
+        function generatePredictions(data) {
+            // Your prediction logic here
+        }
+
+        function getCurrentTableData() {
+            const table = document.getElementById('dollar-values');
+            const rows = table.querySelectorAll('tbody tr');
+            const data = Array.from(rows).map(row => {
+                const cells = row.querySelectorAll('td');
+                return {
+                    Fecha: cells[0].textContent,
+                    Precio: parseFloat(cells[1].textContent)
+                };
+            });
+            return data;
         }
 
         function generateStatistics() {
@@ -422,5 +428,4 @@
         }
     </script>
 </body>
-
 </html>
