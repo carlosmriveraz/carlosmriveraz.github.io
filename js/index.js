@@ -1,28 +1,23 @@
-const headerEl = document.querySelector(".section-header");
-const navIconEl = document.querySelector(".nav-toggle");
-
 /************ DARK THEM MODE */
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', "dark");
+if (
+	window.matchMedia &&
+	window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+	document.documentElement.setAttribute("data-theme", "dark");
 } else {
-    document.documentElement.setAttribute('data-theme', "light");
+	document.documentElement.setAttribute("data-theme", "light");
 }
-window.matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', event => {
-        if (event.matches) {
-            //dark mode
-            document.documentElement.setAttribute('data-theme', "dark")
-        } else {
-            //light mode
-            document.documentElement.setAttribute('data-theme', "light");
-        }
-    })
-
-/************ SHOW MENU - MOBILE */
-
-navIconEl.addEventListener("click", () => {
-    headerEl.classList.toggle("show-menu");
-});
+window
+	.matchMedia("(prefers-color-scheme: dark)")
+	.addEventListener("change", (event) => {
+		if (event.matches) {
+			//dark mode
+			document.documentElement.setAttribute("data-theme", "dark");
+		} else {
+			//light mode
+			document.documentElement.setAttribute("data-theme", "light");
+		}
+	});
 
 /************ GET YEAR */
 
@@ -33,59 +28,140 @@ yearEl.innerHTML = new Date().getFullYear();
 
 const allLinks = document.querySelectorAll("a:link");
 
-allLinks.forEach(function(link) {
-    link.addEventListener("click", function(e) {
-        const href = link.getAttribute("href");
+allLinks.forEach(function (link) {
+	link.addEventListener("click", function (e) {
+		const href = link.getAttribute("href");
 
-        if (!href.startsWith("mailto:") && !href.startsWith("https"))
-            e.preventDefault();
+		if (!href.startsWith("mailto:") && !href.startsWith("https"))
+			e.preventDefault();
 
-        //Scroll back to top
-        if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });
+		//Scroll back to top
+		if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });
 
-        // Scroll to other page
-        if (href !== "#" && href.startsWith("#")) {
-            const sectionEl = document.querySelector(href);
+		// Scroll to other page
+		if (href !== "#" && href.startsWith("#")) {
+			const sectionEl = document.querySelector(href);
 
-            sectionEl.scrollIntoView({ behavior: "smooth" });
-        }
+			sectionEl.scrollIntoView({ behavior: "smooth" });
+		}
 
-        if (headerEl.classList.contains("show-menu"))
-            headerEl.classList.toggle("show-menu");
-    });
+		if (headerEl.classList.contains("show-menu"))
+			headerEl.classList.toggle("show-menu");
+	});
 });
 
 /************ Reveal Section */
 
 const allSectionsEl = document.querySelectorAll("section");
 
-const revealSection = function(entries, observer) {
-    const [entry] = entries;
+const revealSection = function (entries, observer) {
+	const [entry] = entries;
 
-    if (!entry.isIntersecting) return;
+	if (!entry.isIntersecting) return;
 
-    entry.target.classList.remove("section--hidden");
-    observer.unobserve(entry.target);
+	entry.target.classList.remove("section--hidden");
+	observer.unobserve(entry.target);
 };
 
 const sectionObserver = new IntersectionObserver(revealSection, {
-    root: null,
-    threshold: 0.1,
+	root: null,
+	threshold: 0.1,
 });
 
 allSectionsEl.forEach((section) => {
-    sectionObserver.observe(section);
-    section.classList.add("section--hidden");
+	sectionObserver.observe(section);
+	section.classList.add("section--hidden");
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navIcons = document.querySelectorAll('.nav-icon');
+  const sections = document.querySelectorAll('section');
+  const navItems = document.querySelectorAll('.header__nav-list a');
 
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        navIcons.forEach(icon => icon.classList.toggle('active'));
+  // Remove active class from all nav items
+  function removeActiveClasses() {
+    navItems.forEach(item => {
+      item.classList.remove('active');
     });
+  }
+
+  // Add active class to the current nav item
+  function addActiveClass(sectionId) {
+    const currentItem = document.querySelector(`.header__nav-list a[href="#${sectionId}"]`);
+    if (currentItem) {
+      currentItem.classList.add('active');
+    }
+  }
+
+  // On click, update the active class
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      removeActiveClasses();
+      this.classList.add('active');
+    });
+  });
+
+  // On scroll, update the active class
+  window.addEventListener('scroll', function() {
+    let currentSectionId;
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+
+    removeActiveClasses();
+    addActiveClass(currentSectionId);
+  });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('section');
+  const navItems = document.querySelectorAll('.header__nav-list a');
+
+  // Remove active class from all nav items
+  function removeActiveClasses() {
+    navItems.forEach(item => {
+      item.classList.remove('active');
+    });
+  }
+
+  // Add active class to the current nav item
+  function addActiveClass(sectionId) {
+    const currentItem = document.querySelector(`.header__nav-list a[href="#${sectionId}"]`);
+    if (currentItem) {
+      currentItem.classList.add('active');
+    }
+  }
+
+  // On click, update the active class
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      removeActiveClasses();
+      this.classList.add('active');
+    });
+  });
+
+  // On scroll, update the active class
+  window.addEventListener('scroll', function() {
+    let currentSectionId;
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+
+    removeActiveClasses();
+    addActiveClass(currentSectionId);
+  });
+});
+
