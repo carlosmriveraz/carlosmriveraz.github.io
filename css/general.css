@@ -34,12 +34,13 @@ body {
   font-weight: 400;
   font-size: 1.8rem;
   background-color: var(--gradiente-blue);
-  background-image:url(../images/background/bk.jpg);
+  background-image: url(../images/background/bk.jpg);
   color: var(--color-on-surface);
   overflow-x: hidden;
   transition: background-color 0.9s, color 0.3s;
   /* Transiciones para tema claro/oscuro */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el fondo */
   background-repeat: no-repeat;
 }
 
@@ -53,7 +54,7 @@ li {
   margin: 0 auto;
 }
 
-.image-container {
+.aumentamano__container {
 
   transition: transform 0.8s ease;
   align-items: stretch;
@@ -61,15 +62,13 @@ li {
   /* Agrega una transición suave */
 }
 
-.image-container:hover {
+.aumentamano__container:hover {
   transform: scale(1.1);
-  background-image: url("images/work/feproceso.web");
-  /* Aumenta el tamaño al pasar el mouse */
 }
 
 .container-md {
-  max-width: 78%;
-  width: 90%;
+  max-width: 85%;
+  width: 92%;
   margin: 0 auto;
 }
 
@@ -92,7 +91,7 @@ li {
   }
 }
 
-.description-box.slide-left {
+.description-box .slide-left {
   animation-delay: 1s;
 }
 
@@ -229,25 +228,35 @@ li {
 }
 
 .heading-primary:hover {
-  font-size:4.3rem;
+  font-size: 4.3rem;
   color: var(--gradiente-blue);
   text-shadow: 4px 4px 20px rgba(154, 203, 255, 0.7);
   background-color: var(--gradiente-blue);
+}
+
+.heading-primary span {
+  font-size: 5rem;
+  text-shadow: 5px 5px 50px rgba(154, 203, 255, 0.7);
+  color: var(--color-secondary);
 }
 
 .heading-secondary {
   color: var(--color-primary);
   font-size: 3rem;
   flex: none;
+  transition: all 0.8s ease-in-out;
 }
+
 .heading-secondary:hover {
-  font-size:4.3rem;
+  font-size: 4.3rem;
   color: var(--gradiente-blue);
   text-shadow: 4px 4px 20px rgba(154, 203, 255, 0.7);
   background-color: var(--gradiente-blue);
 }
 
-.heading-secondary span {
+.heading-secondary span{
+  font-size: 5rem;
+  text-shadow: 5px 5px 50px rgba(154, 203, 255, 0.7);
   color: var(--color-secondary);
 }
 

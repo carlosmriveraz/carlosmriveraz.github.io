@@ -203,17 +203,18 @@
 
 /* Contenedor de trabajos */
 .works-container {
-  margin: 5px,10px;
+  margin: 2rem  6rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 /* Estilo para cada trabajo */
 .work {
     align-items: center;
-    background-color: var(--color-surface-variant);
+    background:  linear-gradient(18deg, rgba(4, 37, 78, 1) 3%, rgb(01, 25, 216, 0.2) 20%, rgba(4, 37, 78, 1) 60%, rgb(1, 14, 18 ,0.2));
+;
     border-radius: var(--border-radius-sm);
     color: var(--color-primary);
     display: flex;
