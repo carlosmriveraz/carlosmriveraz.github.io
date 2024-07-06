@@ -95,23 +95,21 @@
     /* Radio de borde opcional */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Sombra opcional */
-    height: 0;
-    max-width: 90%;
+
+    max-width: 800px;
     overflow: hidden;
     padding-bottom: 56.25%;
     /* Proporción 16:9 */
     position: relative;
     width:90%;
-    justify-items: flex-start;
+  
 }
 
 .iframe-container iframe {
     border: none;
-    height: 90%;
-    left: 90px;
+    left: 70px;
     position: absolute;
-    top: 0;
-    width: 100%;
+
 }
 
 /* Estilo para contenedor de proyectos */
@@ -200,20 +198,16 @@
 /* Estilo para la sección de trabajos */
 /* Estilo para la sección de trabajos */
 .section-works {
-    padding: 9rem 1rem;
     transition: all 0.4s;
 }
 
 /* Contenedor de trabajos */
 .works-container {
-    align-items: stretch;
-    display: grid;
-    gap: 4rem;
-    grid-template-columns: 1fr 1fr ;
-    justify-content: flex-start;
-    margin: auto;
-    border-radius: 20%;
-    /* Asegura que los elementos hijos se estiren */
+  margin: 5px,10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 /* Estilo para cada trabajo */
@@ -225,9 +219,8 @@
     display: flex;
 flex-direction: column;
     gap: .2rem;
-    justify-content: stretch;
-    padding: .2rem;
-    flex: 1;
+  
+
     /* Asegura que los elementos hijos se estiren uniformemente */
 }
 
@@ -241,18 +234,17 @@ flex-direction: column;
 
 /* Imagen del trabajo */
 .work-img {
-    width: 100%;
-    max-width: 60%;
-    object-fit: contain;
-    padding: 0.2rem;
+    width: 450px;
+    max-width: 88%;
+
 }
 
 /* Descripción del trabajo */
 .work-description {
     color: var(--color-secondary);
     text-align: justify;
-    width: 90%;
-    max-width: 90%;
+    width: 92%;
+    max-width: 350px;
     padding: 1rem;
 }
 
