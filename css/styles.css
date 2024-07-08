@@ -1,72 +1,25 @@
-:root {
-  /* Colores y fuentes principales */
-  --body-font: "Roboto", sans-serif, "Montserrat", sans-serif, "Playwrite US Trad", cursive, "Roboto Condensed", sans-serif;
-  --border-radius-md: 0.8em;
-  --border-radius-sm: 0.8em;
-  --color-on-primary-container: #001d34;
-  --color-on-surface: #1a1c1e;
-  --color-on-surface-variant: #42474e;
-  --color-primary: #00629e;
-  --color-secondary: #04182f;
-  --color-surface: #d5dde6;
-  --color-primarytext: #dee3eb;
-  --color-tertiary: #9acbff;
-  --gradiente-blue: linear-gradient(18deg, rgba(4, 37, 78, 1) 3%, rgba(138, 84, 162, 1) 20%, rgba(89, 84, 164, 1) 60%, rgba(138, 213, 235, 1));
-
-}
-
-html[data-theme="dark"] {
-  /* Colores y fuentes para el tema oscuro */
-  --body-font: "Roboto", sans-serif, "Montserrat", sans-serif, "Playwrite US Trad", cursive;
-  --border-radius-md: 0.4em;
-  --border-radius-sm: 0.8em;
-  --color-on-primary-container: #cfe5ff;
-  --color-on-surface: #e2e2e5;
-  --color-on-surface-variant: #c2c7cf;
-  --color-primary: hwb(211 60% 0%);
-  --color-secondary: #bac8da;
-  --color-surface: #0b1e31;
-  --color-primarytext: #f0f3f6;
-  --color-tertiary: #9acbff;
-  --gradiente-blue: linear-gradient(18deg, rgba(4, 37, 78, 1) 3%, rgba(138, 84, 162, 1) 20%, rgba(89, 84, 164, 1) 60%, rgba(138, 213, 235, 1));
-
-}
-
-/* **************** Colors ******************* */
-.gradient-radial {
-  background: radial-gradient(circle, #01257D, #04254e);
-}
-
-.gradient-horizontal {
-  background: conic-gradient(from 0deg, #3498db, #01257D);
-}
-
-.gradient-diagonal {
-  background: linear-gradient(135deg, #3498db #01257D);
-}
-
-.diagonal-gradient {
-  background: linear-gradient(135deg, #3498db, #bdc3c7);
-}
+@import 'variables_fuentes_color_bordes.css';
 
 /* **************** HEADER ******************* */
 /* Encabezado */
 .header {
-  background-color: inherit;
+  align-items: center;
+  background-color: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  /* Espaciado superior e inferior de 1rem, espaciado lateral de 2rem */
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
 }
 
 /* Logo */
 .header__logo img {
   width: 72px;
+  /* Ancho de la imagen del logo */
 }
 
 /* Navegación */
@@ -78,6 +31,7 @@ html[data-theme="dark"] {
 .header__nav-list {
   display: flex;
   gap: 20px;
+  /* Espaciado entre elementos de la lista de navegación */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -89,29 +43,37 @@ html[data-theme="dark"] {
 }
 
 .header__nav-list a {
-  color: var(--color-primarytext);
+  color: #ffffff;
   font-weight: bold;
   text-decoration: none;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Transiciones suaves para enlaces */
   padding: 10px 15px;
-  position: relative;
+  /* Espaciado interno de los enlaces */
 }
 
 .header__nav-list a:hover {
-  background-color: var(--color-primary);
-  color: rgba(0, 0, 0, 0.8);
+  background-color: var(--color-paleta2);
+  color: #353839;
 }
 
-.header__nav-list a:hover::after,
-.header__nav-list a.active::after {
+
+/* Efecto subrayado de los enlaces de la lista de navegación */
+.header__nav-list a::after {
+  background: var(--color-paleta2);
+  bottom: -5px;
   content: '';
   display: block;
-  width: 100%;
-  height: 3px;
-  background-color: var(--color-primary);
-  position: absolute;
-  bottom: -5px;
+  height: 2px;
   left: 0;
+  position: absolute;
+  transition: width 0.3s;
+  width: 0;
+}
+
+
+.header__nav-list a.active::after {
+  width: 100%;
 }
 
 /* Iconos de menú */
@@ -120,79 +82,38 @@ html[data-theme="dark"] {
 }
 
 .nav-icon {
-  font-size: 2rem;
   cursor: pointer;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .header__nav-list {
-    position: fixed;
-    top: -100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--color-tertiary);
-    border-radius: var(--border-radius-md);
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    transition: top 0.4s;
-    width: 90%;
-  }
-
-  .header__nav-toggle {
-    display: block;
-  }
-
-  .show-menu .header__nav-list {
-    top: 10%;
-  }
-
-  .nav-icon[name="close-outline"] {
-    display: none;
-  }
-
-  .show-menu .nav-icon[name="menu-outline"] {
-    display: none;
-  }
-
-  .show-menu .nav-icon[name="close-outline"] {
-    display: block;
-  }
 }
 
 
 /* ******** HERO TITLE ********** */
 .section-home {
-  height: 100vh;
-  padding: 2rem, 1rem;
+  height: 100%;
+  padding: 8rem 1rem;
+  /* Corregido: separación con espacio */
   width: 100%;
 }
 
 .hero-text-box {
-  gap: 3rem;
-  margin: 2rem, 2rem;
+  gap: var(--size2em);
+  margin: 2em 2em,
+    /* Corregido: separación con espacio */
 }
 
 .hero-main-title-box {
-  font-size: 2rem;
-  margin: 2rem, 2rem;
-  gap: 3rem;
-}
-
-
-.enter-text {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  margin: var(--size2em) var(--size2em);
+  /* Corregido: separación con espacio */
+  gap: var(--size3em);
 }
 
 
 
 .hero-subheading {
-  font-size: 1.2rem;
-
-  margin: 2rem, 2rem;
-  padding: 2rem, 2rem;
+  font-size: var(--size2_2em);
+  margin: 2rem 2em;
+  /* Corregido: separación con espacio */
+  padding: 2rem 2em;
+  /* Corregido: separación con espacio */
   position: relative;
   transition: all 8s;
   text-align: right;
@@ -207,8 +128,6 @@ html[data-theme="dark"] {
   text-align: right;
   animation: changeText 8s infinite;
 }
-
-
 
 @keyframes changeText {
 
@@ -225,175 +144,165 @@ html[data-theme="dark"] {
 }
 
 .description-box {
-  opacity: 0;
   /* Para la animación */
   padding: 2rem 0;
-  line-height: 2.5rem;
+  line-height: 2em;
 }
 
+/* Ajusta los tamaños a unidades rem y redondea los decimales hacia arriba */
 .description-box a {
-  margin-top: 2.4rem;
+  margin-top: 2.4em;
 }
 
-/************* ABOUT SECTION **************/
+/* Sección "Acerca de" */
 .section-about {
-  padding: 9rem 1rem;
+  padding: 9em 1em;
 }
 
-.about-box-text .link {
-  margin-top: 3.5rem;
+/* Ajusta el orden alfabético de las propiedades */
+.about-box {
+  align-items: flex-end;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex: 1;
+  max-width: 100%;
 }
 
+/* .about-box-img: Imagen en la sección "Acerca de" */
 .about-box-img {
   border-radius: var(--border-radius-md);
   width: 100%;
 }
 
-.about-box {
-  align-items: flex-end;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
+/* .about-text: Texto en la sección "Acerca de" */
 .about-text,
 .about-skills {
   flex: 1;
   font-stretch: expanded;
   padding: 20px;
   text-align: justify;
+  max-width: 100%;
 }
 
-.about-skills {
-  display: flex;
-  justify-content: stretch;
-}
-
-/************* CONTACT SECTION **************/
+/* Sección "Contacto" */
 .section-contact {
   padding: 9.6rem 0 0 0;
 }
 
+/* .contact-container: Contenedor de información de contacto */
 .contact-container {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.6em;
   text-align: center;
 }
 
+/* .contact-title: Título de la sección "Contacto" */
 .contact-title {
   color: var(--color-primary);
-  font-size: 3.6rem;
+  font-size: 3.6em;
   font-weight: 600;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.2em;
 }
 
+/* .contact-info-container:first-child: Primer contenedor de información de contacto */
 .contact-info-container:first-child {
   margin: 0 auto;
   width: 70%;
 }
 
+/* .contact-info-container .text: Texto en el contenedor de información de contacto */
 .contact-info-container .text {
   margin: 0 auto;
   width: 80%;
 }
 
+/* ******** Pie de página ********** */
+/* Establece el margen inferior y el relleno superior del pie de página */
 .section-footer {
-  margin-bottom: 1rem;
-  padding-top: 3.8rem;
+  margin-bottom: 1em;
+  /* 16px */
+  padding-top: 3.8em;
+  /* 60.8px, redondeado a 4rem (64px) */
 }
 
+/* ******** Enlaces sociales en el pie de página ********** */
+/* Centra los enlaces y define una transición para el ancho */
 .footer-social-links {
   margin: 0 auto;
   transition: width 0.4s;
   width: 40%;
+  /* No se ajusta a rem ya que es un porcentaje */
 }
 
+/* ******** Derechos de autor en el pie de página ********** */
+/* Establece el margen superior y la alineación del texto para la sección de derechos de autor */
 .copyright {
-  margin-top: 4.8rem;
+  margin-top: 4.8em;
+  /* 76.8px, redondeado a 5rem (80px) */
   text-align: center;
 }
 
+/* ******** Lista EULA en el pie de página ********** */
+/* Estilos para la lista de acuerdos de licencia de usuario final (EULA) */
 #eula-list {
   list-style: none;
   padding: 0;
   text-align: center;
 }
 
+/* Estilos para cada elemento de la lista EULA */
 #eula-list li {
   border-right: 1px solid #000;
   display: inline-block;
   font-size: small;
-  margin-right: 5px;
-  padding-right: 5px;
+  /* No se ajusta a rem ya que es un tamaño relativo predefinido */
+  margin-right: 0.4em;
+  /* Ajustado a múltiplo par más cercano */
+  padding-right: 0.4em;
+  /* Ajustado a múltiplo par más cercano */
 }
 
+/* Estilos para los enlaces dentro de cada elemento de la lista EULA */
 #eula-list li a {
   color: inherit;
   text-decoration: none;
   transition: color 0.3s;
 }
 
+/* Elimina el borde derecho del último elemento de la lista EULA */
 #eula-list li:last-child {
   border-right: none;
 }
 
+/* Estilos para el hover de los enlaces EULA */
 #eula-list li a:hover {
   color: var(--color-primary);
 }
 
-/* Fuentes adicionales */
-.roboto-condensed-con {
-  font-family: "Roboto Condensed", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-weight: 200;
-}
-
-.playwrite-us-trad-u {
-  font-family: "Playwrite US Trad", cursive;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.roboto-thin {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 100;
-}
-
-/* Aplicar animación al cargar la sección */
+/* ******** Animaciones ********** */
+/* Define una animación llamada 'twinkle' para simular el parpadeo de las estrellas */
 .star {
   animation: twinkle 5s infinite alternate;
   background-color: #fff;
-  /* Color de las estrellas */
-  height: 2px;
+  /* Color blanco para las estrellas */
+  height: .2em;
+  /* Ajustado a múltiplo par más cercano, redondeado a .2rem (3.2px) */
   position: absolute;
-  width: 2px;
+  width: .2em;
+  /* Ajustado a múltiplo par más cercano, redondeado a .2rem (3.2px) */
 }
 
 @keyframes twinkle {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(0);
   }
 
-  100% {
-    opacity: 1;
-    transform: translateY(-100vh);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(-100vh);
   }
 }

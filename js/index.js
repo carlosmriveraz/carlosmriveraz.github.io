@@ -72,96 +72,46 @@ allSectionsEl.forEach((section) => {
 	sectionObserver.observe(section);
 	section.classList.add("section--hidden");
 });
+// Toggle menu
+function toggleMenu() {
+	document.querySelector(".header__nav-list").classList.toggle("show-menu");
+}
 
+// Active link highlighting
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".header__nav-list a");
 
+window.addEventListener("scroll", () => {
+	let current = "";
 
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('section');
-  const navItems = document.querySelectorAll('.header__nav-list a');
+	sections.forEach((section) => {
+		const sectionTop = section.offsetTop;
+		if (scrollY >= sectionTop - 60) {
+			current = section.getAttribute("id");
+		}
+	});
 
-  // Remove active class from all nav items
-  function removeActiveClasses() {
-    navItems.forEach(item => {
-      item.classList.remove('active');
-    });
-  }
-
-  // Add active class to the current nav item
-  function addActiveClass(sectionId) {
-    const currentItem = document.querySelector(`.header__nav-list a[href="#${sectionId}"]`);
-    if (currentItem) {
-      currentItem.classList.add('active');
-    }
-  }
-
-  // On click, update the active class
-  navItems.forEach(item => {
-    item.addEventListener('click', function() {
-      removeActiveClasses();
-      this.classList.add('active');
-    });
-  });
-
-  // On scroll, update the active class
-  window.addEventListener('scroll', function() {
-    let currentSectionId;
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
-
-    removeActiveClasses();
-    addActiveClass(currentSectionId);
-  });
+	navLinks.forEach((link) => {
+		link.classList.remove("active");
+		if (link.getAttribute("href").includes(current)) {
+			link.classList.add("active");
+		}
+	});
 });
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('section');
-  const navItems = document.querySelectorAll('.header__nav-list a');
-
-  // Remove active class from all nav items
-  function removeActiveClasses() {
-    navItems.forEach(item => {
-      item.classList.remove('active');
-    });
-  }
-
-  // Add active class to the current nav item
-  function addActiveClass(sectionId) {
-    const currentItem = document.querySelector(`.header__nav-list a[href="#${sectionId}"]`);
-    if (currentItem) {
-      currentItem.classList.add('active');
-    }
-  }
-
-  // On click, update the active class
-  navItems.forEach(item => {
-    item.addEventListener('click', function() {
-      removeActiveClasses();
-      this.classList.add('active');
-    });
-  });
-
-  // On scroll, update the active class
-  window.addEventListener('scroll', function() {
-    let currentSectionId;
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
-
-    removeActiveClasses();
-    addActiveClass(currentSectionId);
-  });
+// Add click event to nav links to maintain active class
+navLinks.forEach((link) => {
+	link.addEventListener("click", function () {
+		navLinks.forEach((nav) => nav.classList.remove("active"));
+		this.classList.add("active");
+	});
 });
 
+document.querySelectorAll(".header__nav-list a").forEach((link) => {
+	link.addEventListener("click", function () {
+		document
+			.querySelector(".header__nav-list a.active")
+			.classList.remove("active");
+		this.classList.add("active");
+	});
+});

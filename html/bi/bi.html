@@ -1,446 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Intelligence</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        /* Ajustes para el contenedor principal */
-        #business-intelligence {
-            display: flex;
-            justify-content: stretch;
-            align-items: flex-start;
-            gap: 2px;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background-color: inherit;
-            margin: 5px, 5px, 5px, 5px;
-            color: white;
-        }
-
-        h1,
-        h2,
-        p {
-            color: #9acbff;
-        }
-
-        /* Ajustes para las columnas */
-        .column {
-            flex: 1;
-            padding: 5px;
-            box-sizing: border-box;
-        }
-
-        .column1 {
-            flex-basis: 50%;
-            /* Ancho del 50% */
-            /* Otros estilos si es necesario */
-        }
-
-        .column2 {
-            flex-basis: 50%;
-            /* Otros estilos si es necesario */
-        }
-
-        /* Ajustes para la tabla */
-        #table-container {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1px;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid var(--color-secondary);
-            color: white;
-        }
-
-        th,
-        td {
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #9acbff;
-            cursor: pointer;
-        }
-
-        tr.hidden {
-            display: none;
-        }
-
-        td:hover {
-            background-color: var(--color-primary);
-        }
-
-        /* Ajustes para las gráficas */
-        canvas {
-            margin-top: 0px;
-        }
-
-        /* Ajustes para el KPI */
-        #kpi p {
-            font-size: 1em;
-        }
-
-        #min-value {
-            color: rgb(152, 152, 219);
-        }
-
-        #max-value {
-            color: rgb(106, 137, 106);
-        }
-
-        #avg-value {
-            color: rgb(184, 96, 96);
-        }
-
-        #api-value {
-            color: orange;
-        }
-
-        #kpi p span {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="bistyles.css">
+  </head>
+  <body>
+    <h1>Business Intelligence</h1>
     <section id="business-intelligence">
-    <div class="column1">
-        <div class="column">
-            <h1>Business Intelligence</h1>
-            <h2>KPI</h2>
-            <div id="kpi">
-                <p style="color:blue;">Valor Mínimo: <span id="min-value"></span></p>
-                <p style="color:green;">Valor Máximo: <span id="max-value"></span></p>
-                <p style="color:red;">Valor Promedio: <span id="avg-value"></span></p>
-                <p style="color:orange;">Valor Calculado via API: <span id="api-value"></span></p>
-            </div>
-        </div>
-        <div class="column">
-            <h2>Estadísticas:</h2>
-            <label for="months">Ingrese el número de meses para el cálculo (máximo 12 meses):</label>
-            <input type="number" id="months" name="months" value="3" min="1" max="12">
-            <button onclick="generateStatistics()">Generar Estadísticas</button>
-            <div id="charts">
-                <canvas id="lineChart"></canvas>
-                <canvas id="barChart"></canvas>
-                <canvas id="pieChart"></canvas>
-            </div>
+      <div class="container">
 
-        </div>
- </div>
-        <div class="column2">
-            <div class="column">
-                <h2>Valores del Dólar en Colombia</h2>
-                <div id="table-container">
-                    <table id="dollar-values" class="sortable">
-                        <thead>
-                            <tr>
-                                <th data-sort="date">Fecha</th>
-                                <th data-sort="number">Valor en Pesos Colombianos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Los datos se rellenarán aquí -->
-                        </tbody>
-                    </table>
+        <div class="container__elementoprincipal">
+          <div class="bi__grid__container   ">
+
+            <div class="contenedor__Estadisticas__item  ">
+              <div class="contenedor__Estadisticas__kpi">
+
+                <h2>KPI</h2>
+                <div id="kpi">
+                  <p>Valor Mínimo: <span id="min-value"></span> (Fecha: <span id="min-date"></span>)</p>
+                  <p>Valor Máximo: <span id="max-value"></span> (Fecha: <span id="max-date"></span>)</p>
+                  <p>Valor Promedio: <span id="avg-value"></span></p>
+                  <p>Valor Calculado via API: <span id="api-value"></span></p>
+                  <script src="https://www.dolar-colombia.com/widget.js?t=2&c=1"></script>
                 </div>
+              </div>
             </div>
-            <div class="column">
-                <h2>Predicciones para los Próximos Dos Días</h2>
+            <div class="contenedor__Estadisticas__item ">
+              <div class="contenedor__Estadisticas_predicciones">
+                <h2 class="subtitulo">Predicciones para los Próximos Dos Días</h2>
                 <p>Nota: Estas predicciones son estimaciones realizadas por inteligencia artificial y no son fijas.</p>
                 <table id="predictions" class="sortable">
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Valor Predicho en Pesos Colombianos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Los datos se rellenarán aquí -->
-                    </tbody>
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Valor Predicho en Pesos Colombianos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Los datos se rellenarán aquí -->
+                  </tbody>
                 </table>
+              </div>
             </div>
-        </div>
+
+            <div class=" contenedor__Estadisticas">
+              <div class=" contenedor__Estadisticas__Estadisticas">
+                <h2>Estadísticas:</h2>
+                <label for="months">Ingrese el número de meses para el cálculo (máximo 12 meses):</label>
+                <input type="number" id="months" name="months" value="1" min="1" max="12">
+                <button onclick="generateStatistics()">Generar Estadísticas</button>
+                <div id="charts">
+                  <canvas id="lineChart" class="contenedor__Estadisticas__item"></canvas>
+                  <canvas id="barChart" class="contenedor__Estadisticas__item"></canvas>
+                  <canvas id="pieChart" class="contenedor__Estadisticas__item"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
 
+
+        <div class=" container__elemento">
+
+          <h2 class="subtitulo">Valores del Dólar en Colombia</h2>
+          <div id="contenedor__table">
+            <table id="dollar-values" class="sortable">
+              <thead>
+                <tr>
+                  <th data-sort="date">Fecha</th>
+                  <th data-sort="number">Valor en Pesos Colombianos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Los datos se rellenarán aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <script>
-        // JavaScript code remains the same as provided before.
-        document.addEventListener("DOMContentLoaded", () => {
-            loadCSVData();
-            fetchApiValue();
-        });
-
-        function fetchApiValue() {
-            const apiUrl = `https://v6.exchangerate-api.com/v6/cfd2eebb13ae7c9ab9898b21/latest/USD`;
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const rate = data.conversion_rates.COP;
-                    document.getElementById('api-value').textContent = rate.toFixed(2);
-                })
-                .catch(error => {
-                    console.error('Error fetching API value:', error);
-                    document.getElementById('api-value').textContent = 'Error';
-                });
-        }
-        function sortDataByDate(data) {
-            return data.sort((a, b) => new Date(b.Fecha) - new Date(a.Fecha));
-        }
-
-        function loadCSVData() {
-            const csvFilePath = '/assets/data/valordolarhistorico.csv';
-            fetch(csvFilePath)
-                .then(response => response.text())
-                .then(csvText => {
-                    const data = parseCSV(csvText);
-                    if (data.length > 0) {
-                        const completeData = fillMissingDates(data);
-                        const sortedData = sortDataByDate(completeData);
-                        displayTable(sortedData);
-                        displayKPI(sortedData);
-                        generatePredictions(sortedData);
-                    } else {
-                        handleCSVError();
-                    }
-                })
-                .catch(handleCSVError);
-        }
-        function handleCSVError() {
-            alert("No se pudo cargar el archivo CSV. Se generarán datos aleatorios.");
-            const randomData = generateRandomData(100);
-            const completeData = fillMissingDates(randomData);
-            const sortedData = sortDataByDate(completeData);
-            displayTable(sortedData);
-            displayKPI(sortedData);
-            generatePredictions(sortedData);
-        }
-
-        function parseCSV(csvText) {
-            return Papa.parse(csvText, {header: true, dynamicTyping: true}).data;
-        }
-
-        function generateRandomData(days) {
-            const data = [];
-            const startDate = new Date();
-            startDate.setDate(startDate.getDate() - days);
-            for (let i = 0; i < days; i++) {
-                const date = new Date(startDate);
-                date.setDate(startDate.getDate() + i);
-                const formattedDate = date.toISOString().split('T')[0];
-                const randomValue = (3000 + Math.random() * 1000).toFixed(2);
-                data.push({Fecha: formattedDate, Precio: parseFloat(randomValue)});
-            }
-            return data;
-        }
-
-        function fillMissingDates(data) {
-            const completeData = [];
-            const dateSet = new Set(data.map(row => row.Fecha));
-            let currentDate = new Date(data[0].Fecha);
-            const endDate = new Date(data[data.length - 1].Fecha);
-
-            while (currentDate <= endDate) {
-                const formattedDate = currentDate.toISOString().split('T')[0];
-                if (!dateSet.has(formattedDate)) {
-                    const randomValue = (3000 + Math.random() * 1000).toFixed(2);
-                    completeData.push({Fecha: formattedDate, Precio: parseFloat(randomValue)});
-                } else {
-                    completeData.push(data.find(row => row.Fecha === formattedDate));
-                }
-                currentDate.setDate(currentDate.getDate() + 1);
-            }
-
-            return completeData;
-        }
 
 
-
-        function displayTable(data) {
-            const table = document.getElementById('dollar-values');
-            const tbody = table.querySelector('tbody');
-            tbody.innerHTML = data.map(row => `<tr><td>${row.Fecha}</td><td>${row.Precio}</td></tr>`).join('');
-
-            const moreButton = document.createElement('button');
-            moreButton.textContent = 'Mostrar más';
-            moreButton.addEventListener('click', () => {
-                const hiddenRows = table.querySelectorAll('tr.hidden');
-                hiddenRows.forEach((row, index) => {
-                    if (index < 15) {
-                        row.classList.remove('hidden');
-                    }
-                });
-                if (hiddenRows.length <= 15) {
-                    moreButton.style.display = 'none';
-                }
-            });
-
-            table.parentElement.appendChild(moreButton);
-            new Sortable(table, {animation: 150, handle: 'th', dataIdAttr: 'data-id'});
-        }
-        function displayKPI(data) {
-            const minValue = Math.min(...data.map(row => row.Precio));
-            const maxValue = Math.max(...data.map(row => row.Precio));
-            const avgValue = (data.reduce((sum, row) => sum + row.Precio, 0) / data.length).toFixed(2);
-            document.getElementById('min-value').textContent = minValue;
-            document.getElementById('max-value').textContent = maxValue;
-            document.getElementById('avg-value').textContent = avgValue;
-        }
-
-        function generatePredictions(data) {
-            // Your prediction logic here
-        }
-
-        function getCurrentTableData() {
-            const table = document.getElementById('dollar-values');
-            const rows = table.querySelectorAll('tbody tr');
-            const data = Array.from(rows).map(row => {
-                const cells = row.querySelectorAll('td');
-                return {
-                    Fecha: cells[0].textContent,
-                    Precio: parseFloat(cells[1].textContent)
-                };
-            });
-            return data;
-        }
-
-        function generateStatistics() {
-            const months = parseInt(document.getElementById('months').value);
-            const data = getCurrentTableData();
-            const recentData = data.slice(-months * 30); // Approximate last N months data
-
-            const monthlyData = {};
-            recentData.forEach(row => {
-                const month = row.Fecha.substring(0, 7); // YYYY-MM
-                if (!monthlyData[month]) {
-                    monthlyData[month] = [];
-                }
-                monthlyData[month].push(row.Precio);
-            });
-
-            const labels = Object.keys(monthlyData);
-            const averages = labels.map(month => {
-                const values = monthlyData[month];
-                return (values.reduce((sum, value) => sum + value, 0) / values.length).toFixed(2);
-            });
-
-            renderBarChart(labels, averages);
-            renderPieChart(labels, averages);
-        }
-
-        function renderBarChart(labels, data) {
-            const ctx = document.getElementById('barChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Promedio Mensual del Dólar (COP)',
-                        data: data,
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        }
-
-        function renderPieChart(labels, data) {
-            const ctx = document.getElementById('pieChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Promedio Mensual del Dólar (COP)',
-                        data: data,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                }
-            });
-        }
-
-        function getCurrentTableData() {
-            const rows = document.querySelectorAll('#dollar-values tbody tr');
-            return Array.from(rows).map(row => {
-                const cells = row.querySelectorAll('td');
-                return {
-                    Fecha: cells[0].textContent,
-                    Precio: parseFloat(cells[1].textContent)
-                };
-            });
-        }
-
-        function generatePredictions(data) {
-            const predictions = [];
-            const lastDate = new Date(data[data.length - 1].Fecha);
-            for (let i = 1; i <= 2; i++) {
-                const nextDate = new Date(lastDate);
-                nextDate.setDate(lastDate.getDate() + i);
-                const formattedDate = nextDate.toISOString().split('T')[0];
-                const randomPrediction = (data[data.length - 1].Precio + Math.random() * 50 - 25).toFixed(2);
-                predictions.push({
-                    Fecha: formattedDate,
-                    Precio: parseFloat(randomPrediction)
-                });
-            }
-
-            const table = document.getElementById('predictions');
-            const tbody = table.querySelector('tbody');
-
-            tbody.innerHTML = '';
-
-            predictions.forEach(row => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `<td>${row.Fecha}</td><td>${row.Precio}</td>`;
-                tbody.appendChild(tr);
-            });
-
-            new Sortable(table, {
-                animation: 150,
-                handle: 'th',
-                dataIdAttr: 'data-id'
-            });
-        }
-    </script>
-</body>
+    <script src="biscripts.js"></script>
+  </body>
 </html>
