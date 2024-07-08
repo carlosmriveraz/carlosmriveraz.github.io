@@ -1,0 +1,308 @@
+@import 'variables_fuentes_color_bordes.css';
+
+/* **************** HEADER ******************* */
+/* Encabezado */
+.header {
+  align-items: center;
+  background-color: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  /* Espaciado superior e inferior de 1rem, espaciado lateral de 2rem */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Logo */
+.header__logo img {
+  width: 72px;
+  /* Ancho de la imagen del logo */
+}
+
+/* Navegación */
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 20px;
+  /* Espaciado entre elementos de la lista de navegación */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-list li {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Transiciones suaves para enlaces */
+  padding: 10px 15px;
+  /* Espaciado interno de los enlaces */
+}
+
+.header__nav-list a:hover {
+  background-color: var(--color-paleta2);
+  color: #353839;
+}
+
+
+/* Efecto subrayado de los enlaces de la lista de navegación */
+.header__nav-list a::after {
+  background: var(--color-paleta2);
+  bottom: -5px;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transition: width 0.3s;
+  width: 0;
+}
+
+
+.header__nav-list a.active::after {
+  width: 100%;
+}
+
+/* Iconos de menú */
+.header__nav-toggle {
+  display: none;
+}
+
+.nav-icon {
+  cursor: pointer;
+}
+
+
+/* ******** HERO TITLE ********** */
+.section-home {
+  height: 100%;
+  padding: 8rem 1rem;
+  /* Corregido: separación con espacio */
+  width: 100%;
+}
+
+.hero-text-box {
+  gap: var(--size2em);
+  margin: 2em 2em,
+    /* Corregido: separación con espacio */
+}
+
+.hero-main-title-box {
+  margin: var(--size2em) var(--size2em);
+  /* Corregido: separación con espacio */
+  gap: var(--size3em);
+}
+
+
+
+.hero-subheading {
+  font-size: var(--size2_2em);
+  margin: 2rem 2em;
+  /* Corregido: separación con espacio */
+  padding: 2rem 2em;
+  /* Corregido: separación con espacio */
+  position: relative;
+  transition: all 8s;
+  text-align: right;
+  gap: initial;
+}
+
+.animate-subheading {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  left: 0;
+  text-align: right;
+  animation: changeText 8s infinite;
+}
+
+@keyframes changeText {
+
+  0%,
+  33.33%,
+  100% {
+    opacity: 0;
+  }
+
+  16.66%,
+  49.99% {
+    opacity: 0.9;
+  }
+}
+
+.description-box {
+  /* Para la animación */
+  padding: 2rem 0;
+  line-height: 2em;
+}
+
+/* Ajusta los tamaños a unidades rem y redondea los decimales hacia arriba */
+.description-box a {
+  margin-top: 2.4em;
+}
+
+/* Sección "Acerca de" */
+.section-about {
+  padding: 9em 1em;
+}
+
+/* Ajusta el orden alfabético de las propiedades */
+.about-box {
+  align-items: flex-end;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex: 1;
+  max-width: 100%;
+}
+
+/* .about-box-img: Imagen en la sección "Acerca de" */
+.about-box-img {
+  border-radius: var(--border-radius-md);
+  width: 100%;
+}
+
+/* .about-text: Texto en la sección "Acerca de" */
+.about-text,
+.about-skills {
+  flex: 1;
+  font-stretch: expanded;
+  padding: 20px;
+  text-align: justify;
+  max-width: 100%;
+}
+
+/* Sección "Contacto" */
+.section-contact {
+  padding: 9.6rem 0 0 0;
+}
+
+/* .contact-container: Contenedor de información de contacto */
+.contact-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6em;
+  text-align: center;
+}
+
+/* .contact-title: Título de la sección "Contacto" */
+.contact-title {
+  color: var(--color-primary);
+  font-size: 3.6em;
+  font-weight: 600;
+  margin-bottom: 1.2em;
+}
+
+/* .contact-info-container:first-child: Primer contenedor de información de contacto */
+.contact-info-container:first-child {
+  margin: 0 auto;
+  width: 70%;
+}
+
+/* .contact-info-container .text: Texto en el contenedor de información de contacto */
+.contact-info-container .text {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* ******** Pie de página ********** */
+/* Establece el margen inferior y el relleno superior del pie de página */
+.section-footer {
+  margin-bottom: 1em;
+  /* 16px */
+  padding-top: 3.8em;
+  /* 60.8px, redondeado a 4rem (64px) */
+}
+
+/* ******** Enlaces sociales en el pie de página ********** */
+/* Centra los enlaces y define una transición para el ancho */
+.footer-social-links {
+  margin: 0 auto;
+  transition: width 0.4s;
+  width: 40%;
+  /* No se ajusta a rem ya que es un porcentaje */
+}
+
+/* ******** Derechos de autor en el pie de página ********** */
+/* Establece el margen superior y la alineación del texto para la sección de derechos de autor */
+.copyright {
+  margin-top: 4.8em;
+  /* 76.8px, redondeado a 5rem (80px) */
+  text-align: center;
+}
+
+/* ******** Lista EULA en el pie de página ********** */
+/* Estilos para la lista de acuerdos de licencia de usuario final (EULA) */
+#eula-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+/* Estilos para cada elemento de la lista EULA */
+#eula-list li {
+  border-right: 1px solid #000;
+  display: inline-block;
+  font-size: small;
+  /* No se ajusta a rem ya que es un tamaño relativo predefinido */
+  margin-right: 0.4em;
+  /* Ajustado a múltiplo par más cercano */
+  padding-right: 0.4em;
+  /* Ajustado a múltiplo par más cercano */
+}
+
+/* Estilos para los enlaces dentro de cada elemento de la lista EULA */
+#eula-list li a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Elimina el borde derecho del último elemento de la lista EULA */
+#eula-list li:last-child {
+  border-right: none;
+}
+
+/* Estilos para el hover de los enlaces EULA */
+#eula-list li a:hover {
+  color: var(--color-primary);
+}
+
+/* ******** Animaciones ********** */
+/* Define una animación llamada 'twinkle' para simular el parpadeo de las estrellas */
+.star {
+  animation: twinkle 5s infinite alternate;
+  background-color: #fff;
+  /* Color blanco para las estrellas */
+  height: .2em;
+  /* Ajustado a múltiplo par más cercano, redondeado a .2rem (3.2px) */
+  position: absolute;
+  width: .2em;
+  /* Ajustado a múltiplo par más cercano, redondeado a .2rem (3.2px) */
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-100vh);
+  }
+}
