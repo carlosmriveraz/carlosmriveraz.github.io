@@ -5,6 +5,7 @@
 	transition: all 0.4s;
 	box-sizing: border-box;
 	background-color: transparent;
+    max-height: 100vh;
 }
 
 /* .about-box: Contenedor de la sección "Acerca de" */
@@ -12,7 +13,7 @@
 	color: var(--color-primertexto);
 	display: flex;
 	flex-flow: row wrap;
-	gap: 3rem;
+	gap: 2rem;
 	justify-content: space-evenly;
 	align-content: stretch;
 	align-items: flex-start;
@@ -34,9 +35,9 @@
 /* .about-skills: Habilidades en la sección "Acerca de" */
 .about_column_skill {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+    flex: 1;
+
+
 	background-image: url("../../images/logo.gif"), url("../../images/logo.jpg");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -63,13 +64,16 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+    position: relative;
 }
 
 .movimiento_skills-grid {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	position: relative;
+	position: absolute;
+    left: 0%;
+    top: 30%;
 	width: 40rem;
 	height: 40rem;
 	transform-style: preserve-3d;
@@ -137,47 +141,9 @@
 }
 
 .movimiento_skills-grid-skill {
-	position: absolute;
+
 	width: 4rem;
 	height: 4rem;
-	transition: transform 0.3s;
+	transition: transform 1s;
 	transform-style: preserve-3d;
-}
-
-/* Calcula la posición de cada elemento en una circunferencia */
-.movimiento_skills-grid-skill:nth-child(1) {
-	transform: rotate(0deg) translate(20rem) rotate(0deg);
-}
-.movimiento_skills-grid-skill:nth-child(2) {
-	transform: rotate(30deg) translate(20rem) rotate(-30deg);
-}
-.movimiento_skills-grid-skill:nth-child(3) {
-	transform: rotate(60deg) translate(20rem) rotate(-60deg);
-}
-.movimiento_skills-grid-skill:nth-child(4) {
-	transform: rotate(90deg) translate(20rem) rotate(-90deg);
-}
-.movimiento_skills-grid-skill:nth-child(5) {
-	transform: rotate(120deg) translate(20rem) rotate(-120deg);
-}
-.movimiento_skills-grid-skill:nth-child(6) {
-	transform: rotate(150deg) translate(20rem) rotate(-150deg);
-}
-.movimiento_skills-grid-skill:nth-child(7) {
-	transform: rotate(180deg) translate(20rem) rotate(-180deg);
-}
-.movimiento_skills-grid-skill:nth-child(8) {
-	transform: rotate(210deg) translate(20rem) rotate(-210deg);
-}
-.movimiento_skills-grid-skill:nth-child(9) {
-	transform: rotate(240deg) translate(20rem) rotate(-240deg);
-}
-.movimiento_skills-grid-skill:nth-child(10) {
-	transform: rotate(270deg) translate(20rem) rotate(-270deg);
-}
-.movimiento_skills-grid-skill:nth-child(11) {
-	transform: rotate(300deg) translate(20rem) rotate(-300deg);
-}
-.movimiento_skills-grid-skill:nth-child(12) {
-	transform: rotate(330deg) translate(20rem) rotate(-330deg);
 }

@@ -10,7 +10,7 @@
 }
 
 .skills-title {
-	font-size: var(--size-segundotexto);
+	font-size: var(--size-texto);
 }
 
 .skills-data-box {
@@ -30,6 +30,7 @@
 }
 
 .skills-name {
+	font-size: var(--size-textosmall), 10px;
 	position: relative;
 	display: inline-block;
 	margin: 0.5rem 3rem;
@@ -64,7 +65,7 @@
 	color: #fff;
 	padding: 0.5rem;
 	border-radius: 5px;
-	font-size: var(--size-segundotexto), 12px;
+	font-size: var(--size-textosmall), 10px;
 	width: 20rem;
 	/* Ajusta el ancho según sea necesario */
 	text-align: center;
@@ -80,29 +81,7 @@
 	/* Muestra la descripción al hacer hover */
 }
 
-/* Corrección de desbordamiento en el iframe */
-.container__iframe {
-	background-color: inherit;
-	/* Color de fondo opcional */
-	border-radius: 8px;
-	/* Radio de borde opcional */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	/* Sombra opcional */
 
-	max-width: 220em;
-	min-width: 70em;
-	overflow: hidden;
-	/* Proporción 16:9 */
-	position: relative;
-
-	justify-content: space-between;
-}
-
-.bi__iframe {
-	border: none;
-	flex: 2;
-	height: 100%;
-}
 
 /* Estilo para contenedor de proyectos */
 .project {
@@ -128,26 +107,27 @@
 .social-icon:active {
 	color: var(--color-primary);
 	transform: translateY(-5px);
-}
+}s
 
 /*************other skill **************/
 /* Estilo para la sección de trabajos */
 
 .other-skills-list {
 	list-style: none;
+	text-align: center;
 	padding: 0;
-	animation: fadeInLeft 0.5s forwards;
+	transition: all 2s;
 }
 
 .other-skills-item {
 	display: flex;
 	align-items: center;
-	color: var(--color-primary);
 	gap: 1rem;
-	margin-bottom: 1rem;
+	margin: 1rem 5rem;
 	opacity: 0;
 	transform: translateX(-20px);
-	transition: all 0.5s ease;
+	transition: all 2s ease;
+	text-align: center;
 }
 
 .other-skills-item:hover {
@@ -156,31 +136,30 @@
 }
 
 .other-skills-item:nth-child(1) {
-	animation-delay: 0.1s;
+	animation-delay: 6s;
 }
 
 .other-skills-item:nth-child(2) {
-	animation-delay: 0.2s;
+	animation-delay: 2s;
 }
 
 .other-skills-item:nth-child(3) {
-	animation-delay: 0.3s;
+	animation-delay: 3s;
 }
 
 .other-skills-item:nth-child(4) {
-	animation-delay: 0.4s;
+	animation-delay: 4s;
 }
 
 .other-skills-item:nth-child(5) {
-	animation-delay: 0.5s;
+	animation-delay: 5s;
 }
 
 .other-skills-icon {
-	font-size: 2rem;
 	color: var(--color-primary);
 }
 
-/************* WORKS SECTION **************/
+/************* proyectos SECTION **************/
 /* Estilo para la sección de trabajos */
 /* Estilo para la sección de trabajos */
 
@@ -191,7 +170,7 @@
 	align-items: center;
 	text-align: center;
 	padding: 20px;
-    font-size: var(--size-segundotexto);
+	font-size: var(--size-segundotexto);
 }
 
 /* Imagen principal de la sección */
@@ -203,16 +182,17 @@
 }
 
 /* Contenedor de trabajos */
-.works__container {
+.contenedor__proyectos {
 	display: flex;
 	flex-flow: row wrap;
 	gap: 1rem;
 	justify-content: center;
-    height: 90%;
-    max-height: 95%;
+	height: 90%;
+	max-height: 95%;
 }
-.works__container p {
+.contenedor__proyectos p {
 	text-align: justify;
+	font-size: var(--size-textosmall), 1rem;
 }
 
 /* Cada tarjeta de trabajo */
@@ -225,7 +205,7 @@
 	margin: 1rem auto;
 	transition: transform 1s;
 	max-height: 90%;
-    height: 80%;
+	height: 80%;
 }
 
 .work:hover {
@@ -259,13 +239,13 @@
 
 /* Responsividad para pantallas más pequeñas */
 @media (max-width: 768px) {
-	.works__container {
+	.contenedor__proyectos {
 		flex-direction: column;
 		align-items: center;
 	}
 
 	.work {
 		flex: 1 1 100%;
-        max-height: 90%;
+		max-height: 90%;
 	}
 }

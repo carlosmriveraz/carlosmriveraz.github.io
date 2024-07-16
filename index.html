@@ -113,15 +113,19 @@
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/workskillsstyles.css" />
 		<link rel="stylesheet" href="styles/animations.css" />
+		<link rel="stylesheet" href="styles/animate_text_101animate.css" />
 		<link rel="stylesheet" href="styles/queries.css" />
 		<link rel="stylesheet" href="sections/about_me/about_me.html" />
 	</head>
-	<body>
+	<body class="textoshadow">
 		<header>
 			<nav class="navbar">
 				<div class="navbar-logo">
 					<a href="#"
-						><img src="images/logo.webp" alt="Carlos Rivera Logo"
+						><img
+							src="images/logo.webp"
+							alt="Carlos Rivera Logo"
+							loading="lazy"
 					/></a>
 				</div>
 				<div class="menu-icon">
@@ -132,15 +136,39 @@
 					<li>
 						<a href="#sobre-mi"><span>S</span>obre Mí</a>
 					</li>
-					<li><a href="#Habilidades">Tecnologías</a></li>
-					<li><a href="#proyectos">Proyectos</a></li>
-					<li><a href="#bi">BI</a></li>
-					<li><a href="#contacto">Contacto</a></li>
+					<li>
+						<a href="#Tecnologias"><span>T</span>ecnologías</a>
+					</li>
+					<li>
+						<a href="#Habilidades"><span>H</span>abilidades</a>
+					</li>
+					<li>
+						<a href="#proyectos"><span>P</span>royectos</a>
+					</li>
+					<li>
+						<a href="#business-intelligence"><span>B</span>I</a>
+					</li>
+					<li>
+						<a href="#contacto"><span>C</span>ontacto</a>
+					</li>
+					<li>
+						<div
+							class="theme-selector"
+							onclick="toggleTheme();"
+							onkeydown="toggleTheme();"
+						>
+							<span
+								><img
+									src="images/theme.svg"
+									alt="cambiar theme"
+							/></span>
+						</div>
+					</li>
 				</ul>
 			</nav>
 		</header>
 		<main>
-			<section>
+			<section id="home">
 				<div class="contenedor">
 					<div class="elemento">
 						<iframe src="sections/home.html" title="home"></iframe>
@@ -150,7 +178,7 @@
 
 			<!-- Secciones del sitio -->
 			<section id="sobre-mi" class="section-about textoshadow fade-in">
-				<div class="container">
+				<div class="container textoshadow">
 					<div class="item_contenido">
 						<iframe
 							src="sections/about_me/about_me.html"
@@ -166,7 +194,7 @@
 			</section>
 
 			<!-- SKILLS SECTION -->
-			<section class="section-skills" id="Habilidades">
+			<section class="section-skills" id="Tecnologias">
 				<div class="container textoshadow">
 					<div class="container__medio">
 						<div class="fullstack-skills">
@@ -179,6 +207,7 @@
 											<img
 												src="images/frontend/js.svg"
 												alt="logo de javascript"
+												loading="lazy"
 											/>
 											<p>
 												<strong>JavaScript:</strong>
@@ -384,85 +413,86 @@
 							</div>
 						</div>
 					</div>
-					<div class="heading-secondary--right">
-						<h2 class="heading-secondary final">
-							<span> &lt;&frasl;&nbsp;T</span>ecnología-. .... ..
-							.- .-
-						</h2>
-					</div>
-				</div>
-
-				<div class="other-skills" id="oskills">
-					<div class="container__medio">
-						<div class="heading-secondary--right">
+					<div class="heading-secondary">
+						<div class="final">
 							<h2 class="heading-secondary">
-								<span> &lt;&frasl;&nbsp;</span>
-								<span>O</span>tras <span>H</span>abilidades
-								(descubre)-.-.
+								<span> &lt;&frasl;&nbsp;T</span>ecnologías
 							</h2>
 						</div>
-						<ul
-							class="other-skills-list text container__aumentotamano"
-						>
-							<!-- Lista de otras habilidades -->
-							<li class="other-skills-item">
-								<ion-icon
-									class="other-skills-icon"
-									name=" chevron-forward-outline "
-								></ion-icon>
-								<p>
-									<strong>Desarrollo de Software:</strong>
-									.NET(C#,VB), Versionamiento en GitHub,
-									SubVersion.
-								</p>
-							</li>
-							<li class="other-skills-item">
-								<ion-icon
-									class="other-skills-icon"
-									name=" chevron-forward-outline "
-								></ion-icon>
-								<p>
-									<strong>Interoperatividad:</strong> Web
-									Services - SOAP - API Rest. Postman.
-								</p>
-							</li>
-							<li class="other-skills-item">
-								<ion-icon
-									class="other-skills-icon"
-									name=" chevron-forward-outline "
-								></ion-icon>
-								<p>
-									<strong>Metodologías ágiles:</strong> SCRUM,
-									DevOps.
-								</p>
-							</li>
-							<li class="other-skills-item">
-								<ion-icon
-									class="other-skills-icon"
-									name=" chevron-forward-outline "
-								></ion-icon>
-								<p>
-									<strong>Facturación electronica:</strong>
-									UBL, XML, JSON.
-								</p>
-							</li>
-						</ul>
 					</div>
 				</div>
 			</section>
 
 			<!-- Other Skills -->
+			<section class="other-skills" id="Habilidades">
+				<div class="container__medio container__padd">
+					<div class="heading-secondary--right">
+						<div class="heading-secondary">
+							<span> &lt;&frasl;&nbsp;</span>
+							<span>O</span>tras <span>H</span>abilidades
+							(descubre)-.-.
+						</div>
+					</div>
+					<ul class="other-skills-list container__aumentotamano ">
+						<!-- Lista de otras habilidades -->
 
+						<li class="other-skills-item">
+							<ion-icon
+								class="other-skills-icon"
+								name="chevron-forward-outline"
+							></ion-icon>
+							<p>
+								<strong>Desarrollo de Software:</strong>
+								.NET(C#,VB), Versionamiento en GitHub,
+								SubVersion.
+							</p>
+						</li>
+						<li class="other-skills-item">
+							<ion-icon
+								class="other-skills-icon"
+								name="chevron-forward-outline"
+							></ion-icon>
+							<p>
+								<strong>Interoperatividad:</strong> Web Services
+								- SOAP - API Rest. Postman.
+							</p>
+						</li>
+						<li class="other-skills-item">
+							<ion-icon
+								class="other-skills-icon"
+								name="chevron-forward-outline"
+							></ion-icon>
+							<p>
+								<strong>Metodologías ágiles:</strong> SCRUM,
+								DevOps.
+							</p>
+						</li>
+						<li class="other-skills-item">
+							<ion-icon
+								class="other-skills-icon"
+								name="chevron-forward-outline"
+							></ion-icon>
+							<p>
+								<strong>Facturación electronica:</strong> UBL,
+								XML, JSON.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</section>
 			<!-- works -->
 			<section id="proyectos" class="slide-in-left">
 				<div class="container">
-					<div class="works__container item_contenido segundotexto">
+					<div
+						class="contenedor__proyectos item_contenido segundotexto"
+					>
 						<div class="work container__aumentotamano">
 							<h2 class="work__title">Facturación Electrónica</h2>
 							<img
 								src="images/work/feproceso.webp"
 								alt="Project 1"
 								class="work__img container__aumentotamano"
+								loading="lazy"
 							/>
 							<p>
 								Un proyecto de factura electrónica a nivel
@@ -488,6 +518,7 @@
 								src="images/work/lawsglue.webp"
 								alt="Project 2"
 								class="work__img container__aumentotamano"
+								loading="lazy"
 							/>
 							<p>
 								<strong>Demo</strong> de algunas de las
@@ -526,10 +557,14 @@
 				</div>
 			</section>
 
-			<section id="bi" class="bi fade-in">
+			<section id="business-intelligence" class="bi">
 				<div class="contenedor">
 					<div class="item_contenido">
-						<iframe src="sections/bi/bi.html" title="bi"></iframe>
+						<iframe
+							src="sections/bi/bi.html"
+							title="bi"
+							height="80vh"
+						></iframe>
 						<div class="final">
 							<h2 class="heading-secondary">
 								<span>B</span>usiness <span>I</span>ntelligence
@@ -538,24 +573,30 @@
 					</div>
 				</div>
 			</section>
-			<section id="contacto" class="contact fade-in">
-				<div class="container">
+
+			<section id="contacto" class="contact">
+				<div class="container container__padd">
 					<div class="column">
 						<div class="contact-container container__medio">
+							<div
+								class="textoanimadoInZoom sonido-hover navbar-logo"
+							>
+								<h2 class="heading-secondary">
+									<strong><span>C</span>ontácteme</strong>
+								</h2>
+								<img
+									src="images/logo.jpg"
+									alt="carlos mario rivera logo"
+									class="navbar-logo"
+									loading="lazy"
+								/>
+							</div>
 							<div class="final">
-								<div class="sonido-hover">
-									<h2 class="heading-secondary">
-										<strong><span>C</span>ontácteme</strong>
-									</h2>
-									<img
-										src="images/logo.jpg"
-										alt="carlos mario rivera logo"
-									/>
-								</div>
+								<p>Soy curioso, creativo y muy persistente</p>
 							</div>
 
 							<div class="contact-info-container">
-								<p class="contact-title">Carlos Mario</p>
+								<p class="contact-title">!¡Carlos Mario¡!</p>
 								<p class="text">
 									Si deseas contactarme para cualquier
 									consulta o proyecto, puedes escribirme a
@@ -578,26 +619,54 @@
 					</div>
 				</div>
 			</section>
-			<script>
-				const miSonido = new Audio("./assets/music/dbz.wav");
-
-				document
-					.querySelector(".sonido-hover")
-					.addEventListener("mouseover", () => {
-						miSonido.play();
-					});
-			</script>
-			<script src="scripts/scripts.js"></script>
-			<script src="scripts/js/index.js"></script>
-
-			<script>
-				const menuIcon = document.querySelector(".menu-icon");
-				const menu = document.querySelector(".menu");
-
-				menuIcon.addEventListener("click", () => {
-					menu.classList.toggle("show");
-				});
-			</script>
 		</main>
+		<script>
+			const miSonido = new Audio("./assets/music/dbz.wav");
+
+			document
+				.querySelector(".sonido-hover")
+				.addEventListener("mouseover", () => {
+					miSonido.play();
+				});
+		</script>
+		<script src="scripts/scripts.js"></script>
+		<script src="scripts/js/index.js"></script>
+		<script src="scripts/js/other_skill.js"></script>
+
+		<script>
+			const menuIcon = document.querySelector(".menu-icon");
+			const menu = document.querySelector(".menu");
+
+			menuIcon.addEventListener("click", () => {
+				menu.classList.toggle("show");
+			});
+		</script>
+
+		<script>
+			for (let i = 0; i < 100; i++) {
+				const star = document.createElement("div");
+				star.className = "star";
+				star.style.left = `${Math.random() * 100}%`;
+				star.style.top = `${Math.random() * 100}%`;
+				document.body.appendChild(star);
+			}
+		</script>
+
+		<script>
+			document
+				.getElementById("copyEmailButton")
+				.addEventListener("click", function () {
+					var email = document.getElementById("emailToCopy");
+					email.select();
+					document.execCommand("copy");
+
+					// Opcional: Feedback al usuario
+					this.textContent = "!Email Copiado!";
+				});
+
+			function toggleTheme() {
+				document.body.classList.toggle("dark-theme");
+			}
+		</script>
 	</body>
 </html>

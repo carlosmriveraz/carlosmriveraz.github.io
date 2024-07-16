@@ -1,43 +1,39 @@
 .navbar {
+    padding: 1rem;
+    margin: .5rem 0;
 	position: fixed;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px;
+	white-space: nowrap;
 	background-color: transparent;
-	color: white;
-	top: 0;
 	z-index: 1000;
+	font-size:  1.5rem;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+#home{
+    border: none;
 }
 
 .navbar ul {
 	display: flex;
 }
-.header__nav-list a {
-	font-weight: bold;
-	text-decoration: none;
 
-	/* Transiciones suaves para enlaces */
-	padding: 0.2em 0.2em;
-	/* Espaciado interno de los enlaces */
-}
 
 /* Logo */
 .navbar-logo img {
-	width: 2rem;
+
+max-width: 5rem;	
+max-height: 5rem;  
 	/* Ancho de la imagen del logo */
 }
 
-.navbar_sobre_mi {
-	color: var(--color-tercertexto), blue;
-}
+
 
 .navbar_sobre_mi span {
-	color: var(--color-sombratexto), #000;
+	color: rgba(0, 123, 255, 1), var(--color-sombratexto), #000;
 }
 
-.header__nav-list a:hover {
-	background-color: var(--color-paleta2);
+.navbar a:hover {
+	background-color: rgba(0, 123, 255, 1), var(--color-paleta2);
 	color: #353839;
 }
 
@@ -75,15 +71,10 @@
 .header {
 	background-color: var(--color-paleta2); /* Color de fondo del header */
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	padding: 10px 20px;
+	padding: 1px 1px;
 	position: relative;
 	z-index: 1000;
-}
-
-.navbar li {
-	margin-left: 20px;
 }
 
 /* Estilos del menú toggle para pantallas pequeñas */
@@ -95,9 +86,9 @@
 
 .menu-toggle span {
 	width: 25px;
-	height: 3px;
+	height: 5px;
 	background: white;
-	margin: 4px 0;
+
 	transition: 0.4s;
 }
 
@@ -120,7 +111,8 @@
 	}
 
 	.navbar li {
-		margin: 10px 0;
+		margin: 5px 1px;
+		max-width: 30%;
 		text-align: center;
 	}
 
@@ -131,38 +123,98 @@
 
 .menu-icon {
 	display: none;
-	font-size: 2rem;
+	font-size: var(--size-segundotexto), 1rem;
 	cursor: pointer;
 }
 
 .menu {
 	list-style: none;
 	display: flex;
-	padding: 0;
-	margin: 0;
-}
 
-.menu li {
-	margin-left: 20px;
+	font-size: var(--size-textosmall), 1rem;
 }
 
 .menu li a {
-	color: white;
+	color: #fff;
 	text-decoration: none;
-	padding: 10px 15px;
-	transition: background-color 0.3s ease;
+	position: relative;
+	padding: 1px 1px;
+	transition: color 0.3s ease;
+	width: 7rem;
+	font-weight: 600;
+}
+
+.menu li a:hover::after {
+	width: 100%;
+	left: 0;
 }
 
 .menu li a:hover {
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(0, 123, 255, 1);
+}
+
+.menu li a::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	width: 0;
+	height: 4px;
+	background-color: #fff;
+	transition: width 0.3s ease, left 0.8s ease;
 }
 
 .final {
 	position: absolute;
-	bottom: 20px; /* Ajusta el margen inferior según lo que desees */
-	right: 20px; /* Ajusta el margen derecho según lo que desees */
+	bottom: 10%; /* Ajusta el margen inferior según lo que desees */
+	right: 1rem; /* Ajusta el margen derecho según lo que desees */
 	background-color: var(--color-paleta6); /* Color de fondo del div */
 	padding: 10px; /* Espaciado interno */
 	border-radius: 5px; /* Bordes redondeados */
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave */
+	opacity: 0.5;
+}
+.final:hover {
+	opacity: 1;
+	text-shadow: 1px 1px 11px var(--color-paleta6);
+	color: var(--color-titulo), #fff;
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.sonido-hover {
+	position: absolute;
+	bottom: 5%; /* Ajusta el margen inferior según lo que desees */
+	right: 0px;
+	width: 6rem;
+	margin: 0 1rem;
+	height: 3rem;
+	transition: background-color 1s ease-out; /* Transición suave */
+}
+
+.sonido-hover:hover {
+	background-color: yellow, var(--color-paleta6);
+	opacity: 1;
+}
+
+.hover-message {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20vh; /* 20% del viewport height */
+	background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+	color: rgba(255, 255, 255, 0.8); /* Texto semitransparente */
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+	z-index: 1000; /* Asegurarse de que esté encima de otros elementos */
+}
+
+.hover-message.show {
+	opacity: 1; /* Totalmente visible */
+	visibility: visible;
 }

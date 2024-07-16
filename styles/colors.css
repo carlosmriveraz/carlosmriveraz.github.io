@@ -23,13 +23,14 @@
 	--color-paleta3: #00b4d8;
 	--color-paleta4: #90e0ef;
 	--color-paleta5: #caf0f8;
-
+	--color-paleta6: #007bff; /* Azul vibrante */
+    
 	--color-negro-carbon: #222;
 	--color-negro-azabache: #001119;
 	--color-negro-onix: #353839;
 	--color-negro-azulado: #1c1c44;
 
-	--color-paleta6: #007bff; /* Azul vibrante */
+
 	--color-paleta7: #ff00ff; /* Magenta llamativo */
 	--color-paleta8: #00ff00; /* Verde vibrante */
 	--color-paleta9: #ff0000; /* Rojo intenso */

@@ -10,17 +10,25 @@ html {
 	text-align: center;
 }
 
+html[data-theme="dark-theme"] {
+	background-image: url(/images/background/bk.jpg);
+	font-size: var(--size-titulo);
+	color: var(--color-primertexto), #f0f3f6;
+	text-align: center;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-body[data-theme="dark"] {
+body[data-theme="dark-theme"] {
 	background-image: url(../images/background/bk.jpg);
 	font-size: var(--size-titulo);
 	color: var(--color-primertexto), #f0f3f6;
 	text-align: center;
+    white-space: nowrap;
 }
 
 body {
@@ -48,6 +56,9 @@ span {
 	font-weight: 600;
 }
 
+li {
+	padding: 0;
+}
 h3 {
 	font-size: var(--size-tercertitulo);
 }
@@ -59,11 +70,11 @@ h4 {
 /* Estilos para las secciones del sitio web */
 section {
 	overflow: hidden; /* Oculta scrolls horizontal y vertical */
-	padding: 4.2rem 1rem;
+	padding: 3rem 1rem;
 	text-align: center;
-	margin: 0 auto;
+	margin: 2rem auto;
 	max-width: 100%;
-	max-height: 100%;
+	max-height: 97vh;
 }
 
 /* Estilos para el footer */
@@ -73,17 +84,28 @@ footer {
 	padding: 20px;
 }
 
+
+
 iframe {
-	background-color: transparent;
+	background-color: inherit, transparent;
 	max-width: 100%;
 	overflow: hidden;
+	border-radius: 1px;
+	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2),
+		0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 1s ease-in-out;
+}
+
+iframe:hover {
+	box-shadow: 0px 0px 15px 5px rgba(0, 0, 255, 0.5),
+		0px 5px 1px 5px rgba(0, 0, 255, 0.3);
 }
 .contenedor {
 	margin: 0 auto;
 	max-width: 100%;
 	width: 100%;
-	max-height: 100%;
-	height: 100%;
+	max-height: 100vh;
+	height: 100vh;
 	overflow: hidden;
 	position: relative;
 }
@@ -107,8 +129,8 @@ iframe {
 /* Elemento interno */
 .elemento {
 	width: 100%; /* Ancho del 100% del contenedor */
-	height: 95%; /* Altura del 100% del contenedor */
-    overflow: hidden;
+	height: 95vh; /* Altura del 100% del contenedor */
+	overflow: hidden;
 	/* Otros estilos que no causen scroll */
 }
 
@@ -158,15 +180,21 @@ iframe {
 }
 
 .item_contenido iframe,
-.column iframe,
-.elemento iframe {
+.column iframe {
 	width: 100%; /* Ocupa el ancho completo del contenedor */
-	max-height: 90%; /* Ocupa el alto completo del contenedor */
-	height: 45rem;
+	max-height: 100vh; /* Ocupa el alto completo del contenedor */
+	height: 97vh;
 	border: none; /* Elimina el borde del iframe, si no es necesario */
 	overflow: hidden;
 }
 
+#home .elemento iframe {
+	width: 100%; /* Ocupa el ancho completo del contenedor */
+	max-height: 100vh; /* Ocupa el alto completo del contenedor */
+	height: 97vh;
+    border: none;
+	overflow: hidden;
+}
 .description-box {
 	animation-delay: 1s;
 }
@@ -220,18 +248,6 @@ iframe {
 	border-color: var(--color-paleta2);
 }
 
-.sonido-hover {
-	width: 10rem;
-	height: 5rem;
-	transition: background-color 0.2s; /* Transición suave */
-	position: relative;
-	left: 50%;
-}
-
-.sonido-hover:hover {
-	background-color: transparent;
-}
-
 /* Estilos para las columnas */
 .column {
 	flex: 1; /* Las columnas se expanden igualmente */
@@ -245,4 +261,16 @@ iframe {
 /* Estilos para listas */
 li {
 	list-style: none;
+}
+
+.theme-selector {
+	cursor: pointer;
+	padding: 10px;
+}
+
+.dark-theme {
+	background-color: #2c3e50;
+	/* Color de fondo oscuro */
+	color: #ecf0f1;
+	/* Color de texto para el tema oscuro */
 }

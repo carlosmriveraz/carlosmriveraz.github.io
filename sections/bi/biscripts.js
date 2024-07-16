@@ -130,43 +130,29 @@ function displayKPI(data) {
 }
 
 function generateStatistics() {
-	const months = document.getElementById("months").value;
-	const data = loadData(); // Obtener los datos adecuados
+	const months = parseInt(document.getElementById("months").value);
+	const data = getCurrentTableData();
+	const recentData = data.slice(-months * 30); // Approximate last N months data
 
-	// Agrupar por meses y ordenar de manera descendente
-	const groupedData = groupDataByMonths(data, months);
-
-	// Mostrar datos en la tabla
-	populateDynamicTable(groupedData);
-}
-
-function loadData() {
-	// Función para cargar los datos del archivo CSV o desde alguna fuente
-	// Aquí deberías implementar la carga de datos desde el archivo CSV
-}
-
-function groupDataByMonths(data, months) {
-	// Lógica para agrupar los datos por meses y ordenar de manera descendente
-	// Debes implementar la lógica aquí
-}
-
-function populateDynamicTable(groupedData) {
-	const tableBody = document
-		.getElementById("dynamic-table")
-		.querySelector("tbody");
-	tableBody.innerHTML = ""; // Limpiar el cuerpo de la tabla
-
-	groupedData.forEach((monthData) => {
-		const tr = document.createElement("tr");
-		const dateTd = document.createElement("td");
-		dateTd.textContent = monthData.month; // Ajusta cómo mostrar la fecha del mes
-		const valueTd = document.createElement("td");
-		valueTd.textContent = monthData.averageValue.toFixed(2); // Ajusta cómo mostrar el valor promedio
-
-		tr.appendChild(dateTd);
-		tr.appendChild(valueTd);
-		tableBody.appendChild(tr);
+	const monthlyData = {};
+	recentData.forEach((row) => {
+		const month = row.Fecha.substring(0, 7); // YYYY-MM
+		if (!monthlyData[month]) {
+			monthlyData[month] = [];
+		}
+		monthlyData[month].push(row.Precio);
 	});
+
+	const labels = Object.keys(monthlyData);
+	const averages = labels.map((month) => {
+		const values = monthlyData[month];
+		return (
+			values.reduce((sum, value) => sum + value, 0) / values.length
+		).toFixed(2);
+	});
+
+	renderBarChart(labels, averages);
+	renderPieChart(labels, averages);
 }
 
 function renderBarChart(labels, data) {
@@ -273,36 +259,4 @@ function generatePredictions(data) {
 		handle: "th",
 		dataIdAttr: "data-id",
 	});
-}
-
-// biscripts.js
-
-document.addEventListener("DOMContentLoaded", (event) => {
-	// Cargar datos y generar estadísticas al cargar la página
-	generateStatistics();
-});
-
-function generateStatistics() {
-	const months = document.getElementById("months").value;
-	const data = loadData(); // Implementa la carga de datos adecuada
-
-	// Agrupar por meses y ordenar de manera descendente
-	const groupedData = groupDataByMonths(data, months);
-
-	// Mostrar datos en la tabla
-	populateDynamicTable(groupedData);
-}
-
-function downloadHistoricalData() {
-	// Lógica para descargar el archivo CSV con datos históricos
-	// Implementa la lógica para descargar el archivo CSV aquí
-	alert("Función de descarga de datos históricos no implementada.");
-}
-
-function showHistoricalChart() {
-	const historicalData = loadHistoricalData(); // Implementa la carga de datos históricos adecuada
-
-	// Lógica para mostrar la gráfica histórica utilizando Chart.js
-	// Implementa la lógica para mostrar la gráfica histórica aquí
-	alert("Función para mostrar la gráfica histórica no implementada.");
 }

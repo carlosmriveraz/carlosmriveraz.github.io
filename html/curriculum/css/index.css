@@ -151,11 +151,11 @@ page[size="A4"] {
 
 /* End Printing */
 
-.containercurriculum {
-    padding: 2rem 0Rem;
+.container {
     display: flex;
-    flex-flow: row wrap;
-
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
 }
 
 .leftPanel {
@@ -259,7 +259,6 @@ page[size="A4"] {
 .item {
     padding-bottom: 0.7cm;
     padding-top: 0.7cm;
-    height: 20%;
 }
 
 .item h2 {

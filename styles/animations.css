@@ -95,6 +95,14 @@
 		blink-caret 0.75s step-end infinite 6s;
 	transition: text-shadow 0.5s, transform 0.5s;
 }
+.typing {
+
+	transform: scale(0.5);
+	animation:  typing 4s steps(30, end) 2s infinite,
+		blink-caret 0.75s step-end infinite 6s;
+	transition: text-shadow 0.5s, transform 0.5s;
+}
+
 
 .textoanimadoInZoom:hover {
 	text-shadow: 0px 0px 2px var(--color-paleta4), -3px -3px 2px #00ffff,

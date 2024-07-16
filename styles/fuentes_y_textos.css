@@ -6,11 +6,12 @@
 	/* Tamaños de fuente (rem) basados en 1rem = 16px */
 	--size-titulogrande: 2.4rem;
 	--size-titulo: 2.2rem;
-	--size-subtitulo: 2.8rem;
+	--size-subtitulo: 2rem;
 	--size-tercertitulo: 1.8rem;
 	--size-texto: 1.7rem;
 	--size-segundotexto: 1.4rem;
-	--size-tercertexto: 0.8rem;
+	--size-tercertexto: 1rem;
+    --size-textosmall: 0.8rem;
 }
 
 /* Fuentes adicionales */
@@ -99,7 +100,7 @@
 }
 
 .heading-secondary--right {
-	justify-content: center;
+	justify-content: right;
 }
 
 .heading-secondary--left::after,
