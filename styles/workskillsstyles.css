@@ -1,0 +1,271 @@
+/* Estilo para la sección de habilidades */
+.section-skills {
+	padding: 0.2rem auto;
+	transition: all 0.4s;
+}
+
+.skills-group {
+	margin: 0.5rem 0;
+	text-align: center;
+}
+
+.skills-title {
+	font-size: var(--size-segundotexto);
+}
+
+.skills-data-box {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.skills-data-list {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+}
+
+.skills-name {
+	position: relative;
+	display: inline-block;
+	margin: 0.5rem 3rem;
+	perspective: 1000px;
+	/* Establece una perspectiva para el efecto 3D */
+	transition: all 0.4s;
+}
+
+.skills-name:hover {
+	transform: scale(1.2);
+	background-image: url("images/work/feproceso.web");
+	transition: all 0.4s;
+	/* Aumenta el tamaño al pasar el mouse */
+}
+
+.skills-name img {
+	height: 6rem;
+	/* Tamaño fijo para las imágenes */
+	margin-bottom: 0.5rem;
+	object-fit: contain;
+	width: 6rem;
+	/* Tamaño fijo para las imágenes */
+}
+
+.skills-name p {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.4);
+	color: #fff;
+	padding: 0.5rem;
+	border-radius: 5px;
+	font-size: var(--size-segundotexto), 12px;
+	width: 20rem;
+	/* Ajusta el ancho según sea necesario */
+	text-align: center;
+}
+
+.skills-name:hover img {
+	transform: rotateY(180deg);
+	/* Voltea la imagen en el eje Y al hacer hover */
+}
+
+.skills-name:hover p {
+	display: block;
+	/* Muestra la descripción al hacer hover */
+}
+
+/* Corrección de desbordamiento en el iframe */
+.container__iframe {
+	background-color: inherit;
+	/* Color de fondo opcional */
+	border-radius: 8px;
+	/* Radio de borde opcional */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	/* Sombra opcional */
+
+	max-width: 220em;
+	min-width: 70em;
+	overflow: hidden;
+	/* Proporción 16:9 */
+	position: relative;
+
+	justify-content: space-between;
+}
+
+.bi__iframe {
+	border: none;
+	flex: 2;
+	height: 100%;
+}
+
+/* Estilo para contenedor de proyectos */
+.project {
+	margin-bottom: 2rem;
+}
+
+/* Estilo para íconos sociales */
+.social-links {
+	align-items: center;
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+.social-icon {
+	color: var(--color-secondary);
+	font-size: 2rem;
+	transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover,
+.social-icon:active {
+	color: var(--color-primary);
+	transform: translateY(-5px);
+}
+
+/*************other skill **************/
+/* Estilo para la sección de trabajos */
+
+.other-skills-list {
+	list-style: none;
+	padding: 0;
+	animation: fadeInLeft 0.5s forwards;
+}
+
+.other-skills-item {
+	display: flex;
+	align-items: center;
+	color: var(--color-primary);
+	gap: 1rem;
+	margin-bottom: 1rem;
+	opacity: 0;
+	transform: translateX(-20px);
+	transition: all 0.5s ease;
+}
+
+.other-skills-item:hover {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+.other-skills-item:nth-child(1) {
+	animation-delay: 0.1s;
+}
+
+.other-skills-item:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.other-skills-item:nth-child(3) {
+	animation-delay: 0.3s;
+}
+
+.other-skills-item:nth-child(4) {
+	animation-delay: 0.4s;
+}
+
+.other-skills-item:nth-child(5) {
+	animation-delay: 0.5s;
+}
+
+.other-skills-icon {
+	font-size: 2rem;
+	color: var(--color-primary);
+}
+
+/************* WORKS SECTION **************/
+/* Estilo para la sección de trabajos */
+/* Estilo para la sección de trabajos */
+
+/* Contenedor principal */
+#proyectos .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+    font-size: var(--size-segundotexto);
+}
+
+/* Imagen principal de la sección */
+#proyectos img {
+	max-width: 80%;
+	height: 25%;
+	width: 50%;
+	margin-bottom: 1rem;
+}
+
+/* Contenedor de trabajos */
+.works__container {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 1rem;
+	justify-content: center;
+    height: 90%;
+    max-height: 95%;
+}
+.works__container p {
+	text-align: justify;
+}
+
+/* Cada tarjeta de trabajo */
+.work {
+	flex: 1 1 calc(50% - 3rem);
+	background-color: var(--color-paleta2);
+	border-radius: 1rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 1rem;
+	margin: 1rem auto;
+	transition: transform 1s;
+	max-height: 90%;
+    height: 80%;
+}
+
+.work:hover {
+	transform: translateY(-2rem);
+}
+
+/* Imagen de trabajo */
+.work__img {
+	max-width: 50%;
+	height: 50%;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+/* Título de trabajo */
+.work__title {
+	font-size: var(--size-segundotexto), 1rem;
+	color: var(--gradiente-azul);
+	margin-bottom: 10px;
+	font-family: "Playwrite US Trad", serif;
+}
+
+/* Link en el trabajo */
+#proyectos .link {
+	font-family: "Roboto", sans-serif;
+	color: var(--color-paleta2);
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.3s;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+	.works__container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.work {
+		flex: 1 1 100%;
+        max-height: 90%;
+	}
+}

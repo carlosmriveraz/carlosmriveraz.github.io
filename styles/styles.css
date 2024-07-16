@@ -1,0 +1,168 @@
+.navbar {
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: transparent;
+	color: white;
+	top: 0;
+	z-index: 1000;
+}
+
+.navbar ul {
+	display: flex;
+}
+.header__nav-list a {
+	font-weight: bold;
+	text-decoration: none;
+
+	/* Transiciones suaves para enlaces */
+	padding: 0.2em 0.2em;
+	/* Espaciado interno de los enlaces */
+}
+
+/* Logo */
+.navbar-logo img {
+	width: 2rem;
+	/* Ancho de la imagen del logo */
+}
+
+.navbar_sobre_mi {
+	color: var(--color-tercertexto), blue;
+}
+
+.navbar_sobre_mi span {
+	color: var(--color-sombratexto), #000;
+}
+
+.header__nav-list a:hover {
+	background-color: var(--color-paleta2);
+	color: #353839;
+}
+
+/* Secciones con dos columnas */
+
+.proyectos,
+.bi {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.column {
+	flex: 1;
+	margin: 1rem;
+}
+
+@media (max-width: 768px) {
+	.column {
+		flex: 100%;
+	}
+}
+
+.menu-item {
+	transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+	background-color: #f0f0f0;
+	color: #333;
+	transform: translateY(-3px); /* Ejemplo de animación de elevación */
+}
+
+/* Estilos del header */
+.header {
+	background-color: var(--color-paleta2); /* Color de fondo del header */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	position: relative;
+	z-index: 1000;
+}
+
+.navbar li {
+	margin-left: 20px;
+}
+
+/* Estilos del menú toggle para pantallas pequeñas */
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.menu-toggle span {
+	width: 25px;
+	height: 3px;
+	background: white;
+	margin: 4px 0;
+	transition: 0.4s;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+	.navbar ul {
+		flex-direction: column;
+		background: var(
+			--color-paleta2
+		); /* Color de fondo del menú desplegable */
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		display: none;
+	}
+
+	.navbar ul.active {
+		display: flex;
+	}
+
+	.navbar li {
+		margin: 10px 0;
+		text-align: center;
+	}
+
+	.menu-toggle {
+		display: flex;
+	}
+}
+
+.menu-icon {
+	display: none;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.menu {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
+.menu li {
+	margin-left: 20px;
+}
+
+.menu li a {
+	color: white;
+	text-decoration: none;
+	padding: 10px 15px;
+	transition: background-color 0.3s ease;
+}
+
+.menu li a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.final {
+	position: absolute;
+	bottom: 20px; /* Ajusta el margen inferior según lo que desees */
+	right: 20px; /* Ajusta el margen derecho según lo que desees */
+	background-color: var(--color-paleta6); /* Color de fondo del div */
+	padding: 10px; /* Espaciado interno */
+	border-radius: 5px; /* Bordes redondeados */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
