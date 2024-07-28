@@ -1,0 +1,144 @@
+/* .section-about: Sección "Acerca de" */
+.section-about {
+	padding: 2rem 2rem;
+
+	transition: all 0.4s;
+	box-sizing: border-box;
+	background-color: transparent;
+	height: 100vh;
+	font-size: var(--medida-texto-mediana);
+}
+.section-about span {
+	font-size: var(--ancho-titulo);
+}
+/* .about-box: Contenedor de la sección "Acerca de" */
+.about-box {
+	color: var(--color-primertexto);
+	display: flex;
+	flex-flow: row wrap;
+	gap: 3rem;
+	justify-content: center;
+
+	text-shadow: 1px 1px 11px var(--color-paleta6);
+}
+
+.about-column {
+	flex: 1;
+	text-align: justify;
+	border-radius: 2rem;
+	border: 1px solid;
+	font-size: --medida-texto-mediana, 1.2rem;
+	gap: 2rem;
+}
+.about-column h2 {
+	font-size: var(--ancho-titulo);
+}
+
+/* .about-skills: Habilidades en la sección "Acerca de" */
+.about_column_skill {
+	display: flex;
+	flex: 1;
+	background-image: url("../../images/logo.png"), url("../../images/logo.png");
+	background-size: 30%;
+	background-position: center;
+	position: absolute;
+	right: 10%;
+	top: 0%;
+	background-repeat: no-repeat;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+	.about-box {
+		flex-direction: column;
+	}
+
+	.about-skills {
+		padding: 5rem;
+	}
+}
+
+#movimiento_skills {
+	perspective: 1000px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+}
+
+.movimiento_skills-grid {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: absolute;
+	left: 0%;
+	top: 20%;
+
+	transform-style: preserve-3d;
+	transform: rotateX(0deg) rotateY(0deg);
+	transition: transform 1s;
+}
+
+.movimiento_skills-grid-skill {
+	position: absolute;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.movimiento_skills-grid-skill img {
+	max-width: 5rem;
+	min-width: 3rem;
+}
+
+.movimiento_skills-grid-skill-tooltip {
+	position: absolute;
+	top: 5%;
+	left: 10%;
+	transform: translateX(-50%);
+	background-color: inherit;
+	color: var(--color-paleta5);
+	padding: 1rem;
+	opacity: 0.9;
+	transition: opacity 0.3s;
+	pointer-events: none;
+	font-size: 0.8rem;
+}
+
+.movimiento_skills-grid-skill:hover {
+	opacity: 1;
+	color: var(--color-paleta4);
+	background-color: var(--color-primary);
+}
+
+.movimiento_skills-grid-skill-tooltip:hover {
+	opacity: 0.7;
+	color: #000;
+	background-color: var(--color-primary);
+}
+
+#movimiento_skills {
+	perspective: 1000px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative; /* Asegura que el contenedor se posicione correctamente */
+}
+
+.movimiento_skills-grid {
+	position: relative;
+
+	transform-style: preserve-3d;
+	transform: rotateX(0deg) rotateY(0deg);
+	transition: transform 1s;
+}
+
+.movimiento_skills-grid-skill {
+	transition: transform 1s;
+	transform-style: preserve-3d;
+}
+
+
+
+

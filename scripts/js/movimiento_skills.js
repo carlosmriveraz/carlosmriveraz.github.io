@@ -1,4 +1,4 @@
-// scripts.js
+// scriptss.js
 
 document.addEventListener("DOMContentLoaded", function() {
     const skills = document.querySelectorAll('.movimiento_skills-grid-skill');
