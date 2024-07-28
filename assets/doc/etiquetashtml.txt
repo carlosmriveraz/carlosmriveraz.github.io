@@ -1,0 +1,31 @@
+Explicación de Cada Tag
+<script>: Se utiliza para incluir y ejecutar código JavaScript.
+<a>: Define un hipervínculo.
+<img>: Inserta una imagen.
+<cite>: Representa el título de una obra.
+<code>: Define un fragmento de código.
+<!-- -->: Define un comentario.
+<dfn>: Representa un término definido.
+<div>: Define una división o sección en un documento.
+<dl>: Define una lista de definiciones.
+<dt>: Define un término en una lista de definiciones.
+<ol>: Define una lista ordenada.
+<li>: Define un elemento de lista.
+<p>: Define un párrafo.
+<dd>: Define una descripción en una lista de definiciones.
+<pre>: Define texto preformateado.
+<span>: Define una sección en línea.
+<strike>: Define texto tachado.
+<ul>: Define una lista desordenada.
+<big>: Define texto grande.
+<small>: Define texto pequeño.
+<u>: Define texto subrayado.
+<label>: Define una etiqueta para un elemento de formulario.
+<select>: Define un menú desplegable.
+<optgroup>: Define un grupo de opciones en un menú desplegable.
+<option>: Define una opción en un menú desplegable.
+<h1>: Define un encabezado de nivel 1.
+<hr>: Define una línea horizontal.
+<meta>: Define metadatos sobre el documento HTML.
+<link>: Define la relación entre el documento actual y un recurso externo.
+<style>:

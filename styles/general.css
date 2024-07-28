@@ -1,0 +1,216 @@
+@import url("./variables_fuentes_textos_colores.css");
+@import url("./fuentes_y_textos.css");
+@import url("./colors.css");
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	transition: all 0.9s ease-in-out;
+	color: var(--color-primertexto);
+	text-align: center;
+}
+
+html[data-theme="dark-theme"] {
+	background-image: url(/images/background/bk.jpg);
+	font-size: var(--size-titulo);
+	color: var(--color-primertexto), #f0f3f6;
+	text-align: center;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+*::placeholder {
+	background-color: #00ffff;
+}
+
+body[data-theme="dark-theme"] {
+	background-image: url(../images/background/bk.jpg);
+	font-size: var(--size-titulo);
+	color: var(--color-primertexto), #f0f3f6;
+	text-align: center;
+	white-space: nowrap;
+}
+
+body {
+	background-color: var(--color-paleta2);
+	background-image: url(../images/background/bk.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--color-titulo);
+	font-family: var(--font-primary);
+	font-size: var(--medida-texto);
+	font-weight: 400;
+	overflow-x: hidden;
+	transition: background-color 0.9s, color 0.3s;
+	text-align: center;
+	text-shadow: 1px 1px 11px var(--color-paleta6);
+}
+
+a {
+	color: var(--color-primertexto), #f0f3f6;
+}
+
+span {
+	color: var(--color-paleta6);
+	font-size: var(--medida-texto);
+	font-weight: 600;
+}
+
+li {
+	padding: 0;
+	margin-right: var(--margen-reducida);
+}
+
+h3 {
+	font-size: var(--size-tercertitulo);
+}
+
+h4 {
+	font-size: var(--size-textosmall);
+}
+
+/* Estilos para las secciones del sitio web */
+section {
+	overflow: hidden;
+	/* Oculta scrolls horizontal y vertical */
+	padding: 1rem 2rem;
+	text-align: center;
+	margin: 3rem auto;
+	max-width: 100%;
+	max-height: 90vh;
+	border-radius: var(--borde-grande);
+	border: 1px solid;
+	border-color: var(--color-paleta3);
+	background-color: transparent;
+}
+
+/* Estilos para el footer */
+footer {
+	background-color: rgba(0, 0, 0, 0.8);
+	text-align: center;
+	padding: 20px;
+}
+
+iframe {
+	max-height: 95hv;
+
+	overflow: hidden;
+	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 1s ease-in-out;
+	background-color: transparent;
+	max-height: var(--altura-maxima);
+	border-radius: var(--borde-grande);
+}
+iframe::-webkit-scrollbar {
+	display: none;
+}
+
+iframe:hover {
+	box-shadow: 2px 2px 15px 5px rgba(0, 0, 255, 0.5), 0px 5px 1px 5px rgba(0, 0, 255, 0.3);
+}
+
+.contenedor {
+	margin: 0 auto;
+	max-width: 100%;
+	width: 100%;
+	max-height: 100vh;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	border-radius: var(--borde-grande);
+	border: 2px solid;
+}
+
+/* Elemento interno */
+.elemento {
+	width: 100%;
+	/* Ancho del 100% del contenedor */
+	height: 95vh;
+	/* Altura del 100% del contenedor */
+	overflow: hidden;
+	/* Otros estilos que no causen scroll */
+}
+
+.container__aumentotamano {
+	transition: transform 1.2s ease;
+}
+
+.container__aumentotamano:hover {
+	transform: scale(1.2);
+}
+
+.container__medio {
+	position: relative;
+	margin: 0.1rem auto;
+}
+
+.container_flex_colum {
+	display: flex;
+	flex-flow: column;
+}
+
+.container_flex_colum_fstart {
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	gap: 1rem;
+}
+
+.item2rem {
+	flex: 1;
+	padding: 2rem 0;
+	margin: 2rem 0;
+	flex-grow: 2;
+	overflow: hidden;
+}
+
+.item3rem {
+	flex: 1;
+	padding: 3rem 0;
+	margin: 3rem 0;
+	flex-grow: 2;
+	overflow: hidden;
+}
+
+.item_contenido {
+	overflow: hidden;
+	/* Oculta las barras de desplazamiento */
+}
+
+.description-box {
+	animation-delay: 1s;
+}
+
+.section--hidden {
+	opacity: 0;
+	transform: translateY(8rem);
+}
+
+.container__padd {
+	padding: 9.6rem;
+}
+
+/* Estilos para las columnas */
+.column {
+	flex: 1;
+	/* Las columnas se expanden igualmente */
+	margin: 10px;
+	/* Margen entre las columnas */
+	padding: 20px;
+	/* Padding interno de las columnas */
+	border-radius: 8px;
+	/* Bordes redondeados */
+	box-shadow: 0 2px 4px rgba(3, 254, 250, 0.1);
+	/* Sombra para las columnas */
+	overflow: hidden;
+}
+
+/* Estilos para listas */
+li {
+	list-style: none;
+}
+

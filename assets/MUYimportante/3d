@@ -1,0 +1,225 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Skills Animation</title>
+		<style>
+			.skills-container {
+				position: relative;
+				width: 300px;
+				height: 300px;
+				margin: auto;
+				perspective: 1000px;
+			}
+
+			.central-figure {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 50px;
+				height: 50px;
+				background: linear-gradient(45deg, #ff0000, #0000ff);
+				transform: translate(-50%, -50%);
+				animation: rotate3D 5s infinite linear;
+			}
+
+			.skill {
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				background: #ff0;
+				border-radius: 50%;
+				animation: orbit 5s infinite linear;
+			}
+
+			.skill1 {
+				transform: rotate(0deg) translateX(100px) rotate(0deg);
+			}
+			.skill2 {
+				transform: rotate(90deg) translateX(100px) rotate(-90deg);
+			}
+			.skill3 {
+				transform: rotate(180deg) translateX(100px) rotate(-180deg);
+			}
+			.skill4 {
+				transform: rotate(270deg) translateX(100px) rotate(-270deg);
+			}
+
+			@keyframes rotate3D {
+				from {
+					transform: translate(-50%, -50%) rotateX(0) rotateY(0);
+				}
+				to {
+					transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg);
+				}
+			}
+
+			@keyframes orbit {
+				from {
+					transform: rotate(0deg) translateX(100px) rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg) translateX(100px) rotate(-360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="skills-container">
+			<div class="central-figure"></div>
+			<div class="skill skill1"></div>
+			<div class="skill skill2"></div>
+			<div class="skill skill3"></div>
+			<div class="skill skill4"></div>
+			<!-- Agrega más habilidades según sea necesario -->
+		</div>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Facturación Electrónica</title>
+		<style>
+			.container__aumentotamano {
+				max-width: 1200px;
+				margin: auto;
+				padding: 20px;
+			}
+
+			.work {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+
+			.work__title {
+				font-size: 2em;
+				margin-bottom: 20px;
+			}
+
+			.work__img {
+				width: 40%;
+				border: 2px solid #ccc;
+				margin-bottom: 20px;
+			}
+
+			.work__description {
+				max-width: 800px;
+				margin-bottom: 20px;
+				overflow: hidden;
+				transition: max-height 0.5s ease;
+			}
+
+			.work__description.collapsed {
+				max-height: 0;
+			}
+
+			.skills-container {
+				position: relative;
+				width: 300px;
+				height: 300px;
+				margin: auto;
+				perspective: 1000px;
+			}
+
+			.central-figure {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 50px;
+				height: 50px;
+				background: linear-gradient(45deg, #ff0000, #0000ff);
+				transform: translate(-50%, -50%);
+				animation: rotate3D 5s infinite linear;
+			}
+
+			.skill {
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				background: #ff0;
+				border-radius: 50%;
+				animation: orbit 5s infinite linear;
+			}
+
+			.skill1 {
+				transform: rotate(0deg) translateX(100px) rotate(0deg);
+			}
+			.skill2 {
+				transform: rotate(90deg) translateX(100px) rotate(-90deg);
+			}
+			.skill3 {
+				transform: rotate(180deg) translateX(100px) rotate(-180deg);
+			}
+			.skill4 {
+				transform: rotate(270deg) translateX(100px) rotate(-270deg);
+			}
+
+			@keyframes rotate3D {
+				from {
+					transform: translate(-50%, -50%) rotateX(0) rotateY(0);
+				}
+				to {
+					transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg);
+				}
+			}
+
+			@keyframes orbit {
+				from {
+					transform: rotate(0deg) translateX(100px) rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg) translateX(100px) rotate(-360deg);
+				}
+			}
+
+			.toggle-button {
+				cursor: pointer;
+				color: blue;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="work container__aumentotamano">
+			<h2 class="work__title">Facturación Electrónica</h2>
+			<img
+				src="images/work/feproceso.webp"
+				alt="Proceso de Facturación Electrónica"
+				class="work__img container__aumentotamano"
+				loading="lazy"
+			/>
+			<div id="description" class="work__description collapsed">
+				<p>
+					Implementé un sistema de facturación electrónica global que unifica los estándares para la
+					emisión, recepción y procesamiento de facturas electrónicas. Este proyecto mejora la
+					eficiencia y la transparencia en las transacciones comerciales.
+				</p>
+				<p><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
+				<ul>
+					<li>Desarrollé interfaces de usuario intuitivas y responsivas.</li>
+					<li>Integré sistemas de validación y seguridad de datos.</li>
+				</ul>
+			</div>
+			<div class="toggle-button" onclick="toggleDescription()">Mostrar más</div>
+		</div>
+
+
+		<script>
+			function toggleDescription() {
+				const description = document.getElementById("description");
+				const toggleButton = document.querySelector(".toggle-button");
+				description.classList.toggle("collapsed");
+				toggleButton.textContent = description.classList.contains("collapsed")
+					? "Mostrar más"
+					: "Mostrar menos";
+			}
+		</script>
+	</body>
+</html>

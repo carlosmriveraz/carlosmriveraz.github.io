@@ -1,0 +1,105 @@
+/* Estilo base para el cuerpo */
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.menu-icon {
+	display: none;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.menu {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
+.menu li {
+	margin-left: 20px;
+}
+
+.menu li a {
+	color: white;
+	text-decoration: none;
+	padding: 10px 15px;
+	transition: background-color 0.3s ease;
+}
+
+.menu li a:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    html{
+        font-size: 40%;
+    }
+	.menu-icon {
+		display: block;
+	}
+
+	.menu {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+		background-color: transparent;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		z-index: 999;
+        font-size: medium;
+        margin: .5rem, 5px;
+	}
+
+	.menu li {
+		margin: 0;
+		text-align: center;
+	}
+
+	.menu li a {
+		padding: 15px;
+		border-bottom: 1px solid #0077b6;
+	}
+
+	.menu li a:hover {
+		background-color: rgba(#0077b6 0.2);
+	}
+
+	.menu.show {
+		display: flex;
+	}
+}
+
+.navbar a:hover {
+	background-color: var(--color-paleta4);
+	color: var(--color-paleta5), #0077b6;
+}
+
+.menu-item {
+	transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+	background-color: #f0f0f0;
+	color: #333;
+	transform: translateY(-3px); /* Ejemplo de animación de elevación */
+}
+.menu-toggle {
+	transition: transform 0.3s ease;
+}
+
+.menu-toggle.open {
+	transform: rotate(90deg); /* Ejemplo de animación de transformación */
+}
+
+
+
+@media (max-width: 768px) {
+    .column {
+        flex: 100%;
+    }
+}

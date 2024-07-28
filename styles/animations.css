@@ -1,0 +1,379 @@
+/* Animación para deslizar el contenido hacia la izquierda */
+.slide-left {
+	animation: slideleft 1s linear forwards;
+}
+
+@keyframes slideleft {
+	0% {
+		transform: translate(10rem);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+
+/* Animación para crear un efecto de explosión */
+@keyframes burst {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+		filter: blur(5px);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2);
+		filter: blur(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Animación para crear un efecto de resplandor */
+@keyframes glow {
+	0% {
+		text-shadow: 1px 1px 5px var(--color-paleta1), 0 0 10px var(--color-paleta5), 0 0 15px #ffef00,
+			0 0 20px var(--color-paleta4), 0 0 25px var(--color-paleta2), 0 0 30px var(--color-paleta5),
+			0 0 35px #ffef00;
+	}
+	50% {
+		text-shadow: 0 0 10px var(--color-paleta1), 0 0 20px var(--color-paleta1), 0 0 30px #ffef00,
+			0 0 40px #ffef00, 0 0 50px var(--color-paleta2), 0 0 60px var(--color-paleta1),
+			0 0 70px #ffef00;
+	}
+	100% {
+		text-shadow: 0 0 5px var(--color-paleta1), 0 0 10px var(--color-paleta1),
+			0 0 15px var(--color-paleta4), 0 0 20px var(--color-paleta4), 0 0 25px #ffef00,
+			0 0 30px #ffef00, 0 0 35px var(--color-paleta4);
+	}
+}
+
+/* Animación para crear un efecto de aparecer y hacer zoom */
+@keyframes fadeInZoom {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Animación para el efecto de escribir */
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+/* Animación para el parpadeo del cursor */
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: var(--color-paleta2);
+	}
+}
+
+/* Estilo y animaciones para el texto animado con zoom */
+.textoanimadoInZoom {
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	color: var(--color-paleta2);
+	transform: scale(0.5);
+	animation: fadeInZoom 2s ease forwards, typing 4s steps(30, end) 2s forwards,
+		blink-caret 0.75s step-end infinite 6s;
+	transition: text-shadow 0.5s, transform 0.5s;
+}
+.typing {
+	transform: scale(0.5);
+	animation: typing 4s steps(30, end) 2s infinite, blink-caret 0.75s step-end infinite 6s;
+	transition: text-shadow 0.5s, transform 0.5s;
+}
+
+.textoanimadoInZoom:hover {
+	text-shadow: 0px 0px 2px var(--color-paleta4), -3px -3px 2px #00ffff,
+		0px -3px var(--color-paleta4), -3px 1px 0 var(--color-paleta5);
+	transform: scale(1.4);
+	color: var(--color-paleta4), var(--color-paleta4);
+}
+
+/* Estilo y animaciones combinadas */
+.combined-effects {
+	text-align: center;
+	animation: fadeIn 2s forwards;
+	opacity: 0;
+}
+
+.combined-effects h2,
+.combined-effects h3 {
+	font-size: 1.6rem;
+	position: relative;
+}
+
+.combined-effects h2 {
+	animation: pulse 3s 4s infinite, moveRightLeft 8s 1s 2;
+}
+.combined-effects h3 {
+	animation: pulse 5s 500ms infinite, moveLeftRight 8s 1s 2;
+}
+
+.combined-effects-pulse {
+	animation: pulse 5s 2s linear 2;
+}
+
+/* Animación para aparecer */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Animación para crear un efecto de pulso */
+@keyframes pulse {
+	0%,
+	100% {
+		text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+	}
+	50% {
+		text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
+	}
+}
+
+/* Animación para mover de izquierda a derecha */
+@keyframes moveLeftRight {
+	0%,
+	100% {
+		left: 0;
+	}
+	50% {
+		left: -10px;
+	}
+}
+
+/* Animación para mover de derecha a izquierda */
+@keyframes moveRightLeft {
+	0%,
+	100% {
+		right: 0;
+	}
+	50% {
+		right: -10px;
+	}
+}
+
+/* Estilo y animaciones para efectos combinados */
+.combined-effects::before,
+.combined-effects::after {
+	content: "";
+	position: absolute;
+	background-color: var(--color-paleta2);
+	border-radius: 50%;
+	animation: grow 2s 4s forwards, shrink 2s 8s forwards;
+}
+
+.combined-effects::before {
+	top: -20px;
+	left: -20px;
+	width: 10px;
+	height: 10px;
+	animation-delay: 0.2s;
+}
+
+.combined-effects::after {
+	bottom: -20px;
+	right: -20px;
+	width: 10px;
+	height: 10px;
+	animation-delay: 0.4s;
+}
+
+/* Animación para crecer */
+@keyframes grow {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Animación para reducir */
+@keyframes shrink {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+imagenredonda {
+	overflow: hidden;
+}
+
+.imagen {
+	/* Escala al hacer hover */
+	transition: transform 0.3s;
+}
+
+.imagenredonda:hover .imagen {
+	transform: scale(1.3);
+}
+
+.imagen:hover {
+	/* Rotación 3D al hacer hover */
+	transform: rotateY(180deg);
+	transform-style: preserve-3d;
+}
+
+.imagen:hover {
+	/* Borde redondeado y sombra al hacer hover */
+	border-radius: 50%;
+	box-shadow: 0px 0px 15px 15px #ec731e;
+}
+
+.cube {
+	width: 200px;
+	height: 200px;
+	position: sticky;
+	transform-style: preserve-3d;
+	animation: rotateCube 5s infinite linear;
+}
+
+.face {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-image: url("../images/logo.jpg"); /* Ruta a tu imagen */
+	background-size: cover;
+	border: 1px solid #ccc;
+}
+
+.front {
+	transform: translateZ(100px);
+}
+.back {
+	transform: rotateY(180deg) translateZ(100px);
+}
+.left {
+	transform: rotateY(-90deg) translateZ(100px);
+}
+.right {
+	transform: rotateY(90deg) translateZ(100px);
+}
+.top {
+	transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+	transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes rotateCube {
+	from {
+		transform: rotateY(0);
+	}
+	to {
+		transform: rotateY(360deg);
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	transition: all ease 0.5s;
+}
+
+.fondo {
+	background-image: url("http://caribestours.com/wp/wp-content/uploads/2015/10/cartagena-de-indias-colombia.jpg");
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	padding: 5vw;
+	text-align: center;
+	animation: fondo 5s ease infinite backwards;
+}
+
+h4 {
+	background-color: #fff;
+	font-size: 15vw;
+	padding: 10vh 2vw;
+	font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
+	mix-blend-mode: screen;
+	line-height: 1em;
+}
+
+h4 b {
+	font-size: 6vw;
+	line-height: 1.5em;
+	display: block;
+}
+
+p {
+	color: #fff;
+	position: fixed;
+	z-index: 10;
+	bottom: 20%;
+	text-align: center;
+	width: 100%;
+	font-size: 2em;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 960px) {
+	h4 {
+		font-size: 7em;
+		max-width: 12em;
+		margin: auto;
+	}
+}
+
+.text-mask {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: var(--altura-contenido);
+	width: var(--ancho-contenido);
+	overflow: hidden;
+}
+
+.text-mask h1 {
+	font-size: 10rem; /* Puedes ajustar este tamaño según lo necesites */
+	color: transparent;
+	position: relative;
+	margin: 0;
+	background: url(/images/logo.gif) no-repeat center center;
+	background-size: cover;
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
+.text-mask::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(/images/logo.gif) no-repeat center center;
+	background-size: cover;
+	z-index: -1;
+	filter: blur(20px);
+	transform: scale(1.2);
+}
