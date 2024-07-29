@@ -75,13 +75,15 @@ h4 {
 
 /* Estilos para las secciones del sitio web */
 section {
+	margin-top: 2rem;
 	overflow: hidden;
 	/* Oculta scrolls horizontal y vertical */
 	padding: 1rem 2rem;
 	text-align: center;
-	margin: 3rem auto;
+	height: max-content;
 	max-width: 100%;
-	max-height: 90vh;
+	max-height: 95vh;
+	height: 95vh;
 	border-radius: var(--borde-grande);
 	border: 1px solid;
 	border-color: var(--color-paleta3);
@@ -92,17 +94,16 @@ section {
 footer {
 	background-color: rgba(0, 0, 0, 0.8);
 	text-align: center;
-	padding: 20px;
 }
 
 iframe {
-	max-height: 95hv;
+	height: 100hv;
 
 	overflow: hidden;
 	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 1s ease-in-out;
 	background-color: transparent;
-	max-height: var(--altura-maxima);
+
 	border-radius: var(--borde-grande);
 }
 iframe::-webkit-scrollbar {
@@ -212,5 +213,37 @@ iframe:hover {
 /* Estilos para listas */
 li {
 	list-style: none;
+}
+
+.contenedor-con-fondo {
+	position: relative;
+}
+
+.contenedor-con-fondo::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.5); /* Blanco con 50% de opacidad */
+	z-index: -1; /* Coloca la capa detrás del contenido */
+}
+
+.mi_elemento_background_transparente {
+	background-color: hsla(210, 93%, 51%, 0.3); /* Rojo con 50% de opacidad */
+	position: relative;
+}
+
+.mi-mi_elemento_background_transparente::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("./images/background/bk3.jpeg");
+	opacity: 0.8; /* Ajusta la opacidad según tus necesidades */
+	z-index: -1; /* Coloca la capa detrás del contenido */
 }
 

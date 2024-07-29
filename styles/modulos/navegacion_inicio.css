@@ -10,7 +10,7 @@
 	cursor: pointer;
 	display: flex;
 	height: var(--altura-navbar);
-	margin: px;
+
 	justify-content: space-between; /* Centra el menú */
 	position: fixed;
 	width: 99%;

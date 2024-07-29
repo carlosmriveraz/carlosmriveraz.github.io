@@ -245,8 +245,8 @@ imagenredonda {
 }
 
 .cube {
-	width: 200px;
-	height: 200px;
+	width: 5rem;
+	height: 5rem;
 	position: sticky;
 	transform-style: preserve-3d;
 	animation: rotateCube 5s infinite linear;
@@ -254,8 +254,8 @@ imagenredonda {
 
 .face {
 	position: absolute;
-	width: 200px;
-	height: 200px;
+	width: 5rem;
+	height: 5rem;
 	background-image: url("../images/logo.jpg"); /* Ruta a tu imagen */
 	background-size: cover;
 	border: 1px solid #ccc;

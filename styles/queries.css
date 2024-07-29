@@ -35,9 +35,9 @@ body {
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
-    html{
-        font-size: 40%;
-    }
+	html {
+		font-size: 40%;
+	}
 	.menu-icon {
 		display: block;
 	}
@@ -51,8 +51,8 @@ body {
 		top: 60px;
 		left: 0;
 		z-index: 999;
-        font-size: medium;
-        margin: .5rem, 5px;
+		font-size: medium;
+		margin: 0.5rem, 5px;
 	}
 
 	.menu li {
@@ -96,10 +96,8 @@ body {
 	transform: rotate(90deg); /* Ejemplo de animación de transformación */
 }
 
-
-
 @media (max-width: 768px) {
-    .column {
-        flex: 100%;
-    }
+	.column {
+		flex: 100%;
+	}
 }

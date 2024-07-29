@@ -1,4 +1,4 @@
-
+@import url("../variables.css");
 .btn {
   display: inline-block;
   padding: var(--relleno-mediana) var(--relleno-grande);
