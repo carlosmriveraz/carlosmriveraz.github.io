@@ -1,162 +1,52 @@
-<section class="section-about" id="about">
+<div id="movimiento_skills_sobre_mi" class="movimiento_skills_sobre_mi">
 	<link rel="stylesheet" href="../../styles/variables/fuentes_y_textos.css" />
-
 	<link rel="stylesheet" href="../../styles/colores.css" />
 	<link rel="stylesheet" href="../../styles/variables/lib-variables_fuentes_textos_colores.css" />
 	<link rel="stylesheet" href="../../styles/variables/.css" />
-
 	<link rel="stylesheet" href="../../styles/modulos/animaciones" />
 	<link rel="stylesheet" href="../../styles/styles.css" />
 	<link rel="stylesheet" href="../../styles/general.css" />
 	<link rel="stylesheet" href="../../styles/queries.css" />
-
 	<link rel="stylesheet" href="sobre_mi.css" />
-	<style>
-        .skills-container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: auto;
-            perspective: 1000px;
-        }
-
-        .central-figure {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #ff0000, #0000ff);
-            transform: translate(-50%, -50%);
-            animation: rotate3D 5s infinite linear;
-        }
-
-        .skill {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: #ff0;
-            border-radius: 50%;
-            animation: orbit 5s infinite linear;
-        }
-
-        .skill1 { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-        .skill2 { transform: rotate(90deg) translateX(100px) rotate(-90deg); }
-        .skill3 { transform: rotate(180deg) translateX(100px) rotate(-180deg); }
-        .skill4 { transform: rotate(270deg) translateX(100px) rotate(-270deg); }
-
-        @keyframes rotate3D {
-            from { transform: translate(-50%, -50%) rotateX(0) rotateY(0); }
-            to { transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg); }
-        }
-
-        @keyframes orbit {
-            from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-            to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
-        }
-    </style>
-	
-	
-	<div class="stars">
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-		<div class="star"></div>
-	</div>
-	<div class="letra-grande">
-		<h2 class="heading-secondary">
-			Soy <span>C</span>arlos <span>M</span>ario <span>R</span>ivera<span>&nbsp;&frasl;&gt;</span>
-		</h2>
-	</div>
-
-	<div class="cube">
-		<div class="face front"></div>
-		<div class="face back"></div>
-		<div class="face left"></div>
-		<div class="face right"></div>
-		<div class="face top"></div>
-		<div class="face bottom"></div>
-	</div>
 
 	<div class="about-box">
+		<!-- Información Personal y Texto -->
 		<div class="about-column">
-
-			<p class=" texto-con-sombra">
+			<h2 class="heading-secondary">
+				Soy <span>C</span>arlos <span>M</span>ario <span>R</span>ivera<span>&nbsp;&frasl;&gt;</span>
+			</h2>
+			<p class="texto-con-sombra">
 				<strong>Desarrollador de software</strong>
 				Con más de 12 años de experiencia, apasionado por la creación de aplicaciones robustas y
 				escalables, he trabajado en proyectos desde la etapa de diseño hasta la implementación de
 				soluciones.
 			</p>
-			<p class="texto-margin">
+			<p class="texto-con-sombra">
 				<strong>Como Ingeniero de datos,</strong>
-				 mi objetivo es crear soluciones eficientes que
-				mejoren la experiencia del usuario.</p>
-				</p>
-			<p class="texto-margin">
+				mi objetivo es crear soluciones eficientes que mejoren la experiencia del usuario.
+			</p>
+			<p class="texto-con-sombra">
 				<strong>Un Arquitecto de soluciones, </strong>
 				con experiencia en diseño, implementación y optimización de infraestructuras en la nube.
 			</p>
 			<p>Auditor interno ISO 27001.</p>
 
-	
+			<div class="cube">
+				<div class="face front"></div>
+				<div class="face back"></div>
+				<div class="face left"></div>
+				<div class="face right"></div>
+				<div class="face top"></div>
+				<div class="face bottom"></div>
+			</div>
 		</div>
-		<div class="about_column_skill  right-colum container__aumentotamano">
-			<div class="about_column    container__aumentotamano">
+
+		<!-- Habilidades y Animaciones -->
+		<div class="about_column_skill">
+			<!-- Contenedor de habilidades -->
 			<div id="movimiento_skills">
-
-
-				<div class="relleno-extra-grande skills-container">
-				
-				
-
 				<div class="movimiento_skills-grid">
-
+					<!-- Cubo central y habilidades -->
 					<div class="central-figure">
 						<div class="cube">
 							<div class="face front"></div>
@@ -166,20 +56,26 @@
 							<div class="face top"></div>
 							<div class="face bottom"></div>
 						</div>
-
 					</div>
 
-					<div class="movimiento_skills-grid-skill">
+					<!-- Habilidades -->
 					<div class="movimiento_skills-grid-skill">
 						<img src="../../images/frontend/html.svg" alt="HTML" />
 						<div class="movimiento_skills-grid-skill-tooltip">HTML</div>
 					</div>
-	
+
+					<div class="central-figure"></div>
+
+					<div class="movimiento_skills-grid-skill">
+						<img src="../../images/frontend/html.svg" alt="HTML" />
+						<div class="movimiento_skills-grid-skill-tooltip">HTML</div>
+					</div>
+
 					<div class="movimiento_skills-grid-skill">
 						<img src="../../images/frontend/js.svg" alt="JavaScript" />
 						<div class="movimiento_skills-grid-skill-tooltip">JavaScript</div>
 					</div>
-	
+
 					<div class="movimiento_skills-grid-skill">
 						<img src="../../images/frontend/css.ico" alt="CSS" />
 						<div class="movimiento_skills-grid-skill-tooltip">CSS</div>
@@ -249,18 +145,11 @@
 						<div class="movimiento_skills-grid-skill-tooltip">RDS</div>
 					</div>
 
-					<div class="skill skill1"></div>
-					<div class="skill skill2"></div>
-					<div class="skill skill3"></div>
-					<div class="skill skill4"></div>
-
-
-
+					<!-- Repite para otras habilidades -->
+					<!-- ... -->
 				</div>
 			</div>
-			</div>
-			
 		</div>
 	</div>
 	<script src="../../scripts/js/movimiento_skills.js"></script>
-</section>
+</div>

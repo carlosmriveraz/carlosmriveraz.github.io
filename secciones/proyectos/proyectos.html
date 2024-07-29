@@ -14,17 +14,28 @@
 			.proyectos__grid {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 20px;
+				gap: 1rem;
 			}
 
 			.proyecto {
 				flex: 1 1 calc(50% - 20px);
 				border: 1px solid #ccc;
-				border-radius: 10px;
+				border-radius: 1rem;
 				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 				overflow: hidden;
 				background-color: #fff;
 				transition: box-shadow 0.3s ease;
+
+				flex: 0.4;
+				background: linear-gradient(
+					18deg,
+					rgba(4, 37, 78, 1) 3%,
+					rgb(01, 25, 216, 0.2) 20%,
+					rgba(4, 37, 78, 1) 60%,
+					rgb(1, 14, 18, 0.2)
+				);
+
+				color: var(--color-primary);
 			}
 
 			.proyecto:hover {
@@ -68,6 +79,19 @@
 				.proyecto {
 					flex: 1 1 100%;
 				}
+
+				/************* WORKS SECTION **************/
+				/* Estilo para la sección de trabajos */
+				/* Estilo para la sección de trabajos */
+
+				/* Descripción del trabajo */
+				.proyecto__description {
+					color: var(--color-primary);
+					text-align: justify;
+					width: 90%;
+					max-width: 300px;
+					padding: 1rem;
+				}
 			}
 		</style>
 	</head>
@@ -77,7 +101,7 @@
 				<div class="proyecto">
 					<h2 class="proyecto__title">Facturación Electrónica</h2>
 					<img
-						src="images/work/feproceso.webp"
+						src=".../../ciudad.jpeg"
 						alt="Proceso de Facturación Electrónica"
 						class="proyecto__img"
 						loading="lazy"
@@ -102,7 +126,7 @@
 				<div class="proyecto">
 					<h2 class="proyecto__title">Precios Históricos del Dólar en Colombia</h2>
 					<img
-						src="../../images/work/lawsglue.webp"
+						src="../../images/background/bk2.jpeg"
 						alt="Análisis de Precios del Dólar"
 						class="proyecto__img"
 						loading="lazy"
