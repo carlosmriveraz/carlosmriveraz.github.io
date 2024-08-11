@@ -1,19 +1,15 @@
-@import url("./variables_fuentes_textos_colores.css");
-@import url("./fuentes_y_textos.css");
-@import url("./colors.css");
-
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 	transition: all 0.9s ease-in-out;
-	color: var(--color-primertexto);
+	color: var(--color-texto);
 	text-align: center;
 }
 
 html[data-theme="dark-theme"] {
 	background-image: url(./images/background/bk.jpg);
-	font-size: var(--size-titulo);
-	color: var(--color-primertexto), #f0f3f6;
+
+	color: var(--color-texto), #ffffff;
 	text-align: center;
 }
 
@@ -30,9 +26,8 @@ html[data-theme="dark-theme"] {
 body[data-theme="dark-theme"] {
 	background-image: url(../images/background/bk.jpg);
 	font-size: var(--size-titulo);
-	color: var(--color-primertexto), #f0f3f6;
+	color: var(--color-texto), #f0f3f6;
 	text-align: center;
-	white-space: nowrap;
 }
 
 /* Modo oscuro */
@@ -41,7 +36,6 @@ body.dark-mode {
 	--color-navbar: #00ffff;
 	--color-hover: #00ffff;
 	--color-menu__principal_secundario: #000;
-	--color-paleta-principal2: var(--color-paleta-principal2);
 	background-color: #000;
 	color: #00ffff;
 }
@@ -52,8 +46,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: var(--color-titulo);
-	font-family: var(--font-primary);
-	font-size: var(--medida-texto);
+	font-family: var(--fuente-primaria), var(--fuente-secundaria);
+
 	font-weight: 400;
 	overflow-x: hidden;
 	transition: background-color 0.9s, color 0.3s;
@@ -62,7 +56,7 @@ body {
 }
 
 a {
-	color: var(--color-primertexto), #ffffff;
+	color: var(--color-texto), #ffffff;
 }
 
 span {

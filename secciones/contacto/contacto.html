@@ -27,14 +27,13 @@
 							Si deseas contactarme para cualquier consulta o proyecto, puedes escribirme a
 							carlosmrz100@hotmail.com
 							<a
-								class="link btn btn-full"
+								class="link btn"
 								href="mailto:carlosmrz100@hotmail.com?subject=Correo de contacto de Carlos
 								Rivera&body=Buen día, este correo se genera desde la página web de Carlos Rivera y
 								te contacto"
 								>Enviar correo electrónico
 							</a>
-
-							<a href="secciones/contacto/contacto.html" class="link btn btn-full">Copiar Email</a>
+							<a id="copyEmailButton" class="link btn">Copiar Email</a>
 						</p>
 					</div>
 				</div>
@@ -63,10 +62,28 @@
 						aria-label="WhatsApp"
 						class="contact__icon-whatsapp"
 					>
-						<!-- Icono de WhatsApp -->
 					</a>
 				</div>
 			</div>
 		</div>
+		<script>
+			document.getElementById("copyEmailButton").addEventListener("click", function () {
+				var email = "carlosmrz100@hotmail.com";
+				email.select();
+				document.execCommand("copy");
+
+				// Opcional: Feedback al usuario
+				this.textContent = "!Email Copiado!";
+			});
+
+			document.addEventListener("DOMContentLoaded", function () {
+				const menuToggle = document.querySelector(".menu-toggle");
+				const navMenu = document.querySelector(".navbar__menu");
+
+				menuToggle.addEventListener("click", function () {
+					navMenu.classList.toggle("active");
+				});
+			});
+		</script>
 	</body>
 </html>
