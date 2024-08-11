@@ -1,0 +1,179 @@
+/* .section-about: Sección "Acerca de" */
+
+/* .about-box: Contenedor de la sección "Acerca de" */
+.about-box {
+	color: var(--color-primertexto);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: stretch;
+	text-shadow: 1px 1px 1px var(--color-paleta-principal5);
+}
+
+/* .about-column: Información Personal */
+.about-column {
+	flex: 1;
+
+	text-align: justify;
+	border-radius: 2rem;
+}
+
+/* .about_column_skill: Habilidades en la sección "Acerca de" */
+.about_column_skill {
+	display: flex;
+	flex: 1;
+	background-size: cover;
+	background-position: center;
+	position: static;
+	background-repeat: no-repeat;
+}
+
+/* ? revisar luego 
+@keyframes cambiarImagen {
+	0%,
+	100% {
+		background-image: url("../../images/logo.png");
+	}
+	25% {
+		background-image: url("../../images/logomin.webp");
+	}
+	50% {
+		background-image: url("../../images/logo.gif");
+	}
+	75% {
+		background-image: url("../../images/logo.webp");
+	}
+} */
+
+/* Contenedor de habilidades */
+#movimiento_skills {
+	perspective: 1000px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.movimiento_skills-grid {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 2s;
+}
+
+.movimiento_skills-grid-skill {
+	position: absolute;
+	transition: transform 1.5s;
+	transform-style: preserve-3d;
+}
+
+.movimiento_skills-grid-skill img {
+	max-width: 3rem;
+	min-width: 2.5rem;
+}
+
+.movimiento_skills-grid-skill-tooltip {
+	position: absolute;
+
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: inherit;
+	color: var(--color-paleta-principal5);
+	padding: 1rem;
+	opacity: 0.9;
+	transition: opacity 0.3s;
+	pointer-events: none;
+	font-size: 0.8rem;
+}
+
+.movimiento_skills-grid-skill:hover {
+	opacity: 1;
+	color: var(--color-paleta-principal4);
+	background-color: var(--color-primary);
+}
+
+.movimiento_skills-grid-skill-tooltip:hover {
+	opacity: 0.7;
+	color: #000;
+	background-color: var(--color-primary);
+}
+
+/* .section-about: Sección "Acerca de" */
+.section-about {
+	display: flex;
+	padding: 1rem;
+	transition: all 0.8s;
+	background-color: transparent;
+	height: 100vh;
+	font-size: var(--medida-texto), 2rem;
+}
+
+/* .about-box: Contenedor de la sección "Acerca de" */
+.about-box {
+	color: var(--color-primertexto);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: stretch;
+	text-shadow: 1px 1px 1px var(--color-paleta-principal5);
+}
+
+/* .about-column: Información Personal */
+.about-column {
+	flex: 1;
+
+	text-align: justify;
+	border-radius: 2rem;
+}
+
+/* .about_column_skill: Habilidades en la sección "Acerca de" */
+
+/* Contenedor de habilidades */
+#movimiento_skills {
+	perspective: 1000px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+/* Ajustes de las columnas */
+.about-column,
+.about_column_skill {
+	flex: 1;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+	.about-box {
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	.about-column,
+	.about_column_skill {
+		max-width: 100%;
+	}
+	.texto_justificado {
+		font-size: var(--medida-texto-mediano);
+	}
+}
+
+/* Logo centrado */
+.skills-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	width: 10rem; /* Tamaño del logo */
+	height: 10rem; /* Tamaño del logo */
+	border-radius: 50%;
+	background: url("../../images/logo.png") no-repeat center center;
+	background-size: contain;
+	pointer-events: none; /* Permite que las skills puedan ser clickeables */
+}

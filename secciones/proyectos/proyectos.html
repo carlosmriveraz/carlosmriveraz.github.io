@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Proyectos</title>
+
+		<link rel="stylesheet" href="../../styles/styles.css" />
+		<link rel="stylesheet" href="../../styles/general.css" />
+		<link rel="stylesheet" href="./proyectos.css" />
+	</head>
+	<body>
+		<div class="contenedor__proyectos pulse">
+			<div class="proyectos__grid">
+				<div class="proyecto">
+					<h2 class="proyecto__title">Facturación Electrónica</h2>
+					<img
+						src="../../images/proyectos/fe.jpeg"
+						alt="Proceso de Facturación Electrónica"
+						class="proyecto__img"
+						loading="lazy"
+					/>
+					<div class="proyecto__content">
+						<div id="description1" class="proyecto__description collapsed">
+							<p>
+								Implementé sistemas de facturación electrónica global que unifica los estándares
+								para la emisión, recepción y procesamiento de facturas electrónicas. Este proyecto
+								mejora la eficiencia y la transparencia en las transacciones comerciales.
+							</p>
+							<p><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
+							<ul>
+								<li>Desarrollé interfaces de usuario intuitivas y responsivas.</li>
+								<li>Integré sistemas de validación y seguridad de datos.</li>
+							</ul>
+						</div>
+						<div class="toggle-button" onclick="toggleDescription('description1')">Mostrar más</div>
+					</div>
+				</div>
+
+				<div class="proyecto">
+					<h2 class="proyecto__title">Precios Históricos del Dólar en Colombia</h2>
+					<img
+						src="../../images/proyectos/dolar.jpeg"
+						alt="Análisis de Precios del Dólar"
+						class="proyecto__img"
+						loading="lazy"
+					/>
+					<div class="proyecto__content">
+						<div id="description2" class="proyecto__description collapsed">
+							<p>
+								Desarrollé un sistema para analizar y predecir los precios históricos del dólar en
+								Colombia utilizando inteligencia artificial y herramientas de Business Intelligence.
+								Este proyecto proporciona insights valiosos para la toma de decisiones financieras.
+							</p>
+							<p><strong>Tecnologías:</strong> Python, AWS QuickSight, RDS, IA, API</p>
+							<ul>
+								<li>Implementación de un dashboard interactivo en QuickSight.</li>
+								<li>Uso de modelos de IA para predicciones precisas.</li>
+							</ul>
+							<a href="#bi" class="link btn btn-outline" target="_blank" rel="noopener"
+								>Ver mucho más</a
+							>
+						</div>
+						<div class="toggle-button" onclick="toggleDescription('description2')">Mostrar más</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function toggleDescription(id) {
+				const description = document.getElementById(id);
+				const toggleButton = description.nextElementSibling;
+				description.classList.toggle("collapsed");
+				toggleButton.textContent = description.classList.contains("collapsed")
+					? "Mostrar más"
+					: "Mostrar menos";
+			}
+		</script>
+	</body>
+</html>

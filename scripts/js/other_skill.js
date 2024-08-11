@@ -178,12 +178,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		"text-100",
 	];
 	const colors = [
-		"var(--color-paleta1)",
-		"var(--color-paleta2)",
-		"var(--color-paleta3)",
-		"var(--color-paleta4)",
-		"var(--color-paleta5)",
-		"var(--color-paleta6)",
+		"var(--color-paleta-principal1)",
+		"var(--color-paleta-principal2)",
+		"var(--color-paleta-principal3)",
+		"var(--color-paleta-principal4)",
+		"var(--color-paleta-principal5)",
+		"var(--color-paleta-principal6)",
 	];
 	const sizes = [
 		"var(--size-tercertitulo)",
@@ -195,17 +195,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	skillsItems.forEach((item) => {
 		item.addEventListener("mouseover", () => {
 			// Elegir una animación, color y tamaño al azar
-			const randomAnimation =
-				animations[Math.floor(Math.random() * animations.length)];
-			const randomColor =
-				colors[Math.floor(Math.random() * colors.length)];
+			const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+			const randomColor = colors[Math.floor(Math.random() * colors.length)];
 			const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
 
 			// Aplicar animación
-			item.classList.add(
-				"animate__animated",
-				`animate__${randomAnimation}`
-			);
+			item.classList.add("animate__animated", `animate__${randomAnimation}`);
 
 			// Cambiar color y tamaño del texto
 			item.style.color = randomColor;
@@ -221,10 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		item.addEventListener("mouseout", () => {
 			// Eliminar todas las animaciones
 			animations.forEach((animation) => {
-				item.classList.remove(
-					"animate__animated",
-					`animate__${animation}`
-				);
+				item.classList.remove("animate__animated", `animate__${animation}`);
 			});
 
 			// Revertir color y tamaño del texto
@@ -265,13 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const hoverMessage = document.getElementById("hover-message");
 	const messageContent = document.getElementById("message-content");
 
-	const messages = [
-		"Amo",
-		"A",
-		"Mi",
-		"Mamá",
-		"...",
-	];
+	const messages = ["Amo", "A", "Mi", "Mamá", "..."];
 
 	let messageIndex = 0;
 

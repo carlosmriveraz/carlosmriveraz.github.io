@@ -1,0 +1,109 @@
+@import url("../../styles/general.css");
+@import url("../../styles/movil.css");
+@import url("../../styles/styles.css");
+
+/* Estilo general para la sección de contacto */
+.contact {
+	padding: 2rem;
+	text-align: center; /* Alinea el contenido al centro */
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contact-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Alinea el contenido al centro */
+	gap: 2rem;
+}
+
+/* Logo en el centro */
+.contact-logo {
+	text-align: center;
+	flex: 1 1 100%;
+}
+
+.flaming-image {
+	max-width: 100px;
+	height: auto;
+	border-radius: var(--borde-reducido);
+}
+
+.medida-titulo {
+	margin-top: 1rem;
+}
+
+/* Contenido principal */
+.contact-info {
+	flex: 1 1 auto; /* Permite que este contenido crezca según el espacio disponible */
+	text-align: center;
+}
+
+.contact-image {
+	margin: 1rem 0;
+}
+
+.contact-details {
+	margin-top: 1rem;
+}
+
+#copyEmailButton {
+	margin-left: 1rem;
+}
+
+/* Redes sociales en la parte inferior y centradas */
+.contact-social {
+	display: flex;
+	justify-content: center; /* Centra los iconos horizontalmente */
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.contact__icon-linkedin,
+.contact__icon-github,
+.contact__icon-whatsapp {
+	display: inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	background-color: #ffffff;
+	border-radius: 50%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: transform 1.3s, box-shadow 0.3s;
+	color: var(--color-paleta-principal6);
+	text-decoration: none;
+}
+
+/* Botones y enlaces */
+.link.btn.btn-full {
+	margin-top: 1rem;
+}
+
+.contact__icon-whatsapp {
+	background: url("../../images/social/svgnwhatsapp.svg");
+	width: 3rem;
+	background-position: center;
+	background-size: contain;
+}
+
+.contact__icon-linkedin {
+	background: url("../../images/social/linkedin.svg");
+}
+
+.contact__icon-github {
+	background: url("../../images/social/github.svg");
+}
+
+/* Título al final */
+.contact-title {
+	margin-top: 2rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+}

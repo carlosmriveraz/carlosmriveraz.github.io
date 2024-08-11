@@ -1,0 +1,39 @@
+/* ********* BTN *********** */
+
+.btn,
+.btn:link,
+.btn:visited {
+	cursor: pointer;
+	display: inline-block;
+	padding: 1rem 2rem;
+	color: var(--color-primary);
+	border-radius: 2rem;
+	border: 3px solid;
+	background-color: var(--color-paleta-principal1), blue;
+	transition: all 0.9s;
+}
+
+.btn-outline:link,
+.btn-outline:visited {
+	border-color: var(--color-primary);
+	background-color: var(--color-primary), #f0f3f6;
+}
+
+.btn-outline:hover,
+.btn-outline:active {
+	color: #f0f3f6;
+	background-color: var(--color-primary);
+}
+
+.btn-full:link,
+.btn-full:visited {
+	color: var(--color-paleta-principal2), #f0f3f6;
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.btn-full:hover,
+.btn-full:active {
+	background-color: var(--color-paleta-principal3);
+	border-color: var(--color-paleta-principal2);
+}

@@ -1,0 +1,96 @@
+:root {
+	/* Alturas */
+	--altura-completa: 100%;
+	--altura-contenido: 70rem;
+	--altura-grande: 80vh;
+	--altura-mediano: 60vh;
+	--altura-minima: 20vh;
+	--altura-navbar: 1.2rem;
+	--altura-reducido: 40vh;
+
+	/* Anchos */
+	--ancho-completo: 100%;
+	--ancho-contenido: 70rem;
+	--ancho-grande: 75%;
+	--ancho-maximo: 90%;
+	--ancho-mediano: 50%;
+	--ancho-minimo: 10%;
+	--ancho-reducido: 25%;
+	--ancho-menu: 100%;
+
+	/* Bordes */
+	/* Bordes */
+	--borde-estandar: 1rem;
+	--borde-extra-grande: 3rem;
+	--borde-extra-reducido: 0.0625rem;
+	--borde-grande: 2rem;
+	--borde-mediano: 1.5rem;
+	--borde-reducido: 0.125rem;
+
+	/* Colores principales */
+	--color-navbar: #00ffff9a;
+	--color-hover: #00ffff;
+	--color-menu-principal: #00e5ee;
+	--color-menu-principal-secundario: #c0c0c0;
+	--color-principal: #007bff;
+	--color-primertexto: #ffffff;
+	--color-segundotexto: #4cc654;
+	--color-subtitulo: #caf0f8;
+	--color-titulo: #ffffff;
+	--color-titulo-grande: #ffffff;
+
+	/* Medidas textos */
+	--medida-texto: 2.1rem;
+	--medida-texto-extra-grande: 3rem;
+	--medida-texto-extra-reducido: 0.6rem;
+	--medida-texto-grande: 2.4rem;
+	--medida-texto-mediano: 1.6rem;
+	--medida-texto-reducido: 1rem;
+
+	/* Medidas títulos */
+	--medida-titulo: 6rem;
+	--medida-titulo-extra-grande: 8rem;
+	--medida-titulo-extra-reducido: 0.5rem;
+	--medida-titulo-grande: 7rem;
+	--medida-titulo-mediano: 2.5rem;
+	--medida-titulo-reducido: 3rem;
+
+	/* Márgenes */
+	--margen-extra-grande: 10rem;
+	--margen-extra-reducido: 0.25rem;
+	--margen-grande: 2rem;
+	--margen-mediano: 1rem;
+	--margen-reducido: 0.5rem;
+
+	/* Rellenos */
+	--relleno-extra-grande: 3rem;
+	--relleno-extra-reducido: 0.25rem;
+	--relleno-grande: 2rem;
+	--relleno-mediano: 1rem;
+	--relleno-reducido: 0.5rem;
+
+	/* Paleta de colores */
+	--color-paleta-principal1: hsla(239, 94%, 19%, 0.854);
+	--color-paleta-principal2: #007bff;
+	--color-paleta-principal3: #0077b6;
+	--color-paleta-principal4: #00c3ff;
+	--color-paleta-principal5: #00b4d8;
+	--color-paleta-principal6: #90e0ef;
+	--color-paleta-principal7: #caf0f8;
+
+	/* Colores */
+
+	/* Sombra del texto */
+	--sombra-1: 1px 1px 0;
+	--sombra-2: 2px 2px 0;
+	--sombra-3: 3px 3px 0;
+	--sombra-4: 4px 4px 0;
+
+	--gradiente-azul: linear-gradient(
+		18deg,
+		rgba(4, 37, 78, 1) 3%,
+		rgba(138, 84, 162, 1) 20%,
+		rgba(89, 84, 164, 1) 60%,
+		rgba(138, 213, 235, 1) 100%
+	);
+}

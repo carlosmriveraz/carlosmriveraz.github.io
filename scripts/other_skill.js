@@ -178,12 +178,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		"text-100",
 	];
 	const colors = [
-		"var(--color-paleta1)",
-		"var(--color-paleta2)",
-		"var(--color-paleta3)",
-		"var(--color-paleta4)",
-		"var(--color-paleta5)",
-		"var(--color-paleta6)",
+		"var(--color-paleta-principal1)",
+		"var(--color-paleta-principal2)",
+		"var(--color-paleta-principal3)",
+		"var(--color-paleta-principal4)",
+		"var(--color-paleta-principal5)",
+		"var(--color-paleta-principal6)",
 	];
 	const sizes = [
 		"var(--size-tercertitulo)",

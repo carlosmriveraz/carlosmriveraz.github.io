@@ -1,0 +1,77 @@
+@media (max-width: 1200px) {
+	/* Para pantallas grandes como desktops */
+	.titulo h1 {
+		font-size: var(--medida-titulo); /* Reducir ligeramente el tamaño */
+	}
+
+	.titulo span {
+		font-size: var(--medida-titulo-extra-grande); /* Ajustar el tamaño de las letras grandes */
+	}
+	.doble_altura iframe {
+		height: 90vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+	}
+}
+
+@media (max-width: 992px) {
+	/* Para pantallas medianas como tablets en modo horizontal */
+
+	.titulo h1 {
+		font-size: 4.5rem;
+		word-break: break-all; /* Fuerza el salto de línea en cualquier punto de la palabra */
+		width: 100%;
+	}
+
+	.titulo span {
+		font-size: 5.5rem;
+	}
+	.doble_altura iframe {
+		height: 110vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+	}
+}
+
+@media (max-width: 768px) {
+	/* Para tablets pequeñas y dispositivos móviles */
+	.titulo h1 {
+		font-size: 5.5rem;
+	}
+
+	.titulo span {
+		font-size: 6rem;
+	}
+	.doble_altura iframe {
+		height: 120vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+	}
+}
+
+@media (max-width: 576px) {
+	/* Para dispositivos móviles más pequeños */
+	.titulo h1 {
+		font-size: 3.5rem;
+	}
+
+	.titulo span {
+		font-size: 4.5rem;
+	}
+	.doble_altura iframe {
+		height: 130vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+	}
+}
+
+@media (max-width: 375px) {
+	/* Para dispositivos móviles muy pequeños (como iPhone SE) */
+	.titulo h1,
+	h5 {
+		font-size: 3rem;
+		word-break: break-all; /* Fuerza el salto de línea en cualquier punto de la palabra */
+		width: 100%;
+	}
+
+	.titulo span {
+		font-size: 4rem;
+	}
+
+	.doble_altura iframe {
+		height: 170vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+	}
+}
+

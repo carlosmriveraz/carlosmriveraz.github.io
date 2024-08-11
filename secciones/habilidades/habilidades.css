@@ -1,0 +1,53 @@
+@import url("../../styles/styles.css");
+@import url("../../styles/general.css");
+
+/*************other skill **************/
+/* Estilo para la sección de trabajos */
+
+.other-skills-list {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	transition: all 3s;
+}
+
+.other-skills-item {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin: 1rem 2rem;
+	opacity: 0;
+	transform: translateX(-20px);
+	transition: all 2s ease;
+	text-align: center;
+}
+
+.other-skills-item:hover {
+	transform: translateX(0);
+	opacity: 1;
+	background-color: var(--color-hover);
+}
+
+.other-skills-item:nth-child(1) {
+	animation-delay: 6s;
+}
+
+.other-skills-item:nth-child(2) {
+	animation-delay: 10s;
+}
+
+.other-skills-item:nth-child(3) {
+	animation-delay: 3s;
+}
+
+.other-skills-item:nth-child(4) {
+	animation-delay: 4s;
+}
+
+.other-skills-item:nth-child(5) {
+	animation-delay: 6s;
+}
+
+.other-skills-icon {
+	color: var(--color-primary);
+}
