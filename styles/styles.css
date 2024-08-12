@@ -1,4 +1,5 @@
 @import url("./variables.css");
+@import url("./contenedores/contenedores.css");
 @import url("./util/fuentes_textos.css");
 @import url("./util/colores.css");
 @import url("./modulos/botones.css");
@@ -12,7 +13,6 @@
 	margin: 1rem;
 }
 
-.proyectos,
 .bi {
 	display: flex;
 	flex-wrap: nowrap;

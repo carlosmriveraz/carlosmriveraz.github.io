@@ -14,7 +14,7 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	font-size: var(--medida-texto-mediano);
+	font-size: var(--medida-texto-reducido);
 }
 
 .other-skills-item {
@@ -24,6 +24,7 @@
 	transform: translateX(-20px);
 	transition: all 2s ease;
 	text-align: center;
+	font-size: var(--medida-texto-mediano);
 }
 
 .other-skills-item:hover {

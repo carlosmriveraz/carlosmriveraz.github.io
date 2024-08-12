@@ -73,10 +73,10 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="styles/movil.css" />
+
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/general.css" />
-		<link rel="stylesheet" href="secciones/contacto/contacto.css" />
+		<link rel="stylesheet" href="styles/movil.css" />
 	</head>
 	<body>
 		<header>
@@ -126,80 +126,87 @@
 		</header>
 
 		<main class="combined-effects-pulse">
-			<iframe
-				src="secciones/inicio/inicio.html"
-				class="borde-redondeado-grande"
-				frameborder="0"
-				scrolling="no"
-				title="inicio"
-				id="inicio"
-			></iframe>
-
+			<div class="embed_contenedor aspect-ratio-4-3">
+				<iframe
+					src="secciones/inicio/inicio.html"
+					class="borde-redondeado-grande"
+					frameborder="0"
+					scrolling="no"
+					title="inicio"
+					id="inicio"
+				></iframe>
+			</div>
 			<!-- Secciones del sitio -->
-			<iframe
-				src="secciones/sobre_mi/sobre_mi.html"
-				class="borde-redondeado-grande doble_altura"
-				title="sobre_mi"
-				frameborder="0"
-				scrolling="no"
-				id="sobre_mi"
-			>
-			</iframe>
 
+			<div class="embed_contenedor aspect-ratio-2-3">
+				<iframe
+					src="secciones/sobre_mi/sobre_mi.html"
+					title="sobre_mi"
+					frameborder="0"
+					scrolling="no"
+					id="sobre_mi"
+				>
+				</iframe>
+			</div>
 			<!-- SKILLS SECTION -->
 			<!-- SKILLS SECTION -->
-
-			<iframe
-				src="secciones/tecnologias/tecnologias.html"
-				id="tecnologias"
-				class="slide-in-left"
-				title="tecnologias"
-				frameborder="0"
-				scrolling="no"
-			>
-			</iframe>
-
+			<div class="embed_contenedor aspect-ratio-1-1">
+				<iframe
+					src="secciones/tecnologias/tecnologias.html"
+					id="tecnologias"
+					class="slide-in-left"
+					title="tecnologias"
+					frameborder="0"
+					scrolling="no"
+				>
+				</iframe>
+			</div>
 			<!-- Other Skills -->
-
-			<iframe
-				src="secciones/habilidades/habilidades.html"
-				id="habilidades"
-				class="slide-in-left"
-				title="habilidades"
-				frameborder="0"
-				scrolling="no"
-			></iframe>
-			<!-- works -->
-
-			<iframe
-				id="proyectos"
-				src="secciones/proyectos/proyectos.html"
-				class="slide-in-left"
-				title="proyectos"
-				frameborder="0"
-				scrolling="no"
-			></iframe>
-
-			<iframe
-				id="business-intelligence"
-				src="secciones/bi/bi.html"
-				title="bi"
-				frameborder="0"
-				scrolling="no"
-				class="bi"
-			>
-				<div class="final">
-					<h2 class="heading-secondary"><span>B</span>usiness <span>I</span>ntelligence</h2>
-				</div>
-			</iframe>
-			<iframe
-				src="secciones/contacto/contacto.html"
-				id="contacto"
-				class="slide-in-left"
-				title="contacto"
-				frameborder="0"
-				scrolling="no"
-			></iframe>
+			<div class="embed_contenedor aspect-ratio-4-5">
+				<iframe
+					src="secciones/habilidades/habilidades.html"
+					id="habilidades"
+					class="slide-in-left"
+					title="habilidades"
+					frameborder="0"
+					scrolling="no"
+				></iframe>
+				<!-- works -->
+			</div>
+			<div class="embed_contenedor aspect-ratio-7-10">
+				<iframe
+					id="proyectos"
+					src="secciones/proyectos/proyectos.html"
+					class="slide-in-left"
+					title="proyectos"
+					frameborder="0"
+					scrolling="no"
+				></iframe>
+			</div>
+			<div class="embed_contenedor aspect-ratio-1-1">
+				<iframe
+					id="business-intelligence"
+					src="secciones/bi/bi.html"
+					title="bi"
+					frameborder="0"
+					scrolling="no"
+					class="bi"
+				>
+					<div class="final">
+						<h2 class="heading-secondary"><span>B</span>usiness <span>I</span>ntelligence</h2>
+					</div>
+				</iframe>
+			</div>
+			<div class="embed_contenedor">
+				<iframe
+					src="secciones/contacto/contacto.html"
+					id="contacto"
+					class="slide-in-left"
+					title="contacto"
+					frameborder="0"
+					scrolling="no"
+				></iframe>
+			</div>
 		</main>
 		<script>
 			const miSonido = new Audio("./assets/music/dbz.wav");

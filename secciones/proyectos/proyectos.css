@@ -3,6 +3,7 @@
 .contenedor__proyectos {
 	margin: 0 auto; /* Centra el contenedor */
 	padding: 2rem;
+	font-size: var(--medida-texto);
 }
 
 .proyectos__grid {

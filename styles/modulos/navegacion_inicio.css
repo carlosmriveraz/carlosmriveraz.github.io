@@ -3,20 +3,21 @@
 
 /* Navbar header menu de navegación */
 .navbar {
-	margin-top: 1rem;
-	width: 98%;
+	margin: 1rem 1rem;
+	width: 95%;
 	position: fixed;
-	background-color: rgba(0, 255, 255, 0.2); /* Semi-transparente */
+	background-color: #00ffffe1; /* Semi-transparente */
 	background-size: 5%;
 	height: var(--altura-navbar);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border-radius: 1rem;
+	border-radius: 2rem;
 	border: 1px solid transparent;
 	white-space: nowrap;
 	font-size: medium;
 	transition: background-color 0.8s ease;
+	z-index: 1000;
 }
 
 .navbar span {
