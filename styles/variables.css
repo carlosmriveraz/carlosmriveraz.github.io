@@ -1,8 +1,5 @@
 :root {
 	/* Alturas */
-	--fuente-primaria: "Montserrat", serif;
-	--fuente-secondaria: "Roboto", sans-serif;
-	--fuente-terciaria: "Playwrite US Trad", cursive;
 	--altura-completa: 100%;
 	--altura-contenido: 70rem;
 	--altura-grande: 80vh;
@@ -36,17 +33,19 @@
 	--color-menu-principal: #00e5ee;
 	--color-menu-principal-secundario: #ffffff;
 	--color-principal: #007bff;
-	--color-texto: #ffffff;
+	--color-primertexto: #ffffff;
+	--color-segundotexto: #4cc654;
+	--color-subtitulo: #caf0f8;
 	--color-titulo: #ffffff;
 	--color-titulo-grande: #ffffff;
 
 	/* Medidas textos */
-	--medida-texto: 2.2rem;
+	--medida-texto: 2.1rem;
 	--medida-texto-extra-grande: 3rem;
 	--medida-texto-extra-reducido: 0.6rem;
-	--medida-texto-grande: 2.5rem;
-	--medida-texto-mediano: 1.8rem;
-	--medida-texto-reducido: 1.2rem;
+	--medida-texto-grande: 2.4rem;
+	--medida-texto-mediano: 1.6rem;
+	--medida-texto-reducido: 1rem;
 
 	/* Medidas títulos */
 	--medida-titulo: 6rem;

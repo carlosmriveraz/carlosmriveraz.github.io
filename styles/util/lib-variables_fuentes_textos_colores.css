@@ -31,7 +31,7 @@
 	--color-menu-principal: #00e5ee;
 	--color-menu-principal-secundario: #c0c0c0;
 	--color-principal: #007bff;
-	--color-texto: #ffffff;
+	--color-primertexto: #ffffff;
 	--color-segundotexto: #4cc654;
 	--color-subtitulo: #caf0f8;
 	--color-titulo: #ffffff;
@@ -276,7 +276,7 @@
 	padding: var(--relleno-mediano);
 	border-radius: var(--borde-estandar);
 	background-color: var(--color-paleta-principal1);
-	color: var(--color-texto);
+	color: var(--color-primertexto);
 	font-size: var(--medida-texto);
 }
 .roboto-condensed-con {

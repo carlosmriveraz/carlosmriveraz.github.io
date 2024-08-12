@@ -4,7 +4,6 @@
 
 /* Estilo general para la sección de contacto */
 .contact {
-	font-size: var(--medida-texto);
 	padding: 2rem;
 	text-align: center; /* Alinea el contenido al centro */
 }

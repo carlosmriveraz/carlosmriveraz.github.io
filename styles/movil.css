@@ -7,6 +7,9 @@
 	.titulo h1 span {
 		font-size: var(--medida-titulo-extra-grande); /* Ajustar el tamaño de las letras grandes */
 	}
+	.doble_altura iframe {
+		height: 90vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+	}
 }
 
 @media (max-width: 992px) {
@@ -15,11 +18,14 @@
 	.titulo h1 {
 		font-size: 4.5rem;
 		word-break: break-all; /* Fuerza el salto de línea en cualquier punto de la palabra */
-		width: 120%;
+		width: 100%;
 	}
 
 	.titulo h1 span {
 		font-size: 5.5rem;
+	}
+	.doble_altura iframe {
+		height: 110vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
 	}
 }
 
@@ -31,6 +37,9 @@
 
 	.titulo h1 span {
 		font-size: 5rem;
+	}
+	.doble_altura iframe {
+		height: 120vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
 	}
 }
 
@@ -45,6 +54,9 @@
 	}
 	.titulo h5 span {
 		font-size: 3rem;
+	}
+	.doble_altura iframe {
+		height: 130vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
 	}
 }
 
@@ -62,6 +74,10 @@
 	}
 	.titulo h5 span {
 		font-size: 3rem;
+	}
+
+	.doble_altura iframe {
+		height: 170vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
 	}
 }
 
