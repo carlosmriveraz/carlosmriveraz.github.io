@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Variables CSS</title>
+  <link rel="stylesheet" href="./variables/configuracion.css">
+</head>
+<body>
+  <div class="variable-display">
+    <!-- Variables de Imágenes -->
+    <div class="variable-display__item">
+      <h2>Variables de Imágenes</h2>
+      <span><code>--logo-url: url("/imagenes/logo.png");</code></span><span><img src="logo.png"></span>
+      <span><code>--logo-width: 9.375rem; /* 150px */</code></span>
+      <br>
+      <div class="linea-horizontal"></div> <!-- Línea horizontal para --logo-width -->
+      <br>
+      <span><code>--logo-height: 3.125rem; /* 50px */</code></span>
+      <br>
+        <!-- Ejemplos de líneas para medidas -->
+ <div class="linea-vertical"></div>   <!-- Línea vertical para --logo-height -->
+ <br>
+      <span><code>--icono-url: url("/imagenes/icono.svg");</code></span>
+      <span><code>--icono-width: 1.5rem; /* 24px */</code></span>
+      <span><code>--icono-height: 1.5rem; /* 24px */</code></span>
+    </div>
+
+    <!-- Variables de Colores -->
+    <div class="variable-display__item">
+      <h2>Variables de Colores</h2>
+      <span><code>--color: #3498db;</code></span>
+
+        <!-- Caja para colores -->
+  <div class="caja-color" style="background-color: var(--color);"></div>
+
+      <span><code>--color-primario: #258741;</code></span>
+      <div class="caja-color" style="background-color: var(--color-primario);"></div>
+   
+      <span><code>--color-secundario: #2ecc71;</code></span>
+      <div class="caja-color" style="background-color: var(--color-secundario);"></div>
+
+      <span><code>--color-terciario: #9b59b6;</code></span>
+    <div class="caja-color" style="background-color: var(--color-terciario);"></div>
+
+
+      <span><code>--color-hover: #00ffff
+
+        <div class="caja-color" style="background-color: var(--color-hover);"></div>
+    
+    </div>
+
+    <!-- Variables de Fondo -->
+    <div class="variable-display__item">
+      <h2>Variables de Fondo</h2>
+      <span><code>--fondo: #ecf0f1;</code></span>
+      <span><code>--fondo-secundario: #bdc3c7;</code></span>
+      <span><code>--fondo-terciario: #95a5a6;</code></span>
+    </div>
+
+    <!-- Variables de Texto -->
+    <div class="variable-display__item">
+      <h2>Variables de Texto</h2>
+      <span><code>--texto: #2c3e50;</code></span>
+      <span><code>--texto-secundario: #7f8c8d;</code></span>
+      <span><code>--borde: #dcdcdc;</code></span>
+    </div>
+
+    <!-- Variables de Fuentes -->
+    <div class="variable-display__item">
+      <h2>Variables de Fuentes</h2>
+      <span><code>--fuente-primaria: "Montserrat", sans-serif;</code></span>
+      <span><code>--fuente-secundaria: "Georgia", serif;</code></span>
+      <span><code>--fuente-util: "Courier New", monospace;</code></span>
+    </div>
+
+    <!-- Variables de Tamaño de Fuente -->
+    <div class="variable-display__item">
+      <h2>Variables de Tamaño de Fuente</h2>
+      <span><code>--tamano-titulo: 2rem; /* 32px */</code></span>
+      <span><code>--tamano-subtitulo: 1.5rem; /* 24px */</code></span>
+      <span><code>--tamano-texto: 1rem; /* 16px */</code></span>
+      <span><code>--tamano-texto-pequeno: 0.875rem; /* 14px */</code></span>
+    </div>
+
+    <!-- Variables de Espaciado -->
+    <div class="variable-display__item">
+      <h2>Variables de Espaciado</h2>
+      <span><code>--margen: 1.5rem; /* 24px */</code></span>
+      <span><code>--padding: 1rem; /* 16px */</code></span>
+      <span><code>--espaciado-entre-lineas: 1.6;</code></span>
+    </div>
+
+    <!-- Variables de Bordes -->
+    <div class="variable-display__item">
+      <h2>Variables de Bordes</h2>
+      <span><code>--borde: 1px solid #dcdcdc;</code></span>
+      <span><code>--borde-fino: 0.5px solid #bdc3c7;</code></span>
+      <span><code>--borde-redondeado: 5px;</code></span>
+    </div>
+
+    <!-- Variables de Otros Estilos -->
+    <div class="variable-display__item">
+      <h2>Variables de Otros Estilos</h2>
+      <span><code>--sombra-caja: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1);</code></span>
+      <span><code>--sombra-texto: 0px 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3);</code></span>
+    </div>
+  </div>
+
+
+  <!-- Caja para imágenes -->
+  <div class="imagen__logo"></div>
+  <div class="imagen__icono"></div>
+
+</body>
+</html>

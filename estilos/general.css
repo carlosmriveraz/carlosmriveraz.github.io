@@ -1,0 +1,89 @@
+/** @format */
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body[data-theme="dark-theme"] {
+  background-image: url(../images/background/bk.jpg);
+
+  color: var(--color-texto), #fff;
+  text-align: center;
+}
+
+body {
+  background: url(../images/background/bk.jpg);
+  background-color: var(--color-paleta6);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-titulo);
+  font-family: var(--fuente-principal);
+
+  font-weight: 400;
+
+  transition: background-color 0.9s, color 0.3s;
+  text-align: center;
+  text-shadow: 1px 1px 11px var(--color-paleta6);
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+
+header {
+  height: 5%;
+}
+
+a {
+  color: var(--color-texto), #ffffff;
+}
+iframe {
+  height: 100vh;
+  width: 100%;
+  border-radius: 0.8rem;
+  border: 0.1px solid var(--color-borde);
+  overflow-x: auto; /* Solo barra de desplazamiento horizontal */
+  overflow-y: hidden; /* Sin barra de desplazamiento vertical */
+  /* Ocupa el 100% de la altura de la pantalla */
+}
+span {
+  color: var(--color-paleta2);
+  font-size: var(--medida-texto);
+  font-weight: 600;
+}
+
+li {
+  padding: 0;
+  margin-right: var(--margen-reducida);
+}
+
+h3 {
+  font-size: var(--size-tercertitulo);
+}
+
+h4 {
+  font-size: var(--size-textosmall);
+}
+
+/* Estilos para las secciones del sitio web */
+section {
+  margin-top: 2rem;
+  overflow: hidden;
+  /* Oculta scrolls horizontal y vertical */
+  padding: 1rem 1rem;
+
+  background-color: transparent;
+}
+
+/* Estilos para el footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
