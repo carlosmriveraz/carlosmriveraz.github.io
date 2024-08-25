@@ -1,0 +1,103 @@
+/** @format */
+
+:root {
+	/* Alturas */
+	--altura-completa: 100vh;
+	--altura-contenido: 70rem;
+	--altura-grande: 80vh;
+	--altura-mediano: 60vh;
+	--altura-minima: 20vh;
+	--altura-navbar: 2vh;
+	--altura-reducido: 40vh;
+
+	/* Anchos */
+	--ancho-completo: 100%;
+	--ancho-contenido: 70rem;
+	--ancho-grande: 75%;
+	--ancho-maximo: 90%;
+	--ancho-mediano: 50%;
+	--ancho-minimo: 10%;
+	--ancho-reducido: 25%;
+	--ancho-menu: 100%;
+
+	/* Bordes */
+	--borde-estandar: 1rem;
+	--borde-extra-grande: 3rem;
+	--borde-extra-reducido: 0.0625rem;
+	--borde-grande: 2rem;
+	--borde-mediano: 1.5rem;
+	--borde-reducido: 0.125rem;
+
+	/* Colores principales */
+	--color-hover: #00ffff;
+	--color-menu: #00e5ee;
+	--color-menu-secundario: #c0c0c0;
+	--color: #007bff;
+	--color-texto: #ffffff;
+	--color-segundotexto: #4cc654;
+	--color-subtitulo: #caf0f8;
+	--color-titulo: #ffffff;
+	--color-titulo-grande: #ffffff;
+
+	/* Medidas textos */
+	--medida-texto: 3rem;
+	--medida-texto-extra-grande: 3rem;
+	--medida-texto-extra-reducido: 0.5rem;
+	--medida-texto-grande: 2rem;
+	--medida-texto-mediano: 1.5rem;
+	--medida-texto-reducido: 1rem;
+
+	/* Medidas títulos */
+	--medida-titulo: 4rem;
+	--medida-titulo-extra-grande: 5rem;
+	--medida-titulo-extra-reducido: 0.5rem;
+	--medida-titulo-grande: 2rem;
+	--medida-titulo-mediano: 1.5rem;
+	--medida-titulo-reducido: 1rem;
+
+	/* Márgenes */
+	--margen-extra-grande: 10rem;
+	--margen-extra-reducido: 0.25rem;
+	--margen-grande: 2rem;
+	--margen-mediano: 1rem;
+	--margen-reducido: 0.5rem;
+
+	/* Rellenos */
+	--relleno-extra-grande: 3rem;
+	--relleno-extra-reducido: 0.25rem;
+	--relleno-grande: 2rem;
+	--relleno-mediano: 1rem;
+	--relleno-reducido: 0.5rem;
+
+	/* Paleta de colores */
+	--color-paleta1: #03045e;
+	--color-paleta2: #007bff;
+	--color-paleta3: #0077b6;
+	--color-paleta4: #00c3ff;
+	--color-paleta5: #00b4d8;
+	--color-paleta6: #90e0ef;
+	--color-paleta7: #caf0f8;
+
+	/* Colores */
+
+	--color-sombra-1: #03045e;
+	--color-sombra-2: #007bff;
+	--color-sombra-3: #00c3ff;
+	--color-sombra-4: #00b4d8;
+
+	/* Sombra del texto */
+	--sombra-1: 1px 1px 0;
+	--sombra-2: 2px 2px 0;
+	--sombra-3: 3px 3px 0;
+	--sombra-4: 4px 4px 0;
+}
+/* Estilo para el texto con efecto 3D */
+.texto-3d {
+	font-size: var(--medida-texto); /* Tamaño de fuente */
+	font-weight: bold; /* Grosor de la fuente */
+	color: var(--color); /* Color del texto */
+	text-shadow: var(--sombra-1) var(--color-sombra-1), /* Primera sombra del texto */ var(--sombra-2) var(--color-sombra-2),
+		/* Segunda sombra del texto */ var(--sombra-3) var(--color-sombra-3), /* Tercera sombra del texto */ var(--sombra-4) var(--color-sombra-4); /* Cuarta sombra del texto */
+	transform: translateZ(0); /* Establece un contexto de apilamiento para el texto */
+}
+

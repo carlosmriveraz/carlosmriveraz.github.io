@@ -1,0 +1,1229 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro y Kanban</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #282c34;
+        color: #61dafb;
+        transition: background-color 0.5s ease;
+        height: 100vh;
+      }
+      .logo {
+        width: 2.5rem;
+        position: fixed;
+        top: 1%;
+        left: 1%;
+
+        background-size: 50%;
+        background-repeat: no-repeat;
+      }
+
+      .container {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .timer-kanban {
+        display: flex;
+        flex: 1; /* Ocupa todo el espacio disponible */
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 10px;
+      }
+
+      .timer,
+      .kanban {
+        background-color: #444c56;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s;
+      }
+
+      .timer:hover,
+      .kanban:hover {
+        background-color: #61dafb;
+        color: #444c56;
+      }
+
+      .timer:hover button,
+      .kanban:hover button {
+        background-color: #0ff;
+        color: #444c56;
+      }
+
+      .timer {
+        margin-bottom: 20px;
+      }
+
+      .time {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .clock {
+        background: radial-gradient(circle, #3a3f47, #282c34); /* Gradiente circular */
+        border-radius: 10px;
+        border-color: #61dafb;
+        box-shadow: inset 0 0 10px #61dafb55;
+        padding: 20px;
+        font-size: 24px;
+        color: #61dafb;
+        margin-top: 2rem;
+        border: 1px solid #61dafb;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin: 5px;
+        background-color: #61dafb;
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #21a1f1;
+      }
+
+      .kanban {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .kanban_menu {
+        margin: 0;
+        display: flex;
+        flex-flow: column wrap;
+      }
+
+      .fila {
+        border: 0.2px solid #21a1f1;
+        border-radius: 10px;
+        border-color: #61dafb;
+        box-shadow: inset 0 0 10px #61dafb55;
+      }
+
+      .fila1 {
+        flex: 8; /* La primera fila ocupa el 80% del espacio */
+      }
+
+      .fila2 {
+        flex: 2; /* La segunda fila ocupa el 20% del espacio restante */
+      }
+
+      .fila2 input {
+        width: 95%;
+        height: 5%;
+      }
+
+      .kanban .columna {
+        background-color: #3a3f47;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 5px;
+        flex-grow: 1;
+        flex-basis: calc(50% - 20px); /* Ajuste para el margen */
+      }
+
+      .kanban .columna h3 {
+        text-align: center;
+        color: #61dafb;
+      }
+
+      .kanban .columna ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .kanban .tarea {
+        background-color: #61dafb;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 10px;
+        color: #000;
+        cursor: pointer;
+      }
+
+      .hamburguesa {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        width: 30px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .hamburguesa span {
+        background-color: #61dafb;
+        height: 4px;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .menu-configuracion {
+        position: absolute;
+        top: 20%;
+        right: 0;
+        width: 300px;
+        height: 80vh;
+        background-color: #444c56;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .menu-configuracion--abierto {
+        transform: translateX(0);
+      }
+
+      .menu-configuracion h2 {
+        margin-top: 0;
+        color: #61dafb;
+      }
+
+      .menu-configuracion label,
+      .menu-configuracion input {
+        margin-bottom: 10px;
+        display: block;
+        color: #61dafb;
+      }
+
+      .alerta-activa {
+        background-color: #d32f2f;
+        color: #fff;
+      }
+
+      #imagen-alerta {
+        display: none;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+      }
+
+      #entrada-tarea {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #61dafb;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      .tareas-container {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .timer-kanban {
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .timer {
+          flex-basis: 100%;
+          margin-bottom: 10px;
+        }
+
+        .kanban {
+          flex-direction: column;
+        }
+
+        .kanban .columna {
+          flex-basis: 100%; /* Cada columna ocupa el ancho completo */
+          margin: 0 0 10px 0; /* Añadir margen inferior */
+        }
+
+        .kanban .tarea {
+          margin: 5px 0;
+        }
+
+        .menu-configuracion {
+          width: 100%;
+          height: auto;
+          transform: translateX(0);
+          position: static;
+          box-shadow: none;
+        }
+
+        .hamburguesa {
+          top: 10px;
+          right: 10px;
+        }
+
+        .logo {
+          width: 2.5rem;
+          position: fixed;
+          top: 1%;
+          left: 1%;
+          background: url("logo.ico");
+          background-size: 50%;
+          background-repeat: no-repeat;
+        }
+      }
+    </style>
+
+    <style>
+      /**
+ * Animación para deslizar el contenido hacia la izquierda
+ *
+ * @format
+ */
+
+      .deslizar-izquierda {
+        animation: deslizarIzquierda 1s linear forwards;
+      }
+
+      @keyframes deslizarIzquierda {
+        0% {
+          opacity: 0;
+          transform: translate(10rem);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+
+      /* Animación para crear un efecto de aparecer y hacer zoom */
+      @keyframes aparecerZoom {
+        0% {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Animación para el efecto de escribir */
+      @keyframes escribir {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      /* Animación para el parpadeo del cursor */
+      @keyframes parpadeo-cursor {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #007bff;
+        }
+      }
+
+      /* ============================================= */
+      /* ANIMACIONES COMPLEJAS */
+      /* ============================================= */
+
+      /* Animación para crear un efecto de explosión */
+      @keyframes explosion {
+        0% {
+          filter: blur(5px);
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        50% {
+          filter: blur(0);
+          opacity: 1;
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Animación para crear un efecto de resplandor */
+      @keyframes resplandor {
+        0% {
+          text-shadow: 1px 1px 5px var(--color-paleta1), 0 0 10px var(--color-paleta5), 0 0 15px #ffef00, 0 0 20px var(--color-paleta4), 0 0 25px #007bff,
+            0 0 30px var(--color-paleta5), 0 0 35px #ffef00;
+        }
+        50% {
+          text-shadow: 0 0 10px var(--color-paleta1), 0 0 20px var(--color-paleta1), 0 0 30px #ffef00, 0 0 40px #ffef00, 0 0 50px #007bff, 0 0 60px var(--color-paleta1),
+            0 0 70px #ffef00;
+        }
+        100% {
+          text-shadow: 0 0 5px var(--color-paleta1), 0 0 10px var(--color-paleta1), 0 0 15px var(--color-paleta4), 0 0 20px var(--color-paleta4), 0 0 25px #ffef00, 0 0 30px #ffef00,
+            0 0 35px var(--color-paleta4);
+        }
+      }
+
+      /* ============================================= */
+      /* ANIMACIONES DE CRECIMIENTO Y REDUCCIÓN */
+      /* ============================================= */
+
+      /* Animación para crecer */
+      @keyframes crecer {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Animación para reducir */
+      @keyframes reducir {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(0);
+        }
+      }
+
+      /* Animación para el efecto de pulso */
+      @keyframes pulso {
+        0%,
+        100% {
+          text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+        }
+        50% {
+          text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
+        }
+      }
+
+      /* ============================================= */
+      /* TEXTOS ANIMADOS */
+      /* ============================================= */
+
+      /* Estilo y animaciones para el texto animado con zoom */
+      .texto-animado-zoom {
+        animation: aparecerZoom 2s ease forwards, escribir 4s steps(30, end) 2s forwards, parpadeo-cursor 0.75s step-end infinite 6s;
+        color: #007bff;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        transform: scale(0.5);
+        transition: text-shadow 0.5s, transform 0.5s;
+      }
+
+      .texto-animado-zoom:hover {
+        color: var(--color-paleta4);
+        text-shadow: 0px 0px 2px var(--color-paleta4), -3px -3px 2px #00ffff, 0px -3px var(--color-paleta4), -3px 1px 0 var(--color-paleta5);
+        transform: scale(1.4);
+      }
+
+      /* ============================================= */
+      /* EFECTOS COMBINADOS */
+      /* ============================================= */
+
+      /* Estilo y animaciones combinadas */
+      .efectos__combinados {
+        animation: aparecer 2s forwards;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .efectos__combinados h2,
+      .efectos__combinados h3 {
+        font-size: 1.6rem;
+        position: relative;
+      }
+
+      .efectos__combinapulsodos h2 {
+        animation: pulso 3s 4s infinite, moverDerechaIzquierda 8s 1s 2;
+      }
+
+      .efectos__combinados h3 {
+        animation: pulso 5s 500ms infinite, moverIzquierdaDerecha 8s 1s 2;
+      }
+
+      .efectos__combinados::before,
+      .efectos__combinados::after {
+        animation: crecer 2s 4s forwards, reducir 2s 8s forwards;
+        background-color: #007bff;
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+      }
+      .pulso {
+        animation: pulso 5s 500ms infinite, moverIzquierdaDerecha 8s 1s 2;
+      }
+      .pulso::before {
+        animation-delay: 0.2s;
+        height: 10px;
+        left: -20px;
+        top: -20px;
+        width: 10px;
+      }
+
+      .pulso::after {
+        animation-delay: 0.4s;
+        bottom: -20px;
+        height: 10px;
+        right: -20px;
+        width: 10px;
+      }
+
+      /* Animación para aparecer */
+      @keyframes aparecer {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* ============================================= */
+      /* TEXTO HERO */
+      /* ============================================= */
+
+      /* Importa la fuente Marvel */
+      @import url("https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap");
+
+      .marvel-negrita {
+        font-family: "Marvel", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      /* Contenedor del texto Hero */
+      .contenedor-texto-hero {
+        background: url("../images/logo.gif") no-repeat center;
+        background-clip: text;
+        background-size: 50%;
+        font-size: 500px;
+        font-weight: bold;
+        opacity: 0.7;
+        -webkit-background-clip: text;
+      }
+
+      /* Sección Hero */
+      .seccion-hero {
+        align-items: center;
+        background-color: black; /* Fondo para un mejor contraste */
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+      }
+
+      /* Contenido de la sección Hero */
+      .contenido-hero {
+        position: relative;
+        text-align: center;
+      }
+
+      /* Texto Hero con animación */
+      .texto-hero {
+        animation: moverFondo 5s linear infinite;
+        background: url("../images/logo.gif") no-repeat center center;
+        background-clip: text;
+        background-size: cover;
+        color: transparent;
+        font-family: var(--font-marvel);
+        font-size: 10vw; /* Tamaño del texto relativo al ancho de la ventana */
+        -webkit-background-clip: text;
+      }
+
+      /* Animación para mover el fondo en el texto Hero */
+      @keyframes moverFondo {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 100% 0;
+        }
+      }
+
+      /* ============================================= */
+      /* IMÁGENES ANIMADAS */
+      /* ============================================= */
+
+      /* Imagen redonda */
+
+      /* Animación de rotación para la imagen redonda */
+      @keyframes rotarImagen {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Estilo de la imagen en la sección Hero */
+      .imagen-seccion-hero img {
+        animation: rotarImagen 5s linear infinite;
+        border-radius: 50%;
+        width: 100%;
+      }
+
+      /* ============================================= */
+      /* BOTONES ANIMADOS */
+      /* ============================================= */
+
+      /* Botón con animación y sombra */
+      .boton-animado {
+        animation: explosion 2s infinite;
+        background-color: var(--color-paleta1);
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 1rem 2rem;
+        position: relative;
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+
+      .boton-animado:hover {
+        background-color: #007bff;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .tarjeta_holografica {
+        background: linear-gradient(135deg, #007bff, #0ff, rgba(0, 0, 0, 0.3), #0ff);
+        background-size: 400% 400%;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        transform: rotateX(0deg) rotateY(0deg) scale(1);
+        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        animation: hologram 3s linear infinite;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .tarjeta_holografica::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 255, 255, 0.2);
+        filter: blur(8px);
+        z-index: 1;
+        transition: opacity 0.3s;
+        opacity: 0;
+      }
+
+      .tarjeta_holografica:hover {
+        transform: rotateX(15deg) rotateY(15deg) scale(1.05);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(135deg, var(--color-hover), var(--color-secundario), var(--color-terciario), var(--color-primario));
+      }
+
+      .tarjeta_holografica:hover::before {
+        opacity: 1;
+      }
+
+      @keyframes hologram {
+        0% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+
+      .tarjeta__3d {
+        width: 20rem;
+        height: 30rem;
+        perspective: 1000px;
+        margin: 2rem auto;
+      }
+
+      /* Estilo de la tarjeta en sí */
+      .tarjeta__3d__contenido {
+        width: 100%;
+        height: 100%;
+        background-color: var(--fondo-principal);
+        border-radius: var(--borde-redondeado);
+        box-shadow: var(--sombra-caja);
+        transition: transform 0.6s ease-in-out;
+        transform-style: preserve__3d;
+        position: relative;
+      }
+
+      /* Efecto de rotación en hover */
+      .tarjeta__3d:hover .tarjeta__3d__contenido {
+        transform: rotateY(180deg);
+      }
+
+      /* Cara frontal de la tarjeta */
+      .cara__frontal,
+      .cara__trasera {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: var(--borde-redondeado);
+      }
+
+      /* Imagen y estilos de la cara frontal */
+      .cara__frontal__imagen {
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Imagen y estilos de la cara trasera */
+      .cara__trasera__imgen {
+        background-size: cover;
+        background-position: center;
+        transform: rotateY(180deg);
+      }
+
+      /* Efecto holográfico */
+      .tarjeta__3d__contenido::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+        border-radius: var(--borde-redondeado);
+        opacity: 0.5;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        transition: opacity 0.6s ease-in-out;
+      }
+
+      /* Mayor brillo en hover */
+      .tarjeta__3d:hover .tarjeta__3d__contenido::before {
+        opacity: 0.8;
+      }
+
+      7		/* Bloque: Contenedor de la tarjeta */
+			.tarjeta--3d-rotacion-z {
+        width: 20rem; /* Ancho de la tarjeta en rem */
+        height: 30rem; /* Altura de la tarjeta en rem */
+        perspective: 1000px; /* Distancia para la perspectiva 3D */
+        margin: 2rem auto; /* Margen para centrar la tarjeta */
+      }
+
+      /* Bloque: Contenido de la tarjeta */
+      .tarjeta__contenido {
+        width: 100%; /* Ancho completo del contenedor */
+        height: 100%; /* Altura completa del contenedor */
+        background-color: var(--fondo-principal); /* Fondo utilizando la variable de color */
+        border-radius: var(--borde-redondeado); /* Bordes redondeados */
+        box-shadow: var(--sombra-caja); /* Sombra de la caja */
+        transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Transición para la rotación y opacidad */
+        transform-style: preserve-3d; /* Mantiene el efecto 3D */
+        position: relative; /* Posición relativa para los elementos internos */
+      }
+
+      /* Modificador: Efecto de rotación en el eje Z y desvanecimiento en hover */
+      .tarjeta--3d-rotacion-z:hover .tarjeta__contenido {
+        transform: rotateY(180deg) rotateZ(15deg); /* Rota en el eje Y y Z */
+        opacity: 0.9; /* Desvanece un poco la opacidad */
+      }
+
+      /* Elemento: Cara frontal de la tarjeta */
+      .tarjeta__cara--frontal,
+      .tarjeta__cara--trasera {
+        position: absolute; /* Posición absoluta dentro del contenedor */
+        width: 100%; /* Ancho completo de la tarjeta */
+        height: 100%; /* Altura completa de la tarjeta */
+        backface-visibility: hidden; /* Oculta la cara posterior */
+        border-radius: var(--borde-redondeado); /* Bordes redondeados */
+      }
+
+      .tarjeta__cara--frontal {
+        background-image: var(--logo-url); /* Imagen de fondo utilizando la variable de logo */
+        background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+        background-position: center; /* Centra la imagen de fondo */
+      }
+
+      /* Elemento: Cara trasera de la tarjeta */
+      .tarjeta__cara--trasera {
+        background-image: var(--icono-url); /* Imagen de fondo utilizando la variable de icono */
+        background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+        background-position: center; /* Centra la imagen de fondo */
+        transform: rotateY(180deg); /* Rota la cara trasera */
+      }
+
+      .tarjeta__3d__escala {
+        width: 20rem; /* Ancho de la tarjeta en rem */
+        height: 30rem; /* Altura de la tarjeta en rem */
+        perspective: 1000px; /* Distancia para la perspectiva 3D */
+        margin: 2rem auto; /* Margen para centrar la tarjeta */
+        transition: transform 0.3s ease-in-out; /* Transición para el efecto de escala */
+      }
+
+      .tarjeta__3d__escala:hover {
+        transform: scale(1.1); /* Escala la tarjeta en hover */
+      }
+
+      .tarjeta__contenido {
+        width: 100%; /* Ancho completo del contenedor */
+        height: 100%; /* Altura completa del contenedor */
+        background-color: var(--fondo-principal); /* Fondo utilizando la variable de color */
+        border-radius: var(--borde-redondeado); /* Bordes redondeados */
+        box-shadow: var(--sombra-caja); /* Sombra de la caja */
+        transition: transform 0.6s ease-in-out; /* Transición para la rotación */
+        transform-style: preserve-3d; /* Mantiene el efecto 3D */
+        position: relative; /* Posición relativa para los elementos internos */
+      }
+
+      .tarjeta__3d__escala:hover .tarjeta__contenido {
+        transform: rotateY(180deg); /* Rota la tarjeta en el eje Y al hacer hover */
+      }
+
+      .tarjeta__cara__frontal,
+      .tarjeta__cara__trasera {
+        position: absolute; /* Posición absoluta dentro del contenedor */
+        width: 100%; /* Ancho completo de la tarjeta */
+        height: 100%; /* Altura completa de la tarjeta */
+        backface-visibility: hidden; /* Oculta la cara posterior */
+        border-radius: var(--borde-redondeado); /* Bordes redondeados */
+      }
+
+      .tarjeta__cara__frontal {
+        background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+        background-position: center; /* Centra la imagen de fondo */
+      }
+
+      .tarjeta__cara__trasera {
+        background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+        background-position: center; /* Centra la imagen de fondo */
+        transform: rotateY(180deg); /* Rota la cara trasera */
+      }
+
+      /* Tarjeta 3D con Rotación en Z y Desvanecimiento */
+      .tarjeta__3d__rotacion__z {
+        width: 20rem; /* Ancho de la tarjeta en rem */
+        height: 30rem; /* Altura de la tarjeta en rem */
+        perspective: 1000px; /* Distancia para la perspectiva 3D */
+        margin: 2rem auto; /* Margen para centrar la tarjeta */
+      }
+
+      .tarjeta__3d__rotacion__z:hover .tarjeta__contenido {
+        transform: rotateY(180deg) rotateZ(15deg); /* Rota en el eje Y y Z */
+        opacity: 0.9; /* Desvanece un poco la opacidad */
+      }
+
+      /* Tarjeta 3D con Movimiento Flotante en Hover */
+      .tarjeta__3d__flotante {
+        width: 20rem; /* Ancho de la tarjeta en rem */
+        height: 30rem; /* Altura de la tarjeta en rem */
+        perspective: 1000px; /* Distancia para la perspectiva 3D */
+        margin: 2rem auto; /* Margen para centrar la tarjeta */
+        transition: transform 0.6s ease-in-out; /* Transición para el movimiento */
+      }
+
+      .tarjeta__3d__flotante:hover {
+        transform: translateY(-10px); /* Desplaza la tarjeta hacia arriba en hover */
+      }
+
+      .tarjeta__3d__flotante:hover .tarjeta__contenido {
+        transform: rotateY(180deg); /* Rota la tarjeta en el eje Y al hacer hover */
+      }
+    </style>
+    <style>
+      /* Paleta de colores */
+      :root {
+          --fire-color1: #ff9d00;
+          --fire-color2: #ff4500;
+          --fire-color3: #ffd700;
+          --fire-color4: #ff6347;
+          --fire-color5: #ff0000;
+      }
+
+
+
+
+
+      .texto__en_llamas {
+          font-family: 'Arial', sans-serif;
+          font-size: 4rem;
+          color: var(--fire-color1);
+          animation: flames 2s infinite, flicker 0.1s infinite alternate, glow 2s infinite alternate, distortion 3s infinite;
+          text-shadow:
+              0 0 5px var(--fire-color1),
+              0 0 10px var(--fire-color2),
+              0 0 15px var(--fire-color3),
+              0 0 20px var(--fire-color4),
+              0 0 25px var(--fire-color5);
+          box-shadow:
+              0 0 10px var(--fire-color1),
+              0 0 20px var(--fire-color2),
+              0 0 30px var(--fire-color3),
+              0 0 40px var(--fire-color4),
+              0 0 50px var(--fire-color5);
+          filter: url(#distortion); /* Filtro SVG para distorsión */
+          position: absolute;
+          z-index: 1;
+      }
+
+      .flaming-image {
+          width: 100%;
+          height: auto;
+          animation: flames 2s infinite, flicker 0.1s infinite alternate, glow 2s infinite alternate, distortion 3s infinite;
+          position: absolute;
+          z-index: 0;
+      }
+
+      @keyframes flames {
+          0% { color: var(--fire-color1); }
+          25% { color: var(--fire-color2); }
+          50% { color: var(--fire-color3); }
+          75% { color: var(--fire-color4); }
+          100% { color: var(--fire-color5); }
+      }
+
+      @keyframes flicker {
+          0% { opacity: 1; }
+          50% { opacity: 0.8; }
+          100% { opacity: 1; }
+      }
+
+      @keyframes glow {
+          0% {
+              text-shadow:
+                  0 0 5px var(--fire-color1),
+                  0 0 10px var(--fire-color2),
+                  0 0 15px var(--fire-color3),
+                  0 0 20px var(--fire-color4),
+                  0 0 25px var(--fire-color5);
+              box-shadow:
+                  0 0 10px var(--fire-color1),
+                  0 0 20px var(--fire-color2),
+                  0 0 30px var(--fire-color3),
+                  0 0 40px var(--fire-color4),
+                  0 0 50px var(--fire-color5);
+          }
+          100% {
+              text-shadow:
+                  0 0 10px var(--fire-color1),
+                  0 0 20px var(--fire-color2),
+                  0 0 30px var(--fire-color3),
+                  0 0 40px var(--fire-color4),
+                  0 0 50px var(--fire-color5);
+              box-shadow:
+                  0 0 20px var(--fire-color1),
+                  0 0 40px var(--fire-color2),
+                  0 0 60px var(--fire-color3),
+                  0 0 80px var(--fire-color4),
+                  0 0 100px var(--fire-color5);
+          }
+      }
+
+      @keyframes distortion {
+          0% {
+              transform: translateY(0) skewX(0deg);
+          }
+          25% {
+              transform: translateY(-5px) skewX(-5deg);
+          }
+          50% {
+              transform: translateY(5px) skewX(5deg);
+          }
+          75% {
+              transform: translateY(-5px) skewX(-5deg);
+          }
+          100% {
+              transform: translateY(0) skewX(0deg);
+          }
+      }
+
+      /* SVG filter for distortion */
+      svg {
+          position: absolute;
+          width: 0;
+          height: 0;
+      }
+      <svg>
+          <defs>
+              <filter id="distortion">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.01" result="noise" />
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" />
+              </filter>
+          </defs>
+      </svg>
+    </style>
+  </head>
+  <body>
+    <!-- Ícono de Menú de Hamburguesa -->
+    <div class="hamburguesa" onclick="toggleMenuConfiguracion()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <img src="logo.ico" alt="" class="logo" />
+
+    <!-- Contenedor principal de Timer y Kanban -->
+    <div class="container">
+      <div class="timer-kanban">
+        <!-- Reloj Pomodoro -->
+        <div class="timer">
+          <div id="pantalla" class="time clock">25:00</div>
+          <div id="pantalla-descanso" class="time clock">05:00</div>
+          <button id="iniciar">Iniciar</button>
+          <button id="pausar">Pausar</button>
+          <button id="reiniciar">Resetear</button>
+          <img id="imagen-alerta" src="logo.ico" alt="Alerta" class="pulso texto__en_llamas" />
+        </div>
+
+        <!-- Tablero Kanban -->
+        <div class="kanban">
+          <div class="kanban_menu">
+            <div class="fila fila1 tareas-container">
+              <div class="columna" id="pendientes">
+                <h3>Pendientes</h3>
+                <ul></ul>
+              </div>
+              <div class="columna" id="en-proceso">
+                <h3>En Proceso</h3>
+                <ul></ul>
+              </div>
+              <div class="columna tarjeta_holografica" id="terminadas">
+                <h3>Terminadas</h3>
+                <ul></ul>
+              </div>
+            </div>
+
+            <div class="fila fila2">
+              <input type="text" id="entrada-tarea" placeholder="Nueva tarea" />
+              <button id="agregar-tarea">Agregar Tarea</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menú de Configuración -->
+    <div class="menu-configuracion" id="configuracion-menu">
+      <h2>Configuración</h2>
+      <label for="tiempo-trabajo">Tiempo de trabajo (minutos):</label>
+      <input type="number" id="tiempo-trabajo" value="25" min="1" />
+
+      <label for="tiempo-descanso">Tiempo de descanso (minutos):</label>
+      <input type="number" id="tiempo-descanso" value="5" min="1" />
+
+      <label for="tiempo-alerta">Tiempo para alerta (segundos):</label>
+      <input type="number" id="tiempo-alerta" value="30" min="1" />
+
+      <button onclick="aplicarConfiguracion()">Aplicar</button>
+    </div>
+    <script src="scripts/configuracion.js"></script>
+    <script src="scripts/pomodoro.js"></script>
+    <script src="scripts/kanban.js"></script>
+    <script src="scripts/alertas.js"></script>
+
+    <script>
+      // Variables globales para el reloj Pomodoro
+      let tiempoRestante = 1500; // 25 minutos en segundos
+      let tiempoDescanso = 300; // 5 minutos en segundos
+      let tiempoAlerta = 30; // 30 segundos antes del final para la alerta
+      let temporizador;
+      let temporizadorEnMarcha = false;
+      let intervaloAlerta;
+
+      // Función para actualizar la pantalla con el tiempo restante
+      function actualizarPantalla(id, tiempo) {
+        const minutos = Math.floor(tiempo / 60);
+        const segundos = tiempo % 60;
+        document.getElementById(id).textContent = `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+      }
+
+      // Lógica del Temporizador Pomodoro
+      function iniciarTemporizador() {
+        if (!temporizadorEnMarcha) {
+          temporizadorEnMarcha = true;
+          temporizador = setInterval(() => {
+            tiempoRestante--;
+            actualizarPantalla("pantalla", tiempoRestante);
+
+            if (tiempoRestante === tiempoAlerta) {
+              activarAlerta();
+            }
+
+            if (tiempoRestante <= 0) {
+              clearInterval(temporizador);
+              temporizadorEnMarcha = false;
+              iniciarDescanso();
+            }
+          }, 1000);
+        }
+      }
+
+      function iniciarDescanso() {
+        temporizadorEnMarcha = true;
+        temporizador = setInterval(() => {
+          tiempoDescanso--;
+          actualizarPantalla("pantalla-descanso", tiempoDescanso);
+          if (tiempoDescanso === tiempoAlerta) {
+            activarAlerta();
+          }
+          if (tiempoDescanso <= 0) {
+            clearInterval(temporizador);
+            temporizadorEnMarcha = false;
+            reiniciarTemporizador();
+          }
+        }, 1000);
+      }
+
+      function pausarTemporizador() {
+        clearInterval(temporizador);
+        temporizadorEnMarcha = false;
+        desactivarAlerta();
+      }
+
+      function reiniciarTemporizador() {
+        clearInterval(temporizador);
+        tiempoRestante = 1500;
+        tiempoDescanso = 300;
+        actualizarPantalla("pantalla", tiempoRestante);
+        actualizarPantalla("pantalla-descanso", tiempoDescanso);
+        temporizadorEnMarcha = false;
+        desactivarAlerta();
+      }
+
+      // Alerta de Tiempo Restante
+      function activarAlerta() {
+        const sonidoAlerta = new Audio("alerta.wav");
+        sonidoAlerta.play();
+
+        intervaloAlerta = setInterval(() => {
+          document.body.classList.toggle("alerta-activa");
+        }, 500);
+
+        mostrarImagenAlerta(true);
+      }
+
+      function desactivarAlerta() {
+        clearInterval(intervaloAlerta);
+        document.body.classList.remove("alerta-activa");
+        mostrarImagenAlerta(false);
+      }
+
+      // Mostrar/ocultar imagen de alerta
+      function mostrarImagenAlerta(mostrar) {
+        const imagenAlerta = document.getElementById("imagen-alerta");
+        if (mostrar) {
+          imagenAlerta.style.display = "block";
+        } else {
+          imagenAlerta.style.display = "none";
+        }
+      }
+
+      function establecerTiempoTrabajo(nuevoTiempo) {
+        tiempoRestante = nuevoTiempo * 60;
+        actualizarPantalla("pantalla", tiempoRestante);
+      }
+
+      function establecerTiempoDescanso(nuevoTiempo) {
+        tiempoDescanso = nuevoTiempo * 60;
+        actualizarPantalla("pantalla-descanso", tiempoDescanso);
+      }
+
+      function establecerTiempoAlerta(nuevoTiempoAlerta) {
+        tiempoAlerta = nuevoTiempoAlerta;
+      }
+
+      // Gestión de tareas en el tablero Kanban
+      function agregarTarea() {
+        const entradaTarea = document.getElementById("entrada-tarea");
+        const textoTarea = entradaTarea.value.trim();
+        if (textoTarea !== "") {
+          const nuevaTarea = document.createElement("li");
+          nuevaTarea.classList.add("tarea");
+          nuevaTarea.textContent = textoTarea;
+
+          nuevaTarea.draggable = true;
+          nuevaTarea.id = `tarea-${Date.now()}`; // Asignar un ID único a cada tarea
+          nuevaTarea.addEventListener("dragstart", dragStart);
+          nuevaTarea.addEventListener("dragend", dragEnd);
+
+          document.getElementById("pendientes").querySelector("ul").appendChild(nuevaTarea);
+          entradaTarea.value = "";
+        }
+      }
+
+      function permitirDrop(event) {
+        event.preventDefault();
+      }
+
+      function dragStart(event) {
+        event.dataTransfer.setData("text", event.target.id);
+      }
+
+      function dragEnd(event) {
+        event.target.style.display = "block";
+      }
+
+      function drop(event) {
+        event.preventDefault();
+        const idTarea = event.dataTransfer.getData("text");
+        const tarea = document.getElementById(idTarea);
+        const contenedor = event.currentTarget.querySelector("ul");
+        contenedor.appendChild(tarea);
+      }
+
+      // Asignación de eventos
+      document.querySelectorAll(".columna").forEach((columna) => {
+        columna.addEventListener("dragover", permitirDrop);
+        columna.addEventListener("drop", drop);
+      });
+      // Asignación de eventos
+      document.getElementById("iniciar").addEventListener("click", iniciarTemporizador);
+      document.getElementById("pausar").addEventListener("click", pausarTemporizador);
+      document.getElementById("reiniciar").addEventListener("click", reiniciarTemporizador);
+      document.getElementById("agregar-tarea").addEventListener("click", agregarTarea);
+
+      document.querySelectorAll(".columna").forEach((columna) => {
+        columna.addEventListener("dragover", permitirDrop);
+        columna.addEventListener("drop", drop);
+      });
+
+      // Cambiar el fondo de pantalla cuando queden pocos segundos
+      function activarAlerta() {
+        const sonidoAlerta = new Audio("alerta.mp3");
+        sonidoAlerta.play();
+
+        intervaloAlerta = setInterval(() => {
+          document.body.style.backgroundColor = document.body.style.backgroundColor === "red" ? "#f4f4f4" : "red";
+        }, 500);
+
+        mostrarImagenAlerta(true);
+      }
+
+      function desactivarAlerta() {
+        clearInterval(intervaloAlerta);
+        document.body.style.backgroundColor = "#f4f4f4";
+        mostrarImagenAlerta(false);
+      }
+    </script>
+  </body>
+</html>
+
