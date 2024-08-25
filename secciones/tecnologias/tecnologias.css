@@ -1,0 +1,106 @@
+/** @format */
+
+@import url("../../estilos/estilo.css");
+
+/*************tecnologias **************/
+/* Estilo para la sección de habilidades */
+.section-skills {
+  padding: 1.5rem auto;
+  transition: all 0.4s;
+}
+
+.skills-group {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: var(--size-texto);
+}
+
+.skills-data-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-name {
+  font-size: var(--medida-texto-extra-reducido), 10px;
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  perspective: 1000px;
+  /* Establece una perspectiva para el efecto 3D */
+  transition: all 0.4s;
+}
+
+.skills-name:hover {
+  transform: scale(1.2);
+  transition: all 0.4s;
+  background-color: var(--color-hover);
+  color: var(--color-paleta6);
+  /* Aumenta el tamaño al pasar el mouse */
+}
+
+.skills-name img {
+  height: 3rem;
+  /* Tamaño fijo para las imágenes */
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+  width: 5rem;
+  /* Tamaño fijo para las imágenes */
+}
+
+.skills-name p {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(36, 10, 122, 0.5);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 5px;
+  width: 18rem;
+  /* Ajusta el ancho según sea necesario */
+  text-align: center;
+}
+
+.skills-name:hover img {
+  transform: rotateY(180deg);
+  /* Voltea la imagen en el eje Y al hacer hover */
+}
+
+.skills-name:hover p {
+  display: block;
+  /* Muestra la descripción al hacer hover */
+}
+
+/* Estilo para contenedor de proyectos */
+.project {
+  margin-bottom: 2rem;
+}
+
+/* Estilo para íconos sociales */
+.social-links {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  color: var(--color-secondary);
+  font-size: 2rem;
+  transition: transform 1.3s, color 0.3s;
+}
+
+.social-icon:hover,
+.social-icon:active {
+  color: var(--color-primary);
+  transform: translateY(-5px);
+}

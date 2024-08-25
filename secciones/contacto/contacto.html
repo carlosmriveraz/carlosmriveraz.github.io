@@ -1,0 +1,61 @@
+<div class="contenedor__flex__columna pulso">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contacto</title>
+
+		<link rel="stylesheet" href="./contacto.css" />
+		<link rel="stylesheet" href="../../estilos/estilo.css " />
+
+
+			<div class="contenido contenedor__item">
+				<!-- Logo en el centro -->
+				<div class="subtitulo">
+					<h2><span>C</span>arlos<span>M</span>ario<span>R</span>ivera.com</h2>
+				</div>
+
+				<!-- Contenido principal -->
+				<div class="contacto__info contenedor__item">
+					<h2 class="subtitulo">
+						<strong><span>C</span>ontácteme</strong>
+					</h2>
+
+					<div class="contacto__details contenedor__item">
+						<p class="texto">
+							Si deseas contactarme para cualquier consulta o proyecto, puedes escribirme a carlosmrz100@hotmail.com
+							<a
+								class="link btn"
+								href="mailto:carlosmrz100@hotmail.com?subject=Correo de contacto de Carlos
+								Rivera&body=Buen día, este correo se genera desde la página web de Carlos Rivera y
+								te contacto"
+								>Enviar correo electrónico
+							</a>
+							<a id="emailToCopy" class="link btn">Copiar Email</a>
+						</p>
+					</div>
+				</div>
+
+				<!-- Redes sociales en la parte derecha -->
+				<div class="contacto__social">
+					<a href="https://www.linkedin.com/in/carlosmariorivera" target="_blank" aria-label="LinkedIn" class="icon__linkedin">
+						<!-- Icono de LinkedIn -->
+					</a>
+					<a href="https://github.com/carlosmriveraz" target="_blank" aria-label="GitHub" class="icon__github">
+						<!-- Icono de GitHub -->
+					</a>
+					<a href="https://wa.me/+573117559365" target="_blank" aria-label="WhatsApp" class="icon__whatsapp"> </a>
+				</div>
+			</div>
+		</div>
+		<script>
+			document.getElementById("copyEmailButton").addEventListener("click", function () {
+				var email = document.getElementById("emailToCopy");
+				email.select();
+				document.execCommand("copy");
+
+				// Opcional: Feedback al usuario
+				this.textContent = "!Email Copiado!";
+			});
+		</script>
+
+	</div>
+</div>

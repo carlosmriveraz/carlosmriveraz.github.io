@@ -1,0 +1,77 @@
+/**
+ * Logo en el centro
+ *
+ * @format
+ */
+
+.contacto__logo {
+	text-align: center;
+	flex: 1 1 100%;
+}
+
+/* Contenido principal */
+
+.contacto__image {
+	margin: 1rem 0;
+}
+
+.contacto__details {
+	margin-top: 1rem;
+}
+
+#copyEmailButton {
+	margin-left: 1rem;
+}
+
+/* Redes sociales en la parte inferior y centradas */
+.contacto__social {
+	display: flex;
+	justify-content: center; /* Centra los iconos horizontalmente */
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.contacto__icon__linkedin,
+.contacto__icon__github,
+.contacto__icon__whatsapp {
+	display: inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	background-color: #ffffff;
+	border-radius: 50%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: transform 1.3s, box-shadow 0.3s;
+	color: var(--color-paleta6);
+	text-decoration: none;
+}
+
+/* Botones y enlaces */
+.link.btn.btn-full {
+	margin-top: 1rem;
+}
+
+.icon__whatsapp {
+	background: url("../../images/social/svgnwhatsapp.svg");
+	width: 3rem;
+	background-position: center;
+	background-size: contain;
+}
+
+.icon__linkedin {
+	background: url("../../images/social/linkedin.svg");
+}
+
+.icon__github {
+	background: url("../../images/social/github.svg");
+}
+
+/* Título al final */
+.contact-title {
+	margin-top: 2rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+}

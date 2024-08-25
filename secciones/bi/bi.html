@@ -1,0 +1,95 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Business Intelligence</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+		<link rel="stylesheet" href="biestilo.css" />
+		<link rel="stylesheet" href="../../estilos/fuentes_y_textos.css" />
+		<link rel="stylesheet" href="../../estilos/estilo.css" />
+	</head>
+	<body class="textoshadow pulso">
+		<section id="business-intelligence">
+			<div class="contenedor_bi">
+				<div class="contenedor__Estadisticas__item">
+					<div class="contenedor__Estadisticas__kpi">
+						<h2>KPI</h2>
+						<div id="kpi">
+							<p>
+								Valor Mínimo:
+								<span id="min-value"></span> (Fecha: <span id="min-date"></span>)
+							</p>
+							<p>
+								Valor Máximo:
+								<span id="max-value"></span> (Fecha: <span id="max-date"></span>)
+							</p>
+							<p>
+								Valor Promedio:
+								<span id="avg-value"></span>
+							</p>
+							<p>
+								Valor Calculado via API:
+								<span id="api-value"></span>
+							</p>
+							<script src="https://www.dolar-colombia.com/widget.js?t=2&c=1"></script>
+						</div>
+					</div>
+					<div class="contenedor__Estadisticas">
+						<div class="contenedor__Estadisticas__Estadisticas">
+							<h2>Estadísticas:</h2>
+							<label for="months">Ingrese el número de meses para el cálculo (máximo 12 meses):</label>
+							<input type="number" id="months" name="months" value="1" min="1" max="12" />
+							<button onclick="generateStatistics()">Generar Estadísticas</button>
+							<div id="charts">
+								<canvas id="lineChart" class="contenedor__Estadisticas__item"></canvas>
+								<canvas id="barChart" class="contenedor__Estadisticas__item"></canvas>
+								<canvas id="pieChart" class="contenedor__Estadisticas__item"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contenedor__Estadisticas__item">
+					<div class="contenedor__Estadisticas_predicciones">
+						<h2 class="subtitulo">Predicciones para los Próximos Dos Días</h2>
+						<p>Nota: Estas predicciones son estimaciones realizadas por inteligencia artificial y no son fijas.</p>
+						<table id="predictions" class="sortable">
+							<thead>
+								<tr>
+									<th>Fecha</th>
+									<th>Valor Predicho en Pesos Colombianos</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Los datos se rellenarán aquí -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="contenedor__Estadisticas__item">
+					<h2 class="subtitulo">Valores del Dólar en Colombia</h2>
+					<div id="contenedor__table">
+						<table id="dollar-values" class="sortable">
+							<thead>
+								<tr>
+									<th data-sort="date">Fecha</th>
+									<th data-sort="number">Valor en Pesos Colombianos</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Los datos se rellenarán aquí -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="biscripts.js"></script>
+	</body>
+</html>

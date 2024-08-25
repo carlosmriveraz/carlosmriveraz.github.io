@@ -1,0 +1,94 @@
+/** @format */
+
+@import url("../../estilos/configuracion.css");
+/* Estilos generales para la sección de proyectos */
+.contenedor__proyectos {
+	max-width: 100%;
+	margin: 0 auto; /* Centra el contenedor */
+	padding: 2rem;
+}
+
+.proyectos__grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem; /* Aumenta el espacio entre las tarjetas */
+	justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
+/* Estilos para cada proyecto */
+.proyecto {
+	flex: 1 1 calc(50% - 2rem); /* Ajusta el tamaño de las tarjetas */
+	border: 1px solid var(--color-border, #ccc);
+	border-radius: var(--borde-reducido);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: box-shadow 0.3s ease;
+	background: linear-gradient(
+		18deg,
+		var(--color-paleta1, rgba(4, 37, 78, 1)) 3%,
+		var(--color-paleta2, rgba(1, 25, 216, 0.2)) 20%,
+		var(--color-paleta3, rgba(4, 37, 78, 1)) 60%,
+		var(--color-paleta4, rgba(1, 14, 18, 0.2))
+	);
+	background-color: var(--color-background, #fff);
+	height: auto; /* Ajusta la altura según el contenido */
+}
+
+.proyecto:hover {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título del proyecto */
+.proyecto__title {
+	font-size: var(--medida-texto, 2rem);
+	margin: 1rem;
+	color: var(--medida-texto, #000);
+}
+
+/* Estilo para la imagen del proyecto */
+.proyecto__img {
+	width: 50%;
+	height: auto;
+	border-bottom: 1px solid var(--color-border, #ccc);
+	border-radius: var(--borde-grande);
+}
+
+/* Contenido del proyecto */
+.proyecto__content {
+	padding: var(--relleno-mediano);
+}
+
+/* Descripción del proyecto */
+.proyecto__description {
+	max-height: 10rem; /* Ajusta la altura máxima */
+	overflow: hidden;
+	transition: max-height 0.5s ease;
+	color: var(--color-texto);
+	text-align: justify;
+	width: 100%;
+	margin-top: 1rem; /* Añade margen superior */
+}
+
+.proyecto__description p {
+	margin-bottom: 1rem; /* Espacio entre párrafos */
+}
+
+.proyecto__description.collapsed {
+	max-height: 0; /* Oculta el contenido colapsado */
+}
+
+/* Botón para desplegar la descripción */
+.toggle-button {
+	cursor: pointer;
+	color: var(--color-enlace, blue);
+	text-decoration: underline;
+	margin-top: 0.5rem;
+	display: inline-block;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+	.proyecto {
+		flex: 1 1 100%; /* Tarjetas en una columna */
+	}
+}
