@@ -1,0 +1,209 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Botones CSS</title>
+		<style>
+			/* configuracion.css */
+			:root {
+				--color-primario-1: #3498db; /* Azul Claro */
+				--color-primario-2: #2980b9; /* Azul Oscuro */
+				--color-primario-3: #1abc9c; /* Verde Turquesa */
+				--color-primario-4: #16a085; /* Verde Oscuro */
+
+				--color-secundario-1: #e74c3c; /* Rojo Claro */
+				--color-secundario-2: #c0392b; /* Rojo Oscuro */
+				--color-secundario-3: #f39c12; /* Naranja */
+				--color-secundario-4: #d35400; /* Naranja Oscuro */
+
+				--fuente: "Arial", sans-serif;
+				--tamano-fuente: 16px;
+				--peso-fuente-normal: 400;
+				--peso-fuente-negrita: 700;
+
+				--espaciado-pequeno: 8px;
+				--espaciado-medio: 16px;
+				--espaciado-grande: 24px;
+
+				--radio-borde-pequeno: 4px;
+				--radio-borde-medio: 8px;
+				--radio-borde-grande: 16px;
+
+				--transicion-rapida: 0.2s ease-in-out;
+				--transicion-lenta: 0.5s ease-in-out;
+
+				--opacidad-alta: 1;
+				--opacidad-media: 0.7;
+				--opacidad-baja: 0.5;
+
+				/* Variables específicas para botones */
+				--boton-primario-fondo: var(--color-primario-1);
+				--boton-primario-texto: #ffffff;
+				--boton-primario-hover: var(--color-primario-2);
+
+				--boton-secundario-fondo: var(--color-secundario-1);
+				--boton-secundario-texto: #ffffff;
+				--boton-secundario-hover: var(--color-secundario-2);
+
+				--boton-terciario-fondo: #bdc3c7; /* Gris Claro */
+				--boton-terciario-texto: #2c3e50; /* Azul Grisáceo */
+				--boton-terciario-hover: #7f8c8d; /* Gris Oscuro */
+			}
+
+			/* Estilos para el botón primario */
+			.boton-primario {
+				background-color: var(--boton-primario-fondo);
+				color: var(--boton-primario-texto);
+				font-family: var(--fuente);
+				font-size: 1rem;
+				padding: var(--espaciado-medio);
+				border-radius: var(--radio-borde-medio);
+				border: none;
+				transition: background-color var(--transicion-rapida);
+				margin: 10px;
+			}
+
+			.boton-primario:hover {
+				background-color: var(--boton-primario-hover);
+			}
+
+			/* Estilos para el botón secundario */
+			.boton-secundario {
+				background-color: var(--boton-secundario-fondo);
+				color: var(--boton-secundario-texto);
+				font-family: var(--fuente);
+				font-size: 1rem;
+				padding: var(--espaciado-medio);
+				border-radius: var(--radio-borde-medio);
+				border: none;
+				transition: background-color var(--transicion-rapida);
+				margin: 10px;
+			}
+
+			.boton-secundario:hover {
+				background-color: var(--boton-secundario-hover);
+			}
+
+			/* Estilos para el botón terciario */
+			.boton-terciario {
+				background-color: var(--boton-terciario-fondo);
+				color: var(--boton-terciario-texto);
+				font-family: var(--fuente);
+				font-size: 1rem;
+				padding: var(--espaciado-medio);
+				border-radius: var(--radio-borde-medio);
+				border: none;
+				transition: background-color var(--transicion-rapida);
+				margin: 10px;
+			}
+
+			.boton-terciario:hover {
+				background-color: var(--boton-terciario-hover);
+			}
+
+			/* Botón animado con efecto de escala */
+			.boton-animado {
+				background-color: var(--color-primario-1);
+				color: var(--boton-primario-texto);
+				font-family: var(--fuente);
+				font-size: 1rem;
+				padding: var(--espaciado-medio);
+				border-radius: var(--radio-borde-medio);
+				border: none;
+				transition: transform var(--transicion-rapida), background-color var(--transicion-rapida);
+				margin: 10px;
+			}
+
+			.boton-animado:hover {
+				background-color: var(--color-primario-2);
+				transform: scale(1.1); /* Escala el botón al pasar el cursor */
+			}
+
+			/* Botón animado con efecto de rotación */
+			.boton-animado-rotacion {
+				background-color: var(--color-secundario-1);
+				color: var(--boton-secundario-texto);
+				font-family: var(--fuente);
+				font-size: 1rem;
+				padding: var(--espaciado-medio);
+				border-radius: var(--radio-borde-medio);
+				border: none;
+				transition: transform var(--transicion-lenta), background-color var(--transicion-rapida);
+				margin: 10px;
+			}
+
+			.boton-animado-rotacion:hover {
+				background-color: var(--color-secundario-2);
+				transform: rotate(15deg); /* Rota el botón al pasar el cursor */
+			}
+
+			/* Botón colorido con fondo degradado */
+			.boton-colorido {
+				background: linear-gradient(to right, var(--color-primario-1), var(--color-primario-2));
+				color: var(--boton-primario-texto);
+				font-family: var(--fuente);
+				font-size: 1rem;
+				padding: var(--espaciado-medio);
+				border-radius: var(--radio-borde-medio);
+				border: none;
+				transition: background var(--transicion-rapida);
+				margin: 10px;
+			}
+
+			.boton-colorido:hover {
+				background: linear-gradient(to right, var(--color-primario-2), var(--color-primario-3));
+			}
+
+			/* Botón colorido con borde animado */
+			.boton-colorido-borde {
+				background-color: transparent;
+				color: var(--color-primario-1);
+				font-family: var(--fuente);
+				font-size: 1rem;
+				padding: var(--espaciado-medio);
+				border: 2px solid var(--color-primario-1);
+				border-radius: var(--radio-borde-medio);
+				transition: color var(--transicion-rapida), border-color var(--transicion-rapida);
+				margin: 10px;
+			}
+
+			.boton-colorido-borde:hover {
+				color: var(--color-primario-3);
+				border-color: var(--color-primario-3);
+			}
+
+			/* Estilos generales para la visualización */
+			.contenedor-botones {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				padding: 20px;
+			}
+
+			.boton {
+				display: inline-block;
+				margin: 10px;
+				text-align: center;
+				padding: 10px 20px;
+				border-radius: var(--radio-borde-medio);
+				color: #fff;
+				text-decoration: none;
+				font-family: var(--fuente);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="contenedor-botones">
+			<button class="boton boton-primario">Botón Primario</button>
+			<button class="boton boton-secundario">Botón Secundario</button>
+			<button class="boton boton-terciario">Botón Terciario</button>
+			<button class="boton boton-animado">Botón Animado (Escala)</button>
+			<button class="boton boton-animado-rotacion">Botón Animado (Rotación)</button>
+			<button class="boton boton-colorido">Botón Colorido (Degradado)</button>
+			<button class="boton boton-colorido-borde">Botón Colorido (Borde)</button>
+		</div>
+	</body>
+</html>

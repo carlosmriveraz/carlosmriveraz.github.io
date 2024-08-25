@@ -1,0 +1,83 @@
+/** @format */
+
+@import url("./tarjeta_holograma/tarjeta_holograma.css");
+
+/* Estilos para las tarjetas */
+.tarjetas {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--margen);
+	padding: var(--padding);
+}
+.tarjeta {
+	background-color: var(--fondo);
+	border: var(--borde);
+	border-radius: var(--borde-redondeado);
+	box-shadow: var(--sombra-caja);
+	padding: var(--padding);
+	width: 300px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta:hover {
+	transform: scale(1.05);
+	box-shadow: var(--sombra-caja);
+}
+.tarjeta img {
+	width: 100%;
+	height: auto;
+	border-bottom: 2px solid var(--color-secundario);
+	margin-bottom: var(--margen);
+}
+.tarjeta h3 {
+	color: var(--texto);
+	margin-bottom: var(--margen);
+}
+.tarjeta p {
+	color: var(--texto-secundario);
+}
+
+/* Estilos específicos para cada tarjeta */
+.tarjeta-1 {
+	background-color: var(--color);
+	color: var(--color-blanco);
+}
+.tarjeta-2 {
+	background-color: var(--color-secundario);
+	color: var(--color-blanco);
+}
+.tarjeta-3 {
+	background-color: var(--color-terciario);
+	color: var(--color-blanco);
+}
+.tarjeta-4 {
+	background-color: var(--fondo-secundario);
+	border: 2px solid var(--color);
+}
+.tarjeta-5 {
+	background: linear-gradient(45deg, var(--color-secundario), var(--color-secundario2));
+	color: var(--color-blanco);
+}
+.tarjeta-6 {
+	background: linear-gradient(45deg, var(--color-terciario), var(--color-terciario2));
+	color: var(--color-paleta6);
+}
+.tarjeta-7 {
+	background-color: var(--color);
+	color: var(--color-blanco);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.tarjeta8 {
+	background-color: var(--color-secundario);
+	color: var(--color-blanco);
+	border: 2px solid var(--color-terciario);
+	border-radius: 20px;
+}
+
+/* Estilos para las tarjetas */
+.contenedor__tarjetas {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--margen);
+	padding: var(--padding);
+}

@@ -1,0 +1,178 @@
+/**
+ * Botones básicos
+ *
+ * @format
+ */
+
+.boton {
+	display: inline-block;
+	padding: var(--padding); /* Usar variable para el padding del botón */
+	margin: var(--margen); /* Usar variable para el margen del botón */
+	font-family: var(--fuente-primaria); /* Usar fuente primaria */
+	font-size: var(--tamano-texto); /* Usar tamaño de texto definido */
+	color: var(--texto); /* Usar color de texto principal */
+	text-align: center;
+	border: none;
+	border-radius: var(--borde-redondeado); /* Usar variable para borde redondeado */
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Botones con degradados */
+.boton_gradiente {
+	background: linear-gradient(45deg, var(--color-secundario), var(--color-secundario2)); /* Usar colores secundarios */
+}
+
+.boton_gradiente-2 {
+	background: linear-gradient(45deg, var(--color-terciario), var(--color-terciario2)); /* Usar colores terciarios */
+}
+
+/* Efectos al pasar el ratón */
+.boton_gradiente:hover {
+	background: linear-gradient(45deg, var(--color-hover), var(--color-secundario2)); /* Usar color de hover y color secundario2 */
+}
+
+.boton_gradiente-2:hover {
+	background: linear-gradient(45deg, var(--color-hover), var(--color-terciario2)); /* Usar color de hover y color terciario2 */
+}
+
+/* Botón con animación constante */
+.boton_animado {
+	background-color: var(--color-secundario); /* Usar color secundario */
+	animation: bounce 1s infinite; /* Animación definida más abajo */
+}
+
+/* Movimiento de arriba a abajo */
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-10px);
+	}
+}
+
+/* Botones adicionales con diferentes estilos */
+.boton_sombra {
+	background-color: var(--color); /* Usar color principal */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.boton_sombra:hover {
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+	transform: translateY(-2px);
+}
+
+.boton_brillo {
+	background-color: var(--color-terciario); /* Usar color terciario */
+	box-shadow: 0 0 10px var(--color-terciario);
+}
+
+.boton_brillo:hover {
+	box-shadow: 0 0 20px var(--color-hover);
+}
+
+.boton_borde-doble {
+	background-color: transparent;
+	color: var(--color); /* Usar color principal */
+	border: 2px solid var(--color); /* Usar color principal */
+	border-radius: var(--borde-redondeado); /* Usar borde redondeado */
+	position: relative;
+	z-index: 1;
+}
+
+.boton_borde-doble::before {
+	content: "";
+	position: absolute;
+	top: -4px;
+	left: -4px;
+	right: -4px;
+	bottom: -4px;
+	border: 2px solid var(--color-secundario); /* Usar color secundario */
+	border-radius: var(--borde-redondeado); /* Usar borde redondeado */
+	z-index: -1;
+}
+
+.boton_borde-doble:hover {
+	color: var(--color-blanco); /* Usar color blanco */
+	background-color: var(--color); /* Usar color principal */
+}
+
+.boton_subrayado {
+	background-color: transparent;
+	color: var(--color-secundario); /* Usar color secundario */
+	border: none;
+	border-bottom: 2px solid var(--color-secundario); /* Usar color secundario */
+}
+
+.boton_subrayado:hover {
+	color: var(--color-hover); /* Usar color de hover */
+	border-bottom-color: var(--color-hover); /* Usar color de hover */
+}
+
+.boton_icono {
+	background-color: var(--color); /* Usar color principal */
+	padding-left: var(--icono-width); /* Usar ancho del icono para padding */
+	position: relative;
+}
+
+.boton_icono::before {
+	content: "🔥";
+	position: absolute;
+	left: var(--padding); /* Usar padding principal para el posicionamiento */
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: var(--tamano-subtitulo); /* Usar tamaño de subtitulo */
+}
+
+.boton_borde-gradiente {
+	background-color: var(--texto); /* Usar color de texto principal */
+	border: 2px solid transparent;
+	border-radius: var(--borde-redondeado); /* Usar borde redondeado */
+	background-image: linear-gradient(var(--texto), var(--texto)), linear-gradient(45deg, var(--color-secundario), var(--color-secundario2)); /* Usar colores secundarios */
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+
+.boton_borde-gradiente:hover {
+	color: var(--texto); /* Usar color de texto principal */
+	background-color: var(--color-secundario); /* Usar color secundario */
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+	cursor: pointer;
+	display: inline-block;
+	padding: 1rem 2rem;
+	color: var(--color-primary);
+	border-radius: 2rem;
+	border: 3px solid;
+	background-color: var(--color-paleta1), blue;
+	transition: all 0.9s;
+}
+
+.btn-outline:link,
+.btn-outline:visited {
+	border-color: var(--color-primary);
+	background-color: var(--color-primary), #f0f3f6;
+}
+
+.btn-outline:hover,
+.btn-outline:active {
+	color: #f0f3f6;
+	background-color: var(--color-primary);
+}
+
+.btn-full:link,
+.btn-full:visited {
+	color: var(--color-paleta2), #f0f3f6;
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.btn-full:hover,
+.btn-full:active {
+	background-color: var(--color-paleta3);
+	border-color: var(--color-paleta2);
+}

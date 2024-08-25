@@ -1,0 +1,248 @@
+/** @format */
+
+.tarjeta_holografica {
+	width: 300px;
+	height: 200px;
+	background: linear-gradient(135deg, var(--color), var(--color-secundario), var(--color-terciario), var(--color-primario));
+	background-size: 400% 400%;
+	border-radius: 15px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+	position: relative;
+	overflow: hidden;
+	transform: rotateX(0deg) rotateY(0deg) scale(1);
+	transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+	animation: hologram 3s linear infinite;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+}
+
+.tarjeta_holografica::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 255, 255, 0.2);
+	filter: blur(8px);
+	z-index: 1;
+	transition: opacity 0.3s;
+	opacity: 0;
+}
+
+.tarjeta_holografica:hover {
+	transform: rotateX(15deg) rotateY(15deg) scale(1.05);
+	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+	background: linear-gradient(135deg, var(--color-hover), var(--color-secundario), var(--color-terciario), var(--color-primario));
+}
+
+.tarjeta_holografica:hover::before {
+	opacity: 1;
+}
+
+@keyframes hologram {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+.tarjeta__3d {
+	width: 20rem;
+	height: 30rem;
+	perspective: 1000px;
+	margin: 2rem auto;
+}
+
+/* Estilo de la tarjeta en sí */
+.tarjeta__3d__contenido {
+	width: 100%;
+	height: 100%;
+	background-color: var(--fondo);
+	border-radius: var(--borde-redondeado);
+	box-shadow: var(--sombra-caja);
+	transition: transform 0.6s ease-in-out;
+	transform-style: preserve__3d;
+	position: relative;
+}
+
+/* Efecto de rotación en hover */
+.tarjeta__3d:hover .tarjeta__3d__contenido {
+	transform: rotateY(180deg);
+}
+
+/* Cara frontal de la tarjeta */
+.cara__frontal,
+.cara__trasera {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: var(--borde-redondeado);
+}
+
+/* Imagen y estilos de la cara frontal */
+.cara__frontal__imagen {
+	background-size: cover;
+	background-position: center;
+}
+
+/* Imagen y estilos de la cara trasera */
+.cara__trasera__imgen {
+	background-size: cover;
+	background-position: center;
+	transform: rotateY(180deg);
+}
+
+/* Efecto holográfico */
+.tarjeta__3d__contenido::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+	border-radius: var(--borde-redondeado);
+	opacity: 0.5;
+	mix-blend-mode: screen;
+	pointer-events: none;
+	transition: opacity 0.6s ease-in-out;
+}
+
+/* Mayor brillo en hover */
+.tarjeta__3d:hover .tarjeta__3d__contenido::before {
+	opacity: 0.8;
+}
+/* Bloque: Contenedor de la tarjeta */
+.tarjeta--3d-rotacion-z {
+	width: 20rem; /* Ancho de la tarjeta en rem */
+	height: 30rem; /* Altura de la tarjeta en rem */
+	perspective: 1000px; /* Distancia para la perspectiva 3D */
+	margin: 2rem auto; /* Margen para centrar la tarjeta */
+}
+
+/* Bloque: Contenido de la tarjeta */
+.tarjeta__contenido {
+	width: 100%; /* Ancho completo del contenedor */
+	height: 100%; /* Altura completa del contenedor */
+	background-color: var(--fondo); /* Fondo utilizando la variable de color */
+	border-radius: var(--borde-redondeado); /* Bordes redondeados */
+	box-shadow: var(--sombra-caja); /* Sombra de la caja */
+	transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Transición para la rotación y opacidad */
+	transform-style: preserve-3d; /* Mantiene el efecto 3D */
+	position: relative; /* Posición relativa para los elementos internos */
+}
+
+/* Modificador: Efecto de rotación en el eje Z y desvanecimiento en hover */
+.tarjeta--3d-rotacion-z:hover .tarjeta__contenido {
+	transform: rotateY(180deg) rotateZ(15deg); /* Rota en el eje Y y Z */
+	opacity: 0.9; /* Desvanece un poco la opacidad */
+}
+
+/* Elemento: Cara frontal de la tarjeta */
+.tarjeta__cara--frontal,
+.tarjeta__cara--trasera {
+	position: absolute; /* Posición absoluta dentro del contenedor */
+	width: 100%; /* Ancho completo de la tarjeta */
+	height: 100%; /* Altura completa de la tarjeta */
+	backface-visibility: hidden; /* Oculta la cara posterior */
+	border-radius: var(--borde-redondeado); /* Bordes redondeados */
+}
+
+.tarjeta__cara--frontal {
+	background-image: var(--logo-url); /* Imagen de fondo utilizando la variable de logo */
+	background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+	background-position: center; /* Centra la imagen de fondo */
+}
+
+/* Elemento: Cara trasera de la tarjeta */
+.tarjeta__cara--trasera {
+	background-image: var(--icono-url); /* Imagen de fondo utilizando la variable de icono */
+	background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+	background-position: center; /* Centra la imagen de fondo */
+	transform: rotateY(180deg); /* Rota la cara trasera */
+}
+
+.tarjeta__3d__escala {
+	width: 20rem; /* Ancho de la tarjeta en rem */
+	height: 30rem; /* Altura de la tarjeta en rem */
+	perspective: 1000px; /* Distancia para la perspectiva 3D */
+	margin: 2rem auto; /* Margen para centrar la tarjeta */
+	transition: transform 0.3s ease-in-out; /* Transición para el efecto de escala */
+}
+
+.tarjeta__3d__escala:hover {
+	transform: scale(1.1); /* Escala la tarjeta en hover */
+}
+
+.tarjeta__contenido {
+	width: 100%; /* Ancho completo del contenedor */
+	height: 100%; /* Altura completa del contenedor */
+	background-color: var(--fondo); /* Fondo utilizando la variable de color */
+	border-radius: var(--borde-redondeado); /* Bordes redondeados */
+	box-shadow: var(--sombra-caja); /* Sombra de la caja */
+	transition: transform 0.6s ease-in-out; /* Transición para la rotación */
+	transform-style: preserve-3d; /* Mantiene el efecto 3D */
+	position: relative; /* Posición relativa para los elementos internos */
+}
+
+.tarjeta__3d__escala:hover .tarjeta__contenido {
+	transform: rotateY(180deg); /* Rota la tarjeta en el eje Y al hacer hover */
+}
+
+.tarjeta__cara__frontal,
+.tarjeta__cara__trasera {
+	position: absolute; /* Posición absoluta dentro del contenedor */
+	width: 100%; /* Ancho completo de la tarjeta */
+	height: 100%; /* Altura completa de la tarjeta */
+	backface-visibility: hidden; /* Oculta la cara posterior */
+	border-radius: var(--borde-redondeado); /* Bordes redondeados */
+}
+
+.tarjeta__cara__frontal {
+	background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+	background-position: center; /* Centra la imagen de fondo */
+}
+
+.tarjeta__cara__trasera {
+	background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+	background-position: center; /* Centra la imagen de fondo */
+	transform: rotateY(180deg); /* Rota la cara trasera */
+}
+
+/* Tarjeta 3D con Rotación en Z y Desvanecimiento */
+.tarjeta__3d__rotacion__z {
+	width: 20rem; /* Ancho de la tarjeta en rem */
+	height: 30rem; /* Altura de la tarjeta en rem */
+	perspective: 1000px; /* Distancia para la perspectiva 3D */
+	margin: 2rem auto; /* Margen para centrar la tarjeta */
+}
+
+.tarjeta__3d__rotacion__z:hover .tarjeta__contenido {
+	transform: rotateY(180deg) rotateZ(15deg); /* Rota en el eje Y y Z */
+	opacity: 0.9; /* Desvanece un poco la opacidad */
+}
+
+/* Tarjeta 3D con Movimiento Flotante en Hover */
+.tarjeta__3d__flotante {
+	width: 20rem; /* Ancho de la tarjeta en rem */
+	height: 30rem; /* Altura de la tarjeta en rem */
+	perspective: 1000px; /* Distancia para la perspectiva 3D */
+	margin: 2rem auto; /* Margen para centrar la tarjeta */
+	transition: transform 0.6s ease-in-out; /* Transición para el movimiento */
+}
+
+.tarjeta__3d__flotante:hover {
+	transform: translateY(-10px); /* Desplaza la tarjeta hacia arriba en hover */
+}
+
+.tarjeta__3d__flotante:hover .tarjeta__contenido {
+	transform: rotateY(180deg); /* Rota la tarjeta en el eje Y al hacer hover */
+}

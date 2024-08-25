@@ -1,0 +1,10 @@
+/** @format */
+
+@import url("./colores.css");
+@import url("./contenedores.css");
+
+@import url("./fuentes_textos.css");
+
+.margen__arriba__grande {
+	margin-top: var(--margen-grande);
+}
