@@ -1,133 +1,132 @@
 /** @format */
 
 @media (max-width: 1200px) {
-    /* Para pantallas grandes como desktops */
-    .titulo h1 {
-        font-size: var(--medida-titulo); /* Reducir ligeramente el tamaño */
-    }
+  /* Para pantallas grandes como desktops */
+  .titulo h1 {
+    font-size: var(--medida-titulo); /* Reducir ligeramente el tamaño */
+  }
 
-    .titulo h1 span {
-        font-size: var(
-            --medida-titulo-extra-grande
-        ); /* Ajustar el tamaño de las letras grandes */
-    }
+  .titulo h1 span {
+    font-size: var(
+      --medida-titulo-extra-grande
+    ); /* Ajustar el tamaño de las letras grandes */
+  }
 
-    .iframe {
-        height: 100vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .doble__pantalla {
-        height: 120vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .triple__pantalla {
-        height: 180vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .texto {
-        font-size: var(
-            --medida-texto
-        ); /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
+  .iframe {
+    height: 100vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .doble__pantalla {
+    height: 120vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .triple__pantalla {
+    height: 180vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .texto {
+    font-size: var(
+      --medida-texto
+    ); /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
 }
 
 @media (max-width: 992px) {
-    /* Para pantallas medianas como tablets en modo horizontal */
+  /* Para pantallas medianas como tablets en modo horizontal */
 
-    .titulo h1 {
-        font-size: 2rem;
-        word-break: break-all; /* Fuerza el salto de línea en cualquier punto de la palabra */
-        width: 100%;
-    }
+  .titulo h1 {
+    font-size: 2rem;
+    word-break: break-all; /* Fuerza el salto de línea en cualquier punto de la palabra */
+    width: 100%;
+  }
 
-    .iframe {
-        height: 140vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .doble__pantalla {
-        height: 180vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .triple__pantalla {
-        height: 220vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .texto {
-        font-size: 1.1rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
+  .iframe {
+    height: 190vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .doble__pantalla {
+    height: 240vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .triple__pantalla {
+    height: 250vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .texto {
+    font-size: 1.1rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
 }
 
 @media (max-width: 768px) {
-    /* Para tablets pequeñas y dispositivos móviles */
-    .titulo h1 {
-        font-size: 2rem;
-    }
+  /* Para tablets pequeñas y dispositivos móviles */
+  .titulo h1 {
+    font-size: 2rem;
+  }
 
-    .titulo h1 span {
-        font-size: 2.4rem;
-    }
+  .titulo h1 span {
+    font-size: 2.4rem;
+  }
 
-    .iframe {
-        height: 200vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .doble__pantalla {
-        height: 240vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .triple__pantalla {
-        height: 280vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .texto {
-        font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
+  .iframe {
+    height: 250vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .doble__pantalla {
+    height: 260vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .triple__pantalla {
+    height: 280vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .texto {
+    font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
 }
 
 @media (max-width: 576px) {
-    /* Para dispositivos móviles más pequeños */
-    .titulo h1 {
-        font-size: 1.2rem;
-    }
+  /* Para dispositivos móviles más pequeños */
+  .titulo h1 {
+    font-size: 1.2rem;
+  }
 
-    .titulo h1 span {
-        font-size: 2rem;
-    }
-    .titulo h5 span {
-        font-size: 1rem;
-    }
-    .iframe {
-        height: 240vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .doble__pantalla {
-        height: 280vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .triple__pantalla {
-        height: 320vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .texto {
-        font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
+  .titulo h1 span {
+    font-size: 2rem;
+  }
+  .titulo h5 span {
+    font-size: 1rem;
+  }
+  .iframe {
+    height: 260vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .doble__pantalla {
+    height: 290vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .triple__pantalla {
+    height: 380vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .texto {
+    font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
 }
 
 @media (max-width: 375px) {
-    /* Para dispositivos móviles muy pequeños (como iPhone SE) */
-    .titulo h1,
-    .titulo h5 {
-        font-size: 1.8rem;
-        word-break: break-all; /* Fuerza el salto de línea en cualquier punto de la palabra */
-        width: 100%;
-    }
+  /* Para dispositivos móviles muy pequeños (como iPhone SE) */
+  .titulo h1,
+  .titulo h5 {
+    font-size: 1.8rem;
+    word-break: break-all; /* Fuerza el salto de línea en cualquier punto de la palabra */
+    width: 100%;
+  }
 
-    .titulo h1 span {
-        font-size: 1.5rem;
-    }
-    .titulo h5 span {
-        font-size: 1rem;
-    }
+  .titulo h1 span {
+    font-size: 1.5rem;
+  }
+  .titulo h5 span {
+    font-size: 1rem;
+  }
 
-    .iframe {
-        height: 280vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .doble__pantalla {
-        height: 320vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .triple__pantalla {
-        height: 360vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
-    .texto {
-        font-size: 0.8rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-    }
+  .iframe {
+    height: 280vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .doble__pantalla {
+    height: 320vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .triple__pantalla {
+    height: 360vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
+  .texto {
+    font-size: 0.8rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+  }
 }
-

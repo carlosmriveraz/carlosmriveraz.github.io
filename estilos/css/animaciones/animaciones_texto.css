@@ -6,214 +6,211 @@
 
 /* Animación para crear un efecto de explosión */
 @keyframes animacion__explosion {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-        filter: blur(5px);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-        filter: blur(0);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: blur(5px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: blur(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Animación para crear un efecto de resplandor */
 @keyframes animacion__resplandor {
-    0% {
-        text-shadow: 1px 1px 5px var(--color-paleta1),
-            0 0 10px var(--color-paleta5), 0 0 15px #ffef00,
-            0 0 20px var(--color-paleta4), 0 0 25px var(--color-paleta2),
-            0 0 30px var(--color-paleta5), 0 0 35px #ffef00;
-    }
-    50% {
-        text-shadow: 0 0 10px var(--color-paleta1),
-            0 0 20px var(--color-paleta1), 0 0 30px #ffef00, 0 0 40px #ffef00,
-            0 0 50px var(--color-paleta2), 0 0 60px var(--color-paleta1),
-            0 0 70px #ffef00;
-    }
-    100% {
-        text-shadow: 0 0 5px var(--color-paleta1), 0 0 10px var(--color-paleta1),
-            0 0 15px var(--color-paleta4), 0 0 20px var(--color-paleta4),
-            0 0 25px #ffef00, 0 0 30px #ffef00, 0 0 35px var(--color-paleta4);
-    }
+  0% {
+    text-shadow: 1px 1px 5px var(--color-paleta1), 0 0 10px var(--color-paleta5),
+      0 0 15px #ffef00, 0 0 20px var(--color-paleta4),
+      0 0 25px var(--color-paleta2), 0 0 30px var(--color-paleta5),
+      0 0 35px #ffef00;
+  }
+  50% {
+    text-shadow: 0 0 10px var(--color-paleta1), 0 0 20px var(--color-paleta1),
+      0 0 30px #ffef00, 0 0 40px #ffef00, 0 0 50px var(--color-paleta2),
+      0 0 60px var(--color-paleta1), 0 0 70px #ffef00;
+  }
+  100% {
+    text-shadow: 0 0 5px var(--color-paleta1), 0 0 10px var(--color-paleta1),
+      0 0 15px var(--color-paleta4), 0 0 20px var(--color-paleta4),
+      0 0 25px #ffef00, 0 0 30px #ffef00, 0 0 35px var(--color-paleta4);
+  }
 }
 
 /* Animación para crear un efecto de aparecer y hacer zoom */
 @keyframes animacion__zoom {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Animación para el parpadeo del cursor */
 @keyframes animacion__parpadeo-cursor {
-    from,
-    to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: var(--color-paleta2);
-    }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-paleta2);
+  }
 }
 
 /* Animación para aparecer */
 @keyframes animacion__fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Animación para crear un efecto de pulso */
 @keyframes animacion__pulso {
-    0%,
-    100% {
-        text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
-    }
-    50% {
-        text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
-    }
+  0%,
+  100% {
+    text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+  }
+  50% {
+    text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
+  }
 }
 
 /* Animación para escribir texto */
 @keyframes animacion__escribir {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* Animación para crecer */
 @keyframes animacion__crecer {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Animación para reducir */
 @keyframes animacion__reducir {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0);
-    }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 
 /* -------------------- ESTILOS -------------------- */
 
 /* Estilo y animaciones para el texto animado con zoom */
 .texto__animado__zoom {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    color: var(--color-paleta2);
-    transform: scale(0.5);
-    animation: animacion__zoom 2s ease forwards,
-        animacion__escribir 4s steps(30, end) 2s forwards,
-        animacion__parpadeo-cursor 0.75s step-end infinite 6s;
-    transition: text-shadow 0.5s, transform 0.5s;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: var(--color-paleta2);
+  transform: scale(0.5);
+  animation: animacion__zoom 2s ease forwards,
+    animacion__escribir 4s steps(30, end) 2s forwards,
+    animacion__parpadeo-cursor 0.75s step-end infinite 6s;
+  transition: text-shadow 0.5s, transform 0.5s;
 }
 
 .texto__animado__zoom:hover {
-    text-shadow: 0px 0px 2px var(--color-paleta4), -3px -3px 2px #00ffff,
-        0px -3px var(--color-paleta4), -3px 1px 0 var(--color-paleta5);
-    transform: scale(1.4);
-    color: var(--color-paleta4);
+  text-shadow: 0px 0px 2px var(--color-paleta4), -3px -3px 2px #00ffff,
+    0px -3px var(--color-paleta4), -3px 1px 0 var(--color-paleta5);
+  transform: scale(1.4);
+  color: var(--color-paleta4);
 }
 
 /* Estilo y animaciones combinadas */
 .efectos__combinados {
-    text-align: center;
-    animation: animacion__fade-in 2s forwards;
-    opacity: 0;
+  text-align: center;
+  animation: animacion__fade-in 2s forwards;
+  opacity: 0;
 }
 
 .efectos__combinados h2 {
-    animation: animacion__pulso 3s 4s infinite,
-        animacion__move-right-left 8s 1s 2;
+  animation: animacion__pulso 3s 4s infinite, animacion__move-right-left 8s 1s 2;
 }
 
 .efectos__combinados h3 {
-    animation: animacion__pulso 5s 500ms infinite,
-        animacion__move-left-right 8s 1s 2;
+  animation: animacion__pulso 5s 500ms infinite,
+    animacion__move-left-right 8s 1s 2;
 }
 
 .efectos__combinados__pulso {
-    animation: animacion__pulso 5s 2s linear 2;
+  animation: animacion__pulso 5s 2s linear 2;
 }
 
 /* Efectos adicionales combinados */
 .efectos__combinados::before,
 .efectos__combinados::after {
-    content: '';
-    position: absolute;
-    background-color: var(--color-paleta2);
-    border-radius: 50%;
-    animation: animacion__crecer 2s 4s forwards,
-        animacion__reducir 2s 8s forwards;
+  content: "";
+  position: absolute;
+  background-color: var(--color-paleta2);
+  border-radius: 50%;
+  animation: animacion__crecer 2s 4s forwards, animacion__reducir 2s 8s forwards;
 }
 
 .efectos__combinados::before {
-    top: -20px;
-    left: -20px;
-    width: 10px;
-    height: 10px;
-    animation-delay: 0.2s;
+  top: -20px;
+  left: -20px;
+  width: 10px;
+  height: 10px;
+  animation-delay: 0.2s;
 }
 
 .efectos__combinados::after {
-    bottom: -20px;
-    right: -20px;
-    width: 10px;
-    height: 10px;
-    animation-delay: 0.4s;
+  bottom: -20px;
+  right: -20px;
+  width: 10px;
+  height: 10px;
+  animation-delay: 0.4s;
 }
 
 /* Animación para crecer */
 @keyframes crecer {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Animación para reducir */
 @keyframes reducir {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0);
-    }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 
 /* Animación para el efecto de pulso */
 @keyframes pulso {
-    0%,
-    100% {
-        text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
-    }
-    50% {
-        text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
-    }
+  0%,
+  100% {
+    text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+  }
+  50% {
+    text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
+  }
 }
 
 /* ============================================= */
@@ -222,21 +219,21 @@
 
 /* Estilo y animaciones para el texto animado con zoom */
 .texto-animado-zoom {
-    animation: aparecerZoom 2s ease forwards,
-        escribir 4s steps(30, end) 2s forwards,
-        parpadeo-cursor 0.75s step-end infinite 6s;
-    color: var(--color-paleta2);
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    transform: scale(0.5);
-    transition: text-shadow 0.5s, transform 0.5s;
+  animation: aparecerZoom 2s ease forwards,
+    escribir 4s steps(30, end) 2s forwards,
+    parpadeo-cursor 0.75s step-end infinite 6s;
+  color: var(--color-paleta2);
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  transform: scale(0.5);
+  transition: text-shadow 0.5s, transform 0.5s;
 }
 
 .texto-animado-zoom:hover {
-    color: var(--color-paleta4);
-    text-shadow: 0px 0px 2px var(--color-paleta4), -3px -3px 2px #00ffff,
-        0px -3px var(--color-paleta4), -3px 1px 0 var(--color-paleta5);
-    transform: scale(1.4);
+  color: var(--color-paleta4);
+  text-shadow: 0px 0px 2px var(--color-paleta4), -3px -3px 2px #00ffff,
+    0px -3px var(--color-paleta4), -3px 1px 0 var(--color-paleta5);
+  transform: scale(1.4);
 }
 
 /* ============================================= */
@@ -245,57 +242,57 @@
 
 /* Estilo y animaciones combinadas */
 .efectos__combinados {
-    animation: aparecer 2s forwards;
-    opacity: 0;
-    text-align: center;
+  animation: aparecer 2s forwards;
+  opacity: 0;
+  text-align: center;
 }
 
 .efectos__combinados h2,
 .efectos__combinados h3 {
-    font-size: 1.6rem;
-    position: relative;
+  font-size: 1.6rem;
+  position: relative;
 }
 
 .efectos__combinapulsodos h2 {
-    animation: pulso 3s 4s infinite, moverDerechaIzquierda 8s 1s 2;
+  animation: pulso 3s 4s infinite, moverDerechaIzquierda 8s 1s 2;
 }
 
 .efectos__combinados::before,
 .efectos__combinados::after {
-    animation: crecer 2s 4s forwards, reducir 2s 8s forwards;
-    background-color: var(--color-paleta2);
-    border-radius: 50%;
-    content: '';
-    position: absolute;
+  animation: crecer 2s 4s forwards, reducir 2s 8s forwards;
+  background-color: var(--color-paleta2);
+  border-radius: 50%;
+  content: "";
+  position: absolute;
 }
 
 .pulso {
-    animation: pulso 5s 500ms infinite, moverIzquierdaDerecha 8s 1s 2;
+  animation: pulso 5s 500ms infinite, moverIzquierdaDerecha 8s 1s 2;
 }
 .pulso::before {
-    animation-delay: 0.2s;
-    height: 10px;
-    left: -20px;
-    top: -20px;
-    width: 10px;
+  animation-delay: 0.2s;
+  height: 10px;
+  left: -20px;
+  top: -20px;
+  width: 10px;
 }
 
 .pulso::after {
-    animation-delay: 0.4s;
-    bottom: -20px;
-    height: 10px;
-    right: -20px;
-    width: 10px;
+  animation-delay: 0.4s;
+  bottom: -20px;
+  height: 10px;
+  right: -20px;
+  width: 10px;
 }
 
 /* Animación para aparecer */
 @keyframes aparecer {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ============================================= */
@@ -303,60 +300,60 @@
 /* ============================================= */
 
 /* Importa la fuente Marvel */
-@import url('https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap");
 
 .marvel-negrita {
-    font-family: 'Marvel', sans-serif;
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Marvel", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* Contenedor del texto Hero */
 .contenedor-texto-hero {
-    background: url('../images/logo.gif') no-repeat center;
-    background-clip: text;
-    background-size: 50%;
-    font-size: 500px;
-    font-weight: bold;
-    opacity: 0.7;
-    -webkit-background-clip: text;
+  background: url("../images/logo.gif") no-repeat center;
+  background-clip: text;
+  background-size: 50%;
+  font-size: 500px;
+  font-weight: bold;
+  opacity: 0.7;
+  -webkit-background-clip: text;
 }
 
 /* Sección Hero */
 .seccion-hero {
-    align-items: center;
-    background-color: black; /* Fondo para un mejor contraste */
-    display: flex;
-    height: 100vh;
-    justify-content: center;
+  align-items: center;
+  background-color: black; /* Fondo para un mejor contraste */
+  display: flex;
+  height: 100vh;
+  justify-content: center;
 }
 
 /* Contenido de la sección Hero */
 .contenido-hero {
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: center;
 }
 
 /* Texto Hero con animación */
 .texto-hero {
-    animation: moverFondo 5s linear infinite;
-    background: url('../images/logo.gif') no-repeat center center;
-    background-clip: text;
-    background-size: cover;
-    color: transparent;
-    font-family: var(--font-marvel);
-    font-size: 10vw; /* Tamaño del texto relativo al ancho de la ventana */
-    -webkit-background-clip: text;
+  animation: moverFondo 5s linear infinite;
+  background: url("../images/logo.gif") no-repeat center center;
+  background-clip: text;
+  background-size: cover;
+  color: transparent;
+  font-family: var(--font-marvel);
+  font-size: 10vw; /* Tamaño del texto relativo al ancho de la ventana */
+  -webkit-background-clip: text;
 }
 
 /* Animación para mover el fondo en el texto Hero */
 @keyframes moverFondo {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
 
 /* ============================================= */
@@ -367,19 +364,19 @@
 
 /* Animación de rotación para la imagen redonda */
 @keyframes rotarImagen {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Estilo de la imagen en la sección Hero */
 .imagen-seccion-hero img {
-    animation: rotarImagen 5s linear infinite;
-    border-radius: 50%;
-    width: 100%;
+  animation: rotarImagen 5s linear infinite;
+  border-radius: 50%;
+  width: 100%;
 }
 
 /* ============================================= */
@@ -388,47 +385,47 @@
 
 /* Botón con animación y sombra */
 .boton-animado {
-    animation: explosion 2s infinite;
-    background-color: var(--color-paleta1);
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 1rem 2rem;
-    position: relative;
-    transition: background-color 0.3s, box-shadow 0.3s;
+  animation: explosion 2s infinite;
+  background-color: var(--color-paleta1);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  position: relative;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .boton-animado:hover {
-    background-color: var(--color-paleta2);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-paleta2);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .texto__final {
-    position: fixed;
-    bottom: 1%;
-    right: 2rem;
-    transform: translateY(-50%);
+  position: fixed;
+  bottom: 1%;
+  right: 2rem;
+  transform: translateY(-50%);
 
-    background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 
-    padding: 0.2rem;
-    border-radius: 12px;
+  padding: 0.2rem;
+  border-radius: 12px;
 
-    font-size: var(--medida-texto-extra-reducido);
+  font-size: var(--medida-texto-extra-reducido);
 }
 
 .texto__final__animado {
-    opacity: 0;
-    transform: translateY(-100%);
-    animation: dropIn 0.5s ease forwards;
-    animation-delay: var(--delay);
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: dropIn 0.5s ease forwards;
+  animation-delay: var(--delay);
 }
 
 @keyframes dropIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
