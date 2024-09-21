@@ -1,0 +1,49 @@
+.notification-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1.5px solid var(--color-hover);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.checkbox-container input {
+  margin-left: 1rem;
+}
+
+.eliminar-nota {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Botón de eliminar tarea */
+.eliminar {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+}

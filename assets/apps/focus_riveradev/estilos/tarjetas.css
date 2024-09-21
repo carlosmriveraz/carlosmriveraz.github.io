@@ -1,0 +1,201 @@
+/** @format */
+
+.holograma {
+  background: linear-gradient(
+    135deg,
+    var(--color-paleta1),
+    var(--color-secundario),
+    var(--color-terciario),
+    var(--color-primario)
+  );
+  background-size: 400% 400%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  transform: rotateX(0deg) rotateY(0deg) scale(1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease,
+    filter 0.4s ease;
+  animation: holograma 4s linear infinite;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.holograma::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 255, 0.3);
+  filter: blur(10px);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.holograma:hover {
+  transform: rotateX(20deg) rotateY(20deg) scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(
+    135deg,
+    var(--color-paleta5),
+    var(--color-secundario),
+    var(--color-terciario),
+    var(--color-primario)
+  );
+}
+
+.holograma:hover::before {
+  opacity: 1;
+}
+
+.holograma:active {
+  transform: rotateX(30deg) rotateY(30deg) scale(1.2);
+  background: linear-gradient(
+    135deg,
+    var(--color-paleta1),
+    var(--color-secundario),
+    var(--color-terciario),
+    var(--color-primario)
+  );
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes holograma {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Efectos adicionales */
+@keyframes brillo {
+  0% {
+    filter: brightness(1.2);
+  }
+  50% {
+    filter: brightness(0.8);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes rotacion {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes parpadeo {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.holograma::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  transition: opacity 0.5s ease;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+}
+
+.holograma:hover::after {
+  opacity: 1;
+  animation: brillo 2s infinite, rotacion 5s linear infinite;
+}
+
+.holograma:active::after {
+  animation: zoom 0.5s ease-out;
+}
+
+.contenedor__imagen__cubierta {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.1),
+      rgba(0, 0, 0, 0.1) 70%
+    ),
+    linear-gradient(45deg, var(--color-paleta4), var(--color-paleta7));
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.capa__final {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  transition: height 0.3s ease;
+}
+
+.tarjeta__imagen__cubierta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: url("../imagenes/logo.ico") no-repeat center center/cover;
+  clip-path: inset(
+    100% 0 0 0
+  ); /* Esconde la imagen completamente inicialmente */
+  transition: clip-path 0.3s ease;
+}
+
+.contenedor__imagen__cubierta:hover .capa__final {
+  height: 20%; /* Disminuye el tamaño del texto al hacer hover */
+}
+
+.contenedor__imagen__cubierta:hover .tarjeta__imagen__cubierta {
+  clip-path: inset(0 0 0 0); /* Muestra la imagen completamente en hover */
+}
+
+.contenedor__imagen__cubierta:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Aumenta el box-shadow en hover */
+}

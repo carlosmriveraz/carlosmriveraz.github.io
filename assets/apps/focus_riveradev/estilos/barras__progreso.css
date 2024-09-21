@@ -1,0 +1,80 @@
+        /* Barra de progreso */
+ 
+
+        .barra-progreso__interno {
+            height: 1%;
+            background-color: #61dafb;
+            width: 0%;
+            transition: width 0.2s;
+        }
+
+
+
+
+
+.barra-progreso {
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+.barra-progreso__interno {
+	background: linear-gradient(
+		45deg,
+		#61dafb 0%,
+		var(--color-primario) 20%,
+		var(--color-terciario) 80%,
+		var(--color-terciario) 100%
+	);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+	width: 1%;
+	height: 10%;
+}
+
+.barra-progreso--rainbow {
+	width: 250px;
+	height: 50px;
+	border-radius: 10px;
+	background: linear-gradient(
+		90deg,
+		#ff0000,
+		#ff7f00,
+		#ffff00,
+		#00ff00,
+		#0000ff,
+		#4b0082,
+		#8b00ff
+	);
+	background-size: 200% 100%;
+	background-position: 0 0;
+	position: relative;
+}
+
+.barra-progreso--rainbow .barra-progreso__interno--barra {
+	background: linear-gradient(
+		90deg,
+		#ff0000,
+		#ff7f00,
+		#ffff00,
+		#00ff00,
+		#0000ff,
+		#4b0082,
+		#8b00ff
+	);
+	background-size: 200% 100%;
+	background-position: 0 0;
+	border-radius: 10px;
+	height: 100%;
+	animation: rainbow-progress 5s linear infinite;
+}
+
+@keyframes rainbow-progress {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
+}

@@ -1,0 +1,117 @@
+:root {
+  --fire-color1: #ff9d00;
+  --fire-color2: #ff4500;
+  --fire-color3: #ffd700;
+  --fire-color4: #ff6347;
+  --fire-color5: #ff0000;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #61dafb, #282c34aa, #61dafb44, #3a3f47);
+  animation: backgroundChange 1s infinite alternate;
+}
+
+.texto__en__llamas {
+  font-family: "Arial", sans-serif;
+  font-size: 4rem;
+  color: var(--fire-color1);
+  animation: flames 2s infinite, flicker 0.1s infinite alternate,
+    glow 2s infinite alternate, distortion 3s infinite;
+  text-shadow: 0 0 5px var(--fire-color1), 0 0 10px var(--fire-color2),
+    0 0 15px var(--fire-color3), 0 0 20px var(--fire-color4),
+    0 0 25px var(--fire-color5);
+  box-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2),
+    0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
+    0 0 50px var(--fire-color5);
+  filter: url(#distortion); /* Filtro SVG para distorsión */
+  position: absolute;
+  z-index: 10; /* Asegura que esté por encima del fondo */
+}
+
+@keyframes flames {
+  0% {
+    color: var(--fire-color1);
+  }
+  25% {
+    color: var(--fire-color2);
+  }
+  50% {
+    color: var(--fire-color3);
+  }
+  75% {
+    color: var(--fire-color4);
+  }
+  100% {
+    color: var(--fire-color5);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px var(--fire-color1), 0 0 10px var(--fire-color2),
+      0 0 15px var(--fire-color3), 0 0 20px var(--fire-color4),
+      0 0 25px var(--fire-color5);
+    box-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2),
+      0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
+      0 0 50px var(--fire-color5);
+  }
+  100% {
+    text-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2),
+      0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
+      0 0 50px var(--fire-color5);
+    box-shadow: 0 0 20px var(--fire-color1), 0 0 40px var(--fire-color2),
+      0 0 60px var(--fire-color3), 0 0 80px var(--fire-color4),
+      0 0 100px var(--fire-color5);
+  }
+}
+
+@keyframes distortion {
+  0% {
+    transform: translateY(0) skewX(0deg);
+  }
+  25% {
+    transform: translateY(-5px) skewX(-5deg);
+  }
+  50% {
+    transform: translateY(5px) skewX(5deg);
+  }
+  75% {
+    transform: translateY(-5px) skewX(-5deg);
+  }
+  100% {
+    transform: translateY(0) skewX(0deg);
+  }
+}
+
+@keyframes backgroundChange {
+  0% {
+    background: linear-gradient(135deg, #61dafb, #282c34aa, #61dafb44, #3a3f47);
+  }
+  100% {
+    background: linear-gradient(135deg, #3a3f47, #61dafb44, #282c34aa, #61dafb);
+  }
+}
+
+/* SVG filter for distortion */
+svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}

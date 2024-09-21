@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Kanban</title>
+    <link rel="stylesheet" href="configuracion.css" />
+    <link rel="stylesheet" href="estilos/general.css" />
+    <link rel="stylesheet" href="estilos/barras__progreso.css" />
+    <link rel="stylesheet" href="estilos/menu.css" />
+    <link rel="stylesheet" href="estilos/tarjetas.css" />
+    <link rel="stylesheet" href="estilos/notificaciones.css" />
+    <link rel="stylesheet" href="estilos/notas__rapidas.css" />
+    <link rel="stylesheet" href="estilos/kanban.css" />
+    <link rel="stylesheet" href="estilos/main.css" />
+    <link rel="stylesheet" href="estilos/movil.css" />
+
+    <!-- Nuevo archivo CSS -->
+
+    <script type="module" src="js/configuracion.js"></script>
+  </head>
+  <body>
+    <header>
+      <input type="checkbox" id="toggle-config" class="toggle-checkbox" />
+
+      <label for="toggle-config" class="hamburguesa">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Menú de configuración -->
+      <div class="menu-configuracion">
+        <h2>Configuración</h2>
+
+        <div class="configuracion-item">
+          <label for="tiempo-trabajo">Tiempo de trabajo (minutos):</label>
+          <input
+            type="number"
+            id="tiempo-trabajo"
+            value="25"
+            max="30"
+            min="1"
+          />
+        </div>
+
+        <div class="configuracion-item">
+          <label for="tiempo-descanso">Tiempo de descanso (minutos):</label>
+          <input
+            type="number"
+            id="tiempo-descanso"
+            value="5"
+            max="10"
+            min="1"
+          />
+        </div>
+
+        <div class="configuracion-item">
+          <label for="tiempo-alerta">Tiempo para alerta (segundos):</label>
+          <input type="number" id="tiempo-alerta" value="55" min="1" max="70" />
+        </div>
+
+        <div class="configuracion-item">
+          <label class="checkbox-container">
+            Habilitar notificaciones
+            <input type="checkbox" id="notificacionesHabilitadas" checked />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div class="configuracion-item">
+          <button id="aplicar-config">Aplicar</button>
+        </div>
+      </div>
+      <div class="logo">
+        <img src="imagenes/logo.ico" alt="Logo" />
+      </div>
+    </header>
+
+    <main class="principal">
+      <div class="reloj">
+        <h2>Pomodoro</h2>
+        <div class="panel_principal">
+          <div class="fila fila1">
+            <div class="clock" id="pantalla">25:00</div>
+
+            <div class="barra-progreso__interno" id="barra-progreso"></div>
+
+            <div id="pantalla-descanso" class="clock">05:00</div>
+          </div>
+          <div class="fila fila2">
+            <button id="iniciar">Iniciar</button>
+            <button id="pausar">Pausar</button>
+            <button id="reiniciar">Resetear</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen de alerta que se mostrará cuando la alarma esté activa -->
+
+      <!-- Tablero Kanban -->
+      <div class="kanban">
+        <h2>Kanban</h2>
+        <div class="panel_principal">
+          <div class="fila fila1">
+            <div class="tareas-container">
+              <div class="columna" id="pendientes">
+                <h3>Pendientes</h3>
+                <ul></ul>
+              </div>
+              <div class="columna" id="en-proceso">
+                <h3>En Proceso</h3>
+                <ul></ul>
+              </div>
+              <div class="columna" id="terminadas">
+                <h3>Terminadas</h3>
+                <ul class="holograma"></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="fila2">
+            <button id="agregar-tarea">Agregar Tarea</button>
+            <input type="text" id="entrada-tarea" placeholder="Nueva tarea" />
+          </div>
+        </div>
+      </div>
+
+      <div class="kanban">
+        <h2>notas-rapidas</h2>
+        <div class="notas-rapidas"></div>
+        <button id="agregar-nota">Agregar Nota Rápida</button>
+      </div>
+      <img
+        src="imagenes/alerta.png"
+        alt="Alerta"
+        id="imagen-alerta"
+        class="texto__en__llamas"
+      />
+      <!-- Contenedor de notificaciones -->
+
+      <div id="notification-container" class="notification-container"></div>
+    </main>
+    <script src="./js/configuracion.js"></script>
+    <script src="./js/notificaciones.js"></script>
+    <script src="./js/kanban.js"></script>
+    <script src="./js/reloj.js"></script>
+    <script src="./js/alarmas.js"></script>
+    <script src="./js/inicializacion.js"></script>
+  </body>
+</html>

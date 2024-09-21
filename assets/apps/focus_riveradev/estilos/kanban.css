@@ -1,0 +1,108 @@
+.kanban {
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle, #3a3f47, #282c34);
+  border-radius: 10px;
+  border-color: #61dafb;
+  box-shadow: inset 0 0 10px #61dafbaa;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  color: #61dafb;
+  width: 100%;
+  height: auto;
+  border: 1px solid #61dafb;
+}
+.kanban:hover {
+  background: radial-gradient(circle, var(--color-paleta5), #61dafb20);
+  color: var(--color-hover);
+  scale: 1.02;
+  box-shadow: 1px 1px 1px 2px #00ffff99;
+}
+
+.kanban .columna {
+  /* Gradiente circular */
+  text-align: center;
+  border-radius: 4px;
+  background-color: #282c34;
+  border-color: #61dafb;
+  box-shadow: inset 0 1px 5px #61dafbaa;
+  padding: 1px;
+  min-height: 50vh;
+  flex-grow: 1;
+  flex-basis: calc(50% - 20px); /* Ajuste para el margen */
+}
+
+.kanban .columna ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tareas-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0px 0px 2px rgba(0, 255, 255, 0.5);
+}
+.kanban .tarea {
+  background-color: #3a3f47;
+  padding: 5px;
+
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px -2px 5px rgba(0, 255, 255, 0.5);
+}
+.kanban input {
+  width: 65%;
+  height: 38%;
+  border-radius: 8px;
+  background: linear-gradient(#3a3f47, #282c34);
+  color: var(--color-texto);
+}
+
+.tarea {
+  background-color: #3a3f47;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px 0;
+  box-shadow: 0px 2px 5px rgba(0, 255, 255, 0.5);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tarea:hover {
+  background-color: #4c545a;
+  transform: scale(1.05);
+}
+
+.alerta-activa {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+#imagen-alerta {
+  display: none;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+#entrada-tarea {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.eliminar {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+}

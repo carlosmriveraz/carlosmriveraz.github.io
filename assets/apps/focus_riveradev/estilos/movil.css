@@ -1,0 +1,41 @@
+/* Media Queries */
+@media (max-width: 768px) {
+    .timer-kanban {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .kanban {
+        flex-direction: column;
+    }
+
+    .kanban .tarea {
+        margin: 5px 0; /* Añadir margen vertical a las tareas */
+    }
+    .kanban .columna {
+        min-height: 20vh;
+    }
+    .hamburguesa {
+        top: 10px;
+        right: 10px;
+        position: fixed; /* Asegúrate de que esté en una posición fija */
+    }
+
+    .panel_principal {
+        display: flex;
+        flex-direction: column; /* Organiza los elementos en una columna */
+        flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+        margin-top: 1rem;
+    }
+    .tareas-container {
+        display: flex;
+        flex-direction: column; /* Organiza los elementos en una columna */
+        flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+    }
+    .reloj,
+    .clock {
+        min-width: 100%;
+        margin-right: 0;
+        margin-bottom: .8rem; /* Añade espacio entre los elementos */
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "tiempoTrabajo": 1,
+    "tiempoDescanso": 5,
+    "tiempoAlerta": 30,
+    "notificacionesHabilitadas": true
+}

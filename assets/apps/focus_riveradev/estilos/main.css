@@ -1,0 +1,76 @@
+/* estilos/main.css */
+.principal {
+  display: grid; /* Ajusta la dirección de los elementos en pantallas más pequeñas */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 3.2rem;
+}
+
+@media (min-width: 600px) {
+  .principal {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 columnas en pantallas más grandes */
+    height: 65vh;
+  }
+}
+
+.reloj {
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle, #3a3f47, #282c34);
+  border-radius: 10px;
+  border-color: #61dafb;
+  box-shadow: inset 0 0 10px #61dafbaa;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  color: #61dafb;
+  width: 100%;
+  height: auto;
+  border: 1px solid #61dafb;
+  transition: all 1s;
+}
+.panel_principal {
+  margin-top: 0.8rem;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.fila {
+  border-radius: 8px;
+
+  box-shadow: inset 0 0px 1px #61dafb50;
+}
+.fila1 {
+  flex: 8; /* La primera fila ocupa el 80% del espacio */
+  min-height: 60vh;
+}
+
+.fila2 {
+  flex: 2; /* La segunda fila ocupa el 20% del espacio restante */
+}
+
+.reloj:hover {
+  background: radial-gradient(circle, var(--color-paleta5), #61dafb20);
+  color: var(--color-hover);
+  scale: 1.02;
+  box-shadow: 1px 1px 1px 2px #00ffff99;
+}
+
+.clock {
+  background: radial-gradient(
+    circle,
+    #3a3f47,
+    #282c34
+  ); /* Gradiente circular */
+  border-radius: 10px;
+  border-color: #61dafb;
+  box-shadow: inset 0 0 10px #61dafb55;
+  padding: 0.8rem;
+  color: #61dafb;
+  margin-top: 0.5rem;
+  border: 1px solid #61dafb;
+}

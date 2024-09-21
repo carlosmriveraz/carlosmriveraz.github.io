@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Estilos principales */
+body {
+  font-family: var(--fuente-primaria);
+  background-color: #282c34;
+  border-radius: 10px;
+  border-color: #61dafb;
+  box-shadow: inset 0 0 11px #61dafb55;
+  font-size: 18px;
+  color: #61dafb;
+}
+
+header {
+  width: var(--ancho-completo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: var(--color-menu);
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.8rem;
+  background-color: var(--color-paleta4);
+  border-radius: 10px;
+  border-color: #61dafb;
+  box-shadow: inset 0 0 10px #61dafbaa;
+  color: var(--color-texto);
+  border: 1px solid var(--color-paleta5);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  scale: 1.1;
+  background-color: var(--color-principal);
+  color: var(--color-secundario);
+  text-shadow: 1px 2px 5px var(--color-hover);
+}
+h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1rem;
+}

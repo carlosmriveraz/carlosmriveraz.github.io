@@ -1,0 +1,127 @@
+/* Ocultar el checkbox */
+.toggle-checkbox {
+	display: none;
+}
+
+/* Estilos del ícono de hamburguesa */
+.hamburguesa {
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 1100;
+}
+
+.hamburguesa span {
+	display: block;
+	width: 100%;
+	height: 4px;
+	background-color: var(--color-texto);
+	transition: background-color 0.3s ease;
+}
+
+/* Menú oculto por defecto */
+.menu-configuracion {
+	position: fixed;
+	bottom: -85%; /* Menú fuera de la vista por defecto */
+	right: 0;
+	width: 55%; /* Ocupa todo el ancho de la pantalla */
+	height: 85%; /* Ocupa el 80% de la altura de la pantalla */
+	background-color: var(--color-menu);
+	color: var(--color-texto);
+	padding: 0.5rem;
+	box-shadow: 0px -2px 5px rgba(0, 255, 255, 0.6);
+	transition: bottom 0.9s ease-in-out;
+	z-index: 1000;
+	border: 1px solid #61dafb;
+	border-radius: 8px;
+	overflow-y: auto; /* Permite scroll si el contenido es mayor que el menú */
+	font-size: 0.8rem;
+	margin-bottom: 0.1rem;
+}
+
+/* Mostrar el menú cuando el checkbox está marcado */
+.toggle-checkbox:checked ~ .menu-configuracion {
+	bottom: 0;
+}
+
+/* Opcional: Cambiar el aspecto del ícono de hamburguesa cuando el menú esté abierto */
+.toggle-checkbox:checked ~ .hamburguesa span {
+	background-color: rgba(0, 255, 255, 0.8);
+}
+
+/* Estilo moderno para los items de configuración */
+.configuracion-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	flex-wrap: wrap; /* Permite que se ajusten en pantallas pequeñas */
+}
+
+.configuracion-item label {
+	flex: 1;
+	margin-right: 10px;
+	min-width: 150px; /* Asegura que el label tenga un ancho mínimo en pantallas grandes */
+	font-weight: bold;
+}
+
+.configuracion-item input {
+	flex: 1;
+	padding: 8px;
+	border-radius: 4px;
+	border: 1px solid #61dafb;
+	background-color: #f0f0f0;
+}
+
+.configuracion-item button {
+	width: 100%;
+	padding: 10px;
+	background-color: #61dafb;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	transition: background-color 0.3s ease;
+}
+
+.configuracion-item button:hover {
+	background-color: #21a1f1;
+}
+.logo img {
+	height: 2rem;
+}
+
+/* Estilo del logo */
+.logo {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+}
+logo img {
+	min-width: 2rem;
+}
+/* Responsive adjustments */
+@media (max-width: 600px) {
+	.configuracion-item {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.configuracion-item label {
+		margin-bottom: 5px;
+		min-width: auto;
+	}
+
+	.configuracion-item input,
+	.configuracion-item button {
+		width: 100%;
+	}
+}
