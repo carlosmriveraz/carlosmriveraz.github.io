@@ -1,95 +1,431 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Business Intelligence</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
-		<link rel="stylesheet" href="biestilo.css" />
-		<link rel="stylesheet" href="../../estilos/fuentes_y_textos.css" />
-		<link rel="stylesheet" href="../../estilos/estilo.css" />
-	</head>
-	<body class="textoshadow pulso">
-		<section id="business-intelligence">
-			<div class="contenedor_bi">
-				<div class="contenedor__Estadisticas__item">
-					<div class="contenedor__Estadisticas__kpi">
-						<h2>KPI</h2>
-						<div id="kpi">
-							<p>
-								Valor Mínimo:
-								<span id="min-value"></span> (Fecha: <span id="min-date"></span>)
-							</p>
-							<p>
-								Valor Máximo:
-								<span id="max-value"></span> (Fecha: <span id="max-date"></span>)
-							</p>
-							<p>
-								Valor Promedio:
-								<span id="avg-value"></span>
-							</p>
-							<p>
-								Valor Calculado via API:
-								<span id="api-value"></span>
-							</p>
-							<script src="https://www.dolar-colombia.com/widget.js?t=2&c=1"></script>
-						</div>
-					</div>
-					<div class="contenedor__Estadisticas">
-						<div class="contenedor__Estadisticas__Estadisticas">
-							<h2>Estadísticas:</h2>
-							<label for="months">Ingrese el número de meses para el cálculo (máximo 12 meses):</label>
-							<input type="number" id="months" name="months" value="1" min="1" max="12" />
-							<button onclick="generateStatistics()">Generar Estadísticas</button>
-							<div id="charts">
-								<canvas id="lineChart" class="contenedor__Estadisticas__item"></canvas>
-								<canvas id="barChart" class="contenedor__Estadisticas__item"></canvas>
-								<canvas id="pieChart" class="contenedor__Estadisticas__item"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contenedor__Estadisticas__item">
-					<div class="contenedor__Estadisticas_predicciones">
-						<h2 class="subtitulo">Predicciones para los Próximos Dos Días</h2>
-						<p>Nota: Estas predicciones son estimaciones realizadas por inteligencia artificial y no son fijas.</p>
-						<table id="predictions" class="sortable">
-							<thead>
-								<tr>
-									<th>Fecha</th>
-									<th>Valor Predicho en Pesos Colombianos</th>
-								</tr>
-							</thead>
-							<tbody>
-								<!-- Los datos se rellenarán aquí -->
-							</tbody>
-						</table>
-					</div>
-				</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Intelligence</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
-				<div class="contenedor__Estadisticas__item">
-					<h2 class="subtitulo">Valores del Dólar en Colombia</h2>
-					<div id="contenedor__table">
-						<table id="dollar-values" class="sortable">
-							<thead>
-								<tr>
-									<th data-sort="date">Fecha</th>
-									<th data-sort="number">Valor en Pesos Colombianos</th>
-								</tr>
-							</thead>
-							<tbody>
-								<!-- Los datos se rellenarán aquí -->
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</section>
+    <link rel="stylesheet" href="bi_estilo.css" />
+    <link rel="stylesheet" href="../../estilos/estilo.css" />
+  </head>
+  <body>
+    <section id="business-intelligence">
+      <div class="contenedor__bi">
+        <div class="bi__elemento">
+          <h2>KPI</h2>
+          <br />
 
-		<script src="biscripts.js"></script>
-	</body>
+          <div id="kpi">
+            <table class="tabla__contenedor">
+              <thead>
+                <tr>
+                  <th>Descripción</th>
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Valor Mínimo:</strong></td>
+                  <td>
+                    <strong id="valor-minimo"></strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Fecha:</strong></td>
+                  <td>
+                    <strong id="fecha-minima"></strong>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><strong>Valor Máximo:</strong></td>
+                  <td>
+                    <span id="valor-maximo" class="valor-maximo"></span> 
+                  </td>
+                </tr>
+                <tr>
+                    <td><strong>Fecha Máxima:</strong></td>
+                    <td>
+                      <span id="fecha-maxima" </span> 
+                    </td>
+                  </tr>
+        
+                <tr>
+                  <td><strong>Valor Promedio:</strong></td>
+                  <td><span id="avg-value"></span></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+         
+                <tr>
+                  <td><strong>Valor Calculado via API:</strong></td>
+                  <td><span id="api-value"></span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <br />
+            <br />
+            <script src="https://www.dolar-colombia.com/widget.js?t=2&c=1"></script>
+          </div>
+        </div>
+        <div class="bi__elemento">
+          <h2 class="tabla__titulo">Estadísticas Mensuales</h2>
+          <div class="tabla__contenedor">
+            <table id="monthly-statistics" class="">
+              <thead>
+                <tr class="tabla__fila">
+                  <th class="tabla__columna">Mes</th>
+                  <th class="tabla__columna">Promedio Mensual</th>
+                  <th class="tabla__columna">Valor Máximo</th>
+                  <th class="tabla__columna">Valor Mínimo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Las filas se generarán dinámicamente aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="bi__elemento">
+          <div id="charts">
+            <div class="chart-container">
+              <canvas id="chart1"></canvas>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart2"></canvas>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart3"></canvas>
+            </div>
+          </div>
+
+          <!-- Button to Generate Statistics -->
+          <button id="generate-stats">Generar Estadísticas</button>
+        </div>
+        <div class="bi__elemento">
+          <div class="contenedor__Estadisticas_predicciones">
+            <h2 class="subtitulo">Predicciones para los Próximos Dos Días</h2>
+            <p>
+              Nota: Estas predicciones son estimaciones realizadas por
+              inteligencia artificial y no son fijas.
+            </p>
+            <table id="predictions" class="display tabla__contenedor">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Valor Predicho en Pesos Colombianos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Los datos se rellenarán aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="bi__elemento">
+          <h2 class="tabla__titulo">Valores del Dólar</h2>
+          <div class="tabla__contenedor">
+            <h2>Valores Históricos del Dólar</h2>
+            <table id="dollar-values" class="dataTable">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Valor del Dólar (COP)</th>
+                </tr>
+              </thead>
+              <tbody id="dollar-values-body">
+                <!-- Rows will be populated via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination Buttons -->
+          <div class="pagination">
+            <button id="prev-page" class="disabled">Anterior</button>
+            <button class="active" data-page="1">1</button>
+            <button data-page="2">2</button>
+            <button data-page="3">3</button>
+            <button id="next-page">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      5
+    </section>
+    <script src="biscripts.js"></script>
+    <script src="./js/bi_calcular_valor_Api.js"></script>
+    <!-- CSS Styles -->
+
+    <!-- JavaScript Code -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Global Variables
+      let dollarData = []; // Array to hold dollar values
+      let currentPage = 1;
+      const rowsPerPage = 10;
+
+      // Function to generate random dollar values if CSV is not loaded
+      function generateRandomDollarData(days) {
+        const data = [];
+        let baseValue = 4000; // Starting value
+        for (let i = 0; i < days; i++) {
+          const date = new Date();
+          date.setDate(date.getDate() - i);
+          const value = baseValue + Math.floor(Math.random() * 400 - 200);
+          data.push({
+            date: date.toISOString().split("T")[0],
+            value,
+          });
+        }
+        return data;
+      }
+
+      // Function to load CSV data or generate random data
+      function loadDollarData() {
+        // Attempt to load CSV file
+        fetch("valordolarhistorico.csv")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("CSV not found");
+            }
+            return response.text();
+          })
+          .then((data) => {
+            // Parse CSV data
+            const rows = data.split("\n").slice(1);
+            dollarData = rows.map((row) => {
+              const [date, value] = row.split(",");
+              return { date, value: value };
+            });
+            populateDollarTable();
+            calculateKPIs();
+          })
+          .catch((error) => {
+            // If CSV not found, generate random data
+            console.error(error);
+            dollarData = generateRandomDollarData(100);
+            populateDollarTable();
+            calculateKPIs();
+          });
+      }
+
+      // Function to populate the dollar table with pagination
+      function populateDollarTable() {
+        const tbody = document.getElementById("dollar-values-body");
+        tbody.innerHTML = "";
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageData = dollarData.slice(start, end);
+
+        pageData.forEach((data) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                    <td>${data.date}</td>
+                    <td>${data.value}</td>
+                `;
+          tbody.appendChild(row);
+        });
+
+        // Update pagination buttons
+        updatePaginationButtons();
+      }
+
+      // Function to update pagination buttons
+      function updatePaginationButtons() {
+        const totalPages = Math.ceil(dollarData.length / rowsPerPage);
+        document.querySelectorAll(".pagination button").forEach((button) => {
+          if (button.dataset.page) {
+            if (parseInt(button.dataset.page) === currentPage) {
+              button.classList.add("active");
+            } else {
+              button.classList.remove("active");
+            }
+          }
+        });
+
+        document
+          .getElementById("prev-page")
+          .classList.toggle("disabled", currentPage === 1);
+        document
+          .getElementById("next-page")
+          .classList.toggle("disabled", currentPage === totalPages);
+      }
+
+      // Pagination button event listeners
+      document.getElementById("prev-page").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          populateDollarTable();
+        }
+      });
+
+      document.getElementById("next-page").addEventListener("click", () => {
+        const totalPages = Math.ceil(dollarData.length / rowsPerPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          populateDollarTable();
+        }
+      });
+
+      document
+        .querySelectorAll(".pagination button[data-page]")
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            currentPage = parseInt(button.dataset.page);
+            populateDollarTable();
+          });
+        });
+
+      // Function to calculate KPIs
+      function calculateKPIs() {
+        const values = dollarData.map((data) => data.value);
+        const minValue = Math.min(...values);
+        const maxValue = Math.max(...values);
+        const avgValue = (
+          values.reduce((a, b) => a + b, 0) / values.length
+        ).toFixed(2);
+        const minDate = dollarData.find((data) => data.value === minValue).date;
+        const maxDate = dollarData.find((data) => data.value === maxValue).date;
+
+        document.getElementById("valor-minimo").innerText = minValue;
+        document.getElementById("fecha-minima").innerText = minDate;
+        document.getElementById("valor-maximo").innerText = maxValue;
+        document.getElementById("fecha-maxima").innerText = maxDate;
+        document.getElementById("valor-promedio").innerText = avgValue;
+
+        // Load API value
+        fetch("https://www.dolar-colombia.com/api/hoy")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("valor-api").innerText = data.valor;
+          })
+          .catch((error) => {
+            console.error("Error fetching API data:", error);
+            // Fallback to a generated value
+            document.getElementById("valor-api").innerText =
+              generateRandomDollarData(1)[0].value;
+          });
+      }
+
+      // Function to generate charts
+      function generateCharts() {
+        // Chart 1: Historical Dollar Values
+        const ctx1 = document.getElementById("chart1").getContext("2d");
+        const labels1 = dollarData.map((data) => data.date).reverse();
+        const values1 = dollarData.map((data) => data.value).reverse();
+
+        new Chart(ctx1, {
+          type: "line",
+          data: {
+            labels: labels1,
+            datasets: [
+              {
+                label: "Valor del Dólar",
+                data: values1,
+                borderColor: "blue",
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            scales: {
+              x: {
+                display: false,
+              },
+            },
+          },
+        });
+
+        // Chart 2: Monthly Average
+        const ctx2 = document.getElementById("chart2").getContext("2d");
+        const monthlyData = {};
+
+        dollarData.forEach((data) => {
+          const month = data.date.slice(0, 7); // YYYY-MM
+          if (!monthlyData[month]) {
+            monthlyData[month] = [];
+          }
+          monthlyData[month].push(data.value);
+        });
+
+        const labels2 = Object.keys(monthlyData).reverse();
+        const values2 = labels2.map((month) => {
+          const sum = monthlyData[month].reduce((a, b) => a + b, 0);
+          return (sum / monthlyData[month].length).toFixed(2);
+        });
+
+        new Chart(ctx2, {
+          type: "bar",
+          data: {
+            labels: labels2,
+            datasets: [
+              {
+                label: "Promedio Mensual",
+                data: values2,
+                backgroundColor: "rgba(75, 192, 192, 0.5)",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+          },
+        });
+
+        // Chart 3: Max and Min Values per Month
+        const ctx3 = document.getElementById("chart3").getContext("2d");
+        const maxValues = labels2.map((month) =>
+          Math.max(...monthlyData[month])
+        );
+        const minValues = labels2.map((month) =>
+          Math.min(...monthlyData[month])
+        );
+
+        new Chart(ctx3, {
+          type: "line",
+          data: {
+            labels: labels2,
+            datasets: [
+              {
+                label: "Valor Máximo",
+                data: maxValues,
+                borderColor: "red",
+                fill: false,
+              },
+              {
+                label: "Valor Mínimo",
+                data: minValues,
+                borderColor: "green",
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+          },
+        });
+      }
+
+      // Event Listener for Generate Statistics Button
+      document
+        .getElementById("generate-stats")
+        .addEventListener("click", () => {
+          generateCharts();
+        });
+
+      // Initialize the page
+      loadDollarData();
+    </script>
+  </body>
 </html>

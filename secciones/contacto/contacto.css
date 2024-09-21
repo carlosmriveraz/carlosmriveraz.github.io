@@ -1,77 +1,198 @@
-/**
- * Logo en el centro
- *
- * @format
- */
+/* Estilo general para la sección de contacto */
+.contact {
+  padding: 2rem;
+  text-align: center; /* Alinea el contenido al centro */
+}
 
-.contacto__logo {
-	text-align: center;
-	flex: 1 1 100%;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea el contenido al centro */
+}
+
+/* Logo en el centro */
+.contact-logo {
+  text-align: center;
+  flex: 1 1 100%;
+}
+
+.medida-titulo {
+  margin-top: 1rem;
 }
 
 /* Contenido principal */
-
-.contacto__image {
-	margin: 1rem 0;
+.contact-info {
+  flex: 1 1 auto; /* Permite que este contenido crezca según el espacio disponible */
+  text-align: center;
 }
 
-.contacto__details {
-	margin-top: 1rem;
+.contact-image {
+  margin: 1rem 0;
+}
+
+.contact-details {
+  margin-top: 1rem;
 }
 
 #copyEmailButton {
-	margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 /* Redes sociales en la parte inferior y centradas */
-.contacto__social {
-	display: flex;
-	justify-content: center; /* Centra los iconos horizontalmente */
-	gap: 1rem;
-	margin-top: 2rem;
+.contact-social {
+  display: flex;
+  justify-content: center; /* Centra los iconos horizontalmente */
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.contacto__icon__linkedin,
-.contacto__icon__github,
-.contacto__icon__whatsapp {
-	display: inline-block;
-	background-size: contain;
-	background-repeat: no-repeat;
-	align-items: center;
-	justify-content: center;
-	width: 3rem;
-	height: 3rem;
-	background-color: #ffffff;
-	border-radius: 50%;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	transition: transform 1.3s, box-shadow 0.3s;
-	color: var(--color-paleta6);
-	text-decoration: none;
+.contact__icon-linkedin,
+.contact__icon-github,
+.contact__icon-whatsapp {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 1.3s, box-shadow 0.3s;
+  color: var(--color-principal6);
+  text-decoration: none;
 }
 
 /* Botones y enlaces */
 .link.btn.btn-full {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-.icon__whatsapp {
-	background: url("../../images/social/svgnwhatsapp.svg");
-	width: 3rem;
-	background-position: center;
-	background-size: contain;
+.contact__icon-whatsapp {
+  background: url("../../images/social/svgnwhatsapp.svg");
+  width: 3rem;
+  background-position: center;
+  background-size: contain;
 }
 
-.icon__linkedin {
-	background: url("../../images/social/linkedin.svg");
+.contact__icon-linkedin {
+  background: url("../../images/social/linkedin.svg");
 }
 
-.icon__github {
-	background: url("../../images/social/github.svg");
+.contact__icon-github {
+  background: url("../../images/social/github.svg");
+}
+/* Footer Styles */
+.footer {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 2rem 1rem;
+  border-top: 1px solid #ddd;
 }
 
-/* Título al final */
-.contact-title {
-	margin-top: 2rem;
-	font-size: 1.5rem;
-	font-weight: bold;
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.footer__section {
+  flex: 1;
+  margin: 1rem;
+}
+
+.footer__contact a.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.footer__contact a.btn:hover {
+  background-color: #0056b3;
+}
+
+.footer__links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__links ul li {
+  margin: 0.5rem 0;
+}
+
+.footer__links ul li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer__links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer__lab ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__lab ul li {
+  margin: 0.5rem 0;
+}
+
+.footer__lab ul li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer__lab ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.footer__policy {
+  margin-top: 1rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.sonido-hover {
+  padding: 20px;
+
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.sonido-hover:hover {
+  cursor: pointer;
 }

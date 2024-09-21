@@ -1,61 +1,145 @@
-<div class="contenedor__flex__columna pulso">
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Contacto</title>
+<link rel="stylesheet" href="../../estilos/estilo.css" />
+<link rel="stylesheet" href="./contacto.css" />
 
-		<link rel="stylesheet" href="./contacto.css" />
-		<link rel="stylesheet" href="../../estilos/estilo.css " />
+<div class="footer__container">
+  <!-- Secciones de contacto, links útiles y laboratorio -->
+  <div class="footer__sections">
+    <!-- Contacto -->
+    <div>
+      <strong><span>C</span>ontacto</strong>
+      <p>Si deseas contactarme para cualquier consulta o proyecto:</p>
+      <p>
+        Email:
+        <a href="mailto:carlosmrz100@hotmail.com" id="emailToCopy"
+          >carlosmrz100@hotmail.com</a
+        >
+      </p>
+      <p>
+        <a href="mailto:carlosmrz100@hotmail.com" class="btn holograma"
+          >Enviar correo electrónico</a
+        >
+      </p>
+      <p>
+        <input
+          type="text"
+          id="hiddenEmail"
+          value="carlosmrz100@hotmail.com"
+          style="position: absolute; left: -9999px"
+        />
+        <a href="#" id="copyEmailButton" class="link btn btn-full holograma"
+          >Copiar Email</a
+        >
+      </p>
+    </div>
+    <!-- Links Útiles -->
+    <div class="footer__section footer__links">
+      <h2 class="subtitulo">
+        <strong><span>L</span>inks<span>Ú</span>tiles</strong>
+      </h2>
+      <ul>
+        <a
+          href="../../assets/apps/focus_riveradev/focus_riveradev.html"
+          target="_blank"
+          >Aplicación Pomodoro</a
+        >
 
+        <h3 class="subtitulo"><span>R</span>edes <span>S</span>ociales</h3>
+        <div class="contact-social">
+          <a
+            href="https://www.linkedin.com/in/carlosmariorivera"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="contact__icon-linkedin"
+          >
+            <!-- Icono de LinkedIn -->
+          </a>
+          <a
+            href="https://github.com/carlosmriveraz"
+            target="_blank"
+            aria-label="GitHub"
+            class="contact__icon-github"
+          >
+            <!-- Icono de GitHub -->
+          </a>
+          <a
+            href="https://wa.me/+573117559365"
+            target="_blank"
+            aria-label="WhatsApp"
+            class="btn-whatsapp contact__icon-whatsapp"
+          >
+            <i class="fab fa-whatsapp"></i>
+            <!-- Asegúrate de tener Font Awesome o similar para el ícono -->
+            <span class="sm-red-dot"></span>
+            <!-- Punto rojo de notificación -->
+            <div class="quick-message">
+              <p>¡Contáctanos!</p>
+              <span class="quick-message__seta-direita"></span>
+            </div>
+          </a>
 
-			<div class="contenido contenedor__item">
-				<!-- Logo en el centro -->
-				<div class="subtitulo">
-					<h2><span>C</span>arlos<span>M</span>ario<span>R</span>ivera.com</h2>
-				</div>
+          <!-- Icono de WhatsApp -->
+        </div>
+      </ul>
+    </div>
 
-				<!-- Contenido principal -->
-				<div class="contacto__info contenedor__item">
-					<h2 class="subtitulo">
-						<strong><span>C</span>ontácteme</strong>
-					</h2>
+    <!-- Laboratorio -->
+    <div class="footer__section footer__lab">
+      <h4>Laboratorio</h4>
+      <ul>
+        <li>
+          <a href="../../html/laboratorio/laboratorio.html" target="_blank"
+            >Componente 1</a
+          >
+        </li>
+      </ul>
+      <p>
+        Explora mi laboratorio, con componentes y animaciones experimentales.
+      </p>
+    </div>
+  </div>
 
-					<div class="contacto__details contenedor__item">
-						<p class="texto">
-							Si deseas contactarme para cualquier consulta o proyecto, puedes escribirme a carlosmrz100@hotmail.com
-							<a
-								class="link btn"
-								href="mailto:carlosmrz100@hotmail.com?subject=Correo de contacto de Carlos
-								Rivera&body=Buen día, este correo se genera desde la página web de Carlos Rivera y
-								te contacto"
-								>Enviar correo electrónico
-							</a>
-							<a id="emailToCopy" class="link btn">Copiar Email</a>
-						</p>
-					</div>
-				</div>
-
-				<!-- Redes sociales en la parte derecha -->
-				<div class="contacto__social">
-					<a href="https://www.linkedin.com/in/carlosmariorivera" target="_blank" aria-label="LinkedIn" class="icon__linkedin">
-						<!-- Icono de LinkedIn -->
-					</a>
-					<a href="https://github.com/carlosmriveraz" target="_blank" aria-label="GitHub" class="icon__github">
-						<!-- Icono de GitHub -->
-					</a>
-					<a href="https://wa.me/+573117559365" target="_blank" aria-label="WhatsApp" class="icon__whatsapp"> </a>
-				</div>
-			</div>
-		</div>
-		<script>
-			document.getElementById("copyEmailButton").addEventListener("click", function () {
-				var email = document.getElementById("emailToCopy");
-				email.select();
-				document.execCommand("copy");
-
-				// Opcional: Feedback al usuario
-				this.textContent = "!Email Copiado!";
-			});
-		</script>
-
-	</div>
+  <!-- Política de Cookies y Derechos Reservados -->
+  <div class="footer__bottom">
+    <p class="footer__policy">
+      Política de Cookies | Todos los derechos reservados
+    </p>
+  </div>
 </div>
+<div class="texto__atractivo sonido-hover">
+  <div class="animacion__resplandor">
+    <h5><span>C</span>arlos<span>M</span>ario<span>R</span>ivera.com</h5>
+  </div>
+</div>
+<script>
+  // Crea un nuevo objeto de audio
+  const miSonido = new Audio("../../assets/music/dbz.wav");
+
+  // Selecciona el elemento que activará el sonido
+  document.querySelector(".sonido-hover").addEventListener("mouseover", () => {
+    miSonido.play();
+  });
+</script>
+
+<script>
+  document
+    .getElementById("copyEmailButton")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // Evita que el enlace recargue la página
+      var email = document.getElementById("hiddenEmail");
+
+      // Selecciona el contenido del input oculto
+      email.select();
+      email.setSelectionRange(0, 99999); // Para móviles
+
+      // Copia el contenido al portapapeles
+      document.execCommand("copy");
+
+      // Feedback al usuario
+      this.textContent = "!Email Copiado!";
+
+      // Opcional: Restaura el texto del botón después de 2 segundos
+      setTimeout(() => {
+        this.textContent = "Copiar Email";
+      }, 2000);
+    });
+</script>

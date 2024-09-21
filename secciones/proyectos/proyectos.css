@@ -1,94 +1,130 @@
 /** @format */
-
-@import url("../../estilos/configuracion.css");
-/* Estilos generales para la sección de proyectos */
 .contenedor__proyectos {
-	max-width: 100%;
-	margin: 0 auto; /* Centra el contenedor */
-	padding: 2rem;
+  min-width: 100%;
+  margin: 0 auto; /* Centra el contenedor */
 }
 
 .proyectos__grid {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem; /* Aumenta el espacio entre las tarjetas */
-	justify-content: center; /* Centra las tarjetas horizontalmente */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* Espacio entre las tarjetas */
+  align-items: center;
 }
 
 /* Estilos para cada proyecto */
 .proyecto {
-	flex: 1 1 calc(50% - 2rem); /* Ajusta el tamaño de las tarjetas */
-	border: 1px solid var(--color-border, #ccc);
-	border-radius: var(--borde-reducido);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
-	transition: box-shadow 0.3s ease;
-	background: linear-gradient(
-		18deg,
-		var(--color-paleta1, rgba(4, 37, 78, 1)) 3%,
-		var(--color-paleta2, rgba(1, 25, 216, 0.2)) 20%,
-		var(--color-paleta3, rgba(4, 37, 78, 1)) 60%,
-		var(--color-paleta4, rgba(1, 14, 18, 0.2))
-	);
-	background-color: var(--color-background, #fff);
-	height: auto; /* Ajusta la altura según el contenido */
-}
-
-.proyecto:hover {
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para el título del proyecto */
-.proyecto__title {
-	font-size: var(--medida-texto, 2rem);
-	margin: 1rem;
-	color: var(--medida-texto, #000);
+  flex: 1 1 calc(45% - 2rem); /* Ajusta el tamaño */
+  background: url(../../images/background/bk.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  border: 1px solid #61dafb;
+  box-shadow: inset 0 2px 5px #61dafbaa;
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
 }
 
 /* Estilo para la imagen del proyecto */
 .proyecto__img {
-	width: 50%;
-	height: auto;
-	border-bottom: 1px solid var(--color-border, #ccc);
-	border-radius: var(--borde-grande);
+  margin-top: 1rem;
+  max-width: 100%; /* Se ajusta al ancho del contenedor */
+  max-height: 200px; /* Establece una altura máxima */
+  width: 300px; /* Establece una altura máxima */
+  object-fit: cover; /* Ajusta la imagen para llenar el espacio sin distorsión */
+  border: 1px solid var(--color-paleta3);
+  border-radius: 5px;
 }
 
 /* Contenido del proyecto */
 .proyecto__content {
-	padding: var(--relleno-mediano);
+  padding: var(--relleno-mediano);
+  height: calc(100% - 150px); /* Resta la altura de la imagen */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye el contenido */
 }
 
 /* Descripción del proyecto */
 .proyecto__description {
-	max-height: 10rem; /* Ajusta la altura máxima */
-	overflow: hidden;
-	transition: max-height 0.5s ease;
-	color: var(--color-texto);
-	text-align: justify;
-	width: 100%;
-	margin-top: 1rem; /* Añade margen superior */
-}
-
-.proyecto__description p {
-	margin-bottom: 1rem; /* Espacio entre párrafos */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Mostrar solo 3 líneas */
+  overflow: hidden; /* Oculta el texto que excede las líneas visibles */
+  transition: max-height 0.5s ease;
+  color: var(--color-texto);
+  text-align: justify;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
 .proyecto__description.collapsed {
-	max-height: 0; /* Oculta el contenido colapsado */
+  display: -webkit-box; /* Mantiene la misma estructura */
 }
 
-/* Botón para desplegar la descripción */
+.proyecto__description {
+  display: block; /* Muestra el contenido por defecto */
+}
+
 .toggle-button {
-	cursor: pointer;
-	color: var(--color-enlace, blue);
-	text-decoration: underline;
-	margin-top: 0.5rem;
-	display: inline-block;
+  font-size: 0.85rem; /* Tamaño más pequeño */
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--color-paleta3);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-/* Media query para pantallas más pequeñas */
+.toggle-button:hover {
+  background-color: var(--color-paleta3);
+  color: white;
+}
+
 @media (max-width: 768px) {
-	.proyecto {
-		flex: 1 1 100%; /* Tarjetas en una columna */
-	}
+  .proyecto {
+    flex: 1 1 100%; /* Tarjetas en una columna */
+  }
+}
+
+.footer__kpis {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.kpi {
+  background: url(../../images/background/bk.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid var(--color-paleta6) ddd;
+  border-radius: 8px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  margin: 1rem;
+}
+
+.kpi__icon {
+  text-align: center;
+  max-width: 50px;
+  margin-bottom: 0.5rem;
+  margin-left: 40%;
+  color: var(--color-texto);
+  background-color: var(--color-paleta2);
+  border-radius: 4px;
+}
+
+.kpi__data {
+  margin-top: 0.5rem;
+  height: 8rem;
+}
+
+.kpi__value {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.kpi__description {
+  font-size: 0.775rem;
+  color: #fafafafa;
 }

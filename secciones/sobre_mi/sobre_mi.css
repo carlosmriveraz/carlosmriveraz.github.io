@@ -6,11 +6,123 @@
 
 /* .about-box: Contenedor de la sección "Acerca de" */
 .about-box {
-  margin: 4rem;
+  :root {
+    /* Colores principales */
+    --color-menu: #90e0ef;
+    --color-primario: #007bff;
+    --color-secundario: #0077b6;
+    --color-terciario: #00b4d8;
+    --color-texto: #ffffff;
+    --color-subtitulo: #ffffff;
+    --color-titulo: #ffffff;
+    --color-titulo-grande: #ffffff;
+
+    /* Medidas textos */
+    --medida-texto: 1.1rem;
+    --medida-texto-extra-grande: 1.5rem;
+    --medida-texto-extra-reducido: 0.6rem;
+    --medida-texto-grande: 1.3rem;
+    --medida-texto-mediano: 1rem;
+    --medida-texto-reducido: 1rem;
+
+    /* Medidas títulos */
+    --medida-titulo: 2.2rem;
+    --medida-titulo-extra-grande: 3rem;
+    --medida-titulo-extra-reducido: 0.5rem;
+    --medida-titulo-grande: 2.8rem;
+    --medida-titulo-mediano: 2rem;
+    --medida-titulo-reducido: 1.8rem;
+  }
+
+  body {
+    max-width: 100%;
+    max-height: 80vh;
+    width: 100%;
+    background: url("/images/background/bk.jpg"), inherit, transparent;
+    color: var(--color-texto);
+  }
+
+  #inteligencia-negocios {
+    background-color: inherit;
+    color: var(--color-titulo);
+    font-size: var(--medida-texto-reducido);
+  }
+
+  .contenedor__bi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+    height: 80vh;
+  }
+
+  .bi__elemento {
+    padding: 1em;
+    border-radius: 1px;
+    flex-grow: 7;
+    height: 100vh;
+    max-width: 100vh;
+    width: 80%;
+    flex-flow: column wrap;
+  }
+
+  .kpi__titulo,
+  .estadisticas__titulo,
+  .predicciones__titulo,
+  .dolar__titulo {
+    color: var(--color-menu);
+    font-size: var(--medida-titulo-mediano);
+    text-align: center;
+  }
+
+  .kpi__valor {
+    font-size: var(--medida-texto);
+  }
+
+  #valor-minimo {
+    color: rgb(152, 152, 219);
+  }
+
+  #valor-maximo {
+    color: rgb(106, 137, 106);
+  }
+
+  #valor-promedio {
+    color: rgb(184, 96, 96);
+  }
+
+  #valor-api {
+    color: orange;
+  }
+
+  .estadisticas__etiqueta,
+  .estadisticas__input,
+  .estadisticas__boton {
+    color: var(--color-menu);
+  }
+
+  .estadisticas__graficos {
+    margin-top: 2px;
+  }
+
+  .estadisticas__grafico {
+    margin-top: 2px;
+  }
+
+  /* Ajustes responsivos */
+  @media (max-width: 900px) {
+    .contenedor__bi {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  margin: var(--margen-reducido), 1rem;
   color: var(--color-texto);
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1rem;
   justify-content: space-around;
   align-items: flex-end;
   text-shadow: 1px 1px 1px var(--color-paleta5);
