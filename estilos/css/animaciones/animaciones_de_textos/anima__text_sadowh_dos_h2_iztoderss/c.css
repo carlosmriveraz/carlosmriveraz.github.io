@@ -1,0 +1,70 @@
+.dynamic-charts {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    opacity: 0;
+    position: relative;
+    animation: grow 2s forwards, rotate 4s infinite linear;
+}
+
+@keyframes grow {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.dynamic-charts::before,
+.dynamic-charts::after {
+    content: '';
+    position: absolute;
+    background-color: #007bff;
+    border-radius: 50%;
+    animation: scaleUp 2s 2s forwards, scaleDown 2s 6s forwards;
+}
+
+.dynamic-charts::before {
+    top: -20px;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    animation-delay: 0.2s;
+}
+
+.dynamic-charts::after {
+    bottom: -20px;
+    right: -20px;
+    width: 10px;
+    height: 10px;
+    animation-delay: 0.4s;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleDown {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}

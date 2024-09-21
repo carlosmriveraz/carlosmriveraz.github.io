@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Estilos Hero</title>
+    <style>
+        /* Estilo de la imagen en la sección Hero */
+
+        /* Importa la fuente Marvel */
+        @import url('https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap');
+
+        /* Estilo de la fuente Marvel */
+        .marvel__negrita {
+            font-family: 'Marvel', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Contenido de la sección Hero */
+        .contenido__hero {
+            position: relative;
+            text-align: center;
+        }
+
+        /* Contenedor del texto Hero */
+        .contenedor__texto__hero {
+            background: url('https://via.placeholder.com/800') no-repeat center;
+            background-clip: text;
+            background-size: 50%;
+            font-size: 500px;
+            font-weight: bold;
+            opacity: 0.7;
+            -webkit-background-clip: text;
+        }
+
+        /* Imagen en la sección Hero */
+        .imagen__seccion__hero img {
+            animation: rotarImagen 5s linear infinite;
+            border-radius: 50%;
+            width: 100%;
+        }
+
+        /* Sección Hero */
+        .seccion__hero {
+            align-items: center;
+            background-color: black; /* Fondo para un mejor contraste */
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+        }
+
+        /* Texto Hero con animación */
+        .texto__hero {
+            animation: moverFondo 5s linear infinite;
+            background: url('https://via.placeholder.com/800') no-repeat center center;
+            background-clip: text;
+            background-size: cover;
+            color: transparent;
+            font-family: var(--font-marvel);
+            font-size: 10vw; /* Tamaño del texto relativo al ancho de la ventana */
+            -webkit-background-clip: text;
+        }
+
+        /* Animaciones */
+        @keyframes moverFondo {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        @keyframes rotarImagen {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="seccion__hero">
+        <div class="contenido__hero">
+            <div class="contenedor__texto__hero marvel__negrita">
+                <span class="texto__hero">¡Hola Mundo!</span>
+            </div>
+            <div class="imagen__seccion__hero">
+                <img src="https://via.placeholder.com/150" alt="Imagen de prueba">
+            </div>
+        </div>
+    </section>
+</body>
+</html>

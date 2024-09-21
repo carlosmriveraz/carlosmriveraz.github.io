@@ -1,0 +1,86 @@
+
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .combined-effects {
+            text-align: center;
+            animation: fadeIn 2s forwards;
+            opacity: 0;
+        }
+
+        .combined-effects h1, .combined-effects h2 {
+            font-size: 2em;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .combined-effects h1 {
+            animation: pulse 3s 2s infinite, moveLeftRight 2s 4s infinite;
+        }
+
+        .combined-effects h2 {
+            animation: pulse 3s 4s infinite, moveRightLeft 2s 6s infinite;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff; }
+            50% { text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff; }
+        }
+
+        @keyframes moveLeftRight {
+            0%, 100% { left: 0; }
+            50% { left: -10px; }
+        }
+
+        @keyframes moveRightLeft {
+            0%, 100% { right: 0; }
+            50% { right: -10px; }
+        }
+
+        .combined-effects::before, .combined-effects::after {
+            content: '';
+            position: absolute;
+            background-color: #007bff;
+            border-radius: 50%;
+            animation: grow 2s 4s forwards, shrink 2s 8s forwards;
+        }
+
+        .combined-effects::before {
+            top: -20px;
+            left: -20px;
+            width: 10px;
+            height: 10px;
+            animation-delay: 0.2s;
+        }
+
+        .combined-effects::after {
+            bottom: -20px;
+            right: -20px;
+            width: 10px;
+            height: 10px;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes grow {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shrink {
+            0% { transform: scale(1); }
+            100% { transform: scale(0); }
+        }
+  
+

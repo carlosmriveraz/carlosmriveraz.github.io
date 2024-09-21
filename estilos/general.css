@@ -13,48 +13,52 @@ html {
 
 body[data-theme="dark-theme"] {
   background-image: url(../images/background/bk.jpg);
-
   color: var(--color-texto), #fff;
   text-align: center;
 }
 
 body {
+  padding-top: 1rem;
   background: url(../images/background/bk.jpg);
-  background-color: var(--color-paleta6);
-  background-repeat: no-repeat;
   background-size: cover;
+
+  background-repeat: no-repeat;
   color: var(--color-titulo);
   font-family: var(--fuente-principal);
-
   font-weight: 400;
-
   transition: background-color 0.9s, color 0.3s;
   text-align: center;
-  text-shadow: 1px 1px 11px var(--color-paleta6);
+  text-shadow: 1px 1px 5px var(--color-paleta1);
   display: flex;
   flex-flow: column wrap;
-  gap: 1rem;
 }
 
 header {
-  height: 5%;
+  position: absolute;
+}
+main {
+  position: relative;
+}
+a {
+  line-height: normal;
 }
 
-a {
-  color: var(--color-texto), #ffffff;
-}
 iframe {
-  height: 100vh;
+  border: 2px solid var(--color-hover);
+
+  border-radius: 15px;
+  border-color: var(--color-paleta2);
+  box-shadow: inset 5px 5px 10px #61dafb99;
+
+  min-height: 95vh;
+  margin-top: 3rem;
   width: 100%;
-  border-radius: 0.8rem;
-  border: 0.1px solid var(--color-borde);
-  overflow-x: auto; /* Solo barra de desplazamiento horizontal */
-  overflow-y: hidden; /* Sin barra de desplazamiento vertical */
-  /* Ocupa el 100% de la altura de la pantalla */
+  padding-top: 1rem;
 }
+
 span {
   color: var(--color-paleta2);
-  font-size: var(--medida-texto);
+  font-size: var(--medida-texto-extra-grande);
   font-weight: 600;
 }
 
@@ -71,19 +75,14 @@ h4 {
   font-size: var(--size-textosmall);
 }
 
-/* Estilos para las secciones del sitio web */
 section {
   margin-top: 2rem;
-  overflow: hidden;
-  /* Oculta scrolls horizontal y vertical */
-  padding: 1rem 1rem;
-
+  height: 100vh;
+  border-bottom: 1px solid #ccc;
   background-color: transparent;
 }
 
-/* Estilos para el footer */
 footer {
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
 }
-

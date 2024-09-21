@@ -1,182 +1,170 @@
 /** @format */
 
-.texto-3d {
-	font-size: var(--medida-texto); /* Tamaño de fuente */
-	font-weight: bold; /* Grosor de la fuente */
-	color: var(--color); /* Color del texto */
-	text-shadow: var(--sombra-1) var(--color-sombra-1), /* Primera sombra del texto */ var(--sombra-2) var(--color-sombra-2),
-		/* Segunda sombra del texto */ var(--sombra-3) var(--color-sombra-3), /* Tercera sombra del texto */ var(--sombra-4) var(--color-sombra-4); /* Cuarta sombra del texto */
-	transform: translateZ(0); /* Establece un contexto de apilamiento para el texto */
-}
 /* Fuentes adicionales */
-.roboto-condensed-con {
-	font-family: "Roboto Condensed", sans-serif;
-	font-optical-sizing: auto;
-	font-style: normal;
-	font-weight: 200;
+.playwrite-us-trad-u {
+  font-family: "Playwrite US Trad", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.playwrite-us-trad-u {
-	font-family: "Playwrite US Trad", cursive;
-	font-optical-sizing: auto;
-	font-style: normal;
-	font-weight: 400;
+.roboto-condensed-con {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 200;
 }
 
 .roboto-thin {
-	font-family: "Roboto", sans-serif;
-	font-style: normal;
-	font-weight: 100;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 100;
 }
 
-.titulo {
-	font-size: var(--medida-titulo);
-}
-
-.subtitulo {
-	color: var(--color-paleta6), #00629e;
-	flex: none;
-	font-size: var(--size-segundotitulo);
-	margin-top: 2%;
-	text-align: center;
-	transition: all 0.7s ease-in-out;
-	font-family: "Montserrat", sans-serif;
-}
-
-.subtitulo:hover {
-	animation: glow 1.5s infinite;
-	color: var(--color-paleta3);
-	text-shadow: 2px 2px 4px var(--color-paleta3);
-	transition: all 1.5s ease-in-out;
-	font-size: var(--size-titulogrande);
-}
-
-.subtitulo span {
-	font-size: var(--size-titulogrande);
-	text-shadow: 1px 10px 20px rgba(154, 203, 255, 0.8);
-	color: var(--color-paleta4);
-}
-
-.subtitulo span :hover {
-	font-size: 2.1rem;
-	text-shadow: 1px 10px 20px rgba(154, 203, 255, 0.8);
-	color: var(--color-paleta2);
-}
-
-.subtitulo--izquierdo,
-.subtitulo--derecho {
-	display: flex;
-	align-items: center;
-	gap: 1.5rem;
-	margin-bottom: 2rem;
-}
-
-.subtitulo--derecho {
-	justify-content: right;
-}
-
-.subtitulo--izquierdo::after,
-.subtitulo--derecho::before {
-	content: "";
-	display: block;
-	background-color: var(--color-primary);
-	text-shadow: 2px 2px 4px var(--color-paleta3);
+.texto__3d {
+  color: var(--color-paleta3); /* Color del texto */
+  font-size: var(--medida-texto); /* Tamaño de fuente */
+  font-weight: bold; /* Grosor de la fuente */
+  text-shadow: var(--sombra-1) var(--color-sombra-1),
+    /* Primera sombra del texto */ var(--sombra-2) var(--color-sombra-2),
+    /* Segunda sombra del texto */ var(--sombra-3) var(--color-sombra-3),
+    /* Tercera sombra del texto */ var(--sombra-4) var(--color-sombra-4); /* Cuarta sombra del texto */
+  transform: translateZ(
+    0
+  ); /* Establece un contexto de apilamiento para el texto */
 }
 
 /* Clase para texto atractivo */
-.texto-atractivo {
-	color: var(--color-titulo); /* Color del texto */
-	text-shadow: 0 0 10px var(--color-paleta1), /* Sombra de texto */ 0 0 20px var(--color-paleta1), 0 0 30px var(--color-paleta2),
-		0 0 40px var(--color-paleta2), 0 0 50px var(--color-paleta2), 0 0 60px var(--color-paleta1), 0 0 70px var(--color-paleta6);
+.texto__atractivo {
+  color: var(--color-titulo); /* Color del texto */
+  text-shadow: 0 0 10px var(--color-paleta1),
+    /* Sombra de texto */ 0 0 20px var(--color-paleta1),
+    0 0 30px var(--color-paleta2), 0 0 40px var(--color-paleta3),
+    0 0 50px var(--color-paleta4), 0 0 60px var(--color-paleta4),
+    0 0 70px var(--color-paleta7);
 }
 
 .texto {
-	font-size: var(--medida-texto);
+  font-size: var(--medida-texto);
+  text-shadow: 1px 1px 15px var(--color-paleta2),
+    1px 0 25px var(--color-paleta1), 1px 1px 35px var(--color-paleta4),
+    1px 1px 45px var(--color-paleta2);
+  transition: all 4s ease-out;
 }
+
 .texto span {
-	font-size: var(--medida-texto-grande);
-	font-weight: 900;
+  font-size: var(--medida-extra-grande);
+  font-weight: 700;
+  color: var(--color-paleta6);
 }
-.texto_justificado {
-	text-align: justify;
+
+.texto-margin {
+  margin: 1rem 0;
+}
+
+.texto-padding {
+  padding: 1rem;
+}
+
+.texto__justificado {
+  text-align: justify;
 }
 
 /* ********** HEADINGS *********** */
-
-.encabezado__titulo {
-	margin: 2rem auto;
-	text-shadow: 1px 1px 15px #007bff, 1px 0 25px var(--color-paleta1), 1px 1px 35px #007bff, 1px 1px 45px #007bff;
-	transition: 2s ease-out;
+.inicio__titulo {
+  font-size: var(--medida-titulo);
+  text-shadow: 1px 1px 15px var(--color-paleta2),
+    1px 0 25px var(--color-paleta1), 1px 1px 35px var(--color-paleta2),
+    1px 1px 45px var(--color-paleta4);
+  transition: all 4s ease-out;
 }
 
-.encabezado__titulo:hover {
-	font-size: var(--ti);
-	color: var(--color-titulo);
-	text-shadow: 0 0 10px #007bff, 0 0 15px var(--color-paleta1), 0 0 20px #007bff;
-}
-
-.encabezado__titulo span {
-	font-size: 2.2em;
-	color: var(--color-paleta6);
-}
-
-.segundotexto {
-	font-size: var(--size-segundotexto), 1rem;
-}
-.texto-padding {
-	padding: 1rem;
-}
-.texto-margin {
-	margin: 1rem 0;
-}
-
-/* Clase para texto atractivo */
-
-.heroe {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: var(--altura-completa);
-}
-
-.heroe__texto {
-	text-align: center;
-}
-
-.heroe__titulo {
-	margin-bottom: var(--margen-mediano);
-}
-
-.texto-intro {
-	font-size: var(--medida-titulo-reducido);
-	color: var(--color-paleta-5);
-}
-
-.descripcion__caja {
-	max-width: var(--ancho-mediano);
-	margin: 0 auto;
+.inicio__titulo span {
+  font-size: var(--medida-extra-grande);
+  color: var(--color-paleta6);
 }
 
 .descripcion {
-	font-size: var(--medida-texto-mediano);
-	color: var(--color-paleta-3);
-	margin-bottom: var(--margen-mediano);
+  color: var(--color-paleta3);
+  font-size: var(--medida-texto-mediano);
+  margin-bottom: var(--margen-mediano);
 }
 
-.subtitulo__izquierdo,
+.descripcion__caja {
+  margin: 0 auto;
+  max-width: var(--ancho-mediano);
+}
+
+.segundotexto {
+  font-size: var(--medida-texto-mediano), 1rem;
+}
+
+.subtitulo {
+  color: var(--color-paleta1), #00629e;
+  flex: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--medida-subtitulo);
+  margin-top: 2%;
+  text-align: center;
+  transition: all 0.7s ease-in-out;
+}
+
+.subtitulo:hover {
+  animation: glow 1.5s infinite;
+  color: var(--color-paleta2);
+  font-size: var(--medida-subtitulo);
+  text-shadow: 2px 2px 4px var(--color-paleta4);
+  transition: all 1.5s ease-in-out;
+}
+
+.subtitulo span {
+  color: var(--color-paleta4);
+  font-size: var(--size-titulogrande);
+  text-shadow: 1px 10px 20px rgba(154, 203, 255, 0.8);
+}
+
+.subtitulo span:hover {
+  color: var(--color-paleta2);
+  font-size: 2.1rem;
+  text-shadow: 1px 10px 20px rgba(154, 203, 255, 0.8);
+}
+
 .subtitulo__derecho {
-	display: flex;
-	margin-bottom: 2rem;
+  align-items: center;
+  display: flex;
+  justify-content: right;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
-.subtitulo__derecho::after,
-.subtitulo__derecho::before {
-	content: "";
-	display: block;
-	background-color: var(--color-paleta-4);
-	text-shadow: 2px 2px 4px var(--color-paleta-1);
+
+.subtitulo__izquierdo {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
-.texto__atractivo {
-	color: var(--color-titulo);
-	text-shadow: 0 0 10px var(--color-paleta1), 0 0 20px var(--color-paleta1), 0 0 30px var(--color-paleta2), 0 0 40px var(--color-paleta2),
-		0 0 50px var(--color-paleta2), 0 0 60px var(--color-paleta1), 0 0 70px var(--color-paleta2);
+
+.subtitulo__derecho::before,
+.subtitulo__izquierdo::after {
+  background-color: var(--color-paleta4);
+  content: "";
+  display: block;
+  text-shadow: 2px 2px 4px var(--color-paleta1);
+}
+.nombre {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.parte1,
+.parte2 {
+  flex: 1 1 100%;
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 600px) {
+  .parte1,
+  .parte2 {
+    flex: 1 1 auto;
+  }
 }

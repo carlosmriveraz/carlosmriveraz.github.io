@@ -1,158 +1,210 @@
-/**
- * Import Google Material Icons
- *
- * @format
- */
-
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 /* Navbar header menu de navegación */
 .navbar {
-	width: 99%;
-	margin-top: 1rem;
-	padding: 0.1rem;
-	position: fixed;
-	background-color: #00ffff; /* Semi-transparente */
-	color: var(--color-navbar);
-	display: flex;
-	height: var(--altura-navbar);
-	justify-content: space-between;
-	border-radius: 1rem;
-	border: 2px solid var(--color-navbar);
-	white-space: nowrap;
-	transition: background-color 0.8s ease;
+  width: 99%;
+
+  position: fixed;
+
+  background-color: #00ffffdd; /* Semi-transparente */
+
+  display: flex;
+  height: var(--altura-navbar);
+  justify-content: space-between;
+  border: 1px solid var(--color-hover);
+  z-index: 1000;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  transition: background-color 0.8s ease;
 }
 
 .navbar span {
-	font-size: 1.3rem;
-	color: var(--color-paleta2), #007bff; /* Color del texto */
-	text-shadow: var(--sombra-1) var(--color-sombra-1), var(--sombra-2) var(--color-sombra-2), var(--sombra-3) var(--color-sombra-3),
-		var(--sombra-4) var(--color-sombra-4); /* Sombra del texto */
-	transform: translateZ(0); /* Establece un contexto de apilamiento para el texto */
+  font-size: 1.2rem;
+  color: var(--color-paleta6);
+  text-shadow: var(--color-paleta4) var(--color-paleta1),
+    var(--color-paleta2) var(--color-paleta2),
+    var(--color-paleta3) var(--color-paleta3),
+    var(--color-paleta4) var(--color-paleta4); /* Sombra del texto */
+  transform: translateZ(
+    0
+  ); /* Establece un contexto de apilamiento para el texto */
 }
 
 .navbar__logo img {
-	position: relative;
-
-	min-width: 2.5rem;
-	width: 4rem;
+  min-width: 2rem;
+  width: 3rem;
 }
 
 .navbar__menu {
-	display: flex;
-	list-style-type: none;
-	padding: 0;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
 }
 
 .navbar__menu-item {
-	background-color: rgba(4, 0, 37, 0.01);
-	border-radius: 0.5rem;
-	margin-left: 1rem;
+  background-color: rgba(4, 0, 37, 0.01);
+  border-radius: 0.5rem;
+  margin-left: 1rem;
 }
 
 .navbar__menu-item a {
-	color: var(--color-navbar);
-	text-decoration: none;
-	position: relative;
-	display: inline;
-	/* Padding interno de los ítems */
-	border-radius: 1rem; /* Bordes redondeados */
-	box-shadow: var(--color-hover);
-	transition: background-color 0.5s ease-in-out, color 0.7s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transiciones unificadas */
+  color: var(--color-navbar);
+  text-decoration: none;
+  position: relative;
+  display: inline;
+  /* Padding interno de los ítems */
+  border-radius: 1rem; /* Bordes redondeados */
+  box-shadow: var(--color-hover);
+  transition: background-color 0.5s ease-in-out, color 0.7s ease-in-out,
+    transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transiciones unificadas */
 }
 
 .navbar__menu-item a:hover {
-	background-color: var(--color-hover);
-	transform: scale(1.2);
-	color: var(--color-paleta7);
-	box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.3); /* Mayor sombra en hover */
+  background-color: var(--color-paleta6);
+  transform: scale(1.05);
+  color: var(--color-paleta3);
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.7); /* Mayor sombra en hover */
 }
 
 .navbar__menu-item a::after {
-	content: "";
-	position: absolute;
-	width: 0;
-	height: 0.2rem;
-	display: block;
-	margin-top: 0.5rem;
-	right: 0;
-	background: var(--color-paleta5);
-	transition: width 1.4s ease;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.2rem;
+  display: block;
+  margin-top: 0.5rem;
+  right: 0;
+  background: radial-gradient(
+    circle,
+    var(--color-paleta1),
+    var(--color-paleta2),
+    var(--color-paleta3),
+    var(--color-paleta4)
+  );
+  transition: width 1.4s ease;
 }
 
 .navbar__menu-item a:hover::after,
 .navbar__menu-item a.active::after {
-	width: 100%;
-	left: 0;
+  width: 100%;
+  left: 0;
 }
 
 /* Icono del menú de hamburguesa */
-.menu-icon {
-	display: none; /* Oculto por defecto en pantallas grandes */
-	flex-direction: column;
-	cursor: pointer;
-	margin-left: auto;
+.navbar__menu-icon {
+  display: none; /* Oculto por defecto en pantallas grandes */
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
 }
 
 /* Toggle de tema (oscuro/claro) */
 .theme-toggle {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .theme-toggle i {
-	font-size: 1rem;
-	cursor: pointer;
-	display: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
 }
 
 .theme-toggle #light-mode-icon {
-	display: block;
+  display: block;
 }
 
 .navbar__menu-item span {
-	font-size: var(--medida-texto-grande);
-	line-height: var(--altura-navbar);
-	vertical-align: middle;
-	color: #007bff;
+  font-size: var(--medida-texto-grande);
+  line-height: var(--altura-navbar);
+  vertical-align: middle;
 }
 
 @media (max-width: 768px) {
-	.navbar {
-		flex-direction: column;
-		align-items: flex-start;
-		font-family: "Montserrat", sans-serif;
-	}
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Montserrat", sans-serif;
+  }
 
-	.navbar__logo {
-		order: 1;
-	}
+  .navbar__logo {
+    order: 1;
+  }
 
-	.menu-icon {
-		display: flex; /* Mostrar en pantallas pequeñas */
-		order: 2;
-		margin-bottom: var(--margen-pequeno);
-		margin-left: auto; /* Alinear a la derecha */
-	}
+  .menu-icon {
+    display: flex; /* Mostrar en pantallas pequeñas */
+    order: 2;
+  }
 
-	.navbar__menu {
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		display: none;
-		order: 3;
-	}
+  .navbar__menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none;
+    order: 3;
+  }
 
-	.navbar__menu.active {
-		display: flex;
-	}
+  .navbar__menu.active {
+    display: flex;
+  }
 
-	.navbar__menu-item {
-		text-align: center;
-	}
+  .navbar__menu-item {
+    text-align: center;
+  }
 
-	.theme-toggle {
-		justify-content: center;
-		width: 100%;
-	}
+  .theme-toggle {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Estilos del icono del menú hamburguesa */
+.navbar__menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar__menu-line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-titulo);
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Estilos del menú */
+.navbar__menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar__menu-item {
+  margin: 0 1rem;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .navbar__menu-icon {
+    display: flex;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--color-paleta1);
+  }
+
+  .navbar__menu-item {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .navbar__menu.show {
+    display: flex;
+  }
 }

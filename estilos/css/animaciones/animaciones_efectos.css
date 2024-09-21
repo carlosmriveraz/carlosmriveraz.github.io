@@ -1,0 +1,156 @@
+@keyframes animacion__explosion {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+        filter: blur(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animación para crear un efecto de resplandor */
+@keyframes animacion__resplandor {
+    0% {
+        text-shadow: 1px 1px 5px var(--color-paleta1),
+            0 0 10px var(--color-paleta5), 0 0 15px #ffef00,
+            0 0 20px var(--color-paleta4), 0 0 25px var(--color-paleta2),
+            0 0 30px var(--color-paleta5), 0 0 35px #ffef00;
+    }
+    50% {
+        text-shadow: 0 0 10px var(--color-paleta1),
+            0 0 20px var(--color-paleta1), 0 0 30px #ffef00, 0 0 40px #ffef00,
+            0 0 50px var(--color-paleta2), 0 0 60px var(--color-paleta1),
+            0 0 70px #ffef00;
+    }
+    100% {
+        text-shadow: 0 0 5px var(--color-paleta1), 0 0 10px var(--color-paleta1),
+            0 0 15px var(--color-paleta4), 0 0 20px var(--color-paleta4),
+            0 0 25px #ffef00, 0 0 30px #ffef00, 0 0 35px var(--color-paleta4);
+    }
+}
+
+/* Animación para crear un efecto de aparecer y hacer zoom */
+@keyframes animacion__zoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animación para el parpadeo del cursor */
+@keyframes animacion__parpadeo-cursor {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--color-paleta2);
+    }
+}
+
+/* Animación para aparecer */
+@keyframes animacion__fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animación para crear un efecto de pulso */
+@keyframes animacion__pulso {
+    0%,
+    100% {
+        text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+    }
+    50% {
+        text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
+    }
+}
+
+/* Animación para escribir texto */
+@keyframes animacion__escribir {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Animación para crecer */
+@keyframes animacion__crecer {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animación para reducir */
+@keyframes animacion__reducir {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+/* Estilo y animaciones combinadas */
+.efectos__combinados {
+    animation: zoom 3s 4s 2, animacion__move-right-left 8s 1s 2;
+}
+
+.efectos__combinados h2 {
+    animation: animacion__pulso 3s 4s infinite,
+        animacion__resplandor 8s 1s infinite;
+}
+
+.efectos__combinados h3 {
+    animation: animacion__pulso 5s 500ms infinite,
+        animacion__move-left-right 8s 1s 2;
+}
+
+.efectos__combinados__pulso {
+    animation: animacion__pulso 5s 2s linear 2;
+}
+
+/* Efectos adicionales combinados */
+.efectos__combinados::before,
+.efectos__combinados::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-paleta2);
+    border-radius: 50%;
+    animation: animacion__crecer 2s 4s forwards,
+        animacion__reducir 2s 8s forwards;
+}
+
+.efectos__combinados::before {
+    top: -20px;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    animation-delay: 0.2s;
+}
+
+.efectos__combinados::after {
+    bottom: -20px;
+    right: -20px;
+    width: 10px;
+    height: 10px;
+    animation-delay: 0.4s;
+}

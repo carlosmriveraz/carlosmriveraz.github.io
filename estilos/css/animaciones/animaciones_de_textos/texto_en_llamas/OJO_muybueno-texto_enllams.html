@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto en llamas</title>
+    <style>
+        /* Paleta de colores */
+        :root {
+            --fire-color1: #ff9d00;
+            --fire-color2: #ff4500;
+            --fire-color3: #ffd700;
+            --fire-color4: #ff6347;
+            --fire-color5: #ff0000;
+        }
+
+        .flaming-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 3rem;
+            color: var(--fire-color1);
+            animation: flames 2s infinite, flicker 0.1s infinite alternate;
+        }
+
+        @keyframes flames {
+            0% { color: var(--fire-color1); }
+            25% { color: var(--fire-color2); }
+            50% { color: var(--fire-color3); }
+            75% { color: var(--fire-color4); }
+            100% { color: var(--fire-color5); }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="flaming-text">Texto en llamas</h1>
+</body>
+</html>

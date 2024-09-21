@@ -1,557 +1,574 @@
 /** @format */
 
 .estrellas {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 120%;
-	transform: rotate(-45deg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  transform: rotate(-45deg);
 }
 
 .estrellas2 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 90%;
-	transform: rotate(-40deg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  transform: rotate(-40deg);
 }
 
 .estrella {
-	--estrella-color: #ec731e;
-	--estrella-tail-length: 6em;
-	--estrella-tail-height: 5px;
-	--estrella-width: calc(var(--estrella-tail-length) / 8);
-	--fall-duration: 15s;
-	--tail-fade-duration: var(--fall-duration);
-	position: absolute;
-	top: var(--top-offset);
-	left: 0;
-	width: var(--estrella-tail-length);
-	height: var(--estrella-tail-height);
-	color: #ec731e;
-	background: linear-gradient(45deg, currentColor, transparent);
-	border-radius: 50%;
-	filter: drop-shadow(0 0 6px currentColor);
-	transform: translate3d(104em, 0, 0);
-	animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+  --estrella-color: #ec731e;
+  --estrella-tail-length: 6em;
+  --estrella-tail-height: 5px;
+  --estrella-width: calc(var(--estrella-tail-length) / 8);
+  --fall-duration: 15s;
+  --tail-fade-duration: var(--fall-duration);
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--estrella-tail-length);
+  height: var(--estrella-tail-height);
+  color: #ec731e;
+  background: linear-gradient(45deg, currentColor, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
+    tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
 }
 @media screen and (max-width: 750px) {
-	.estrella {
-		animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
-	}
+  .estrella {
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
 }
 
 .estrella:nth-child(1) {
-	--estrella-tail-length: 5.59em;
-	--top-offset: 21.66vh;
-	--fall-duration: 11.465s;
-	--fall-delay: 4.865s;
+  --estrella-tail-length: 5.59em;
+  --top-offset: 21.66vh;
+  --fall-duration: 11.465s;
+  --fall-delay: 4.865s;
 }
 .estrella:nth-child(2) {
-	--estrella-tail-length: 6.55em;
-	--top-offset: 83.55vh;
-	--fall-duration: 7.247s;
-	--fall-delay: 3.612s;
+  --estrella-tail-length: 6.55em;
+  --top-offset: 83.55vh;
+  --fall-duration: 7.247s;
+  --fall-delay: 3.612s;
 }
 .estrella:nth-child(3) {
-	--estrella-tail-length: 6.27em;
-	--top-offset: 32.43vh;
-	--fall-duration: 10.77s;
-	--fall-delay: 1.942s;
+  --estrella-tail-length: 6.27em;
+  --top-offset: 32.43vh;
+  --fall-duration: 10.77s;
+  --fall-delay: 1.942s;
 }
 .estrella:nth-child(4) {
-	--estrella-tail-length: 7.15em;
-	--top-offset: 75.6vh;
-	--fall-duration: 11.322s;
-	--fall-delay: 5.464s;
+  --estrella-tail-length: 7.15em;
+  --top-offset: 75.6vh;
+  --fall-duration: 11.322s;
+  --fall-delay: 5.464s;
 }
 .estrella:nth-child(5) {
-	--estrella-tail-length: 5em;
-	--top-offset: 67.08vh;
-	--fall-duration: 6.417s;
-	--fall-delay: 1.661s;
+  --estrella-tail-length: 5em;
+  --top-offset: 67.08vh;
+  --fall-duration: 6.417s;
+  --fall-delay: 1.661s;
 }
 .estrella:nth-child(6) {
-	--estrella-tail-length: 6.47em;
-	--top-offset: 7.31vh;
-	--fall-duration: 6.191s;
-	--fall-delay: 9.688s;
+  --estrella-tail-length: 6.47em;
+  --top-offset: 7.31vh;
+  --fall-duration: 6.191s;
+  --fall-delay: 9.688s;
 }
 .estrella:nth-child(7) {
-	--estrella-tail-length: 6.6em;
-	--top-offset: 49.15vh;
-	--fall-duration: 10.908s;
-	--fall-delay: 0.68s;
+  --estrella-tail-length: 6.6em;
+  --top-offset: 49.15vh;
+  --fall-duration: 10.908s;
+  --fall-delay: 0.68s;
 }
 .estrella:nth-child(8) {
-	--estrella-color: #ec731e;
-	--estrella-tail-length: 5.08em;
-	--top-offset: 16.91vh;
-	--fall-duration: 11.261s;
-	--fall-delay: 5.482s;
+  --estrella-color: #ec731e;
+  --estrella-tail-length: 5.08em;
+  --top-offset: 16.91vh;
+  --fall-duration: 11.261s;
+  --fall-delay: 5.482s;
 }
 .estrella:nth-child(9) {
-	--estrella-tail-length: 6.04em;
-	--top-offset: 32.37vh;
-	--fall-duration: 10.134s;
-	--fall-delay: 6.749s;
+  --estrella-tail-length: 6.04em;
+  --top-offset: 32.37vh;
+  --fall-duration: 10.134s;
+  --fall-delay: 6.749s;
 }
 .estrella:nth-child(10) {
-	--estrella-tail-length: 6.61em;
-	--top-offset: 74.86vh;
-	--fall-duration: 8.977s;
-	--fall-delay: 2.15s;
+  --estrella-tail-length: 6.61em;
+  --top-offset: 74.86vh;
+  --fall-duration: 8.977s;
+  --fall-delay: 2.15s;
 }
 .estrella:nth-child(11) {
-	--estrella-tail-length: 5.98em;
-	--top-offset: 93.38vh;
-	--fall-duration: 8.18s;
-	--fall-delay: 0.261s;
-	--estrella-color: #ec731e;
+  --estrella-tail-length: 5.98em;
+  --top-offset: 93.38vh;
+  --fall-duration: 8.18s;
+  --fall-delay: 0.261s;
+  --estrella-color: #ec731e;
 }
 .estrella:nth-child(12) {
-	--estrella-tail-length: 6.16em;
-	--top-offset: 89.44vh;
-	--fall-duration: 6.738s;
-	--fall-delay: 9.245s;
+  --estrella-tail-length: 6.16em;
+  --top-offset: 89.44vh;
+  --fall-duration: 6.738s;
+  --fall-delay: 9.245s;
 }
 .estrella:nth-child(13) {
-	--estrella-tail-length: 5.16em;
-	--top-offset: 64.9vh;
-	--fall-duration: 7.918s;
-	--fall-delay: 0.957s;
-	--estrella-color: #ec731e;
+  --estrella-tail-length: 5.16em;
+  --top-offset: 64.9vh;
+  --fall-duration: 7.918s;
+  --fall-delay: 0.957s;
+  --estrella-color: #ec731e;
 }
 .estrella:nth-child(14) {
-	--estrella-tail-length: 6em;
-	--top-offset: 8.14vh;
-	--fall-duration: 10.335s;
-	--fall-delay: 2.067s;
+  --estrella-tail-length: 6em;
+  --top-offset: 8.14vh;
+  --fall-duration: 10.335s;
+  --fall-delay: 2.067s;
 }
 .estrella:nth-child(15) {
-	--estrella-tail-length: 5.05em;
-	--top-offset: 25.65vh;
-	--fall-duration: 7.379s;
-	--fall-delay: 6.507s;
+  --estrella-tail-length: 5.05em;
+  --top-offset: 25.65vh;
+  --fall-duration: 7.379s;
+  --fall-delay: 6.507s;
 }
 .estrella:nth-child(16) {
-	--estrella-tail-length: 6.39em;
-	--top-offset: 33.5vh;
-	--fall-duration: 10.565s;
-	--fall-delay: 2.445s;
+  --estrella-tail-length: 6.39em;
+  --top-offset: 33.5vh;
+  --fall-duration: 10.565s;
+  --fall-delay: 2.445s;
 }
 .estrella:nth-child(17) {
-	--estrella-tail-length: 7.28em;
-	--top-offset: 21.76vh;
-	--fall-duration: 7.261s;
-	--fall-delay: 4.637s;
+  --estrella-tail-length: 7.28em;
+  --top-offset: 21.76vh;
+  --fall-duration: 7.261s;
+  --fall-delay: 4.637s;
 }
 .estrella:nth-child(18) {
-	--estrella-tail-length: 6.47em;
-	--top-offset: 4.53vh;
-	--fall-duration: 8.218s;
-	--fall-delay: 1.843s;
+  --estrella-tail-length: 6.47em;
+  --top-offset: 4.53vh;
+  --fall-duration: 8.218s;
+  --fall-delay: 1.843s;
 }
 .estrella:nth-child(19) {
-	--estrella-tail-length: 6.9em;
-	--top-offset: 1.16vh;
-	--fall-duration: 7.415s;
-	--fall-delay: 3.424s;
+  --estrella-tail-length: 6.9em;
+  --top-offset: 1.16vh;
+  --fall-duration: 7.415s;
+  --fall-delay: 3.424s;
 }
 .estrella:nth-child(20) {
-	--estrella-tail-length: 7.32em;
-	--top-offset: 73.02vh;
-	--fall-duration: 6.332s;
-	--fall-delay: 2.278s;
+  --estrella-tail-length: 7.32em;
+  --top-offset: 73.02vh;
+  --fall-duration: 6.332s;
+  --fall-delay: 2.278s;
 }
 .estrella:nth-child(21) {
-	--estrella-tail-length: 5.63em;
-	--top-offset: 36.53vh;
-	--fall-duration: 10.201s;
-	--fall-delay: 6.177s;
+  --estrella-tail-length: 5.63em;
+  --top-offset: 36.53vh;
+  --fall-duration: 10.201s;
+  --fall-delay: 6.177s;
 }
 .estrella:nth-child(22) {
-	--estrella-tail-length: 5.68em;
-	--top-offset: 16.48vh;
-	--fall-duration: 9.578s;
-	--fall-delay: 7.239s;
+  --estrella-tail-length: 5.68em;
+  --top-offset: 16.48vh;
+  --fall-duration: 9.578s;
+  --fall-delay: 7.239s;
 }
 .estrella:nth-child(23) {
-	--estrella-tail-length: 5.02em;
-	--top-offset: 42.63vh;
-	--fall-duration: 11.324s;
-	--fall-delay: 6.373s;
+  --estrella-tail-length: 5.02em;
+  --top-offset: 42.63vh;
+  --fall-duration: 11.324s;
+  --fall-delay: 6.373s;
 }
 .estrella:nth-child(24) {
-	--estrella-tail-length: 5.58em;
-	--top-offset: 62.4vh;
-	--fall-duration: 6.343s;
-	--fall-delay: 4.337s;
+  --estrella-tail-length: 5.58em;
+  --top-offset: 62.4vh;
+  --fall-duration: 6.343s;
+  --fall-delay: 4.337s;
 }
 .estrella:nth-child(25) {
-	--estrella-tail-length: 5.43em;
-	--top-offset: 77.14vh;
-	--fall-duration: 7.898s;
-	--fall-delay: 9.638s;
+  --estrella-tail-length: 5.43em;
+  --top-offset: 77.14vh;
+  --fall-duration: 7.898s;
+  --fall-delay: 9.638s;
 }
 .estrella:nth-child(26) {
-	--estrella-tail-length: 5.46em;
-	--top-offset: 88.62vh;
-	--fall-duration: 8.087s;
-	--fall-delay: 7.101s;
+  --estrella-tail-length: 5.46em;
+  --top-offset: 88.62vh;
+  --fall-duration: 8.087s;
+  --fall-delay: 7.101s;
 }
 .estrella:nth-child(27) {
-	--estrella-tail-length: 6.87em;
-	--top-offset: 74.04vh;
-	--fall-duration: 8.769s;
-	--fall-delay: 9.037s;
+  --estrella-tail-length: 6.87em;
+  --top-offset: 74.04vh;
+  --fall-duration: 8.769s;
+  --fall-delay: 9.037s;
 }
 .estrella:nth-child(28) {
-	--estrella-tail-length: 5.09em;
-	--top-offset: 54.08vh;
-	--fall-duration: 9.991s;
-	--fall-delay: 0.279s;
+  --estrella-tail-length: 5.09em;
+  --top-offset: 54.08vh;
+  --fall-duration: 9.991s;
+  --fall-delay: 0.279s;
 }
 .estrella:nth-child(29) {
-	--estrella-tail-length: 6.03em;
-	--top-offset: 32.09vh;
-	--fall-duration: 10.88s;
-	--fall-delay: 3.847s;
+  --estrella-tail-length: 6.03em;
+  --top-offset: 32.09vh;
+  --fall-duration: 10.88s;
+  --fall-delay: 3.847s;
 }
 .estrella:nth-child(30) {
-	--estrella-tail-length: 5.68em;
-	--top-offset: 1.49vh;
-	--fall-duration: 7.726s;
-	--fall-delay: 6.055s;
+  --estrella-tail-length: 5.68em;
+  --top-offset: 1.49vh;
+  --fall-duration: 7.726s;
+  --fall-delay: 6.055s;
 }
 .estrella:nth-child(31) {
-	--estrella-tail-length: 7.25em;
-	--top-offset: 68.63vh;
-	--fall-duration: 7.819s;
-	--fall-delay: 5.639s;
+  --estrella-tail-length: 7.25em;
+  --top-offset: 68.63vh;
+  --fall-duration: 7.819s;
+  --fall-delay: 5.639s;
 }
 .estrella:nth-child(32) {
-	--estrella-tail-length: 7.06em;
-	--top-offset: 83.02vh;
-	--fall-duration: 6.856s;
-	--fall-delay: 4.435s;
+  --estrella-tail-length: 7.06em;
+  --top-offset: 83.02vh;
+  --fall-duration: 6.856s;
+  --fall-delay: 4.435s;
 }
 .estrella:nth-child(33) {
-	--estrella-tail-length: 7.01em;
-	--top-offset: 72.8vh;
-	--fall-duration: 10.646s;
-	--fall-delay: 0.271s;
+  --estrella-tail-length: 7.01em;
+  --top-offset: 72.8vh;
+  --fall-duration: 10.646s;
+  --fall-delay: 0.271s;
 }
 .estrella:nth-child(34) {
-	--estrella-tail-length: 6.54em;
-	--top-offset: 64.64vh;
-	--fall-duration: 7.62s;
-	--fall-delay: 5.406s;
+  --estrella-tail-length: 6.54em;
+  --top-offset: 64.64vh;
+  --fall-duration: 7.62s;
+  --fall-delay: 5.406s;
 }
 .estrella:nth-child(35) {
-	--estrella-tail-length: 6.71em;
-	--top-offset: 36.16vh;
-	--fall-duration: 7.029s;
-	--fall-delay: 6.689s;
+  --estrella-tail-length: 6.71em;
+  --top-offset: 36.16vh;
+  --fall-duration: 7.029s;
+  --fall-delay: 6.689s;
 }
 .estrella:nth-child(36) {
-	--estrella-tail-length: 7.45em;
-	--top-offset: 29.53vh;
-	--fall-duration: 7.402s;
-	--fall-delay: 3.145s;
+  --estrella-tail-length: 7.45em;
+  --top-offset: 29.53vh;
+  --fall-duration: 7.402s;
+  --fall-delay: 3.145s;
 }
 .estrella:nth-child(37) {
-	--estrella-tail-length: 6.26em;
-	--top-offset: 89.28vh;
-	--fall-duration: 9.662s;
-	--fall-delay: 8.183s;
+  --estrella-tail-length: 6.26em;
+  --top-offset: 89.28vh;
+  --fall-duration: 9.662s;
+  --fall-delay: 8.183s;
 }
 .estrella:nth-child(38) {
-	--estrella-tail-length: 5.33em;
-	--top-offset: 98.05vh;
-	--fall-duration: 10.903s;
-	--fall-delay: 0.359s;
+  --estrella-tail-length: 5.33em;
+  --top-offset: 98.05vh;
+  --fall-duration: 10.903s;
+  --fall-delay: 0.359s;
 }
 .estrella:nth-child(39) {
-	--estrella-tail-length: 6.28em;
-	--top-offset: 68.28vh;
-	--fall-duration: 10.091s;
-	--fall-delay: 0.872s;
+  --estrella-tail-length: 6.28em;
+  --top-offset: 68.28vh;
+  --fall-duration: 10.091s;
+  --fall-delay: 0.872s;
 }
 .estrella:nth-child(40) {
-	--estrella-tail-length: 5.28em;
-	--top-offset: 19.24vh;
-	--fall-duration: 9.507s;
-	--fall-delay: 8.041s;
+  --estrella-tail-length: 5.28em;
+  --top-offset: 19.24vh;
+  --fall-duration: 9.507s;
+  --fall-delay: 8.041s;
 }
 .estrella:nth-child(41) {
-	--estrella-tail-length: 5.58em;
-	--top-offset: 80.38vh;
-	--fall-duration: 9.957s;
-	--fall-delay: 8.774s;
+  --estrella-tail-length: 5.58em;
+  --top-offset: 80.38vh;
+  --fall-duration: 9.957s;
+  --fall-delay: 8.774s;
 }
 .estrella:nth-child(42) {
-	--estrella-tail-length: 6.57em;
-	--top-offset: 74.11vh;
-	--fall-duration: 9.342s;
-	--fall-delay: 5.519s;
+  --estrella-tail-length: 6.57em;
+  --top-offset: 74.11vh;
+  --fall-duration: 9.342s;
+  --fall-delay: 5.519s;
 }
 .estrella:nth-child(43) {
-	--estrella-tail-length: 6.98em;
-	--top-offset: 85.58vh;
-	--fall-duration: 10.177s;
-	--fall-delay: 3.775s;
+  --estrella-tail-length: 6.98em;
+  --top-offset: 85.58vh;
+  --fall-duration: 10.177s;
+  --fall-delay: 3.775s;
 }
 .estrella:nth-child(44) {
-	--estrella-tail-length: 6.81em;
-	--top-offset: 97.06vh;
-	--fall-duration: 8.248s;
-	--fall-delay: 0.824s;
+  --estrella-tail-length: 6.81em;
+  --top-offset: 97.06vh;
+  --fall-duration: 8.248s;
+  --fall-delay: 0.824s;
 }
 .estrella:nth-child(45) {
-	--estrella-tail-length: 6.6em;
-	--top-offset: 67.72vh;
-	--fall-duration: 11.515s;
-	--fall-delay: 3.596s;
+  --estrella-tail-length: 6.6em;
+  --top-offset: 67.72vh;
+  --fall-duration: 11.515s;
+  --fall-delay: 3.596s;
 }
 .estrella:nth-child(46) {
-	--estrella-tail-length: 6.96em;
-	--top-offset: 57.16vh;
-	--fall-duration: 6.367s;
-	--fall-delay: 7.488s;
+  --estrella-tail-length: 6.96em;
+  --top-offset: 57.16vh;
+  --fall-duration: 6.367s;
+  --fall-delay: 7.488s;
 }
 .estrella:nth-child(47) {
-	--estrella-tail-length: 5.94em;
-	--top-offset: 29.7vh;
-	--fall-duration: 10.272s;
-	--fall-delay: 9.11s;
+  --estrella-tail-length: 5.94em;
+  --top-offset: 29.7vh;
+  --fall-duration: 10.272s;
+  --fall-delay: 9.11s;
 }
 .estrella:nth-child(48) {
-	--estrella-tail-length: 6.28em;
-	--top-offset: 77.15vh;
-	--fall-duration: 7.658s;
-	--fall-delay: 0.987s;
+  --estrella-tail-length: 6.28em;
+  --top-offset: 77.15vh;
+  --fall-duration: 7.658s;
+  --fall-delay: 0.987s;
 }
 .estrella:nth-child(49) {
-	--estrella-tail-length: 5.57em;
-	--top-offset: 30.7vh;
-	--fall-duration: 6.791s;
-	--fall-delay: 8.813s;
+  --estrella-tail-length: 5.57em;
+  --top-offset: 30.7vh;
+  --fall-duration: 6.791s;
+  --fall-delay: 8.813s;
 }
 .estrella:nth-child(50) {
-	--estrella-tail-length: 5.53em;
-	--top-offset: 43.02vh;
-	--fall-duration: 11.046s;
-	--fall-delay: 9.077s;
+  --estrella-tail-length: 5.53em;
+  --top-offset: 43.02vh;
+  --fall-duration: 11.046s;
+  --fall-delay: 9.077s;
 }
 
 .estrella {
-	--estrella-color: var(--color-estrella);
-	--estrella-tail-length: 6em;
-	--estrella-tail-height: 2px;
-	--estrella-width: calc(var(--estrella-tail-length) / 6);
-	--fall-duration: 9s;
-	--tail-fade-duration: var(--fall-duration);
-	position: absolute;
-	top: var(--top-offset);
-	left: 0;
-	width: var(--estrella-tail-length);
-	height: var(--estrella-tail-height);
-	color: var(--estrella-color);
-	background: linear-gradient(45deg, currentColor, transparent);
-	border-radius: 50%;
-	filter: drop-shadow(0 0 6px currentColor);
-	transform: translate3d(104em, 0, 0);
-	animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+  --estrella-color: var(--color-estrella);
+  --estrella-tail-length: 6em;
+  --estrella-tail-height: 2px;
+  --estrella-width: calc(var(--estrella-tail-length) / 6);
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--estrella-tail-length);
+  height: var(--estrella-tail-height);
+  color: var(--estrella-color);
+  background: linear-gradient(45deg, currentColor, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
+    tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
 }
 
 @media screen and (max-width: 750px) {
-	.estrella {
-		animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
-	}
+  .estrella {
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
 }
 
 .estrella::before,
 .estrella::after {
-	position: absolute;
-	content: "";
-	top: 0;
-	left: calc(var(--estrella-width) / -2);
-	width: var(--estrella-width);
-	height: 100%;
-	background: linear-gradient(45deg, transparent, currentColor, transparent);
-	border-radius: inherit;
-	animation: blink 2s linear infinite;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: calc(var(--estrella-width) / -2);
+  width: var(--estrella-width);
+  height: 100%;
+  background: linear-gradient(45deg, transparent, currentColor, transparent);
+  border-radius: inherit;
+  animation: blink 2s linear infinite;
 }
 
 .estrella::before {
-	transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .estrella::after {
-	transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 @keyframes fall {
-	to {
-		transform: translate3d(-30em, 0, 0);
-	}
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
 }
 
 @keyframes tail-fade {
-	0%,
-	50% {
-		width: var(--estrella-tail-length);
-		opacity: 1;
-	}
-	70%,
-	80% {
-		width: 0;
-		opacity: 0.4;
-	}
-	100% {
-		width: 0;
-		opacity: 0;
-	}
+  0%,
+  50% {
+    width: var(--estrella-tail-length);
+    opacity: 1;
+  }
+  70%,
+  80% {
+    width: 0;
+    opacity: 0.4;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes blink {
-	50% {
-		opacity: 0.6;
-	}
+  50% {
+    opacity: 0.6;
+  }
 }
 
 .contenedor__home {
-	position: sticky;
-	flex-direction: column;
-	width: 80vw;
-	height: 80vh;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  position: sticky;
+  flex-direction: column;
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.flaming-text {
-	font-family: var(--font-primary);
-	font-size: var(--font-size-large);
-	color: var(--fire-color1);
-	animation: flames 2s infinite, flicker 0.1s infinite alternate, glow 2s infinite alternate, distortion 3s infinite;
-	text-shadow: 0 0 5px var(--fire-color1), 0 0 10px var(--fire-color2), 0 0 15px var(--fire-color3), 0 0 20px var(--fire-color4),
-		0 0 25px var(--fire-color5);
-	box-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2), 0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
-		0 0 50px var(--fire-color5);
-	filter: url(#distortion); /* Filtro SVG para distorsión */
-	position: absolute;
-	z-index: 1;
+.texto__en__llamas {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-large);
+  color: var(--fire-color1);
+  animation: llamas 2s infinite, flicker 0.1s infinite alternate,
+    glow 2s infinite alternate, distortion 3s infinite;
+  text-shadow: 0 0 5px var(--fire-color1), 0 0 10px var(--fire-color2),
+    0 0 15px var(--fire-color3), 0 0 20px var(--fire-color4),
+    0 0 25px var(--fire-color5);
+  box-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2),
+    0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
+    0 0 50px var(--fire-color5);
+  filter: url(#distortion); /* Filtro SVG para distorsión */
+  position: absolute;
+  z-index: 1;
 }
 
-.flaming-text:hover {
-	color: var(--hover-color);
-	text-shadow: 0 0 5px var(--hover-color), 0 0 10px var(--hover-color), 0 0 15px var(--hover-color), 0 0 20px var(--hover-color),
-		0 0 25px var(--hover-color);
-	box-shadow: 0 0 10px var(--hover-color), 0 0 20px var(--fire-color2), 0 0 30px var(--hover-color), 0 0 40px var(--color-paleta1),
-		0 0 50px var(--hover-color);
+.texto__en__llamas:hover {
+  color: var(--hover-color);
+  text-shadow: 0 0 5px var(--hover-color), 0 0 10px var(--hover-color),
+    0 0 15px var(--hover-color), 0 0 20px var(--hover-color),
+    0 0 25px var(--hover-color);
+  box-shadow: 0 0 10px var(--hover-color), 0 0 20px var(--fire-color2),
+    0 0 30px var(--hover-color), 0 0 40px var(--color-paleta1),
+    0 0 50px var(--hover-color);
 }
 
-.flaming-image {
-	width: 10%;
-	height: auto;
-	animation: flames 2s infinite, flicker 0.1s infinite alternate, glow 2s infinite alternate, distortion 3s infinite;
-	position: absolute;
-	z-index: 0;
+.llamas-image {
+  width: 10%;
+  height: auto;
+  animation: llamas 2s infinite, flicker 0.1s infinite alternate,
+    glow 2s infinite alternate, distortion 3s infinite;
+  position: absolute;
+  z-index: 0;
 }
 
-@keyframes flames {
-	0% {
-		color: var(--fire-color1);
-	}
-	25% {
-		color: var(--fire-color2);
-	}
-	50% {
-		color: var(--fire-color3);
-	}
-	75% {
-		color: var(--fire-color4);
-	}
-	100% {
-		color: var(--fire-color5);
-	}
+@keyframes llamas {
+  0% {
+    color: var(--fire-color1);
+  }
+  25% {
+    color: var(--fire-color2);
+  }
+  50% {
+    color: var(--fire-color3);
+  }
+  75% {
+    color: var(--fire-color4);
+  }
+  100% {
+    color: var(--fire-color5);
+  }
 }
 
 @keyframes flicker {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0.8;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes glow {
-	0% {
-		text-shadow: 0 0 5px var(--fire-color1), 0 0 10px var(--fire-color2), 0 0 15px var(--fire-color3), 0 0 20px var(--fire-color4),
-			0 0 25px var(--fire-color5);
-		box-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2), 0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
-			0 0 50px var(--fire-color5);
-	}
-	100% {
-		text-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2), 0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
-			0 0 50px var(--fire-color5);
-		box-shadow: 0 0 20px var(--fire-color1), 0 0 40px var(--fire-color2), 0 0 60px var(--fire-color3), 0 0 80px var(--fire-color4),
-			0 0 100px var(--fire-color5);
-	}
+  0% {
+    text-shadow: 0 0 5px var(--fire-color1), 0 0 10px var(--fire-color2),
+      0 0 15px var(--fire-color3), 0 0 20px var(--fire-color4),
+      0 0 25px var(--fire-color5);
+    box-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2),
+      0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
+      0 0 50px var(--fire-color5);
+  }
+  100% {
+    text-shadow: 0 0 10px var(--fire-color1), 0 0 20px var(--fire-color2),
+      0 0 30px var(--fire-color3), 0 0 40px var(--fire-color4),
+      0 0 50px var(--fire-color5);
+    box-shadow: 0 0 20px var(--fire-color1), 0 0 40px var(--fire-color2),
+      0 0 60px var(--fire-color3), 0 0 80px var(--fire-color4),
+      0 0 100px var(--fire-color5);
+  }
 }
 
 @keyframes distortion {
-	0% {
-		transform: translateY(0) skewX(0deg);
-	}
-	25% {
-		transform: translateY(-5px) skewX(-5deg);
-	}
-	50% {
-		transform: translateY(5px) skewX(5deg);
-	}
-	75% {
-		transform: translateY(-5px) skewX(-5deg);
-	}
-	100% {
-		transform: translateY(0) skewX(0deg);
-	}
+  0% {
+    transform: translateY(0) skewX(0deg);
+  }
+  25% {
+    transform: translateY(-5px) skewX(-5deg);
+  }
+  50% {
+    transform: translateY(5px) skewX(5deg);
+  }
+  75% {
+    transform: translateY(-5px) skewX(-5deg);
+  }
+  100% {
+    transform: translateY(0) skewX(0deg);
+  }
 }
 
 /* styles.css */
 
 .brillante {
-	font-size: 2rem;
-	font-weight: bold;
-	color: #fff;
-	padding: 20px;
-	border: 2px solid #0e5c6b18;
-	border-radius: 10px;
-	text-align: center;
-	background: linear-gradient(45deg, #00ff05, var(--color-navbar), #0000ff); /* Gradiente de colores */
-	background-size: 400% 400%; /* Tamaño del gradiente */
-	animation: brillo-destello 3s ease-in-out infinite; /* Aplicar la animación */
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 20px;
+  border: 2px solid #0e5c6b18;
+  border-radius: 10px;
+  text-align: center;
+  background: linear-gradient(
+    45deg,
+    #00ff05,
+    var(--color-navbar),
+    #0000ff
+  ); /* Gradiente de colores */
+  background-size: 400% 400%; /* Tamaño del gradiente */
+  animation: brillo-destello 3s ease-in-out infinite; /* Aplicar la animación */
 }
 
 @keyframes brillo-destello {
-	0% {
-		background-position: 0% 0%;
-		box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-	}
-	50% {
-		background-position: 100% 100%;
-		box-shadow: 0 0 30px rgb(209, 228, 36);
-	}
-	100% {
-		background-position: 0% 0%;
-		box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-	}
+  0% {
+    background-position: 0% 0%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    background-position: 100% 100%;
+    box-shadow: 0 0 30px rgb(209, 228, 36);
+  }
+  100% {
+    background-position: 0% 0%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
 }

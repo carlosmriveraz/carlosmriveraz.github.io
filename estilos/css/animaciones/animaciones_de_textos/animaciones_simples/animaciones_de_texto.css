@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Animaciones</title>
+    <style>
+        /* -------------------- ANIMACIONES -------------------- */
+        
+        /* Animación para crear un efecto de explosión */
+        @keyframes animacion__explosion {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+                filter: blur(5px);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+                filter: blur(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Animación para crear un efecto de aparecer */
+        @keyframes animacion__aparecer {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        /* Animación para crear un efecto de pulso */
+        @keyframes animacion__pulso {
+            0%,
+            100% {
+                text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+            }
+            50% {
+                text-shadow: 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
+            }
+        }
+        
+        /* Animación para el parpadeo del cursor */
+        @keyframes animacion__parpadeo__cursor {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: var(--color-paleta2);
+            }
+        }
+        
+        /* Animación para escribir texto */
+        @keyframes animacion__escribir {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        /* Animación para crecer */
+        @keyframes animacion__crecer {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Animación para reducir */
+        @keyframes animacion__reducir {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+        
+        /* Animación para crear un efecto de resplandor */
+        @keyframes animacion__resplandor {
+            0% {
+                text-shadow: 1px 1px 5px var(--color-paleta1),
+                    0 0 10px var(--color-paleta5), 0 0 15px #ffef00,
+                    0 0 20px var(--color-paleta4), 0 0 25px var(--color-paleta2),
+                    0 0 30px var(--color-paleta5), 0 0 35px #ffef00;
+            }
+            50% {
+                text-shadow: 0 0 10px var(--color-paleta1),
+                    0 0 20px var(--color-paleta1), 0 0 30px #ffef00, 0 0 40px #ffef00,
+                    0 0 50px var(--color-paleta2), 0 0 60px var(--color-paleta1),
+                    0 0 70px #ffef00;
+            }
+            100% {
+                text-shadow: 0 0 5px var(--color-paleta1), 0 0 10px var(--color-paleta1),
+                    0 0 15px var(--color-paleta4), 0 0 20px var(--color-paleta4),
+                    0 0 25px #ffef00, 0 0 30px #ffef00, 0 0 35px var(--color-paleta4);
+            }
+        }
+        
+        /* Animación para mover de derecha a izquierda */
+        @keyframes animacion__mover__derecha__izquierda {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        
+        /* Animación para mover de izquierda a derecha */
+        @keyframes animacion__mover__izquierda__derecha {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* -------------------- ESTILOS -------------------- */
+        
+        /* Estilo y animaciones para el texto animado con zoom */
+        .texto__animado__zoom {
+            animation: animacion__escribir 4s steps(30, end) 2s forwards,
+                animacion__parpadeo__cursor 0.75s step-end infinite 6s,
+                animacion__zoom 2s ease forwards;
+            color: var(--color-paleta2);
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            transform: scale(0.5);
+            transition: text-shadow 0.5s, transform 0.5s;
+        }
+        
+        /* Efecto al pasar el cursor sobre el texto animado con zoom */
+        .texto__animado__zoom:hover {
+            color: var(--color-paleta4);
+            text-shadow: 0px 0px 2px var(--color-paleta4), -3px -3px 2px #00ffff,
+                0px -3px var(--color-paleta4), -3px 1px 0 var(--color-paleta5);
+            transform: scale(1.4);
+        }
+        
+        /* Estilo y animaciones combinadas */
+        .efectos__combinados {
+            animation: animacion__aparecer 2s forwards;
+            opacity: 0;
+            text-align: center;
+            position: relative; /* Necesario para posicionar ::before y ::after */
+        }
+        
+        .efectos__combinados h2,
+        .efectos__combinados h3 {
+            animation: animacion__pulso 3s 4s infinite,
+                animacion__mover__derecha__izquierda 8s 1s 2;
+        }
+        
+        .efectos__combinados h3 {
+            animation: animacion__pulso 5s 500ms infinite,
+                animacion__mover__izquierda__derecha 8s 1s 2;
+        }
+        
+        /* Efecto adicional combinado para pulso */
+        .efectos__combinados__pulso {
+            animation: animacion__pulso 5s 2s linear 2;
+        }
+        
+        /* Efectos adicionales combinados */
+        .efectos__combinados::before,
+        .efectos__combinados::after {
+            animation: animacion__crecer 2s 4s forwards,
+                animacion__reducir 2s 8s forwards;
+            background-color: var(--color-paleta2);
+            border-radius: 50%;
+            content: '';
+            position: absolute;
+        }
+        
+        .efectos__combinados::before {
+            height: 10px;
+            left: -20px;
+            top: -20px;
+            width: 10px;
+            animation-delay: 0.2s;
+        }
+        
+        .efectos__combinados::after {
+            bottom: -20px;
+            height: 10px;
+            right: -20px;
+            width: 10px;
+            animation-delay: 0.4s;
+        }
+        
+        /* Animación para el efecto de pulso en el texto */
+        .pulso {
+            animation: animacion__pulso 1.5s ease-in-out infinite;
+            display: inline-block;
+            font-size: 2rem;
+            color: #ff0000; /* Cambia el color según tus preferencias */
+            position: relative; /* Necesario para posicionar ::before y ::after */
+        }
+        
+        .pulso::before,
+        .pulso::after {
+            content: '';
+            position: absolute;
+            background-color: #ff0000; /* Color de fondo para el efecto visual */
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: animacion__pulso 1.5s ease-in-out infinite;
+        }
+        
+        .pulso::before {
+            top: -10px;
+            left: -10px;
+        }
+        
+        .pulso::after {
+            bottom: -10px;
+            right: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="texto__animado__zoom">Texto con Animación de Zoom</div>
+    <div class="efectos__combinados">
+        <h2>Título con Efectos Combinados</h2>
+        <h3>Subtítulo con Efectos Combinados</h3>
+    </div>
+    <div class="efectos__combinados__pulso">
+        <h2>Otro Título con Pulso</h2>
+    </div>
+    <div class="pulso">Texto con Efecto de Pulso</div>
+</body>
+</html>

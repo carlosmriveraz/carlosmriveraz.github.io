@@ -1,10 +1,11 @@
 /** @format */
 
 .contenedor {
-  position: relative;
   display: flex;
   flex-direction: column;
-  overflow: visible; /* Asegura que no recorte el margen */
+  flex-wrap: wrap;
+  align-items: stretch;
+  height: 100vh;
 }
 
 .contenedor > :first-child {
@@ -37,39 +38,22 @@
   margin: 0.1rem auto;
 }
 
-. {
-  position: relative;
+.contenedor__flex__columna {
   display: flex;
 
   flex-flow: column wrap;
 }
 
 .contenedor__flex__columna__evenly {
-  position: relative;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  gap: 2rem;
 }
 
 .contenedor__flex__columna__centrado {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-
-  gap: 3rem;
-}
-
-/* Contenedor flexible con diseño en columna */
-.contenedor__flex__columna {
-  display: flex;
-  flex-flow: column wrap; /* Disposición en columna y permite el ajuste de los elementos */
-  justify-content: center; /* Centra los elementos a lo largo del eje principal (vertical en este caso) */
-  gap: 2rem; /* Espacio entre los elementos */
-  padding: 1rem; /* Espaciado interno */
-  border: 1px solid #ddd; /* Borde del contenedor */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de caja */
 }
 
 /* Alineación de elementos al inicio del contenedor */
@@ -97,15 +81,14 @@
   width: 100%; /* El contenedor ocupa el 100% del ancho disponible */
   padding-top: 56.25%; /* Proporción de 16:9 para mantener el aspecto del iframe */
   height: 0; /* El truco para mantener la proporción */
-  overflow: hidden; /* Oculta cualquier desbordamiento */
 }
 
 .iframe__wrapper iframe {
   position: absolute; /* Posiciona el iframe dentro del contenedor */
   top: 0;
   left: 0;
-  width: 100%; /* El iframe ocupa el 100% del ancho del contenedor */
-  height: 100%; /* El iframe ocupa el 100% de la altura del contenedor */
+  min-width: 100%; /* El iframe ocupa el 100% del ancho del contenedor */
+  min-height: 100%; /* El iframe ocupa el 100% de la altura del contenedor */
   border: none; /* Elimina el borde del iframe */
 }
 
@@ -115,4 +98,41 @@
   border-radius: 4px; /* Bordes redondeados */
   text-align: center; /* Alineación del texto al centro */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de caja */
+}
+
+/* Estilos para pantallas grandes (dos columnas) */
+.contenedor__columnas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contenedor__columnas__item {
+  flex: 1 1 calc(50% - 1rem); /* Dos columnas con espacio entre ellas */
+}
+
+/* Configuración de la esfera 3D */
+.contenedor__columnas__item__movimiento {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s; /* Suaviza la transición de rotación */
+  margin-top: 10rem;
+}
+
+/* Estilos para pantallas medianas y pequeñas (una fila) */
+@media (max-width: 768px) {
+  .contenedor__columnas__item {
+    flex: 1 1 100%; /* Una columna en pantallas pequeñas */
+  }
+}
+
+.contenedor__columnas__item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s; /* Suaviza la transición de rotación */
 }

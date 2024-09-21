@@ -32,28 +32,29 @@
   /* Colores principales */
   --color-menu: #90e0ef;
   --color-primario: #007bff;
-  --color-secundario: #007bff;
-  --color-terciario: #007bff;
+  --color-secundario: #0077b655;
+  --color-terciario: #caf0f855;
   --color-texto: #ffffff;
   --color-subtitulo: #ffffff;
   --color-titulo: #ffffff;
   --color-titulo-grande: #ffffff;
 
   /* Medidas textos */
-  --medida-texto: 1.2rem;
+  --medida-texto: 1.1rem;
   --medida-texto-extra-grande: 1.5rem;
   --medida-texto-extra-reducido: 0.6rem;
-  --medida-texto-grande: 1.6rem;
-  --medida-texto-mediano: 1.4rem;
+  --medida-texto-grande: 1.3rem;
+  --medida-texto-mediano: 1rem;
   --medida-texto-reducido: 1rem;
 
   /* Medidas títulos */
-  --medida-titulo: 2.2rem;
-  --medida-titulo-extra-grande: 3rem;
+  --medida-titulo: 2rem;
+  --medida-subtitulo: 1.5rem;
+  --medida-titulo-extra-grande: 3.5rem;
   --medida-titulo-extra-reducido: 0.5rem;
-  --medida-titulo-grande: 2.8rem;
-  --medida-titulo-mediano: 2rem;
-  --medida-titulo-reducido: 1.8rem;
+  --medida-titulo-grande: 2.2rem;
+  --medida-titulo-mediano: 1.8rem;
+  --medida-titulo-reducido: 1.6rem;
 
   /* Márgenes */
   --margen-extra-grande: 4rem;
@@ -88,8 +89,6 @@
 
   /* Fuentes */
   --fuente-primaria: "Montserrat", sans-serif; /* Fuente principal */
-  --fuente-secundaria: "Georgia", serif; /* Fuente secundaria */
-  --fuente-util: "Courier New", monospace; /* Fuente utilitaria */
 
   /* Tamaños de Fuente */
   --tamano-titulo: 2rem; /* Tamaño del título */
@@ -104,10 +103,11 @@
 
   /* Bordes */
   --borde: 1px solid #0ff; /* Borde principal */
-  --borde-fino: 0.5px solid var(--color-borde); /* Borde fino */
+  --borde-reducido: 2px solid var(--color-borde); /* Borde fino */
   --borde-redondeado: 5px; /* Borde redondeado */
-
+  --borde-mediano: 1.5rem; /* Borde redondeado */
   /* Otros Estilos */
   --sombra-caja: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra de la caja */
   --sombra-texto: 0px 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3); /* Sombra del texto */
+  --delay: 2s;
 }

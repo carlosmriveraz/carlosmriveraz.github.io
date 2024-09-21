@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto en llamas con Imagen</title>
+    <style>
+        /* Paleta de colores */
+        :root {
+            --fire-color1: #ff9d00;
+            --fire-color2: #ff4500;
+            --fire-color3: #ffd700;
+            --fire-color4: #ff6347;
+            --fire-color5: #ff0000;
+        }
+
+        body {
+            background: #000; /* Fondo oscuro para resaltar el texto y la imagen */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Evita scrollbars */
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flaming-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 4rem;
+            color: var(--fire-color1);
+            animation: flames 2s infinite, flicker 0.1s infinite alternate, glow 2s infinite alternate, distortion 3s infinite;
+            text-shadow: 
+                0 0 5px var(--fire-color1), 
+                0 0 10px var(--fire-color2),
+                0 0 15px var(--fire-color3),
+                0 0 20px var(--fire-color4),
+                0 0 25px var(--fire-color5);
+            box-shadow: 
+                0 0 10px var(--fire-color1), 
+                0 0 20px var(--fire-color2), 
+                0 0 30px var(--fire-color3),
+                0 0 40px var(--fire-color4),
+                0 0 50px var(--fire-color5);
+            filter: url(#distortion); /* Filtro SVG para distorsión */
+            position: absolute;
+            z-index: 1;
+        }
+
+        .flaming-image {
+            width: 100%;
+            height: auto;
+            animation: flames 2s infinite, flicker 0.1s infinite alternate, glow 2s infinite alternate, distortion 3s infinite;
+            position: absolute;
+            z-index: 0;
+        }
+
+        @keyframes flames {
+            0% { color: var(--fire-color1); }
+            25% { color: var(--fire-color2); }
+            50% { color: var(--fire-color3); }
+            75% { color: var(--fire-color4); }
+            100% { color: var(--fire-color5); }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 
+                    0 0 5px var(--fire-color1), 
+                    0 0 10px var(--fire-color2),
+                    0 0 15px var(--fire-color3),
+                    0 0 20px var(--fire-color4),
+                    0 0 25px var(--fire-color5);
+                box-shadow: 
+                    0 0 10px var(--fire-color1), 
+                    0 0 20px var(--fire-color2), 
+                    0 0 30px var(--fire-color3),
+                    0 0 40px var(--fire-color4),
+                    0 0 50px var(--fire-color5);
+            }
+            100% {
+                text-shadow: 
+                    0 0 10px var(--fire-color1), 
+                    0 0 20px var(--fire-color2),
+                    0 0 30px var(--fire-color3),
+                    0 0 40px var(--fire-color4),
+                    0 0 50px var(--fire-color5);
+                box-shadow: 
+                    0 0 20px var(--fire-color1), 
+                    0 0 40px var(--fire-color2), 
+                    0 0 60px var(--fire-color3),
+                    0 0 80px var(--fire-color4),
+                    0 0 100px var(--fire-color5);
+            }
+        }
+
+        @keyframes distortion {
+            0% {
+                transform: translateY(0) skewX(0deg);
+            }
+            25% {
+                transform: translateY(-5px) skewX(-5deg);
+            }
+            50% {
+                transform: translateY(5px) skewX(5deg);
+            }
+            75% {
+                transform: translateY(-5px) skewX(-5deg);
+            }
+            100% {
+                transform: translateY(0) skewX(0deg);
+            }
+        }
+
+        /* SVG filter for distortion */
+        svg {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+        <svg>
+            <defs>
+                <filter id="distortion">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.01" result="noise" />
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" />
+                </filter>
+            </defs>
+        </svg>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="ruta/a/tu/imagen.jpg" alt="Imagen de fondo" class="flaming-image">
+        <h1 class="flaming-text">Texto en llamas</h1>
+    </div>
+</body>
+</html>
