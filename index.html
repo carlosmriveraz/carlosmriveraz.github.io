@@ -77,22 +77,26 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./estilos/estilo.css" />
+
     <style>
       /* Estilos base */
-
       .content {
         flex-grow: 1;
         padding: 2rem;
       }
 
       .fixed-text {
+        color: var(--color-texto);
+        text-shadow: 1px 2px 5px var(--color-texto);
         position: fixed;
         top: 90%;
         right: 2rem;
         transform: translateY(-50%);
         font-size: 0.5rem;
-        background-color: rgba(0, 255, 255, 0.7);
-
+        background-color: rgba(0, 155, 255, 0.5);
         padding: 0.5rem;
         border-radius: 8px;
         width: 180px;
@@ -115,19 +119,19 @@
         }
       }
     </style>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="./estilos/estilo.css" />
   </head>
+
   <body>
     <header>
       <nav class="navbar">
         <div class="navbar__logo">
-          <a href="#"
-            ><img
+          <a href="#">
+            <img
               src="images/logo.png"
               alt="Logo de Carlos Rivera"
               loading="lazy"
-          /></a>
+            />
+          </a>
         </div>
 
         <!-- Ícono del menú hamburguesa -->
@@ -141,42 +145,40 @@
               ><span class="navbar__link-highlight">S</span>obre mí</a
             >
           </li>
-          <li class="navbar__menu-item">
+          <li class="navbar__menu-item texto__3d">
             <a href="#tecnologias" class="navbar__link"
-              ><span class="navbar__link-highlight">T</span>ecnologías</a
+              ><span>T</span>ecnologías</a
             >
           </li>
           <li class="navbar__menu-item">
             <a href="#habilidades" class="navbar__link"
-              ><span class="navbar__link-highlight">H</span>abilidades</a
+              ><span>H</span>abilidades</a
             >
           </li>
-          <li class="navbar__menu-item">
+          <li class="navbar__menu-item texto__3d">
             <a href="#proyectos" class="navbar__link"
               ><span class="navbar__link">P</span>royectos</a
             >
           </li>
-          <li class="navbar__menu-item navbar__menu-item--highlight">
+          <li class="navbar__menu-item">
             <a href="#bi" class="navbar__link"
               ><span class="navbar__link">B</span>I_</a
             >
           </li>
-          <li class="navbar__menu-item">
-            <a href="#contacto" class="navbar__link"
-              ><span class="navbar__link-highlight">C</span>ontacto</a
-            >
+          <li class="navbar__menu-item texto__3d">
+            <a href="#contacto" class="navbar__link"><span>C</span>ontacto</a>
           </li>
         </ul>
       </nav>
     </header>
+
     <main>
       <!-- Contenido -->
-
       <iframe
         src="./secciones/inicio/inicio.html"
         scrolling="no"
         title="inicio"
-        class="texto__final__animado"
+        class=""
         frameborder="0"
         id="inicio"
         allowfullscreen
@@ -184,34 +186,28 @@
 
       <iframe
         src="./secciones/sobre_mi/sobre_mi.html"
-        scrolling="no"
-        class="texto__final__animado doble__pantalla"
+        class="doble__pantalla"
         title="sobre_mi"
-        frameborder="0"
         id="sobre_mi"
         allowfullscreen
       ></iframe>
 
       <iframe
         src="./secciones/tecnologias/tecnologias.html"
-        scrolling="no"
         class="doble__pantalla"
         allowfullscreen
         title="tecnologias"
-        1
         id="tecnologias"
-        frameborder="0"
       ></iframe>
 
       <iframe
         src="secciones/habilidades/habilidades.html"
-        scrolling="no"
         class="texto__final__animado"
         allowfullscreen
         id="habilidades"
         title="habilidades"
-        frameborder="0"
       ></iframe>
+
       <iframe
         src="secciones/proyectos/proyectos.html"
         scrolling="no"
@@ -219,27 +215,33 @@
         allowfullscreen
         id="proyectos"
         title="proyectos"
-        frameborder="0"
       ></iframe>
+
       <iframe
         src="secciones/bi/bi.html"
         id="bi"
         title="bi"
-        frameborder="0"
-        class="bi triple__pantalla"
+        class="doble__pantalla"
         allowfullscreen
       ></iframe>
+
       <iframe
-        allowfullscreen
         src="secciones/contacto/contacto.html"
-        scrolling="no"
         id="contacto"
         class="doble__pantalla"
         title="contacto"
-        frameborder="0"
+        allowfullscreen
       ></iframe>
+
+      <!-- Sección del video de bienvenida y política de cookies -->
+      <section class="cookies-and-video-section">
+        <!-- Contenido del modal de cookies y video -->
+        <div id="cookiesModalContainer"></div>
+        <!-- Aquí cargaremos el contenido -->
+      </section>
     </main>
-    <div class="fixed-text" id="fixedText">
+
+    <div class="fixed-text pulso" id="fixedText">
       <span class="animated-text">I</span>
       <span class="animated-text">n</span>
       <span class="animated-text">i</span>
@@ -247,14 +249,14 @@
       <span class="animated-text">i</span>
       <span class="animated-text">o</span>
     </div>
+
     <!-- Scripts -->
 
-    <script type="module" src="./scripts/index.js"></script>
     <script type="module" src="./scripts/main.js"></script>
     <script>
       // Selecciona el ícono del menú y el menú
       const menuToggle = document.getElementById("menuToggle");
-      const menu = document.querySelector(".navbar__menu"); // Correctly select the menu
+      const menu = document.querySelector(".navbar__menu");
 
       // Añade un evento click para mostrar u ocultar el menú
       menuToggle.addEventListener("click", () => {
@@ -298,5 +300,6 @@
         }
       });
     </script>
+    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
