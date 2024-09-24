@@ -1,5 +1,26 @@
 <link rel="stylesheet" href="../../estilos/estilo.css" />
-<section class="contenedor__flex__columna__evenly" id="inicio">
+<style>
+  .contenedor_letra {
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../../logo.png") no-repeat center center fixed;
+    background-size: 99%;
+  }
+  .letra-grande {
+    font-size: 1em;
+    font-weight: bold;
+    color: transparent;
+    background: url("../../images/logo.png") no-repeat center center;
+    background-size: 80%;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+</style>
+
+<section class="contenedor__flex__columna" id="inicio">
   <div class="nombre inicio__titulo">
     <h1 class="parte1">
       <span>C</span>arlos<span>M</span>ario<span class="parte2">R</span
@@ -7,9 +28,9 @@
     </h1>
   </div>
 
-  <div class="texto">
-    <h4><span>A</span>nálisis de <span>D</span>atos <span>A</span>vanzados</h4>
-    <h4><span>D</span>esarrollador de <span>S</span>oftware</h4>
+  <div class="texto efectos__combinados">
+    <h5><span>A</span>nálisis de <span>D</span>atos <span>A</span>vanzados</h5>
+    <h6><span>D</span>esarrollador de <span>S</span>oftware</h6>
   </div>
   <div>
     <a href="../../html/curriculum/curriculum.html" class="botonLink holograma"
@@ -19,5 +40,9 @@
 
   <div class="texto__animado__zoom">
     <span>A</span>pasionado por la <span>T</span>ecnología>
+  </div>
+
+  <div class="contenedor_letra">
+    <div class="letra-grande">Inicio</div>
   </div>
 </section>

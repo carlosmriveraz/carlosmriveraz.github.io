@@ -1,0 +1,72 @@
+/* Estilos generales del contenedor de las tablas y gráficos */
+.tabla__contenedor,
+.chart-container {
+  border: 1px solid var(--color-hover);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* Estilos para DataTables */
+.dataTables_wrapper .dataTables_filter {
+  float: right;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* Estilos mejorados para los gráficos */
+.chart-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Ajustes para el layout responsivo */
+@media (max-width: 768px) {
+  .chart-container,
+  .tabla__contenedor {
+    padding: 10px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  canvas {
+    border-radius: 6px;
+  }
+}
+
+/* Personalización de las leyendas y etiquetas en las gráficas */
+.chartjs-legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.chartjs-legend-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 0.9rem;
+}
+
+.chartjs-legend-color {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+/* Leyenda de los gráficos */
+.chartjs-legend-text {
+  color: var(--color-texto, #333);
+}

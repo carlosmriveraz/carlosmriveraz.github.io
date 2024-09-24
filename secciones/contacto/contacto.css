@@ -1,7 +1,7 @@
 /* Estilo general para la sección de contacto */
 .contact {
   padding: 2rem;
-  text-align: center; /* Alinea el contenido al centro */
+  text-align: center;
 }
 
 .container {
@@ -13,10 +13,9 @@
 .contact-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Alinea el contenido al centro */
+  align-items: center;
 }
 
-/* Logo en el centro */
 .contact-logo {
   text-align: center;
   flex: 1 1 100%;
@@ -26,9 +25,8 @@
   margin-top: 1rem;
 }
 
-/* Contenido principal */
 .contact-info {
-  flex: 1 1 auto; /* Permite que este contenido crezca según el espacio disponible */
+  flex: 1 1 auto;
   text-align: center;
 }
 
@@ -44,10 +42,9 @@
   margin-left: 1rem;
 }
 
-/* Redes sociales en la parte inferior y centradas */
 .contact-social {
   display: flex;
-  justify-content: center; /* Centra los iconos horizontalmente */
+  justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -70,25 +67,23 @@
   text-decoration: none;
 }
 
-/* Botones y enlaces */
 .link.btn.btn-full {
   margin-top: 1rem;
 }
 
 .contact__icon-whatsapp {
-  background: url("../../images/social/svgnwhatsapp.svg");
-  width: 3rem;
-  background-position: center;
-  background-size: contain;
+  background: url("../../images/social/svgnwhatsapp.svg") center / contain
+    no-repeat;
 }
 
 .contact__icon-linkedin {
-  background: url("../../images/social/linkedin.svg");
+  background: url("../../images/social/linkedin.svg") center / contain no-repeat;
 }
 
 .contact__icon-github {
-  background: url("../../images/social/github.svg");
+  background: url("../../images/social/github.svg") center / contain no-repeat;
 }
+
 /* Footer Styles */
 .footer {
   background-color: #f5f5f5;
@@ -125,45 +120,30 @@
   background-color: #007bff;
   color: #fff;
   border-radius: 4px;
-  text-decoration: none;
 }
 
 .footer__contact a.btn:hover {
   background-color: #0056b3;
 }
 
-.footer__links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer__links ul li {
-  margin: 0.5rem 0;
-}
-
-.footer__links ul li a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.footer__links ul li a:hover {
-  text-decoration: underline;
-}
-
+.footer__links ul,
 .footer__lab ul {
   list-style: none;
   padding: 0;
 }
 
+.footer__links ul li,
 .footer__lab ul li {
   margin: 0.5rem 0;
 }
 
+.footer__links ul li a,
 .footer__lab ul li a {
   color: #007bff;
   text-decoration: none;
 }
 
+.footer__links ul li a:hover,
 .footer__lab ul li a:hover {
   text-decoration: underline;
 }
@@ -178,21 +158,68 @@
   margin-top: 1rem;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-
 .sonido-hover {
   padding: 20px;
-
   border-radius: 8px;
   transition: background-color 0.3s;
 }
 
 .sonido-hover:hover {
   cursor: pointer;
+}
+
+/* Iconos con tooltips */
+.icon-button {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.icon-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.material-icons {
+  font-size: 1.5rem;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.icon-button:hover .material-icons {
+  color: #007bff;
+}
+
+/* Tooltip */
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.8rem;
+  transition: visibility 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+/* Flecha del tooltip */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
 }

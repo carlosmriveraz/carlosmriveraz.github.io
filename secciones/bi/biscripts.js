@@ -31,7 +31,6 @@ function loadCSVData() {
 }
 
 function handleLoadError() {
-  alert("No se pudo cargar el archivo CSV. Se generarán datos aleatorios.");
   const randomData = generateRandomData(100);
   displayTable(randomData);
   displayKPI(randomData);

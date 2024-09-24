@@ -1,14 +1,12 @@
-/** @format */
-
-import {updateYear} from './year.js';
-import {seleccionar_enlaces} from './js/seleccionar_enlaces.js';
+import { updateYear } from "./year.js";
+import { seleccionar_enlaces } from "./js/seleccionar_enlaces.js";
 import {
-    resaltarEnlaceActivo,
-    desplazamientoSuave,
-    alternarMenu,
-    alternarTema,
-} from './js/navbar/cambio_de_menu.js';
-import {revelarIframes} from './js/ocular_seccion.js';
+  resaltarEnlaceActivo,
+  desplazamientoSuave,
+  alternarMenu,
+  alternarTema,
+} from "./js/navbar/cambio_de_menu.js";
+import { revelarIframes } from "./js/ocultar_seccion.js";
 
 // Ejecutar la función para actualizar el año
 updateYear();
@@ -29,5 +27,4 @@ alternarMenu();
 alternarTema();
 
 // Inicializar la revelación de iframes
-revelarIframes();
-
+// revelarIframes();

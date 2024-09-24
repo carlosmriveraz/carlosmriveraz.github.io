@@ -1,8 +1,6 @@
 export function resaltarEnlaceActivo() {
   const secciones = document.querySelectorAll("section");
-  const enlacesNav = document.querySelectorAll(
-    ".navbar__menu-list .navbar__link"
-  );
+  const enlacesNav = document.querySelectorAll(".navbar__link");
 
   window.addEventListener("scroll", () => {
     let actual = "";
@@ -46,5 +44,16 @@ export function alternarTema() {
 
   botonTema.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
+  });
+}
+
+// Definir la función alternarMenu
+export function alternarMenu() {
+  const menuToggle = document.getElementById("menuToggle");
+  const menu = document.querySelector(".navbar__menu");
+
+  // Añade un evento click para mostrar u ocultar el menú
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
   });
 }

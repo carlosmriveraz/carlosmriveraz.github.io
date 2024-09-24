@@ -1,0 +1,128 @@
+/* Contenedor de las tarjetas de KPI */
+.tarjetas__contenedor {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-height: 8vh; /* Limitar la altura al 10% del dashboard */
+  font-size: 0.8rem; /* Tamaño de fuente pequeño */
+}
+
+/* Tarjetas individuales */
+.tarjeta__KPI {
+  background-color: var(--color-paleta4, #fff);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 30%; /* Ocupa máximo el 30% del espacio disponible */
+}
+
+/* Fondo con color rojo suave para el valor mínimo */
+.tarjeta__minimo {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Fondo normal para el valor máximo */
+.tarjeta__maximo {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+/* Animaciones en hover */
+.tarjeta__minimo:hover {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(192, 57, 43, 0.3);
+}
+
+.tarjeta__maximo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+/* Flecha roja hacia abajo en hover del mínimo */
+.tarjeta__minimo:hover::after {
+  content: "↓";
+  color: #e74c3c;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Flecha verde hacia arriba en hover del máximo */
+.tarjeta__maximo:hover::after {
+  content: "↑";
+  color: #27ae60;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Estilos del contenido KPI */
+.kpi__contenido {
+  display: flex;
+  align-items: center;
+}
+
+.kpi__contenido i.material-icons {
+  font-size: 32px;
+  color: var(--color-paleta3, #3498db);
+  margin-right: 10px;
+}
+
+.kpi__detalles {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi__fila {
+  display: flex;
+  align-items: center;
+}
+
+.kpi__fila i.material-icons {
+  font-size: 20px;
+  color: var(--color-paleta2, #f39c12);
+  margin-right: 5px;
+}
+
+.kpi__detalles h3,
+.kpi__detalles p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .tarjetas__contenedor {
+    flex-direction: column; /* Reorganiza las tarjetas en una columna */
+    max-height: none; /* Remueve el límite de altura en pantallas pequeñas */
+  }
+
+  .tarjeta__KPI {
+    max-width: 100%; /* Ocupa el 100% del ancho disponible en pantalla pequeña */
+    margin-bottom: 10px; /* Espaciado entre las tarjetas */
+  }
+
+  .kpi__contenido {
+    justify-content: flex-start;
+  }
+}
+
+/* Ajuste para pantallas medianas (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tarjetas__contenedor {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tarjeta__KPI {
+    max-width: 45%; /* Tarjetas ocupan 45% del ancho en pantallas medianas */
+  }
+}

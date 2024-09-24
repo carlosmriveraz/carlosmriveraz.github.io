@@ -2,113 +2,68 @@
 <link rel="stylesheet" href="./contacto.css" />
 
 <div class="footer__container">
-  <!-- Secciones de contacto, links útiles y laboratorio -->
   <div class="footer__sections">
-    <!-- Contacto -->
-    <div>
-      <strong><span>C</span>ontacto</strong>
-      <p>Si deseas contactarme para cualquier consulta o proyecto:</p>
+    <div class="footer__section footer__contact ">
+      <h2 class="subtitulo"><strong><span>C</span>ontacto</strong><h2>
+      <p class="texto">Si deseas contactarme para cualquier consulta o proyecto:</p>
       <p>
         Email:
-        <a href="mailto:carlosmrz100@hotmail.com" id="emailToCopy"
-          >carlosmrz100@hotmail.com</a
-        >
+        <a href="mailto:carlosmrz100@hotmail.com" id="emailToCopy">carlosmrz100@hotmail.com</a>
       </p>
-      <p>
-        <a href="mailto:carlosmrz100@hotmail.com" class="btn holograma"
-          >Enviar correo electrónico</a
-        >
-      </p>
-      <p>
-        <input
-          type="text"
-          id="hiddenEmail"
-          value="carlosmrz100@hotmail.com"
-          style="position: absolute; left: -9999px"
-        />
-        <a href="#" id="copyEmailButton" class="link btn btn-full holograma"
-          >Copiar Email</a
-        >
-      </p>
+      <div class="icon-button" id="sendEmailIcon">
+        <i class="material-icons">email</i>
+        <div class="tooltip">Enviar Email</div>
+      </div>
+  
+      <!-- Icono de Copiar -->
+      <div class="icon-button" id="copyEmailIcon">
+        <i class="material-icons">content_copy</i>
+        <div class="tooltip">Copiar Email</div>
+      </div>
+    
     </div>
-    <!-- Links Útiles -->
+
     <div class="footer__section footer__links">
-      <h2 class="subtitulo">
-        <strong><span>L</span>inks<span>Ú</span>tiles</strong>
-      </h2>
+      <h2 class="subtitulo"><strong><span>L</span>inks<span>Ú</span>tiles</strong></h2>
       <ul>
-        <a
-          href="../../assets/apps/focus_riveradev/focus_riveradev.html"
-          target="_blank"
-          >Aplicación Pomodoro</a
-        >
-
-        <h3 class="subtitulo"><span>R</span>edes <span>S</span>ociales</h3>
-        <div class="contact-social">
-          <a
-            href="https://www.linkedin.com/in/carlosmariorivera"
-            target="_blank"
-            aria-label="LinkedIn"
-            class="contact__icon-linkedin"
-          >
-            <!-- Icono de LinkedIn -->
-          </a>
-          <a
-            href="https://github.com/carlosmriveraz"
-            target="_blank"
-            aria-label="GitHub"
-            class="contact__icon-github"
-          >
-            <!-- Icono de GitHub -->
-          </a>
-          <a
-            href="https://wa.me/+573117559365"
-            target="_blank"
-            aria-label="WhatsApp"
-            class="btn-whatsapp contact__icon-whatsapp"
-          >
-            <i class="fab fa-whatsapp"></i>
-            <!-- Asegúrate de tener Font Awesome o similar para el ícono -->
-            <span class="sm-red-dot"></span>
-            <!-- Punto rojo de notificación -->
-            <div class="quick-message">
-              <p>¡Contáctanos!</p>
-              <span class="quick-message__seta-direita"></span>
-            </div>
-          </a>
-
-          <!-- Icono de WhatsApp -->
-        </div>
+        <li>
+          <a href="../../assets/apps/focus_riveradev/focus_riveradev.html" target="_blank" class="enlace__desplazamiento--fondo">Aplicación Pomodoro</a>
+        </li>
       </ul>
+      <h3 class="subtitulo"><span>R</span>edes <span>S</span>ociales</h3>
+      <div class="contact-social">
+        <a href="https://www.linkedin.com/in/carlosmariorivera" target="_blank" aria-label="LinkedIn" class="contact__icon-linkedin"></a>
+        <a href="https://github.com/carlosmriveraz" target="_blank" aria-label="GitHub" class="contact__icon-github"></a>
+        <a href="https://wa.me/+573117559365" target="_blank" aria-label="WhatsApp" class="btn-whatsapp contact__icon-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
     </div>
 
-    <!-- Laboratorio -->
     <div class="footer__section footer__lab">
       <h4>Laboratorio</h4>
       <ul>
         <li>
-          <a href="../../html/laboratorio/laboratorio.html" target="_blank"
-            >Componente 1</a
-          >
+          <a href="../../html/laboratorio/laboratorio.html" target="_blank" class="enlace__desplazamiento--fondo enlace__subrayado--deslizante">Componente 1</a>
         </li>
       </ul>
-      <p>
-        Explora mi laboratorio, con componentes y animaciones experimentales.
-      </p>
+      <p>Explora mi laboratorio, con componentes y animaciones experimentales.</p>
     </div>
   </div>
 
-  <!-- Política de Cookies y Derechos Reservados -->
   <div class="footer__bottom">
     <p class="footer__policy">
-      Política de Cookies | Todos los derechos reservados
+      <a href="../../html/footer/cookies.html">Política de Cookies</a> | Todos los derechos reservados
     </p>
   </div>
 </div>
+
 <div class="texto__atractivo sonido-hover">
   <div class="animacion__resplandor">
     <h5><span>C</span>arlos<span>M</span>ario<span>R</span>ivera.com</h5>
   </div>
+</div>
+
 </div>
 <script>
   // Crea un nuevo objeto de audio

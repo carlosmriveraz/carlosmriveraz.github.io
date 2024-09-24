@@ -1,19 +1,9 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100vh;
-  background-size: cover;
-  background: url(../../images/background/bk.jpg);
-}
-
 /* Estilos para títulos y texto */
 #inteligencia-negocios,
 #business-intelligence h2 {
   color: var(--color-titulo);
 }
 #business-intelligence span {
-  color: var(--color-paleta5);
   font-size: 1rem;
 }
 
@@ -25,24 +15,45 @@ body {
   font-size: var(--size-subtitulo, 15px);
   text-align: center;
 }
+.contenedor__flex__bi {
+  display: flex;
 
-/* Contenedores principales */
-.contenedor__bi,
-.contenedor_bi {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem;
-  margin: 0 auto;
+  flex-direction: column;
+}
+
+.contenedor__bi__kpi {
+  height: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: lightblue;
 }
 
 .contenedor__bi {
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  height: 90%;
+  display: flex;
+  gap: 1px;
+  padding: 2px;
+  margin: 0 auto;
+  background-color: var(--color-hover);
+}
+
+.contenido__bi__9 {
+  flex: 9; /* 90% del espacio */
+}
+
+.contenido__bi__1 {
+  flex: 0.2; /* 10% del espacio */
+}
+
+.contenedor__flex__bi--1 {
+  flex: 1; /* 10% del espacio */
 }
 
 /* Elementos de negocio e inteligencia */
 .bi__elemento {
-  margin-top: 1rem;
-  padding: 0.5rem 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
   font-size: 0.8rem;
   background: url(../../images/background/bk.jpg);
   border-radius: 10px;
@@ -54,29 +65,23 @@ body {
   border-color: #61dafb;
   box-shadow: inset 5px 5px 10px #61dafb99;
   display: flex;
-  flex-flow: column wrap;
-
-  padding: 2rem;
-}
-
-/* Gráficos y tablas */
-#charts {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
+  flex-flow: column nowrap;
 }
 
 canvas {
-  border: 1px solid black;
+  max-width: 300px;
+  margin: 0 1rem;
+  border: 2px solid var(--color-hover, #ddd);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Tablas */
-table,
 .dataTable,
 .table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 table tr:nth-child(even),
@@ -88,23 +93,36 @@ table tr:nth-child(even),
 table tr:hover,
 .dataTable tbody tr:hover,
 .table tbody tr:hover {
-  background-color: #e2e6ea;
+  background-color: var(--color-paleta3);
 }
 
 /* Botones */
 button {
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
   background-color: var(--color-paleta3);
-  color: white;
+  color: var(--color-texto);
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 5px;
   transition: background-color 0.3s;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 724px) {
+  .contenedor__bi {
+    flex-direction: column;
+  }
+}
+
+/* Estilos para DataTables */
+.dataTables_wrapper .dataTables_filter {
+  float: right;
+  text-align: right;
 }
 
 /* Tablas ocultas */
@@ -123,7 +141,7 @@ button:hover {
 #dollar-values td,
 #monthly-statistics th,
 #monthly-statistics td {
-  padding: 8px;
+  padding: 4px;
   text-align: left;
 }
 
@@ -131,14 +149,7 @@ button:hover {
 #monthly-statistics th,
 .tabla__contenedor th {
   background-color: var(--color-paleta3);
-  color: white;
-}
-
-/* Ajustes responsivos */
-@media (max-width: 900px) {
-  .contenedor__bi {
-    grid-template-columns: 1fr;
-  }
+  color: var(--color-texto);
 }
 
 /* Contenedores para tablas */
@@ -148,12 +159,12 @@ button:hover {
   text-align: left;
   background-color: var(--color-paleta5);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .tabla__contenedor th,
 .tabla__contenedor tr,
 .tabla__contenedor td {
-  padding: 0.5rem;
+  padding: 0.4rem;
 }
 
 .tabla__titulo {
@@ -162,39 +173,15 @@ button:hover {
   text-align: center;
   margin-bottom: 1rem;
 }
-/* Para asegurar que las tablas ocupen todo el alto del contenedor */
-.tabla__contenedor tbody {
-  height: calc(100% - (/* altura de encabezado y márgenes */));
-  overflow-y: auto; /* Permitir scroll si es necesario */
-}
-.tabla__contenedor tbody tr:nth-child(even) {
-  border-bottom: 4px solid var(--color-paleta5); /* Color de borde para filas pares */
-  border-left: 10%; /* Color de borde para filas pares */
-  border-right: 10%; /* Color de borde para filas pares */
+
+/* DataTables search box alignment */
+.dataTables_wrapper .dataTables_filter {
+  float: right;
+  text-align: right;
 }
 
-.tabla__contenedor td::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  width: 90%;
-  border-bottom: 2px solid #ddd; /* Color del borde inferior */
-}
-
-#valor-minimo,
-#valor-minimo {
-  color: rgb(152, 152, 219);
-}
-
-#valor-maximo {
-  color: rgb(106, 137, 106);
-}
-
-#valor-promedio {
-  color: rgb(184, 96, 96);
-}
-
-#valor-api {
-  color: orange;
+/* DataTables pagination style */
+.dataTables_wrapper .dataTables_paginate {
+  margin-top: 10px;
+  float: right;
 }
