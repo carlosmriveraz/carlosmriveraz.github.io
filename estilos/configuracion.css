@@ -7,7 +7,7 @@
   --altura-grande: 80vh;
   --altura-mediano: 60vh;
   --altura-minima: 20vh;
-  --altura-navbar: 1.8rem;
+  --altura-navbar: 1.5rem;
   --altura-reducido: 40vh;
 
   /* Anchos */
@@ -42,19 +42,17 @@
   /* Medidas textos */
   --medida-texto: 1.1rem;
   --medida-texto-extra-grande: 1.5rem;
-  --medida-texto-extra-reducido: 0.6rem;
+  --medida-texto-extra-reducido: 0.5rem;
   --medida-texto-grande: 1.3rem;
-  --medida-texto-mediano: 1rem;
-  --medida-texto-reducido: 1rem;
+  --medida-texto-mediano: 0.8rem;
+  --medida-texto-reducido: 0.6rem;
 
   /* Medidas títulos */
-  --medida-titulo: 2rem;
-  --medida-subtitulo: 1.5rem;
+  --medida-titulo: 1.5rem;
+  --medida-subtitulo: 1.3rem;
   --medida-titulo-extra-grande: 3.5rem;
   --medida-titulo-extra-reducido: 0.5rem;
-  --medida-titulo-grande: 2.2rem;
-  --medida-titulo-mediano: 1.8rem;
-  --medida-titulo-reducido: 1.6rem;
+  --medida-titulo-grande: 2rem;
 
   /* Márgenes */
   --margen-extra-grande: 4rem;
@@ -64,9 +62,9 @@
   --margen-reducido: 1rem;
 
   /* Rellenos */
-  --relleno-extra-grande: 10rem;
+  --relleno-extra-grande: 2rem;
   --relleno-extra-reducido: 0.25rem;
-  --relleno-grande: 5rem;
+  --relleno-grande: 1.5rem;
   --relleno-mediano: 1rem;
   --relleno-reducido: 0.5rem;
 
@@ -110,4 +108,8 @@
   --sombra-caja: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra de la caja */
   --sombra-texto: 0px 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3); /* Sombra del texto */
   --delay: 2s;
+}
+
+.margen__grande {
+  margin-top: var(--margen-grande);
 }

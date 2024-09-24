@@ -1,5 +1,5 @@
 /** @format */
-
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 /* Fuentes adicionales */
 .playwrite-us-trad-u {
   font-family: "Playwrite US Trad", cursive;
@@ -20,18 +20,36 @@
   font-style: normal;
   font-weight: 100;
 }
-
 .texto__3d {
-  color: var(--color-paleta3); /* Color del texto */
   font-size: var(--medida-texto); /* Tamaño de fuente */
   font-weight: bold; /* Grosor de la fuente */
-  text-shadow: var(--sombra-1) var(--color-sombra-1),
-    /* Primera sombra del texto */ var(--sombra-2) var(--color-sombra-2),
-    /* Segunda sombra del texto */ var(--sombra-3) var(--color-sombra-3),
-    /* Tercera sombra del texto */ var(--sombra-4) var(--color-sombra-4); /* Cuarta sombra del texto */
-  transform: translateZ(
-    0
-  ); /* Establece un contexto de apilamiento para el texto */
+  color: var(--color-principal); /* Color del texto principal */
+  text-shadow: 0 0 5px var(--color-paleta7),
+    /* Brillo suave */ 0 0 10px var(--color-paleta1),
+    /* Brillo más fuerte */ 0 0 12px var(--color-paleta2),
+    /* Sombra más difusa */ 0 0 18px var(--color-paleta3),
+    /* Más difusa */ 0 0 20px var(--color-paleta4); /* Sombra más lejana */
+
+  transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Rotaciones para dar efecto 3D */
+
+  perspective: 1000px; /* Añade profundidad a la perspectiva */
+  display: inline-block; /* Necesario para aplicar transformaciones 3D correctamente */
+  transition: transform 0.3s ease; /* Suaviza la transición */
+}
+
+.texto__3d:hover {
+  transform: translateZ(20px) /* Eleva el texto al pasar el mouse */
+    rotateX(5deg) rotateY(5deg) scale(1.05); /* Efecto de elevación y escalado */
+}
+
+.texto__3d:before {
+  content: attr(data-shadow); /* Sombra adicional */
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  color: var(--color-paleta4); /* Color de sombra */
+  filter: blur(5px); /* Difumina la sombra */
+  z-index: -1; /* Envía la sombra detrás del texto */
 }
 
 /* Clase para texto atractivo */
@@ -72,6 +90,7 @@
 
 /* ********** HEADINGS *********** */
 .inicio__titulo {
+  margin-top: 5rem;
   font-size: var(--medida-titulo);
   text-shadow: 1px 1px 15px var(--color-paleta2),
     1px 0 25px var(--color-paleta1), 1px 1px 35px var(--color-paleta2),
@@ -80,7 +99,7 @@
 }
 
 .inicio__titulo span {
-  font-size: var(--medida-extra-grande);
+  font-size: var(--medida-titulo-extra-grande);
   color: var(--color-paleta6);
 }
 
@@ -100,7 +119,7 @@
 }
 
 .subtitulo {
-  color: var(--color-paleta1), #00629e;
+  color: var(--color-texto);
   flex: none;
   font-family: "Montserrat", sans-serif;
   font-size: var(--medida-subtitulo);
@@ -113,7 +132,7 @@
   animation: glow 1.5s infinite;
   color: var(--color-paleta2);
   font-size: var(--medida-subtitulo);
-  text-shadow: 2px 2px 4px var(--color-paleta4);
+  text-shadow: 2px 2px 4px var(--color-paleta3);
   transition: all 1.5s ease-in-out;
 }
 

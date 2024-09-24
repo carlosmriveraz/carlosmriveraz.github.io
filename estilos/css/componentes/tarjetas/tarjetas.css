@@ -1,7 +1,7 @@
 /** @format */
 
 @import url("./tarjeta_holograma/tarjeta_holograma.css");
-
+@import url("./tarjetas__Bi.css");
 /* Estilos para las tarjetas */
 .tarjetas {
   display: flex;

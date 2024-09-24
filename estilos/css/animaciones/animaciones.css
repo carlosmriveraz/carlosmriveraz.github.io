@@ -1,16 +1,10 @@
 /*
- * =============================================
- *
- * @format
- */
 
 /* ANIMACIONES BÁSICAS */
 /* ============================================= */
 @import url("./animaciones_movimiento.css");
-@import url("./animaciones_texto.css");
 @import url("./animaciones_imagenes.css");
 
 @import url("./animaciones_estrellas.css");
 @import url("./animaciones_3d.css");
-
-@import url("./animaciones_de_textos/animaciones_de_textos.css");
+@import url("./efectos__combinados.css");

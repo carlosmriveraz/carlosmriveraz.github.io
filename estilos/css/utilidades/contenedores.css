@@ -37,7 +37,13 @@
   position: relative;
   margin: 0.1rem auto;
 }
-
+.contenedor__flex {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+  justify-content: space-between; /* Espacio entre los elementos */
+  gap: 1rem; /* Espacio entre tarjetas */
+  margin-bottom: 2rem; /* Espacio inferior */
+}
 .contenedor__flex__columna {
   display: flex;
 
@@ -48,6 +54,7 @@
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
+  gap: 1rem;
 }
 
 .contenedor__flex__columna__centrado {

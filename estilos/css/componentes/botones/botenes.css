@@ -426,3 +426,62 @@
     transform: translateY(0%);
   }
 }
+
+/* Estilo básico para los enlaces */
+
+/* Opción 1: Subrayado Deslizante */
+.enlace__subrayado--deslizante::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-paleta6);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.enlace__subrayado--deslizante:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* Opción 2: Efecto de Resplandor */
+.enlace__efecto--resplandor:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--color-paleta5),
+    0 0 40px var(--color-paleta5), 0 0 50px var(--color-paleta5),
+    0 0 60px var(--color-paleta5), 0 0 70px var(--color-paleta5);
+}
+
+/* Opción 3: Desplazamiento de Fondo */
+.enlace__desplazamiento--fondo {
+  background: linear-gradient(
+    to right,
+    var(--color-paleta4),
+    var(--color-paleta3)
+  );
+  background-size: 200% auto;
+}
+
+.enlace__desplazamiento--fondo:hover {
+  background-position: right center;
+  color: #fff;
+}
+
+/* Opción 4: Sombra de Texto */
+.enlace__sombra--texto:hover {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Opción 5: Cambio de Color de Fondo */
+.enlace__cambio--fondo {
+  padding: 5px 10px;
+}
+
+.enlace__cambio--fondo:hover {
+  background-color: var(--color-paleta4);
+  color: #fff;
+}

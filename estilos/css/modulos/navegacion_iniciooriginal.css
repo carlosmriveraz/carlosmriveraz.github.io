@@ -1,29 +1,33 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 /* Navbar header menu de navegación */
 .navbar {
-  width: 98%;
+  width: 99%;
+
   position: fixed;
-  background-color: #00ffff99; /* Semi-transparente */
+
+  background-color: #00ffffdd; /* Semi-transparente */
+
   display: flex;
-  justify-content: space-between;
   height: var(--altura-navbar);
-  border: 1.5px solid #0dffd0;
-  border-radius: 0.3rem;
+  justify-content: space-between;
+  border: 1px solid var(--color-hover);
   z-index: 1000;
+  border-radius: 0.4rem;
   white-space: nowrap;
   transition: background-color 0.8s ease;
-  color: var(--color-texto);
-  font-weight: bold;
-  font-size: 1rem;
 }
 
 .navbar span {
-  font-size: var(--altura-navbar);
+  font-size: 1.1rem;
   color: var(--color-paleta3);
-  font-weight: 900;
-  text-shadow: 0 0 1px var(--color-paleta1), /* Plateado */ 0 0 10px #c0c0c0,
-    0 0 15px #87ceeb, /* Azul plateado */ 0 0 5ch #87ceeb; /* Azul plateado */
-  transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
-  perspective: 1000px; /* Añade perspectiva para el efecto 3D */
+  text-shadow: var(--color-paleta4) var(--color-paleta1),
+    var(--color-paleta2) var(--color-paleta2),
+    var(--color-paleta3) var(--color-paleta3),
+    var(--color-paleta4) var(--color-paleta4); /* Sombra del texto */
+  transform: translateZ(
+    0
+  ); /* Establece un contexto de apilamiento para el texto */
 }
 
 .navbar__logo img {
@@ -38,30 +42,26 @@
 }
 
 .navbar__menu-item {
+  background-color: rgba(4, 0, 37, 0.01);
   border-radius: 0.5rem;
-  margin: 0 1rem;
+  margin-left: 0.5rem;
 }
 
 .navbar__menu-item a {
-  color: var(--color-texto);
-  background-color: #00ffffaa;
   text-decoration: none;
+  position: relative;
   display: inline;
-  border-radius: 0.5rem; /* Bordes redondeados */
+  /* Padding interno de los ítems */
+  border-radius: 1rem; /* Bordes redondeados */
   box-shadow: var(--color-hover);
   transition: background-color 0.5s ease-in-out, color 0.7s ease-in-out,
     transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transiciones unificadas */
 }
 
-.navbar__menu-item :hover {
-  background-color: var(--color-paleta5);
-  transform: scale(1.5);
-  padding: 0;
-  border-radius: 0.1rem;
-  color: var(--color-paleta1);
-
-  margin: 0;
-  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1); /* Mayor sombra en hover */
+.navbar__menu-item a:hover {
+  background-color: var(--color-paleta6);
+  transform: scale(1.05);
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.7); /* Mayor sombra en hover */
 }
 
 .navbar__menu-item a::after {
@@ -112,21 +112,28 @@
   display: block;
 }
 
+.navbar__menu-item span {
+  font-size: var(--medida-texto-grande);
+  vertical-align: middle;
+}
+
 @media (max-width: 768px) {
   .navbar {
+    flex-direction: column;
     align-items: flex-start;
+    font-family: "Montserrat", sans-serif;
   }
 
-  .navbar__menu-icon {
+  .menu-icon {
     display: flex; /* Mostrar en pantallas pequeñas */
     order: 2;
   }
 
   .navbar__menu {
-    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    display: none;
   }
 
   .navbar__menu.active {
@@ -141,37 +148,34 @@
     justify-content: center;
     width: 100%;
   }
+}
 
-  /* Estilos para dispositivos móviles */
+.navbar__menu-item {
+  margin: 0 1rem;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .navbar__menu-icon {
+    display: flex;
+  }
+
   .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
     position: absolute;
     top: 2rem;
     left: 0;
-    background-color: var(--color-paleta4);
+    background-color: var(--color-paleta1);
   }
 
   .navbar__menu-item {
     margin: 1rem 0;
+    text-align: center;
   }
 
   .navbar__menu.show {
     display: flex;
   }
-}
-
-.navbar__link {
-  text-shadow: 0 0 10px var(--color-paleta3), /* Plateado */ 0 0 10px #c0c0c0,
-    0 0 15px #87ceeb, /* Azul plateado */ 0 0 20px #87ceeb; /* Azul plateado */
-  transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
-  perspective: 1000px; /* Añade perspectiva para el efecto 3D */
-  display: inline-block;
-  transition: background-size 0.8s ease, transform 0.8s ease;
-  background: transparent;
-  background-size: 100% 100%;
-}
-
-.navbar__link :hover {
-  background-color: #5952ff;
-  background-size: 150% 150%; /* Aumenta el tamaño del fondo */
-  transform: scale(1.5); /* Escala el elemento */
 }
