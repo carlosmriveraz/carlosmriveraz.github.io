@@ -1,0 +1,78 @@
+/* Variables de color por tema */
+:root {
+  --fondo__claro: #ecf0f1;
+  --texto__claro: #2c3e50;
+  --fondo__oscuro: #2c3e50;
+  --texto__oscuro: #ecf0f1;
+  --fondo__espacial: #000033;
+  --texto__espacial: #00ffcc;
+  --fondo__principal: #3498db;
+  --texto__menu: #ffffff;
+}
+
+/* Estilos globales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--fondo__espacial);
+  color: var(--texto__espacial);
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu__config {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--fondo__principal);
+  color: var(--texto__menu);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu__config i {
+  font-size: 24px;
+}
+
+.menu__config__toggle-menu {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background-color: var(--fondo__principal);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.menu__config__toggle-menu label {
+  color: var(--texto__menu);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.menu__config__toggle-menu input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Clases para temas */
+.theme-light {
+  background-color: var(--fondo__claro);
+  color: var(--texto__claro);
+}
+
+.theme-dark {
+  background-color: var(--fondo__oscuro);
+  color: var(--texto__oscuro);
+}
+
+.theme-space {
+  background-color: var(--fondo__espacial);
+  color: var(--texto__espacial);
+}

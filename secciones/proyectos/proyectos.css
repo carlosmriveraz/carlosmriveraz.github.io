@@ -6,18 +6,17 @@
 
 .proyectos__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 0.8rem;
+  padding: 4px;
 }
 
 .proyecto {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-
+  border-radius: 8px;
   border: 1px solid #61dafb;
   box-shadow: inset 0 2px 5px #61dafbaa;
   transition: transform 0.3s ease;
+  margin: 1rem;
 }
 
 .proyecto:hover {
@@ -26,19 +25,20 @@
 }
 
 .proyecto__title {
-  font-size: 1.3rem;
-  padding: 10px 15px;
-  background-color: var(--color-paleta4), var(--color-principal);
+  font-size: 1.2rem;
+  padding: 5px 10px;
   color: white;
 }
 
 .proyecto__img {
-  width: 100%;
-  height: auto;
+  border-radius: 10px;
+  border: 1px solid #61dafb;
+  width: 70%;
+  height: 40%;
 }
 
 .proyecto__content {
-  padding: 15px;
+  padding: 8px;
 }
 
 .proyecto__description {
@@ -52,14 +52,14 @@
 }
 
 .proyecto__description:not(.collapsed) {
-  max-height: 500px; /* Se expande al hacer click */
+  max-height: 20rem; /* Se expande al hacer click */
 }
 
 .toggle-button {
-  color: var(--color-principal, #3498db);
+  color: var(--color-paleta3, #3498db);
   cursor: pointer;
   text-align: right;
-  margin-top: 10px;
+  margin-top: 8px;
   transition: color 0.3s ease;
 }
 
@@ -73,35 +73,78 @@
     grid-template-columns: 1fr; /* Proyectos ocupan todo el ancho en pantallas pequeñas */
   }
 }
+
 .contenedor__flex__proyectos {
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-  justify-content: space-between; /* Espacio entre los elementos */
-  gap: 0.5rem; /* Espacio entre tarjetas */
-  margin-bottom: 2rem; /* Espacio inferior */
-  height: 20%;
+  margin-bottom: 1rem;
+  gap: 2px;
+  flex-wrap: wrap;
 }
 
 .tarjeta__kpi_proyecos {
-  flex: 1 1 calc(20% - 0.5rem); /* Cada tarjeta ocupa el 20% del ancho menos el espacio de la brecha */ /* Fondo blanco */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  padding: 0.5rem; /* Espacio interno */
-  transition: transform 0.3s; /* Transición suave al hover */
+  border: 1.5px solid var(--color-hover);
+  background-color: var(--color-paleta4);
+  display: flex;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Fondo más claro para las tarjetas */
 }
 
 .tarjeta__kpi_proyecos:hover {
-  transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+  transform: scale(1.05);
+}
+
+.tarjeta_kpi__value {
+  font-size: 0.8rem; /* Ajusta el tamaño de la fuente del valor principal */
+  margin-top: 0;
+  height: 0.85rem;
+}
+
+.tarjeta__kpi__data {
+  border: 0.8px solid var(--color-hover);
+  border-radius: 7px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.2rem;
+  text-align: center;
+  margin: 0.1rem;
+  display: flex;
 }
 
 .tarjeta__kpi__icon {
-  text-align: center; /* Centra el icono */
-  margin-bottom: 1rem; /* Espacio inferior del icono */
+  font-size: 32px;
+  color: var(--color-paleta1);
+  margin-bottom: 0;
 }
 
+.tarjeta__kpi_proyecos__detalles {
+  margin-top: 0.2rem;
+  text-align: center;
+  font-size: 0.7rem; /* Fuente más pequeña para la descripción */
+}
+
+/* Estilos responsivos */
 @media (max-width: 768px) {
+  .tarjeta__kpi__icon {
+    font-size: 1rem;
+  }
+  .contenedor__flex__proyectos {
+    flex-direction: column;
+  }
   .tarjeta__kpi_proyecos {
-    flex: 1 1 calc(50% - 1rem); /* Dos tarjetas por fila en pantallas medianas */
+    flex-direction: row;
+
+    align-items: start;
+    flex: 1; /* Dos tarjetas por fila en pantallas medianas */
+  }
+
+  .tarjeta_kpi__value {
+    width: 40%;
   }
 }
 

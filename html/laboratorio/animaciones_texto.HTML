@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efecto de Degradado con Mouse</title>
+    <link rel="stylesheet" href="../../estilos/configuracion.css" />
+    <link rel="stylesheet" href="./animaciones_simples.css" />
+    <link rel="stylesheet" href="./laboratorio.css" />
+    <link rel="stylesheet" href="./menu__configuracion.css" />
+    <style>
+      .contenedor__laboratorio {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        height: 150vh; /* 50% de la altura de la pantalla */
+        gap: 5px;
+      }
+
+      .contenedor__laboratorio div {
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Ícono de configuración con el logo de Google -->
+    <div>
+      <div class="menu__config" id="config-icon">
+        <i class="material-icons">settings</i>
+      </div>
+
+      <div class="menu__config__toggle-menu" id="config-menu">
+        <label>
+          <input type="radio" name="theme" value="light" id="theme-light" />
+          Tema Claro
+        </label>
+        <label>
+          <input type="radio" name="theme" value="dark" id="theme-dark" /> Tema
+          Oscuro
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="theme"
+            value="space"
+            id="theme-space"
+            checked
+          />
+          Tema Espacial (Predeterminado)
+        </label>
+      </div>
+
+      <script>
+        document
+          .getElementById("config-icon")
+          .addEventListener("click", function () {
+            var menu = document.getElementById("config-menu");
+            menu.style.display =
+              menu.style.display === "block" ? "none" : "block";
+          });
+
+        document.querySelectorAll('input[name="theme"]').forEach((input) => {
+          input.addEventListener("change", function () {
+            document.body.className = ""; // Elimina clases existentes
+            if (this.value === "light") {
+              document.body.classList.add("theme-light");
+            } else if (this.value === "dark") {
+              document.body.classList.add("theme-dark");
+            } else {
+              document.body.classList.add("theme-space");
+            }
+          });
+        });
+      </script>
+    </div>
+    <!-- Menú lateral -->
+    <div class="menu__sidebar">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li class="submenu">
+          <a href="#">Animaciones</a>
+          <ul>
+            <li><a href="animaciones_texto.HTML">Animaciones de texto</a></li>
+            <li><a href="#">En Proceso</a></li>
+            <li><a href="#">Completadas</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Reportes</a></li>
+      </ul>
+    </div>
+    <div class="theme-space">
+      <div>
+        <h1>Juego de Animaciones de Texto</h1>
+        <p>
+          Haz clic en cada texto "riveradev" para capturarlo. ¡Captura los 100
+          textos lo más rápido posible!
+        </p>
+        <div class="contenedor__laboratorio">
+          <!-- Texto con las diferentes animaciones -->
+          <!-- Repetimos "riveradev" con diferentes clases para aplicar las animaciones -->
+
+          <!-- Texto con las diferentes animaciones -->
+          <!-- Repetimos "riveradev" con diferentes clases para aplicar las animaciones -->
+          <div class="text texto__1">riveradev</div>
+          <div class="text texto__2">riveradev</div>
+          <div class="text texto__3">riveradev</div>
+          <div class="text texto__4">riveradev</div>
+          <div class="text texto__5">riveradev</div>
+          <div class="text texto__6">riveradev</div>
+          <div class="text texto__7">riveradev</div>
+          <div class="text texto__8">riveradev</div>
+          <div class="text texto__9">riveradev</div>
+          <div class="text texto__10">riveradev</div>
+          <div class="text texto__11">riveradev</div>
+          <div class="text texto__12">riveradev</div>
+          <div class="text texto__13">riveradev</div>
+          <div class="text texto__14">riveradev</div>
+          <div class="text texto__15">riveradev</div>
+          <div class="text texto__16">riveradev</div>
+          <div class="text texto__17">riveradev</div>
+          <div class="text texto__18">riveradev</div>
+          <div class="text texto__19">riveradev</div>
+          <div class="text texto__20">riveradev</div>
+          <div class="text texto__21">riveradev</div>
+          <div class="text texto__22">riveradev</div>
+          <div class="text texto__23">riveradev</div>
+          <div class="text texto__24">riveradev</div>
+          <div class="text texto__25">riveradev</div>
+          <div class="text texto__26">riveradev</div>
+          <div class="text texto__27">riveradev</div>
+          <div class="text texto__28">riveradev</div>
+          <div class="text texto__29">riveradev</div>
+          <div class="text texto__30">riveradev</div>
+          <div class="text texto__31">riveradev</div>
+          <div class="text texto__32">riveradev</div>
+          <div class="text texto__33">riveradev</div>
+          <div class="text texto__34">riveradev</div>
+          <div class="text texto__35">riveradev</div>
+          <div class="text texto__36">riveradev</div>
+          <div class="text texto__37">riveradev</div>
+          <div class="text texto__38">riveradev</div>
+          <div class="text texto__39">riveradev</div>
+          <div class="text texto__40">riveradev</div>
+          <div class="text texto__41">riveradev</div>
+          <div class="text texto__42">riveradev</div>
+          <div class="text texto__43">riveradev</div>
+          <div class="text texto__44">riveradev</div>
+          <div class="text texto__45">riveradev</div>
+          <div class="text texto__46">riveradev</div>
+          <div class="text texto__47">riveradev</div>
+          <div class="text texto__48">riveradev</div>
+          <div class="text texto__49">riveradev</div>
+          <div class="text texto__50">riveradev</div>
+          <div class="text texto__51">riveradev</div>
+          <div class="text texto__52">riveradev</div>
+          <div class="text texto__53">riveradev</div>
+          <div class="text texto__54">riveradev</div>
+          <div class="text texto__55">riveradev</div>
+          <div class="text texto__56">riveradev</div>
+          <div class="text texto__57">riveradev</div>
+          <div class="text texto__58">riveradev</div>
+          <div class="text texto__59">riveradev</div>
+          <div class="text texto__60">riveradev</div>
+          <div class="text texto__61">riveradev</div>
+          <div class="text texto__62">riveradev</div>
+          <div class="text texto__63">riveradev</div>
+          <div class="text texto__64">riveradev</div>
+          <div class="text texto__65">riveradev</div>
+          <div class="text texto__66">riveradev</div>
+          <div class="text texto__67">riveradev</div>
+          <div class="text texto__68">riveradev</div>
+          <div class="text texto__69">riveradev</div>
+          <div class="text texto__70">riveradev</div>
+          <div class="text texto__71">riveradev</div>
+          <div class="text texto__72">riveradev</div>
+          <div class="text texto__73">riveradev</div>
+          <div class="text texto__74">riveradev</div>
+          <div class="text texto__75">riveradev</div>
+          <div class="text texto__76">riveradev</div>
+          <div class="text texto__77">riveradev</div>
+          <div class="text texto__78">riveradev</div>
+          <div class="text texto__79">riveradev</div>
+          <div class="text texto__80">riveradev</div>
+          <div class="text texto__81">texto__81</div>
+          <div class="text texto__82"></div>
+          <div class="text texto__83"></div>
+          <div class="text texto__84"></div>
+          <div class="text texto__85"></div>
+          <div class="text texto__86"></div>
+          <div class="text texto__87"></div>
+          <div class="text texto__88"></div>
+          <div class="text texto__89"></div>
+          <div class="text texto__90"></div>
+          <div class="text texto__91"></div>
+          <div class="text texto__92"></div>
+          <div class="text texto__93"></div>
+          <div class="text texto__94">sara</div>
+          <div class="text texto__95">sara</div>
+          <div class="text texto__96">sara</div>
+          <div class="text texto__97">sara</div>
+          <div class="text texto__98">sara</div>
+          <div class="text texto__99">sara</div>
+          <div class="text texto__100">riveradev</div>
+        </div>
+        <p id="message"></p>
+
+        <script>
+          // JavaScript para manejar el juego
+
+          // Obtener todos los elementos de texto
+          const texts = document.querySelectorAll(".text");
+          let capturedCount = 0;
+
+          // Función para capturar un texto al hacer clic
+          function captureText(event) {
+            event.target.style.display = "none";
+            capturedCount++;
+            if (capturedCount === 100) {
+              document.getElementById("message").innerText =
+                "¡Felicidades! Has capturado todos los textos.";
+            }
+          }
+
+          // Añadir el evento de clic a cada texto
+          texts.forEach((text) => {
+            text.addEventListener("click", captureText);
+          });
+        </script>
+      </div>
+    </div>
+    <div class="scrolling-text">
+      <span>S</span><span>C</span><span>R</span><span>O</span><span>L</span
+      ><span>L</span><span>I</span><span>N</span><span>G</span>
+      <span>&nbsp;</span>
+      <span>L</span><span>E</span><span>T</span><span>T</span><span>E</span
+      ><span>R</span><span>S</span>
+    </div>
+    <div>
+      <div class="texto__animado__zoom">Texto Animado con Zoom</div>
+
+      <div class="efectos__combinados">
+        <h2>Texto con Efectos Combinados</h2>
+        <h3 class="efectos__combinados__pulso">Texto con Pulso</h3>
+      </div>
+
+      <div class="pulso">Pulso en Texto</div>
+
+      <div class="animacion__resplandor">Texto con Efecto de Resplandor</div>
+    </div>
+
+    <h1 class="dynamic-charts">Business Intelligence</h1>
+    <h2 class="dynamic-charts">Análisis de Datos Avanzado</h2>
+    <div class="combined-effects">
+      <h1>Business Intelligence</h1>
+      <h2>Análisis de Datos Avanzado</h2>
+    </div>
+    <div class="texto__animado__zoom">Texto Animado con Zoom</div>
+
+    <div class="efectos__combinados">
+      <h2>Texto con Efectos Combinados</h2>
+      <h3 class="efectos__combinados__pulso">Texto con Pulso</h3>
+    </div>
+
+    <div class="pulso">Pulso en Texto</div>
+
+    <div class="animacion__resplandor">Texto con Efecto de Resplandor</div>
+    <section class="seccion__hero">
+      <div class="contenido__hero">
+        <div class="contenedor__texto__hero marvel__negrita">
+          <span class="texto__hero">¡Hola Mundo!</span>
+        </div>
+        <div class="imagen__seccion__hero">
+          <img src="https://via.placeholder.com/150" alt="Imagen de prueba" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

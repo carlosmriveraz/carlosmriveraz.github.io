@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenida y Política de Cookies</title>
+
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="../../estilos/estilo.css" />
+    <style>
+      /* Estilos generales */
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Sección Hero con video */
+      .hero-section {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Efecto de oscurecimiento del video */
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #00f4f499;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+
+      .hero-image {
+        max-width: 200px;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Modal de cookies */
+      .cookie-consent-modal {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        padding: 1.5rem;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .cookie-modal-content {
+        background-color: #282c34;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .cookie-modal-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #00f4f499;
+      }
+
+      .cookie-modal-content p {
+        font-size: 1rem;
+        color: #555f5554;
+        margin-bottom: 1.5rem;
+      }
+
+      .cookie-link {
+        color: #00f4f499;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .cookie-buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .cookie-buttons button {
+        background-color: #00f4f499;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.5;
+      }
+    </style>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Sección Hero con video -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <video class="hero-video" autoplay muted playsinline>
+        <source src="../../assets/videos/bienvenida.mp4" type="video/mp4" />
+        Tu navegador no soporta video HTML5.
+      </video>
+      <div class="hero-content">
+        <img
+          src="../../images/logo.webp"
+          alt="Logo de bienvenida"
+          class="hero-image"
+        />
+        <h1>¡Descubre soluciones increíbles!</h1>
+      </div>
+    </section>
+
+    <!-- Modal de política de cookies -->
+    <div class="cookie-consent-modal" id="cookieConsentModal">
+      <div class="cookie-modal-content">
+        <h2>Política de Cookies</h2>
+        <p>
+          No recolectamos cookies personales. Sin embargo, es importante
+          informarte sobre el uso de cookies para mejorar la experiencia del
+          usuario.
+        </p>
+        <div class="cookie-buttons">
+          <button id="acceptCookies">
+            <i class="material-icons holograma">check_circle</i> Aceptar
+          </button>
+        </div>
+      </div>
+
+      <!-- Información adicional sobre cookies -->
+      <div class="cookie-more-info" id="cookieMoreInfo">
+        <h3>Información sobre el uso de cookies</h3>
+        <p>
+          Aunque no utilizamos cookies para recolectar información personal,
+          algunas cookies pueden ser necesarias para mejorar tu experiencia en
+          el sitio web. Estas pueden incluir cookies de sesión que ayudan a
+          mantener la funcionalidad del sitio.
+        </p>
+        <p>
+          Recomendamos que los usuarios se informen sobre las cookies y la
+          manera en que pueden gestionarlas. Para más detalles, te sugerimos
+          consultar la
+          <a href="https://www.allaboutcookies.org" target="_blank"
+            >guía de cookies</a
+          >.
+        </p>
+      </div>
+    </div>
+
+    <!-- Script para manejar cookies y el modal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cookieModal = document.getElementById("cookieConsentModal");
+        const moreInfoLink = document.getElementById("moreInfoLink");
+        const cookieMoreInfo = document.getElementById("cookieMoreInfo");
+        const acceptCookies = document.getElementById("acceptCookies");
+
+        // Mostrar modal si no se ha aceptado antes
+        if (!localStorage.getItem("cookiesAccepted")) {
+          cookieModal.style.display = "block";
+        }
+
+        // Aceptar cookies y guardar en localStorage
+        acceptCookies.addEventListener("click", () => {
+          cookieModal.style.display = "none";
+          localStorage.setItem("cookiesAccepted", "true");
+        });
+
+        // Mostrar información adicional de cookies
+        moreInfoLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          cookieMoreInfo.style.display = "block"; // Muestra la información adicional
+        });
+      });
+    </script>
+  </body>
+</html>

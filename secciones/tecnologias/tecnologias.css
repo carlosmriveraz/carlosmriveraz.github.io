@@ -1,30 +1,30 @@
 /*************tecnologias **************/
 /* Estilo para la sección de habilidades */
-.section-skills {
+.section__tecnologias {
   padding: 1.5rem auto;
   transition: all 0.4s;
 }
 
-.skills-group {
+.tecnologias__grupo {
   margin: 0.5rem 0;
   text-align: center;
 }
 
-.skills-title {
-  margin-top: 1rem;
-  font-size: var(--size-texto);
+.tecnologias__title {
+  margin-top: 0.5rem;
 }
 
-.skills-data-list {
+.contenedor__tecnologias {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   text-align: center;
   padding: 0;
+  gap: 1rem;
 }
 
-.skills-name {
+.tecnologias__name {
   font-size: var(--medida-texto-extra-reducido), 10px;
   position: relative;
   display: flex;
@@ -34,7 +34,7 @@
   transition: all 0.4s;
 }
 
-.skills-name:hover {
+.tecnologias__name:hover {
   transform: scale(1.2);
   transition: all 0.4s;
   background-color: var(--color-hover);
@@ -42,16 +42,18 @@
   /* Aumenta el tamaño al pasar el mouse */
 }
 
-.skills-name img {
-  height: 3rem;
+.tecnologias__name img {
+  height: 4rem;
   /* Tamaño fijo para las imágenes */
   margin-bottom: 0.5rem;
   object-fit: contain;
   width: 4rem;
+  border: 2px solid var(--color-hover);
+  border-radius: 6px;
   /* Tamaño fijo para las imágenes */
 }
 
-.skills-name p {
+.tecnologias__name p {
   display: none;
   position: absolute;
   top: 50%;
@@ -67,12 +69,12 @@
   text-align: center;
 }
 
-.skills-name:hover img {
+.tecnologias__name:hover img {
   transform: rotateY(180deg);
   /* Voltea la imagen en el eje Y al hacer hover */
 }
 
-.skills-name:hover p {
+.tecnologias__name:hover p {
   display: block;
   /* Muestra la descripción al hacer hover */
 }

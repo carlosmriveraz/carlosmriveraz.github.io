@@ -36,6 +36,7 @@
   padding: 2px;
   margin: 0 auto;
   background-color: var(--color-hover);
+  justify-content: center;
 }
 
 .contenido__bi__9 {
@@ -66,6 +67,8 @@
   box-shadow: inset 5px 5px 10px #61dafb99;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 canvas {
@@ -87,7 +90,7 @@ canvas {
 table tr:nth-child(even),
 .dataTable tbody tr:nth-child(even),
 .table tbody tr:nth-child(even) {
-  background-color: var(--color-paleta7);
+  background-color: var(--color-paleta6);
 }
 
 table tr:hover,
@@ -156,8 +159,7 @@ button:hover {
 .tabla__contenedor {
   border-radius: 10px;
   overflow: hidden;
-  text-align: left;
-  background-color: var(--color-paleta5);
+  background-color: var(--color-paleta4);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   margin-bottom: 1rem;
 }

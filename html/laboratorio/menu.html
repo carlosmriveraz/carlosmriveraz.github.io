@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuración de Temas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Variables de color por tema */
+      :root {
+        --fondo__claro: #ecf0f1;
+        --texto__claro: #2c3e50;
+        --fondo__oscuro: #2c3e50;
+        --texto__oscuro: #ecf0f1;
+        --fondo__espacial: #000033;
+        --texto__espacial: #00ffcc;
+        --fondo__principal: #3498db;
+        --texto__menu: #ffffff;
+      }
+
+      /* Estilos globales */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--fondo__espacial);
+        color: var(--texto__espacial);
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .menu__config {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background: var(--fondo__principal);
+        color: var(--texto__menu);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1000;
+      }
+
+      .menu__config i {
+        font-size: 24px;
+      }
+
+      .menu__config__toggle-menu {
+        display: none;
+        position: fixed;
+        bottom: 80px;
+        left: 20px;
+        background-color: var(--fondo__principal);
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .menu__config__toggle-menu label {
+        color: var(--texto__menu);
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .menu__config__toggle-menu input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      /* Clases para temas */
+      .theme-light {
+        background-color: var(--fondo__claro);
+        color: var(--texto__claro);
+      }
+
+      .theme-dark {
+        background-color: var(--fondo__oscuro);
+        color: var(--texto__oscuro);
+      }
+
+      .theme-space {
+        background-color: var(--fondo__espacial);
+        color: var(--texto__espacial);
+      }
+    </style>
+  </head>
+  <div>
+    <div class="menu__config" id="config-icon">
+      <i class="fab fa-google"></i>
+    </div>
+
+    <div class="menu__config__toggle-menu" id="config-menu">
+      <label>
+        <input type="radio" name="theme" value="light" id="theme-light" /> Tema
+        Claro
+      </label>
+      <label>
+        <input type="radio" name="theme" value="dark" id="theme-dark" /> Tema
+        Oscuro
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="theme"
+          value="space"
+          id="theme-space"
+          checked
+        />
+        Tema Espacial (Predeterminado)
+      </label>
+    </div>
+
+    <script>
+      document
+        .getElementById("config-icon")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("config-menu");
+          menu.style.display =
+            menu.style.display === "block" ? "none" : "block";
+        });
+
+      document.querySelectorAll('input[name="theme"]').forEach((input) => {
+        input.addEventListener("change", function () {
+          document.body.className = ""; // Elimina clases existentes
+          if (this.value === "light") {
+            document.body.classList.add("theme-light");
+          } else if (this.value === "dark") {
+            document.body.classList.add("theme-dark");
+          } else {
+            document.body.classList.add("theme-space");
+          }
+        });
+      });
+    </script>
+  </div>
+</html>

@@ -117,13 +117,13 @@
   display: inline-block;
   padding: 0.5rem 1rem;
   margin-top: 0.5rem;
-  background-color: #007bff;
+  background-color: var(--color-paleta3);
   color: #fff;
   border-radius: 4px;
 }
 
 .footer__contact a.btn:hover {
-  background-color: #0056b3;
+  background-color: var(--color-paleta6);
 }
 
 .footer__links ul,
@@ -139,7 +139,7 @@
 
 .footer__links ul li a,
 .footer__lab ul li a {
-  color: #007bff;
+  color: var(--color-paleta3);
   text-decoration: none;
 }
 
@@ -150,7 +150,7 @@
 
 .footer__bottom {
   text-align: center;
-  font-size: 0.875rem;
+
   color: #666;
 }
 
@@ -184,13 +184,12 @@
 }
 
 .material-icons {
-  font-size: 1.5rem;
-  color: #555;
+  color: var(--color-hover);
   transition: color 0.3s;
 }
 
 .icon-button:hover .material-icons {
-  color: #007bff;
+  color: var(--color-paleta3);
 }
 
 /* Tooltip */
