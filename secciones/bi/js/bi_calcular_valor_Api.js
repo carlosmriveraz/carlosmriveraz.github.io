@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  obtenerValorAPI();
+  tecnologias__grupo();
 });
 
 // Función para obtener el valor del dólar de una fuente oficial
-function obtenerValorAPI() {
+function tecnologias__grupo() {
   fetch("https://api.exchangerate-api.com/v4/latest/USD") // Ejemplo de API
     .then((response) => response.json())
     .then((data) => {

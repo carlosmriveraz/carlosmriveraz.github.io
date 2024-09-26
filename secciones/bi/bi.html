@@ -4,13 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Business Intelligence</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"
-    />
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
@@ -170,7 +164,7 @@
           </div>
 
           <div class="tabla__contenedor">
-            <table id="monthly-average-values" class="display">
+            <table id="monthly-average-values" class="tbody">
               <thead>
                 <tr>
                   <th>Mes</th>
@@ -232,7 +226,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         loadDollarData(); // Carga los datos CSV o los genera si no existen
-        fetchApiValue(); // Descomentarlo si se necesita en el futuro
+        tecnologias__grupo(); // Descomentarlo si se necesita en el futuro
       });
 
       // Función para cargar datos del CSV o generar datos aleatorios

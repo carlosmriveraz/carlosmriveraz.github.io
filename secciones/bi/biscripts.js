@@ -25,7 +25,6 @@ function loadCSVData() {
       }
     })
     .catch((error) => {
-      console.error("Error:", error);
       handleLoadError();
     });
 }
@@ -58,7 +57,7 @@ function generateRandomData(days) {
     const date = new Date(startDate);
     date.setDate(startDate.getDate() + i);
     const formattedDate = date.toISOString().split("T")[0];
-    const randomValue = (3800 + Math.random() * 500).toFixed(2);
+    const randomValue = (4100 + Math.random() * 500).toFixed(2);
     data.push({
       Fecha: formattedDate,
       Precio: parseFloat(randomValue),

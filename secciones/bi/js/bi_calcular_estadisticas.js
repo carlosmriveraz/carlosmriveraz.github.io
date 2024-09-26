@@ -95,5 +95,5 @@ function generateCharts(dollarData) {
 // Escuchar evento para generar las estadísticas
 document.getElementById("generate-stats").addEventListener("click", () => {
   // Asegurarse de que `dollarData` esté disponible globalmente o pasarla como argumento
-  generateCharts(dollarData);
+  generateCharts(data);
 });
