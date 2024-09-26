@@ -90,7 +90,7 @@
 
 /* ********** HEADINGS *********** */
 .inicio__titulo {
-  margin-top: 5rem;
+  margin: 2rem 0;
   font-size: var(--medida-titulo);
   text-shadow: 1px 1px 15px var(--color-paleta2),
     1px 0 25px var(--color-paleta1), 1px 1px 35px var(--color-paleta2),
@@ -123,7 +123,7 @@
   flex: none;
   font-family: "Montserrat", sans-serif;
   font-size: var(--medida-subtitulo);
-  margin-top: 2%;
+  margin-top: 2px;
   text-align: center;
   transition: all 0.7s ease-in-out;
 }

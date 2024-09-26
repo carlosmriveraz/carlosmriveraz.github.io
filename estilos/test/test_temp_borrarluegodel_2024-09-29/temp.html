@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resaltado de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .resaltado {
+            transition: background-color 0.3s ease;
+        }
+
+        .resaltado:hover {
+            background-color: rgba(255, 255, 0, 0.5); /* Verde amarillento semitransparente */
+        }
+
+        .btn-toggle {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #3613d2; /* Color del botón */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-toggle:hover {
+            background-color: #0f0009; /* Color de hover del botón */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Resaltado de Texto</h1>
+    <p class="resaltado">Pasa el ratón por encima de este texto para ver el efecto de resaltado.</p>
+
+    <button class="btn-toggle" onclick="toggleHighlight()">Activar/Desactivar Resaltado</button>
+
+    <script>
+        function toggleHighlight() {
+            const text = document.querySelector('.resaltado');
+            text.classList.toggle('highlight-active');
+        }
+    </script>
+</body>
+</html>

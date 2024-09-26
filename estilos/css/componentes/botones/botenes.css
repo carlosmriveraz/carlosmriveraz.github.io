@@ -6,15 +6,15 @@
 
 .boton {
   display: inline-block;
-  padding: var(--padding); /* Usar variable para el padding del botón */
-  margin: var(--margen); /* Usar variable para el margen del botón */
-  font-family: var(--fuente-primaria); /* Usar fuente primaria */
-  font-size: var(--tamano-texto); /* Usar tamaño de texto definido */
-  color: var(--texto); /* Usar color de texto principal */
+  padding: var(__padding); /* Usar variable para el padding del botón */
+  margin: var(__margen); /* Usar variable para el margen del botón */
+  font-family: var(__fuente-primaria); /* Usar fuente primaria */
+  font-size: var(__tamano-texto); /* Usar tamaño de texto definido */
+  color: var(__texto); /* Usar color de texto principal */
   text-align: center;
   border: none;
   border-radius: var(
-    --borde-redondeado
+    __borde-redondeado
   ); /* Usar variable para borde redondeado */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -24,16 +24,16 @@
 .boton_gradiente {
   background: linear-gradient(
     45deg,
-    var(--color-secundario),
-    var(--color-secundario2)
+    var(__color-secundario),
+    var(__color-secundario2)
   ); /* Usar colores secundarios */
 }
 
 .boton_gradiente-2 {
   background: linear-gradient(
     45deg,
-    var(--color-terciario),
-    var(--color-terciario2)
+    var(__color-terciario),
+    var(__color-terciario2)
   ); /* Usar colores terciarios */
 }
 
@@ -41,22 +41,22 @@
 .boton_gradiente:hover {
   background: linear-gradient(
     45deg,
-    var(--color-hover),
-    var(--color-secundario2)
+    var(__color-hover),
+    var(__color-secundario2)
   ); /* Usar color de hover y color secundario2 */
 }
 
 .boton_gradiente-2:hover {
   background: linear-gradient(
     45deg,
-    var(--color-hover),
-    var(--color-terciario2)
+    var(__color-hover),
+    var(__color-terciario2)
   ); /* Usar color de hover y color terciario2 */
 }
 
 /* Botón con animación constante */
 .boton_animado {
-  background-color: var(--color-secundario); /* Usar color secundario */
+  background-color: var(__color-secundario); /* Usar color secundario */
   animation: bounce 1s infinite; /* Animación definida más abajo */
 }
 
@@ -72,7 +72,7 @@
 
 /* Botones adicionales con diferentes estilos */
 .boton_sombra {
-  background-color: var(--color); /* Usar color principal */
+  background-color: var(__color); /* Usar color principal */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -82,19 +82,19 @@
 }
 
 .boton_brillo {
-  background-color: var(--color-terciario); /* Usar color terciario */
-  box-shadow: 0 0 10px var(--color-terciario);
+  background-color: var(__color-terciario); /* Usar color terciario */
+  box-shadow: 0 0 10px var(__color-terciario);
 }
 
 .boton_brillo:hover {
-  box-shadow: 0 0 20px var(--color-hover);
+  box-shadow: 0 0 20px var(__color-hover);
 }
 
 .boton_borde-doble {
   background-color: transparent;
-  color: var(--color); /* Usar color principal */
-  border: 2px solid var(--color); /* Usar color principal */
-  border-radius: var(--borde-redondeado); /* Usar borde redondeado */
+  color: var(__color); /* Usar color principal */
+  border: 2px solid var(__color); /* Usar color principal */
+  border-radius: var(__borde-redondeado); /* Usar borde redondeado */
   position: relative;
   z-index: 1;
 }
@@ -106,56 +106,56 @@
   left: -4px;
   right: -4px;
   bottom: -4px;
-  border: 2px solid var(--color-secundario); /* Usar color secundario */
-  border-radius: var(--borde-redondeado); /* Usar borde redondeado */
+  border: 2px solid var(__color-secundario); /* Usar color secundario */
+  border-radius: var(__borde-redondeado); /* Usar borde redondeado */
   z-index: -1;
 }
 
 .boton_borde-doble:hover {
-  color: var(--color-blanco); /* Usar color blanco */
-  background-color: var(--color); /* Usar color principal */
+  color: var(__color-blanco); /* Usar color blanco */
+  background-color: var(__color); /* Usar color principal */
 }
 
 .boton_subrayado {
   background-color: transparent;
-  color: var(--color-secundario); /* Usar color secundario */
+  color: var(__color-secundario); /* Usar color secundario */
   border: none;
-  border-bottom: 2px solid var(--color-secundario); /* Usar color secundario */
+  border-bottom: 2px solid var(__color-secundario); /* Usar color secundario */
 }
 
 .boton_subrayado:hover {
-  color: var(--color-hover); /* Usar color de hover */
-  border-bottom-color: var(--color-hover); /* Usar color de hover */
+  color: var(__color-hover); /* Usar color de hover */
+  border-bottom-color: var(__color-hover); /* Usar color de hover */
 }
 
 .boton_icono {
-  background-color: var(--color); /* Usar color principal */
-  padding-left: var(--icono-width); /* Usar ancho del icono para padding */
+  background-color: var(__color); /* Usar color principal */
+  padding-left: var(__icono-width); /* Usar ancho del icono para padding */
   position: relative;
 }
 
 .boton_icono::before {
   content: "🔥";
   position: absolute;
-  left: var(--padding); /* Usar padding principal para el posicionamiento */
+  left: var(__padding); /* Usar padding principal para el posicionamiento */
   top: 50%;
   transform: translateY(-50%);
-  font-size: var(--tamano-subtitulo); /* Usar tamaño de subtitulo */
+  font-size: var(__tamano-subtitulo); /* Usar tamaño de subtitulo */
 }
 
 .boton_borde-gradiente {
-  background-color: var(--texto); /* Usar color de texto principal */
+  background-color: var(__texto); /* Usar color de texto principal */
   border: 2px solid transparent;
-  border-radius: var(--borde-redondeado); /* Usar borde redondeado */
-  background-image: linear-gradient(var(--texto), var(--texto)),
-    linear-gradient(45deg, var(--color-secundario), var(--color-secundario2)); /* Usar colores secundarios */
+  border-radius: var(__borde-redondeado); /* Usar borde redondeado */
+  background-image: linear-gradient(var(__texto), var(__texto)),
+    linear-gradient(45deg, var(__color-secundario), var(__color-secundario2)); /* Usar colores secundarios */
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 
 .boton_borde-gradiente:hover {
-  color: var(--texto); /* Usar color de texto principal */
-  background-color: var(--color-secundario); /* Usar color secundario */
+  color: var(__texto); /* Usar color de texto principal */
+  background-color: var(__color-secundario); /* Usar color secundario */
 }
 
 .btn,
@@ -164,49 +164,49 @@
   cursor: pointer;
   display: inline-block;
   padding: 1rem 2rem;
-  color: var(--color-primary);
+  color: var(__color-primary);
   border-radius: 2rem;
   border: 3px solid;
-  background-color: var(--color-paleta1), blue;
+  background-color: var(__color-paleta1), blue;
   transition: all 0.9s;
 }
 
 .btn-outline:link,
 .btn-outline:visited {
-  border-color: var(--color-primary);
-  background-color: var(--color-primary), #f0f3f6;
+  border-color: var(__color-primary);
+  background-color: var(__color-primary), #f0f3f6;
 }
 
 .btn-outline:hover,
 .btn-outline:active {
   color: #f0f3f6;
-  background-color: var(--color-primary);
+  background-color: var(__color-primary);
 }
 
 .btn-full:link,
 .btn-full:visited {
-  color: var(--color-paleta2), #f0f3f6;
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: var(__color-paleta2), #f0f3f6;
+  background-color: var(__color-primary);
+  border-color: var(__color-primary);
 }
 
 .btn-full:hover,
 .btn-full:active {
-  background-color: var(--color-paleta3);
-  border-color: var(--color-paleta2);
+  background-color: var(__color-paleta3);
+  border-color: var(__color-paleta2);
 }
 
 .botonLink {
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
-  color: var(--color-paleta2);
+  color: var(__color-paleta2);
   background: linear-gradient(
     135deg,
-    var(--color-paleta5),
-    var(--color-paleta6),
-    var(--color-paleta2),
-    var(--color-paleta6)
+    var(__color-paleta5),
+    var(__color-paleta6),
+    var(__color-paleta2),
+    var(__color-paleta6)
   );
   text-decoration: none;
   border-radius: 5px;
@@ -228,12 +228,10 @@
   color: #fff;
   border-radius: 100%;
   transition: background-color 0.5s;
-  width: 60px !important;
-  height: 60px !important;
   line-height: 70px;
-  position: relative !important;
+  position: relative;
   display: block;
-  transform: none !important;
+  animation: zoomBig;
   z-index: 9;
   text-align: center;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
@@ -245,49 +243,6 @@
   background-color: #53ca5b;
 }
 
-.whatsapp-fixed__icon__video-vemo-icon.btn-whatsapp i {
-  font-size: 32px;
-  color: #fff;
-  animation: sm-shake-animation linear 1.5s infinite;
-  animation-delay: 3s;
-}
-
-.rs-video .animate-border .video-vemo-icon:before {
-  content: "";
-  border: 2px solid #fff;
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  top: 50%;
-  opacity: 0;
-  transform: translateX(-50%) translateY(-50%);
-  display: block;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  animation: zoomBig 3.25s linear infinite;
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
-}
-
-.rs-video .animate-border .video-vemo-icon:after {
-  content: "";
-  border: 2px solid #fff;
-  position: absolute;
-  opacity: 0;
-  z-index: 0;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  display: block;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  animation: zoomBig 3.25s linear infinite;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-
 .btn-whatsapp:after,
 .btn-whatsapp:before {
   border: 2px solid #30bf39 !important;
@@ -295,193 +250,61 @@
   height: 130px !important;
 }
 
-.sm-red-dot {
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  margin: 0 auto;
-  background: red;
-  transform: scale(0);
-  border-radius: 50%;
-  animation-name: notificationPoint;
-  animation-duration: 300ms;
-  animation-fill-mode: forwards;
-  animation-delay: 3s;
-}
-
-.quick-message {
-  position: absolute;
-  bottom: 4px;
-  right: 88px;
-  width: max-content;
-  border-radius: 0;
-  background: #393b39;
-}
-
-.line-up {
-  opacity: 0;
-  animation-name: anim-lineUp;
-  animation-duration: 0.75s;
-  animation-fill-mode: forwards;
-  animation-delay: 5s;
-}
-
-.quick-message p {
-  line-height: 40px;
-  font-size: 15px;
-  padding: 4px 16px;
-  height: 40px;
-  position: relative;
-  color: #fff;
-  margin: 0;
-}
-
-.quick-message__seta-direita:before {
-  display: inline-block;
-  content: "";
-  vertical-align: middle;
-  margin-right: 10px;
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 20px solid #393b39;
-  position: absolute;
-  bottom: 3px;
-  right: -30px;
-}
-
-#hover-message {
-  display: none;
-}
-
-.whatsapp-fixed:hover #hover-message {
-  display: block;
-}
-
-@keyframes zoomBig {
-  0% {
-    transform: translate(-50%, -50%) scale(0.5);
-    opacity: 1;
-    border-width: 3px;
-  }
-  40% {
-    opacity: 0.5;
-    border-width: 2px;
-  }
-  65% {
-    border-width: 1px;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
-    border-width: 1px;
-  }
-}
-
-@keyframes sm-shake-animation {
-  0% {
-    transform: rotate(0) scale(1) skew(0.017rad);
-  }
-  25% {
-    transform: rotate(0) scale(1) skew(0.017rad);
-  }
-  35% {
-    transform: rotate(-0.3rad) scale(1) skew(0.017rad);
-  }
-  45% {
-    transform: rotate(0.3rad) scale(1) skew(0.017rad);
-  }
-  55% {
-    transform: rotate(-0.3rad) scale(1) skew(0.017rad);
-  }
-  65% {
-    transform: rotate(0.3rad) scale(1) skew(0.017rad);
-  }
-  75% {
-    transform: rotate(0) scale(1) skew(0.017rad);
-  }
-  100% {
-    transform: rotate(0) scale(1) skew(0.017rad);
-  }
-}
-
-@keyframes notificationPoint {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes anim-lineUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-
 /* Estilo básico para los enlaces */
 
 /* Opción 1: Subrayado Deslizante */
-.enlace__subrayado--deslizante::before {
+.enlace__subrayado__deslizante::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--color-paleta6);
+  background-color: var(__color-paleta6);
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
 }
 
-.enlace__subrayado--deslizante:hover::before {
+.enlace__subrayado__deslizante:hover::before {
   visibility: visible;
   transform: scaleX(1);
 }
 
 /* Opción 2: Efecto de Resplandor */
-.enlace__efecto--resplandor:hover {
+.enlace__efecto__resplandor:hover {
   color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--color-paleta5),
-    0 0 40px var(--color-paleta5), 0 0 50px var(--color-paleta5),
-    0 0 60px var(--color-paleta5), 0 0 70px var(--color-paleta5);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(__color-paleta5),
+    0 0 40px var(__color-paleta5), 0 0 50px var(__color-paleta5),
+    0 0 60px var(__color-paleta5), 0 0 70px var(__color-paleta5);
 }
 
 /* Opción 3: Desplazamiento de Fondo */
-.enlace__desplazamiento--fondo {
+.enlace__desplazamiento__fondo {
   background: linear-gradient(
     to right,
-    var(--color-paleta4),
-    var(--color-paleta3)
+    var(__color-paleta4),
+    var(__color-paleta3)
   );
   background-size: 200% auto;
 }
 
-.enlace__desplazamiento--fondo:hover {
+.enlace__desplazamiento__fondo:hover {
   background-position: right center;
   color: #fff;
 }
 
 /* Opción 4: Sombra de Texto */
-.enlace__sombra--texto:hover {
+.enlace__sombra__texto:hover {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Opción 5: Cambio de Color de Fondo */
-.enlace__cambio--fondo {
+.enlace__cambio__fondo {
   padding: 5px 10px;
 }
 
-.enlace__cambio--fondo:hover {
-  background-color: var(--color-paleta4);
+.enlace__cambio__fondo:hover {
+  background-color: var(__color-paleta4);
   color: #fff;
 }

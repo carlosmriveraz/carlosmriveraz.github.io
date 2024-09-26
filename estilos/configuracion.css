@@ -34,6 +34,7 @@
   --color-primario: #007bff;
   --color-secundario: #0077b655;
   --color-terciario: #caf0f855;
+
   --color-texto: #ffffff;
   --color-subtitulo: #ffffff;
   --color-titulo: #ffffff;
@@ -48,9 +49,9 @@
   --medida-texto-reducido: 0.6rem;
 
   /* Medidas títulos */
-  --medida-titulo: 1.5rem;
+  --medida-titulo: 2rem;
   --medida-subtitulo: 1.3rem;
-  --medida-titulo-extra-grande: 3.5rem;
+  --medida-titulo-extra-grande: 4rem;
   --medida-titulo-extra-reducido: 0.5rem;
   --medida-titulo-grande: 2rem;
 
@@ -76,7 +77,7 @@
   --color-paleta5: #00b4d8;
   --color-paleta6: #90e0ef;
   --color-paleta7: #caf0f8;
-
+  --color-hover: #00ffff;
   /* Colores */
 
   /* Sombra del texto */
@@ -112,4 +113,8 @@
 
 .margen__grande {
   margin-top: var(--margen-grande);
+}
+
+.margen__mediano {
+  margin-top: var(--margen-mediano);
 }

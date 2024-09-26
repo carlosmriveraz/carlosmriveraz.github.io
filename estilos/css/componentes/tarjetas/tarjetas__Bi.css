@@ -16,36 +16,6 @@
   margin: 0.5rem;
 }
 
-.tarjeta__kpi .tarjeta__kpi__icon {
-  text-align: center;
-  max-width: 30px;
-  margin-bottom: 0.5rem;
-
-  background: radial-gradient(
-    circle at 70% 70%,
-    var(--color-paleta7),
-    var(--color-paleta1),
-    var(--color-paleta3),
-    var(--color-paleta4)
-  );
-  filter: brightness(1.4);
-  border-radius: 4px;
-}
-
-.tarjeta__kpi__data {
-  margin-top: 0.5rem;
-}
-
-.tarjeta__kpi__value {
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.tarjeta__kpi__description {
-  font-size: 0.775rem;
-  color: #fafafafa;
-}
-
 .tarjeta__kpi__larga {
   border: 1px solid var(--color-paleta6) ddd;
   border-radius: 7px;
