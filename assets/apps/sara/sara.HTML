@@ -12,11 +12,77 @@
     <link rel="stylesheet" href="./css/fotter.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/general.css" />
+
+    <style>
+      /* Estilo general para los modales */
+      .modal {
+        display: none; /* Ocultos por defecto */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Fondo oscuro semitransparente */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+
+      .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 300px;
+      }
+
+      .modal-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .close-button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #ff5e78;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .close-button:hover {
+        background-color: #ffb1b1;
+      }
+    </style>
     <!-- <link rel="stylesheet" href="./sara.css" /> -->
   </head>
 
   <body>
-    <!-- Ícono de configuración con el logo de Google -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <img src="./imagenes/sarita.jpg" alt="Sarita" class="modal-image" />
+        <p>
+          Instrucciones: Haz clic en el texto "Sara" para moverlo y eliminar
+          divs. Tienes 2 minutos para completar el juego.
+        </p>
+        <button
+          class="close-button"
+          onclick="cerrarModal('modal-instrucciones')"
+        >
+          Comenzar
+        </button>
+      </div>
+    </div>
+
     <header>
       <h1>¿Dónde está Sarita?</h1>
       <p
@@ -78,8 +144,8 @@
 
     <div class="contenedor__flex__columna" id="tablero">
       <div class="estadisticas">
-        <p>Divs restantes: <span id="divs-restantes">10</span></p>
-        <p>Divs capturados: <span id="divs-capturados">0</span></p>
+        <p>Saras restantes: <span id="divs-restantes">10</span></p>
+        <p>Saras capturadas: <span id="divs-capturados">0</span></p>
         <p>Tiempo restante: <span id="tiempo-restante">2:00</span></p>
       </div>
 
@@ -91,15 +157,15 @@
           Amalia
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego Amalia carlosmariorivera.com "
           />
         </div>
-        <div class="text texto__2">riveradev</div>
+        <div class="text texto__2">Amalia</div>
         <div class="text texto__3">
-          riveradev
+          Amalia
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego Amalia carlosmariorivera.com "
           />
         </div>
         <div class="text texto__9">a</div>
@@ -109,111 +175,125 @@
           l
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego Amalia carlosmariorivera.com "
           />
         </div>
         <div class="text texto__1">
           i
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego sofi carlosmariorivera.com "
           />
         </div>
         <div class="text texto__13">a</div>
-        <div class="text texto__14">riveradev</div>
-        <div class="text texto__15">riveradev</div>
-        <div class="text texto__16">riveradev</div>
-        <div class="text texto__17">riveradev</div>
+        <div class="text texto__14">Amalia</div>
+        <div class="text texto__15">caata</div>
+        <div class="text texto__16">caata</div>
+        <div class="text texto__17">Amalia</div>
         <div class="text texto__18">
-          riveradev
+          Amalia
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego Amalia carlosmariorivera.com "
           />
         </div>
-        <div class="text texto__19">riveradev</div>
-        <div class="text texto__20">riveradev</div>
+        <div class="text texto__19">Amalia</div>
+        <div class="text texto__20">Amalia</div>
 
-        <div class="text texto__22">riveradev</div>
-        <div class="text texto__23">riveradev</div>
+        <div class="text texto__22">Amalia</div>
+        <div class="text texto__23">Amalia</div>
         <div class="text texto__1">
           Amalia
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego Amalia carlosmariorivera.com "
           />
         </div>
-        <div class="text texto__25">riveradev</div>
-        <div class="text texto__26">riveradev</div>
-        <div class="text texto__27">riveradev</div>
+        <div class="text texto__25">caata</div>
+        <div class="text texto__26">caata</div>
+        <div class="text texto__27">caata</div>
         <div class="text texto__1">
           Amalia
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego caata carlosmariorivera.com "
           />
         </div>
         <div class="text texto__1">
           Amalia
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego caata carlosmariorivera.com "
           />
         </div>
-        <div class="text texto__28">riveradev</div>
-        <div class="text texto__29">riveradev</div>
-        <div class="text texto__30">riveradev</div>
+        <div class="text texto__28">caata</div>
+        <div class="text texto__29">caata</div>
+        <div class="text texto__30">caata</div>
         <div class="text texto__88">
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego caata carlosmariorivera.com "
           />
         </div>
         <div class="text texto__89">
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego caata carlosmariorivera.com "
           />
         </div>
         <div class="text texto__90">
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego Amalia carlosmariorivera.com "
           />
         </div>
         <div class="text texto__91">
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego Amalia carlosmariorivera.com "
           />
         </div>
         <div class="text texto__92">
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego Amalia carlosmariorivera.com "
           />
         </div>
         <div class="text texto__93">
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego caata carlosmariorivera.com "
           />
         </div>
-        <div class="text texto__100">riveradev</div>
+        <div class="text texto__100">caata</div>
 
         <div class="text texto__94">Sara</div>
         <div class="text texto__1">
           Amalia
           <img
             src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego riveradev carlosmariorivera.com "
+            alt="fresa sarita juego caata carlosmariorivera.com "
           />
         </div>
       </div>
-
+      <script src="./juego.js"></script>
       <!-- Aquí podrías añadir más contenido si lo necesitas -->
     </div>
     <p id="message" class="holograma__rojo"></p>
+
+    <!-- Modal de instrucciones -->
+
+    <script>
+      // Mostrar modal al cargar la página
+      window.onload = function () {
+        document.getElementById("modal-instrucciones").style.display = "block";
+      };
+
+      // Función para cerrar un modal
+      function cerrarModal(id) {
+        document.getElementById(id).style.display = "none";
+      }
+    </script>
 
     <script>
       // Obtener todos los elementos de texto
@@ -250,7 +330,7 @@
         if (divsRestantes === 0) {
           clearInterval(timer); // Detener el temporizador
           document.getElementById("message").innerText =
-            "¡Felicidades! Has capturado todos los textos.";
+            "¡Felicidades! Has capturado todos los textos. Tio Mario te ama. :)";
           return;
         }
 
@@ -315,7 +395,7 @@
 
     <fotter class="fondo">
       <div class="contenedor_letra sarita">
-        <div class="letra-grande">riveradev</div>
+        <div class="letra-grande">caata</div>
       </div>
     </fotter>
   </body>
