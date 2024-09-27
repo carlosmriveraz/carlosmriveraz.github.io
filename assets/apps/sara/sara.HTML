@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Sara</title>
+    <link rel="stylesheet" href="./configuracion.css" />
+    <link rel="stylesheet" href="./css/menu__configuracion.css" />
+    <link rel="stylesheet" href="./css/sara.css" />
+    <link rel="stylesheet" href="./css/estadisticas.css" />
+
+    <link rel="stylesheet" href="./css/fotter.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/general.css" />
+    <!-- <link rel="stylesheet" href="./sara.css" /> -->
+  </head>
+
+  <body>
+    <!-- Ícono de configuración con el logo de Google -->
+    <header>
+      <h1>¿Dónde está Sarita?</h1>
+      <p
+        title="Haz clic en el texto 'Sara' para moverlo y eliminar divs. Tienes 2 minutos para completar el juego."
+        class="SuperBacano"
+      >
+        Instrucciones
+      </p>
+      <nav>
+        <div class="menu__config" id="config-icon">
+          <i class="material-icons">settings</i>
+        </div>
+
+        <div class="menu__config__toggle-menu" id="config-menu">
+          <label>
+            <input type="radio" name="theme" value="light" id="theme-light" />
+            Tema Claro
+          </label>
+          <label>
+            <input type="radio" name="theme" value="dark" id="theme-dark" />
+            Tema Oscuro
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="theme"
+              value="space"
+              id="theme-space"
+              checked
+            />
+            Tema sarita (Predeterminado)
+          </label>
+        </div>
+
+        <script>
+          document
+            .getElementById("config-icon")
+            .addEventListener("click", function () {
+              var menu = document.getElementById("config-menu");
+              menu.style.display =
+                menu.style.display === "block" ? "none" : "block";
+            });
+
+          document.querySelectorAll('input[name="theme"]').forEach((input) => {
+            input.addEventListener("change", function () {
+              document.body.className = ""; // Elimina clases existentes
+              if (this.value === "light") {
+                document.body.classList.add("theme-light");
+              } else if (this.value === "dark") {
+                document.body.classList.add("theme-dark");
+              } else {
+                document.body.classList.add("theme-space");
+              }
+            });
+          });
+        </script>
+      </nav>
+    </header>
+
+    <div class="contenedor__flex__columna" id="tablero">
+      <div class="estadisticas">
+        <p>Divs restantes: <span id="divs-restantes">10</span></p>
+        <p>Divs capturados: <span id="divs-capturados">0</span></p>
+        <p>Tiempo restante: <span id="tiempo-restante">2:00</span></p>
+      </div>
+
+      <div
+        class="tablero__contenedor__sarita gradiente__verde__opaco"
+        id="game-board"
+      >
+        <div class="text texto__1">
+          Amalia
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__2">riveradev</div>
+        <div class="text texto__3">
+          riveradev
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__9">a</div>
+        <div class="text texto__10">m</div>
+        <div class="text texto__11">a</div>
+        <div class="text texto__12">
+          l
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__1">
+          i
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__13">a</div>
+        <div class="text texto__14">riveradev</div>
+        <div class="text texto__15">riveradev</div>
+        <div class="text texto__16">riveradev</div>
+        <div class="text texto__17">riveradev</div>
+        <div class="text texto__18">
+          riveradev
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__19">riveradev</div>
+        <div class="text texto__20">riveradev</div>
+
+        <div class="text texto__22">riveradev</div>
+        <div class="text texto__23">riveradev</div>
+        <div class="text texto__1">
+          Amalia
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__25">riveradev</div>
+        <div class="text texto__26">riveradev</div>
+        <div class="text texto__27">riveradev</div>
+        <div class="text texto__1">
+          Amalia
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__1">
+          Amalia
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__28">riveradev</div>
+        <div class="text texto__29">riveradev</div>
+        <div class="text texto__30">riveradev</div>
+        <div class="text texto__88">
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__89">
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__90">
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__91">
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__92">
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__93">
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+        <div class="text texto__100">riveradev</div>
+
+        <div class="text texto__94">Sara</div>
+        <div class="text texto__1">
+          Amalia
+          <img
+            src="./imagenes/fresa_sarita.png"
+            alt="fresa sarita juego riveradev carlosmariorivera.com "
+          />
+        </div>
+      </div>
+
+      <!-- Aquí podrías añadir más contenido si lo necesitas -->
+    </div>
+    <p id="message" class="holograma__rojo"></p>
+
+    <script>
+      // Obtener todos los elementos de texto
+      const texts = document.querySelectorAll(".text");
+      let capturedCount = 0;
+      let divsRestantes = texts.length;
+      let timer;
+      let tiempoRestante = 120; // Tiempo en segundos (2 minutos)
+
+      // Actualizar marcadores
+      document.getElementById("divs-restantes").innerText = divsRestantes;
+
+      // Función para buscar el div que contiene "Sara"
+      function findSara() {
+        return Array.from(texts).find((text) => text.innerText === "Sara");
+      }
+
+      // Función para mover "Sara" a un nuevo div aleatorio
+      function moveSara() {
+        const saraDiv = findSara(); // Buscar el div actual que contiene "Sara"
+
+        // Ocultar el div actual y quitar el texto
+        saraDiv.style.display = "none";
+        saraDiv.innerText = "";
+
+        capturedCount++;
+        divsRestantes--;
+
+        // Actualizar marcadores
+        document.getElementById("divs-capturados").innerText = capturedCount;
+        document.getElementById("divs-restantes").innerText = divsRestantes;
+
+        // Verificar si se ganó el juego
+        if (divsRestantes === 0) {
+          clearInterval(timer); // Detener el temporizador
+          document.getElementById("message").innerText =
+            "¡Felicidades! Has capturado todos los textos.";
+          return;
+        }
+
+        // Generar un nuevo índice aleatorio que sea diferente del actual
+        let newSaraDiv;
+        do {
+          const randomIndex = Math.floor(Math.random() * texts.length);
+          newSaraDiv = texts[randomIndex];
+        } while (
+          newSaraDiv.style.display === "none" // No mover a un div que ya haya sido ocultado
+        );
+
+        // Asignar el texto "Sara" al nuevo div
+        newSaraDiv.innerText = "Sara";
+      }
+
+      // Función para manejar el clic en el texto
+      function handleClick(event) {
+        const clickedDiv = event.target;
+
+        // Solo permitir que se haga clic en el div con "Sara"
+        if (clickedDiv.innerText === "Sara") {
+          moveSara(); // Mover "Sara" a otro div aleatorio
+        } else {
+          alert("¡Debes tocar el texto 'Sara' para continuar!");
+        }
+      }
+
+      // Temporizador
+      function startTimer() {
+        timer = setInterval(() => {
+          tiempoRestante--;
+          let minutes = Math.floor(tiempoRestante / 60);
+          let seconds = tiempoRestante % 60;
+
+          // Formatear segundos con 2 dígitos
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+          document.getElementById("tiempo-restante").innerText =
+            minutes + ":" + seconds;
+
+          // Si el tiempo se acaba
+          if (tiempoRestante <= 0) {
+            clearInterval(timer);
+            document.getElementById("message").innerText =
+              "¡Tiempo agotado! Has perdido.";
+            // Deshabilitar clics en los divs
+            texts.forEach((text) => {
+              text.removeEventListener("click", handleClick);
+            });
+          }
+        }, 1000);
+      }
+
+      // Añadir el evento de clic solo a los divs que contienen "Sara"
+      texts.forEach((text) => {
+        text.addEventListener("click", handleClick);
+      });
+
+      // Iniciar el temporizador
+      startTimer();
+    </script>
+
+    <fotter class="fondo">
+      <div class="contenedor_letra sarita">
+        <div class="letra-grande">riveradev</div>
+      </div>
+    </fotter>
+  </body>
+</html>

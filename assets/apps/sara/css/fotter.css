@@ -1,0 +1,66 @@
+:root {
+  /* Tonos rojos */
+  --color-rojo-1: #ffcccc; /* Rojo claro */
+  --color-rojo-2: #ff6666; /* Rojo medio */
+  --color-rojo-3: #cc0000; /* Rojo oscuro */
+  --color-rojo-4: #990000; /* Rojo muy oscuro */
+  --color-rojo-5: #ff3333; /* Rojo brillante */
+
+  /* Nuevas variables de tonos rojos */
+  --color-paleta1: #ff3333; /* Rojo brillante */
+  --color-secundario: #ff6666; /* Rojo medio */
+  --color-terciario: #cc0000; /* Rojo oscuro */
+  --color-primario: #990000; /* Rojo muy oscuro */
+}
+
+.holograma__rojo {
+  background: linear-gradient(
+    135deg,
+    var(--color-rojo-3),
+    var(--color-rojo-2),
+    var(--color-rojo-4),
+    var(--color-rojo-1)
+  );
+  background-size: 400% 400%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  transform: rotateX(0deg) rotateY(0deg) scale(1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: holograma__rojo 4s linear infinite;
+  z-index: 500;
+  text-align: center;
+  padding: 1rem;
+  width: 300px; /* Ajusta el ancho según tus necesidades */
+}
+
+.holograma__rojo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: rgba(255, 72, 6, 0.472);
+  filter: blur(10px);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.holograma__rojo:active {
+  transform: rotateX(30deg) rotateY(30deg) scale(1.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes holograma__rojo {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
