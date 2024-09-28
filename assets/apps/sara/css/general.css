@@ -8,14 +8,15 @@ html {
 }
 
 body {
-  margin: 5px;
-  background-image: linear-gradient(135deg, #ff4b4b, #ff9999),
+  background-image: linear-gradient(135deg, #3498db, #ff9999),
     /* Tonos rojos */ linear-gradient(45deg, #7cfc00, #66cdaa); /* Tonos verdes */
   background-size: 100%, 80%; /* Ajusta el tamaño del fondo */
   background-repeat: no-repeat;
   font-family: Arial, sans-serif;
   color: var(--color-principal);
   transition: background-color 0.3s, color 0.3s;
+  padding: 1px;
+  margin: 1px;
 }
 
 header {
@@ -23,7 +24,7 @@ header {
   justify-content: space-between;
   background-color: var(--fondo-menu);
   color: var(--color-menu);
-  padding: 10px;
+  padding: 2px;
 
   border-radius: 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
@@ -67,7 +68,4 @@ p[title]:hover::before {
   border-style: solid;
   border-color: transparent transparent var(--color-principal) transparent;
   z-index: 10;
-}
-img {
-  width: 40px;
 }

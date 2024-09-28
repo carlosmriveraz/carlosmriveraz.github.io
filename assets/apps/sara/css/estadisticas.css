@@ -1,6 +1,6 @@
 .sarita {
-  font-size: 1.2rem;
-  margin: 10px;
+  font-size: 1rem;
+
   transform-style: preserve-3d;
   transform: rotateY(15deg) translateZ(40px); /* Ajustado ángulo */
   transition: transform 0.7s ease, text-shadow 0.7s ease;
@@ -8,17 +8,18 @@
 
 /* Estilos 3D aplicados desde el principio al selector de resultados */
 .estadisticas {
+  margin-top: 2rem;
   display: flex;
   justify-content: space-around;
   width: 100%;
-  min-height: 10vh;
-  padding: 10px;
+  min-height: 6vh;
+  padding: 1px;
   background-color: #6ffdaaaa;
   border-radius: 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
     /* Sombra principal */ -5px -5px 15px rgba(255, 255, 255, 0.8) inset,
     /* Brillo interior superior */ 5px 5px 15px rgba(0, 0, 0, 0.2) inset; /* Sombra interior inferior */
-  transform: rotateY(20deg) rotateX(-5deg) translateZ(120px); /* Ajustado ángulo */
+  transform: rotateY(6deg) rotateX(-5deg) translateZ(8px); /* Ajustado ángulo */
   transition: transform 0.7s ease-in-out, box-shadow 0.7s;
 
   /* Borde con gradiente de tonos verdes tipo hoja de fresa */
@@ -28,30 +29,10 @@
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
+/* 
 
-.tablero {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 600px;
-  padding: 10px;
-  background-color: var(--fondo-principal);
-  border-radius: 10px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
-    /* Sombra principal */ -5px -5px 15px rgba(255, 255, 255, 0.8) inset,
-    /* Brillo interior superior */ 5px 5px 15px rgba(0, 0, 0, 0.2) inset; /* Sombra interior inferior */
-  transform: rotateY(20deg) rotateX(-5deg) translateZ(120px); /* Ajustado ángulo */
-  transition: transform 0.7s ease-in-out, box-shadow 0.7s;
 
-  /* Borde con gradiente de tonos verdes tipo hoja de fresa */
-  border: 5px solid transparent;
-  background-image: linear-gradient(white, white),
-    linear-gradient(45deg, #7cfc00, #228b22, #006400);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-}
-
-/* Resultados */
+ */ /* Resultados */
 #divs-restantes,
 #divs-capturados,
 #tiempo-restante {
@@ -64,16 +45,16 @@
 /* Ícono de configuración de Google con efecto 3D */
 .icono-configuracion {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 60px;
-  height: 60px;
+  bottom: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  transform: rotateY(360deg) translateZ(50px);
+  transform: rotateY(360deg) translateZ(10px);
   transition: transform 1s ease;
 }
 
 .icono-configuracion:hover {
-  transform: rotateY(720deg) translateZ(150px);
+  transform: rotateY(720deg) translateZ(10px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }

@@ -2,17 +2,19 @@
   padding: 5px;
   background-color: var(--fondo-principal);
   border-radius: 10px;
-  box-shadow: 10px 10px 20px rgb(0 0 0 / 0.4),
-    -5px -5px 15px rgb(255 255 255 / 0.8) inset,
-    5px 5px 15px rgb(0 0 0 / 0.2) inset;
-  transform: rotateY(10deg) rotateX(-5deg) translateZ(10px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
+    /* Sombra principal */ -5px -5px 15px rgba(255, 255, 255, 0.8) inset,
+    /* Brillo interior superior */ 5px 5px 15px rgba(0, 0, 0, 0.2) inset; /* Sombra interior inferior */
+  transform: rotateY(10deg) rotateX(-5deg) translateZ(10px); /* Ajustado ángulo */
   transition: transform 0.7s ease-in-out, box-shadow 0.7s;
-  border: 5px solid #fff0;
-  background: url(../imagenes/sara.jpg);
+
+  /* Borde con gradiente de tonos verdes tipo hoja de fresa */
+  border: 5px solid transparent;
+  background: url("../imagenes/sara.jpg");
   background-origin: border-box;
   background-clip: content-box, border-box;
-  min-height: 80vh;
-  overflow: hidden;
+
+  height: 80vh;
 }
 
 .SuperBacano {
@@ -38,24 +40,26 @@
   background-clip: content-box, border-box;
 }
 .tablero__contenedor__sarita {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 10px 10px 20px rgb(126 68 68 / 0.4),
-    -5px -5px 15px rgb(255 255 255 / 0.8) inset,
-    5px 5px 15px rgb(0 0 0 / 0.2) inset;
+  box-shadow: 10px 10px 20px rgba(126, 68, 68, 0.4),
+    -5px -5px 15px rgba(255, 255, 255, 0.8) inset,
+    5px 5px 15px rgba(0, 0, 0, 0.2) inset;
+  transform: rotateY(5deg) rotateX(-5deg) translateZ(10px);
+  transition: transform 0.7s ease-in-out, box-shadow 0.7s;
+  border: 5px solid var(--fondo-principal);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
   width: 100%;
-  height: 100%;
-  gap: 10px;
-  background-color: var(--fondo-secundario);
+  min-height: 100%;
 }
-
-.tablero__contenedor__sarita .texto {
-  flex: 1 0 calc(20% - 10px); /* 5 columnas */
-  padding: 5px;
+.tablero__contenedor__sarita div {
+  display: flex;
+  width: 10%;
+  padding: 10px;
   border-radius: 15px;
+  flex: 1;
   cursor: pointer;
   background: radial-gradient(
     circle at 40% 40%,
@@ -64,42 +68,6 @@
     #ffa07aaa,
     #ffdab945
   );
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: background 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tablero__contenedor__sarita .texto img {
-  width: 30px; /* Ajusta el tamaño de la imagen */
-  height: 30px; /* Ajusta la altura de la imagen */
-  margin-top: 10px;
-  border-radius: 5px;
-}
-
-.tablero__contenedor__sarita .texto:hover {
-  background: radial-gradient(circle at 40% 40%, #ff6347, #ffa07a, #ffdab9);
-}
-
-/* Estilos para flexibilidad responsiva */
-@media (max-width: 1200px) {
-  .tablero__contenedor__sarita .texto {
-    flex: 1 0 calc(20% - 15px); /* Siempre 5 columnas */
-  }
-}
-
-@media (max-width: 800px) {
-  .tablero__contenedor__sarita .texto {
-    flex: 1 0 calc(20% - 10px); /* Siempre 5 columnas */
-  }
-}
-
-@media (max-width: 600px) {
-  .tablero__contenedor__sarita .texto {
-    flex: 1 0 calc(20% - 5px); /* Siempre 5 columnas */
-  }
 }
 
 .sara {

@@ -26,22 +26,28 @@
   --borde-grande: 2rem;
   --borde-mediano: 1.5rem;
   --borde-reducido: 0.125rem;
+  /* Medidas títulos  #2caa77  #fa1b5b  #fb6383  #0d4583 */
+  /*  #fcd6df  #99657b  #fcacc4  #fc94ae */
+
+  /* #1e53a8  #d61760  #dcc023  #1cd1b4  #2a2b2c  
+  * #b286c6  #9ebaf5  #bd2716  #e9c0e2  #fafbfb  #ae47be  #f6cf99 
+   #f9e5d0  #c3dff6  #fad7e0  */
 
   /* Colores principales */
-  --color-menu: #0f0;
+  --color-menu: #2caa77;
   --color-principal: red;
   --color-primario: #d53032;
-  --color-secundario: #7cfc00;
-  --color-terciario: #f0202a66;
+  --color-secundario: #2caa77;
+  --color-terciario: #fb6383;
   --color-texto: ##66cdaa;
   --color-subtitulo: #d53032;
   --color-titulo: #00ffff;
-  --color-hover: #7cfc00;
+  --color-hover: #2caa77;
 
-  --fondo-principal: #ff4500;
+  --fondo-principal: #fa1b5b;
   --fondo-secundario: #66cdaa;
-  --fondo-terciario: #ff4588;
-  --fondo-menu: #ff4588;
+  --fondo-terciario: #fc94ae;
+  --fondo-menu: #fa1b5b;
   /* Medidas textos */
   --medida-texto: 1.1rem;
   --medida-texto-extra-grande: 1.5rem;

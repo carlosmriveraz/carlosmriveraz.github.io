@@ -143,7 +143,7 @@
 }
 
 .efectos__combinados__pulso {
-  animation: animacion__pulso 5s 2s linear 2;
+  animation: animacion__pulso 5s 4s linear 2;
 }
 
 .efectos__combinados::before,
@@ -231,7 +231,8 @@
 /* Generación de 100 animaciones diferentes */
 /* Ejemplo de animación 1: Texto que parpadea */
 /* Animación 1: Texto que parpadea */
-#text {
+.texto {
+  display: block;
 }
 
 .texto__1 {
@@ -307,7 +308,8 @@
 
 /* Animación 5: Texto que se mueve de arriba hacia abajo */
 .texto__5 {
-  animation: moveY 2s infinite;
+  animation: moveY 4s infinite;
+  animation-delay: 5s;
 }
 
 @keyframes moveY {
@@ -327,6 +329,7 @@
 /* Animación 6: Texto que cambia de color */
 .texto__6 {
   animation: colorChange 2s infinite;
+  animation-delay: 5s;
 }
 
 @keyframes colorChange {
@@ -383,7 +386,7 @@
 
 /* Animación 9: Texto que se agranda y reduce */
 .texto__9 {
-  animation: growShrink 2s infinite;
+  animation: growShrink 4s infinite;
 }
 
 @keyframes growShrink {
@@ -543,7 +546,7 @@
 
 /* Animación 16: Texto que se desplaza en zigzag */
 .texto__16 {
-  animation: zigzag 2s infinite;
+  animation: zigzag 4s infinite;
 }
 
 @keyframes zigzag {
@@ -773,7 +776,7 @@
 
 /* Animación 25: Texto que cambia de tamaño y se mueve en zigzag */
 .texto__25 {
-  animation: zigzagSizeMove 2s infinite;
+  animation: zigzagSizeMove 4s infinite;
 }
 
 @keyframes zigzagSizeMove {
@@ -1229,7 +1232,7 @@
 
 /* Animación 40: Texto que se mueve en onda y cambia de color */
 .texto__40 {
-  animation: waveMoveColor 2s infinite;
+  animation: waveMoveColor 4s infinite;
 }
 
 @keyframes waveMoveColor {
@@ -1608,7 +1611,7 @@
 
 /* Animación 51: Texto que se mueve en zigzag y cambia de tamaño */
 .texto__51 {
-  animation: zigzagMoveSizeOpacity 2s infinite;
+  animation: zigzagMoveSizeOpacity 4s infinite;
 }
 
 @keyframes zigzagMoveSizeOpacity {
@@ -1820,7 +1823,7 @@
 
 /* Animación 57: Texto que se mueve en zigzag y cambia de opacidad */
 .texto__57 {
-  animation: zigzagMoveOpacity 2s infinite;
+  animation: zigzagMoveOpacity 4s infinite;
 }
 
 @keyframes zigzagMoveOpacity {

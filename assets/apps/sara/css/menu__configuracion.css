@@ -14,10 +14,9 @@
 
 .menu__config {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
+  top: 10px;
+  right: 10px;
+
   background: var(--fondo__principal);
   color: var(--color-secundario);
   border-radius: 50%;
@@ -29,7 +28,7 @@
 }
 
 .menu__config i {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .menu__config__toggle-menu {

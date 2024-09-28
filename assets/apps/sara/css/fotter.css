@@ -32,7 +32,6 @@
   z-index: 500;
   text-align: center;
   padding: 1rem;
-  width: 300px; /* Ajusta el ancho según tus necesidades */
 }
 
 .holograma__rojo::before {

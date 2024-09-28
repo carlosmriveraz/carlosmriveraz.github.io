@@ -1,0 +1,7 @@
+/* Media Queries */
+@media (max-width: 768px) {
+  .texto {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
