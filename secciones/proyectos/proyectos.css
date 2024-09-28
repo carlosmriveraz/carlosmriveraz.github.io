@@ -77,6 +77,7 @@
 .contenedor__flex__proyectos {
   display: flex;
   margin-bottom: 1rem;
+  text-align: center;
   gap: 2px;
   flex-wrap: wrap;
 }
@@ -104,6 +105,7 @@
   font-size: 0.8rem; /* Ajusta el tamaño de la fuente del valor principal */
   margin-top: 0;
   height: 0.85rem;
+  color: var(--color-principal);
 }
 
 .tarjeta__kpi__data {

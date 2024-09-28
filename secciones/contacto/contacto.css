@@ -222,3 +222,22 @@
   border-style: solid;
   border-color: #333 transparent transparent transparent;
 }
+
+.contenedor_letra {
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../images/logo.png") no-repeat center center fixed;
+  background-size: 99%;
+}
+.letra-grande {
+  font-size: 1em;
+  font-weight: bold;
+  color: transparent;
+  background: url("../../images/logo.png") no-repeat center center;
+  background-size: 80%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
