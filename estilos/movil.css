@@ -5,11 +5,11 @@
 
   /* Para tablets pequeñas y dispositivos móviles */
   .inicio__titulo h1 {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   .inicio__titulo h1 span {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
 
   .iframe {
@@ -19,7 +19,7 @@
     height: 140vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .triple__pantalla {
-    height: 250vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+    height: 200vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .texto {
     font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
@@ -29,11 +29,11 @@
 @media (max-width: 576px) {
   /* Para dispositivos móviles más pequeños */
   .inicio__titulo h1 {
-    font-size: 1.2rem;
+    font-size: 2.1rem;
   }
 
   .inicio__titulo h1 span {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
   .inicio__titulo h5 span {
     font-size: 1rem;
@@ -45,7 +45,7 @@
     height: 150vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .triple__pantalla {
-    height: 240vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+    height: 200vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .texto {
     font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */

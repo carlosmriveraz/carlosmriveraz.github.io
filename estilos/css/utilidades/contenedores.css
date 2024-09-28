@@ -30,7 +30,7 @@
 }
 
 .contenedor__aumentotamano:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 .contenedor__medio {
@@ -38,6 +38,10 @@
   margin: 0.1rem auto;
 }
 .contenedor__flex {
+  display: flex;
+}
+
+.contenedor__flex__separado {
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
   justify-content: space-between; /* Espacio entre los elementos */
@@ -47,19 +51,22 @@
 .contenedor__flex__columna {
   display: flex;
 
-  flex-flow: column wrap;
+  flex-direction: column;
+}
+.contenedor__flex__columna h1 {
+  flex-wrap: wrap;
 }
 
 .contenedor__flex__columna__evenly {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: space-evenly;
   gap: 1rem;
 }
 
 .contenedor__flex__columna__centrado {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -142,4 +149,19 @@
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 1s; /* Suaviza la transición de rotación */
+}
+
+.contenedor__grid_2 {
+  display: grid; /* Ajusta la dirección de los elementos en pantallas más pequeñas */
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .contenedor__grid_2 {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 columnas en pantallas más grandes */
+  }
 }

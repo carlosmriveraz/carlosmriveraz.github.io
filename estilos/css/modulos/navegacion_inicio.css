@@ -35,23 +35,24 @@
   display: flex;
   list-style-type: none;
   padding: 0;
-  background: radial-gradient(circle, #61dafbaa, #282c34aa);
-  border-radius: 7px;
-  border-color: #61dafb;
-  box-shadow: inset 0 0 10px #61dafbaa;
 
+  border-radius: 7px;
+
+  border: 2px solid #0ff;
+  box-shadow: inset 0 0 10px #61dafbaa;
+  max-width: 50%;
   color: #61dafb;
 }
 
 .navbar__menu-item {
   border-radius: 0.5rem;
-  margin: 0 0.5rem;
-  background-color: #00ffff55;
+  margin: 0 0.2rem;
+  background-color: #0ffffe;
 }
 
 .navbar__menu-item a {
   color: var(--color-texto);
-  background-color: #00ffffaa;
+
   text-decoration: none;
   display: inline;
   border-radius: 0.5rem; /* Bordes redondeados */
@@ -60,22 +61,11 @@
     transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transiciones unificadas */
 }
 
-.navbar__menu-item :hover {
-  background-color: var(--color-paleta5);
-  transform: scale(1.5);
-  padding: 0;
-  border-radius: 0.1rem;
-  color: var(--color-paleta1);
-
-  margin: 0;
-  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1); /* Mayor sombra en hover */
-}
-
 .navbar__menu-item a::after {
   content: "";
   position: absolute;
   width: 0;
-  height: 0.2rem;
+
   display: block;
   margin-top: 0.3rem;
   right: 0;
@@ -101,13 +91,13 @@
   flex-direction: column;
   cursor: pointer;
   margin-left: auto;
+  background: radial-gradient(circle, #009, #282c34dd);
 
-  background: radial-gradient(circle, #61dafb22, #282c34aa);
   border-radius: 3px;
-  border-color: #61dafb;
-  box-shadow: inset 0 0 1px #61dafbaa;
+  border-color: #0ff;
+  box-shadow: inset 0 0 2px #61dafbaa;
 
-  color: #61dafb;
+  color: #0ff;
 }
 
 /* Toggle de tema (oscuro/claro) */
@@ -141,6 +131,8 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background: radial-gradient(circle, #009e, #282c34fe);
+    left: 0;
     margin-top: 2rem;
   }
 
@@ -174,8 +166,6 @@
 }
 
 .navbar__link {
-  text-shadow: 0 0 10px var(--color-paleta3), /* Plateado */ 0 0 10px #c0c0c0,
-    0 0 15px #87ceeb, /* Azul plateado */ 0 0 20px #87ceeb; /* Azul plateado */
   transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
   perspective: 1000px; /* Añade perspectiva para el efecto 3D */
   display: inline-block;
@@ -185,7 +175,6 @@
 }
 
 .navbar__link :hover {
-  background-color: #5952ff;
   background-size: 150% 150%; /* Aumenta el tamaño del fondo */
   transform: scale(1.5); /* Escala el elemento */
 }

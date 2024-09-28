@@ -13,7 +13,7 @@ html {
 
 body[data-theme="dark-theme"] {
   background-image: url(../images/background/bk.jpg);
-  color: var(--color-texto), #fff;
+  color: var(--color-texto) #fff;
   text-align: center;
 }
 
@@ -22,12 +22,12 @@ body {
   background-size: cover;
 
   background-repeat: no-repeat;
-  color: var(--color-titulo);
+  color: var(--color-texto);
   font-family: var(--fuente-principal);
   font-weight: 400;
   transition: background-color 0.9s, color 0.3s;
-  text-align: center;
-  text-shadow: 1px 1px 5px var(--color-paleta6);
+  text-align: justify;
+  text-shadow: 0px 1px 2px var(--color-paleta6);
   display: flex;
   flex-flow: column wrap;
 }
@@ -90,4 +90,8 @@ footer {
 
 .triple__pantalla {
   height: 270vh;
+}
+
+#inicio {
+  text-align: center;
 }

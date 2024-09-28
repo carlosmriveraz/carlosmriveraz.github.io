@@ -88,9 +88,15 @@
   text-align: justify;
 }
 
+.texto__centrado {
+  text-align: center;
+}
+
 /* ********** HEADINGS *********** */
 .inicio__titulo {
-  margin: 2rem 0;
+  text-align: center;
+  display: inline-block;
+  margin: 1rem 0;
   font-size: var(--medida-titulo);
   text-shadow: 1px 1px 15px var(--color-paleta2),
     1px 0 25px var(--color-paleta1), 1px 1px 35px var(--color-paleta2),
@@ -169,10 +175,6 @@
   content: "";
   display: block;
   text-shadow: 2px 2px 4px var(--color-paleta1);
-}
-.nombre {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .parte1,

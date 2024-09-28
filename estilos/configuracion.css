@@ -31,6 +31,7 @@
 
   /* Colores principales */
   --color-menu: #90e0ef;
+  --color-principal: #00f;
   --color-primario: #007bff;
   --color-secundario: #0077b655;
   --color-terciario: #caf0f855;
@@ -48,12 +49,12 @@
   --medida-texto-mediano: 0.8rem;
   --medida-texto-reducido: 0.6rem;
 
-  /* Medidas títulos */
-  --medida-titulo: 2rem;
+  /* Medidas títulos  */
+  --medida-titulo: 2.4rem;
   --medida-subtitulo: 1.3rem;
   --medida-titulo-extra-grande: 4rem;
   --medida-titulo-extra-reducido: 0.5rem;
-  --medida-titulo-grande: 2rem;
+  --medida-titulo-grande: 2.6rem;
 
   /* Márgenes */
   --margen-extra-grande: 4rem;
