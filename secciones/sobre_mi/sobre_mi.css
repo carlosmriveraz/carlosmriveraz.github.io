@@ -1,10 +1,9 @@
-.coontenedor__flex {
-  display: flex;
+#movimiento_skills_sobre_mi .sobre__mi__columna {
+  font-size: 1.5rem;
 }
 
-#inteligencia-negocios {
-  background-color: inherit;
-  color: var(--color-titulo);
+.coontenedor__flex {
+  display: flex;
 }
 
 .sobre__mi__columna {
@@ -17,7 +16,7 @@
 .sobre__mi__movimiento_skills {
   margin-top: 4rem;
 
-  margin-left: 8rem;
+  margin-left: 4rem;
   padding: 1rem;
   display: flex;
   flex: 1;
@@ -120,7 +119,10 @@
   .sobre__mi__columna,
   .sobre__mi__movimiento_skills {
     max-width: 100%;
-    padding: 0.5rem;
+    padding: 0.1rem;
+  }
+  #movimiento_skills_sobre_mi .sobre__mi__columna {
+    font-size: 1rem;
   }
 }
 

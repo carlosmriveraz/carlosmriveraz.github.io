@@ -92,8 +92,8 @@
         color: var(--color-texto);
         text-shadow: 1px 2px 5px var(--color-texto);
         position: fixed;
-        top: 90%;
-        right: 2rem;
+        top: 95%;
+        right: .5rem;
         transform: translateY(-50%);
         font-size: 1.2rem;
         background-color: rgba(0, 155, 255, 0.5);
@@ -178,14 +178,19 @@
         src="./secciones/inicio/inicio.html"
         scrolling="no"
         title="inicio"
-        class=""
+        class="iframe"
         frameborder="0"
         id="inicio"
         allowfullscreen
+        height="50vh"
       ></iframe>
 
       <iframe
         src="./secciones/sobre_mi/sobre_mi.html"
+       
+      
+        frameborder="0"
+        scrolling="no"
         class="doble__pantalla"
         title="sobre_mi"
         id="sobre_mi"
@@ -195,6 +200,10 @@
       <iframe
         src="./secciones/tecnologias/tecnologias.html"
         class=""
+   
+        height="auto"
+        frameborder="0"
+        scrolling="no"
         allowfullscreen
         title="tecnologias"
         id="tecnologias"
@@ -210,8 +219,11 @@
 
       <iframe
         src="secciones/proyectos/proyectos.html"
-        scrolling="no"
+        width="100vH"
         class="triple__pantalla"
+        height="auto"
+        frameborder="0"
+        scrolling="no"
         allowfullscreen
         id="proyectos"
         title="proyectos"
@@ -249,6 +261,41 @@
       <span class="animated-text">i</span>
       <span class="animated-text">o</span>
     </div>
+
+    <!-- Menú de redes sociales con estructura BEM -->
+    <aside class="aside__contacto__social">
+      <!-- Correo -->
+      <a
+        href="mailto:carlosmrz100@hotmail.com"
+        aria-label="Correo"
+        class="material-icons">mail
+      </a>
+   
+      <!-- WhatsApp -->
+      <a
+        href="https://wa.me/+573117559365"
+        target="_blank"
+        aria-label="WhatsApp"
+        class="icono__whatsapp"
+      >
+      </a>
+    
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/carlosmariorivera" target="_blank" aria-label="LinkedIn" class=" icono__linkedin"></a>
+      <!-- GitHub -->
+      <a href="https://github.com/carlosmriveraz" target="_blank" aria-label="GitHub" class="icono__github"></a>
+      
+    
+      </a>
+      <a class="material-icons">clock</a>
+
+      
+
+
+      </a>
+
+
+    </aside>
 
     <!-- Scripts -->
 

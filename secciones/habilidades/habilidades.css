@@ -104,23 +104,15 @@
 }
 
 .habilidades__imagen {
-  font-size: 36px;
+  font-size: 3rem;
   color: var(--color-paleta1);
 }
 
 .habilidades__subtitulo {
-  font-size: 18px;
   font-weight: bold;
   color: var(--color-principal);
 }
 
-.habilidades__linea {
-  height: 2px;
-  background-color: var(--color-paleta2);
-  margin: 10px 0;
-}
-
 .habilidades__descripcion {
-  font-size: 16px;
   color: var(--color-texto);
 }

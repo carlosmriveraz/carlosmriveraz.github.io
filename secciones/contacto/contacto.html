@@ -1,106 +1,148 @@
 <link rel="stylesheet" href="../../estilos/estilo.css" />
 <link rel="stylesheet" href="./contacto.css" />
 
+<footer>
+	<h2 class="subtitulo">
+		<span>&lt;&frasl;&nbsp;</span>
+		<span>C</span>ontacto
+	</h2>
 
-<footer class="">
+	<section class="seccion__principal">
+		<!-- Laboratorio -->
+		<div class="tarjeta__footer tarjeta__footer--laboratorio gradiente__frio">
+			<h2 class="tarjeta__footer__titulo"><span>L</span>aboratorio</h2>
+			<div class="tarjeta__linea__gradiente"></div>
+			<ul class="tarjeta__footer__lista">
+				<li>
+					<a
+						href="../../html/laboratorio/laboratorio.html"
+						target="_blank"
+						class="tarjeta__footer__enlace enlace enlace__efecto__resplandor enlace__subrayado__deslizante"
+						>Componente 1</a
+					>
+				</li>
+				<!-- Puedes agregar más enlaces aquí -->
+			</ul>
+			<p class="tarjeta__footer__descripcion">
+				<span>E</span>xplora componentes y animaciones experimentales.
+			</p>
+		</div>
 
+		<!-- Contacto (resaltado y central) -->
+		<div class="tarjeta__footer tarjeta__footer--contacto gradiente__frio">
+			<h2 class="tarjeta__footer__titulo">Contactactame</h2>
+			<div class="tarjeta__linea__gradiente"></div>
+			<div class="tarjeta__footer__contacto-item">
+				<i class="material-icons">email</i>
+				<a
+					href="mailto:carlosmrz100@hotmail.com"
+					class="tarjeta__footer__enlace enlace enlace__efecto__resplandor enlace__subrayado__deslizante"
+					>carlosmrz100@hotmail.com</a
+				>
+			</div>
+			<div class="tarjeta__footer__contacto-item">
+				<i class="material-icons">phone</i>
+				<span class="tarjeta__footer__texto">+57 311 755 9365</span>
+			</div>
+		</div>
 
-<div class="footer__section footer__contact ">
-  <h2 class="subtitulo"><strong><span>C</span>ontacto</strong><h2>
-    <i id="sendEmailIcon" class="material-icons">email <div class="tooltip">Enviar Email</div></i>
-    
-    <a href="mailto:carlosmrz100@hotmail.com" id="emailToCopy">carlosmrz100@hotmail.com</a>
+		<!-- Apps -->
+		<div class="tarjeta__footer tarjeta__footer--apps gradiente__frio">
+			<h2 class="tarjeta__footer__titulo">Apps</h2>
+			<div class="tarjeta__linea__gradiente"></div>
+			<ul class="tarjeta__footer__lista">
+				<li>
+					<a
+						href="../../assets/apps/sara/sara.HTML"
+						target="_blank"
+						class="tarjeta__footer__enlace enlace enlace__efecto__resplandor enlace__subrayado__deslizante"
+						>Sarita - Videojuego</a
+					>
+				</li>
+				<li>
+					<a
+						href="../../assets/apps/focus_riveradev/focus_riveradev.html"
+						target="_blank"
+						class="tarjeta__footer__enlace enlace enlace__efecto__resplandor enlace__subrayado__deslizante"
+						>Pomodoro - Productividad</a
+					>
+				</li>
+			</ul>
+		</div>
+	</section>
 
- 
+	<section class="contenedor__flex__columna">
+		<div class="animacion__resplandor sonido-hover">
+			<span>C</span>arlos<span>M</span>ario<span>R</span>ivera.com
+		</div>
+		<h6 class="texto__atractivo"><span>L</span>inks<span>Ú</span>tiles</h6>
+		<div class="contenedor__medio">
+			<a
+				href="https://www.linkedin.com/in/carlosmariorivera"
+				target="_blank"
+				aria-label="LinkedIn"
+				class="icono__linkedin"
+			></a>
+			<a
+				href="https://github.com/carlosmriveraz"
+				target="_blank"
+				aria-label="GitHub"
+				class="icono__github"
+			></a>
+			<a
+				href="https://wa.me/+573117559365"
+				target="_blank"
+				aria-label="WhatsApp"
+				class="btn-whatsapp icono__whatsapp"
+			></a>
+		</div>
+	</section>
 
+	<div class="footer__bottom">
+		<p class="footer__policy">
+			<a href="../../html/footer/cookies.html">Política de Cookies</a> |
+			Licencias e Inspiraciones (en estructuración).
+		</p>
+	</div>
 
-  <!-- Icono de Copiar -->
+	<div class="contenedor_letra margen__grande">
+		<div class="letra-grande">
+			&copy; 2024 By RiveraDev Todos los derechos reservados.
+		</div>
+	</div>
 
-    <i class="material-icons">content_copy  <div class="tooltip" id="copyEmailButton">Copiar Email</div></i>
-  
-  </div>
-</div>
-  <div class="footer__sections contenedor__flex">
+	<script src="../../scripts/js/contacto/reproducir__sonido__goku.js"></script>
 
-    <div class="footer__section footer__lab">
-      <h2 class="subtitulo"><strong><i class="material-icons">science</i> <span>L</span>aboratorio</strong><h2>
-        
-      <ul>
-        <li>
-          <a href="../../html/laboratorio/laboratorio.html" target="_blank" class="enlace__desplazamiento--fondo enlace__subrayado--deslizante">Componente 1</a>
-        </li>
-      </ul>
-      <p  class="texto">Explora mi laboratorio, con componentes y animaciones experimentales.</p>
-    </div>
+	<script>
+		document
+			.getElementById("copyEmailButton")
+			.addEventListener("click", function (event) {
+				event.preventDefault(); // Evita que el enlace recargue la página
 
-    <div class="footer__section footer__links">
-      <h2 class="subtitulo"><span>A</span>pps</h2>
-      <ul>
-        <li>
-          <a href="../../assets/apps/sara/sara.HTML" target="_blank" class="enlace__desplazamiento--fondo">Sarita - video Juego</a>
-        </li>
-        <li>
-          <a href="../../assets/apps/focus_riveradev/focus_riveradev.html" target="_blank" class="enlace__desplazamiento--fondo">Pomodoro - Productividad</a>
-        </li>
-      </ul>
+				var email = "carlosmrz100@hotmail.com";
 
-    </div>
+				// Crea un campo de texto temporal para copiar el email
+				var tempInput = document.createElement("input");
+				tempInput.value = email;
+				document.body.appendChild(tempInput);
 
+				// Selecciona el contenido del campo temporal
+				tempInput.select();
+				tempInput.setSelectionRange(0, 99999); // Para móviles
 
-  </div>
+				// Copia el contenido al portapapeles
+				document.execCommand("copy");
 
+				// Elimina el campo temporal
+				document.body.removeChild(tempInput);
 
-  
-<div class="texto__atractivo sonido-hover">
-  <div class="animacion__resplandor">
-    <h5><span>C</span>arlos<span>M</span>ario<span>R</span>ivera.com</h5>
-  </div>
-  <h6 class="subtitulo"><strong><span>L</span>inks<span>Ú</span>tiles</strong></h6>
-     
-</div>
-<div class="contact-social">
-  <a href="https://www.linkedin.com/in/carlosmariorivera" target="_blank" aria-label="LinkedIn" class="contact__icon-linkedin"> | </a>
-  <a href="https://github.com/carlosmriveraz" target="_blank" aria-label="GitHub" class="contact__icon-github"> | </a>
-  <a href="https://wa.me/+573117559365" target="_blank" aria-label="WhatsApp" class="btn-whatsapp contact__icon-whatsapp ">
-  
-  </a>
-</div>
+				// Feedback al usuario
+				this.textContent = "¡Email Copiado!";
 
-<div class="footer__bottom">
-  <p class="footer__policy">
-    <a href="../../html/footer/cookies.html">Política de Cookies</a> | Licencias e Inspiraciones(en estructuración).
-  </p>
-</div>
-</div>
-<div class="contenedor_letra margen__grande">
-  <div class="letra-grande">
-    &copy; 2024  By RiveraDev  Todos los derechos reservados.
-  </div>
-</div>
-<script href="../../scripts/js/contacto/reproducir__sonido__goku.js">
-
-</script>
-
-<script>
-  document
-    .getElementById("copyEmailButton")
-    .addEventListener("click", function (event) {
-      event.preventDefault(); // Evita que el enlace recargue la página
-      var email = document.getElementById("hiddenEmail");
-
-      // Selecciona el contenido del input oculto
-      email.select();
-      email.setSelectionRange(0, 99999); // Para móviles
-
-      // Copia el contenido al portapapeles
-      document.execCommand("copy");
-
-      // Feedback al usuario
-      this.textContent = "!Email Copiado!";
-
-      // Opcional: Restaura el texto del botón después de 2 segundos
-      setTimeout(() => {
-        this.textContent = "Copiar Email";
-      }, 2000);
-    });
-</script>
+				// Restaura el texto del botón después de 2 segundos
+				setTimeout(() => {
+					this.textContent = "Copiar Email";
+				}, 2000);
+			});
+	</script>
+</footer>

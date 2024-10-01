@@ -1,392 +1,402 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Intelligence</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Business Intelligence</title>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
-    <link rel="stylesheet" href="bi_estilo.css" />
-    <link rel="stylesheet" href="./css/bi__kpi.css" />
-    <link rel="stylesheet" href="./css/bi__graficos.css" />
-    <link rel="stylesheet" href="../../estilos/estilo.css" />
+		<link rel="stylesheet" href="bi_estilo.css" />
+		<link rel="stylesheet" href="./css/bi__kpi.css" />
+		<link rel="stylesheet" href="./css/bi__graficos.css" />
+		<link rel="stylesheet" href="../../estilos/estilo.css" />
 
-    <style>
-      :root {
-        /* Tonos rojos */
-        --color-rojo-1: #ffcccc; /* Rojo claro */
-        --color-rojo-2: #ff6666; /* Rojo medio */
-        --color-rojo-3: #cc0000; /* Rojo oscuro */
-        --color-rojo-4: #990000; /* Rojo muy oscuro */
-        --color-rojo-5: #ff3333; /* Rojo brillante */
+		<style>
+			:root {
+				/* Tonos rojos */
+				--color-rojo-1: #ffcccc; /* Rojo claro */
+				--color-rojo-2: #ff6666; /* Rojo medio */
+				--color-rojo-3: #cc0000; /* Rojo oscuro */
+				--color-rojo-4: #990000; /* Rojo muy oscuro */
+				--color-rojo-5: #ff3333; /* Rojo brillante */
 
-        /* Nuevas variables de tonos rojos */
-        --color-paleta1: #ff3333; /* Rojo brillante */
-        --color-secundario: #ff6666; /* Rojo medio */
-        --color-terciario: #cc0000; /* Rojo oscuro */
-        --color-primario: #990000; /* Rojo muy oscuro */
-      }
+				/* Nuevas variables de tonos rojos */
+				--color-paleta1: #ff3333; /* Rojo brillante */
+				--color-secundario: #ff6666; /* Rojo medio */
+				--color-terciario: #cc0000; /* Rojo oscuro */
+				--color-primario: #990000; /* Rojo muy oscuro */
+			}
 
-      .holograma__rojo {
-        background: linear-gradient(
-          135deg,
-          var(--color-rojo-3),
-          var(--color-rojo-2),
-          var(--color-rojo-4),
-          var(--color-rojo-1)
-        );
-        background-size: 400% 400%;
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        position: relative;
-        overflow: hidden;
-        transform: rotateX(0deg) rotateY(0deg) scale(1);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        animation: holograma__rojo 4s linear infinite;
-        z-index: 500;
-        text-align: center;
-        padding: 1rem;
-        width: 300px; /* Ajusta el ancho según tus necesidades */
-      }
+			.holograma__rojo {
+				background: linear-gradient(
+					135deg,
+					var(--color-rojo-3),
+					var(--color-rojo-2),
+					var(--color-rojo-4),
+					var(--color-rojo-1)
+				);
+				background-size: 400% 400%;
+				border-radius: 15px;
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+				position: relative;
+				overflow: hidden;
+				transform: rotateX(0deg) rotateY(0deg) scale(1);
+				transition: transform 0.4s ease, box-shadow 0.4s ease;
+				animation: holograma__rojo 4s linear infinite;
+				z-index: 500;
+				text-align: center;
+				padding: 1rem;
+				width: 300px; /* Ajusta el ancho según tus necesidades */
+			}
 
-      .holograma__rojo::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 72, 6, 0.472);
-        filter: blur(10px);
-        z-index: 1;
-        transition: opacity 0.4s ease;
-        opacity: 0;
-      }
+			.holograma__rojo::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 72, 6, 0.472);
+				filter: blur(10px);
+				z-index: 1;
+				transition: opacity 0.4s ease;
+				opacity: 0;
+			}
 
-      .holograma__rojo:active {
-        transform: rotateX(30deg) rotateY(30deg) scale(1.2);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-      }
+			.holograma__rojo:active {
+				transform: rotateX(30deg) rotateY(30deg) scale(1.2);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+			}
 
-      @keyframes holograma__rojo {
-        0% {
-          background-position: 0% 0%;
-        }
-        50% {
-          background-position: 100% 100%;
-        }
-        100% {
-          background-position: 0% 0%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h2>
-        <strong class="subtitulo">
-          <span>B</span>usiness <span>I</span>ntelligence</strong
-        >
-      </h2>
-      <section class="tarjetas__contenedor">
-        <!-- Valor Mínimo con fondo rojo claro -->
-        <div class="tarjeta__KPI tarjeta__minimo">
-          <div class="kpi__contenido">
-            <i class="material-icons">trending_down</i>
-            <div class="kpi__detalles">
-              <h3>Valor Mínimo</h3>
-              <p id="valor-minimo"></p>
-              <div class="kpi__fila">
-                <i class="material-icons">date_range</i>
-                <p><strong>Fecha:</strong> <span id="fecha-minima"></span></p>
-              </div>
-            </div>
-          </div>
-        </div>
+			@keyframes holograma__rojo {
+				0% {
+					background-position: 0% 0%;
+				}
+				50% {
+					background-position: 100% 100%;
+				}
+				100% {
+					background-position: 0% 0%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h2>
+				<strong class="subtitulo">
+					<span> &lt;&frasl;&nbsp;B</span>usiness
+					<span>I</span>ntelligence</strong
+				>
+			</h2>
+			<section class="tarjetas__contenedor">
+				<!-- Valor Mínimo con fondo rojo claro -->
+				<div class="tarjeta__KPI tarjeta__minimo">
+					<div class="kpi__contenido">
+						<i class="material-icons">trending_down</i>
+						<div class="kpi__detalles">
+							<h3>Valor Mínimo</h3>
+							<p id="valor-minimo"></p>
+							<div class="kpi__fila">
+								<i class="material-icons">date_range</i>
+								<p><strong>Fecha:</strong> <span id="fecha-minima"></span></p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <!-- Valor Máximo con animación verde -->
-        <div class="tarjeta__KPI tarjeta__maximo">
-          <div class="kpi__contenido">
-            <i class="material-icons">trending_up</i>
-            <div class="kpi__detalles">
-              <h3>Valor Máximo</h3>
-              <p id="valor-maximo"></p>
-              <div class="kpi__fila">
-                <i class="material-icons">date_range</i>
-                <p>
-                  <strong>Fecha Máxima:</strong> <span id="fecha-maxima"></span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+				<!-- Valor Máximo con animación verde -->
+				<div class="tarjeta__KPI tarjeta__maximo">
+					<div class="kpi__contenido">
+						<i class="material-icons">trending_up</i>
+						<div class="kpi__detalles">
+							<h3>Valor Máximo</h3>
+							<p id="valor-maximo"></p>
+							<div class="kpi__fila">
+								<i class="material-icons">date_range</i>
+								<p>
+									<strong>Fecha Máxima:</strong> <span id="fecha-maxima"></span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <!-- Valor Promedio -->
-        <div class="tarjeta__KPI tarjeta__promedio">
-          <div class="kpi__contenido">
-            <i class="material-icons">equalizer</i>
-            <div class="kpi__detalles">
-              <h3>Valor Promedio</h3>
-              <p id="avg-value"></p>
-            </div>
-          </div>
-        </div>
+				<!-- Valor Promedio -->
+				<div class="tarjeta__KPI tarjeta__promedio">
+					<div class="kpi__contenido">
+						<i class="material-icons">equalizer</i>
+						<div class="kpi__detalles">
+							<h3>Valor Promedio</h3>
+							<p id="avg-value"></p>
+						</div>
+					</div>
+				</div>
 
-        <!-- Valor Calculado vía API -->
-        <div class="tarjeta__KPI tarjeta__api">
-          <div class="kpi__contenido">
-            <i class="material-icons">attach_money</i>
-            <div class="kpi__detalles">
-              <h3>Valor Calculado vía API</h3>
-              <p id="valor-api"></p>
-              <p>
-                <small>Fuente Oficial: <span id="api-fuente"></span></small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+				<!-- Valor Calculado vía API -->
+				<div class="tarjeta__KPI tarjeta__api">
+					<div class="kpi__contenido">
+						<i class="material-icons">attach_money</i>
+						<div class="kpi__detalles">
+							<h3>Valor Calculado vía API</h3>
+							<p id="valor-api"></p>
+							<p>
+								<small>Fuente Oficial: <span id="api-fuente"></span></small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <section
-        id="business-intelligence"
-        class="contenedor__bi contenido__bi__9"
-      >
-        <div class="bi__elemento">
-          <div class="contenedor__flex__separado">
-            <div class="chart-container">
-              <canvas id="chart2"></canvas>
-            </div>
-            <div class="chart-container">
-              <canvas id="chart3"></canvas>
-            </div>
-          </div>
+			<section
+				id="business-intelligence"
+				class="contenedor__bi contenido__bi__9"
+			>
+				<div class="bi__elemento">
+					<div class="contenedor__flex__separado">
+						<div class="chart-container">
+							<canvas id="chart2"></canvas>
+						</div>
+						<div class="chart-container">
+							<canvas id="chart3"></canvas>
+						</div>
+					</div>
 
-          <div class="tabla__contenedor">
-            <table id="monthly-average-values" class="tbody">
-              <thead>
-                <tr>
-                  <th>Mes</th>
-                  <th>Promedio Mensual</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Los datos de promedios mensuales se llenarán aquí mediante JavaScript -->
-              </tbody>
-            </table>
-          </div>
-          <div class="bi__elemento contenedor__Estadisticas_predicciones">
-            <h2 class="subtitulo">Predicciones para los Próximos Dos Días</h2>
-            <p>
-              Nota: Estas predicciones son estimaciones realizadas por
-              inteligencia artificial y no son fijas.
-            </p>
-            <table id="predictions" class="display tabla__contenedor">
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Valor Predicho en Pesos Colombianos</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Los datos se rellenarán aquí -->
-              </tbody>
-            </table>
-          </div>
-        </div>
+					<div class="tabla__contenedor">
+						<table id="monthly-average-values" class="tbody">
+							<thead>
+								<tr>
+									<th>Mes</th>
+									<th>Promedio Mensual</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Los datos de promedios mensuales se llenarán aquí mediante JavaScript -->
+							</tbody>
+						</table>
+					</div>
+					<div class="bi__elemento contenedor__Estadisticas_predicciones">
+						<h2 class="subtitulo">Predicciones para los Próximos Dos Días</h2>
+						<p>
+							Nota: Estas predicciones son estimaciones realizadas por
+							inteligencia artificial y no son fijas.
+						</p>
+						<table id="predictions" class="display tabla__contenedor">
+							<thead>
+								<tr>
+									<th>Fecha</th>
+									<th>Valor Predicho en Pesos Colombianos</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Los datos se rellenarán aquí -->
+							</tbody>
+						</table>
+					</div>
+				</div>
 
-        <div class="bi__elemento">
-          <canvas id="chart1"></canvas>
-          <div class="tabla__contenedor">
-            <h2>Valores Históricos del Dólar</h2>
-            <table id="dollar-values" class="dataTable">
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Valor del Dólar (COP)</th>
-                </tr>
-              </thead>
-              <tbody id="dollar-values-body">
-                <!-- Rows will be populated via JavaScript -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-    </main>
+				<div class="bi__elemento">
+					<canvas id="chart1"></canvas>
+					<div class="tabla__contenedor">
+						<h2>Valores Históricos del Dólar</h2>
+						<table id="dollar-values" class="dataTable">
+							<thead>
+								<tr>
+									<th>Fecha</th>
+									<th>Valor del Dólar (COP)</th>
+								</tr>
+							</thead>
+							<tbody id="dollar-values-body">
+								<!-- Rows will be populated via JavaScript -->
+							</tbody>
+						</table>
+					</div>
+					<a
+						href="./Dolar_completo_API/Dolar_completo_API.html"
+						role="Ir a pagina de los datos historicos oficiales"
+						class="enlace enlace__efecto__3d enlace__subrayado__deslizante"
+						target="_blank"
+						title="ir a datos historicos oficiales"
+					>
+						datos historicos oficiales"</a
+					>
+				</div>
+			</section>
+		</main>
 
-    <script src="./js/bi_calcular_valor_Api.js"></script>
-    <script src="./js/bi_calcular_estadisticas.js"></script>
-    <script src="./js/generar__graficos.js"></script>
-    <!-- CSS Styles -->
+		<script src="./js/bi_calcular_valor_Api.js"></script>
+		<script src="./js/bi_calcular_estadisticas.js"></script>
+		<script src="./js/generar__graficos.js"></script>
+		<!-- CSS Styles -->
 
-    <!-- JavaScript Code -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        loadDollarData(); // Carga los datos CSV o los genera si no existen
-        tecnologias__grupo(); // Descomentarlo si se necesita en el futuro
-      });
+		<!-- JavaScript Code -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				loadDollarData(); // Carga los datos CSV o los genera si no existen
+				tecnologias__grupo(); // Descomentarlo si se necesita en el futuro
+			});
 
-      // Función para cargar datos del CSV o generar datos aleatorios
-      function loadDollarData() {
-        fetch("valordolarhistorico.csv")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("No se encontró el archivo CSV.");
-            }
-            return response.text();
-          })
-          .then((data) => {
-            dollarData = parseCSV(data);
-            populateDollarTable(); // Llenar la tabla
-            calculateKPIs(); // Calcular KPIs
-          })
-          .catch((error) => {
-            console.error(error);
-            dollarData = generateRandomData(100); // Generar datos aleatorios si no hay CSV
-            populateDollarTable();
-            calculateKPIs();
-          });
-      }
+			// Función para cargar datos del CSV o generar datos aleatorios
+			function loadDollarData() {
+				fetch("valordolarhistorico.csv")
+					.then((response) => {
+						if (!response.ok) {
+							throw new Error("No se encontró el archivo CSV.");
+						}
+						return response.text();
+					})
+					.then((data) => {
+						dollarData = parseCSV(data);
+						populateDollarTable(); // Llenar la tabla
+						calculateKPIs(); // Calcular KPIs
+					})
+					.catch((error) => {
+						console.error(error);
+						dollarData = generateRandomData(100); // Generar datos aleatorios si no hay CSV
+						populateDollarTable();
+						calculateKPIs();
+					});
+			}
 
-      // Función para llenar la tabla con DataTables
-      function populateDollarTable() {
-        const tbody = document.getElementById("dollar-values-body");
-        tbody.innerHTML = ""; // Limpiar contenido previo
+			// Función para llenar la tabla con DataTables
+			function populateDollarTable() {
+				const tbody = document.getElementById("dollar-values-body");
+				tbody.innerHTML = ""; // Limpiar contenido previo
 
-        // Llenar la tabla con los datos cargados
-        dollarData.forEach((data) => {
-          const row = document.createElement("tr");
-          row.innerHTML = `<td>${data.Fecha}</td><td>${data.Precio}</td>`;
-          tbody.appendChild(row);
-        });
+				// Llenar la tabla con los datos cargados
+				dollarData.forEach((data) => {
+					const row = document.createElement("tr");
+					row.innerHTML = `<td>${data.Fecha}</td><td>${data.Precio}</td>`;
+					tbody.appendChild(row);
+				});
 
-        // Inicializar DataTables para búsqueda y paginación
-        $(document).ready(function () {
-          $("#dollar-values").DataTable({
-            paging: true,
-            searching: true,
-            pageLength: 10, // Número de filas por página
-            lengthChange: false, // Desactivar cambiar el número de filas por página
-            language: {
-              search: "Buscar:", // Etiqueta personalizada para el campo de búsqueda
-              paginate: {
-                previous: "Anterior",
-                next: "Siguiente",
-              },
-            },
-          });
-        });
-      }
+				// Inicializar DataTables para búsqueda y paginación
+				$(document).ready(function () {
+					$("#dollar-values").DataTable({
+						paging: true,
+						searching: true,
+						pageLength: 10, // Número de filas por página
+						lengthChange: false, // Desactivar cambiar el número de filas por página
+						language: {
+							search: "Buscar:", // Etiqueta personalizada para el campo de búsqueda
+							paginate: {
+								previous: "Anterior",
+								next: "Siguiente",
+							},
+						},
+					});
+				});
+			}
 
-      // Funciones adicionales para manejar KPIs, predicciones, gráficos, etc.
-      function calculateKPIs() {
-        const minValue = Math.min(...dollarData.map((data) => data.Precio));
-        const maxValue = Math.max(...dollarData.map((data) => data.Precio));
-        const avgValue = (
-          dollarData.reduce((sum, data) => sum + data.Precio, 0) /
-          dollarData.length
-        ).toFixed(2);
+			// Funciones adicionales para manejar KPIs, predicciones, gráficos, etc.
+			function calculateKPIs() {
+				const minValue = Math.min(...dollarData.map((data) => data.Precio));
+				const maxValue = Math.max(...dollarData.map((data) => data.Precio));
+				const avgValue = (
+					dollarData.reduce((sum, data) => sum + data.Precio, 0) /
+					dollarData.length
+				).toFixed(2);
 
-        document.getElementById("valor-minimo").textContent = minValue;
-        document.getElementById("valor-maximo").textContent = maxValue;
-        document.getElementById("valor-promedio").textContent = avgValue;
-      }
-    </script>
-    <script>
-      // Function to generate random dollar data if the historical table is empty
-      function generateRandomDollarData(days) {
-        const data = [];
-        let baseValue = 4000;
-        for (let i = 0; i < days; i++) {
-          const date = new Date();
-          date.setDate(date.getDate() - i);
-          const value = baseValue + Math.floor(Math.random() * 400 - 200); // Random value between 3800 and 4200
-          data.push({ date: date.toISOString().split("T")[0], value });
-        }
-        return data;
-      }
+				document.getElementById("valor-minimo").textContent = minValue;
+				document.getElementById("valor-maximo").textContent = maxValue;
+				document.getElementById("valor-promedio").textContent = avgValue;
+			}
+		</script>
+		<script>
+			// Function to generate random dollar data if the historical table is empty
+			function generateRandomDollarData(days) {
+				const data = [];
+				let baseValue = 4000;
+				for (let i = 0; i < days; i++) {
+					const date = new Date();
+					date.setDate(date.getDate() - i);
+					const value = baseValue + Math.floor(Math.random() * 400 - 200); // Random value between 3800 and 4200
+					data.push({ date: date.toISOString().split("T")[0], value });
+				}
+				return data;
+			}
 
-      // Function to read the dollar data from the table or generate random data if table is empty
-      function readOrGenerateDollarData() {
-        const rows = document.querySelectorAll("#dollar-values tbody tr");
-        let dollarData = [];
+			// Function to read the dollar data from the table or generate random data if table is empty
+			function readOrGenerateDollarData() {
+				const rows = document.querySelectorAll("#dollar-values tbody tr");
+				let dollarData = [];
 
-        // Check if the table has data
-        if (rows.length > 0) {
-          // Read the data from the table
-          rows.forEach((row) => {
-            const date = row.cells[0].innerText; // Get date from the first column
-            const value = parseFloat(row.cells[1].innerText); // Get value from the second column
-            dollarData.push({ date, value });
-          });
-        } else {
-          // Generate random data if the table is empty
-          dollarData = generateRandomDollarData(100); // Generate data for the last 100 days
+				// Check if the table has data
+				if (rows.length > 0) {
+					// Read the data from the table
+					rows.forEach((row) => {
+						const date = row.cells[0].innerText; // Get date from the first column
+						const value = parseFloat(row.cells[1].innerText); // Get value from the second column
+						dollarData.push({ date, value });
+					});
+				} else {
+					// Generate random data if the table is empty
+					dollarData = generateRandomDollarData(100); // Generate data for the last 100 days
 
-          // Populate the table with the generated random data
-          const tbody = document.querySelector("#dollar-values tbody");
-          tbody.innerHTML = ""; // Clear existing data
-          dollarData.forEach((data) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `<td>${data.date}</td><td>${data.value.toFixed(
-              2
-            )}</td>`;
-            tbody.appendChild(row);
-          });
-        }
+					// Populate the table with the generated random data
+					const tbody = document.querySelector("#dollar-values tbody");
+					tbody.innerHTML = ""; // Clear existing data
+					dollarData.forEach((data) => {
+						const row = document.createElement("tr");
+						row.innerHTML = `<td>${data.date}</td><td>${data.value.toFixed(
+							2
+						)}</td>`;
+						tbody.appendChild(row);
+					});
+				}
 
-        return dollarData;
-      }
+				return dollarData;
+			}
 
-      // Function to calculate monthly averages from the dollar data
-      function calculateMonthlyAverages(dollarData) {
-        const monthlyData = {}; // Object to store values grouped by month
+			// Function to calculate monthly averages from the dollar data
+			function calculateMonthlyAverages(dollarData) {
+				const monthlyData = {}; // Object to store values grouped by month
 
-        // Group values by month and year (YYYY-MM format)
-        dollarData.forEach((data) => {
-          const month = data.date.slice(0, 7); // Extract YYYY-MM format
-          if (!monthlyData[month]) {
-            monthlyData[month] = [];
-          }
-          monthlyData[month].push(data.value); // Add value to the month group
-        });
+				// Group values by month and year (YYYY-MM format)
+				dollarData.forEach((data) => {
+					const month = data.date.slice(0, 7); // Extract YYYY-MM format
+					if (!monthlyData[month]) {
+						monthlyData[month] = [];
+					}
+					monthlyData[month].push(data.value); // Add value to the month group
+				});
 
-        // Calculate the average for each month and update the monthly averages table
-        const monthlyTableBody = document.querySelector(
-          "#monthly-average-values tbody"
-        );
-        monthlyTableBody.innerHTML = ""; // Clear previous data
+				// Calculate the average for each month and update the monthly averages table
+				const monthlyTableBody = document.querySelector(
+					"#monthly-average-values tbody"
+				);
+				monthlyTableBody.innerHTML = ""; // Clear previous data
 
-        Object.keys(monthlyData).forEach((month) => {
-          const values = monthlyData[month];
-          const average = (
-            values.reduce((a, b) => a + b, 0) / values.length
-          ).toFixed(2); // Calculate average
+				Object.keys(monthlyData).forEach((month) => {
+					const values = monthlyData[month];
+					const average = (
+						values.reduce((a, b) => a + b, 0) / values.length
+					).toFixed(2); // Calculate average
 
-          // Create a new row in the monthly averages table
-          const row = document.createElement("tr");
-          row.innerHTML = `<td>${month}</td><td>${average}</td>`;
-          monthlyTableBody.appendChild(row);
-        });
-      }
+					// Create a new row in the monthly averages table
+					const row = document.createElement("tr");
+					row.innerHTML = `<td>${month}</td><td>${average}</td>`;
+					monthlyTableBody.appendChild(row);
+				});
+			}
 
-      // Main function to initialize the process
-      function initialize() {
-        // Get the dollar data from the table or generate it
-        const dollarData = readOrGenerateDollarData();
+			// Main function to initialize the process
+			function initialize() {
+				// Get the dollar data from the table or generate it
+				const dollarData = readOrGenerateDollarData();
 
-        // Calculate and display the monthly averages
-        calculateMonthlyAverages(dollarData);
-      }
+				// Calculate and display the monthly averages
+				calculateMonthlyAverages(dollarData);
+			}
 
-      // Call the initialize function when the window loads
-      window.onload = function () {
-        initialize();
-      };
-    </script>
-    <script src="biscripts.js"></script>
-  </body>
+			// Call the initialize function when the window loads
+			window.onload = function () {
+				initialize();
+			};
+		</script>
+		<script src="biscripts.js"></script>
+	</body>
 </html>
