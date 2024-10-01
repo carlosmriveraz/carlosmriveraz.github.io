@@ -1,0 +1,16 @@
+.texto_3d_rapido {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto_3d_rapido p {
+  color: var(--color-paleta3);
+  font-size: var(--medida-texto);
+  font-weight: 700;
+  text-shadow: -0.0075em 0.0075em 0 var(--color-paleta1),
+    0.005em 0.005em 0 var(--color-paleta2), 0.01em 0.01em 0 var(--color-paleta3),
+    0.015em 0.015em var(--color-paleta4), 0.02em 0.02em 0 var(--color-paleta5),
+    0.025em 0.025em 0 var(--color-paleta6), 0.03em 0.03em 0 var(--color-paleta7);
+}
