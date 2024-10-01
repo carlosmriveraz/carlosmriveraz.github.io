@@ -1,0 +1,63 @@
+.menu__config {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--fondo__principal);
+  color: var(--texto__menu);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu__config i {
+  font-size: 24px;
+}
+
+.menu__config__toggle-menu {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background-color: var(--fondo__principal);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.menu__config__toggle-menu label {
+  color: var(--texto__menu);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.menu__config__toggle-menu input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Clases para temas */
+.theme-light {
+  background-color: var(--fondo__claro);
+  color: var(--texto__claro);
+}
+
+.theme-dark {
+  background: linear-gradient(
+    135deg,
+    var(--color-rojo-3),
+    var(--color-rojo-2),
+    var(--color-rojo-4),
+    var(--color-rojo-1)
+  );
+  color: var(--texto__oscuro);
+}
+
+.theme-space {
+  background-color: var(--fondo__espacial);
+  color: var(--texto__espacial);
+}

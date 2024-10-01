@@ -37,7 +37,7 @@
   --color-menu: #2caa77;
   --color-principal: red;
   --color-primario: #d53032;
-  --color-secundario: #2caa77;
+  --color-secundario: #053e05;
   --color-terciario: #fb6383;
   --color-texto: ##66cdaa;
   --color-subtitulo: #d53032;
@@ -48,11 +48,21 @@
   --fondo-secundario: #66cdaa;
   --fondo-terciario: #fc94ae;
   --fondo-menu: #fa1b5b;
+
+  --fondo__claro: #ecf0f1;
+  --texto__claro: #2c3e50;
+  --fondo__oscuro: #2c3e50;
+  --texto__oscuro: #ecf0f1;
+  --fondo__espacial: #000033;
+  --texto__espacial: #00ffcc;
+  --fondo__principal: #3498db;
+  --texto__menu: #ffffff;
+
   /* Medidas textos */
-  --medida-texto: 1.1rem;
-  --medida-texto-extra-grande: 1.5rem;
+  --medida-texto: 1.5rem;
+  --medida-texto-extra-grande: 1.9rem;
   --medida-texto-extra-reducido: 0.6rem;
-  --medida-texto-grande: 1.3rem;
+  --medida-texto-grande: 1.7rem;
   --medida-texto-mediano: 1rem;
   --medida-texto-reducido: 1rem;
 

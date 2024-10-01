@@ -1,492 +1,225 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juego de Sara</title>
-    <link rel="stylesheet" href="./configuracion.css" />
-    <link rel="stylesheet" href="./css/menu__configuracion.css" />
-    <link rel="stylesheet" href="./css/sara.css" />
-    <link rel="stylesheet" href="./css/estadisticas.css" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Juego de Sara</title>
+		<link rel="stylesheet" href="./estilo.css" />
+		<title>¿Dónde está Sarita?</title>
+		<!-- <link rel="stylesheet" href="./sara.css" /> -->
+	</head>
 
-    <link rel="stylesheet" href="./css/fotter.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/general.css" />
+	<body>
+		<div class="estadisticas">
+			<p class="">restantes: <span id="divs-restantes">10</span></p>
+			<p class="">capturadas: <span id="divs-capturados">0</span></p>
+			<p class="holograma__rojo" sara>
+				Tiempo restante: <span id="tiempo-restante">2:00</span>
+			</p>
+		</div>
 
-    <style>
-      /* Estilo general para los modales */
-      .modal {
-        display: none; /* Ocultos por defecto */
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.5
-        ); /* Fondo oscuro semitransparente */
-        justify-content: center;
-        align-items: center;
-        display: flex;
-      }
+		<div id="modal-instrucciones" class="modal">
+			<h1>¿Dónde está Sarita?</h1>
+			<div class="modal-content">
+				<p>
+					Instrucciones: Haz clic en el texto "Sara" para moverlo y eliminar
+					divs. Tienes 2 minutos para completar el juego.
+				</p>
+				<button
+					class="close-button"
+					onclick="cerrarModal('modal-instrucciones')"
+				>
+					>>>
+				</button>
+				<img src="./imagenes/sarita.jpg" alt="Sarita" class="modal-image" />
+			</div>
+		</div>
 
-      .modal-content {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        width: 300px;
-      }
+		<div id="tablero">
+			<div
+				class="tablero__contenedor__sarita gradiente__verde__opaco"
+				id="game-board"
+			>
+				<div class="texto texto__1">
+					Amalia
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego Amalia carlosmariorivera.com "
+					/>
+				</div>
 
-      .modal-image {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-      }
+				<div class="texto texto__22">
+					Sofi
+					<img
+						src="./imagenes/fresa_gano.png"
+						alt="fresa sarita juego Amalia carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__1">
+					cata
+					<img
+						src="./imagenes/fresa.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__25">
+					Amalia
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego Amalia carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__1">
+					cata
+					<img
+						src="./imagenes/fresa.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__22">
+					Sofi
+					<img
+						src="./imagenes/fresa_gano.png"
+						alt="fresa sarita juego Amalia carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__33">
+					Amalia
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__55">
+					Amalia
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__8">
+					<img
+						src="./imagenes/fresa_gano.png"
+						alt="fresa sarita juego Amalia carlosmariorivera.com "
+					/>cata
+				</div>
+				<div class="texto texto__1">
+					cata
+					<img
+						src="./imagenes/fresa.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__1">
+					cata
+					<img
+						src="./imagenes/fresa.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__19">
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__1">
+					cata
+					<img
+						src="./imagenes/fresa.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__30">
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego Amalia carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__25 to__29">
+					Amalia1
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego Amalia carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__29">
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego Amalia carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__33">
+					Amalia
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+				<div class="texto texto__44">
+					cata
+					<img.
+						src="./imagenes/fresa.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
 
-      .close-button {
-        margin-top: 10px;
-        padding: 10px 20px;
-        background-color: #ff5e78;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
+				<div class="texto texto__94">Sara</div>
+				<div class="texto texto__1">
+					Amalia
+					<img
+						src="./imagenes/fresa_sarita.png"
+						alt="fresa sarita juego caata carlosmariorivera.com "
+					/>
+				</div>
+			</div>
 
-      .close-button:hover {
-        background-color: #ffb1b1;
-      }
-    </style>
-    <!-- <link rel="stylesheet" href="./sara.css" /> -->
-  </head>
+			<!-- Aquí podrías añadir más contenido si lo necesitas -->
+		</div>
 
-  <body>
-    <div id="modal-instrucciones" class="modal">
-      <div class="modal-content">
-        <img src="./imagenes/sarita.jpg" alt="Sarita" class="modal-image" />
-        <p>
-          Instrucciones: Haz clic en el texto "Sara" para moverlo y eliminar
-          divs. Tienes 2 minutos para completar el juego.
-        </p>
-        <button
-          class="close-button"
-          onclick="cerrarModal('modal-instrucciones')"
-        >
-          Comenzar
-        </button>
-      </div>
-    </div>
+		<p id="message" class="gradiente__verde__opaco"></p>
+		<!-- Modal de instrucciones -->
+		<fotter class="fondo">
+			<nav>
+				<div class="menu__config" id="config-icon">
+					<i class="material-icons">settings</i>
+				</div>
 
-    <header>
-      <h1>¿Dónde está Sarita?</h1>
-      <p
-        title="Haz clic en el texto 'Sara' para moverlo y eliminar divs. Tienes 2 minutos para completar el juego."
-        class="SuperBacano"
-      >
-        Instrucciones
-      </p>
-      <nav>
-        <div class="menu__config" id="config-icon">
-          <i class="material-icons">settings</i>
-        </div>
+				<div class="menu__config__toggle-menu" id="config-menu">
+					<label>
+						<input type="radio" name="theme" value="light" id="theme-light" />
+						Tema Claro
+					</label>
+					<label>
+						<input type="radio" name="theme" value="dark" id="theme-dark" />
+						Tema Oscuro
+					</label>
+					<label>
+						<input
+							type="radio"
+							name="theme"
+							value="space"
+							id="theme-space"
+							checked
+						/>
+						Tema sarita (Predeterminado)
+					</label>
+				</div>
+			</nav>
+			<!-- <div class="">
+        <div class="">riveradev</div>
+      </div> -->
+		</fotter>
 
-        <div class="menu__config__toggle-menu" id="config-menu">
-          <label>
-            <input type="radio" name="theme" value="light" id="theme-light" />
-            Tema Claro
-          </label>
-          <label>
-            <input type="radio" name="theme" value="dark" id="theme-dark" />
-            Tema Oscuro
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="theme"
-              value="space"
-              id="theme-space"
-              checked
-            />
-            Tema sarita (Predeterminado)
-          </label>
-        </div>
+		<!-- <script
+      type="module"
+      src="./js/notificacion__Instrucciones/mensaje_perder.js"
+    ></script>
+    <script src="./js/notificacion__Instrucciones/mensaje_ganar.js.js"></script> -->
+		<script></script>
 
-        <script>
-          document
-            .getElementById("config-icon")
-            .addEventListener("click", function () {
-              var menu = document.getElementById("config-menu");
-              menu.style.display =
-                menu.style.display === "block" ? "none" : "block";
-            });
-
-          document.querySelectorAll('input[name="theme"]').forEach((input) => {
-            input.addEventListener("change", function () {
-              document.body.className = ""; // Elimina clases existentes
-              if (this.value === "light") {
-                document.body.classList.add("theme-light");
-              } else if (this.value === "dark") {
-                document.body.classList.add("theme-dark");
-              } else {
-                document.body.classList.add("theme-space");
-              }
-            });
-          });
-        </script>
-      </nav>
-    </header>
-
-    <div id="tablero">
-      <div
-        class="tablero__contenedor__sarita gradiente__verde__opaco"
-        id="game-board"
-      >
-        <div class="texto texto__1">
-          Amalia
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__1">
-          cata
-          <img
-            src="./imagenes/fresa.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__22">
-          Sofi
-          <img
-            src="./imagenes/fresa_gano.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__1">
-          cata
-          <img
-            src="./imagenes/fresa.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-
-        <div class="texto texto__12">
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__1">
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego sofi carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__22">
-          Sofi
-          <img
-            src="./imagenes/fresa_gano.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__1">
-          cata
-          <img
-            src="./imagenes/fresa.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <!-- <div class="texto texto__3">
-          Amalia
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-  
-        <div class="texto texto__18">
-          Amalia
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__1">Amalia</div>
-        <div class="texto texto__1">
-          <img
-            src="./imagenes/fresa_gano.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />cata
-        </div>
-
-        <div class="texto texto__22">
-          Sofi
-          <img
-            src="./imagenes/fresa_gano.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__1">
-          CATA
-          <img
-            src="./imagenes/fresa.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />cata
-        </div>
-        <div class="texto texto__1">
-          Amalia
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__1">
-          <img
-            src="./imagenes/fresa_gano.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />cata
-        </div>
-        <div class="texto texto__55">
-          SOFIA
-          <img
-            src="./imagenes/fresa_gano.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />cata
-        </div> -->
-        <div class="texto texto__1">
-          cata
-          <img
-            src="./imagenes/fresa.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__22">
-          Sofi
-          <img
-            src="./imagenes/fresa_gano.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__33">
-          Amalia
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__55">
-          Amalia
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__8">
-          <img
-            src="./imagenes/fresa_gano.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />cata
-        </div>
-        <div class="texto texto__1">
-          cata
-          <img
-            src="./imagenes/fresa.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__1">
-          cata
-          <img
-            src="./imagenes/fresa.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__19">
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__50">
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__90">
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__25">
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__29">
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego Amalia carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__44">
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-        <div class="texto texto__44">
-          cata
-          <img.
-            src="./imagenes/fresa.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-
-        <div class="texto texto__94">Sara</div>
-        <div class="texto texto__1">
-          Amalia
-          <img
-            src="./imagenes/fresa_sarita.png"
-            alt="fresa sarita juego caata carlosmariorivera.com "
-          />
-        </div>
-      </div>
-      <script src="./juego.js"></script>
-      <!-- Aquí podrías añadir más contenido si lo necesitas -->
-    </div>
-    <hr />
-    <div class="estadisticas">
-      <p>Saras restantes: <span id="divs-restantes">10</span></p>
-      <p>Saras capturadas: <span id="divs-capturados">0</span></p>
-      <p>Tiempo restante: <span id="tiempo-restante">2:00</span></p>
-    </div>
-    <p id="message" class="holograma__rojo"></p>
-
-    <!-- Modal de instrucciones -->
-
-    <script>
-      // Mostrar modal al cargar la página
-      window.onload = function () {
-        document.getElementById("modal-instrucciones").style.display = "block";
-      };
-
-      // Función para cerrar un modal
-      function cerrarModal(id) {
-        document.getElementById(id).style.display = "none";
-      }
-    </script>
-
-    <script>
-      // Obtener todos los elementos de texto
-      const texts = document.querySelectorAll(".texto");
-      let capturedCount = 0;
-      let divsRestantes = texts.length;
-      let timer;
-      let tiempoRestante = 120; // Tiempo en segundos (2 minutos)
-
-      // Actualizar marcadores
-      document.getElementById("divs-restantes").innerText = divsRestantes;
-
-      // Función para buscar el div que contiene "Sara"
-      function findSara() {
-        return Array.from(texts).find((text) => text.innerText === "Sara");
-      }
-
-      // Función para mover "Sara" a un nuevo div aleatorio
-      function moveSara() {
-        const saraDiv = findSara(); // Buscar el div actual que contiene "Sara"
-
-        // Ocultar el div actual y quitar el texto
-        saraDiv.style.display = "none";
-        saraDiv.innerText = "";
-
-        capturedCount++;
-        divsRestantes--;
-
-        // Actualizar marcadores
-        document.getElementById("divs-capturados").innerText = capturedCount;
-        document.getElementById("divs-restantes").innerText = divsRestantes;
-
-        // Verificar si se ganó el juego
-        if (divsRestantes === 0) {
-          clearInterval(timer); // Detener el temporizador
-          document.getElementById("message").innerText =
-            "¡Felicidades! Has Ganado. Tio Mario te ama. :)";
-          return;
-        }
-
-        // Generar un nuevo índice aleatorio que sea diferente del actual
-        let newSaraDiv;
-        do {
-          const randomIndex = Math.floor(Math.random() * texts.length);
-          newSaraDiv = texts[randomIndex];
-        } while (
-          newSaraDiv.style.display === "none" // No mover a un div que ya haya sido ocultado
-        );
-
-        // Asignar el texto "Sara" al nuevo div
-        newSaraDiv.innerText = "Sara";
-      }
-
-      // Función para manejar el clic en el texto
-      function handleClick(event) {
-        const clickedDiv = event.target;
-
-        // Solo permitir que se haga clic en el div con "Sara"
-        if (clickedDiv.innerText === "Sara") {
-          moveSara(); // Mover "Sara" a otro div aleatorio
-        } else {
-          alert("¡Debes tocar el texto 'Sara' para continuar!");
-        }
-      }
-
-      // Temporizador
-      function startTimer() {
-        timer = setInterval(() => {
-          tiempoRestante--;
-          let minutes = Math.floor(tiempoRestante / 60);
-          let seconds = tiempoRestante % 60;
-
-          // Formatear segundos con 2 dígitos
-          seconds = seconds < 10 ? "0" + seconds : seconds;
-          document.getElementById("tiempo-restante").innerText =
-            minutes + ":" + seconds;
-
-          // Si el tiempo se acaba
-          if (tiempoRestante <= 0) {
-            clearInterval(timer);
-            document.getElementById("message").innerText =
-              "¡Tiempo agotado! Has perdido.";
-            // Deshabilitar clics en los divs
-            texts.forEach((text) => {
-              text.removeEventListener("click", handleClick);
-            });
-          }
-        }, 1000);
-      }
-
-      // Añadir el evento de clic solo a los divs que contienen "Sara"
-      texts.forEach((text) => {
-        text.addEventListener("click", handleClick);
-      });
-
-      // Iniciar el temporizador
-      startTimer();
-    </script>
-
-    <fotter class="fondo">
-      <div class="contenedor_letra sarita">
-        <div class="letra-grande">caata</div>
-      </div>
-    </fotter>
-  </body>
+		<script src="./js/notificacion__Instrucciones/notificacion__Instrucciones.js"></script>
+		<script src="./js/logica_juego.js"></script>
+		<script src="../js/menu_tema.js"></script>
+	</body>
 </html>

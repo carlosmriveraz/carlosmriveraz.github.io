@@ -5,12 +5,6 @@
   --color-rojo-3: #cc0000; /* Rojo oscuro */
   --color-rojo-4: #990000; /* Rojo muy oscuro */
   --color-rojo-5: #ff3333; /* Rojo brillante */
-
-  /* Nuevas variables de tonos rojos */
-  --color-paleta1: #ff3333; /* Rojo brillante */
-  --color-secundario: #ff6666; /* Rojo medio */
-  --color-terciario: #cc0000; /* Rojo oscuro */
-  --color-primario: #990000; /* Rojo muy oscuro */
 }
 
 .holograma__rojo {

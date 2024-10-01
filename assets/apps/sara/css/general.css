@@ -1,71 +1,77 @@
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  background-image: linear-gradient(135deg, #3498db, #ff9999),
-    /* Tonos rojos */ linear-gradient(45deg, #7cfc00, #66cdaa); /* Tonos verdes */
-  background-size: 100%, 80%; /* Ajusta el tamaño del fondo */
-  background-repeat: no-repeat;
-  font-family: Arial, sans-serif;
-  color: var(--color-principal);
-  transition: background-color 0.3s, color 0.3s;
-  padding: 1px;
-  margin: 1px;
+	background-image: linear-gradient(135deg, #3498db, #ff9999),
+		/* Tonos rojos */ linear-gradient(45deg, #7cfc00, #66cdaa); /* Tonos verdes */
+	background-size: 100%, 100%; /* Ajusta el tamaño del fondo */
+	background-repeat: no-repeat;
+	font-family: Arial, sans-serif;
+	color: var(--color-principal);
+	transition: background-color 0.3s, color 0.3s;
+	font-size: var(--medida-texto);
+	padding: 1px;
+	margin: 1px;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--fondo-menu);
-  color: var(--color-menu);
-  padding: 2px;
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--fondo-menu);
+	color: var(--color-menu);
+	padding: 2px;
 
-  border-radius: 10px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
-    /* Sombra principal */ -5px -5px 15px rgba(255, 255, 255, 0.8) inset,
-    /* Brillo interior superior */ 5px 5px 15px rgba(0, 0, 0, 0.2) inset;
+	border-radius: 10px;
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
+		/* Sombra principal */ -5px -5px 15px rgba(255, 255, 255, 0.8) inset,
+		/* Brillo interior superior */ 5px 5px 15px rgba(0, 0, 0, 0.2) inset;
 
-  transition: transform 0.7s ease-in-out, box-shadow 0.7s;
+	transition: transform 0.7s ease-in-out, box-shadow 0.7s;
 
-  /* Borde con gradiente de tonos verdes tipo hoja de fresa */
-  border: 5px solid transparent;
-  background-origin: border-box;
-  background-clip: content-box, border-box;
+	/* Borde con gradiente de tonos verdes tipo hoja de fresa */
+	border: 1px solid transparent;
+	background-origin: border-box;
+	max-height: 4vh;
+	background-clip: content-box, border-box;
 }
 
 p[title] {
-  cursor: pointer;
-  position: relative;
+	cursor: pointer;
+	position: relative;
 }
 
 /* Si quieres personalizar el tooltip */
 p[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  bottom: -1.5rem;
-  left: 0;
-  background-color: var(--fondo--terciario);
-  color: var(--color-principal);
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  white-space: nowrap;
-  font-size: 0.75rem;
-  z-index: 10;
+	content: attr(title);
+	position: absolute;
+	bottom: -1.5rem;
+	left: 0;
+	background-color: var(--fondo--terciario);
+	color: var(--color-principal);
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	white-space: nowrap;
+	font-size: 0.75rem;
+	z-index: 10;
 }
 
 p[title]:hover::before {
-  content: "";
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0.5rem;
-  border-width: 0.5rem;
-  border-style: solid;
-  border-color: transparent transparent var(--color-principal) transparent;
-  z-index: 10;
+	content: "";
+	position: absolute;
+	bottom: -0.5rem;
+	left: 0.5rem;
+	border-width: 0.5rem;
+	border-style: solid;
+	border-color: transparent transparent var(--color-principal) transparent;
+	z-index: 10;
+}
+
+#message {
+	font-size: 30px;
 }
