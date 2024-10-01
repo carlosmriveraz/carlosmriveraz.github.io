@@ -1,25 +1,28 @@
 @media (max-width: 768px) {
+  :root {
+    --medida-texto-extra-grande: 1.3rem;
+    --medida-texto-extra-reducido: 0.5rem;
+    --medida-texto-grande: 1rem;
+    --medida-texto: 0.8rem;
+
+    --medida-titulo: 2.4rem;
+    --medida-subtitulo: 1.1rem;
+    --medida-titulo-extra-grande: 3.5rem;
+    --medida-titulo-extra-reducido: 0.5rem;
+    --medida-titulo-grande: 2.6rem;
+  }
+
   iframe {
-    margin-top: 0.5rem;
+    margin: 0;
+    width: 100%;
+    padding: 0rem;
   }
 
-  /* Para tablets pequeñas y dispositivos móviles */
-  .inicio__titulo h1 {
-    font-size: 2.3rem;
-  }
-
-  .inicio__titulo h1 span {
-    font-size: 2.5rem;
-  }
-
-  .iframe {
-    height: 110vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-  }
   .doble__pantalla {
-    height: 140vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+    height: 150vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .triple__pantalla {
-    height: 200vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+    height: 210vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .texto {
     font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
@@ -27,25 +30,15 @@
 }
 
 @media (max-width: 576px) {
-  /* Para dispositivos móviles más pequeños */
-  .inicio__titulo h1 {
-    font-size: 2.1rem;
-  }
-
-  .inicio__titulo h1 span {
-    font-size: 2.4rem;
-  }
   .inicio__titulo h5 span {
     font-size: 1rem;
   }
-  .iframe {
-    height: 120vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
-  }
+
   .doble__pantalla {
-    height: 150vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+    height: 170vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .triple__pantalla {
-    height: 200vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+    height: 300vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .texto {
     font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */

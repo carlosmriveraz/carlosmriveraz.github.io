@@ -1,0 +1,47 @@
+/* Contenedor del menú de redes sociales con estructura BEM */
+.aside__social__social {
+  position: fixed;
+  /* Alinea a la derecha */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10vh;
+  height: 80vh;
+  background-color: #00ffffdd;
+  /* Limita el ancho total */
+}
+
+/* Estilo de los enlaces de íconos */
+.aside__social__social__icono {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem; /* Tamaño dsse cada ícono */
+  height: 2.5rem; /* Tamaño de cada ícono */
+  border-radius: 50%;
+  background-color: var(--color-paleta3);
+  color: var(--color__texto);
+  border: 0.2px solid var(--color__icono);
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem; /* Espacio entre íconos */
+}
+
+.aside__social__social__icono:hover {
+  color: var(--color-hover);
+  border-color: var(--color-hover);
+}
+
+.aside__social__social__icono:hover {
+  color: var(--color-hover);
+  border-color: var(--color-hover);
+}
+
+/* Ocultar menú en pantallas pequeñas */
+@media (max-width: 668px) {
+  .aside__social__social {
+    display: none;
+  }
+}

@@ -258,3 +258,20 @@
   background-color: var(--color-texto);
   margin: 1rem 0;
 }
+
+.tarjeta__linea {
+  height: 2px;
+  background-color: var(--color-paleta2);
+  margin: 10px 0;
+}
+
+.tarjeta__linea__gradiente {
+  width: 80%; /* No ocupa el 100% del ancho */
+  height: 2px; /* Grosor de la línea */
+  background: linear-gradient(
+    to right,
+    var(--color-paleta6),
+    var(--color-paleta1)
+  ); /* Gradiente de colores */
+  margin: 20px auto; /* Centrar la línea */
+}

@@ -24,16 +24,16 @@
 .boton_gradiente {
   background: linear-gradient(
     45deg,
-    var(__color-secundario),
-    var(__color-secundario2)
+    var(--color-secundario),
+    var(--color-secundario2)
   ); /* Usar colores secundarios */
 }
 
 .boton_gradiente-2 {
   background: linear-gradient(
     45deg,
-    var(__color-terciario),
-    var(__color-terciario2)
+    var(--color-terciario),
+    var(--color-terciario2)
   ); /* Usar colores terciarios */
 }
 
@@ -41,22 +41,22 @@
 .boton_gradiente:hover {
   background: linear-gradient(
     45deg,
-    var(__color-hover),
-    var(__color-secundario2)
+    var(--color-hover),
+    var(--color-secundario2)
   ); /* Usar color de hover y color secundario2 */
 }
 
 .boton_gradiente-2:hover {
   background: linear-gradient(
     45deg,
-    var(__color-hover),
-    var(__color-terciario2)
+    var(--color-hover),
+    var(--color-terciario2)
   ); /* Usar color de hover y color terciario2 */
 }
 
 /* Botón con animación constante */
 .boton_animado {
-  background-color: var(__color-secundario); /* Usar color secundario */
+  background-color: var(--color-secundario); /* Usar color secundario */
   animation: bounce 1s infinite; /* Animación definida más abajo */
 }
 
@@ -72,7 +72,7 @@
 
 /* Botones adicionales con diferentes estilos */
 .boton_sombra {
-  background-color: var(__color); /* Usar color principal */
+  background-color: var(--color); /* Usar color principal */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -82,18 +82,18 @@
 }
 
 .boton_brillo {
-  background-color: var(__color-terciario); /* Usar color terciario */
-  box-shadow: 0 0 10px var(__color-terciario);
+  background-color: var(--color-terciario); /* Usar color terciario */
+  box-shadow: 0 0 10px var(--color-terciario);
 }
 
 .boton_brillo:hover {
-  box-shadow: 0 0 20px var(__color-hover);
+  box-shadow: 0 0 20px var(--color-hover);
 }
 
 .boton_borde-doble {
   background-color: transparent;
-  color: var(__color); /* Usar color principal */
-  border: 2px solid var(__color); /* Usar color principal */
+  color: var(--color); /* Usar color principal */
+  border: 2px solid var(--color); /* Usar color principal */
   border-radius: var(__borde-redondeado); /* Usar borde redondeado */
   position: relative;
   z-index: 1;
@@ -106,30 +106,30 @@
   left: -4px;
   right: -4px;
   bottom: -4px;
-  border: 2px solid var(__color-secundario); /* Usar color secundario */
+  border: 2px solid var(--color-secundario); /* Usar color secundario */
   border-radius: var(__borde-redondeado); /* Usar borde redondeado */
   z-index: -1;
 }
 
 .boton_borde-doble:hover {
-  color: var(__color-blanco); /* Usar color blanco */
-  background-color: var(__color); /* Usar color principal */
+  color: var(--color-blanco); /* Usar color blanco */
+  background-color: var(--color); /* Usar color principal */
 }
 
 .boton_subrayado {
   background-color: transparent;
-  color: var(__color-secundario); /* Usar color secundario */
+  color: var(--color-secundario); /* Usar color secundario */
   border: none;
-  border-bottom: 2px solid var(__color-secundario); /* Usar color secundario */
+  border-bottom: 2px solid var(--color-secundario); /* Usar color secundario */
 }
 
 .boton_subrayado:hover {
-  color: var(__color-hover); /* Usar color de hover */
-  border-bottom-color: var(__color-hover); /* Usar color de hover */
+  color: var(--color-hover); /* Usar color de hover */
+  border-bottom-color: var(--color-hover); /* Usar color de hover */
 }
 
 .boton_icono {
-  background-color: var(__color); /* Usar color principal */
+  background-color: var(--color); /* Usar color principal */
   padding-left: var(__icono-width); /* Usar ancho del icono para padding */
   position: relative;
 }
@@ -148,14 +148,14 @@
   border: 2px solid transparent;
   border-radius: var(__borde-redondeado); /* Usar borde redondeado */
   background-image: linear-gradient(var(__texto), var(__texto)),
-    linear-gradient(45deg, var(__color-secundario), var(__color-secundario2)); /* Usar colores secundarios */
+    linear-gradient(45deg, var(--color-secundario), var(--color-secundario2)); /* Usar colores secundarios */
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 
 .boton_borde-gradiente:hover {
   color: var(__texto); /* Usar color de texto principal */
-  background-color: var(__color-secundario); /* Usar color secundario */
+  background-color: var(--color-secundario); /* Usar color secundario */
 }
 
 .btn,
@@ -164,49 +164,49 @@
   cursor: pointer;
   display: inline-block;
   padding: 1rem 2rem;
-  color: var(__color-primary);
+  color: var(--color-primary);
   border-radius: 2rem;
   border: 3px solid;
-  background-color: var(__color-paleta1), blue;
+  background-color: var(--color-paleta1), blue;
   transition: all 0.9s;
 }
 
 .btn-outline:link,
 .btn-outline:visited {
-  border-color: var(__color-primary);
-  background-color: var(__color-primary), #f0f3f6;
+  border-color: var(--color-primary);
+  background-color: var(--color-primary), #f0f3f6;
 }
 
 .btn-outline:hover,
 .btn-outline:active {
   color: #f0f3f6;
-  background-color: var(__color-primary);
+  background-color: var(--color-primary);
 }
 
 .btn-full:link,
 .btn-full:visited {
-  color: var(__color-paleta2), #f0f3f6;
-  background-color: var(__color-primary);
-  border-color: var(__color-primary);
+  color: var(--color-paleta2), #f0f3f6;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .btn-full:hover,
 .btn-full:active {
-  background-color: var(__color-paleta3);
-  border-color: var(__color-paleta2);
+  background-color: var(--color-paleta3);
+  border-color: var(--color-paleta2);
 }
 
 .botonLink {
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
-  color: var(__color-paleta2);
+  color: var(--color-paleta2);
   background: linear-gradient(
     135deg,
-    var(__color-paleta5),
-    var(__color-paleta6),
-    var(__color-paleta2),
-    var(__color-paleta6)
+    var(--color-paleta5),
+    var(--color-paleta6),
+    var(--color-paleta2),
+    var(--color-paleta6)
   );
   text-decoration: none;
   border-radius: 5px;
@@ -250,9 +250,63 @@
   height: 130px !important;
 }
 
+.icono__linkedin,
+.icono__github,
+.icono__whatsapp {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: #0ff;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 1.3s, box-shadow 9.3s;
+  color: var(--color-principal6);
+  text-decoration: none;
+}
+
+.icono__whatsapp {
+  background: url("../../../../images/social/svgnwhatsapp.svg") center / contain
+    no-repeat;
+}
+
+.icono__linkedin {
+  background: url("../../../../images/social/linkedin.svg") center / contain
+    no-repeat;
+}
+
+.icono__github {
+  background: url("../../../../images/social/github.svg") center / contain
+    no-repeat;
+}
+
+.icono__linkedin,
+.icono__github,
+.icono__whatsapp:hover {
+  background-color: var(--color-hover);
+  border-color: var(--color-hover);
+  transform: scale(1.2);
+  box-shadow: 0 4px 8px rgba(0, 200, 200, 0.9);
+}
+
 /* Estilo básico para los enlaces */
+.enlace {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-principal);
+  cursor: pointer; /* Agregado para interacción */
+}
 
 /* Opción 1: Subrayado Deslizante */
+.enlace__subrayado__deslizante {
+  background-size: 200% auto;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 .enlace__subrayado__deslizante::before {
   content: "";
   position: absolute;
@@ -260,10 +314,10 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(__color-paleta6);
+  background-color: var(--color-paleta6);
   visibility: hidden;
   transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
+  transition: visibility 0s, transform 0.3s ease-in-out; /* Mejorada */
 }
 
 .enlace__subrayado__deslizante:hover::before {
@@ -274,19 +328,20 @@
 /* Opción 2: Efecto de Resplandor */
 .enlace__efecto__resplandor:hover {
   color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(__color-paleta5),
-    0 0 40px var(__color-paleta5), 0 0 50px var(__color-paleta5),
-    0 0 60px var(__color-paleta5), 0 0 70px var(__color-paleta5);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--color-paleta5),
+    0 0 40px var(--color-paleta5), 0 0 50px var(--color-paleta5),
+    0 0 60px var(--color-paleta5), 0 0 70px var(--color-paleta5);
 }
 
-/* Opción 3: Desplazamiento de Fondo */
+/* Opción 3: Desplazamiento de Fondo con Gradiente */
 .enlace__desplazamiento__fondo {
   background: linear-gradient(
     to right,
-    var(__color-paleta4),
-    var(__color-paleta3)
+    var(--color-paleta4),
+    var(--color-paleta3)
   );
   background-size: 200% auto;
+  transition: background-position 0.5s ease;
 }
 
 .enlace__desplazamiento__fondo:hover {
@@ -302,9 +357,45 @@
 /* Opción 5: Cambio de Color de Fondo */
 .enlace__cambio__fondo {
   padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .enlace__cambio__fondo:hover {
-  background-color: var(__color-paleta4);
+  background-color: var(--color-paleta4);
   color: #fff;
+}
+
+/* Opción 6: Efecto 3D */
+.enlace__efecto__3d {
+  perspective: 1000px;
+}
+
+.enlace__efecto__3d:hover {
+  transform: rotateY(10deg);
+}
+
+/* Opción 7: Efecto Fuego */
+.enlace__efecto__fuego {
+  position: relative;
+  overflow: hidden;
+}
+
+.enlace__efecto__fuego::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 165, 0, 0.8) 0%,
+    rgba(255, 0, 0, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.enlace__efecto__fuego:hover::after {
+  opacity: 1;
 }

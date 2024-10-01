@@ -1,97 +1,143 @@
 /** @format */
 
 html {
-  scroll-behavior: smooth;
-  font-family: "Montserrat", sans-serif;
+	scroll-behavior: smooth;
+	font-family: "Montserrat", sans-serif;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body[data-theme="dark-theme"] {
-  background-image: url(../images/background/bk.jpg);
-  color: var(--color-texto) #fff;
-  text-align: center;
+	background-image: url(../images/background/bk.jpg);
+	color: var(--color-texto) #fff;
+	text-align: center;
 }
 
 body {
-  background: url(../images/background/bk.jpg);
-  background-size: cover;
+	background: url(../images/background/bk.jpg);
+	background-size: cover;
+	padding-top: 1rem;
+	background-repeat: no-repeat;
+	color: var(--color-texto);
+	font-family: var(--fuente-principal);
+	font-weight: 400;
+	transition: background-color 0.9s, color 0.3s;
+	text-align: justify;
+	text-shadow: -0.0075em 0.0075em 0 var(--color-paleta1),
+		0.005em 0.005em 0 var(--color-paleta2), 0.01em 0.01em 0 var(--color-paleta3),
+		0.015em 0.015em var(--color-paleta4), 0.02em 0.02em 0 var(--color-paleta5),
+		0.025em 0.025em 0 var(--color-paleta6), 0.03em 0.03em 0 var(--color-paleta7);
 
-  background-repeat: no-repeat;
-  color: var(--color-texto);
-  font-family: var(--fuente-principal);
-  font-weight: 400;
-  transition: background-color 0.9s, color 0.3s;
-  text-align: justify;
-  text-shadow: 0px 1px 2px var(--color-paleta6);
-  display: flex;
-  flex-flow: column wrap;
+	display: flex;
+	flex-flow: column wrap;
 }
+
+/* text-shadow: -0.0075em 0.0075em 0 var(--color-paleta1),
+0.005em 0.005em 0 var(--color-paleta2), 0.01em 0.01em 0 var(--color-paleta3),
+0.015em 0.015em var(--color-paleta4), 0.02em 0.02em 0 var(--color-paleta5),
+0.025em 0.025em 0 var(--color-paleta6), 0.03em 0.03em 0 var(--color-paleta7); */
 
 header {
-  position: absolute;
+	position: absolute;
 }
 main {
-  position: relative;
+	position: relative;
 }
 a {
-  line-height: normal;
-  text-decoration: none;
-  transition: all 0.8s ease-in-out;
+	line-height: normal;
+	text-decoration: none;
+	transition: all 0.8s ease-in-out;
 }
 
 iframe {
-  border: 2px solid var(--color-hover);
+	border: 2px solid var(--color-hover);
 
-  border-radius: 10px;
-  border-color: var(--color-paleta2);
-  box-shadow: inset 5px 5px 10px #61dafb99;
+	border-radius: 10px;
+	border-color: var(--color-hover);
+	box-shadow: inset 5px 5px 10px #61dafb99;
 
-  min-height: 96vh;
-  margin-top: 1.5rem;
-  width: 100%;
+	height: calc(100vh + 10rem);
+	min-height: 99vh;
+	margin-top: 0.5rem;
+	margin-right: 1.2rem;
+	width: 100%;
+}
+
+.iframe {
+	margin-top: 1rem;
+	position: relative;
+	border: 1px solid red; /* Inicialmente transparente */
+	background: linear-gradient(
+		to right,
+		var(--color-hover),
+		var(--color-paleta2),
+		var(--color-paleta3),
+		var(--color-paleta4),
+		var(--color-paleta5),
+		var(--color-paleta6),
+		var(--color-paleta5)
+	); /* Borde degradado */
+	border-image: linear-gradient(
+			to right,
+			var(--color-hover),
+			var(--color-paleta3)
+		)
+		1; /* Aplicar el degradado al borde */
+	box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.5),
+		0 4px 5px rgba(0, 0, 0, 0.3); /* Sombra interna y externa */
+	overflow: hidden; /* Para evitar que el contenido sobresalga */
+	border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+	iframe {
+		margin: 0;
+		width: 100%;
+		padding: 0rem;
+	}
 }
 
 .span {
-  color: var(--color-paleta5);
-  font-size: var(--medida-texto-extra-grande);
-  font-weight: 600;
+	color: var(--color-paleta5);
+	font-size: var(--medida-texto-extra-grande);
+	font-weight: 600;
 }
 
 li {
-  padding: 0;
-  margin-right: var(--margen-reducida);
+	padding: 0;
+	margin-right: var(--margen-reducida);
 }
 
 h3 {
-  font-size: var(--size-tercertitulo);
+	font-size: var(--size-tercertitulo);
 }
 
 h4 {
-  font-size: var(--size-textosmall);
+	font-size: var(--size-textosmall);
 }
 
 section {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 footer {
-  background-color: rgba(0, 0, 0, 0.8);
-  text-align: center;
+	background-color: rgba(0, 0, 0, 0.8);
+	text-align: center;
 }
 
 .doble__pantalla {
-  height: 160vh;
+	height: 160vh;
 }
 
 .triple__pantalla {
-  height: 270vh;
+	height: 270vh;
 }
 
 #inicio {
-  text-align: center;
+	text-align: center;
+	min-height: 70%;
 }
