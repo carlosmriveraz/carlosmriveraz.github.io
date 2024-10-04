@@ -10,18 +10,16 @@
 	border-radius: 0.3rem;
 	z-index: 1000;
 	white-space: nowrap;
-	transition: background-color 0.8s ease;
+	transition: all 0.8s ease;
 	color: var(--color-texto);
 	font-weight: bold;
 	font-size: 1.2rem;
 }
 
 .navbar span {
+	color: var(--color-paleta2);
 	font-size: var(--altura-navbar);
-	color: var(--color-paleta3);
-	font-weight: 900;
-	text-shadow: 0 0 1px var(--color-paleta1), /* Plateado */ 0 0 10px #c0c0c0,
-		0 0 15px #87ceeb, /* Azul plateado */ 0 0 5ch #87ceeb; /* Azul plateado */
+	text-shadow: 0 0 1px var(--color-paleta4);
 	transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
 	perspective: 1000px; /* Añade perspectiva para el efecto 3D */
 }
@@ -41,7 +39,7 @@
 	background-color: #00ffff55;
 	border: 0.2px solid #0ff;
 	box-shadow: inset 0 0 10px #61dafb;
-	max-width: 50%;
+	max-width: 70%;
 	color: #61dafb;
 }
 
@@ -52,9 +50,8 @@
 
 .navbar__menu-item a {
 	color: var(--color-texto);
-
+	margin: 0 2px;
 	text-decoration: none;
-	display: inline;
 	border-radius: 0.5rem; /* Bordes redondeados */
 	box-shadow: var(--color-hover);
 	transition: background-color 0.5s ease-in-out, color 0.7s ease-in-out,
