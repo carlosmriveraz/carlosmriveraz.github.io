@@ -1,0 +1,29 @@
+#tiempo__restante,
+#divs__capturados,
+#divs__restantes,
+#mensaje {
+	font-size: 1.5em;
+	margin-top: 20px;
+}
+
+/* Estilos adicionales para las ventanas emergentes */
+.ventana__emergente {
+	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	width: 50%;
+}
+
+.capa__superpuesta {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}

@@ -1,0 +1,115 @@
+.modal {
+  margin: 1rem 0;
+  border: 1px solid #0ff;
+  position: absolute; /* Fija el modal en toda la pantalla */
+  width: 100%;
+  top: 5px;
+  text-align: center;
+  height: 100vh;
+  background: linear-gradient(
+    15deg,
+    var(--fondo-secundario),
+    var(--fondo-principal),
+    var(--fondo-primario),
+    var(--fondo-terciario)
+  );
+
+  gap: 0.1rem;
+  z-index: 100;
+  color: var(--color-principal);
+}
+
+.modal__contenido {
+  border: 1px solid #0ff;
+
+  position: relative;
+  background-color: var(--fondo-terciario);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 30rem;
+  font-size: 1.5rem;
+
+  z-index: 101;
+  color: var(--color-secundario);
+
+  /* Centrado absoluto */
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  opacity: 0.95;
+  transition: all 0.5s;
+}
+
+.modal__contenido:hover {
+  color: var(--color-primario);
+
+  opacity: 1;
+}
+
+.modal__image {
+  width: 16rem;
+  border: 1px solid #0ff;
+  border-radius: 8px;
+}
+
+#boton__comenzar {
+  background-color: var(--fondo-secundario); /* Color de fondo al pasar */
+
+  border: 1px solid #0ff; /* Sin borde */
+  padding: 0.5rem 1.5rem; /* Espaciado interno */
+  margin-top: 1rem;
+  text-decoration: none;
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: 3rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cambiar cursor al pasar */
+  transition: background-color 0.9s, transform 0.3s; /* Efecto de transición */
+  background-color: var(--fondo-menu); /* Color de fondo al pasar */
+}
+
+#boton__comenzar:hover {
+  background-color: var(--fondo-secundario); /* Color de fondo al pasar */
+  transform: scale(1.05); /* Aumentar tamaño al pasar */
+}
+
+/* Estilo para la capa superpuesta (fondo oscuro) */
+#capa-superpuesta {
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-fondo-superpuesto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Estilo para la ventana emergente */
+.ventana-emergente {
+  background-color: var(--fondo-principal); /* Fondo de la ventana */
+  border-radius: var(--border-radius); /* Bordes redondeados */
+  padding: 0.1rem;
+  text-align: center;
+
+  color: var(--color-texto); /* Color del texto */
+}
+
+/* Estilo para el título de la ventana emergente */
+.ventana-emergente h2 {
+  color: var(--color-titulo); /* Título con color personalizado */
+}
+
+/* Estilo para la descripción de la ventana emergente */
+.ventana-emergente p {
+  color: var(--color-subtitulo); /* Color del subtítulo */
+}
+
+/* Estilo para la imagen dentro de la ventana emergente */
+.ventana-emergente__imagen {
+  border-radius: var(--border-radius);
+}
+.material-icons {
+  /* Espacio entre icono y texto */
+  color: var(--color-menu);
+}
