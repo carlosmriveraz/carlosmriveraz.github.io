@@ -31,32 +31,31 @@
 
   /* #1e53a8  #d61760  #dcc023  #1cd1b4  #2a2b2c  
   * #b286c6  #9ebaf5  #bd2716  #e9c0e2  #fafbfb  #ae47be  #f6cf99 
-   #f9e5d0  #c3dff6  #fad7e0  */
+   #f9e5d0  #c3dff6  #fad7e0  #006400  #228B22 */
 
   /* Colores principales */
   --color-menu: #2caa77;
-  --color-principal: red;
+  --color-principal: #fa0000;
   --color-primario: #d53032;
-  --color-secundario: #053e05;
-  --color-terciario: #fb6383;
-  --color-texto: ##66cdaa;
+  --color-secundario: #070;
+  --color-terciario: #053e05aa;
+  --color-texto: #dd3322;
   --color-subtitulo: #d53032;
   --color-titulo: #00ffff;
-  --color-hover: #2caa77;
+  --color-hover: #fc94ae;
 
   --fondo-principal: #fa1b5b;
-  --fondo-secundario: #66cdaa;
-  --fondo-terciario: #fc94ae;
+  --fondo-primario: #fc94aeee;
+  --fondo-secundario: #1cd1b4;
+  --fondo-terciario: #66cdaaee;
   --fondo-menu: #fa1b5b;
 
-  --fondo__claro: #ecf0f1;
-  --texto__claro: #2c3e50;
-  --fondo__oscuro: #2c3e50;
-  --texto__oscuro: #ecf0f1;
-  --fondo__espacial: #000033;
-  --texto__espacial: #00ffcc;
-  --fondo__principal: #3498db;
-  --texto__menu: #ffffff;
+  --fondo-claro: #ecf0f1;
+  --texto-claro: #2c3e50;
+  --fondo-oscuro: #2c3e50;
+  --texto-oscuro: #ecf0f1;
+  --fondo-espacial: #000033;
+  --texto-espacial: #00ffcc;
 
   /* Medidas textos */
   --medida-texto: 1.5rem;
@@ -90,12 +89,12 @@
   --relleno-reducido: 0.5rem;
 
   /* Paleta de colores */
-  --color-paleta1: #110114ff;
-  --color-paleta2: #3a3f47;
-  --color-paleta3: #444c56;
+  --color-paleta1: #004400;
+  --color-paleta2: #006600;
+  --color-paleta3: #009966;
   --color-paleta4: #00c3ff;
-  --color-paleta5: #61dafb55;
-  --color-paleta6: #90e0ef;
+  --color-paleta5: #d61760;
+  --color-paleta6: #00ffcc;
   --color-paleta7: #7cfc00;
 
   /* Colores */
@@ -107,7 +106,11 @@
   --sombra-4: 4px 4px 0;
 
   /* Fuentes */
+  --fuente-principal: "Roboto", sans-serif; /* Fuente principal */
   --fuente-primaria: "Montserrat", sans-serif; /* Fuente principal */
+
+  --fuente-secundaria: "Lato", sans-serif; /* Fuente principal */
+  --fuente-terciaria: "poppins", sans-serif; /* Fuente principal */
 
   /* Tamaños de Fuente */
   --tamano-titulo: 2rem; /* Tamaño del título */

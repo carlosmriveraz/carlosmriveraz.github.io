@@ -1,12 +1,18 @@
 .menu__config {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 10px;
+  left: 10px;
   width: 40px;
   height: 40px;
-  background: var(--fondo__principal);
-  color: var(--texto__menu);
-  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--color-rojo-3),
+    var(--color-rojo-2),
+    var(--color-rojo-4),
+    var(--color-rojo-1)
+  );
+  color: var(--color-secundario);
+  border-radius: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +29,13 @@
   position: fixed;
   bottom: 80px;
   left: 20px;
-  background-color: var(--fondo__principal);
+  background: linear-gradient(
+    135deg,
+    var(--fondo-secundario),
+    var(--color-rojo-2),
+    var(--fondo-terciario),
+    var(--color-rojo-1)
+  );
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -31,7 +43,7 @@
 }
 
 .menu__config__toggle-menu label {
-  color: var(--texto__menu);
+  color: var(--color-principal);
   display: block;
   margin-bottom: 10px;
 }
@@ -42,22 +54,17 @@
 
 /* Clases para temas */
 .theme-light {
-  background-color: var(--fondo__claro);
-  color: var(--texto__claro);
+  background-color: var(--fondo-claro);
+  color: var(--texto-claro);
 }
 
 .theme-dark {
-  background: linear-gradient(
-    135deg,
-    var(--color-rojo-3),
-    var(--color-rojo-2),
-    var(--color-rojo-4),
-    var(--color-rojo-1)
-  );
-  color: var(--texto__oscuro);
+  background-color: var(--fondo-oscuro);
+
+  color: var(--texto-oscuro);
 }
 
 .theme-space {
-  background-color: var(--fondo__espacial);
-  color: var(--texto__espacial);
+  background-color: var(--fondo-principal);
+  color: var(--color-principal);
 }

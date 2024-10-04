@@ -1,0 +1,184 @@
+/** @format */
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  height: 100vh;
+}
+
+.contenedor > :first-child {
+  padding-top: 3rem; /* Añade un espacio en la parte superior del primer elemento */
+}
+
+/* Elemento interno */
+.contenido {
+  width: 100%;
+  /* Ancho del 100% del contenedor */
+
+  gap: 5rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  /* Altura del 100% del contenedor */
+
+  /* Otros estilos que no causen scroll */
+}
+
+.contenedor__aumentotamano {
+  transition: transform 1.2s ease;
+}
+
+.contenedor__aumentotamano:hover {
+  transform: scale(1.05);
+}
+
+.contenedor__medio {
+  position: relative;
+  margin: 0.1rem auto;
+}
+.contenedor__flex {
+  display: flex;
+}
+
+.contenedor__flex__separado {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+  justify-content: space-between; /* Espacio entre los elementos */
+  gap: 1rem; /* Espacio entre tarjetas */
+  margin-bottom: 2rem; /* Espacio inferior */
+}
+.contenedor__flex__columna {
+  display: flex;
+
+  flex-direction: column;
+}
+.contenedor__flex__columna h1 {
+  flex-wrap: wrap;
+}
+
+.contenedor__flex__columna__evenly {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.contenedor__flex__columna__around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.contenedor__flex__columna__between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contenedor__flex__columna__centrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Alineación de elementos al inicio del contenedor */
+.contenedor__flex__columna__inicio {
+  align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+}
+
+/* Alineación de elementos al final del contenedor */
+.contenedor__flex__columna__fin {
+  align-items: flex-end; /* Alinea los elementos al final del contenedor */
+}
+
+/* Alineación de elementos estirados para llenar el espacio disponible */
+.contenedor__flex__columna__estirado {
+  justify-content: space-between; /* Estira los elementos para que ocupen el espacio del contenedor */
+}
+
+/* Alineación de elementos a la línea base de su contenido */
+.contenedor__flex__columna__base {
+  align-items: baseline; /* Alinea los elementos a la línea base de su contenido */
+}
+
+.iframe__wrapper {
+  position: relative; /* Posiciona el contenedor en relación con su contenedor padre */
+  width: 100%; /* El contenedor ocupa el 100% del ancho disponible */
+  padding-top: 56.25%; /* Proporción de 16:9 para mantener el aspecto del iframe */
+  height: 0; /* El truco para mantener la proporción */
+}
+
+.iframe__wrapper iframe {
+  position: absolute; /* Posiciona el iframe dentro del contenedor */
+  top: 0;
+  left: 0;
+  min-width: 100%; /* El iframe ocupa el 100% del ancho del contenedor */
+  min-height: 100%; /* El iframe ocupa el 100% de la altura del contenedor */
+  border: none; /* Elimina el borde del iframe */
+}
+
+/* Estilo para los elementos dentro del contenedor */
+.contenedor__item {
+  padding: 1rem; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+  text-align: center; /* Alineación del texto al centro */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de caja */
+}
+
+/* Estilos para pantallas grandes (dos columnas) */
+.contenedor__columnas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contenedor__columnas__item {
+  flex: 1 1 calc(50% - 1rem); /* Dos columnas con espacio entre ellas */
+}
+
+/* Configuración de la esfera 3D */
+.contenedor__columnas__item__movimiento {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s; /* Suaviza la transición de rotación */
+  margin-top: 10rem;
+}
+
+/* Estilos para pantallas medianas y pequeñas (una fila) */
+@media (max-width: 768px) {
+  .contenedor__columnas__item {
+    flex: 1 1 100%; /* Una columna en pantallas pequeñas */
+  }
+}
+
+.contenedor__columnas__item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s; /* Suaviza la transición de rotación */
+}
+
+.contenedor__grid_2 {
+  display: grid; /* Ajusta la dirección de los elementos en pantallas más pequeñas */
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .contenedor__grid_2 {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 columnas en pantallas más grandes */
+  }
+}
+
+.contenedor__padding {
+  padding: 1rem;
+}
