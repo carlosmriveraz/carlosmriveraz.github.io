@@ -1,0 +1,193 @@
+/* Gradientes */
+.gradiente__radial {
+  background-color: radial-gradient(
+    circle,
+    #01257d,
+    #04254e,
+    rgba(138, 213, 235, 0.3)
+  );
+}
+
+.gradiente__horizontal {
+  background: conic-gradient(from 0deg, #3498db, #01257d);
+}
+
+.gradiente__diagonal {
+  background: linear-gradient(135deg, #3498db, #bdc3c7);
+}
+.gradiente__diagonal-lineal {
+  background: linear-gradient(
+    18deg,
+    rgba(4, 37, 78, 1) 3%,
+    rgba(138, 84, 162, 1) 20%,
+    rgba(89, 84, 164, 1) 60%,
+    rgba(138, 213, 235, 1)
+  );
+}
+
+.gradiente__paletas {
+  background: radial-gradient(
+      circle,
+      var(--color-paleta1),
+      var(--color-paleta2)
+    ),
+    radial-gradient(circle at top left, var(--color-paleta3), transparent),
+    radial-gradient(
+      circle at bottom right,
+      var(--color-paleta4),
+      var(--color-paleta5)
+    ),
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.5),
+      var(--color-paleta6)
+    );
+}
+
+/* Gradiente predominante de la paleta 1 (Cálidos) */
+.gradiente__paleta1 {
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--color-paleta1),
+    /* Color predominante */ var(--color-paleta2),
+    var(--color-paleta3),
+    var(--color-paleta4)
+  );
+  filter: brightness(1.2); /* Brillo extra */
+}
+
+/* Gradiente predominante de la paleta 2 (Fríos) */
+.gradiente__paleta2 {
+  background: linear-gradient(
+    135deg,
+    var(--color-paleta2),
+    /* Color predominante */ var(--color-paleta1),
+    var(--color-paleta3),
+    var(--color-paleta4)
+  );
+  filter: brightness(1.2); /* Brillo extra */
+}
+
+/* Gradiente predominante de la paleta 3 (Neones) */
+.gradiente__paleta3 {
+  background: conic-gradient(
+    from 180deg,
+    var(--color-paleta3),
+    /* Color predominante */ var(--color-paleta1),
+    var(--color-paleta2),
+    var(--color-paleta4)
+  );
+  filter: brightness(1.3); /* Más brillo */
+}
+
+/* Gradiente predominante de la paleta 4 (Pasteles) */
+.gradiente__paleta4 {
+  background: radial-gradient(
+    ellipse at center,
+    var(--color-paleta4),
+    /* Color predominante */ var(--color-paleta1),
+    var(--color-paleta2),
+    var(--color-paleta3)
+  );
+  filter: brightness(1.2); /* Brillo extra */
+}
+
+/* Gradiente predominante de la paleta 5 (Monocromáticos) */
+.gradiente__paleta5 {
+  background: linear-gradient(
+    160deg,
+    var(--color-paleta5),
+    /* Color predominante */ var(--color-paleta1),
+    var(--color-paleta2),
+    var(--color-paleta4)
+  );
+  filter: brightness(1.1); /* Brillo más sutil */
+}
+
+/* Gradiente predominante de la paleta 6 (Tonos tierra) */
+.gradiente__paleta6 {
+  background: conic-gradient(
+    from 270deg,
+    var(--color-paleta6),
+    /* Color predominante */ var(--color-paleta1),
+    var(--color-paleta2),
+    var(--color-paleta5)
+  );
+  filter: brightness(1.2); /* Brillo extra */
+}
+
+/* Gradiente predominante de la paleta 7 (Contrastes) */
+.gradiente__paleta7 {
+  background: radial-gradient(
+    circle at 70% 70%,
+    var(--color-paleta7),
+    /* Color predominante */ var(--color-paleta1),
+    var(--color-paleta3),
+    var(--color-paleta4)
+  );
+  filter: brightness(1.4); /* Máximo brillo */
+}
+
+/* Gradiente cálido vibrante */
+.gradiente__calido {
+  background: radial-gradient(
+    circle at 40% 40%,
+    #ff4500,
+    /* Naranja fuego */ #ff6347,
+    /* Tomate */ #ffa07a,
+    /* Salmón claro */ #ffdab9 /* Melocotón */
+  );
+  filter: brightness(1.3);
+}
+
+/* Gradiente oceánico frío */
+.gradiente__frio {
+  background: linear-gradient(
+    120deg,
+    #00bfff,
+    /* Azul profundo */ #1e90ff,
+    /* Azul cielo */ #4682b4,
+    /* Azul acero */ #5f9ea0 /* Azul cadete */
+  );
+  filter: brightness(1.2);
+}
+
+/* Gradiente neón eléctrico */
+.gradiente__neon {
+  background: conic-gradient(
+    from 180deg,
+    #ff00ff,
+    /* Magenta neón */ #ff1493,
+    /* Rosa intenso */ #ff4500,
+    /* Naranja fuerte */ #00ff7f /* Verde primavera neón */
+  );
+  filter: brightness(1.4);
+}
+.fondo__semitransparente {
+  position: relative;
+  background-color: rgba(50, 50, 50, 0.7);
+}
+
+/* Gradiente pastel suave */
+.gradiente__pastel {
+  background: radial-gradient(
+    ellipse at center,
+    #f8b195,
+    /* Rosa pastel */ #f67280,
+    /* Melocotón suave */ #c06c84,
+    /* Malva claro */ #6c5b7b /* Lila oscuro */
+  );
+  filter: brightness(1.2);
+}
+
+/* Gradiente tonos tierra naturales */
+.gradiente__tierra {
+  background: linear-gradient(
+    160deg,
+    #8b4513,
+    /* Marrón madera */ #d2691e,
+    /* Marrón rojizo */ #f4a460,
+    /* Arena */ #ffebcd /* Beige claro */
+  );
+  filter: brightness(1.1);
+}

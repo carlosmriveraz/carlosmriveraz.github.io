@@ -1,0 +1,178 @@
+.grupo__habilidades {
+  margin-bottom: 2rem;
+}
+
+.titulo__habilidades {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.lista__datos__habilidades {
+  list-style: none;
+  padding: 0;
+}
+
+.icono__javascript::before {
+  content: "";
+  background-image: url("../../../images/frontend/js.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__css::before {
+  content: "";
+  background-image: url("../../../images/frontend/css.ico");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__html::before {
+  content: "";
+  background-image: url("../../../images/frontend/html.ico");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__react::before {
+  content: "";
+  background-image: url("../../../images/frontend/react.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__angular::before {
+  content: "";
+  background-image: url("../../../images/frontend/angular.ico");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* AWS Skills */
+.icono__quicksight::before {
+  content: "";
+  background-image: url("../../../images/aws/quicksight.webp");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__ec2::before {
+  content: "";
+  background-image: url("../../../images/aws/ec2.webp");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__athena::before {
+  content: "";
+  background-image: url("../../../images/aws/athena.webp");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__s3::before {
+  content: "";
+  background-image: url("../../../images/aws/s3.webp");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__glue::before {
+  content: "";
+  background-image: url("../../../images/aws/glue.webp");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Backend Skills */
+.icono__aspnet::before {
+  content: "";
+  background-image: url("../../../images/backend/netcore.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__python::before {
+  content: "";
+  background-image: url("../../../images/backend/python.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__java::before {
+  content: "";
+  background-image: url("../../../images/backend/java.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__api::before {
+  content: "";
+  background-image: url("../../../images/backend/api.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Database Skills */
+.icono__mysql::before {
+  content: "";
+  background-image: url("../../../images/db/mysql.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__mariadb::before {
+  content: "";
+  background-image: url("../../../images/db/maria.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__sqlserver::before {
+  content: "";
+  background-image: url("../../../images/db/file_type_sql_icon_130152.svg");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icono__rds::before {
+  content: "";
+  background-image: url("../../../images/aws/rds.webp");
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

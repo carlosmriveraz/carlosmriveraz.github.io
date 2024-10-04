@@ -1,0 +1,135 @@
+:root {
+  /* Alturas */
+  --altura-completa: 100vh;
+  --altura-contenido: 70rem;
+  --altura-grande: 80vh;
+  --altura-mediano: 60vh;
+  --altura-minima: 20vh;
+  --altura-navbar: 1.8rem;
+  --altura-reducido: 40vh;
+
+  /* Anchos */
+  --ancho-completo: 100%;
+  --ancho-contenido: 70rem;
+  --ancho-grande: 75%;
+  --ancho-maximo: 90%;
+  --ancho-mediano: 50%;
+  --ancho-minimo: 10%;
+  --ancho-reducido: 25%;
+  --ancho-menu: 100%;
+
+  /* Bordes */
+  /* Bordes */
+  --borde-estandar: 1rem;
+  --borde-extra-grande: 3rem;
+  --borde-extra-reducido: 0.0625rem;
+  --borde-grande: 2rem;
+  --borde-mediano: 1.5rem;
+  --borde-reducido: 0.125rem;
+  /* Medidas títulos  #2caa77  #fa1b5b  #fb6383  #0d4583 */
+  /*  #fcd6df  #99657b  #fcacc4  #fc94ae */
+
+  /* #1e53a8  #d61760  #dcc023  #1cd1b4  #2a2b2c  
+  * #b286c6  #9ebaf5  #bd2716  #e9c0e2  #fafbfb  #ae47be  #f6cf99 
+   #f9e5d0  #c3dff6  #fad7e0  #006400  #228B22 */
+
+  /* Colores principales */
+  --color-menu: #2caa77;
+  --color-principal: #fa0000;
+  --color-primario: #d53032;
+  --color-secundario: #070;
+  --color-terciario: #053e05aa;
+  --color-texto: #dd3322;
+  --color-subtitulo: #d53032;
+  --color-titulo: #00ffff;
+  --color-hover: #fc94ae;
+
+  --fondo-principal: #fa1b5b;
+  --fondo-primario: #fc94aeee;
+  --fondo-secundario: #1cd1b4;
+  --fondo-terciario: #66cdaaee;
+  --fondo-menu: #fa1b5b;
+
+  --fondo-claro: #ecf0f1;
+  --texto-claro: #2c3e50;
+  --fondo-oscuro: #2c3e50;
+  --texto-oscuro: #ecf0f1;
+  --fondo-espacial: #000033;
+  --texto-espacial: #00ffcc;
+
+  /* Medidas textos */
+  --medida-texto: 1.5rem;
+  --medida-texto-extra-grande: 1.9rem;
+  --medida-texto-extra-reducido: 0.6rem;
+  --medida-texto-grande: 1.7rem;
+  --medida-texto-mediano: 1rem;
+  --medida-texto-reducido: 1rem;
+
+  /* Medidas títulos */
+  --medida-titulo: 2.2rem;
+  --medida-subtitulo: 2rem;
+  --medida-titulo-extra-grande: 3rem;
+  --medida-titulo-extra-reducido: 0.5rem;
+  --medida-titulo-grande: 2.8rem;
+  --medida-titulo-mediano: 1.8rem;
+  --medida-titulo-reducido: 1.6rem;
+
+  /* Márgenes */
+  --margen-extra-grande: 4rem;
+  --margen-extra-reducido: 0.25rem;
+  --margen-grande: 2rem;
+  --margen-mediano: 1.5rem;
+  --margen-reducido: 1rem;
+
+  /* Rellenos */
+  --relleno-extra-grande: 10rem;
+  --relleno-extra-reducido: 0.25rem;
+  --relleno-grande: 5rem;
+  --relleno-mediano: 1rem;
+  --relleno-reducido: 0.5rem;
+
+  /* Paleta de colores */
+  --color-paleta1: #004400;
+  --color-paleta2: #006600;
+  --color-paleta3: #009966;
+  --color-paleta4: #00c3ff;
+  --color-paleta5: #d61760;
+  --color-paleta6: #00ffcc;
+  --color-paleta7: #7cfc00;
+
+  /* Colores */
+
+  /* Sombra del texto */
+  --sombra-1: 1px 1px 0;
+  --sombra-2: 2px 2px 0;
+  --sombra-3: 3px 3px 0;
+  --sombra-4: 4px 4px 0;
+
+  /* Fuentes */
+  --fuente-principal: "Roboto", sans-serif; /* Fuente principal */
+  --fuente-primaria: "Montserrat", sans-serif; /* Fuente principal */
+
+  --fuente-secundaria: "Lato", sans-serif; /* Fuente principal */
+  --fuente-terciaria: "poppins", sans-serif; /* Fuente principal */
+
+  /* Tamaños de Fuente */
+  --tamano-titulo: 2rem; /* Tamaño del título */
+  --tamano-subtitulo: 1.5rem; /* Tamaño del subtítulo */
+  --tamano-texto: 1rem; /* Tamaño del texto */
+  --tamano-texto-pequeno: 0.875rem; /* Tamaño del texto pequeño */
+
+  /* Espaciado */
+  --margen: 1.5rem; /* Margen principal */
+  --padding: 1rem; /* Relleno (padding) principal */
+  --espaciado-entre-lineas: 1.6; /* Espaciado entre líneas */
+
+  /* Bordes */
+  --borde: 1px solid #61dafb; /* Borde principal */
+  --borde-reducido: 2px solid var(--color-paleta4), #61dafb; /* Borde fino */
+  --borde-redondeado: 5px; /* Borde redondeado */
+  --borde-mediano: 1.5rem; /* Borde redondeado */
+  /* Otros Estilos */
+  --sombra-caja: 0px 0.25rem 0.5rem #61dafb; /* Sombra de la caja */
+  --sombra-texto: 0px 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3); /* Sombra del texto */
+  --delay: 2s;
+}
