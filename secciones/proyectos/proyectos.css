@@ -112,9 +112,8 @@
 }
 
 .tarjeta_kpi__value {
-  font-size: 0.8rem; /* Ajusta el tamaño de la fuente del valor principal */
   margin-top: 0;
-  height: 0.85rem;
+  height: 1.5rem;
   color: var(--color-principal);
 }
 

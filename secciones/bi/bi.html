@@ -216,7 +216,7 @@
 					<a
 						href="./Dolar_completo_API/Dolar_completo_API.html"
 						role="Ir a pagina de los datos historicos oficiales"
-						class="holograma enlace enlace__efecto__3d enlace__subrayado__deslizante"
+						class="enlace enlace__efecto__3d enlace__subrayado__deslizante"
 						target="_blank"
 						title="ir a datos historicos oficiales"
 					>
@@ -225,7 +225,23 @@
 				</div>
 			</section>
 		</main>
-
+		<div class="tabla__contenedor">
+			<h2>Estadísticas Mensuales</h2>
+			<table id="monthly-statistics" class="display">
+				<thead>
+					<tr>
+						<th>Mes</th>
+						<th>Promedio</th>
+						<th>Máximo</th>
+						<th>Mínimo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Aquí se llenarán los datos mensuales -->
+				</tbody>
+			</table>
+		</div>
+		<button id="generate-stats">Generar Estadísticas</button>
 		<script src="./js/bi_calcular_valor_Api.js"></script>
 		<script src="./js/bi_calcular_estadisticas.js"></script>
 		<script src="./js/generar__graficos.js"></script>
@@ -302,7 +318,7 @@
 
 				document.getElementById("valor-minimo").textContent = minValue;
 				document.getElementById("valor-maximo").textContent = maxValue;
-				document.getElementById("valor-promedio").textContent = avgValue;
+				document.getElementById("avg-value").textContent = avgValue;
 			}
 		</script>
 		<script>
@@ -396,6 +412,26 @@
 			window.onload = function () {
 				initialize();
 			};
+		</script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				loadCSVData(); // Asegúrate de que esta función esté definida
+				// Si se necesita
+			});
+
+			// Asegúrate de que todas las funciones estén correctamente definidas
+			function displayMonthlyTable(stats) {
+				const table = document.getElementById("monthly-statistics");
+				const tbody = table.querySelector("tbody");
+				tbody.innerHTML = "";
+
+				stats.forEach((row) => {
+					const tr = document.createElement("tr");
+					tr.innerHTML = `<td>${row.month}</td><td>${row.average}</td><td>${row.max}</td><td>${row.min}</td>`;
+					tbody.appendChild(tr);
+				});
+			}
 		</script>
 		<script src="biscripts.js"></script>
 	</body>
