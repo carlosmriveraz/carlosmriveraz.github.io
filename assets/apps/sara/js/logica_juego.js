@@ -34,6 +34,9 @@ function iniciarJuego() {
   function moveSara() {
     const saraDiv = findSara(); // Buscar el div actual que contiene "Sara"
 
+    // Reproducir el sonido de acierto (cuando el jugador acierta con "Sara")
+    reproducirSonidoSara();
+
     // Ocultar el div actual y quitar el texto
     saraDiv.style.display = "none";
     saraDiv.innerText = "";
@@ -41,17 +44,15 @@ function iniciarJuego() {
     capturedCount++;
     divsRestantes--;
 
-    // Reproducir el sonido de acierto (cuando el jugador acierta con "Sara")
-    reproducirSonidoSara();
-
     // Actualizar marcadores
     document.getElementById("divs-capturados").innerText = capturedCount;
     document.getElementById("divs-restantes").innerText = divsRestantes;
 
     // Verificar si se ganó el juego
     if (divsRestantes === 0) {
-      clearInterval(timer); // Detener el temporizador
       reproducirSonidoGanar(); // Sonido de ganar
+      clearInterval(timer); // Detener el temporizador
+
       mostrarVentanaEmergente(
         "¡Felicidades! Ganaste",
         "Has capturado todas las Saras.",
@@ -79,8 +80,8 @@ function iniciarJuego() {
     if (clickedDiv.innerText === "Sara") {
       moveSara(); // Mover "Sara" a otro div aleatorio
     } else {
-      alert("¡Debes tocar el texto 'Sara' para continuar!");
       reproducirSonidoError(); // Sonido de error al equivocarse
+      alert("¡Debes tocar el texto 'Sara' para continuar!");
     }
   }
 
@@ -98,8 +99,9 @@ function iniciarJuego() {
 
       // Si el tiempo se acaba
       if (tiempoRestante <= 0) {
-        clearInterval(timer);
         reproducirSonidoPerder(); // Sonido de perder
+        clearInterval(timer);
+
         mostrarVentanaEmergente(
           "¡Tiempo agotado!",
           "No lograste capturar todas las Saras.",
