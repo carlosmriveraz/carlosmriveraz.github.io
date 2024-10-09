@@ -1,172 +1,43 @@
 <link rel="stylesheet" href="../../estilos/estilo.css" />
 
 <link rel="stylesheet" href="sobre_mi.css" />
-<style>
-  .contenedor__3d {
-  	display: flex;
-  	justify-content: center;
-  	align-items: center;
-
-  	background-color: transparent;
-  	perspective: 800px; / Controla la profundidad del efecto 3D */
-  }
-
-  .caja {
-  	width: 75px;
-  	height: 75px;
-  	transform-style: preserve-3d; /* Permite el efecto 3D */
-  	transition: transform 0.5s;
-  }
-
-  .caja:hover {
-  	transform: rotateY(20deg) rotateX(20deg); /* Rotación en hover */
-  }
-
-  .cara {
-  	position: absolute;
-  	width: 75px;
-  	height: 75px;
-  	background: url("logo.png") no-repeat center/cover;
-
-  }
-
-  .cara:nth-child(1) {
-  	transform: translateZ(35px); /* Frente */
-  }
-
-  .cara:nth-child(2) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: rotateY(90deg) translateZ(35px); /* Derecha */
-  }
-
-  .cara:nth-child(3) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: rotateY(-90deg) translateZ(35px); /* Izquierda */
-  }
-
-  .cara:nth-child(4) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: rotateX(90deg) translateZ(35px); /* Arriba */
-  }
-
-  .cara:nth-child(5) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: rotateX(-90deg) translateZ(35px); /* Abajo */
-  }
-
-  .cara:nth-child(6) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: translateZ(-35px); /* Espalda */
-  }
-</style>
-
-<style>
-  .contenedor__3d__quick {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    perspective: 800px; /* Controla la profundidad del efecto 3D */
-  }
-
-  .cara__quick {
-    width: 20px;
-    height: 20px;
-    transform-style: preserve-3d; /* Permite el efecto 3D */
-    transition: transform 0.5s;
-  }
-
-  .cara__quick:hover {
-    transform: rotateY(20deg) rotateX(20deg); /* Rotación en hover */
-  }
-
-  .cara__quick {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: url("../../images/aws/quicksight.webp") no-repeat center/cover;
-  }
-
-  .cara__quick:nth-child(1) {
-    transform: translateZ(10px); /* Frente */
-  }
-
-  .cara__quick:nth-child(2) {
-    background: url("../../images/aws/quicksight.webp") no-repeat center/cover;
-    transform: rotateY(90deg) translateZ(10px); /* Derecha */
-  }
-
-  .cara__quick:nth-child(3) {
-    background: url("../../images/aws/quicksight.webp") no-repeat center/cover;
-    transform: rotateY(-90deg) translateZ(10px); /* Izquierda */
-  }
-
-  .cara__quick:nth-child(4) {
-    background: url("../../images/aws/quicksight.webp") no-repeat center/cover;
-    transform: rotateX(90deg) translateZ(10px); /* Arriba */
-  }
-
-  .cara__quick:nth-child(5) {
-    background: url("../../images/aws/quicksight.webp") no-repeat center/cover;
-    transform: rotateX(-90deg) translateZ(10px); /* Abajo */
-  }
-
-  .cara__quick:nth-child(6) {
-    background: url("../../images/aws/quicksight.webp") no-repeat center/cover;
-    transform: translateZ(-10px); /* Espalda */
-  }
-</style>
 <h2>
   <strong class="subtitulo"> <span>S</span>obre <span>M</span>i</strong>
 </h2>
-<section
-  id="movimiento_skills_sobre_mi"
-  class="contenedor__flex__centrado__centrado"
->
+<section id="movimiento_skills_sobre_mi" class="coontenedor__flex">
   <!-- Información Personal y Texto -->
   <div class="sobre__mi__columna pulso">
     <h2 class="subtitulo">
       <span> &lt;&frasl;&nbsp;S</span>oy <span>C</span>arlos <span>M</span>ario
       <span>R</span>ivera<span>&nbsp;&frasl;&gt;</span>
     </h2>
-    <p class="texto">
-      <strong class="pulso">Desarrollador de software</strong>
+    <p class="margen__mediano">
+      <strong class="texto__3d">Desarrollador de software</strong>
       Con más de 12 años de experiencia, apasionado por la creación de
       aplicaciones robustas y escalables, he trabajado en proyectos desde la
       etapa de diseño hasta la implementación de soluciones.
     </p>
-    <p class="texto">
-      <strong class="pulso">Como Ingeniero de datos,</strong>
+    <p class="margen__mediano">
+      <strong class="texto__3d">Como Ingeniero de datos,</strong>
       mi objetivo es crear soluciones eficientes que mejoren la experiencia del
       usuario.
     </p>
-    <p class="texto">
-      <strong class="pulso">Un Arquitecto de soluciones, </strong>
+    <p class="margen__mediano">
+      <strong class="texto__3d">Un Arquitecto de soluciones, </strong>
       con experiencia en diseño, implementación y optimización de
       infraestructuras en la nube.
     </p>
-    <p class="pulso"><br />Auditor interno ISO 27001.</p>
+    <p class="texto__3d"><br />Auditor interno ISO 27001.</p>
     <br />
   </div>
 
   <!-- Habilidades y Animaciones -->
-  <div class="sobre__mi__columna conternedor__padding">
+  <div class="sobre__mi__movimiento_skills">
     <!-- Contenedor de habilidades -->
     <div id="movimiento_skills">
-      <div
-        class="movimiento_skills-grid conternedor__paddingconternedor__paddingconternedor__padding"
-      >
-        <div class="caja">
-          <div class="cara"></div>
-          <div class="cara"></div>
-          <div class="cara"></div>
-          <div class="cara"></div>
-          <div class="cara"></div>
-          <div class="cara"></div>
-        </div>
+      <div class="movimiento_skills-grid">
         <!-- Cubo central y habilidades -->
-        <!-- <div class="skills-logo cambiarlogo"></div> -->
+        <div class="skills-logo cambiarlogo"></div>
         <div class="movimiento_skills-grid-skill">
           <img src="../../images/frontend/html.svg" alt="HTML" />
           <div class="movimiento_skills-grid-skill-tooltip">HTML</div>
@@ -190,16 +61,7 @@
           <div class="movimiento_skills-grid-skill-tooltip">Angular</div>
         </div>
         <div class="movimiento_skills-grid-skill">
-          <div class=".contenedor__3d__quick">
-            <div class="caja">
-              <div class="cara__quick"></div>
-              <div class="cara__quick"></div>
-              <div class="cara__quick"></div>
-              <div class="cara__quick"></div>
-              <div class="cara__quick"></div>
-              <div class="cara__quick"></div>
-            </div>
-          </div>
+          <img src="../../images/aws/quicksight.webp" alt="QuickSight" />
           <div class="movimiento_skills-grid-skill-tooltip">QuickSight</div>
         </div>
         <div class="movimiento_skills-grid-skill">

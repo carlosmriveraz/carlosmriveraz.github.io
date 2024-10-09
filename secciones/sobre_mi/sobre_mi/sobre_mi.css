@@ -1,6 +1,5 @@
-#movimiento_skills_sobre_mi {
+#movimiento_skills_sobre_mi .sobre__mi__columna {
   font-size: 1.5rem;
-  height: 100vh;
 }
 
 .coontenedor__flex {
@@ -15,7 +14,9 @@
 }
 
 .sobre__mi__movimiento_skills {
-  margin-left: 3rem;
+  margin-top: 4rem;
+
+  margin-left: 4rem;
   padding: 1rem;
   display: flex;
   flex: 1;
@@ -52,7 +53,7 @@
   perspective: 1000px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: relative;
 }
@@ -94,18 +95,17 @@
 .movimiento_skills-grid-skill:hover {
   opacity: 1;
   color: var(--color-paleta4);
-  background-color: var(--fondo-principal);
+  background-color: var(--color-primary);
 }
 
 .movimiento_skills-grid-skill-tooltip:hover {
   opacity: 0.7;
   color: #000;
-  background-color: var(--color-principal);
+  background-color: var(--color-primary);
 }
 
 #movimiento_skills img {
-  max-width: 3rem;
-  perspective: 1000px;
+  max-width: 4rem;
 }
 
 /* Ajustes para pantallas pequeñas */

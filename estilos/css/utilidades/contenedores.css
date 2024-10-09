@@ -45,8 +45,17 @@
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
   justify-content: space-between; /* Espacio entre los elementos */
-  gap: 1rem; /* Espacio entre tarjetas */
-  margin-bottom: 2rem; /* Espacio inferior */
+  gap: 0.6rem; /* Espacio entre tarjetas */
+  margin-bottom: 0.5rem; /* Espacio inferior */
+}
+
+.contenedor__flex__centrado__centrado {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+  justify-content: centrado;
+  align-items: center;
+  gap: 3rem; /* Espacio entre tarjetas */
+  margin-bottom: 0.5rem; /* Espacio inferior */
 }
 .contenedor__flex__columna {
   display: flex;
@@ -69,7 +78,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  gap: 1rem;
 }
 
 .contenedor__flex__columna__between {

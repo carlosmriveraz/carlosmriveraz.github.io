@@ -32,7 +32,7 @@ function generateCharts(dollarData) {
   const monthlyData = {};
 
   dollarData.forEach((data) => {
-    const month = data.Fecha.slice(0, 7); // YYYY-MM
+    const month = data.Fecha.slice(0, 5); // YYYY-MM
     if (!monthlyData[month]) {
       monthlyData[month] = [];
     }
@@ -53,7 +53,7 @@ function generateCharts(dollarData) {
         {
           label: "Promedio Mensual",
           data: values2,
-          backgroundColor: "rgba(75, 192, 192, 0.5)",
+          backgroundColor: "rgba(0,255, 255, 0.9)",
         },
       ],
     },
@@ -75,11 +75,11 @@ function generateCharts(dollarData) {
         {
           label: "Valor Máximo",
           data: maxValues,
-          borderColor: "red",
+          borderColor: "#0ff",
           fill: false,
         },
         {
-          label: "Valor Mínimo",
+          label: "#f00",
           data: minValues,
           borderColor: "green",
           fill: false,

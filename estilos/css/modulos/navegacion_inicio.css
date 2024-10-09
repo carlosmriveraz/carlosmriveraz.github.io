@@ -1,177 +1,176 @@
 /* Navbar header menu de navegación */
 .navbar {
-	width: 100%;
-	position: fixed;
-	background-color: var(--color-menu); /* Semi-transparente */
-	display: flex;
-	justify-content: space-between;
-	height: var(--altura-navbar);
-	border: 0.5px solid #0ff;
-	border-radius: 0.3rem;
-	z-index: 1000;
-	white-space: nowrap;
-	transition: all 0.8s ease;
-	color: var(--color-texto);
-	font-weight: bold;
-	font-size: 1.2rem;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: var(--altura-navbar);
+  border: 0.4px solid #0ff;
+  border-radius: 0.3rem;
+  z-index: 1000;
+  white-space: nowrap;
+  transition: all 0.8s ease;
+  color: var(--color-texto);
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .navbar span {
-	color: var(--color-paleta2);
-	font-size: var(--altura-navbar);
-	text-shadow: 0 0 1px var(--color-paleta4);
-	transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
-	perspective: 1000px; /* Añade perspectiva para el efecto 3D */
+  color: var(--color-paleta2);
+  font-size: var(--altura-navbar);
+  text-shadow: 0 0 1px var(--color-paleta4);
+  transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
+  perspective: 1000px; /* Añade perspectiva para el efecto 3D */
 }
 
 .navbar__logo img {
-	min-width: 2rem;
-	width: 2.4rem;
+  min-width: 2rem;
+  width: 2.4rem;
 }
 
 .navbar__menu {
-	flex: 2;
-	display: flex;
-	list-style-type: none;
-	padding: 0;
-	justify-content: space-around;
-	border-radius: 7px;
-	background-color: #00ffff55;
-	border: 0.2px solid #0ff;
-	box-shadow: inset 0 0 10px #61dafb;
-	max-width: 70%;
-	color: #61dafb;
+  flex: 2;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: space-around;
+  border-radius: 7px;
+  background-color: #00ffffcc;
+  border: 0.4px solid #0ff;
+  box-shadow: inset 0 5px 10px #61dafb;
+  max-width: 65%;
+  color: #61dafb;
 }
 
 .navbar__menu-item {
-	border-radius: 0.5rem;
-	background-color: #0ffffe22;
+  border-radius: 0.5rem;
+  background-color: #0ff;
 }
 
 .navbar__menu-item a {
-	color: var(--color-texto);
-	margin: 0 2px;
-	text-decoration: none;
-	border-radius: 0.5rem; /* Bordes redondeados */
-	box-shadow: var(--color-hover);
-	transition: background-color 0.5s ease-in-out, color 0.7s ease-in-out,
-		transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transiciones unificadas */
+  color: var(--color-texto);
+  margin: 0 2px;
+  text-decoration: none;
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: var(--color-hover);
+  transition: background-color 0.5s ease-in-out, color 0.7s ease-in-out,
+    transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transiciones unificadas */
 }
 
 .navbar__menu-item a::after {
-	content: "";
-	position: absolute;
-	width: 0;
+  content: "";
+  position: absolute;
+  width: 0;
 
-	display: block;
-	margin-top: 0.3rem;
-	right: 0;
-	background: radial-gradient(
-		circle,
-		var(--color-paleta6),
-		var(--color-paleta2),
-		var(--color-paleta3),
-		var(--color-paleta4)
-	);
-	transition: width 1.4s ease;
+  display: block;
+  margin-top: 0.3rem;
+  right: 0;
+  background: radial-gradient(
+    circle,
+    var(--color-paleta6),
+    var(--color-paleta2),
+    var(--color-paleta3),
+    var(--color-paleta4)
+  );
+  transition: width 1.4s ease;
 }
 
 .navbar__menu-item a:hover::after,
 .navbar__menu-item a.active::after {
-	width: 100%;
-	left: 0;
+  width: 100%;
+  left: 0;
 }
 
 /* Icono del menú de hamburguesa */
 .navbar__menu-icon {
-	display: none; /* Oculto por defecto en pantallas grandes */
-	flex-direction: column;
-	cursor: pointer;
-	margin-left: auto;
-	background: radial-gradient(circle, #009, #282c34dd);
+  display: none; /* Oculto por defecto en pantallas grandes */
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+  background: radial-gradient(circle, #009, #282c34dd);
 
-	border-radius: 3px;
-	border-color: #0ff;
-	box-shadow: inset 0 0 2px #61dafbaa;
+  border-radius: 3px;
+  border-color: #0ff;
+  box-shadow: inset 0 0 2px #61dafbaa;
 
-	color: #0ff;
+  color: #0ff;
 }
 
 /* Toggle de tema (oscuro/claro) */
 .theme-toggle {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .theme-toggle i {
-	font-size: 1rem;
-	cursor: pointer;
-	display: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
 }
 
 .theme-toggle #light-mode-icon {
-	display: block;
+  display: block;
 }
 
 @media (max-width: 768px) {
-	.navbar {
-		align-items: flex-start;
-	}
+  .navbar {
+    align-items: flex-start;
+  }
 
-	.navbar__menu-icon {
-		display: flex; /* Mostrar en pantallas pequeñas */
-		order: 2;
-	}
+  .navbar__menu-icon {
+    display: flex; /* Mostrar en pantallas pequeñas */
+    order: 2;
+  }
 
-	.navbar__menu {
-		display: none;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		background: radial-gradient(circle, #009e, #282c34fe);
-		left: 50%;
-		margin-top: 2.5rem;
-		text-align: left;
-	}
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: radial-gradient(circle, #009e, #282c34fe);
+    left: 50%;
+    margin-top: 2.5rem;
+    text-align: left;
+  }
 
-	.navbar__menu.active {
-		display: flex;
-	}
+  .navbar__menu.active {
+    display: flex;
+  }
 
-	.navbar__menu-item {
-		text-align: left;
-	}
+  .navbar__menu-item {
+    text-align: left;
+  }
 
-	.theme-toggle {
-		justify-content: center;
-		width: 100%;
-	}
+  .theme-toggle {
+    justify-content: center;
+    width: 100%;
+  }
 
-	/* Estilos para dispositivos móviles */
-	.navbar__menu {
-		position: absolute;
-		top: 1rem;
-	}
+  /* Estilos para dispositivos móviles */
+  .navbar__menu {
+    position: absolute;
+    top: 1rem;
+  }
 
-	.navbar__menu-item {
-		margin: 0.1rem 0;
-	}
+  .navbar__menu-item {
+    margin: 0.1rem 0;
+  }
 
-	.navbar__menu.show {
-		display: flex;
-	}
+  .navbar__menu.show {
+    display: flex;
+  }
 }
 
 .navbar__link {
-	transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
-	perspective: 1000px; /* Añade perspectiva para el efecto 3D */
-	display: inline-block;
-	transition: background-size 0.8s ease, transform 0.8s ease;
-	background: transparent;
-	background-size: 100% 100%;
+  transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
+  perspective: 1000px; /* Añade perspectiva para el efecto 3D */
+  display: inline-block;
+  transition: background-size 0.8s ease, transform 0.8s ease;
+  background: transparent;
+  background-size: 100% 100%;
 }
 
 .navbar__link :hover {
-	background-size: 150% 150%; /* Aumenta el tamaño del fondo */
-	transform: scale(1.5); /* Escala el elemento */
+  background-size: 150% 150%; /* Aumenta el tamaño del fondo */
+  transform: scale(1.5); /* Escala el elemento */
 }

@@ -11,7 +11,9 @@
     --medida-titulo-extra-reducido: 0.5rem;
     --medida-titulo-grande: 2.6rem;
   }
-
+  .contenedor__flex__centrado__centrado {
+    flex-direction: column;
+  }
   iframe {
     margin: 0;
     width: 100%;

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datos desde API en Tabla</title>
+
+    <link rel="stylesheet" href="../bi_estilo.css" />
+    <link rel="stylesheet" href="../css/Dolar_completo_API.css" />
+    <link rel="stylesheet" href="../../../estilos/estilo.css" />
+    <style>
+      section {
+        margin-bottom: 20px;
+      }
+    </style>
+
+
+      <style>
+        section {
+          margin-bottom: 20px;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        table,
+        th,
+        td {
+          border: 1px solid black;
+        }
+        th,
+        td {
+          padding: 8px;
+          text-align: left;
+        }
+      </style>
+
+      <!-- Carga de lightweight-charts -->
+      <script src="https://unpkg.com/lightweight-charts@3.7.0/dist/lightweight-charts.standalone.production.js"></script>
+    </head>
+    <body>
+      <!-- Sección para la gráfica -->
+      <section id="grafica__dolar">
+        <div id="chart" style="width: 600px; height: 300px"></div>
+      </section>
+
+      <!-- Sección para la tabla -->
+      <section>
+        <h2 class="subtitulo">Historial del Dólar</h2>
+        <table id="Dolar_completo_API">
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Unidad</th>
+              <th>Vigencia Desde</th>
+              <th>Vigencia Hasta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Los datos se agregarán dinámicamente aquí -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Script para cargar los datos en la tabla y la gráfica -->
+      <script>
+        // Verificar si la variable ya ha sido declarada antes de volver a declararla
+        const apiUrl =
+          "https://www.datos.gov.co/resource/mcec-87by.json?$query=SELECT%20valor%2C%20unidad%2C%20vigenciadesde%2C%20vigenciahasta%20ORDER%20BY%20vigenciahasta%20DESC";
+
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Error en la red");
+            }
+            return response.json();
+          })
+          .then((datos) => {
+            const tbody = document.querySelector("#Dolar_completo_API tbody");
+            const chartData = [];
+            const currentDate = new Date();
+            const threeMonthsAgo = new Date();
+            threeMonthsAgo.setMonth(currentDate.getMonth() - 3); // Fecha de hace tres meses
+
+            datos.forEach((dato) => {
+              const fechaVigencia = new Date(dato.vigenciadesde);
+
+              // Filtrar solo datos del último trimestre
+              if (fechaVigencia >= threeMonthsAgo) {
+                // Formatear y agregar a la tabla
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                        <td>${dato.valor}</td>
+                        <td>${dato.unidad}</td>
+                        <td>${fechaVigencia.toLocaleDateString()}</td>
+                        <td>${new Date(
+                          dato.vigenciahasta
+                        ).toLocaleDateString()}</td>
+                    `;
+                tbody.appendChild(tr);
+
+                // Formatear y agregar a la gráfica
+                chartData.push({
+                  time: dato.vigenciadesde.split("T")[0], // Formato 'YYYY-MM-DD'
+                  value: parseFloat(dato.valor.replace(/,/g, "")), // Convertir a número
+                });
+              }
+            });
+
+            // Crear la gráfica de lightweight-charts
+            const chart = LightweightCharts.createChart(
+              document.getElementById("chart"),
+              {
+                width: 600,
+                height: 300,
+                layout: {
+                  backgroundColor: "#ffffff",
+                  textColor: "#000000",
+                },
+                grid: {
+                  vertLines: {
+                    color: "#e0e0e0",
+                  },
+                  horzLines: {
+                    color: "#e0e0e0",
+                  },
+                },
+                priceScale: {
+                  borderColor: "#cccccc",
+                },
+                timeScale: {
+                  borderColor: "#cccccc",
+                },
+              }
+            );
+
+            // Crear la serie de líneas
+            const lineSeries = chart.addLineSeries({
+              color: "blue", // Color de la línea
+              lineWidth: 2, // Grosor de la línea
+            });
+
+            // Establecer los datos de la gráfica
+            lineSeries.setData(chartData);
+          })
+          .catch((error) => {
+            console.error("Hubo un problema con la solicitud:", error);
+          });
+      </script>
+
+      <section class="contenedor__flex__columna__centrado contenedor__padding">
+        <h1>Datos desde API en Tabla</h1>
+        <table
+          id="Dolar_completo_API"
+          class="tabla__contenedor contenedor__padding"
+        >
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Unidad</th>
+              <th>Vigencia Desde</th>
+              <th>Vigencia Hasta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Los datos se insertarán aquí -->
+          </tbody>
+        </table>
+
+        <script>
+          const apiUrl =
+            "https://www.datos.gov.co/resource/mcec-87by.json?$query=SELECT%20valor%2C%20unidad%2C%20vigenciadesde%2C%20vigenciahasta%20ORDER%20BY%20vigenciahasta%20DESC";
+
+          fetch(apiUrl)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Error en la red");
+              }
+              return response.json();
+            })
+            .then((datos) => {
+              const tbody = document.querySelector("#Dolar_completo_API tbody");
+
+              datos.forEach((dato) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                        <td>${dato.valor}</td>
+                        <td>${dato.unidad}</td>
+                        <td>${new Date(
+                          dato.vigenciadesde
+                        ).toLocaleDateString()}</td>
+                        <td>${new Date(
+                          dato.vigenciahasta
+                        ).toLocaleDateString()}</td>
+                    `;
+                tbody.appendChild(tr);
+              });
+            })
+            .catch((error) => {
+              console.error("Hubo un problema con la solicitud:", error);
+            });
+        </script>
+
+        <p>
+          Los datos presentados en la tabla anterior, se obtienen de
+          <a
+            href="https://www.datos.gov.co/resource/mcec-87by.json"
+            target="_blank"
+            class="enlace enlace__efecto__3d enlace__subrayado__deslizante"
+            >Datos Abiertos de Colombia</a
+          >.
+        </p>
+      </section>
+      <section>
+        <h2 class="subtitulo">ETL y Machine Learning</h2>
+        <h3>¿Qué es ETL?</h3>
+        <p>
+          En mi trabajo con datos, utilizo un proceso llamado ETL, que significa
+          <strong>Extracción</strong>, <strong>Transformación</strong> y
+          <strong>Carga</strong>. Este proceso es fundamental para integrar
+          datos de diversas fuentes y prepararlos para análisis posteriores.
+        </p>
+        <ul>
+          <li>
+            <strong>Extracción:</strong> Primero, extraigo los datos de la API
+            de datos abiertos, específicamente de
+            <a
+              href="https://www.datos.gov.co/resource/mcec-87by.json"
+              target="_blank"
+              class="enlace enlace__efecto__3d enlace__subrayado__deslizante"
+              >esta fuente</a
+            >.
+          </li>
+          <li>
+            <strong>Transformación:</strong> Luego, transformo los datos
+            extraídos para asegurarme de que sean consistentes y útiles. Esto
+            puede incluir limpieza de datos, normalización, y la creación de
+            nuevas variables.
+          </li>
+          <li>
+            <strong>Carga:</strong> Finalmente, cargo los datos transformados en
+            un sistema de almacenamiento o en una base de datos para su análisis
+            posterior.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Machine Learning</h2>
+        <p>
+          Una vez que he cargado los datos, utilizo algoritmos de
+          <strong>machine learning</strong> para extraer patrones y hacer
+          predicciones. Este proceso implica:
+        </p>
+        <ul>
+          <li>
+            <strong>Entrenamiento del modelo:</strong> Utilizo los datos
+            históricos para enseñar al modelo a reconocer patrones.
+          </li>
+          <li>
+            <strong>Validación:</strong> Evalúo la precisión del modelo usando
+            un conjunto de datos de prueba.
+          </li>
+          <li>
+            <strong>Predicciones:</strong> Finalmente, utilizo el modelo
+            entrenado para hacer predicciones basadas en nuevos datos.
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>
+          Crédito:
+          <a
+            href="https://www.datos.gov.co/"
+            class="enlace enlace__efecto__3d enlace__subrayado__deslizante"
+            target="_blank"
+            >datos.gov.co</a
+          >, recursos abiertos del Gobierno de Colombia.
+        </p>
+      </footer>
+      <iframe
+        src="../../contacto/contacto.html"
+        id="contacto"
+        class="iframe"
+        title="contacto"
+        allowfullscreen
+      ></iframe>
+
+      <!-- Sección del video de bienvenida y política de cookies -->
+      <section class="cookies-and-video-section">
+        <!-- Contenido del modal de cookies y video -->
+        <div id="cookiesModalContainer"></div>
+        <!-- Aquí cargaremos el contenido -->
+      </section>
+    </body>
+  </html>
+</html>

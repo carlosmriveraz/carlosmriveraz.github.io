@@ -105,3 +105,57 @@
     transform: scale(0);
   }
 }
+
+@keyframes desvanecer_ampliar {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes escribir {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes parpadeo_caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.maquina__escribir {
+  font-family: "Montserrat", sans-serif;
+
+  text-align: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  width: 0;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: desvanecer_ampliar 2s ease forwards,
+    escribir 4s steps(30, end) 2s forwards,
+    parpadeo_caret 0.75s step-end infinite 6s;
+  transition: text-shadow 0.5s, transform 0.5s, color 0.5s;
+}
+
+.maquina__escribir:hover {
+  text-shadow: 5px 5px 0 var(--color-paleta1), -1px -1px 0 var(--color-paleta2),
+    3px -3px 0 var(--color-paleta3), -5px 5px 0 var(--color-paleta4);
+  transform: scale(1.8);
+  color: var(--color-paleta7);
+}
