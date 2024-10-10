@@ -17,12 +17,15 @@ body {
     var(--fondo-primario),
     var(--fondo-terciario)
   );
+  background-image: url("../imagenes/fondo.png");
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   font-family: var(--fuente-principal);
   color: var(--color-principal);
   transition: background-color 0.3s, color 0.3s;
 
-  padding: 1px;
+  padding: 5rem;
   margin: 1px;
 }
 

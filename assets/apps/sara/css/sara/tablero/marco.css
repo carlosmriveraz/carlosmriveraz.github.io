@@ -1,32 +1,21 @@
-.contenedor__marco {
-  background-image: url("../../../imagenes/marco.webp");
-  background-size: cover;
-  background-position: center;
-  width: 90vw;
-  height: 90vh;
+.pagina__marco {
+  margin: 0;
+  padding: 20px; /* Espacio que actuará como el "marco" */
+  background-color: #f0f0f0; /* Color de fondo del marco */
+  background-image: url("../../../imagenes/marco3.webp"); /* Imagen de fondo del marco */
+  background-size: 125% 150%; /* Hace que la imagen cubra todo el área */
+  background-position: center; /* Centra la imagen */
+  min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.panel__contenido {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
-  width: 80%;
-  height: 80%;
-  padding: 20px;
-  border-radius: 15px; /* Bordes redondeados del panel */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-  text-align: center;
-}
+/* Estilo del contenido dentro del marco */
+.contenido__pagina {
+  padding: 10px; /* Espaciado interior */
 
-@media (max-width: 768px) {
-  .contenedor__marco {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .panel__contenido {
-    width: 90%;
-    height: 90%;
-  }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  max-width: 95%;
+  margin: auto;
 }

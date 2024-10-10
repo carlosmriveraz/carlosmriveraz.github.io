@@ -7,24 +7,19 @@ import {
   reproducirSonidoSara,
   reproducirSonidoGanar,
   reproducirSonidoPerder,
-  detenerTodosLosSonidos,
+  detenerTodosLosSonidos, // Importar la función para detener todos los sonidos
 } from "./sonido/sonido.js";
-
-import { reiniciarJuego } from "./reinicio/reiniciar.js";
-
-// Variables globales para el temporizador y los clics
-let timer;
 
 // Definir la función para iniciar el juego
 export function iniciarJuego() {
-  // Reproducir el sonido de fondo al iniciar el juego
-  reproducirSonidoFondo();
   reproducirSonidoJuego();
-  timer = null;
+  reproducirSonidoFondo(); // Reproducir el sonido de fondo al iniciar el juego
+
   // Obtener todos los elementos de texto
   const texts = document.querySelectorAll(".texto");
   let capturedCount = 0;
   let divsRestantes = texts.length;
+  let timer;
   let tiempoRestante = 120; // Tiempo en segundos (2 minutos)
 
   // Actualizar marcadores
@@ -38,6 +33,7 @@ export function iniciarJuego() {
   // Función para mover "Sara" a un nuevo div aleatorio
   function moveSara() {
     const saraDiv = findSara(); // Buscar el div actual que contiene "Sara"
+    reproducirSonidoSara(); // Reproducir el sonido de acierto
 
     // Ocultar el div actual y quitar el texto
     saraDiv.style.display = "none";
@@ -46,23 +42,21 @@ export function iniciarJuego() {
     capturedCount++;
     divsRestantes--;
 
-    // Reproducir el sonido de acierto (cuando el jugador acierta con "Sara")
-    reproducirSonidoSara();
-
     // Actualizar marcadores
     document.getElementById("divs-capturados").innerText = capturedCount;
     document.getElementById("divs-restantes").innerText = divsRestantes;
 
     // Verificar si se ganó el juego
     if (divsRestantes === 0) {
-      clearInterval(timer); // Detener el temporizador
+      detenerTodosLosSonidos(); // Detener todos los sonidos
       reproducirSonidoGanar(); // Sonido de ganar
+      clearInterval(timer); // Detener el temporizador
+
       mostrarVentanaEmergente(
         "¡Felicidades! Ganaste",
         "Has capturado todas las Saras.",
-        "./imagenes/sara2.jpg"
+        "./imagenes/gano.png"
       ); // Mostrar ventana emergente de ganaste
-      detenerTodosLosSonidos();
       return;
     }
 
@@ -85,8 +79,8 @@ export function iniciarJuego() {
     if (clickedDiv.innerText === "Sara") {
       moveSara(); // Mover "Sara" a otro div aleatorio
     } else {
-      alert("¡Debes tocar el texto 'Sara' para continuar!");
       reproducirSonidoError(); // Sonido de error al equivocarse
+      alert("¡Debes tocar el texto 'Sara' para continuar!");
     }
   }
 
@@ -104,14 +98,16 @@ export function iniciarJuego() {
 
       // Si el tiempo se acaba
       if (tiempoRestante <= 0) {
-        clearInterval(timer);
+        detenerTodosLosSonidos(); // Detener todos los sonidos
         reproducirSonidoPerder(); // Sonido de perder
+        clearInterval(timer);
+
         mostrarVentanaEmergente(
           "¡Tiempo agotado!",
           "No lograste capturar todas las Saras.",
           "./imagenes/fresa_perdio.png"
         ); // Mostrar ventana emergente de perdiste
-        detenerTodosLosSonidos();
+
         // Deshabilitar clics en los divs
         texts.forEach((text) => {
           text.removeEventListener("click", handleClick);
@@ -132,11 +128,6 @@ export function iniciarJuego() {
 // Mostrar el modal de instrucciones al cargar la página
 window.onload = function () {
   document.getElementById("modal__instrucciones").style.display = "block";
-
-  // Conectar botones de reiniciar y detener a sus respectivas funciones
-  document
-    .getElementById("boton__reiniciar")
-    .addEventListener("click", reiniciarJuego);
 };
 
 // Función para cerrar el modal y comenzar el juego

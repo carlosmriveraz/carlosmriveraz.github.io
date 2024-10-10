@@ -16,3 +16,24 @@
 
 @import url("./css/fotter.css");
 @import url("./css/principal.css");
+
+.control__boton {
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--color-primario);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.control__boton i {
+  margin-right: 5px;
+}
+
+.control__boton:hover {
+  background-color: var(--color-hover);
+}
