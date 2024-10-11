@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicio de Marketing - Landing Pages Interactivas</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="header">
+        <a href="./index.html">Inicio</a>
+        <a href="./servicios.html">Servicios</a>
+        <a href="./Inmuebles.html">Inmuebles</a>
+        <a href="./contacto.html">Contacto</a>
+      </nav>
+      <h1 class="animacion-palabra header__item-centro">
+        <span class="texto-principal">InmobiliarIA</span>
+
+        <span class="texto-resaltado"
+          >InmobilIArIA IA
+          <span class="resaltado-ia resaltado-ia-final">IA</span></span
+        >
+      </h1>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Descubre Nuestros Proyectos Inmobiliarios</h1>
+    </section>
+
+    <!-- Mapa Interactivo de Lotes -->
+    <section id="mapa" class="mapa__contenedor">
+      <h2>Mapa de Lotes</h2>
+      <img src="img/mapa-lotes.jpg" alt="Mapa Interactivo de Lotes" />
+
+      <!-- Ejemplo de lotes interactivos -->
+      <div class="lote disponible" onclick="mostrarInfoLote('lote1')">
+        Lote 1
+      </div>
+      <div class="lote vendido" onclick="mostrarInfoLote('lote2')">Lote 2</div>
+      <div class="lote disponible" onclick="mostrarInfoLote('lote3')">
+        Lote 3
+      </div>
+
+      <!-- Información del lote seleccionado -->
+      <div id="info-lote" class="info__lote">
+        <h3>Detalles del Lote</h3>
+        <p id="info-lote-text"></p>
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto">
+      <h2>Contáctanos para más información</h2>
+      <form>
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Correo Electrónico" required />
+        <textarea placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2024 Servicio de Marketing Inmobiliario. Todos los derechos
+        reservados.
+      </p>
+    </footer>
+
+    <script>
+      // Función para mostrar la información del lote seleccionado
+      function mostrarInfoLote(lote) {
+        const infoLote = document.getElementById("info-lote");
+        const infoLoteText = document.getElementById("info-lote-text");
+
+        // Información dinámica de los lotes
+        const lotesInfo = {
+          lote1: "Lote 1 - 300 m² - Precio: $500.000.000 - Estado: Disponible",
+          lote2: "Lote 2 - 250 m² - Precio: $450.000.000 - Estado: Vendido",
+          lote3: "Lote 3 - 320 m² - Precio: $520.000.000 - Estado: Disponible",
+        };
+
+        // Mostrar la información del lote
+        infoLoteText.textContent = lotesInfo[lote];
+        infoLote.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

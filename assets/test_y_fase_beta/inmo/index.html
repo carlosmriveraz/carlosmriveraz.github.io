@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtros de Búsqueda - Inmuebles</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Transformación de Texto - Inmobiliaria IA</title>
+  </head>
+  <body class="fondo_general">
+    <!-- Aside lateral que se puede plegar -->
+    <button class="toggle-aside" onclick="toggleAside()">-<- ></button>
+
+    <header>
+      <nav class="header">
+        <a href="./inicio.html">Inicio</a>
+        <a href="./servicios.html">Servicios</a>
+        <a href="./Inmuebles.html">Inmuebles</a>
+        <a href="./contacto.html">Contacto</a>
+      </nav>
+      <h1 class="animacion-palabra header__item-centro">
+        <span class="texto-principal">InmobiliarIA</span>
+
+        <span class="texto-resaltado"
+          >InmobilIArIA IA
+          <span class="resaltado-ia resaltado-ia-final">IA</span></span
+        >
+      </h1>
+    </header>
+
+    <section class="bienvenida">
+      <h1>Bienvenidos a Inmobiliar IA</h1>
+    </section>
+
+    <!-- Sección de Anuncio -->
+    <section id="anuncio" class="anuncio seccion__contenido">
+      <h2>Transformamos el Sector Inmobiliario</h2>
+      <p>
+        En <strong>[Tu Empresa Inmobiliaria]</strong>, reinventamos la forma de
+        publicitar todo sobre el sector inmobiliario mediante inteligencia
+        artificial y paneles de Business Intelligence. Nuestra misión es
+        brindarte herramientas avanzadas que te ayuden a tomar decisiones
+        informadas y a maximizar el potencial de tus propiedades.
+      </p>
+      <p>Ofrecemos:</p>
+      <ul style="text-align: left; display: inline-block">
+        <li>
+          <strong>Landing Pages:</strong> Creamos páginas específicas para
+          capturar la atención de tus clientes potenciales.
+        </li>
+        <li>
+          <strong>Códigos QR:</strong> Integramos códigos QR para facilitar el
+          acceso a la información de tus inmuebles.
+        </li>
+        <li>
+          <strong>Business Intelligence:</strong> Proporcionamos análisis en
+          tiempo real para optimizar tus decisiones.
+        </li>
+        <li>
+          <strong>Asesoría Contable y Legal:</strong> Nuestro equipo de expertos
+          te ayudará a posicionar tus inmuebles y a identificar clientes
+          potenciales.
+        </li>
+      </ul>
+    </section>
+
+    <section class="seccion__contenido">
+      <h2 class="subtitulo__datos">Destacados</h2>
+
+      <article class="contenido__datos">
+        <div>
+          <h1>El Encanto</h1>
+          <p>
+            El Condominio El Encanto en San Vicente Ferrer es una comunidad
+            residencial excepcionalmente bien situada, a menos de 60 minutos de
+            la ciudad de Medellín.
+          </p>
+        </div>
+        <img src="img/3.jpg" alt="Inmueble 1" class="slider__imagen" />
+      </article>
+
+      <article class="contenido__datos">
+        <img src="img/1.jpg" alt="Inmueble 2" class="imagen__estandar" />
+
+        <p>
+          Este exclusivo desarrollo ofrece a sus residentes la tranquilidad de
+          un entorno natural con todas las comodidades modernas.
+        </p>
+      </article>
+
+      <p class="contenido__datos">
+        Disfruta de servicios gratuitos de acueducto y alcantarillado, así como
+        el regalo de un modelo de casa y los diseños arquitectónicos al adquirir
+        un lote. El Condominio El Encanto está diseñado para ofrecer la mejor
+        experiencia de vida, combinando belleza natural y conveniencia urbana.
+        <img src="img/2.jpg" alt="Inmueble 3" class="slider__imagen" />
+      </p>
+    </section>
+    <!-- Sección del Código QR -->
+    <div class="qr__codigo">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.tupagina.com"
+        alt="Código QR"
+      />
+    </div>
+    <!-- Sección de Precios -->
+    <section id="precios" class="precios">
+      <h2>Planes y Precios</h2>
+      <div class="lista__precios">
+        <!-- Plan Gratuito -->
+        <div class="precio__item">
+          <h3>Plan Gratuito</h3>
+          <p>Acceso limitado a los servicios.</p>
+          <p><strong>Precio: $0</strong></p>
+          <p>Servicios Incluidos:</p>
+          <ul>
+            <li>Crear 1 landing page</li>
+            <li>Acceso a herramientas básicas</li>
+          </ul>
+          <div class="estrellas">⭐⭐⭐</div>
+        </div>
+
+        <!-- Plan Mensual -->
+        <div class="precio__item">
+          <h3>Plan Mensual</h3>
+          <p>Acceso completo a los servicios.</p>
+          <p><strong>Precio: $30/mes</strong></p>
+          <p>Servicios Incluidos:</p>
+          <ul>
+            <li>Crear 5 landing pages</li>
+            <li>Acceso a todas las herramientas</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <div class="estrellas">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <!-- Plan Premium -->
+        <div class="precio__item premium">
+          <h3>Plan Premium</h3>
+          <p>Acceso ilimitado y personalizado.</p>
+          <p><strong>Precio: $100/mes</strong></p>
+          <p>Servicios Incluidos:</p>
+          <ul>
+            <li>Crear landing pages ilimitadas</li>
+            <li>Acceso a herramientas premium</li>
+            <li>Consultoría personalizada</li>
+            <li>
+              Recomendaciones y sectorización para identificar clientes
+              potenciales.
+            </li>
+          </ul>
+          <div class="estrellas">⭐⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+
+      <!-- Tabla de Servicios -->
+      <h2>Servicios Incluidos</h2>
+      <table class="tabla__servicios">
+        <thead>
+          <tr>
+            <th>Servicio</th>
+            <th>Gratuito</th>
+            <th>Mensual</th>
+            <th>Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creación de Landing Pages</td>
+            <td>1</td>
+            <td>5</td>
+            <td>Ilimitadas</td>
+          </tr>
+          <tr>
+            <td>Acceso a Herramientas</td>
+            <td>Básico</td>
+            <td>Completo</td>
+            <td>Premium</td>
+          </tr>
+          <tr>
+            <td>Soporte</td>
+            <td>Sin Soporte</td>
+            <td>Prioritario</td>
+            <td>Personalizado</td>
+          </tr>
+          <tr>
+            <td>Consultoría</td>
+            <td>No Disponible</td>
+            <td>No Disponible</td>
+            <td>Incluida</td>
+          </tr>
+          <tr>
+            <td>Recomendaciones de Clientes Potenciales</td>
+            <td>No Disponible</td>
+            <td>No Disponible</td>
+            <td>Incluida</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Sección del Código QR -->
+    <div class="qr__codigo">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.tupagina.com"
+        alt="Código QR"
+      />
+    </div>
+
+    <section class="seccion__contenido">
+      <h3 class="subtitulo__datos">Inmuebles Disponibles</h3>
+      <div class="contenido__datos">
+        <div class="slider__contenedor">
+          <div class="slider__imagenes">
+            <img src="img/6.jpg" alt="Inmueble 1" class="slider__imagen" />
+            <img src="img/4.jpg" alt="Inmueble 2" class="slider__imagen" />
+            <img src="img/5.jpg" alt="Inmueble 3" class="slider__imagen" />
+          </div>
+
+          <div class="slider__botones">
+            <button class="slider__anterior material-icons">
+              chevron_left
+            </button>
+            <button class="slider__siguiente material-icons">
+              chevron_right
+            </button>
+          </div>
+        </div>
+
+        <div class="inmuebles__lista">
+          <h3>Lista de Inmuebles</h3>
+          <div class="inmueble__item">
+            <h3>Apartamento en El Poblado</h3>
+            <p>Precio: $1.200.000.000</p>
+            <p>Área: 193 m²</p>
+            <button onclick="viewDetails('inmueble1')">Ver Detalles</button>
+          </div>
+          <div class="inmueble__item">
+            <h3>Apartamento en Laureles</h3>
+            <p>Precio: $800.000.000</p>
+            <p>Área: 150 m²</p>
+            <button onclick="viewDetails('inmueble2')">Ver Detalles</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <script src="script.js"></script>
+    <script src="js/slider.js"></script>
+
+    <script>
+      // Función para alternar el aside
+      function toggleAside() {
+        document.querySelector(".aside__contenedor").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

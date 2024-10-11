@@ -1,0 +1,123 @@
+/* Variables de color por tema */
+:root {
+  --fondo__claro: #ecf0f1;
+  --texto__claro: #2c3e50;
+  --fondo__oscuro: #000033;
+  --texto__oscuro: #fff;
+  --fondo__espacial: #2c3e50;
+  --texto__espacial: #00ffcc;
+  --fondo__principal: #3498db;
+  --texto__menu: #ffffff;
+}
+
+.menu_principal {
+  font-size: 0.8rem;
+  display: flex;
+
+  gap: 1rem;
+}
+.menu_principal a {
+  font-size: 0.7rem;
+}
+
+.header__item-izquierda,
+.header__item-centro,
+.header__item-derecha {
+  flex: 1;
+  text-align: center;
+}
+
+/* Para que el elemento central esté realmente centrado */
+.header__item-centro {
+  flex: 2; /* Le damos más espacio al centro */
+  text-align: center;
+}
+
+.menu__config {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--fondo__principal);
+  color: var(--texto__menu);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu__config i {
+  font-size: 24px;
+}
+
+.menu__config__toggle-menu {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background-color: var(--fondo__principal);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.menu__config__toggle-menu label {
+  color: var(--texto__menu);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.menu__config__toggle-menu input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Clases para temas */
+.theme-light {
+  background-color: var(--fondo__claro);
+  color: var(--texto__claro);
+}
+
+.theme-dark {
+  background-color: var(--fondo__oscuro);
+  color: var(--texto__oscuro);
+}
+
+.theme-space {
+  background-color: var(--fondo__espacial);
+  color: var(--texto__espacial);
+}
+
+.menu__principal {
+  background-color: #3e5871aa;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.lista__menu__principal {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.enlace__menu__principal {
+  display: flex;
+  color: white;
+}
+
+.enlace__menu__principal:hover {
+  text-decoration: underline;
+}
+
+.lista__menu__lateral {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

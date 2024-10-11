@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtros de Búsqueda - Inmuebles</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Transformación de Texto - Inmobiliaria IA</title>
+  </head>
+  <body class="fondo_general">
+    <!-- Aside lateral que se puede plegar -->
+    <button class="toggle-aside" onclick="toggleAside()">-<- ></button>
+
+    <header>
+      <nav class="header">
+        <a href="./index.html">Inicio</a>
+        <a href="./servicios.html">Servicios</a>
+        <a href="./Inmuebles.html">Inmuebles</a>
+        <a href="./contacto.html">Contacto</a>
+      </nav>
+      <h1 class="animacion-palabra header__item-centro">
+        <span class="texto-principal">InmobiliarIA</span>
+
+        <span class="texto-resaltado"
+          >InmobilIArIA IA
+          <span class="resaltado-ia resaltado-ia-final">IA</span></span
+        >
+      </h1>
+    </header>
+
+    <main class="contenedor__principal">
+      <aside class="aside__contenedor active">
+        <div class="aside__contenido">
+          <h2>
+            <span class="material-icons">filter_list</span> Filtrar Inmuebles
+          </h2>
+
+          <!-- Filtros de búsqueda con iconos -->
+          <form class="formulario__filtros">
+            <h3>
+              <span class="material-icons">attach_money</span> Rango de Precio
+            </h3>
+            <label for="precio_minimo">
+              <span class="material-icons">money_off</span> Precio mínimo
+            </label>
+            <input type="number" id="precio_minimo" placeholder="Mínimo" />
+            <label for="precio_maximo">
+              <span class="material-icons">money</span> Precio máximo
+            </label>
+            <input type="number" id="precio_maximo" placeholder="Máximo" />
+
+            <h3><span class="material-icons">category</span> Categoría</h3>
+            <label>
+              <span class="material-icons">check_box</span>
+              <input type="checkbox" /> Compra nuevo
+            </label>
+            <label>
+              <span class="material-icons">check_box_outline_blank</span>
+              <input type="checkbox" /> Compra usado
+            </label>
+
+            <h3>
+              <span class="material-icons">apartment</span> Tipo de Inmueble
+            </h3>
+            <label>
+              <span class="material-icons">check_box</span>
+              <input type="checkbox" /> Apartamento
+            </label>
+            <label>
+              <span class="material-icons">check_box</span>
+              <input type="checkbox" /> Casa
+            </label>
+            <label>
+              <span class="material-icons">check_box</span>
+              <input type="checkbox" /> Apartaestudio
+            </label>
+            <label>
+              <span class="material-icons">check_box</span>
+              <input type="checkbox" /> Edificio
+            </label>
+            <label>
+              <span class="material-icons">check_box</span>
+              <input type="checkbox" /> Oficina
+            </label>
+            <label>
+              <span class="material-icons">check_box</span>
+              <input type="checkbox" /> Local
+            </label>
+            <a href="#">Ver más</a>
+
+            <h3><span class="material-icons">aspect_ratio</span> Área</h3>
+            <label for="area_minima">
+              <span class="material-icons">area_chart</span> Área mínima
+            </label>
+            <input type="number" id="area_minima" placeholder="Mínima" />
+            <label for="area_maxima">
+              <span class="material-icons">area_chart</span> Área máxima
+            </label>
+            <input type="number" id="area_maxima" placeholder="Máxima" />
+
+            <h3>
+              <span class="material-icons">home</span> Detalles del Inmueble
+            </h3>
+            <label for="habitaciones">
+              <span class="material-icons">bed</span> Habitaciones
+            </label>
+            <select id="habitaciones">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>+6</option>
+            </select>
+
+            <label for="banos">
+              <span class="material-icons">bathtub</span> Baños
+            </label>
+            <select id="banos">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>+6</option>
+            </select>
+
+            <label for="parqueaderos">
+              <span class="material-icons">directions_car</span> Parqueaderos
+            </label>
+            <select id="parqueaderos">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>+6</option>
+            </select>
+
+            <label for="estrato">
+              <span class="material-icons">label</span> Estrato
+            </label>
+            <select id="estrato">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+
+            <!-- Botones de control -->
+            <div class="control-botones">
+              <button type="button" class="control-boton" id="aplicar-filtros">
+                Aplicar Filtros
+              </button>
+              <button type="button" class="control-boton" id="limpiar-filtros">
+                Limpiar Filtros
+              </button>
+            </div>
+          </form>
+        </div>
+      </aside>
+
+      <div class="contenido__principal">
+        <section class="seccion__contenido">
+          <h2 class="subtitulo__datos">Destacados</h2>
+
+          <article class="contenido__datos">
+            <div>
+              <h1>El Encanto</h1>
+              <p>
+                El Condominio El Encanto en San Vicente Ferrer es una comunidad
+                residencial excepcionalmente bien situada, a menos de 60 minutos
+                de la ciudad de Medellín.
+              </p>
+            </div>
+            <img src="img/3.jpg" alt="Inmueble 1" class="slider__imagen" />
+          </article>
+
+          <article class="contenido__datos">
+            <img src="img/1.jpg" alt="Inmueble 2" class="imagen__estandar" />
+
+            <p>
+              Este exclusivo desarrollo ofrece a sus residentes la tranquilidad
+              de un entorno natural con todas las comodidades modernas.
+            </p>
+          </article>
+
+          <p class="contenido__datos">
+            Disfruta de servicios gratuitos de acueducto y alcantarillado, así
+            como el regalo de un modelo de casa y los diseños arquitectónicos al
+            adquirir un lote. El Condominio El Encanto está diseñado para
+            ofrecer la mejor experiencia de vida, combinando belleza natural y
+            conveniencia urbana.
+            <img src="img/2.jpg" alt="Inmueble 3" class="slider__imagen" />
+          </p>
+        </section>
+        <section class="seccion__contenido">
+          <h3 class="subtitulo__datos">Inmuebles Disponibles</h3>
+          <div class="contenido__datos">
+            <div class="slider__contenedor">
+              <div class="slider__imagenes">
+                <img src="img/6.jpg" alt="Inmueble 1" class="slider__imagen" />
+                <img src="img/4.jpg" alt="Inmueble 2" class="slider__imagen" />
+                <img src="img/5.jpg" alt="Inmueble 3" class="slider__imagen" />
+              </div>
+
+              <div class="slider__botones">
+                <button class="slider__anterior material-icons">
+                  chevron_left
+                </button>
+                <button class="slider__siguiente material-icons">
+                  chevron_right
+                </button>
+              </div>
+            </div>
+
+            <div class="inmuebles__lista">
+              <h3>Lista de Inmuebles</h3>
+              <div class="inmueble__item">
+                <h3>Apartamento en El Poblado</h3>
+                <p>Precio: $1.200.000.000</p>
+                <p>Área: 193 m²</p>
+                <button onclick="viewDetails('inmueble1')">Ver Detalles</button>
+              </div>
+              <div class="inmueble__item">
+                <h3>Apartamento en Laureles</h3>
+                <p>Precio: $800.000.000</p>
+                <p>Área: 150 m²</p>
+                <button onclick="viewDetails('inmueble2')">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="seccion__contenido">
+          <h2>Inmuebles Destacados</h2>
+          <div id="inmuebles">
+            <div class="grid-inmuebles">
+              <div class="inmueble">
+                <img src="image1.jpg" alt="Inmueble 1" />
+                <h3>Apartamento en Venta, El Poblado</h3>
+                <p>Área: 193 m² | Precio: $1.200.000.000</p>
+                <button onclick="viewDetails('inmueble1')">Ver Detalles</button>
+              </div>
+              <div class="inmueble">
+                <img src="image2.jpg" alt="Inmueble 2" />
+                <h3>Apartamento en Venta, Laureles</h3>
+                <p>Área: 150 m² | Precio: $800.000.000</p>
+                <button onclick="viewDetails('inmueble2')">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer__contenedor">
+      <div class="footer__seccion">
+        <h3></h3>
+      </div>
+
+      <div class="footer__seccion">
+        <h3>Dirección de la Empresa</h3>
+        <p>123 Calle Inmobiliaria, Medellín, Colombia</p>
+        <p>Teléfono: +57 123 456 789</p>
+        <p>Email: contacto@inmobiliaria.com</p>
+      </div>
+
+      <div class="footer__seccion">
+        <h3>Síguenos en Redes Sociales</h3>
+        <div class="footer__redes">
+          <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
+          <a href="#"><img src="twitter-icon.png" alt="Twitter" /></a>
+          <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/slider.js"></script>
+
+    <script>
+      // Función para alternar el aside
+      function toggleAside() {
+        document.querySelector(".aside__contenedor").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
