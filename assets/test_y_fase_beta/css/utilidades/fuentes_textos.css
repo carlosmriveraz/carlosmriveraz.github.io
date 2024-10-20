@@ -104,9 +104,9 @@
 .inicio__titulo {
   text-align: center;
   display: inline-block;
-  margin: 2rem 0;
+
   font-family: "Montserrat";
-  font-size: var(--medida-titulo);
+
   text-shadow: 1px 1px 15px var(--color2), 1px 0 25px var(--color1),
     1px 1px 35px var(--color2), 1px 1px 45px var(--color4);
   transition: all 4s ease-out;
@@ -198,23 +198,27 @@
 }
 
 .texto_3d_rapido {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: margin-left 3s ease, margin-top 1s ease,
+    background-color 0.9s ease, transform 0.5s ease; /* Cambios lentos en 0.5s */
 }
 
 .texto_3d_rapido h1 {
-  color: var(--color1);
-  font-size: var(--medida-titulo-extra-grande);
   font-weight: 700;
-  text-shadow: -0.0075em 0.0075em 0 var(--color1),
-    0.005em 0.005em 0 var(--color2), 0.01em 0.01em 0 var(--color3),
-    0.015em 0.015em var(--color4), 0.02em 0.02em 0 var(--color5),
-    0.025em 0.025em 0 var(--color6), 0.03em 0.03em 0 var(--color7);
+  text-shadow: -0.0075em 0.0075em 0 var(--color1), 0.5em 0.5em 0 var(--color2),
+    1em 1em 0 var(--color3), 0.15em 0.15em var(--color4),
+    0.2em 0.02em 0 var(--color5), 0.025em 0.025em 0 var(--color6),
+    0.3em 0.3em 0 var(--color7);
+}
+
+.texto_3d_rapido:hover {
+  transform: scale(1.1); /* Cambia el tamaño del elemento al hacer hover */
+
+  text-shadow: -0.0075em 0.0075em 0 var(--color6), 0.005em 0.5em 0 var(--color5),
+    0.1em 0.1em 0 var(--color2), 0.015em 0.15em var(--color4),
+    0em 0.02em 0 var(--color5), 0.025em 0.25em 0 var(--color6),
+    0.3em 0.3em 0 var(--color7);
+  background-color: #0ff;
+  margin-left: 40%;
+  margin-top: 3rem;
 }

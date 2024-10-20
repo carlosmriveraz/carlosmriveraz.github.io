@@ -131,6 +131,9 @@ body {
 
   padding: 0;
 }
+table {
+  max-width: 90%;
+}
 
 header {
   display: flex;
@@ -212,8 +215,8 @@ main {
   background-color: #0001;
   display: flex;
   flex-flow: column wrap;
-  margin-top: 2.5rem; /* Ajusta según la altura de tu header */
-  padding-top: 1rem; /* Espacio para el header fijo */
+  margin: 0; /* Ajusta según la altura de tu header */
+  padding-top: 2.5rem; /* Espacio para el header fijo */
 }
 section {
   width: 100%;
@@ -476,12 +479,10 @@ menu {
 
 .color_saturno {
   background-color: hsl(40, 70%, 70%);
-  opacity: 0.8;
 }
 
 .color_urano {
   background-color: hsl(170, 75%, 70%);
-  opacity: 0.8;
 }
 
 .color_neptuno {
@@ -515,16 +516,16 @@ menu {
 .enlace:hover::after,
 .enlace.activo::after {
   transform: scaleX(
-    1.1
+    1.2
   ); /* Mostrar subrayado al pasar el mouse o estar activo */
 }
 
 /* Efecto hover */
 .enlace:hover {
-  background-color: var(
-    --color-terciario
-  ); /* Fondo más oscuro al pasar el mouse */
-  color: var(--fondo-terciario); /* Cambiar color del texto al pasar el mouse */
+  border-radius: 20%;
+  border: 3px solid #5005;
+  background-color: var(--fondo-hover); /* Fondo más oscuro al pasar el mouse */
+  color: #b53535; /* Cambiar color del texto al pasar el mouse */
 }
 
 .enlace:hover::after {

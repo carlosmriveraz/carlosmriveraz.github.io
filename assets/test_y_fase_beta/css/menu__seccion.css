@@ -99,8 +99,7 @@
 
 .producto {
   border-radius: 6px;
-  border: 1px solid #00fafa; /* Ejemplo de borde */
-  padding: 10px; /* Espacio interno */
+  border: 0.5px solid #00fafa; /* Ejemplo de borde */
   text-align: center; /* Centrar el texto */
 }
 
@@ -287,4 +286,38 @@
   100% {
     background-color: var(--color1);
   }
+}
+
+/* Estilos 3D aplicados desde el principio al selector de resultados */
+.totales {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  background-color: var(--color5);
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 200, 200, 0.9),
+    /* Sombra principal */ -5px -5px 15px rgba(255, 255, 255, 0.8) inset,
+    /* Brillo interior superior */ 5px 5px 15px rgba(0, 200, 200, 0.8) inset; /* Sombra interior inferior */
+  transform: rotateY(20deg) rotateX(-24deg) translateZ(120px); /* Ajustado ángulo */
+  transition: transform 0.7s ease-in-out, box-shadow 0.7s;
+
+  /* Borde con gradiente de tonos verdes tipo hoja de fresa */
+  border: 5px solid transparent;
+  background-image: linear-gradient(
+    var(--color6),
+    var(--color1),
+    linear-gradient(45deg, var(--color7), #fff, var(--color7))
+  );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+/* Resultados */
+#totalPrecio {
+  font-weight: bold;
+  color: var(--color8);
+  transform: rotateY(10deg) translateZ(30px); /* Ajustado ángulo */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
 }
