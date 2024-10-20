@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escena Cósmica con Mangos, Frutas Neón y Nieve</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("./tex.png") repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .contenedor__imagen {
+        background-color: #0099ff99;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        max-width: 700px; /* Más grande */
+        margin: 0 auto;
+      }
+
+      .contenedor__imagen img {
+        width: 100%;
+        display: block;
+        border-radius: 15px;
+        filter: brightness(1.2); /* Hacer el fondo más brillante */
+      }
+
+      .nieve {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: url("./snow.png") repeat;
+        animation: caer__nieve 10s linear infinite;
+        opacity: 0.8;
+      }
+
+      /* Frutas neón */
+      .frutas-neon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-around;
+        width: 150%; /* Más grande que el contenedor */
+        height: 150%;
+        animation: rotar__frutas 30s linear infinite;
+      }
+
+      .fruta {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        box-shadow: 0 0 20px 5px;
+        animation: parpadear 3s infinite;
+      }
+
+      /* Tonalidades neón */
+      .fruta--rojo {
+        background-color: #ff0040;
+        box-shadow: 0 0 20px 5px #ff0040;
+      }
+      .fruta--naranja {
+        background-color: #ff6600;
+        box-shadow: 0 0 20px 5px #ff6600;
+      }
+      .fruta--amarillo {
+        background-color: #ffcc00;
+        box-shadow: 0 0 20px 5px #ffcc00;
+      }
+      .fruta--verde {
+        background-color: #33ff00;
+        box-shadow: 0 0 20px 5px #33ff00;
+      }
+      .fruta--azul {
+        background-color: #0099ff;
+        box-shadow: 0 0 20px 5px #0099ff;
+      }
+      .fruta--violeta {
+        background-color: #9900ff;
+        box-shadow: 0 0 20px 5px #9900ff;
+      }
+      .fruta--rosa {
+        background-color: #ff33cc;
+        box-shadow: 0 0 20px 5px #ff33cc;
+      }
+      .fruta--cian {
+        background-color: #00ffff;
+        box-shadow: 0 0 20px 5px #00ffff;
+      }
+      .fruta--magenta {
+        background-color: #ff00ff;
+        box-shadow: 0 0 20px 5px #ff00ff;
+      }
+      .fruta--lima {
+        background-color: #ccff00;
+        box-shadow: 0 0 20px 5px #ccff00;
+      }
+
+      /* Animación de rotación */
+      @keyframes rotar__frutas {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      /* Parpadeo neón */
+      @keyframes parpadear {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes caer__nieve {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 0 1000px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor__imagen">
+      <img
+        src="mangos_espacio.png"
+        alt="Helado con mangos y frutas en el espacio"
+      />
+      <div class="nieve"></div>
+      <!-- Frutas neón -->
+      <div class="frutas-neon">
+        <div class="fruta fruta--rojo"></div>
+        <div class="fruta fruta--naranja"></div>
+        <div class="fruta fruta--amarillo"></div>
+        <div class="fruta fruta--verde"></div>
+        <div class="fruta fruta--azul"></div>
+        <div class="fruta fruta--violeta"></div>
+        <div class="fruta fruta--rosa"></div>
+        <div class="fruta fruta--cian"></div>
+        <div class="fruta fruta--magenta"></div>
+        <div class="fruta fruta--lima"></div>
+      </div>
+    </div>
+  </body>
+</html>

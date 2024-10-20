@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Menú Interactivo de Heladería" />
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk&family=Kalnia+Glaze:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/movil.css" />
+
+    <link rel="stylesheet" href="css/menu__seccion.css" />
+    <link rel="stylesheet" href="css/general.css" />
+
+    <style>
+      .contenedor__adiciones {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        height: 100%;
+        width: 100%;
+      }
+
+      .contenedor_item {
+        display: flex;
+      flex-flow:  column wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+ 
+        border: px solid #0cc;
+        border-radius: 50%;
+     
+background-image: url(assets/img/tex.png);
+      }
+
+
+
+ 
+      .escena {
+        background-color: #2225;
+        position: relative;
+        width: 300px;
+        height: 300px;
+      }
+
+      .estrella,
+      .planeta,
+      .luna,
+      .asteroide,
+      .satelite,
+      .sol {
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .sol {
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
+        box-shadow: 0 0 50px 20px rgba(255, 255, 0, 0.5);
+      }
+
+      .tarjeta {
+        width: 4rem;
+        height: 2.5rem;
+
+        color: black;
+        padding: 1px;
+        border-radius: 40%;
+        box-shadow: 0 5x 10px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        font-size: 0.4rem;
+      }
+
+      .tarjeta .icono {
+        font-size: 0.6rem;
+      }
+
+      .tarjeta.planeta {
+        background-color: #7fb3d5;
+      }
+
+      .tarjeta.estrella {
+        background-color: #f9e79f;
+      }
+
+      .tarjeta.luna {
+        background-color: #d5d8dc;
+      }
+
+      .tarjeta.asteroide {
+        background-color: #aab7b8;
+      }
+
+      .tarjeta.satelite {
+        background-color: #7dcea0;
+      }
+
+      /* Orbital animations */
+      @keyframes orbita1 {
+        0% {
+          transform: rotate(0deg) translateX(300px) rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg) translateX(300px) rotate(-360deg);
+        }
+      }
+
+      @keyframes orbita2 {
+        0% {
+          transform: rotate(0deg) translateX(200px) rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg) translateX(200px) rotate(-360deg);
+        }
+      }
+
+      @keyframes orbita3 {
+        0% {
+          transform: rotate(0deg) translateX(400px) rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg) translateX(400px) rotate(-360deg);
+        }
+      }
+
+      .planeta {
+        animation: orbita1 20s linear infinite;
+      }
+
+      .estrella {
+        animation: orbita2 30s linear infinite;
+      }
+
+      .luna {
+        animation: orbita2 10s linear infinite;
+      }
+
+      .asteroide {
+        animation: orbita3 25s linear infinite;
+      }
+
+      .satelite {
+        animation: orbita1 15s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+ <header class="Encabezado">
+     <div class="header">
+       <h1 class="texto__atractivo">moom fried</h1>
+
+       <nav class="submenu">
+         <ul>
+           <li>
+             <a
+               href="#menu"
+               class="enlace activo"
+               onclick="setActivo(this)"
+               >Menu</a
+             >
+           </li>
+           <li>
+             <a href="#ordenes" class="enlace" onclick="setActivo(this)"
+               >Ordenes</a
+             >
+           </li>
+           <li>
+             <a href="#pedido" class="enlace" onclick="setActivo(this)"
+               >Pedido</a
+             >
+           </li>
+           <li>
+            <a href="#juegos" class="enlace" onclick="setActivo(this)"
+              >Juegos</a
+            >
+          </li>
+         </ul>
+       </nav>
+     </div>
+     <div class="Hero gradiente4">
+      <img src="assets/logo2.png" alt="Astronauta sobre laluna y logodel restauraten moon fries">
+     </div>
+ </header>
+   
+
+    <main>
+      <!-- Productos Principales -->
+      <section id="menu" class="gradiente3">
+        <h2>MENU</h2>
+        <div class="productos__grid">
+          <!-- Productos Principales -->
+          <div
+            class="producto"
+            id="postre1"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <img
+              src="assets/img/postres/1.png"
+              alt="Tarta de Fresa"
+              class="producto__imagen"
+            />
+            Tarta de Fresa</h3>
+            <p class="producto__precio">$14,000 COP</p>
+          </div>
+
+          <div
+            class="producto"
+            id="postre2"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <img
+              src="assets/img/postres/2.png"
+              alt="Cheesecake de Limón"
+              class="producto__imagen"
+            />
+            <div class="tarjeta-dorada">
+              Cheesecake de Limón</h3>
+              <p class="producto__precio">$15,000 COP</p>
+            </div>
+          </div>
+          <div
+            class="producto"
+            id="postre3"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <img
+              src="assets/img/postres/3.png"
+              alt="Brownie de Chocolate"
+              class="producto__imagen"
+            />
+            Brownie de Chocolate</h3>
+            <p class="producto__precio">$13,500 COP</p>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- contenedor__adiciones -->
+      <section id="ordenes" class="gradiente1">
+        <h2>ORDENES</h2>
+        <div class="contenedor__adiciones">
+          <div
+            class="producto contenedor_item color_mercurio"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre ">🍔
+            Hamburguesa</h3>
+            <p class="producto__precio">$15,000 COP</p>
+          </div>
+
+          <div
+            class="producto contenedor_item color_venus"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre  ">🍕
+            Pizza</h3>
+            <p class="producto__precio">$18,000 COP</p>
+          </div>
+
+          <div
+            class="producto contenedor_item color_tierra"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre  ">🌭
+            Hot Dog</h3>
+            <p class="producto__precio">$10,000 COP</p>
+          </div>
+
+          <div
+            class="producto contenedor_item color_marte"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre">🍟
+            Papas Fritas</h3>
+            <p class="producto__precio">$7,000 COP</p>
+          </div>
+
+          <div
+            class="producto contenedor_item color_saturnocolor_saturno"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre">🍗
+            Pollo Frito</h3>
+            <p class="producto__precio">$12,000 COP</p>
+          </div>
+
+          <div
+            class="producto contenedor_item color_urano"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre">🥪
+            Sándwich</h3>
+            <p class="producto__precio">$11,000 COP</p>
+          </div>
+
+          <div
+            class="producto contenedor_item " 
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre">🌯
+            Burrito</h3>
+            <p class="producto__precio">$14,000 COP</p>
+          </div>
+
+          <div
+            class="producto  contenedor_item color_urano"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre ">🍣
+            Sushi</h3>
+            <p class="producto__precio">$22,000 COP</p>
+          </div>
+
+          <div
+            class="producto  contenedor_item  color_urano"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre">🍩
+            Dona</h3>
+            <p class="producto__precio">$5,000 COP</p>
+          </div>
+
+          <div
+            class="producto contenedor_item color_saturno"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre">🍦
+            Helado</h3>
+            <p class="producto__precio">$8,000 COP</p>
+          </div>
+
+          <div
+            class="producto color_saturno contenedor_item"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre">🥤
+            Malteada</h3>
+            <p class="producto__precio">$6,000 COP</p>
+          </div>
+
+          <div
+            class="producto color_urano contenedor_item"
+            draggable="true"
+            ondragstart="arrastrar(event)"
+          >
+            <h3 class="producto__nombre">🍺
+            Cerveza</h3>
+            <p class="producto__precio">$9,000 COP</p>
+          </div>
+
+        
+      </section>
+
+      <!-- Sección del Juego -->
+
+
+      <section id="pedido" class="menu__juego gradiente5">
+        <h2>¡Crea tu Propia Receta!</h2>
+      
+        <div class="juego__area gradiente5">
+          <div
+            class="juego__contenedor"
+            id="contenedorReceta"
+            ondrop="soltar(event)"
+            ondragover="permitirArrastrar(event)"
+          >
+          <p id="contadorIngredientes">Ingredientes: 0</p>
+          </div>
+          <small >
+            Arrastra los productos hacia el contenedor y observa el acumulado en
+            la tabla.
+          </small>
+       
+          <!-- Tabla de acumulado de productos -->
+          <table class="juego__tabla" id="tablaAcumulado">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody id="listaProductos"></tbody>
+          </table>
+        </div>
+      </section>
+  
+    </main>
+
+    <section id="juegos"> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Astronaut Scroll & Drag</title>
+    <style>
+
+        #contenedor {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor"></div>
+
+    <!-- Incluye Three.js y el cargador GLTF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script>
+        let scene, camera, renderer, model;
+        let isDragging = false, previousMousePosition = { x: 0, y: 0 };
+
+        // Configuración básica de la escena, cámara y renderizador
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('contenedor').appendChild(renderer.domElement);
+
+            // Luz para iluminar el modelo
+            const light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(1, 1, 1).normalize();
+            scene.add(light);
+
+            // Cargar el modelo 3D de astronauta
+            const loader = new THREE.GLTFLoader();
+            loader.load('assets/3d/astro.glb', function(gltf) {
+                model = gltf.scene;
+                scene.add(model);
+                model.position.set(0, -1, 0);  // Ajusta la posición del modelo
+            }, undefined, function(error) {
+                console.error(error);
+            });
+
+            // Posiciona la cámara
+            camera.position.z = 5;
+        }
+
+        // Rotación del modelo con el scroll del mouse
+        window.addEventListener('wheel', function(event) {
+            if (model) {
+                model.rotation.y += event.deltaY * 0.01;  // Controla la rotación con el scroll
+            }
+        });
+
+        // Eventos de arrastre para rotar el modelo
+        document.addEventListener('mousedown', function(event) {
+            isDragging = true;
+        });
+
+        document.addEventListener('mousemove', function(event) {
+            if (isDragging && model) {
+                let deltaMove = {
+                    x: event.clientX - previousMousePosition.x,
+                    y: event.clientY - previousMousePosition.y
+                };
+
+                model.rotation.y += deltaMove.x * 0.005;  // Rotación en el eje Y
+                model.rotation.x += deltaMove.y * 0.005;  // Rotación en el eje X
+
+                previousMousePosition = {
+                    x: event.clientX,
+                    y: event.clientY
+                };
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+        });
+
+        // Función de animación
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        // Ajustar el tamaño cuando se redimensiona la ventana
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+
+        // Inicializa y anima la escena
+        init();
+        animate();
+    </script>
+</body>
+</html>
+
+
+    </section>
+
+    <script src="js/menu.js"></script>
+    <script src="js/enlace.js"></script>
+  </body>
+</html>
