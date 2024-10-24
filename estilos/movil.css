@@ -27,7 +27,6 @@
     height: 200vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .texto {
-    outline: 5px dashed blue;
     font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
 }
