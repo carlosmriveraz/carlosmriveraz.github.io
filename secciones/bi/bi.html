@@ -12,86 +12,16 @@
     <link rel="stylesheet" href="./css/bi__kpi.css" />
     <link rel="stylesheet" href="./css/bi__graficos.css" />
     <link rel="stylesheet" href="../../estilos/estilo.css" />
-
-    <style>
-      :root {
-        /* Tonos rojos */
-        --color-rojo-1: #ffcccc; /* Rojo claro */
-        --color-rojo-2: #ff6666; /* Rojo medio */
-        --color-rojo-3: #cc0000; /* Rojo oscuro */
-        --color-rojo-4: #990000; /* Rojo muy oscuro */
-        --color-rojo-5: #ff3333; /* Rojo brillante */
-
-        /* Nuevas variables de tonos rojos */
-        --color-paleta1: #ff3333; /* Rojo brillante */
-        --color-secundario: #ff6666; /* Rojo medio */
-        --color-terciario: #cc0000; /* Rojo oscuro */
-        --color-primario: #990000; /* Rojo muy oscuro */
-      }
-
-      .holograma__rojo {
-        background: linear-gradient(
-          135deg,
-          var(--color-rojo-3),
-          var(--color-rojo-2),
-          var(--color-rojo-4),
-          var(--color-rojo-1)
-        );
-        background-size: 400% 400%;
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        position: relative;
-        overflow: hidden;
-        transform: rotateX(0deg) rotateY(0deg) scale(1);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        animation: holograma__rojo 4s linear infinite;
-        z-index: 500;
-        text-align: center;
-        padding: 1rem;
-        width: 300px; /* Ajusta el ancho según tus necesidades */
-      }
-
-      .holograma__rojo::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 72, 6, 0.472);
-        filter: blur(10px);
-        z-index: 1;
-        transition: opacity 0.4s ease;
-        opacity: 0;
-      }
-
-      .holograma__rojo:active {
-        transform: rotateX(30deg) rotateY(30deg) scale(1.2);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-      }
-
-      @keyframes holograma__rojo {
-        0% {
-          background-position: 0% 0%;
-        }
-        50% {
-          background-position: 100% 100%;
-        }
-        100% {
-          background-position: 0% 0%;
-        }
-      }
-    </style>
   </head>
   <body>
-    <main class="contenedor__flex__bi">
+    <main class="contenedor__padding">
       <h2>
         <strong class="subtitulo">
           <span> &lt;&frasl;&nbsp;B</span>usiness
           <span>I</span>ntelligence</strong
         >
       </h2>
-      <div class="tarjetas__contenedor contenedor__padding">
+      <section class="tarjetas__contenedor">
         <!-- Valor Mínimo con fondo rojo claro -->
         <div class="tarjeta__KPI tarjeta__minimo">
           <div class="kpi__contenido">
@@ -102,23 +32,6 @@
               <div class="kpi__fila">
                 <i class="material-icons">date_range</i>
                 <p><strong>Fecha:</strong> <span id="fecha-minima"></span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Valor Máximo con animación verde -->
-        <div class="tarjeta__KPI tarjeta__maximo">
-          <div class="kpi__contenido">
-            <i class="material-icons">trending_up</i>
-            <div class="kpi__detalles">
-              <h3>Valor Máximo</h3>
-              <p id="valor-maximo"></p>
-              <div class="kpi__fila">
-                <i class="material-icons">date_range</i>
-                <p>
-                  <strong>Fecha Máxima:</strong> <span id="fecha-maxima"></span>
-                </p>
               </div>
             </div>
           </div>
@@ -148,44 +61,67 @@
             </div>
           </div>
         </div>
+        <!-- Valor Máximo con animación verde -->
+        <div class="tarjeta__KPI tarjeta__maximo">
+          <div class="kpi__contenido">
+            <i class="material-icons">trending_up</i>
+            <div class="kpi__detalles">
+              <h3>Valor Máximo</h3>
+              <p id="valor-maximo"></p>
+              <div class="kpi__fila">
+                <i class="material-icons">date_range</i>
+                <p>
+                  <strong>Fecha Máxima:</strong> <span id="fecha-maxima"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="contenedor__grid__300">
+        <div>
+          <canvas
+            id="chart2"
+            class="gradiente__frio gradiente__diagonal"
+          ></canvas>
+        </div>
+        <div>
+          <canvas
+            id="chart3"
+            class="gradiente__frio gradiente__diagonal"
+          ></canvas>
+        </div>
+
+        <canvas
+          id="chart1"
+          class="gradiente__diagonal gradiente__frio"
+        ></canvas>
       </div>
-
-      <div
-        id="business-intelligence"
-        class="contenedor__bi contenedor__padding"
-      >
-        <div class="bi__elemento contenido__bi__7">
-          <div class="contenedor__flex__separado">
-            <div class="chart-container gradiente__frio">
-              <canvas id="chart2" class="gradiente__diagonal"></canvas>
-            </div>
-            <div class="chart-container gradiente__frio">
-              <canvas id="chart3" class="gradiente__diagonal"></canvas>
-            </div>
-          </div>
-
-          <div class="tabla__contenedor">
-            <h2>Estadísticas Mensuales</h2>
-            <table id="monthly-statistics" class="display">
-              <thead>
-                <tr>
-                  <th>Mes</th>
-                  <th>Promedio</th>
-                  <th>Máximo</th>
-                  <th>Mínimo</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Aquí se llenarán los datos mensuales -->
-              </tbody>
-            </table>
-          </div>
-          <div class="bi__elemento contenedor__Estadisticas_predicciones">
-            <h2 class="subtitulo">Predicciones para los Próximos Dos Días</h2>
-            <p>
+      <div class="tabla__contenedor">
+        <h2>Estadísticas Mensuales</h2>
+        <table id="monthly-statistics" class="display">
+          <thead>
+            <tr>
+              <th>Mes</th>
+              <th>Promedio</th>
+              <th>Máximo</th>
+              <th>Mínimo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí se llenarán los datos mensuales -->
+          </tbody>
+        </table>
+      </div>
+      <section id="business-intelligence" class="contenedor__bi">
+        <div class="bi__elemento">
+          <article class="contenedor__flex__columna__centrado__centrado">
+            <h6>Predicciones para los Próximos Dos Días</h6>
+            <small>
               Nota: Estas predicciones son estimaciones realizadas por
               inteligencia artificial y no son fijas.
-            </p>
+            </small>
             <table id="predictions" class="display tabla__contenedor">
               <thead>
                 <tr>
@@ -197,11 +133,10 @@
                 <!-- Los datos se rellenarán aquí -->
               </tbody>
             </table>
-          </div>
+          </article>
         </div>
 
         <div class="bi__elemento">
-          <canvas id="chart1"></canvas>
           <div class="tabla__contenedor">
             <h2>Valores Históricos del Dólar</h2>
             <table id="dollar-values" class="dataTable">
@@ -226,7 +161,7 @@
             datos historicos oficiales"</a
           >
         </div>
-      </div>
+      </section>
     </main>
     <!--
     <div class="tabla__contenedor">
@@ -387,7 +322,6 @@
         const monthlyTableBody = document.querySelector(
           "#monthly-average-values tbody"
         );
-        monthlyTableBody.innerHTML = ""; // Clear previous data
 
         Object.keys(monthlyData).forEach((month) => {
           const values = monthlyData[month];

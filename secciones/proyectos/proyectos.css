@@ -2,7 +2,6 @@
 .contenedor__proyectos {
   min-width: 100%;
   margin: 0 auto; /* Centra el contenedor */
-  padding: 1rem;
 }
 
 .proyectos__grid {
@@ -84,15 +83,7 @@
   }
 }
 
-.contenedor__flex__proyectos {
-  display: flex;
-  margin-bottom: 1rem;
-  text-align: center;
-  gap: 2px;
-  flex-wrap: wrap;
-}
-
-.tarjeta__kpi_proyecos {
+x .tarjeta__kpi_proyecos {
   border: 1.5px solid var(--color-hover);
   background-color: var(--color-paleta4);
   display: flex;

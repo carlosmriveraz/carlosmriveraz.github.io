@@ -118,6 +118,20 @@
           transform: translateY(0);
         }
       }
+      .contenedor__logo__fijo {
+        position: fixed;
+        bottom: 2rem;
+
+        background: linear-gradient(
+          to right,
+          var(--color-hover),
+          var(--color-paleta3),
+          var(--color-hover)
+        );
+      }
+      .logo__fijo {
+        width: 2rem;
+      }
     </style>
   </head>
 
@@ -217,11 +231,10 @@
 
       <iframe
         src="secciones/proyectos/proyectos.html"
-        width="100vH"
-        class="triple__pantalla"
-        height="auto"
+        width="100%"
+        class=""
+        height="300hv"
         frameborder="0"
-        scrolling="no"
         allowfullscreen
         id="proyectos"
         title="proyectos"
@@ -245,6 +258,16 @@
 
       <!-- Sección del video de bienvenida y política de cookies -->
       <section class="cookies-and-video-section">
+
+    <a
+            href="https://www.contadorvisitasgratis.com"
+            title="contadores de visitas gratis"
+            ><img
+              src="https://counter6.optistats.ovh/private/contadorvisitasgratis.php?c=nmjhxy5tl8wpnamwzkzxs8autwz9k6eb"
+              border="0"
+              title="contadores de visitas gratis"
+              alt="contadores de visitas gratis" /></a>
+    
         <!-- Contenido del modal de cookies y video -->
         <div id="cookiesModalContainer"></div>
         <!-- Aquí cargaremos el contenido -->
@@ -258,10 +281,14 @@
       <span class="animated-text">c</span>
       <span class="animated-text">i</span>
       <span class="animated-text">o</span>
+      
     </div>
-
-    <!-- Menú de redes sociales con estructura BEM -->
-    <!--    <aside class="aside__contacto__social">
+<div class="contenedor__logo__fijo">
+   
+  <a href="./assets/apps/gradient/riveradev_gradientes.html" target="_blank" aria-label="riveradev_gradientes" ><img src="./images/logomin.webp" alt="logo con grradiente aplicaion gradientes riveradev" class="logo__fijo"></a>
+  
+</div>
+    <aside class="aside__contacto__social">
     
       <a
         href="mailto:carlosmrz100@hotmail.com"
@@ -283,8 +310,7 @@
 
       <a href="https://github.com/carlosmriveraz" target="_blank" aria-label="GitHub" class="icono__github"></a>
       
-    
-      </a>
+  
       <a class="material-icons">clock</a>
 
       
@@ -344,6 +370,7 @@
         }
       });
     </script>
+
     <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

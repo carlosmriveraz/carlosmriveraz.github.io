@@ -45,7 +45,7 @@
 .tecnologias__name img {
   height: 4rem;
   /* Tamaño fijo para las imágenes */
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   object-fit: contain;
   width: 4rem;
   border: 2px solid var(--color-hover);

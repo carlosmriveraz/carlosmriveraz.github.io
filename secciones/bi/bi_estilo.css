@@ -47,37 +47,42 @@
 
 .bi__elemento {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: space-between; /* Alineación vertical uniforme */
-  height: 100%; /* Asegura que todos los elementos ocupen el mismo alto */
 }
-
 .tabla__contenedor,
+.tabla__contenedor__centrada,
 .chart-container {
   flex: 1; /* Hace que las tablas y los gráficos ocupen el mismo espacio disponible */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%; /* Asegura que ocupen el 100% del ancho */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
-.chart-container canvas {
-  width: 100%; /* Asegura que el gráfico ocupe todo el ancho disponible */
-  height: auto; /* Mantiene la proporción adecuada */
+.tabla__contenedor__centrada {
+  align-items: center;
 }
 
-canvas {
-  max-width: 100%;
-  height: 200px; /* Limita la altura de los gráficos */
+.canvas {
+  min-width: 14rem;
+  max-width: 18rem;
+  min-height: 6rem; /* Limita la altura de los gráficos */
   border: 0.5px solid var(--color-hover, #ddd);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Asegura que el canvas ocupe todo el ancho disponible */
+  height: auto; /* Mantiene la proporción adecuada */
 }
 
-canvas #chart1 {
-  width: 98%;
-  height: 200px;
+/* Contenedor principal que utiliza flex-wrap */
+.contenedor-principal {
+  display: flex;
+  flex-wrap: wrap; /* Permite el ajuste de los elementos */
 }
-/* Tablas */
+
 .dataTable,
 .table {
   width: 100%;
@@ -136,6 +141,7 @@ button:hover {
 #monthly-statistics {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.7rem;
 }
 
 #dollar-values th,

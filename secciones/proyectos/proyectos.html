@@ -11,16 +11,15 @@
   </head>
   <body>
     <h2 class="subtitulo"><span &lt;&frasl;&nbsp;>P</span>royectos</h2>
-
-    <div class="contenedor__flex__columna padding-grande">
-      <!-- KPIs y Logros Destacados -->
-      <h3>
-        <strong class="subtitulo"
-          ><span>L</span>ogros <span>D</span>estacados en
-          <span>P</span>royectos</strong
-        >
-      </h3>
-      <div class="contenedor__flex__proyectos texto">
+    <!-- KPIs y Logros Destacados -->
+    <h3 class="margen__grande">
+      <strong
+        ><span class="span">L</span>ogros <span class="span">D</span>estacados
+        en <span class="span">P</span>royectos</strong
+      >
+    </h3>
+    <div class="contenedor__flex__columna contenedor__padding margen__grande">
+      <div class="contenedor__grid__200">
         <div class="tarjeta__kpi_proyecos">
           <h3 class="tarjeta_kpi__value">95%</h3>
 
@@ -86,7 +85,10 @@
         </div>
       </div>
 
-      <div class="contenedor__proyectos">
+      <div class="contenedor__proyectos flex2">
+        <h3 class="margen__grande">
+          <strong><span>P</span>royectos <span>D</span>estacados</strong>
+        </h3>
         <div class="proyectos__grid">
           <div class="proyecto">
             <h2 class="proyecto__title subtitulo">
@@ -121,12 +123,12 @@
                   </p>
                 </ul>
               </div>
-              <div
-                class="toggle-button"
+              <button
+                class="toggle-button enlace enlace__efecto__3d"
                 onclick="toggleDescription('description1')"
               >
-                Mostrar más
-              </div>
+                Mostrar más >
+              </button>
             </div>
           </div>
 
@@ -163,20 +165,20 @@
                     <span class="icono__python"></span>, IA, API
                     <a
                       href="#bi"
-                      class="holograma enlace enlace__efecto__3d enlace__subrayado__deslizante"
+                      class="enlace enlace__subrayado__deslizante"
                       target="_blank"
                       rel="noopener"
-                      >Ver más</a
+                      >Ver más ></a
                     >
                   </p>
                 </ul>
               </div>
-              <div
-                class="toggle-button"
+              <button
+                class="toggle-button enlace enlace__efecto__3d"
                 onclick="toggleDescription('description2')"
               >
-                Mostrar más
-              </div>
+                Mostrar más >
+              </button>
             </div>
           </div>
         </div>
@@ -188,8 +190,8 @@
         const toggleButton = description.nextElementSibling;
         description.classList.toggle("collapsed");
         toggleButton.textContent = description.classList.contains("collapsed")
-          ? "Mostrar más"
-          : "Mostrar menos";
+          ? "Mostrar más > + >"
+          : "Mostrar menos  - < -";
       }
     </script>
   </body>

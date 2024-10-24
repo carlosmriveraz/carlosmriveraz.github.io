@@ -3,60 +3,59 @@
 <link rel="stylesheet" href="sobre_mi.css" />
 <style>
   .contenedor__3d {
-  	display: flex;
-  	justify-content: center;
-  	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  	background-color: transparent;
-  	perspective: 800px; / Controla la profundidad del efecto 3D */
+    background-color: transparent;
+    perspective: 800px;
   }
 
   .caja {
-  	width: 75px;
-  	height: 75px;
-  	transform-style: preserve-3d; /* Permite el efecto 3D */
-  	transition: transform 0.5s;
+    width: 75px;
+    height: 75px;
+    transform-style: preserve-3d; /* Permite el efecto 3D */
+    transition: transform 0.5s;
   }
 
   .caja:hover {
-  	transform: rotateY(20deg) rotateX(20deg); /* Rotación en hover */
+    transform: rotateY(20deg) rotateX(20deg); /* Rotación en hover */
   }
 
   .cara {
-  	position: absolute;
-  	width: 75px;
-  	height: 75px;
-  	background: url("logo.png") no-repeat center/cover;
-
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: url("logo.png") no-repeat center/cover;
   }
 
   .cara:nth-child(1) {
-  	transform: translateZ(35px); /* Frente */
+    transform: translateZ(35px); /* Frente */
   }
 
   .cara:nth-child(2) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: rotateY(90deg) translateZ(35px); /* Derecha */
+    background: url("logo.png") no-repeat center/cover;
+    transform: rotateY(90deg) translateZ(35px); /* Derecha */
   }
 
   .cara:nth-child(3) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: rotateY(-90deg) translateZ(35px); /* Izquierda */
+    background: url("logo.png") no-repeat center/cover;
+    transform: rotateY(-90deg) translateZ(35px); /* Izquierda */
   }
 
   .cara:nth-child(4) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: rotateX(90deg) translateZ(35px); /* Arriba */
+    background: url("logo.png") no-repeat center/cover;
+    transform: rotateX(90deg) translateZ(35px); /* Arriba */
   }
 
   .cara:nth-child(5) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: rotateX(-90deg) translateZ(35px); /* Abajo */
+    background: url("logo.png") no-repeat center/cover;
+    transform: rotateX(-90deg) translateZ(35px); /* Abajo */
   }
 
   .cara:nth-child(6) {
-  	background: url("logo.png") no-repeat center/cover;
-  	transform: translateZ(-35px); /* Espalda */
+    background: url("logo.png") no-repeat center/cover;
+    transform: translateZ(-35px); /* Espalda */
   }
 </style>
 

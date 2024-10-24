@@ -8,10 +8,6 @@
   margin-bottom: 5px;
 }
 
-canvas {
-  min-width: 250px;
-  max-height: 250px;
-}
 #chart1 {
   width: 98%;
 }
@@ -32,6 +28,15 @@ canvas {
   max-width: 98%;
   margin: 0;
   padding: 4px;
+}
+
+canvas {
+  width: 100%; /* Asegura que el canvas ocupe todo el ancho del grid */
+
+  height: 6rem; /* Limita la altura mínima */
+  border: 0.5px solid var(--color-hover, #0ff);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 255, 255, 0.8);
 }
 
 /* Ajustes para el layout responsivo */
