@@ -138,12 +138,9 @@
 
 .maquina__escribir {
   font-family: "Montserrat", sans-serif;
-
   text-align: center;
-
   white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
+  border-right: 1px solid;
   width: 0;
   opacity: 0;
   transform: scale(0.5);

@@ -15,6 +15,9 @@ body[data-theme="dark-theme"] {
   color: var(--color-texto) #fff;
   text-align: center;
 }
+canvas {
+  min-width: 80%;
+}
 
 body {
   background: url(../images/background/bk.jpg);
@@ -120,7 +123,7 @@ footer {
 }
 
 .doble__pantalla {
-  height: 160vh;
+  height: 150vh;
 }
 
 .triple__pantalla {
@@ -129,7 +132,7 @@ footer {
 
 #inicio {
   text-align: center;
-  min-height: 100vh;
+  height: 90vh;
 }
 
 section {
@@ -144,4 +147,50 @@ section:hover {
   transform: translateY(
     -0.3125rem
   ); /* Leve ligero levantamiento al hacer hover (5px ≈ 0.3125rem) */
+}
+
+.enlace {
+  text-decoration: none; /* Eliminar subrayado predeterminado */
+  color: var(--color-terciario); /* Color del texto del enlace */
+  background-color: var(--fondo-terciario); /* Color del texto del enlace */
+
+  position: relative; /* Para el posicionamiento del subrayado */
+  padding: 0.2rempx 0.4rem; /* Espaciado interno del enlace */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+.enlace::after {
+  content: "⋯"; /* Pseudo-elemento para el subrayado */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 0;
+  bottom: 0;
+  height: 2px; /* Altura del subrayado */
+  width: 100%; /* Ancho del subrayado */
+
+  transform: scaleX(0); /* Ocultar subrayado inicialmente */
+  transition: transform 0.7s ease; /* Transición suave */
+}
+
+.enlace:hover::after,
+.enlace.activo::after {
+  transform: scaleX(
+    1.1
+  ); /* Mostrar subrayado al pasar el mouse o estar activo */
+}
+
+/* Efecto hover */
+.enlace:hover {
+  background-color: var(
+    --color-terciario
+  ); /* Fondo más oscuro al pasar el mouse */
+  color: var(--fondo-terciario); /* Cambiar color del texto al pasar el mouse */
+}
+
+.enlace:hover::after {
+  background: var(--fondo-hover); /* Cambiar color del subrayado en hover */
+}
+
+/* Color del enlace activo */
+.enlace.activo {
+  background-color: var(--fondo-primario); /* Fondo del enlace activo */
 }

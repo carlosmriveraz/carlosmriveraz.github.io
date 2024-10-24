@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Gradientes Avanzado</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk&family=Kalnia+Glaze:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(45deg, #ff007f, #00ff7f);
+        font-family: "Honk", system-ui;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        gap: 4rem;
+        text-align: center;
+      }
+      .container {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 11px 1px rgba(31, 38, 135, 0.97),
+          5px 15px 19px 1px rgba(220, 38, 135, 0.57),
+          0 8px 11px 1px rgba(31, 250, 250, 0.27);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        max-width: 800px;
+        width: 100%;
+      }
+      h1,
+      h2 {
+        font-family: "Honk", system-ui;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .color-inputs,
+      .buttons-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .color-input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      label {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="color"] {
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        border: none;
+        border-radius: 42%;
+        cursor: pointer;
+        border: 1px solid #0ff;
+        box-shadow: inset 1px 1px 10px #0dd9;
+      }
+      button {
+        font-family: "Honk", system-ui;
+        padding: 10px 15px;
+        background: radial-gradient(
+          ellipse farthest-corner at center,
+          #f9172255,
+          #c24a8d,
+          #4293d0
+        );
+
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.9;
+      }
+      button:hover {
+        background-color: #0056b3;
+        background: radial-gradient(
+          ellipse farthest-corner at center,
+          #f9172255,
+          #c24a8d,
+          #4293d0,
+          #f9172255
+        );
+      }
+      .gradient-box {
+        width: 100%;
+        height: 150px;
+        margin: 20px 0;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+        font-size: 18px;
+      }
+      .error {
+        text-align: center;
+        margin-top: 10px;
+        display: none;
+      }
+      textarea {
+        width: 100%;
+        height: 100px;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        resize: vertical;
+        font-family: "Kalnia Glaze", serif;
+      }
+      .config-section {
+        margin-top: 30px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+      }
+      .config-inputs {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .config-input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      input[type="number"],
+      input[type="range"],
+      select {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+        font-family: "Kalnia Glaze", serif;
+      }
+
+      .tarjeta_holografica {
+        width: 300px;
+        height: 200px;
+
+        background-size: 400% 400%;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        transform: rotateX(0deg) rotateY(0deg) scale(1);
+        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        animation: hologram 3s linear infinite;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .tarjeta_holografica::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 255, 255, 0.5);
+        filter: blur(8px);
+        z-index: 1;
+        transition: opacity 0.3s;
+        opacity: 0;
+      }
+
+      .tarjeta_holografica:hover {
+        transform: rotateX(15deg) rotateY(15deg) scale(1.05);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(
+          135deg,
+          var(--color-hover),
+          var(--color-secundario),
+          var(--color-terciario),
+          var(--color-primario)
+        );
+      }
+
+      .tarjeta_holografica:hover::before {
+        opacity: 1;
+      }
+
+      @keyframes hologram {
+        0% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+    </style>
+
+    <style>
+      .cube {
+        padding: 1rem;
+        margin: 1px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotateCube 5s infinite linear;
+      }
+
+      .face {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-image: url("logo.png"); /* Ruta a tu imagen */
+        background-size: cover;
+      }
+
+      .front {
+        transform: translateZ(60px);
+      }
+      .back {
+        transform: rotateY(130deg) translateZ(60px);
+      }
+      .left {
+        transform: rotateY(-90deg) translateZ(80px);
+      }
+      .right {
+        transform: rotateY(80deg) translateZ(60px);
+      }
+      .top {
+        transform: rotateX(90deg) translateZ(80px);
+      }
+      .bottom {
+        transform: rotateX(-90deg) translateZ(80px);
+      }
+
+      @keyframes rotateCube {
+        from {
+          transform: rotateY(0);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .letra__grande {
+        padding: 1rem;
+
+        background: url("logo.png") no-repeat center center fixed;
+        background-size: cover;
+        font-size: 1.5 8em;
+      }
+
+      .letra-grande {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: transparent;
+        background: url("logo.png") no-repeat center center;
+        background-size: cover;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generador de Gradientes Avanzado</h1>
+      <div class="color-inputs" id="colorInputs">
+        <div class="color-input">
+          <label for="color1" id="label1">#ff007f</label>
+          <input type="color" id="color1" value="#ff007f" />
+        </div>
+        <div class="color-input">
+          <label for="color2" id="label2">#0056b3</label>
+          <input type="color" id="color2" value="#0056b3" />
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button id="addColorBtn">Agregar Color</button>
+        <button id="linearBtn">Gradiente Lineal</button>
+        <button id="radialBtn">Gradiente Radial</button>
+        <button id="randomGradientBtn">Aleatorio</button>
+        <button id="resetBtn">Reiniciar</button>
+
+        <button id="copyBtn">Copiar CSS</button>
+      </div>
+      <div class="gradient-box" id="gradientBox">
+        El gradiente aparecerá aquí
+      </div>
+      <p id="errorMsg" class="error">
+        Por favor, ingresa colores válidos en formato hexadecimal (solo números
+        y letras A-F).
+      </p>
+      <textarea id="codigoOutput" readonly></textarea>
+
+      <div class="config-section">
+        <h2>Configuración Avanzada</h2>
+        <div class="config-inputs">
+          <div class="config-input">
+            <label for="gradientType">Tipo de Gradiente:</label>
+            <select id="gradientType">
+              <option value="linear">Lineal</option>
+              <option value="radial">Radial</option>
+            </select>
+          </div>
+          <div class="config-input">
+            <label for="gradientAngle">Ángulo (grados):</label>
+            <input
+              type="number"
+              id="gradientAngle"
+              value="90"
+              min="0"
+              max="360"
+            />
+          </div>
+          <div class="config-input">
+            <label for="gradientShape">Forma (solo radial):</label>
+            <select id="gradientShape">
+              <option value="circle">Círculo</option>
+              <option value="ellipse">Elipse</option>
+            </select>
+          </div>
+          <div class="config-input">
+            <label for="gradientSize">Tamaño (solo radial):</label>
+            <select id="gradientSize">
+              <option value="closest-side">Lado más cercano</option>
+              <option value="farthest-side">Lado más lejano</option>
+              <option value="closest-corner">Esquina más cercana</option>
+              <option value="farthest-corner">Esquina más lejana</option>
+            </select>
+          </div>
+        </div>
+        <button id="applyConfigBtn" style="margin-top: 20px">
+          Aplicar Configuración
+        </button>
+      </div>
+    </div>
+
+    <div class="container" id="gradientes">
+      <main>
+        <style>
+          /**
+           * `@property` es necesario para que la animación funcione.
+           * Sin él, los valores de ángulo no se interpolarán correctamente.
+           *
+           * @see https://dev.to/afif/we-can-finally-animate-css-gradient-kdk
+           */
+          @property --bg-angle {
+            inherits: false;
+            initial-value: 0deg;
+            syntax: "<angle>";
+          }
+
+          /**
+           * Para animar el gradiente, configuramos la propiedad personalizada a 1 rotación completa.
+           * La animación comienza en el valor predeterminado de `0deg`.
+           */
+          @keyframes spin {
+            to {
+              --bg-angle: 360deg;
+            }
+          }
+
+          article {
+            /* añade la animación, pero la pausa por defecto */
+            animation: spin 2.5s infinite linear paused;
+
+            /**
+             * Usando `background-origin`, podemos crear un "borde" utilizando dos gradientes.
+             * Y para que los gradientes se vean mejor, usamos OKLCH.
+             *
+             * @see https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin
+             * @see https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl
+             */
+            background:
+              /* Los colores de fondo no funcionan con `background-origin`, así que usamos un gradiente. */ linear-gradient(
+                  to bottom,
+                  oklch(0.1 0.2 240 / 0.95),
+                  oklch(0.1 0.2 240 / 0.95)
+                )
+                padding-box,
+              /* termina en los bordes del borde interno */
+                conic-gradient(
+                  from var(--bg-angle) in oklch longer hue,
+                  oklch(0.85 0.37 0) 0 0
+                )
+                border-box; /* se extiende hasta los bordes del borde externo */
+
+            /* un borde transparente permite que el gradiente de fondo brille */
+            border: 6px solid transparent;
+
+            /* reanuda la animación al pasar el cursor */
+            &:hover {
+              animation-play-state: running;
+            }
+          }
+
+          /******************************************************************
+           * Otros estilos para que la demostración se vea bien
+           ******************************************************************/
+
+          * {
+            box-sizing: border-box;
+          }
+
+          html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+              Helvetica, Arial, sans-serif, "Apple Color Emoji",
+              "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 18px;
+            line-height: 1.45;
+          }
+
+          body {
+            margin: 0;
+          }
+
+          main {
+            background: radial-gradient(
+                circle,
+                oklch(0.55 0.2 330 / 0),
+                oklch(0.99 0.2 330 / 1)
+              ),
+              linear-gradient(
+                344deg in oklch,
+                oklch(0.3 0.37 310),
+                oklch(0.35 0.37 330),
+                oklch(0.3 0.37 310)
+              );
+            display: grid;
+            height: 100svh;
+            place-items: center;
+          }
+
+          article {
+            border-radius: 1rem;
+            box-shadow: 0.125rem 0.25rem 0.25rem 0.5rem
+              oklch(0.1 0.37 315 / 0.25);
+            color: white;
+            padding: 1rem;
+            width: min(400px, 90vw);
+
+            h1 {
+              line-height: 1.1;
+              margin: 0;
+            }
+
+            p {
+              margin: 0.75rem 0 0;
+            }
+          }
+        </style>
+        <article>
+          <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face right"></div>
+            <div class="face right"></div>
+            <div class="face right"></div>
+            <div class="face right"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          <h1>¡Borde Gradiente!</h1>
+          <p class="tarjeta_holografica">By Riveradev</p>
+        </article>
+      </main>
+
+      <button id="generateMultipleBtn">10 Gradientes</button>
+    </div>
+    <div class="letra__grande container">
+      <div
+        class="letra-grande"
+        style="font-family: Arial, Helvetica, sans-serif"
+      >
+        Carlos MArio Rivera
+      </div>
+    </div>
+    <script>
+      let colorsCount = 2;
+      const maxColors = 10;
+
+      function esHexadecimal(color) {
+        const regex = /^#?([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/;
+        return regex.test(color);
+      }
+
+      function generarColorAleatorio() {
+        return (
+          "#" +
+          Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, "0")
+        );
+      }
+
+      function actualizarEtiquetaColor(inputId, labelId) {
+        const colorInput = document.getElementById(inputId);
+        const colorLabel = document.getElementById(labelId);
+        colorLabel.textContent = colorInput.value.toUpperCase();
+      }
+
+      function actualizarGradiente() {
+        const gradientType = document.getElementById("gradientType").value;
+        const angle = document.getElementById("gradientAngle").value;
+        const shape = document.getElementById("gradientShape").value;
+        const size = document.getElementById("gradientSize").value;
+
+        let colors = [];
+        for (let i = 1; i <= colorsCount; i++) {
+          const colorInput = document.getElementById(`color${i}`);
+          const color = colorInput.value;
+          if (esHexadecimal(color)) {
+            colors.push(color);
+            actualizarEtiquetaColor(`color${i}`, `label${i}`);
+          } else {
+            document.getElementById("errorMsg").style.display = "block";
+            return;
+          }
+        }
+
+        document.getElementById("errorMsg").style.display = "none";
+
+        let gradiente;
+        if (gradientType === "linear") {
+          gradiente = `linear-gradient(${angle}deg, ${colors.join(", ")})`;
+        } else {
+          gradiente = `radial-gradient(${shape} ${size} at center, ${colors.join(
+            ", "
+          )})`;
+        }
+
+        document.getElementById("gradientBox").style.background = gradiente;
+        mostrarCodigoGenerado(gradiente);
+      }
+
+      function mostrarCodigoGenerado(gradiente) {
+        const codigoOutput = document.getElementById("codigoOutput");
+        codigoOutput.value = `background: ${gradiente};\nwidth: 300px;\nheight: 150px;`;
+      }
+
+      function generarGradienteAleatorio() {
+        for (let i = 1; i <= colorsCount; i++) {
+          const colorInput = document.getElementById(`color${i}`);
+          colorInput.value = generarColorAleatorio();
+          actualizarEtiquetaColor(`color${i}`, `label${i}`);
+        }
+        actualizarGradiente();
+      }
+
+      function generarDiezGradientes() {
+        const container = document.createElement("div");
+
+        container.style.display = "flex";
+        container.style.flexWrap = "wrap";
+        container.style.justifyContent = "space-around";
+
+        for (let i = 0; i < 10; i++) {
+          const gradiente = `linear-gradient(${Math.floor(
+            Math.random() * 360
+          )}deg, ${generarColorAleatorio()}, ${generarColorAleatorio()})`;
+
+          const gradienteBox = document.createElement("div");
+
+          gradienteBox.style.background = gradiente;
+          gradienteBox.style.width = "calc(20% - 10px)";
+          gradienteBox.style.height = "100px";
+          gradienteBox.style.margin = "5px";
+          gradienteBox.style.borderRadius = "10px";
+
+          container.appendChild(gradienteBox);
+        }
+
+        // Seleccionar el div existente por su ID
+        const existingDiv = document.getElementById("gradientes");
+
+        // Insertar el nuevo div en el div existente
+        existingDiv.appendChild(container);
+      }
+      function agregarColor() {
+        if (colorsCount < maxColors) {
+          colorsCount++;
+          const colorInputs = document.getElementById("colorInputs");
+          const newColorInput = document.createElement("div");
+          newColorInput.className = "color-input";
+          const newColor = generarColorAleatorio();
+          newColorInput.innerHTML = `
+                    <label for="color${colorsCount}" id="label${colorsCount}">${newColor}</label>
+                    <input type="color" id="color${colorsCount}" value="${newColor}"/>
+                `;
+          colorInputs.appendChild(newColorInput);
+          const newColorElement = document.getElementById(
+            `color${colorsCount}`
+          );
+          newColorElement.addEventListener("input", () => {
+            actualizarEtiquetaColor(
+              `color${colorsCount}`,
+              `label${colorsCount}`
+            );
+            actualizarGradiente();
+          });
+          actualizarGradiente();
+        }
+      }
+
+      document
+        .getElementById("addColorBtn")
+        .addEventListener("click", agregarColor);
+      document.getElementById("linearBtn").addEventListener("click", () => {
+        document.getElementById("gradientType").value = "linear";
+        actualizarGradiente();
+      });
+      document.getElementById("radialBtn").addEventListener("click", () => {
+        document.getElementById("gradientType").value = "radial";
+        actualizarGradiente();
+      });
+      document
+        .getElementById("randomGradientBtn")
+        .addEventListener("click", generarGradienteAleatorio);
+      document
+        .getElementById("generateMultipleBtn")
+        .addEventListener("click", generarDiezGradientes);
+      document.getElementById("resetBtn").addEventListener("click", () => {
+        document.getElementById("color1").value = "#ff007f";
+        document.getElementById("color2").value = "#0056b3";
+        document.getElementById("gradientType").value = "linear";
+        document.getElementById("gradientAngle").value = "90";
+        document.getElementById("gradientShape").value = "circle";
+        document.getElementById("gradientSize").value = "closest-side";
+        while (colorsCount > 2) {
+          document.getElementById(`color${colorsCount}`).parentNode.remove();
+          colorsCount--;
+        }
+        actualizarGradiente();
+      });
+      document.getElementById("copyBtn").addEventListener("click", function () {
+        const codigoOutput = document.getElementById("codigoOutput");
+        navigator.clipboard.writeText(codigoOutput.value).then(() => {
+          alert("Código CSS copiado al portapapeles");
+        });
+      });
+      document
+        .getElementById("applyConfigBtn")
+        .addEventListener("click", actualizarGradiente);
+
+      document.getElementById("color1").addEventListener("input", () => {
+        actualizarEtiquetaColor("color1", "label1");
+        actualizarGradiente();
+      });
+      document.getElementById("color2").addEventListener("input", () => {
+        actualizarEtiquetaColor("color2", "label2");
+        actualizarGradiente();
+      });
+      document
+        .getElementById("gradientType")
+        .addEventListener("change", actualizarGradiente);
+      document
+        .getElementById("gradientAngle")
+        .addEventListener("input", actualizarGradiente);
+      document
+        .getElementById("gradientShape")
+        .addEventListener("change", actualizarGradiente);
+      document
+        .getElementById("gradientSize")
+        .addEventListener("change", actualizarGradiente);
+
+      actualizarGradiente();
+    </script>
+  </body>
+</html>

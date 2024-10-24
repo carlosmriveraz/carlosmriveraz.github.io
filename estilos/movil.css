@@ -24,20 +24,21 @@
     height: 150vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .triple__pantalla {
-    height: 210vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+    height: 200vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .texto {
+    outline: 5px dashed blue;
     font-size: 0.9rem; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 450px) {
   .inicio__titulo h5 span {
     font-size: 1rem;
   }
 
   .doble__pantalla {
-    height: 170vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
+    height: 160vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
   }
   .triple__pantalla {
     height: 300vh; /* Ocupa el 200% de la altura del viewport en pantallas pequeñas */
