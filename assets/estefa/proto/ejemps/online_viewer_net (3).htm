@@ -1,0 +1,398 @@
+<style>
+  :root {
+    --color-urano: #78dbe2; /* Color similar al de Urano */
+    --color-principal: var(--color-urano);
+    --color-terciario: white;
+    --color-texto: #ffa500; /* Naranja lunar */
+    --color-resaltado: yellow;
+    --color-sombra: rgba(255, 255, 255, 0.8);
+    --hover-efecto: rgba(255, 165, 0, 0.5); /* Hover para efectos */
+  }
+
+  .espacio__body {
+    background-image: linear-gradient(
+      to bottom,
+      #000,
+      #111
+    ); /* Fondo estrellado */
+    background-size: cover;
+    color: var(--color-terciario);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .espacio__header {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .espacio__titulo {
+    font-size: 3em;
+    color: var(--color-terciario);
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 10px var(--color-sombra);
+  }
+
+  .espacio__planeta {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: radial-gradient(circle at 50% 50%, var(--color-urano), #4c9da1);
+    border-radius: 50%;
+    animation: mover 5s infinite linear;
+    z-index: 1;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes mover {
+    0% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+
+  .espacio__entradas,
+  .espacio__bebidas,
+  .espacio__adiciones,
+  .espacio__salsas {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .espacio__entradas:hover,
+  .espacio__bebidas:hover,
+  .espacio__adiciones:hover,
+  .espacio__salsas:hover {
+    transform: translateY(-10px); /* Efecto de levitación al hacer hover */
+  }
+
+  .espacio__seccion-titulo {
+    font-size: 2em;
+    color: var(--color-terciario);
+    text-shadow: 1px 1px 5px var(--color-sombra);
+  }
+
+  .espacio__lista {
+    list-style: none;
+    padding: 0;
+  }
+
+  .espacio__item {
+    padding: 5px 0;
+  }
+
+  .espacio__resaltado {
+    color: var(--color-resaltado);
+    font-weight: bold;
+  }
+
+  /* Ajustes para pantallas grandes */
+  @media (min-width: 768px) {
+    .espacio__contenedor {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 767px) {
+    .espacio__contenedor {
+      grid-template-columns: 1fr;
+    }
+
+    .espacio__main {
+      width: 90%;
+      height: auto;
+    }
+  }
+
+  .espacio__footer {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .espacio__mensaje {
+    font-size: 1.2em;
+  }
+
+  :root {
+    --color-urano: #78dbe2; /* Color similar al de Urano */
+    --color-principal: var(--color-urano);
+    --color-terciario: white;
+    --color-texto: #ffa500; /* Naranja lunar */
+    --color-resaltado: yellow;
+    --color-sombra: rgba(255, 255, 255, 0.8);
+    --hover-efecto: rgba(
+      255,
+      0,
+      0,
+      0.3
+    ); /* Efecto hover para elementos especiales */
+  }
+
+  .principal {
+    background: linear-gradient(to left, #554, #445);
+  }
+
+  .main {
+    background: radial-gradient(#111 #554 #445);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+  }
+
+  .crater {
+    background-color: #2e2e2e; /* Color similar al cráter lunar */
+    border-radius: 50%; /* Forma redondeada simulando un cráter */
+    width: 60%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7); /* Sombra simulando profundidad */
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Diseño de las cards */
+  section {
+    background: #4a4a4a; /* Color de las secciones simulando rocas */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra de las cards */
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  section:hover {
+    transform: translateY(-10px); /* Efecto de levitación al hacer hover */
+  }
+
+  /* Ajustes para pantallas grandes */
+  @media (min-width: 768px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 767px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    main {
+      width: 90%;
+      height: auto;
+      border-radius: 20px; /* Ajuste en pantallas pequeñas */
+    }
+  }
+
+  .header .planeta {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: radial-gradient(circle at 50% 50%, var(--color-urano), #4c9da1);
+    border-radius: 50%;
+    animation: mover 5s infinite linear;
+    z-index: 1;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes mover {
+    0% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+
+  h2 {
+    font-size: 2em;
+    color: var(--color-terciario);
+    text-shadow: 1px 1px 5px var(--color-sombra);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  li .emoji {
+    margin-right: 10px;
+  }
+
+  li .resaltado {
+    color: var(--color-resaltado);
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+  }
+
+  li .resaltado:hover {
+    background-color: var(--hover-efecto);
+  }
+
+  /* Estructura de dos columnas para pantallas grandes */
+  @media (min-width: 768px) {
+    .menu .columnas {
+      display: flex;
+      justify-content: space-between;
+    }
+    .menu .columna {
+      width: 48%;
+    }
+  }
+
+  .mensaje {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .mensaje .favor {
+    color: red;
+    font-size: 1.2em;
+  }
+
+  /* Efectos de hover y activo para las salsas */
+  .salsa-hover {
+    position: relative;
+  }
+
+  .salsa-hover:hover {
+    background-color: var(--hover-efecto);
+  }
+
+  .salsa-hover.efecto-rojo {
+    color: red;
+  }
+
+  .crater {
+    background-color: #2e2e2e; /* Color similar al cráter lunar */
+    border-radius: 50%; /* Forma redondeada simulando un cráter */
+    width: 60%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7); /* Sombra simulando profundidad */
+  }
+
+  /* Diseño de las cards */
+  section {
+    background: #4a4a4a; /* Color de las secciones simulando rocas */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra de las cards */
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  section:hover {
+    transform: translateY(-10px); /* Efecto de levitación al hacer hover */
+  }
+</style>
+
+<div class="principal">
+  <div class="espacio__header">
+    <div class="espacio__planeta"></div>
+    <h1 class="espacio__titulo">Moon Sweet</h1>
+    <p class="espacio__subtitulo">
+      Escanea el código QR para ver el menú completo y realiza tu pago.
+    </p>
+  </div>
+  <div class="espacio__body container">
+    <div class="espacio__contenedor">
+      <section class="espacio__entradas">
+        <h2 class="espacio__seccion-titulo">Entradas</h2>
+        <ul class="espacio__lista">
+          <li class="espacio__item">🛸 Aros de cebolla (5 unidades) - 8.000</li>
+          <li class="espacio__item">
+            👨‍🚀 Patacón con hogao (5 unidades) - 8.000
+          </li>
+          <li class="espacio__item espacio__resaltado">
+            🛰️ Patacón con carne (5 unidades) - 17.000 Especial
+          </li>
+          <li class="espacio__item espacio__resaltado">
+            👽 Deditos de queso (5 unidades) - 17.000 Especial
+          </li>
+        </ul>
+      </section>
+
+      <section class="espacio__bebidas">
+        <h2 class="espacio__seccion-titulo">Bebidas</h2>
+        <ul class="espacio__lista">
+          <li class="espacio__item">Gaseosa (250 ml) - 2.500</li>
+          <li class="espacio__item">Gaseosa (1 litro) - 7.500</li>
+          <li class="espacio__item">Te Hatsu U - 6.000</li>
+          <li class="espacio__item">Gatoré - 4.000</li>
+          <li class="espacio__item">Agua - 3.000</li>
+        </ul>
+      </section>
+
+      <section class="espacio__adiciones">
+        <h2 class="espacio__seccion-titulo">Adiciones</h2>
+        <ul class="espacio__lista">
+          <li class="espacio__item">Guacamole - 2.500</li>
+          <li class="espacio__item">Crema agria - 2.500</li>
+          <li class="espacio__item">Maicito - 4.000</li>
+          <li class="espacio__item">Adicional salsa - 2.000</li>
+          <li class="espacio__item">Huevos de codorniz (5 unidades) - 5.000</li>
+          <li class="espacio__item">Porción pulled pork - 6.000</li>
+          <li class="espacio__item">Porción pollo desmechado - 6.000</li>
+          <li class="espacio__item">Queso mozzarella - 4.000</li>
+          <li class="espacio__item">Salchichas premium (5 unidades) - 4.000</li>
+          <li class="espacio__item">Tocineta (porción) - 5.000</li>
+          <li class="espacio__item">Alita (1 unidad) - 2.500</li>
+          <li class="espacio__item">Papas fritas (porción) - 6.000</li>
+        </ul>
+      </section>
+
+      <section class="espacio__salsas">
+        <h2 class="espacio__seccion-titulo">Salsas</h2>
+        <ul class="espacio__lista">
+          <li class="espacio__item">Alitas Miel</li>
+          <li class="espacio__item">Mostaza</li>
+          <li class="espacio__item">BBQ Hot</li>
+          <li class="espacio__item">Picante Suave</li>
+          <li class="espacio__item">BBQ Sweet</li>
+          <li class="espacio__item">Chile Dulce</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="espacio__footer">
+      <p class="espacio__mensaje">
+        👨‍🚀 Favor realizar su pedido en la caja. ¡Gracias por su visita!
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+/* Gradientes */
+gradiente1 {
+  background: linear-gradient(135deg, var(--color-1), var(--color-2));
+}
+
+.gradiente2 {
+  background: linear-gradient(135deg, var(--color-3), var(--color-4));
+}
+
+.gradiente3 {
+  background: linear-gradient(135deg, var(--color-5), var(--color-6));
+}
+
+.gradiente4 {
+  background: linear-gradient(135deg, var(--color-7), var(--color-8));
+}
+
+.gradiente5 {
+  background: linear-gradient(135deg, var(--color-9), var(--color-10));
+}
+
+.contenedor__imagen {
+  background-color: #0099ff99;
+
+  width: 100%;
+  height: 10vh;
+  max-width: 700px; /* Más grande */
+  margin: 0 auto;
+}
+
+.contenedor__imagen img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+  filter: brightness(1.2); /* Hacer el fondo más brillante */
+}
+
+.nieve {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: url("../assets/img/tex.png") repeat;
+  animation: caer__nieve 10s linear infinite;
+  opacity: 0.8;
+}
+
+/* Frutas neón */
+.frutas-neon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-around;
+  width: 150%; /* Más grande que el contenedor */
+  height: 150%;
+  animation: rotar__frutas 30s linear infinite;
+}
+
+.fruta {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 5px;
+  animation: parpadear 3s infinite;
+}
+
+/* Tonalidades neón */
+.fruta--rojo {
+  background-color: #ff0040;
+  box-shadow: 0 0 20px 5px #ff0040;
+}
+.fruta--naranja {
+  background-color: #ff6600;
+  box-shadow: 0 0 20px 5px #ff6600;
+}
+.fruta--amarillo {
+  background-color: #ffcc00;
+  box-shadow: 0 0 20px 5px #ffcc00;
+}
+.fruta--verde {
+  background-color: #33ff00;
+  box-shadow: 0 0 20px 5px #33ff00;
+}
+.fruta--azul {
+  background-color: #0099ff;
+  box-shadow: 0 0 20px 5px #0099ff;
+}
+.fruta--violeta {
+  background-color: #9900ff;
+  box-shadow: 0 0 20px 5px #9900ff;
+}
+.fruta--rosa {
+  background-color: #ff33cc;
+  box-shadow: 0 0 20px 5px #ff33cc;
+}
+.fruta--cian {
+  background-color: #00ffff;
+  box-shadow: 0 0 20px 5px #00ffff;
+}
+.fruta--magenta {
+  background-color: #ff00ff;
+  box-shadow: 0 0 20px 5px #ff00ff;
+}
+.fruta--lima {
+  background-color: #ccff00;
+  box-shadow: 0 0 20px 5px #ccff00;
+}
+
+/* Animación de rotación */
+@keyframes rotar__frutas {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Parpadeo neón */
+@keyframes parpadear {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes caer__nieve {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 1000px;
+  }
+}

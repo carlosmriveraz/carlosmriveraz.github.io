@@ -1,0 +1,835 @@
+@import url("utilidades/utilidades.css");
+
+:root {
+  /* Variables para Imágenes */
+  --altura-completa: 100%;
+  --altura-contenido: 70rem;
+  --altura-grande: 80vh;
+  --altura-mediano: 60vh;
+  --altura-minima: 20vh;
+  --altura-navbar: 1.5rem;
+  --altura-reducido: 40vh;
+  --ancho-completo: 100%;
+  --ancho-contenido: 70rem;
+  --ancho-grande: 75%;
+  --ancho-maximo: 90%;
+  --ancho-mediano: 50%;
+  --ancho-menu: 100%;
+  --ancho-minimo: 10%;
+  --ancho-reducido: 25%;
+  --borde-estandar: 1rem;
+  --borde-extra-grande: 3rem;
+  --borde-extra-reducido: 0.0625rem;
+  --borde-fino: 0.5px solid #bdc3c7; /* Borde fino */
+  --borde-grande: 2rem;
+  --borde-principal: 1.5px solid #dcdcdc; /* Borde principal */
+  --borde-redondeado: 10px; /* Borde redondeado */
+  --borde-reducido: 0.5px solid var(--color10); /* Borde fino */
+  --borde: 1px solid #0ff; /* Borde principal */
+  --color1: hsl(210, 10%, 96%); /* Blanco lunar */
+  --color2: #f2f2f2f; /* Gris claro lunar */
+  --color3: hsl(230, 20%, 70%); /* Gris piedra lunar */
+  --color4: hsl(240, 25%, 60%); /* Gris azulado lunar */
+  --color5: hsl(245, 30%, 50%); /* Azul noche lunar */
+  --color6: hsl(250, 35%, 40%); /* Azul oscuro lunar */
+  --color7: hsl(255, 40%, 30%); /* Azul profundo lunar */
+  --color8: hsl(260, 45%, 20%); /* Azul medianoche lunar */
+  --color9: hsl(265, 50%, 15%); /* Gris oscuro lunar */
+  --color10: hsl(270, 55%, 10%); /* Negro lunar */
+  --colorhover: #00ffff;
+  --fondo-hover: #00ffff55; /* Color de hover */
+  --colormenu: #00ffffb0;
+
+  --color-primario: #0ff5;
+  --color-principal: #0ff;
+  --color-secundario: #0077b6;
+  --color-subtitulo: #0ffa;
+  --color-terciario: #f5d223;
+  --color-texto: #f5d223;
+  --color-titulo-grande: #fbd205;
+  --color-titulo: #f5d223;
+
+  --color_mercurio: hsl(30, 10%, 50%);
+  --color_venus: hsl(33, 80%, 60%);
+  --color_tierra: hsl(205, 75%, 50%);
+  --color_marte: hsl(10, 80%, 50%);
+  --color_jupiter: hsl(30, 60%, 55%);
+  --color_saturno: hsl(40, 70%, 70%);
+  --color_urano: hsl(170, 75%, 70%);
+  --color_neptuno: hsl(210, 80%, 55%);
+
+  --color__icono-hover: #00ffcc; /* Color al pasar sobre los íconos */
+  --color__icono: #ffffff; /* Color de los íconos */
+  --espaciado-entre-lineas: 1.6; /* Espaciado entre líneas */
+
+  /*
+  #d4b58b  #  #5e6b75  #725f3d  #7c9493  #d61e24  #7b7f95  #253349 */
+
+  --fondo-primario: #fff5; /* Fondo principal */
+  --fondo-principal: #101626; /* Fondo principal */
+  --fondo-secundario: rgba(132, 139, 200, 0.18); /* Fondo secundario */
+  --fondo-terciario: #adad0022; /* Fondo terciario */
+  --fuente-principal: "Montserrat", sans-serif; /* Fuente principal */
+  --fuente-primaria: "Roboto Condensed", sans-serif; /* Fuente principal */
+  --fuente-secundaria: "Roboto", sans-serif; /* Fuente principal */
+  --fuente-terciaria: "Montserrat", sans-serif; /* Fuente principal */
+  --fuente-util: "Courier New", monospace; /* Fuente utilitaria */
+  --icono-height: 1.5rem; /* Alto del ícono en rem (24px) */
+  --icono-width: 1.5rem; /* Ancho del ícono en rem (24px) */
+  --logo-height: 3.125rem; /* Alto del logo en rem (50px) */
+  --logo-url: url("../assets/body.webp"); /* URL del logo */
+  --logo-width: 9.375rem; /* Ancho del logo en rem (150px) */
+  --margen-extra-grande: 4rem;
+  --margen-extra-reducido: 0.25rem;
+  --margen-grande: 2rem;
+  --margen-mediano: 1.5rem;
+  --margen-principal: 1.5rem; /* Margen principal */
+  --margen-reducido: 1rem;
+  --margen: 1.5rem; /* Margen principal */
+  --medida-subtitulo: 1.3rem;
+  --medida-texto-extra-grande: 2rem;
+  --medida-texto-extra-reducido: 0.5rem;
+  --medida-texto-grande: 1.4rem;
+  --medida-texto-mediano: 0.8rem;
+  --medida-texto-reducido: 0.6rem;
+  --medida-texto: 1.1rem;
+  --medida-titulo-extra-grande: 4.5rem;
+  --medida-titulo-extra-reducido: 0.5rem;
+  --medida-titulo-grande: 2.6rem;
+  --medida-titulo: 3rem;
+  --padding-principal: 1rem; /* Relleno (padding) principal */
+  --padding: 1rem; /* Relleno (padding) principal */
+  --relleno-extra-grande: 2rem;
+  --relleno-extra-reducido: 0.25rem;
+  --relleno-grande: 1.5rem;
+  --relleno-reducido: 0.5rem;
+  --relleno: 1rem;
+  --sombra-1: 1px 1px 0;
+  --sombra-2: 2px 2px 0;
+  --sombra-3: 3px 3px 0;
+  --sombra-4: 4px 4px 0;
+  --sombra-caja: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra de la caja */
+  --sombra-texto: 0px 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3); /* Sombra del texto */
+  --tamano-subtitulo: 1.4rem; /* Tamaño del subtítulo */
+  --tamano-subtitulo: 1.5rem; /* Tamaño del subtítulo */
+  --tamano-texto-pequeno: 0.85rem; /* Tamaño del texto pequeño */
+  --tamano-texto-pequeno: 0.875rem; /* Tamaño del texto pequeño */
+  --tamano-texto: 0.9rem; /* Tamaño del texto */
+  --tamano-texto: 1rem; /* Tamaño del texto */
+  --tamano-titulo: 1.6rem; /* Tamaño del título */
+  --tamano-titulo: 2rem; /* Tamaño del título */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+picture {
+  height: 1rem;
+  width: 2rem;
+}
+
+body {
+  background-image: var(--logo-url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+
+  padding: 0;
+}
+table {
+  max-width: 90%;
+}
+
+header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.Encabezado {
+  background: linear-gradient(
+    70deg,
+    var(--color8),
+    var(--color10),
+    var(--color5)
+  );
+  opacity: 0.8;
+}
+/* Header y navegación */
+/* Header */
+/* Header */
+.header {
+  position: fixed;
+  height: 2.5rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Esto separa el título y la navegación */
+  align-items: center;
+  border: 1.5px solid var(--color2);
+  background: linear-gradient(
+    70deg,
+    var(--color7),
+    var(--color7),
+    var(--color8),
+    var(--color10),
+    var(--color3)
+  );
+  color: var(--color-titulo-grande);
+
+  z-index: 1000;
+  margin-bottom: 2.5rem;
+}
+
+/* Navegación del Submenú */
+.submenu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero */
+.Hero {
+  background: linear-gradient(
+    70deg,
+    var(#eeea),
+    var(--color10),
+    var(--color2),
+    var(--color10),
+    var(--color3)
+  );
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+.Hero img {
+  padding: 1rem;
+  max-width: 100%;
+  max-height: 100vh;
+
+  object-fit: cover;
+}
+
+/* Ajustes pdara evitar que el contenido principal se superponga con el header */
+main {
+  background-color: #0001;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0; /* Ajusta según la altura de tu header */
+  padding-top: 2.5rem; /* Espacio para el header fijo */
+}
+section {
+  background-color: #2e2e2e; /* Color similar al cráter lunar */
+  width: 100%;
+  min-height: 80%;
+  margin-top: 2.5rem;
+  padding: 0.5rem 1rem;
+}
+/* Usar la fuente 'Honk' con un gradiente */
+h1 {
+  margin: 2px;
+  font-family: "Honk", sans-serif;
+  font-size: 2rem; /* Ajusta el tamaño de la fuente */
+}
+h2 {
+  background: linear-gradient(
+    70deg,
+    var(--color1),
+    var(--color10),
+    var(--color2),
+    var(--color10),
+    var(--color3)
+  );
+  font-family: "Kalnia Glaze", serif;
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
+  text-align: center;
+}
+
+#contenedor_3d {
+  background: linear-gradient(
+    70deg,
+    var(--color1),
+    var(--color10),
+    var(--color2),
+    var(--color10),
+    var(--color3)
+  );
+  display: flex;
+}
+/* Un ejemplo de gradiente en un párrafo */
+p {
+  font-family: "Honk", sans-serif;
+  font-size: 1rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-principal)
+  ); /* Gradiente de verde a amarillo */
+  -webkit-background-clip: text;
+}
+
+/* Sección del juego */
+.menu__juego {
+  text-align: center;
+  margin-top: var(--margen-grande);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.juego__area {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  margin-top: var(--margen-mediano);
+}
+
+.juego__contenedor {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  border: 2px dashed var(--color1);
+  padding: 0;
+  min-height: 15rem;
+
+  border-radius: var(--borde-mediano);
+  color: var(--colortexto);
+  font-size: 0.7rem;
+}
+
+/* Gradientes */
+.gradiente1 {
+  background: linear-gradient(135deg, var(--color1), var(--color4));
+}
+
+.gradiente2 {
+  background: linear-gradient(135deg, #6434e7, var(--color5));
+}
+
+.gradiente3 {
+  background: linear-gradient(135deg, var(), var(--color6));
+}
+
+.gradiente4 {
+  background: linear-gradient(15deg, #000e, var(--color4), #0ff5, #000e);
+}
+
+.gradiente5 {
+  background: linear-gradient(135deg, var(--color5), #0ffa);
+}
+
+menu {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+      135deg,
+      rgba(241, 186, 230, 0.376),
+      rgba(0, 200, 200, 0.1)
+    ),
+    url("../assets/img/productos/4.png") no-repeat center center;
+  background-size: cover;
+}
+
+.neon-lights h1,
+.neon-lights p {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5),
+    0 0 30px rgba(255, 255, 0, 0.3);
+  animation: neonGlow 1.5s infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+      0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+      0 0 30px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  animation: twinkling 200s linear infinite;
+}
+
+.stars:before,
+.stars:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: transparent;
+  box-shadow: 0 0 5px #fff, 20px 30px 10px #ffff00, 50px 100px 5px #ff007f,
+    100px 200px 20px #ff00ff;
+  animation: twinkling 200s linear infinite;
+}
+
+@keyframes twinkling {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-100px) translateX(-100px);
+  }
+}
+
+.producto .agregado {
+  display: flex;
+}
+#contadorIngredientes {
+  font-size: 0.6rem;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    #f6e271,
+    #f6e27a,
+    #f6e27a,
+    #f6e27a,
+    #d4af37,
+    #f0c674
+  );
+
+  animation: twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-100vh);
+  }
+}
+
+.color_mercurio {
+  background-color: hsl(30, 10%, 50%);
+}
+
+.color_venus {
+  background-color: hsl(33, 80%, 60%);
+  opacity: 0.6;
+}
+
+.color_tierra {
+  background-color: hsl(205, 75%, 50%);
+  opacity: 0.6;
+}
+
+.color_marte {
+  background-color: hsl(10, 80%, 50%);
+  opacity: 0.6;
+}
+
+.color_jupiter {
+  background-color: hsl(30, 60%, 55%);
+  opacity: 0.6;
+}
+
+.color_saturno {
+  background-color: hsl(40, 70%, 70%);
+}
+
+.color_urano {
+  background-color: hsl(170, 75%, 70%);
+}
+
+.color_neptuno {
+  background-color: hsl(210, 80%, 55%);
+  opacity: 0.8;
+}
+
+.enlace {
+  font-size: 0.8rem;
+  font-family: var(--fuente-secundaria);
+  text-decoration: none; /* Eliminar subrayado predeterminado */
+  color: var(--color-terciario); /* Color del texto del enlace */
+
+  position: relative; /* Para el posicionamiento del subrayado */
+
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+.enlace::after {
+  content: "⋯"; /* Pseudo-elemento para el subrayado */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 0;
+  bottom: 0;
+  height: 2px; /* Altura del subrayado */
+  width: 100%; /* Ancho del subrayado */
+
+  transform: scaleX(0); /* Ocultar subrayado inicialmente */
+  transition: transform 0.7s ease; /* Transición suave */
+}
+
+.enlace:hover::after,
+.enlace.activo::after {
+  transform: scaleX(
+    1.2
+  ); /* Mostrar subrayado al pasar el mouse o estar activo */
+}
+
+/* Efecto hover */
+.enlace:hover {
+  border-radius: 20%;
+  border: 3px solid #5005;
+  background-color: var(--fondo-hover); /* Fondo más oscuro al pasar el mouse */
+  color: #b53535; /* Cambiar color del texto al pasar el mouse */
+}
+
+.enlace:hover::after {
+  background: var(--fondo-hover); /* Cambiar color del subrayado en hover */
+}
+
+/* Color del enlace activo */
+.enlace.activo {
+  background-color: var(--fondo-primario); /* Fondo del enlace activo */
+}
+
+:root {
+  --color-urano: #78dbe2; /* Color similar al de Urano */
+  --color-principal: var(--color-urano);
+  --color-terciario: white;
+  --color-texto: #ffa500; /* Naranja lunar */
+  --color-resaltado: yellow;
+  --color-sombra: rgba(255, 255, 255, 0.8);
+  --hover-efecto: rgba(255, 165, 0, 0.5); /* Hover para efectos */
+}
+
+.espacio__body {
+  background-image: linear-gradient(
+    to right,
+    var(--fondo-principal),
+    #3335
+  ); /* Fondo estrellado */
+  background-size: cover;
+  color: var(--color-terciario);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.espacio__header {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.espacio__titulo {
+  font-size: 3em;
+  color: var(--color-terciario);
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 10px var(--color-sombra);
+}
+
+.espacio__planeta {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: radial-gradient(circle at 50% 50%, var(--color-urano), #4c9da1);
+  border-radius: 50%;
+  animation: mover 5s infinite linear;
+  z-index: 1;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes mover {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.espacio__entradas,
+.espacio__bebidas,
+.espacio__adiciones,
+.espacio__salsas {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.espacio__entradas:hover,
+.espacio__bebidas:hover,
+.espacio__adiciones:hover,
+.espacio__salsas:hover {
+  transform: translateY(-10px); /* Efecto de levitación al hacer hover */
+}
+
+.espacio__seccion-titulo {
+  font-size: 2em;
+  color: var(--color-terciario);
+  text-shadow: 1px 1px 5px var(--color-sombra);
+}
+
+.espacio__lista {
+  list-style: none;
+  padding: 0;
+}
+
+.espacio__item {
+  padding: 5px 0;
+}
+
+.espacio__resaltado {
+  color: var(--color-resaltado);
+  font-weight: bold;
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 768px) {
+  .espacio__contenedor {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+  .espacio__contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .espacio__main {
+    height: auto;
+  }
+}
+
+.espacio__footer {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.espacio__mensaje {
+  font-size: 1.2em;
+}
+
+:root {
+  --color-urano: #78dbe2; /* Color similar al de Urano */
+  --color-principal: var(--color-urano);
+  --color-terciario: white;
+  --color-texto: #ffa500; /* Naranja lunar */
+  --color-resaltado: yellow;
+  --color-sombra: rgba(255, 255, 255, 0.8);
+  --hover-efecto: rgba(
+    255,
+    0,
+    0,
+    0.3
+  ); /* Efecto hover para elementos especiales */
+}
+
+.crater {
+  background-color: #111; /* Color similar al cráter lunar */
+  border-radius: 80%; /* Forma redondeada simulando un cráter */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3); /* Sombra simulando profundidad */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Diseño de las cards */
+section {
+  border-radius: 20px;
+
+  box-shadow: 0px 4px 10px rgba(0, 220, 220, 0.6); /* Sombra de las cards */
+
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-10px); /* Efecto de levitación al hacer hover */
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    height: auto;
+    border-radius: 20px; /* Ajuste en pantallas pequeñas */
+  }
+}
+
+.header .planeta {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: radial-gradient(circle at 50% 50%, var(--color-urano), #4c9da1);
+  border-radius: 50%;
+  animation: mover 5s infinite linear;
+  z-index: 1;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes mover {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+h2 {
+  font-size: 2em;
+  color: var(--color-terciario);
+  text-shadow: 1px 1px 5px var(--color-sombra);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+li .emoji {
+  margin-right: 10px;
+}
+
+li .resaltado {
+  color: var(--color-resaltado);
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+
+li .resaltado:hover {
+  background-color: var(--hover-efecto);
+}
+
+/* Estructura de dos columnas para pantallas grandes */
+@media (min-width: 768px) {
+  .menu .columnas {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu .columna {
+    width: 48%;
+  }
+}
+
+.mensaje {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mensaje .favor {
+  background: radial-gradient(circle at 50% 50%, var(--color5), #4c9da1);
+
+  color: red;
+  font-size: 1.2em;
+}
+
+/* Efectos de hover y activo para las salsas */
+.salsa-hover {
+  position: relative;
+}
+
+.salsa-hover:hover {
+  background-color: var(--hover-efecto);
+}
+
+.salsa-hover.efecto-rojo {
+  color: red;
+}
+
+.crater {
+  background-color: #2e2e2e; /* Color similar al cráter lunar */
+  background: radial-gradient(circle at 50% 50%, #3235, #4ca1);
+
+  border-radius: 50%; /* Forma redondeada simulando un cráter */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7); /* Sombra simulando profundidad */
+}
+
+/* Diseño de las cards */
+.card {
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra de las cards */
+
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Efecto de levitación al hacer hover */
+}
+
+#icono {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+#icono img {
+  width: 10px;
+  height: auto;
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+#icono h2 {
+  margin: 0;
+}

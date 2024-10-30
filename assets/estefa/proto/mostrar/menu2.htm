@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedores con Íconos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .contenedor_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px 0;
+            background-color: #ffffff;
+        }
+
+        .contenedor_item span {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contenedor_item h3 {
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .contenedor_item p {
+            margin: 5px 0 0;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .contenedor_item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <div class="contenedor_item">
+            <span>🍔</span>
+            <h3>Hamburguesa</h3>
+            <p>Precio: $15,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🍕</span>
+            <h3>Pizza</h3>
+            <p>Precio: $18,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🌭</span>
+            <h3>Hot Dog</h3>
+            <p>Precio: $10,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🍟</span>
+            <h3>Papas Fritas</h3>
+            <p>Precio: $7,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🍗</span>
+            <h3>Pollo Frito</h3>
+            <p>Precio: $12,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🥪</span>
+            <h3>Sándwich</h3>
+            <p>Precio: $11,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🌯</span>
+            <h3>Burrito</h3>
+            <p>Precio: $14,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🍣</span>
+            <h3>Sushi</h3>
+            <p>Precio: $22,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🍩</span>
+            <h3>Dona</h3>
+            <p>Precio: $5,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🍦</span>
+            <h3>Helado</h3>
+            <p>Precio: $8,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🥤</span>
+            <h3>Malteada</h3>
+            <p>Precio: $6,000 COP</p>
+        </div>
+
+        <div class="contenedor_item">
+            <span>🍺</span>
+            <h3>Cerveza</h3>
+            <p>Precio: $9,000 COP</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Sweet</title>
+    <style>
+      /* Variables de color para la temática lunar */
+      :root {
+        --color-urano: #78dbe2;
+        --color-principal: var(--color-urano);
+        --color-terciario: white;
+        --color-texto: #ffa500; /* Naranja lunar */
+        --color-resaltado: yellow;
+        --color-sombra: rgba(255, 255, 255, 0.8);
+        --hover-efecto: rgba(255, 165, 0, 0.5);
+      }
+
+      /* Estilos base y fondo lunar */
+      .espacio__body {
+        background: linear-gradient(180deg, #000000, #111111);
+        color: var(--color-terciario);
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Header con animación de planeta */
+      .espacio__header {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .espacio__titulo {
+        font-size: 3em;
+        color: var(--color-terciario);
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 0 10px var(--color-sombra);
+      }
+
+      .espacio__planeta {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        background: radial-gradient(
+          circle at 50% 50%,
+          var(--color-urano),
+          #4c9da1
+        );
+        border-radius: 50%;
+        animation: planetaGira 5s infinite linear;
+        z-index: 1;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @keyframes planetaGira {
+        0% {
+          transform: translateX(-50%) rotate(0deg);
+        }
+        100% {
+          transform: translateX(-50%) rotate(360deg);
+        }
+      }
+
+      /* Main estilo cráter y contenedor de secciones */
+      .espacio__main {
+        width: 80%;
+        margin: 20px auto;
+        border-radius: 20px;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(255, 255, 255, 0.1),
+          rgba(0, 0, 0, 0.7)
+        );
+        box-shadow: 0 0 30px var(--color-sombra);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .espacio__contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+      }
+
+      /* Secciones como "cráteres" */
+      .espacio__crater {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 10px;
+        transition: transform 0.3s ease, rotate 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .espacio__crater:hover {
+        transform: translateY(-10px) scale(1.05) rotate(5deg);
+        background: var(--hover-efecto);
+      }
+
+      .espacio__seccion-titulo {
+        font-size: 2em;
+        color: var(--color-terciario);
+        text-shadow: 1px 1px 5px var(--color-sombra);
+      }
+
+      .espacio__lista {
+        list-style: none;
+        padding: 0;
+      }
+
+      .espacio__item {
+        padding: 5px 0;
+      }
+
+      /* Tabla de pedidos interactiva */
+      .espacio__tabla-pedidos {
+        width: 90%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      .espacio__tabla-pedidos th,
+      .espacio__tabla-pedidos td {
+        padding: 10px;
+        border: 1px solid #fff;
+        text-align: left;
+        color: var(--color-texto);
+      }
+
+      .espacio__tabla-pedidos th {
+        background-color: var(--color-principal);
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .espacio__tabla-pedidos .editable:hover {
+        background-color: var(--hover-efecto);
+        cursor: pointer;
+      }
+
+      /* Media queries para ajuste responsivo */
+      @media (max-width: 768px) {
+        .espacio__contenedor {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Cambiar fondo de tema */
+      .tema-lunar {
+        background: linear-gradient(180deg, #000000, #111111);
+      }
+
+      .tema-nebulosa {
+        background: radial-gradient(circle, #4b0082, #00008b);
+      }
+    </style>
+  </head>
+  <body class="espacio__body tema-lunar">
+    <header class="espacio__header">
+      <div class="espacio__planeta"></div>
+      <h1 class="espacio__titulo">Moon Fries</h1>
+      <button onclick="toggleTheme()">Cambiar tema</button>
+      <p>¡Disfruta el sabor de la luna!</p>
+    </header>
+
+    <main class="espacio__main">
+      <input
+        type="text"
+        id="filterInput"
+        placeholder="Buscar productos..."
+        onkeyup="filterProducts()"
+      />
+      <div class="espacio__contenedor">
+        <section class="espacio__crater espacio__entradas">
+          <h2 class="espacio__seccion-titulo">Entradas</h2>
+          <img src="assets/img/3.jpg" alt="" width="300px" />
+          <ul class="espacio__lista">
+            <li class="espacio__item">🛸 Aros de cebolla - 8.000</li>
+            <li class="espacio__item">👨‍🚀 Patacón con hogao - 8.000</li>
+            <li class="espacio__item">🛰️ Patacón con carne - 17.000</li>
+            <li class="espacio__item">👽 Deditos de queso - 17.000</li>
+          </ul>
+        </section>
+
+        <section class="espacio__crater espacio__bebidas">
+          <h2 class="espacio__seccion-titulo">como 2...</h2>
+          <img src="assets/img/3.jpg" alt="" width="300px" />
+          <ul class="espacio__lista">
+            <li class="espacio__item">Agua - 3.000</li>
+          </ul>
+        </section>
+
+        <section class="espacio__crater espacio__adiciones">
+          <h2 class="espacio__seccion-titulo">combo 3....</h2>
+          <img src="assets/img/3.jpg" alt="" width="300px" />
+          <ul class="espacio__lista">
+            <li class="espacio__item">Guacamole - 2.500</li>
+            <li class="espacio__item">Crema agria - 2.500</li>
+            <li class="espacio__item">Maicito - 4.000</li>
+            <li class="espacio__item">Papas fritas - 6.000</li>
+          </ul>
+        </section>
+
+        <section class="espacio__crater espacio__salsas">
+          <h2 class="espacio__seccion-titulo">como 4</h2>
+          <img src="assets/img/3.jpg" alt="" width="300px" />
+          <ul class="espacio__lista">
+            <li class="espacio__item">BBQ - 2.000</li>
+            <li class="espacio__item">Miel - 2.000</li>
+            <li class="espacio__item">Picante - 2.000</li>
+            <li class="espacio__item">Chile dulce - 2.000</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Tabla de pedidos -->
+
+      <table class="espacio__tabla-pedidos">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="pedidoTable">
+          <!-- Filas de productos agregados dinámicamente aquí -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total Pedido</td>
+            <td id="totalPedido">0</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
+
+    <script>
+      // Cambiar tema de fondo
+      function toggleTheme() {
+        document.body.classList.toggle("tema-nebulosa");
+        document.body.classList.toggle("tema-lunar");
+      }
+
+      // Filtro de productos
+      function filterProducts() {
+        const filter = document
+          .getElementById("filterInput")
+          .value.toLowerCase();
+        const items = document.querySelectorAll(".espacio__item");
+        items.forEach((item) => {
+          item.style.display = item.textContent.toLowerCase().includes(filter)
+            ? ""
+            : "none";
+        });
+      }
+
+      // Agregar producto a la tabla de pedidos
+      function agregarProducto(nombre, precio) {
+        const pedidoTable = document.getElementById("pedidoTable");
+        let existe = false;
+
+        // Verificar si el producto ya está en la tabla
+        Array.from(pedidoTable.rows).forEach((row) => {
+          if (row.cells[0].textContent === nombre) {
+            let cantidad = parseInt(row.cells[2].textContent);
+            row.cells[2].textContent = ++cantidad;
+            row.cells[3].textContent = (cantidad * precio).toFixed(2);
+            existe = true;
+          }
+        });
+
+        if (!existe) {
+          // Crear nueva fila de producto si no existe
+          const row = pedidoTable.insertRow();
+          row.insertCell(0).textContent = nombre;
+          row.insertCell(1).textContent = precio;
+          row.insertCell(2).textContent = 1;
+          row.insertCell(3).textContent = precio.toFixed(2);
+
+          // Botón de eliminar
+          const deleteCell = row.insertCell(4);
+          const deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "Eliminar";
+          deleteBtn.onclick = () => {
+            row.remove();
+            actualizarTotal();
+          };
+          deleteCell.appendChild(deleteBtn);
+        }
+        actualizarTotal();
+      }
+
+      // Actualizar total de pedidos
+      function actualizarTotal() {
+        let total = 0;
+        const pedidoTable = document.getElementById("pedidoTable");
+        Array.from(pedidoTable.rows).forEach((row) => {
+          total += parseFloat(row.cells[3].textContent);
+        });
+        document.getElementById("totalPedido").textContent = total.toFixed(2);
+      }
+
+      // Eventos de añadir productos con click
+      document.querySelectorAll(".espacio__item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const nombre = item.textContent.split("-")[0].trim();
+          const precio = parseFloat(item.textContent.split("-")[1].trim());
+          agregarProducto(nombre, precio);
+        });
+      });
+    </script>
+  </body>
+</html>

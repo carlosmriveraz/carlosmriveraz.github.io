@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Sweet</title>
+    <style>
+      :root {
+        --color-urano: #78dbe2; /* Color similar al de Urano */
+        --color-principal: var(--color-urano);
+        --color-terciario: white;
+        --color-texto: #ffa500; /* Naranja lunar */
+        --color-resaltado: yellow;
+        --color-sombra: rgba(120, 219, 226, 0.8); /* Color de sombra de Urano */
+        --hover-efecto: rgba(255, 0, 0, 0.3); /* Efecto hover */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+
+        background: linear-gradient(
+          to bottom,
+
+          #02033d,
+          #60439b,
+          #010d4b
+        );
+
+        background-size: cover; /* Para que la imagen cubra todo el elemento */
+        background-position: center; /* Centrar la imagen */
+        background-repeat: no-repeat; /* No repetir la imagen */
+
+        color: var(--color-texto);
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header h1,
+      #oredenes h2 {
+        font-size: 3em;
+        color: var(--color-terciario);
+        text-shadow: 3px 3px 5px var(--color-sombra),
+          0 0 10px var(--color-sombra), 5px 5px 10px var(--color-sombra); /* Sombra 3D */
+        position: relative;
+        z-index: 2;
+      }
+
+      .header .planeta {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        background: radial-gradient(
+          circle at 50% 50%,
+          var(--color-urano),
+          #4c9da1
+        );
+        border-radius: 50%;
+        animation: mover 5s infinite linear;
+        z-index: 1;
+        top: 0;
+        right: 20px;
+      }
+
+      @keyframes mover {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(180deg);
+        }
+        100% {
+          transform: translateY(0) rotate(360deg);
+        }
+      }
+
+      h2 {
+        font-size: 2em;
+        color: var(--color-terciario);
+        text-shadow: 1px 1px 5px var(--color-sombra);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        font-size: 1.2em;
+        padding: 10px;
+      }
+
+      li .emoji {
+        margin-right: 10px;
+      }
+
+      li .resaltado {
+        color: var(--color-resaltado);
+        font-weight: bold;
+        position: relative;
+        cursor: pointer;
+      }
+
+      li .resaltado:hover {
+        background-color: var(--hover-efecto);
+      }
+
+      /* Estructura de dos columnas para la primera fila */
+      @media (min-width: 768px) {
+        .menu {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          gap: 20px;
+        }
+
+        .menu .columna {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      /* En pantallas pequeñas, las secciones se muestran en una sola columna */
+      @media (max-width: 767px) {
+        .menu {
+          display: block;
+        }
+      }
+
+      .mensaje {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .mensaje .favor {
+        color: red;
+        font-size: 1.2em;
+      }
+
+      /* Efectos de hover y activo para las salsas */
+      .salsa-hover {
+        position: relative;
+      }
+
+      .salsa-hover:hover {
+        background-color: var(--hover-efecto);
+      }
+
+      .salsa-hover.efecto-rojo {
+        color: red;
+      }
+      .tema_normal {
+        background: radial-gradient(
+            circle at top,
+            rgba(0, 0, 230, 0.2) 10%,
+            rgba(127, 137, 230, 0.2) 20%,
+            rgba(127, 137, 230, 0.9) 19%,
+            rgba(128, 0, 128, 0.1) 50%
+          ),
+          linear-gradient(
+            to bottom,
+            #010d4b,
+            #ad83ec44,
+            #08030b99,
+            #010d4b,
+            #00000099
+          );
+        background-size: cover; /* Para que la imagen cubra todo el elemento */
+        background-position: center; /* Centrar la imagen */
+        background-repeat: no-repeat; /* No repetir la imagen */
+      }
+
+      .tema_normal_menu {
+        background-image: url("logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 10% 10%;
+      }
+    </style>
+  </head>
+  <body class="">
+    <header class="header">
+      <h1>
+        Moon Fries - opción 2 - estoy tratadndo de simula el actual pero no he
+        tenido tiempo para este
+      </h1>
+      <div class="planeta"></div>
+      <p>Escanea el código QR para ver el menú completo y realiza tu pago.</p>
+    </header>
+
+    <main class="menu tema_normal">
+      <!-- Primera columna: Entradas -->
+      <section class="columna tema_normal_menu">
+        <h2>Entradas</h2>
+        <ul>
+          <li>
+            <span class="emoji">🛸</span> Aros de cebolla (5 unidades) - 8.000
+          </li>
+          <li>
+            <span class="emoji">👨‍🚀</span> Patacón con hogao (5 unidades) - 8.000
+          </li>
+          <li>
+            <span class="emoji">🛰️</span> Patacón con carne (5 unidades) -
+            17.000 <span class="resaltado">Especial</span>
+          </li>
+          <li>
+            <span class="emoji">👽</span> Deditos de queso (5 unidades) - 17.000
+            <span class="resaltado">Especial</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Segunda columna: Bebidas -->
+      <section class="columna">
+        <div id="icono">
+          <img src="logo.png" alt="Icono de Bebidas" class="" width="10px" />
+          <h2>Bebidas</h2>
+        </div>
+        <ul>
+          <li>Gaseosa (250 ml) - 2.500</li>
+          <li>Gaseosa (1 litro) - 7.500</li>
+          <li>Té Hatsu - 6.000</li>
+          <li>Gatoré - 4.000</li>
+          <li>Agua - 3.000</li>
+          <li>Hit - 4.000</li>
+        </ul>
+      </section>
+
+      <!-- Segunda fila: Adiciones -->
+      <section class="columna">
+        <h2>Adiciones</h2>
+        <ul>
+          <li>Guacamole - 2.500</li>
+          <li>Crema agria - 2.500</li>
+          <li>Maicito - 4.000</li>
+          <li>Adicional salsa - 2.000</li>
+          <li>Huevos de codorniz (5 unidades) - 5.000</li>
+          <li>Porción pulled pork - 6.000</li>
+          <li>Porción pollo desmechado - 6.000</li>
+          <li>Queso mozzarella - 4.000</li>
+        </ul>
+      </section>
+
+      <!-- Segunda fila: Salsas -->
+      <section class="columna">
+        <h2>Salsas</h2>
+        <ul>
+          <li class="salsa-hover"><span class="emoji">🍗</span> Alitas BBQ</li>
+          <li class="salsa-hover efecto-rojo">
+            <span class="emoji">🍗</span> Mostaza Miel
+          </li>
+          <li class="salsa-hover efecto-rojo">
+            <span class="emoji">🍗</span> BBQ Picante
+          </li>
+          <li class="salsa-hover">
+            <span class="emoji">🍟</span> Papas Fritas
+          </li>
+          <li class="salsa-hover efecto-rojo">
+            <span class="emoji">🍗</span> Alitas Búfalo (3 picantes)
+          </li>
+          <li class="salsa-hover">
+            <span class="emoji">🍟</span> Papas Rosada Especial
+          </li>
+        </ul>
+      </section>
+
+      <section class="mensaje">
+        <p>
+          <span class="emoji">👨‍🚀</span>
+          <span class="favor"
+            >Favor <strong>realizar</strong> su pedido en la caja.
+            ¡Gracias!</span
+          >
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

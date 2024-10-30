@@ -1,0 +1,323 @@
+.navegacion {
+  border-radius: 0.8rem;
+  background: linear-gradient(
+    90deg,
+    var(--color3),
+    var(--color8),
+    var(--color9),
+    var(--color9),
+    var(--color8),
+    var(--color3)
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navegacion ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navegacion ul li a {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navegacion ul li a:hover {
+  color: var(--color-5); /* Púrpura oscuro al pasar el mouse */
+}
+
+.titulo-pagina {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-titulo-grande);
+}
+
+.logo {
+  width: 5rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  height: auto;
+  display: block;
+}
+
+.submenu {
+  border-radius: 2px;
+
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  margin: 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: top 0.3s ease, background-color 0.3s ease; /* Suaviza el cambio de top */
+}
+
+.submenu.fijo {
+  position: fixed;
+  top: -100px; /* Empieza oculto, fuera de la vista */
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--color1); /* Asegúrate de que se mantenga visible */
+  transition: top 0.3s ease; /* Transición para hacer el cambio suave */
+}
+
+.submenu.fijo.visible {
+  top: 0; /* Baja de manera suave hasta su posición fija */
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.productos__grid {
+  display: grid;
+  padding: 1rem;
+  background-color: var(--fondo-primario);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Columnas que se ajustan automáticamente */
+  gap: 10px; /* Espacio entre los elementos */
+}
+
+.producto {
+  border-radius: 6px;
+  border: 0.5px solid #00fafa; /* Ejemplo de borde */
+  text-align: center; /* Centrar el texto */
+}
+
+.producto__imagen {
+  max-height: 30vh; /* Alto máximo de la imagen */
+  width: auto; /* Mantener la proporción */
+  display: block; /* Para evitar el espacio extra abajo */
+  margin: 0 auto; /* Centrar la imagen */
+}
+
+.producto__nombre,
+.producto__precio {
+  font-size: 0.8rem;
+}
+.producto__nombre {
+  display: 1;
+}
+
+.producto__precio {
+  font-size: 0.8rem;
+  color: var(--color-texto);
+}
+
+.producto:active {
+  cursor: grabbing;
+}
+
+.producto:hover {
+  transform: scale(1.02);
+  background-color: var(--fondo-hover);
+}
+
+/* Sección del juego */
+.menu__juego {
+  text-align: center;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.juego__contenedor {
+  min-height: 200px;
+  background-color: var(--fondo-principal);
+  border-radius: var(--borde-mediano);
+  color: var(--color-texto);
+  font-size: var(--medida-texto);
+  transition: background-color 0.3s ease;
+}
+
+.juego__contenedor:hover {
+  background-color: var(--fondo-hover);
+}
+
+.juego__tabla {
+  border-collapse: collapse;
+}
+
+.juego__tabla th,
+.juego__tabla td {
+  color: var(--color-principal);
+  padding: var(--relleno);
+  border: 1px solid var(--color-borde);
+}
+
+.juego__tabla th {
+  background-color: var(--color10);
+}
+
+/* Contenedor del juego */
+.juego__contenedor {
+  border: 4px dashed var(--color-9);
+  padding: var(--relleno-grande);
+  min-height: 250px;
+  background-color: var(--fondo-principal);
+  border-radius: var(--borde-mediano);
+
+  font-size: var(--medida-texto);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.juego__contenedor:hover {
+  background-color: var(--fondo-hover);
+  border-color: var(--color-hover);
+}
+
+/* Contenedores */
+#juego-recetas {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+#contenedor-imagenes {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imagen-draggable {
+  width: 100px;
+  margin: 10px;
+}
+
+/* Área de drop */
+.area-drop {
+  width: 50%;
+  height: 300px;
+  border: 2px dashed var(--color-titulo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color1);
+  transition: background-color 0.5s;
+}
+
+/* Animación de fondo */
+.animacion-fondo {
+  background-color: var(
+    --color3
+  ); /* Cambia al color rosa fuerte durante la animación */
+  animation: cambiar-fondo 3s forwards;
+}
+
+@keyframes cambiar-fondo {
+  0% {
+    background-color: var(--color1);
+  }
+  50% {
+    background-color: var(--color3);
+  }
+  100% {
+    background-color: var(--color1);
+  }
+}
+
+/* Contenedores */
+#juego-recetas {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+#contenedor-imagenes {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imagen-draggable {
+  width: 100px;
+  margin: 10px;
+}
+
+/* Área de drop */
+.area-drop {
+  width: 50%;
+  height: 300px;
+  border: 2px dashed var(--color-titulo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color1);
+  transition: background-color 0.5s;
+}
+
+/* Animación de fondo */
+.animacion-fondo {
+  background-color: var(
+    --color-3
+  ); /* Cambia al color rosa fuerte durante la animación */
+  animation: cambiar-fondo 3s forwards;
+}
+
+@keyframes cambiar-fondo {
+  0% {
+    background-color: var(--color1);
+  }
+  50% {
+    background-color: var(--color-3);
+  }
+  100% {
+    background-color: var(--color1);
+  }
+}
+
+/* Estilos 3D aplicados desde el principio al selector de resultados */
+.totales {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  background-color: var(--color5);
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 200, 200, 0.9),
+    /* Sombra principal */ -5px -5px 15px rgba(255, 255, 255, 0.8) inset,
+    /* Brillo interior superior */ 5px 5px 15px rgba(0, 200, 200, 0.8) inset; /* Sombra interior inferior */
+  transform: rotateY(20deg) rotateX(-24deg) translateZ(120px); /* Ajustado ángulo */
+  transition: transform 0.7s ease-in-out, box-shadow 0.7s;
+
+  /* Borde con gradiente de tonos verdes tipo hoja de fresa */
+  border: 5px solid transparent;
+  background-image: linear-gradient(
+    var(--color6),
+    var(--color1),
+    linear-gradient(45deg, var(--color7), #fff, var(--color7))
+  );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+/* Resultados */
+#totalPrecio {
+  font-weight: bold;
+  color: var(--color8);
+  transform: rotateY(10deg) translateZ(30px); /* Ajustado ángulo */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Sistema Solar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .escena {
+            position: relative;
+            width: 1000px;
+            height: 1000px;
+        }
+
+        .estrella, .planeta, .luna, .asteroide, .satelite, .sol {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .sol {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            top: 50%;
+            left: 50%;
+            margin-top: -75px;
+            margin-left: -75px;
+            box-shadow: 0 0 50px 20px rgba(255, 255, 0, 0.5);
+        }
+
+        .tarjeta {
+            position: absolute;
+            width: 180px;
+            height: 120px;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .tarjeta .icono {
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+
+        .tarjeta.planeta {
+            background-color: #7FB3D5;
+        }
+
+        .tarjeta.estrella {
+            background-color: #F9E79F;
+        }
+
+        .tarjeta.luna {
+            background-color: #D5D8DC;
+        }
+
+        .tarjeta.asteroide {
+            background-color: #AAB7B8;
+        }
+
+        .tarjeta.satelite {
+            background-color: #7DCEA0;
+        }
+
+        /* Orbital animations */
+        @keyframes orbita1 {
+            0% { transform: rotate(0deg) translateX(300px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+        }
+
+        @keyframes orbita2 {
+            0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+        }
+
+        @keyframes orbita3 {
+            0% { transform: rotate(0deg) translateX(400px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(400px) rotate(-360deg); }
+        }
+
+        .planeta {
+            animation: orbita1 20s linear infinite;
+        }
+
+        .estrella {
+            animation: orbita2 30s linear infinite;
+        }
+
+        .luna {
+            animation: orbita2 10s linear infinite;
+        }
+
+        .asteroide {
+            animation: orbita3 25s linear infinite;
+        }
+
+        .satelite {
+            animation: orbita1 15s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="escena">
+        <div class="sol"></div>
+
+        <!-- Planetas -->
+        <div class="tarjeta planeta" style="top: 50%; left: 50%; animation: orbita1;">
+            <div class="icono">🍔</div>
+            <h3>Hamburguesa</h3>
+            <p>$20,000 COP</p>
+        </div>
+        <div class="tarjeta planeta" style="top: 20%; left: 30%; animation: orbita1;">
+            <div class="icono">🌮</div>
+            <h3>Tacos</h3>
+            <p>$12,000 COP</p>
+        </div>
+        <div class="tarjeta planeta" style="top: 70%; left: 40%; animation: orbita1;">
+            <div class="icono">🍕</div>
+            <h3>Pizza</h3>
+            <p>$18,000 COP</p>
+        </div>
+
+        <!-- Estrellas -->
+        <div class="tarjeta estrella" style="top: 30%; left: 70%; animation: orbita2;">
+            <div class="icono">🌟</div>
+            <h3>Estrella</h3>
+            <p>Producto destacado</p>
+        </div>
+        <div class="tarjeta estrella" style="top: 80%; left: 50%; animation: orbita2;">
+            <div class="icono">✨</div>
+            <h3>Brillo de postres</h3>
+            <p>$7,000 COP</p>
+        </div>
+
+        <!-- Lunas -->
+        <div class="tarjeta luna" style="top: 60%; left: 30%; animation: orbita2;">
+            <div class="icono">🌕</div>
+            <h3>Panques</h3>
+            <p>$10,000 COP</p>
+        </div>
+        <div class="tarjeta luna" style="top: 20%; left: 80%; animation: orbita2;">
+            <div class="icono">🌑</div>
+            <h3>Empanadas</h3>
+            <p>$5,000 COP</p>
+        </div>
+
+        <!-- Asteroides -->
+        <div class="tarjeta asteroide" style="top: 70%; left: 50%; animation: orbita3;">
+            <div class="icono">☄️</div>
+            <h3>Nuggets</h3>
+            <p>$8,000 COP</p>
+        </div>
+        <div class="tarjeta asteroide" style="top: 40%; left: 80%; animation: orbita3;">
+            <div class="icono">🪐</div>
+            <h3>Donuts</h3>
+            <p>$4,000 COP</p>
+        </div>
+
+        <!-- Satélites -->
+        <div class="tarjeta satelite" style="top: 40%; left: 80%; animation: orbita1;">
+            <div class="icono">🛰️</div>
+            <h3>Satelite NASA</h3>
+            <p>Explora nuestros productos</p>
+        </div>
+
+        <!-- Planetas adicionales -->
+        <div class="tarjeta planeta" style="top: 60%; left: 40%; animation: orbita1;">
+            <div class="icono">🌭</div>
+            <h3>Hot Dog</h3>
+            <p>$9,000 COP</p>
+        </div>
+        <div class="tarjeta planeta" style="top: 10%; left: 50%; animation: orbita1;">
+            <div class="icono">🥙</div>
+            <h3>Wraps</h3>
+            <p>$11,000 COP</p>
+        </div>
+
+        <!-- Estrellas adicionales -->
+        <div class="tarjeta estrella" style="top: 40%; left: 30%; animation: orbita2;">
+            <div class="icono">⭐</div>
+            <h3>Favorito</h3>
+            <p>Producto especial</p>
+        </div>
+
+        <!-- Lunas adicionales -->
+        <div class="tarjeta luna" style="top: 90%; left: 70%; animation: orbita2;">
+            <div class="icono">🌓</div>
+            <h3>Quesadilla</h3>
+            <p>$14,000 COP</p>
+        </div>
+
+        <!-- Asteroides adicionales -->
+        <div class="tarjeta asteroide" style="top: 10%; left: 80%; animation: orbita3;">
+            <div class="icono">💫</div>
+            <h3>Batidos</h3>
+            <p>$6,000 COP</p>
+        </div>
+
+        <!-- Más satélites -->
+        <div class="tarjeta satelite" style="top: 20%; left: 20%; animation: orbita1;">
+            <div class="icono">🛸</div>
+            <h3>Platillos voladores</h3>
+            <p>$3,000 COP</p>
+        </div>
+
+    </div>
+</body>
+</html>

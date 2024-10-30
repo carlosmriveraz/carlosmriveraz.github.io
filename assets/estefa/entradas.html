@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Sweet</title>
+    <style>
+      :root {
+        --color-urano: #78dbe2; /* Color similar al de Urano */
+        --color-principal: var(--color-urano);
+        --color-terciario: white;
+        --color-texto: #ffa500; /* Naranja lunar */
+        --color-resaltado: yellow;
+        --color-sombra: rgba(120, 219, 226, 0.8); /* Color de sombra de Urano */
+        --hover-efecto: rgba(255, 0, 0, 0.3); /* Efecto hover */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://www.nasa.gov/sites/default/files/thumbnails/image/lroc_wac_nearside.png"); /* Fondo lunar */
+        background-size: cover;
+        background-attachment: fixed;
+        color: var(--color-texto);
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header h1,
+      #oredenes h2 {
+        font-size: 3em;
+        color: var(--color-terciario);
+        text-shadow: 3px 3px 5px var(--color-sombra),
+          0 0 10px var(--color-sombra), 5px 5px 10px var(--color-sombra); /* Sombra 3D */
+        position: relative;
+        z-index: 2;
+      }
+
+      .header .planeta {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        background: radial-gradient(
+          circle at 50% 50%,
+          var(--color-urano),
+          #4c9da1
+        );
+        border-radius: 50%;
+        animation: mover 5s infinite linear;
+        z-index: 1;
+        top: 0;
+        right: 20px;
+      }
+
+      @keyframes mover {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(180deg);
+        }
+        100% {
+          transform: translateY(0) rotate(360deg);
+        }
+      }
+
+      h2 {
+        font-size: 2em;
+        color: var(--color-terciario);
+        text-shadow: 1px 1px 5px var(--color-sombra);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        font-size: 1.2em;
+        padding: 10px;
+      }
+
+      li .emoji {
+        margin-right: 10px;
+      }
+
+      li .resaltado {
+        color: var(--color-resaltado);
+        font-weight: bold;
+        position: relative;
+        cursor: pointer;
+      }
+
+      li .resaltado:hover {
+        background-color: var(--hover-efecto);
+      }
+
+      /* Estructura de dos columnas para la primera fila */
+      @media (min-width: 768px) {
+        .menu {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          gap: 20px;
+        }
+
+        .menu .columna {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      /* En pantallas pequeñas, las secciones se muestran en una sola columna */
+      @media (max-width: 767px) {
+        .menu {
+          display: block;
+        }
+      }
+
+      .mensaje {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .mensaje .favor {
+        color: red;
+        font-size: 1.2em;
+      }
+
+      /* Efectos de hover y activo para las salsas */
+      .salsa-hover {
+        position: relative;
+      }
+
+      .salsa-hover:hover {
+        background-color: var(--hover-efecto);
+      }
+
+      .salsa-hover.efecto-rojo {
+        color: red;
+      }
+    </style>
+
+    <style>
+      /* Variables de color para la temática lunar */
+      :root {
+        --color-urano: #78dbe2;
+        --color-principal: var(--color-urano);
+        --color-terciario: white;
+        --color-texto: #ffa500; /* Naranja lunar */
+        --color-resaltado: yellow;
+        --color-sombra: rgba(255, 255, 255, 0.8);
+        --hover-efecto: rgba(255, 165, 0, 0.5);
+      }
+
+      /* Estilos base y fondo lunar */
+      .espacio__body {
+        background: linear-gradient(180deg, #000000, #111111);
+        color: var(--color-terciario);
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Header con animación de planeta */
+      .espacio__header {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .espacio__titulo {
+        font-size: 3em;
+        color: var(--color-terciario);
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 0 10px var(--color-sombra);
+      }
+
+      .espacio__planeta {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        background: radial-gradient(
+          circle at 50% 50%,
+          var(--color-urano),
+          #4c9da1
+        );
+        border-radius: 50%;
+        animation: planetaGira 5s infinite linear;
+        z-index: 1;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @keyframes planetaGira {
+        0% {
+          transform: translateX(-50%) rotate(0deg);
+        }
+        100% {
+          transform: translateX(-50%) rotate(360deg);
+        }
+      }
+
+      /* Main estilo cráter y contenedor de secciones */
+      .espacio__main {
+        width: 80%;
+        margin: 20px auto;
+        border-radius: 20px;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(255, 255, 255, 0.1),
+          rgba(0, 0, 0, 0.7)
+        );
+        box-shadow: 0 0 30px var(--color-sombra);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .espacio__contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+      }
+
+      /* Secciones como "cráteres" */
+      .espacio__crater {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 10px;
+        transition: transform 0.3s ease, rotate 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .espacio__crater:hover {
+        transform: translateY(-10px) scale(1.05) rotate(5deg);
+        background: var(--hover-efecto);
+      }
+
+      .espacio__seccion-titulo {
+        font-size: 2em;
+        color: var(--color-terciario);
+        text-shadow: 1px 1px 5px var(--color-sombra);
+      }
+
+      .espacio__lista {
+        list-style: none;
+        padding: 0;
+      }
+
+      .espacio__item {
+        padding: 5px 0;
+      }
+
+      /* Tabla de pedidos interactiva */
+      .espacio__tabla-pedidos {
+        width: 90%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      .espacio__tabla-pedidos th,
+      .espacio__tabla-pedidos td {
+        padding: 10px;
+        border: 1px solid #fff;
+        text-align: left;
+        color: var(--color-texto);
+      }
+
+      .espacio__tabla-pedidos th {
+        background-color: var(--color-principal);
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .espacio__tabla-pedidos .editable:hover {
+        background-color: var(--hover-efecto);
+        cursor: pointer;
+      }
+
+      /* Media queries para ajuste responsivo */
+      @media (max-width: 768px) {
+        .espacio__contenedor {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Cambiar fondo de tema */
+      .tema-lunar {
+        background: linear-gradient(180deg, #000000, #111111);
+      }
+
+      .tema-nebulosa {
+        background: radial-gradient(circle, #4b0082, #00008b);
+      }
+    </style>
+  </head>
+  <body class="espacio__body tema-nebulosa">
+    <main class="espacio__main">
+      <div class="espacio__contenedor">
+        <!-- Primera columna: Entradas -->
+        <section class="columna">
+          <h2>Entradas</h2>
+          <ul>
+            <li>
+              <span class="emoji">🛸</span> Aros de cebolla (5 unidades) - 8.000
+            </li>
+            <li>
+              <span class="emoji">👨‍🚀</span> Patacón con hogao (5 unidades) -
+              8.000
+            </li>
+            <li>
+              <span class="emoji">🛰️</span> Patacón con carne (5 unidades) -
+              17.000 <span class="resaltado">Especial</span>
+            </li>
+            <li>
+              <span class="emoji">👽</span> Deditos de queso (5 unidades) -
+              17.000
+              <span class="resaltado">Especial</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Segunda columna: Bebidas -->
+        <section class="columna">
+          <h2>Bebidas</h2>
+          <ul>
+            <li>Gaseosa (250 ml) - 2.500</li>
+            <li>Gaseosa (1 litro) - 7.500</li>
+            <li>Té Hatsu - 6.000</li>
+            <li>Gatoré - 4.000</li>
+            <li>Agua - 3.000</li>
+            <li>Hit - 4.000</li>
+          </ul>
+        </section>
+
+        <!-- Segunda fila: Adiciones -->
+        <section class="columna">
+          <h2>Adiciones</h2>
+          <ul>
+            <li>Guacamole - 2.500</li>
+            <li>Crema agria - 2.500</li>
+            <li>Maicito - 4.000</li>
+            <li>Adicional salsa - 2.000</li>
+            <li>Huevos de codorniz (5 unidades) - 5.000</li>
+            <li>Porción pulled pork - 6.000</li>
+            <li>Porción pollo desmechado - 6.000</li>
+            <li>Queso mozzarella - 4.000</li>
+          </ul>
+        </section>
+
+        <!-- Segunda fila: Salsas -->
+        <section class="columna">
+          <h2>Salsas</h2>
+          <ul>
+            <li class="salsa-hover">
+              <span class="emoji">🍗</span> Alitas BBQ
+            </li>
+            <li class="salsa-hover efecto-rojo">
+              <span class="emoji">🍗</span> Mostaza Miel
+            </li>
+            <li class="salsa-hover efecto-rojo">
+              <span class="emoji">🍗</span> BBQ Picante
+            </li>
+            <li class="salsa-hover">
+              <span class="emoji">🍟</span> Papas Fritas
+            </li>
+            <li class="salsa-hover efecto-rojo">
+              <span class="emoji">🍗</span> Alitas Búfalo (3 picantes)
+            </li>
+            <li class="salsa-hover">
+              <span class="emoji">🍟</span> Papas Rosada Especial
+            </li>
+          </ul>
+        </section>
+
+        <section class="mensaje">
+          <p>
+            <span class="emoji">👨‍🚀</span>
+            <span class="favor"
+              >Favor <strong>realizar</strong> su pedido en la caja.
+              ¡Gracias!</span
+            >
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
