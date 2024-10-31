@@ -1,0 +1,159 @@
+/* Variables de color por tema */
+:root {
+  --fondo__claro: #ecf0f1;
+  --texto__claro: #2c3e50;
+  --fondo__oscuro: #2c3e50;
+  --texto__oscuro: #ecf0f1;
+  --fondo__espacial: #000033;
+  --texto__espacial: #00ffcc;
+  --fondo__principal: #3498db;
+  --texto__menu: #ffffff;
+  /** @format */
+
+  /* Alturas */
+  --altura-completa: 100%;
+  --altura-contenido: 70rem;
+  --altura-grande: 80vh;
+  --altura-mediano: 60vh;
+  --altura-minima: 20vh;
+  --altura-navbar: 1.5rem;
+  --altura-reducido: 40vh;
+
+  /* Anchos */
+  --ancho-completo: 100%;
+  --ancho-contenido: 70rem;
+  --ancho-grande: 75%;
+  --ancho-maximo: 90%;
+  --ancho-mediano: 50%;
+  --ancho-minimo: 10%;
+  --ancho-reducido: 25%;
+  --ancho-menu: 100%;
+
+  /* Bordes */
+  /* Bordes */
+  --borde-estandar: 1rem;
+  --borde-extra-grande: 3rem;
+  --borde-extra-reducido: 0.0625rem;
+  --borde-grande: 2rem;
+  --borde-mediano: 1.5rem;
+  --borde-reducido: 0.125rem;
+
+  /* Colores principales */
+  --color-menu: #90e0ef;
+  --color-principal: #00f;
+  --color-primario: #007bff;
+  --color-secundario: #0077b655;
+  --color-terciario: #caf0f855;
+
+  --color-texto: #ffffff;
+  --color-subtitulo: #ffffff;
+  --color-titulo: #ffffff;
+  --color-titulo-grande: #ffffff;
+
+  /* Medidas textos */
+  --medida-texto: 1.1rem;
+  --medida-texto-extra-grande: 1.5rem;
+  --medida-texto-extra-reducido: 0.5rem;
+  --medida-texto-grande: 1.3rem;
+  --medida-texto-mediano: 0.8rem;
+  --medida-texto-reducido: 0.6rem;
+
+  /* Medidas títulos  */
+  --medida-titulo: 2.4rem;
+  --medida-subtitulo: 1.3rem;
+  --medida-titulo-extra-grande: 4rem;
+  --medida-titulo-extra-reducido: 0.5rem;
+  --medida-titulo-grande: 2.6rem;
+
+  /* Márgenes */
+  --margen-extra-grande: 4rem;
+  --margen-extra-reducido: 0.25rem;
+  --margen-grande: 2rem;
+  --margen-mediano: 1.5rem;
+  --margen-reducido: 1rem;
+
+  /* Rellenos */
+  --relleno-extra-grande: 2rem;
+  --relleno-extra-reducido: 0.25rem;
+  --relleno-grande: 1.5rem;
+  --relleno-mediano: 1rem;
+  --relleno-reducido: 0.5rem;
+
+  /* Paleta de colores */
+  --color-paleta1: #0000ff;
+  --color-paleta2: #007bff;
+  --color-paleta3: #0077b6;
+  --color-paleta4: #00c3ff;
+  --color-paleta5: #00b4d8;
+  --color-paleta6: #90e0ef;
+  --color-paleta7: #caf0f8;
+  --color-hover: #00ffff;
+  /* Colores */
+}
+
+/* Estilos globales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--fondo__espacial);
+  color: var(--texto__espacial);
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu__config {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--fondo__principal);
+  color: var(--texto__menu);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu__config i {
+  font-size: 24px;
+}
+
+.menu__config__toggle-menu {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background-color: var(--fondo__principal);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.menu__config__toggle-menu label {
+  color: var(--texto__menu);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.menu__config__toggle-menu input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Clases para temas */
+.theme-light {
+  background-color: var(--fondo__claro);
+  color: var(--texto__claro);
+}
+
+.theme-dark {
+  background-color: var(--fondo__oscuro);
+  color: var(--texto__oscuro);
+}
+
+.theme-space {
+  background-color: var(--fondo__espacial);
+  color: var(--texto__espacial);
+}

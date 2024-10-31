@@ -79,64 +79,62 @@
         </div>
       </section>
 
-      <div class="contenedor__grid__300">
-        <div>
-          <canvas
-            id="chart2"
-            class="gradiente__frio gradiente__diagonal"
-          ></canvas>
-        </div>
-        <div>
-          <canvas
-            id="chart3"
-            class="gradiente__frio gradiente__diagonal"
-          ></canvas>
-        </div>
-
-        <canvas
-          id="chart1"
-          class="gradiente__diagonal gradiente__frio"
-        ></canvas>
-      </div>
-      <div class="tabla__contenedor">
-        <h2>Estadísticas Mensuales</h2>
-        <table id="monthly-statistics" class="display">
-          <thead>
-            <tr>
-              <th>Mes</th>
-              <th>Promedio</th>
-              <th>Máximo</th>
-              <th>Mínimo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Aquí se llenarán los datos mensuales -->
-          </tbody>
-        </table>
-      </div>
       <section id="business-intelligence" class="contenedor__bi">
         <div class="bi__elemento">
-          <article class="contenedor__flex__columna__centrado__centrado">
+          <div class="contenedor__flex__columna__centrado">
+            <div class="contenedor__grid__2">
+              <canvas
+                id="chart2"
+                class="gradiente__frio gradiente__diagonal"
+              ></canvas>
+
+              <canvas
+                id="chart3"
+                class="gradiente__frio gradiente__diagonal"
+              ></canvas>
+            </div>
+            <div class="tabla__contenedor">
+              <h2>Estadísticas Mensuales</h2>
+              <table id="monthly-statistics" class="display">
+                <thead>
+                  <tr>
+                    <th>Mes</th>
+                    <th>Promedio</th>
+                    <th>Máximo</th>
+                    <th>Mínimo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Aquí se llenarán los datos mensuales -->
+                </tbody>
+              </table>
+            </div>
+
             <h6>Predicciones para los Próximos Dos Días</h6>
             <small>
               Nota: Estas predicciones son estimaciones realizadas por
-              inteligencia artificial y no son fijas.
+              inteligencia artificial y no son fija, el valor esta Predicho en
+              Pesos Colombianos.
             </small>
             <table id="predictions" class="display tabla__contenedor">
               <thead>
                 <tr>
                   <th>Fecha</th>
-                  <th>Valor Predicho en Pesos Colombianos</th>
+                  <th>Valor</th>
                 </tr>
               </thead>
               <tbody>
                 <!-- Los datos se rellenarán aquí -->
               </tbody>
             </table>
-          </article>
+          </div>
         </div>
 
         <div class="bi__elemento">
+          <canvas
+            id="chart1"
+            class="gradiente__diagonal gradiente__frio"
+          ></canvas>
           <div class="tabla__contenedor">
             <h2>Valores Históricos del Dólar</h2>
             <table id="dollar-values" class="dataTable">

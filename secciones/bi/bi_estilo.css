@@ -10,6 +10,11 @@
 #inteligencia-negocios {
   font-size: var(--medida-texto-reducido);
 }
+.canvas__bi {
+  display: flex;
+  max-height: 20rem;
+  width: 100%;
+}
 
 #business-intelligence h2 {
   font-size: var(--size-subtitulo, 15px);
@@ -67,9 +72,8 @@
 }
 
 .canvas {
-  min-width: 14rem;
-  max-width: 18rem;
-  min-height: 6rem; /* Limita la altura de los gráficos */
+  min-width: 100%;
+
   border: 0.5px solid var(--color-hover, #ddd);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -132,6 +132,40 @@
       .logo__fijo {
         width: 2rem;
       }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        margin: 20px;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 500px;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        position: absolute;
+        background: linear-gradient(to top, #0ff5, #4aa8);
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s, transform step-end 1s;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: .7;
+        transform: translatex(1.5rem);
+ 
+        transform:  translatey(-2.5rem);
+        transform: translatex(5.5rem);
+        transform: translatex(8.5rem);
+        transform:  translatey(5.5rem);
+        opacity: .9;
+        transform: translatex(12.5rem);
+        transform: translatex(14.5rem);
+      }
     </style>
   </head>
 
@@ -284,9 +318,23 @@
       
     </div>
 <div class="contenedor__logo__fijo">
-   
-  <a href="./assets/apps/gradient/riveradev_gradientes.html" target="_blank" aria-label="riveradev_gradientes" ><img src="./images/logomin.webp" alt="logo con grradiente aplicaion gradientes riveradev" class="logo__fijo"></a>
-  
+  <div class="tooltip ">
+    <a href="./apps/gradient/riveradev_gradientes.html" title="logo  aplicacion de la aplicacion pomodoro"   target="_blank" aria-label="riveradev_gradientes" ><img src="./images/logomin.webp" alt="logo con grradiente aplicaion gradientes riveradev" class="logo__fijo"></a>
+
+    <div class="tooltiptext">App Gradintes</div>
+  </div>
+
+  <div class="tooltip">
+ <a href="./apps/sara/index.html" title="logo   de la aplicacion sara"  target="_blank" aria-label="riveradev_gradientes" ><img src="./images/logo.webp" alt="logo  aplicacion del juego sa sara" class="logo__fijo"></a>
+ <div class="tooltiptext">App Juego Sara</div>
+</div>
+
+
+<div class="tooltip ">
+  <a href="./apps/sara/index.html" title="logo de la aplicacion Pomodoro"  target="_blank" aria-label="riveradev_gradientes" ><img src="./images/logo.webp" alt="logo  aplicacion del juego sa sara" class="logo__fijo"></a>
+  <div class="tooltiptext">App Pomodoro</div>
+ </div>
+
 </div>
     <aside class="aside__contacto__social">
     
@@ -320,7 +368,7 @@
 
 
     </aside>
- -->
+
     <!-- Scripts -->
 
     <script>
@@ -372,5 +420,15 @@
     </script>
 
     <script type="module" src="./scripts/index.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16752160180">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16752160180');
+</script>
   </body>
 </html>

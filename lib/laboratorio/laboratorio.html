@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Side Menu Interactivo</title>
+
+    <link rel="stylesheet" href="menu__configuracion.css" />
+    <link rel="stylesheet" href="laboratorio.css" />
+    <link
+      rel="stylesheet"
+      href="./Textos/texto_3d_rapido/texto_3d_rapido.css"
+    />
+    <style>
+      body{
+        display flex;
+      }
+      /* Variables de colores desde archivo de configuración */
+
+      /* Estilos del menú lateral */
+      .menu__sidebar {
+        width: 250px;
+        height: 100vh;
+
+        background-color: rgba(55, 55, 47, 0.4);
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu__sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .menu__sidebar li {
+        margin: 20px 0;
+      }
+
+      .menu__sidebar a {
+        color: var(--color-fondo);
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
+
+      .menu__sidebar a:hover {
+        color: var(--color-secundario);
+      }
+
+      /* Submenús */
+      .menu__sidebar .submenu ul {
+        display: none;
+        padding-left: 20px;
+      }
+
+      .menu__sidebar .submenu li {
+        margin: 10px 0;
+      }
+
+      .menu__sidebar .submenu a {
+        font-size: 16px;
+      }
+
+      .menu__sidebar .submenu.active > ul {
+        display: block;
+      }
+
+      /* Botón de configuración (toggle) */
+      .menu__config {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg")
+          no-repeat center center;
+        background-size: contain;
+        cursor: pointer;
+      }
+
+      .menu__config:hover {
+        opacity: 0.8;
+      }
+
+      .menu__config__toggle-menu {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background-color: red;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .menu__config__toggle-menu label {
+        color: var(--color-fondo);
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .menu__config__toggle-menu input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      /* Estilos para menú de configuración activo */
+      .menu__config.menu__config--active .menu__config__toggle-menu {
+        display: block;
+      }
+
+      /* Estilos invertidos */
+      body.inverted {
+        background-color: var(--color-invertido-fondo);
+        color: var(--color-invertido-texto);
+      }
+
+      body.inverted .menu__sidebar {
+        background-color: var(--color-secundario);
+      }
+
+      body.inverted .menu__sidebar a {
+        color: var(--color-invertido-texto);
+      }
+
+      body.inverted .menu__sidebar a:hover {
+        color: var(--color-principal);
+      }
+    </style>
+
+    <style>
+      .estrella__simple {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: #fff;
+        animation: twinkle 5s infinite alternate;
+      }
+
+      @keyframes twinkle {
+        0% {
+          opacity: 0;
+          transform: translateY(0);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(-100vh);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Ícono de configuración con el logo de Google -->
+
+    <!-- Ícono de configuración con el logo de Google -->
+    <div>
+      <div class="menu__config" id="config-icon">
+        <i class="material-icons">settings</i>
+      </div>
+
+      <div class="menu__config__toggle-menu" id="config-menu">
+        <label>
+          <input type="radio" name="theme" value="light" id="theme-light" />
+          Tema Claro
+        </label>
+        <label>
+          <input type="radio" name="theme" value="dark" id="theme-dark" /> Tema
+          Oscuro
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="theme"
+            value="space"
+            id="theme-space"
+            checked
+          />
+          Tema Espacial (Predeterminado)
+        </label>
+      </div>
+
+      <script>
+        document
+          .getElementById("config-icon")
+          .addEventListener("click", function () {
+            var menu = document.getElementById("config-menu");
+            menu.style.display =
+              menu.style.display === "block" ? "none" : "block";
+          });
+
+        document.querySelectorAll('input[name="theme"]').forEach((input) => {
+          input.addEventListener("change", function () {
+            document.body.className = ""; // Elimina clases existentes
+            if (this.value === "light") {
+              document.body.classList.add("theme-light");
+            } else if (this.value === "dark") {
+              document.body.classList.add("theme-dark");
+            } else {
+              document.body.classList.add("theme-space");
+            }
+          });
+        });
+      </script>
+    </div>
+    <!-- Menú lateral -->
+    <div class="menu__sidebar">
+      <ul>
+        <li>
+          <a
+            href="#"
+            class="enlace enlace__efecto__3d enlace__subrayado__deslizante"
+            >Inicio</a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#">Animaciones</a>
+          <ul>
+            <li><a href="animaciones_texto.HTML">Animaciones de texto</a></li>
+            <li><a href="#">En Proceso</a></li>
+            <li><a href="#">Completadas</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Reportes</a></li>
+      </ul>
+    </div>
+    <script class="./js/menu.js"></script>
+    <!-- Botón de configuración -->
+
+    <div class="texto_3d_rapido"><h1>carlos</h1></div>
+
+    <section class="section-laboratorio">
+      <div class="stars">
+        <div class="star" style="--top-offset: 10%; --fall-delay: 0s">...</div>
+        <div class="star" style="--top-offset: 0%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 40%; --fall-delay: 2s"></div>
+
+        <div class="star" style="--top-offset: 40%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 50%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 40%; --fall-delay: 3s"></div>
+        <div class="star" style="--top-offset: 50%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 10%; --fall-delay: 2s"></div>
+        <div class="star" style="--top-offset: 20%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 30%; --fall-delay: 2s"></div>
+        <div class="star" style="--top-offset: 40%; --fall-delay: 3s"></div>
+        <div class="star" style="--top-offset: 50%; --fall-delay: 4s"></div>
+      </div>
+
+      <div class="stars2">
+        <div class="star" style="--top-offset: 10%; --fall-delay: 0s">...</div>
+        <div class="star" style="--top-offset: 20%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 30%; --fall-delay: 2s"></div>
+        <div class="star" style="--top-offset: 40%; --fall-delay: 3s"></div>
+        <div class="star" style="--top-offset: 50%; --fall-delay: 4s"></div>
+        <div class="star" style="--top-offset: 10%; --fall-delay: 0s"></div>
+        <div class="star" style="--top-offset: 20%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 30%; --fall-delay: 2s"></div>
+        <div class="star" style="--top-offset: 40%; --fall-delay: 3s"></div>
+        <div class="star" style="--top-offset: 50%; --fall-delay: 4s"></div>
+      </div>
+      <div class="stars">
+        <div class="star" style="--top-offset: 10%; --fall-delay: 0s"></div>
+        <div class="star" style="--top-offset: 20%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 30%; --fall-delay: 2s"></div>
+        <div class="star" style="--top-offset: 40%; --fall-delay: 3s"></div>
+        <div class="star" style="--top-offset: 50%; --fall-delay: 4s"></div>
+
+        <div class="star" style="--top-offset: 10%; --fall-delay: 0s"></div>
+        <div class="star" style="--top-offset: 20%; --fall-delay: 8s"></div>
+        <div class="star" style="--top-offset: 50%; --fall-delay: 2s"></div>
+        <div class="star" style="--top-offset: 40%; --fall-delay: 3s"></div>
+        <div class="star" style="--top-offset: 70%; --fall-delay: 4s"></div>
+
+        <div class="star" style="--top-offset: 10%; --fall-delay: 0s"></div>
+        <div class="star" style="--top-offset: 20%; --fall-delay: 1s"></div>
+        <div class="star" style="--top-offset: 30%; --fall-delay: 2s"></div>
+        <div class="star" style="--top-offset: 110%; --fall-delay: 8"></div>
+        <div class="star" style="--top-offset: 50%; --fall-delay: 4s"></div>
+      </div>
+
+      <!-- Filtro SVG para distorsión -->
+      <svg>
+        <filter id="distortion">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.01 0.02"
+            numOctaves="3"
+            result="warp"
+          />
+          <feDisplacementMap in="SourceGraphic" in2="warp" scale="10" />
+        </filter>
+      </svg>
+    </section>
+    <div></div>
+    <div class="contenedor__flaming-text">
+      <div class="flaming-text">
+        <h1 class="medida-titulo">
+          <span class="medida-titulo-extra-grande marvel-bold text-contenedor"
+            >C</span
+          >arlos<span class="medida-titulo-extra-grande">M</span>ario<span
+            class="medida-titulo-extra-grande"
+            >R</span
+          >ivera.com
+        </h1>
+      </div>
+      <div class="margen-grande"></div>
+      <div class="item_contenido_home combined-effects">
+        <div class="item_contenido_home" id="flamingSection">
+          <img
+            src="../../images/logomin.webp"
+            alt="Star"
+            class="flaming-image"
+          />
+        </div>
+      </div>
+      <div class="item_contenido_home"></div>
+    </div>
+    <script>
+      // Mostrar/Ocultar submenús
+      document.querySelectorAll(".submenu > a").forEach((item) => {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+          this.parentElement.classList.toggle("active");
+        });
+      });
+
+      // Toggle menú de configuración
+      document
+        .querySelector(".menu__config")
+        .addEventListener("click", function () {
+          this.classList.toggle("menu__config--active");
+        });
+
+      // Toggle colores invertidos
+      document
+        .getElementById("toggle-colors")
+        .addEventListener("change", function () {
+          document.body.classList.toggle("inverted");
+        });
+    </script>
+
+    <script>
+      for (let i = 0; i < 100; i++) {
+        const estrella__simple = document.createElement("div");
+        estrella__simple.className = "estrella__simple";
+        estrella__simple.style.left = `${Math.random() * 100}%`;
+        estrella__simple.style.top = `${Math.random() * 100}%`;
+        document.body.appendChild(estrella__simple);
+      }
+    </script>
+
+    <script href="./js/theme.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16752160180"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-16752160180");
+    </script>
+  </body>
+</html>
