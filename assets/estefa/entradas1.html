@@ -5,44 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moon Sweet</title>
     <style>
-      /* Variables de color para la temática lunar */
       :root {
         --color-urano: #78dbe2;
         --color-principal: var(--color-urano);
         --color-terciario: white;
-        --color-texto: #ffa500; /* Naranja lunar */
+        --color-texto: #ffa500;
         --color-resaltado: yellow;
-        --color-sombra: rgba(255, 255, 255, 0.8);
-        --hover-efecto: rgba(255, 165, 0, 0.5);
+        --color-sombra: rgba(120, 219, 226, 0.8);
+        --hover-efecto: rgba(255, 0, 0, 0.3);
       }
 
-      /* Estilos base y fondo lunar */
-      .espacio__body {
-        background: linear-gradient(180deg, #000000, #111111);
-        color: var(--color-terciario);
+      body.claro {
+        --color-urano: #4b6584;
+        --color-principal: #4b6584;
+        --color-terciario: black;
+        --color-texto: #333;
+        --color-resaltado: #4b6584;
+        --color-sombra: rgba(0, 0, 0, 0.1);
+        background: #f5f5f5;
+      }
+
+      body {
         font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        background-image: url("https://www.nasa.gov/sites/default/files/thumbnails/image/lroc_wac_nearside.png");
+        background-size: cover;
+        background-attachment: fixed;
+        color: var(--color-texto);
+        background: #1e1e1e;
+        margin: 0;
+        padding: 0;
       }
 
-      /* Header con animación de planeta */
-      .espacio__header {
+      .header {
         text-align: center;
         margin-top: 20px;
         position: relative;
         overflow: hidden;
       }
 
-      .espacio__titulo {
+      .header h1 {
         font-size: 3em;
         color: var(--color-terciario);
-        position: relative;
-        z-index: 2;
-        text-shadow: 0 0 10px var(--color-sombra);
+        text-shadow: 3px 3px 5px var(--color-sombra),
+          0 0 10px var(--color-sombra), 5px 5px 10px var(--color-sombra);
       }
 
-      .espacio__planeta {
+      .header .planeta {
         position: absolute;
         width: 5rem;
         height: 5rem;
@@ -52,85 +60,147 @@
           #4c9da1
         );
         border-radius: 50%;
-        animation: planetaGira 5s infinite linear;
+        animation: mover 5s infinite linear;
         z-index: 1;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 0;
+        right: 20px;
       }
 
-      @keyframes planetaGira {
+      @keyframes mover {
         0% {
-          transform: translateX(-50%) rotate(0deg);
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(180deg);
         }
         100% {
-          transform: translateX(-50%) rotate(360deg);
+          transform: translateY(0) rotate(360deg);
         }
       }
 
-      /* Main estilo cráter y contenedor de secciones */
-      .espacio__main {
-        width: 80%;
-        margin: 20px auto;
-        border-radius: 20px;
-        background: radial-gradient(
-          circle at 50% 50%,
-          rgba(255, 255, 255, 0.1),
-          rgba(0, 0, 0, 0.7)
-        );
-        box-shadow: 0 0 30px var(--color-sombra);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .espacio__contenedor {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 20px;
-      }
-
-      /* Secciones como "cráteres" */
-      .espacio__crater {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        padding: 10px;
-        transition: transform 0.3s ease, rotate 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      }
-
-      .espacio__crater:hover {
-        transform: translateY(-10px) scale(1.05) rotate(5deg);
-        background: var(--hover-efecto);
-      }
-
-      .espacio__seccion-titulo {
+      h2 {
         font-size: 2em;
         color: var(--color-terciario);
         text-shadow: 1px 1px 5px var(--color-sombra);
+        text-align: center;
       }
 
-      .espacio__lista {
+      h2.subtitulo {
+        font-size: 2.5em;
+        color: var(--color-terciario);
+        text-shadow: 3px 3px 5px var(--color-sombra),
+          0 0 10px var(--color-sombra), 5px 5px 10px var(--color-sombra);
+        text-align: center;
+      }
+
+      ul {
         list-style: none;
         padding: 0;
       }
 
-      .espacio__item {
-        padding: 5px 0;
+      li {
+        font-size: 1.2em;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
 
-      /* Tabla de pedidos interactiva */
+      .resaltado {
+        color: var(--color-resaltado);
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .menu {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+        background-color: var(--fondo-primario);
+      }
+      button {
+        border-radius: 11px;
+        box-shadow: 0 1 10px #0008;
+        background-color: #00a0a055;
+        color: var(--color-terciario);
+        transition: all 1s;
+      }
+
+      button:hover {
+        transform: scale(1.2);
+      }
+
+      .tarjeta {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .tarjeta:hover {
+        transform: translateY(-10px) scale(1.05);
+        background: var(--hover-efecto);
+      }
+
+      .combo img {
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .combo-content {
+        padding: 10px;
+      }
+
+      .combo button {
+        background-color: var(--color-principal);
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .combo button:hover {
+        background-color: #56b3bb;
+        transform: scale(1.05);
+      }
+
+      .mensaje {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .mensaje .favor {
+        color: red;
+        font-size: 1.2em;
+      }
+
+      .buscar-input,
+      .cambiar-tema-btn {
+        margin: 10px;
+        padding: 8px;
+        font-size: 1em;
+      }
+
       .espacio__tabla-pedidos {
         width: 90%;
         border-collapse: collapse;
-        margin: 20px 0;
+        margin: 20px auto;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       }
 
       .espacio__tabla-pedidos th,
       .espacio__tabla-pedidos td {
         padding: 10px;
-        border: 1px solid #fff;
+        border: 1px solid var(--color-sombra);
         text-align: left;
         color: var(--color-texto);
       }
@@ -138,187 +208,608 @@
       .espacio__tabla-pedidos th {
         background-color: var(--color-principal);
         color: #fff;
-        font-weight: bold;
       }
 
-      .espacio__tabla-pedidos .editable:hover {
-        background-color: var(--hover-efecto);
-        cursor: pointer;
+      .cantidad-input {
+        width: 60px;
       }
 
-      /* Media queries para ajuste responsivo */
-      @media (max-width: 768px) {
-        .espacio__contenedor {
-          grid-template-columns: 1fr;
-        }
+      .total {
+        font-weight: 700;
+        color: var(--color-resaltado);
       }
 
-      /* Cambiar fondo de tema */
-      .tema-lunar {
-        background: linear-gradient(180deg, #000000, #111111);
+      .tooltip {
+        position: relative;
+        display: inline-block;
       }
 
-      .tema-nebulosa {
-        background: radial-gradient(circle, #4b0082, #00008b);
+      .tooltip .tooltip-text {
+        visibility: hidden;
+        width: 150px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%; /* Posición encima del elemento */
+        left: 50%;
+        margin-left: -75px; /* Mitad del ancho */
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%; /* En la parte inferior del tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+      }
+
+      .tooltip.show .tooltip-text {
+        visibility: visible;
+        opacity: 1;
       }
     </style>
   </head>
-  <body class="espacio__body tema-lunar">
-    <header class="espacio__header">
-      <div class="espacio__planeta"></div>
-      <h1 class="espacio__titulo">Moon Fries - opción 1</h1>
-      <button onclick="toggleTheme()">Cambiar tema</button>
-      <p>¡Disfruta el sabor de la luna!</p>
-    </header>
-
-    <main class="espacio__main">
+  <body>
+    <header class="header">
+      <h1>Entradas</h1>
+      <div class="planeta"></div>
       <input
         type="text"
-        id="filterInput"
-        placeholder="Buscar productos..."
-        onkeyup="filterProducts()"
+        class="buscar-input"
+        placeholder="Buscar en el menú..."
+        oninput="filtrarProductos()"
       />
-      <div class="espacio__contenedor">
-        <section class="espacio__crater espacio__entradas">
-          <h2 class="espacio__seccion-titulo">Entradas</h2>
-          <ul class="espacio__lista">
-            <li class="espacio__item">🛸 Aros de cebolla - 8.000</li>
-            <li class="espacio__item">👨‍🚀 Patacón con hogao - 8.000</li>
-            <li class="espacio__item">🛰️ Patacón con carne - 17.000</li>
-            <li class="espacio__item">👽 Deditos de queso - 17.000</li>
+      <button class="cambiar-tema-btn" onclick="cambiarTema()">
+        Cambiar Tema
+      </button>
+    </header>
+
+    <main>
+      <div class="menu">
+        <section class="tarjeta">
+          <h2>Entradas</h2>
+          <ul>
+            <li>
+              🛸 Aros de cebolla (5 unidades) - $8,000
+              <button onclick='agregarProducto("Aros de cebolla", 8000)'>
+                Agregar
+              </button>
+            </li>
+            <li>
+              👨‍🚀 Patacón con hogao (5 unidades) - $8,000
+              <button onclick='agregarProducto("Patacón con hogao", 8000)'>
+                Agregar
+              </button>
+            </li>
+            <li>
+              🛰️ Patacón con carne (5 unidades) - $17,000
+              <span class="resaltado">Especial</span>
+              <button onclick='agregarProducto("Patacón con carne", 17000)'>
+                Agregar
+              </button>
+            </li>
+            <li>
+              👽 Deditos de queso (5 unidades) - $17,000
+              <span class="resaltado">Especial</span>
+              <button onclick='agregarProducto("Deditos de queso", 17000)'>
+                Agregar
+              </button>
+            </li>
           </ul>
         </section>
 
-        <section class="espacio__crater espacio__bebidas">
-          <h2 class="espacio__seccion-titulo">Bebidas</h2>
-          <ul class="espacio__lista">
-            <li class="espacio__item">Gaseosa - 2.500</li>
-            <li class="espacio__item">Té Hatsu - 6.000</li>
-            <li class="espacio__item">Gatoré - 4.000</li>
-            <li class="espacio__item">Agua - 3.000</li>
+        <section class="tarjeta">
+          <h2>Bebidas</h2>
+          <ul>
+            <li>
+              Gaseosa (250 ml) - $2,500
+              <button onclick='agregarProducto("Gaseosa (250 ml)", 2500)'>
+                Agregar
+              </button>
+            </li>
+            <li>
+              Gaseosa (1 litro) - $7,500
+              <button onclick='agregarProducto("Gaseosa (1 litro)", 7500)'>
+                Agregar
+              </button>
+            </li>
+            <li>
+              Té Hatsu - $6,000<button
+                class="tooltip"
+                onclick="agregarProducto('Té Hatsu', 6000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Gatoré - $4,000
+              <button class="tooltip" onclick="agregarProducto('Gatoré', 4000)">
+                Agregar
+              </button>
+            </li>
+            <li>
+              Agua - $3,000
+              <button class="tooltip" onclick="agregarProducto('Agua', 3000)">
+                Agregar
+              </button>
+            </li>
+            <li>
+              Hit (400 ml) - $4,000
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Hit (400 ml)', 4000)"
+              >
+                Agregar
+              </button>
+            </li>
           </ul>
         </section>
 
-        <section class="espacio__crater espacio__adiciones">
-          <h2 class="espacio__seccion-titulo">Adiciones</h2>
-          <ul class="espacio__lista">
-            <li class="espacio__item">Guacamole - 2.500</li>
-            <li class="espacio__item">Crema agria - 2.500</li>
-            <li class="espacio__item">Maicito - 4.000</li>
-            <li class="espacio__item">Papas fritas - 6.000</li>
+        <section class="tarjeta">
+          <h2>Adiciones</h2>
+          <ul>
+            <li>
+              Guacamole - $2,500
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Guacamole', 2500)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Sour cream - $2,500
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Sour cream', 2500)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Cheddar - $2,500
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Cheddar', 2500)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Maicitos - $4,000
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Maicitos', 4000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Adición Salsa - $2,000
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Adición Salsa', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Huevos de codorniz (5 unidades) - $5,000
+              <button
+                onclick="agregarProducto('Huevos de codorniz (5 unidades)', 5000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Porción pulled pork - $6,000
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Porción pulled pork', 6000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Porción pollo desmechado - $6,000
+              <button
+                onclick="agregarProducto('Porción pollo desmechado', 6000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Queso mozzarella - $4,000
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Queso mozzarella', 4000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Porción de tocineta - $4,000
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Porción de tocineta', 4000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Alita (por unidad) - $4,000
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Alita (por unidad)', 4000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              Porción papas - $6,000
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Porción papas', 6000)"
+              >
+                Agregar
+              </button>
+            </li>
           </ul>
         </section>
 
-        <section class="espacio__crater espacio__salsas">
-          <h2 class="espacio__seccion-titulo">Salsas</h2>
-          <ul class="espacio__lista">
-            <li class="espacio__item">BBQ - 2.000</li>
-            <li class="espacio__item">Miel - 2.000</li>
-            <li class="espacio__item">Picante - 2.000</li>
-            <li class="espacio__item">Chile dulce - 2.000</li>
+        <section class="tarjeta">
+          <h2>Salsas</h2>
+          <ul>
+            <li>
+              🍗 BBQ Sweet
+              <button
+                class="tooltip"
+                onclick="agregarProducto('BBQ Sweet', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              🍗 Chile Dulce
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Chile Dulce', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              🍗 Mostaza Miel
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Mostaza Miel', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              🍗 BBQ Hot
+              <button
+                class="tooltip"
+                onclick="agregarProducto('BBQ Hot', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              🍗 Frutos Rojos
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Frutos Rojos', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              🍗 Búfalo Hot
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Búfalo Hot', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              🍟 Rosada Especial
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Rosada Especial', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              🍟 Ajo de la Casa
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Ajo de la Casa', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
+            <li>
+              🍟 Maíz Dulce
+              <button
+                class="tooltip"
+                onclick="agregarProducto('Maíz Dulce', 2000)"
+              >
+                Agregar
+              </button>
+            </li>
           </ul>
         </section>
       </div>
+      <h2 class="subtitulo">Papas</h2>
+      <div class="menu">
+        <section class="tarjeta combo">
+          <img src="assets/img/4.jpg" alt="Combo Plutón" />
+          <div class="combo-content">
+            <h3>Combo Plutón</h3>
+            <p>
+              Papa premium crocante acompañada de carne pulled pork (bañada en
+              salsa sweet BBQ de la casa). Queso mozzarella, maicitos, 2 huevos
+              de codorniz.
+            </p>
+            <p>- Dos opciones de salsa para bañar tus papas.</p>
+            <button
+              class="tooltip"
+              onclick="agregarProducto('Combo Plutón', 21900)"
+            >
+              Agregar - $19,900
+            </button>
+          </div>
+        </section>
 
-      <!-- Tabla de pedidos -->
+        <section class="tarjeta combo">
+          <img src="assets/img/5.jpg" alt="Combo Venus" />
+          <div class="combo-content">
+            <h3>Combo Venus</h3>
+            <p>
+              Papa premium crocante acompañada de pollo desmechado, sour cream,
+              guacamole, pico de gallo, queso mozzarella, 2 huevos de codorniz.
+            </p>
+            <p>- Una opción de salsa para bañar papas.</p>
+            <button
+              class="tooltip"
+              onclick="agregarProducto('Combo Venus', 19900)"
+            >
+              Agregar - $19,900
+            </button>
+          </div>
+        </section>
 
-      <table class="espacio__tabla-pedidos">
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Total</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="pedidoTable">
-          <!-- Filas de productos agregados dinámicamente aquí -->
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3">Total Pedido</td>
-            <td id="totalPedido">0</td>
-            <td></td>
-          </tr>
-        </tfoot>
-      </table>
+        <section class="tarjeta combo">
+          <img src="assets/img/6.jpg" alt="Combo Júpiter" />
+          <div class="combo-content">
+            <h3>Combo Júpiter</h3>
+            <p>
+              Papa premium crocante acompañada de tocineta ahumada. Maicitos,
+              salchicha premium, queso mozzarella, 2 huevos de codorniz.
+            </p>
+            <p>- Tres opciones de salsa para bañar tus papas.</p>
+            <button
+              class="tooltip"
+              onclick="agregarProducto('Combo Júpiter', 22000)"
+            >
+              Agregar - $22,000
+            </button>
+          </div>
+        </section>
+      </div>
     </main>
+    <!-- Tabla de Pedidos Interactiva -->
+    <table class="espacio__tabla-pedidos">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-productos"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="total">Total</td>
+          <td class="total" id="total">$0</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
 
+    <div class="envio-controles">
+      <button onclick="enviarPorWhatsApp()">Enviar por WhatsApp</button>
+      <button onclick="enviarPorCorreo()">Enviar por Correo</button>
+    </div>
     <script>
-      // Cambiar tema de fondo
-      function toggleTheme() {
-        document.body.classList.toggle("tema-nebulosa");
-        document.body.classList.toggle("tema-lunar");
-      }
-
-      // Filtro de productos
-      function filterProducts() {
-        const filter = document
-          .getElementById("filterInput")
-          .value.toLowerCase();
-        const items = document.querySelectorAll(".espacio__item");
-        items.forEach((item) => {
-          item.style.display = item.textContent.toLowerCase().includes(filter)
-            ? ""
-            : "none";
+      function enviarPorWhatsApp() {
+        const telefono = "+573046509039";
+        const fechaActual = new Date().toLocaleDateString("es-CO", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
         });
-      }
 
-      // Agregar producto a la tabla de pedidos
-      function agregarProducto(nombre, precio) {
-        const pedidoTable = document.getElementById("pedidoTable");
-        let existe = false;
-
-        // Verificar si el producto ya está en la tabla
-        Array.from(pedidoTable.rows).forEach((row) => {
-          if (row.cells[0].textContent === nombre) {
-            let cantidad = parseInt(row.cells[2].textContent);
-            row.cells[2].textContent = ++cantidad;
-            row.cells[3].textContent = (cantidad * precio).toFixed(2);
-            existe = true;
+        let mensaje = `Pedido realizado el ${fechaActual}:\n\n`;
+        document.querySelectorAll("#tabla-productos tr").forEach((fila) => {
+          const producto = fila.querySelector("td:first-child")?.textContent;
+          const cantidad = fila.querySelector(".cantidad-input")?.value;
+          const subtotal = fila.querySelector(".subtotal")?.textContent;
+          if (producto && cantidad && subtotal) {
+            mensaje += `Producto: ${producto}\nCantidad: ${cantidad}\nSubtotal: ${subtotal}\n\n`;
           }
         });
 
-        if (!existe) {
-          // Crear nueva fila de producto si no existe
-          const row = pedidoTable.insertRow();
-          row.insertCell(0).textContent = nombre;
-          row.insertCell(1).textContent = precio;
-          row.insertCell(2).textContent = 1;
-          row.insertCell(3).textContent = precio.toFixed(2);
+        const total = document.getElementById("total").textContent;
+        mensaje += `Total: ${total}`;
 
-          // Botón de eliminar
-          const deleteCell = row.insertCell(4);
-          const deleteBtn = document.createElement("button");
-          deleteBtn.textContent = "Eliminar";
-          deleteBtn.onclick = () => {
-            row.remove();
-            actualizarTotal();
-          };
-          deleteCell.appendChild(deleteBtn);
+        const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(
+          mensaje
+        )}`;
+        window.open(urlWhatsApp, "_blank");
+      }
+
+      function enviarPorCorreo() {
+        const correoDestino = "prueba64moonfier.com";
+        const fechaActual = new Date().toLocaleDateString("es-CO", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+        let mensaje = `Pedido realizado el ${fechaActual}:\n\n`;
+        document.querySelectorAll("#tabla-productos tr").forEach((fila) => {
+          const producto = fila.querySelector("td:first-child")?.textContent;
+          const cantidad = fila.querySelector(".cantidad-input")?.value;
+          const subtotal = fila.querySelector(".subtotal")?.textContent;
+          if (producto && cantidad && subtotal) {
+            mensaje += `Producto: ${producto}\nCantidad: ${cantidad}\nSubtotal: ${subtotal}\n\n`;
+          }
+        });
+
+        const total = document.getElementById("total").textContent;
+        mensaje += `Total: ${total}`;
+
+        const asunto = "Confirmación de Pedido Moon Sweet";
+        const mailtoLink = `mailto:${correoDestino}?subject=${encodeURIComponent(
+          asunto
+        )}&body=${encodeURIComponent(mensaje)}`;
+        window.location.href = mailtoLink;
+      }
+    </script>
+    <script>
+      function agregarProducto(nombre, precio) {
+        const filas = document.querySelectorAll("#tabla-productos tr");
+        let productoExistente = null;
+
+        filas.forEach((fila) => {
+          const nombreProducto =
+            fila.querySelector("td:first-child")?.textContent;
+          if (nombreProducto === nombre) {
+            productoExistente = fila;
+          }
+
+          // Mostrar tooltip
+          const button = document.querySelector(`button[onclick*="${nombre}"]`);
+          if (button) {
+            showTooltip(button);
+          }
+        });
+
+        function showTooltip(button) {
+          let tooltip = button.querySelector(".tooltip-text");
+          if (!tooltip) {
+            tooltip = document.createElement("div");
+            tooltip.className = "tooltip-text";
+            tooltip.textContent = "Producto agregado al carrito";
+            button.appendChild(tooltip);
+          }
+          button.classList.add("show");
+
+          setTimeout(() => {
+            button.classList.remove("show");
+            if (tooltip) {
+              tooltip.remove();
+            }
+          }, 2000); // Mostrar por 2 segundos
         }
-        actualizarTotal();
+
+        if (productoExistente) {
+          const cantidadInput =
+            productoExistente.querySelector(".cantidad-input");
+          cantidadInput.value = parseInt(cantidadInput.value) + 1;
+          actualizarSubtotal(cantidadInput);
+        } else {
+          const tabla = document.getElementById("tabla-productos");
+          const nuevaFila = document.createElement("tr");
+
+          nuevaFila.innerHTML = `
+          <td>${nombre}</td>
+          <td class="precio" data-precio="${precio}">${formatearMoneda(
+            precio
+          )}</td>
+          <td><input type="number" class="cantidad-input" value="1" min="1" onchange="actualizarSubtotal(this)"></td>
+          <td class="subtotal">${formatearMoneda(precio)}</td>
+          <td><button onclick="eliminarProducto(this)">Eliminar</button></td>
+        `;
+
+          tabla.appendChild(nuevaFila);
+          calcularTotal();
+        }
       }
 
-      // Actualizar total de pedidos
-      function actualizarTotal() {
+      function actualizarSubtotal(elemento) {
+        const fila = elemento.parentElement.parentElement;
+        const precio = parseFloat(
+          fila.querySelector(".precio").getAttribute("data-precio")
+        );
+        const cantidad = parseInt(elemento.value);
+        const subtotal = precio * cantidad;
+        fila.querySelector(".subtotal").textContent = formatearMoneda(subtotal);
+        calcularTotal();
+      }
+
+      function calcularTotal() {
         let total = 0;
-        const pedidoTable = document.getElementById("pedidoTable");
-        Array.from(pedidoTable.rows).forEach((row) => {
-          total += parseFloat(row.cells[3].textContent);
+        document.querySelectorAll(".subtotal").forEach((subtotalElemento) => {
+          let valorNumerico = subtotalElemento.textContent
+            .replace(/[^0-9,-]+/g, "")
+            .replace(",", ".");
+          total += parseFloat(valorNumerico);
         });
-        document.getElementById("totalPedido").textContent = total.toFixed(2);
+        document.getElementById("total").textContent = formatearMoneda(total);
       }
 
-      // Eventos de añadir productos con click
-      document.querySelectorAll(".espacio__item").forEach((item) => {
-        item.addEventListener("click", () => {
-          const nombre = item.textContent.split("-")[0].trim();
-          const precio = parseFloat(item.textContent.split("-")[1].trim());
-          agregarProducto(nombre, precio);
+      function formatearMoneda(valor) {
+        return new Intl.NumberFormat("es-CO", {
+          style: "currency",
+          currency: "COP",
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        }).format(valor);
+      }
+
+      function eliminarProducto(boton) {
+        const fila = boton.parentElement.parentElement;
+        fila.remove();
+        calcularTotal();
+      }
+
+      function formatearMoneda(valor) {
+        return new Intl.NumberFormat("es-CO", {
+          style: "currency",
+          currency: "COP",
+        }).format(valor);
+      }
+
+      function filtrarProductos() {
+        const query = document
+          .querySelector(".buscar-input")
+          .value.toLowerCase();
+        document.querySelectorAll(".menu section ul li").forEach((item) => {
+          const texto = item.textContent.toLowerCase();
+          item.style.display = texto.includes(query) ? "flex" : "none";
         });
-      });
+      }
+
+      function cambiarTema() {
+        document.body.classList.toggle("claro");
+      }
     </script>
   </body>
 </html>

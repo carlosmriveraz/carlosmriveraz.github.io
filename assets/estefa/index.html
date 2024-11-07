@@ -18,299 +18,14 @@
     <link rel="stylesheet" href="css/menu__seccion.css" />
     <link rel="stylesheet" href="css/general.css" />
 
-    <style>
-      .contenedor__adiciones {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.5rem;
-        height: 100%;
-        width: 100%;
-      }
-
-      .contenedor_item {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: center;
-        width: 95px;
-        height: 95px;
-
-        border: 1px solid var(--color5);
-        border-radius: 50%;
-
-        background-image: url(assets/img/tex.png);
-      }
-
-      .escena {
-        background-color: #2225;
-        position: relative;
-        width: 300px;
-        height: 300px;
-      }
-
-      .estrella,
-      .planeta,
-      .luna,
-      .asteroide,
-      .satelite {
-        position: absolute;
-        border-radius: 50%;
-      }
-header h1 {
-  font-size: 3em;
-  color: var(--color-terciario);
-  text-shadow: 3px 3px 5px var(--color-sombra), 0 0 10px var(--color-sombra), 5px 5px 10px var(--color-sombra);
-  position: relative;
-  z-index: 2;
-}
-      .luna__morada {
-        width: 80px;
-        height: 80px;
-        background-color: var(--color9);
-        top: 30%;
-        left:-50%;
-      
-        margin-top: -25px;
-        margin-left: -25px;
-        box-shadow: 0 0 50px 20px #6434e7;
-      }
-
-      .tarjeta {
-        width: 4rem;
-        height: 2.5rem;
-
-        color: black;
-        padding: 1px;
-        border-radius: 40%;
-        box-shadow: 0 5x 10px rgba(0, 0, 0, 0.4);
-        text-align: center;
-        font-size: 0.4rem;
-      }
-
-      .tarjeta .icono {
-        font-size: 0.6rem;
-      }
-
-      .tarjeta.planeta {
-        background-color: #7fb3d5;
-      }
-
-      .tarjeta.estrella {
-        background-color: #f9e79f;
-      }
-
-      .tarjeta.luna {
-        background-color: #d5d8dc;
-      }
-
-      .tarjeta.asteroide {
-        background-color: #aab7b8;
-      }
-
-      .tarjeta.satelite {
-        background-color: #7dcea0;
-      }
-
-      /* Orbital animations */
-      @keyframes orbita1 {
-        0% {
-          transform: rotate(0deg) translateX(300px) rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg) translateX(300px) rotate(-360deg);
-        }
-      }
-
-      @keyframes orbita2 {
-        0% {
-          transform: rotate(0deg) translateX(200px) rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg) translateX(200px) rotate(-360deg);
-        }
-      }
-
-      @keyframes orbita3 {
-        0% {
-          transform: rotate(0deg) translateX(400px) rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg) translateX(400px) rotate(-360deg);
-        }
-      }
-
-      .planeta {
-        animation: orbita1 20s linear infinite;
-      }
-
-      .estrella {
-        animation: orbita2 30s linear infinite;
-      }
-
-      .luna {
-        animation: orbita2 10s linear infinite;
-      }
-
-      .asteroide {
-        animation: orbita3 25s linear infinite;
-      }
-
-      .satelite {
-        animation: orbita1 15s linear infinite;
-      }
-    </style>
 
 
-<style>
-  /* Variables de color para la temática lunar */
-  :root {
-      --color-urano: #78dbe2;
-      --color-principal: var(--color-urano);
-      --color-terciario: white;
-      --color-texto: #ffa500; /* Naranja lunar */
-      --color-resaltado: yellow;
-      --color-sombra: rgba(255, 255, 255, 0.8);
-      --hover-efecto: rgba(255, 165, 0, 0.5);
-  }
 
-  /* Estilos base y fondo lunar */
-  .espacio__body {
-      background: linear-gradient(180deg, #000000, #111111);
-      color: var(--color-terciario);
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
 
-  /* Header con animación de planeta */
-  .espacio__header {
-      text-align: center;
-      margin-top: 20px;
-      position: relative;
-      overflow: hidden;
-  }
+</head>
+<body>
 
-  .espacio__titulo {
-      font-size: 3em;
-      color: var(--color-terciario);
-      position: relative;
-      z-index: 2;
-      text-shadow: 0 0 10px var(--color-sombra);
-  }
 
-  .espacio__planeta {
-      position: absolute;
-      width: 5rem;
-      height: 5rem;
-      background: radial-gradient(circle at 50% 50%, var(--color-urano), #4c9da1);
-      border-radius: 50%;
-      animation: planetaGira 5s infinite linear;
-      z-index: 1;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-  }
-
-  @keyframes planetaGira {
-      0% { transform: translateX(-50%) rotate(0deg); }
-      100% { transform: translateX(-50%) rotate(360deg); }
-  }
-
-  /* Main estilo cráter y contenedor de secciones */
-  .espacio__main {
-      width: 80%;
-      margin: 20px auto;
-      border-radius: 20px;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.7));
-      box-shadow: 0 0 30px var(--color-sombra);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .espacio__contenedor {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      padding: 20px;
-  }
-
-  /* Secciones como "cráteres" */
-  .espacio__crater {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      padding: 10px;
-      transition: transform 0.3s ease, rotate 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  }
-
-  .espacio__crater:hover {
-      transform: translateY(-10px) scale(1.05) rotate(5deg);
-      background: var(--hover-efecto);
-  }
-
-  .espacio__seccion-titulo {
-      font-size: 2em;
-      color: var(--color-terciario);
-      text-shadow: 1px 1px 5px var(--color-sombra);
-  }
-
-  .espacio__lista {
-      list-style: none;
-      padding: 0;
-  }
-
-  .espacio__item {
-      padding: 5px 0;
-  }
-
-  /* Tabla de pedidos interactiva */
-  .espacio__tabla-pedidos {
-      width: 90%;
-      border-collapse: collapse;
-      margin: 20px 0;
-  }
-
-  .espacio__tabla-pedidos th,
-  .espacio__tabla-pedidos td {
-      padding: 10px;
-      border: 1px solid #fff;
-      text-align: left;
-      color: var(--color-texto);
-  }
-
-  .espacio__tabla-pedidos th {
-      background-color: var(--color-principal);
-      color: #fff;
-      font-weight: bold;
-  }
-
-  .espacio__tabla-pedidos .editable:hover {
-      background-color: var(--hover-efecto);
-      cursor: pointer;
-  }
-
-  /* Media queries para ajuste responsivo */
-  @media (max-width: 768px) {
-      .espacio__contenedor {
-          grid-template-columns: 1fr;
-      }
-  }
-
-  /* Cambiar fondo de tema */
-  .tema-lunar {
-      background: linear-gradient(180deg, #000000, #111111);
-  }
-
-  .tema-nebulosa {
-      background: radial-gradient(circle, #4b0082, #00008b);
-  }
-</style>
-  </head>
-  <body>
     <header class="Encabezado">
       <div class="header">
         <h1 class="texto__atractivo texto_3d_rapido">MOON FRIES</h1>
@@ -319,21 +34,20 @@ header h1 {
           <ul>
             <li>
               <a href="#menu" class="enlace activo" onclick="setActivo(this)"
-                >Menu</a
+                >Menu</a>
               
-
 
 
                 
             </li>
             <li>
-              <a href="#ordenes" class="enlace" onclick="setActivo(this)"
-                >Ordenes</a
+              <a href="#menu" class="enlace" onclick="setActivo(this)"
+                >menu</a
               >
             </li>
             <li>
               <a href="#pedido" class="enlace" onclick="setActivo(this)"
-                >Pedido</a
+                >pedidos</a
               >
             </li>
             <li>
@@ -345,7 +59,7 @@ header h1 {
         </nav>
       </div>
 
-      <div class="Hero gradiente4">
+      <div class=" gradiente4">
         <img
           src="assets/logo.webp"
           alt="Astronauta sobre la luna y logo del restauraten moon fries"
@@ -355,174 +69,14 @@ header h1 {
       
     </header>
 
-    <main>
+    <main class="contenedor__flex__columna__centrado__centrado">
+
+      <iframe id="menu" src="entradas1.html" frameborder="0" width="100%"  height="1800px"></iframe>></iframe>
 
 
-      <h2>Entradas</h2>
-      <h2>opcion 1</h2>
-      <iframe src="entradas1.html" frameborder="0" width="1400px"  height="900px"></iframe>></iframe>
-      <h2>opcion 2</h2>
-      <iframe src="entradas.html" frameborder="0" width="1400px"  height="900px"></iframe>></iframe>
-      <h2>opcion 3</h2>
-      <iframe src="entradas_clasico.html" frameborder="0" width="1400px"  height="900px"></iframe>></iframe>
 
-      <iframe src="entradas_actual.html" frameborder="0" width="1400px"  height="900px"></iframe>></iframe>
+    
 
-  <h2>menus mismas opcines pero serian de este estilo</h2>
-      <!-- Productos Principales -->
-      <iframe src="menu1.html" frameborder="0" width="1400px"  height="900px"></iframe>></iframe>
-      <iframe src="menu_luna.html" frameborder="0" width="1400px"  height="900px"></iframe>></iframe>
-      <iframe src="menu_actual.html" frameborder="0" width="1400px"  height="900px"></iframe>></iframe>
-
-
-      <h2>opcion 2 de pago paa arrastras obvio van los porducto del res</h2>
-      <!-- contenedor__adiciones -->
-      <section id="ordenes" class="gradiente1">
-   
-
-        <h2>ORDENES</h2>
-        <div class="contenedor__adiciones">
-          <div
-            class="producto contenedor_item color_mercurio"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🍔 Hamburguesa</h3>
-            <p class="producto__precio">$15,000 COP</p>
-          </div>
-
-          <div
-            class="producto contenedor_item color_venus"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🍕 Pizza</h3>
-            <p class="producto__precio">$18,000 COP</p>
-          </div>
-
-          <div
-            class="producto contenedor_item color_tierra"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🌭 Hot Dog</h3>
-            <p class="producto__precio">$10,000 COP</p>
-          </div>
-
-          <div
-            class="producto contenedor_item color_marte"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🍟 Papas Fritas</h3>
-            <p class="producto__precio">$7,000 COP</p>
-          </div>
-
-          <div0
-            class="producto contenedor_item color_saturno"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🍗 Pollo Frito</h3>
-            <p class="producto__precio">$12,000 COP</p>
-          </div0>
-
-          <div
-            class="producto contenedor_item color_urano"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🥪 Sándwich</h3>
-            <p class="producto__precio">$11,000 COP</p>
-          </div>
-
-          <div
-            class="producto contenedor_item color_marte"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🌯 Burrito</h3>
-            <p class="producto__precio">$14,000 COP</p>
-          </div>
-
-          <div
-            class="producto contenedor_item color_urano"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🍣 Sushi</h3>
-            <p class="producto__precio">$22,000 COP</p>
-          </div>
-
-          <div
-            class="producto contenedor_item color_urano"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🍩 Dona</h3>
-            <p class="producto__precio">$5,000 COP</p>
-          </div>
-
-          <div
-            class="producto contenedor_item color_saturno"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🍦 Helado</h3>
-            <p class="producto__precio">$8,000 COP</p>
-          </div>
-
-          <div
-            class="producto color_saturno contenedor_item"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🥤 Malteada</h3>
-            <p class="producto__precio">$6,000 COP</p>
-          </div>
-
-          <div
-            class="producto color_urano contenedor_item"
-            draggable="true"
-            ondragstart="arrastrar(event)"
-          >
-            <h3 class="producto__nombre">🍺 Cerveza</h3>
-            <p class="producto__precio">$9,000 COP</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- pedido-->
-      <section id="pedido" class="menu__juego gradiente5">
-        <h2>¡Crea tu Propia Receta!</h2>
-        <div class="juego__area">
-          <div
-            class="juego__contenedor"
-            id="contenedorReceta"
-            ondrop="soltar(event)"
-            ondragover="permitirArrastrar(event)"
-          >
-            <p id="contadorIngredientes">Ingredientes: 0</p>
-          </div>
-
-          <!-- Tabla de acumulado de productos -->
-          <div>
-            <p>Arrastra los productos hacia el contenedor.</p>
-            <p>Observa el acumulado en la tabla.</p>
-            <table class="juego__tabla" id="tablaAcumulado">
-              <thead>
-                <tr>
-                  <th>Producto</th>
-                  <th>Descripción</th>
-                  <th>Cantidad</th>
-                </tr>
-              </thead>
-              <tbody id="listaProductos"></tbody>
-            </table>
-            <p class="totales">Total: <span id="totalPrecio">$0</span></p>
-          </div>
-        </div>
-      </section>
     </main>
 
     <script src="js/menu.js"></script>
