@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moon Sweet</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
       :root {
         --color-urano: #78dbe2;
@@ -255,6 +259,21 @@
       .tooltip.show .tooltip-text {
         visibility: visible;
         opacity: 1;
+      }
+
+      .imagen-contenedor {
+        display: none;
+      }
+      .oculto {
+        display: none;
+      }
+
+      .mostrar {
+        display: block;
+      }
+
+      .imagen-contenedor.mostrar {
+        display: block;
       }
     </style>
   </head>
@@ -556,7 +575,16 @@
       <h2 class="subtitulo">Papas</h2>
       <div class="menu">
         <section class="tarjeta combo">
-          <img src="assets/img/4.jpg" alt="Combo Plutón" />
+          <button class="ver-mas-btn" onclick="toggleVerMas(this)">
+            Ver más <i class="fas fa-angle-down"></i>
+          </button>
+          <div class="imagen-contenedor oculto">
+            <img
+              src="assets/img/4.jpg"
+              alt="Combo Plutón"
+              style="width: 100%"
+            />
+          </div>
           <div class="combo-content">
             <h3>Combo Plutón</h3>
             <p>
@@ -566,16 +594,21 @@
             </p>
             <p>- Dos opciones de salsa para bañar tus papas.</p>
             <button
-              class="tooltip"
+              class="tooltip agregar-btn"
               onclick="agregarProducto('Combo Plutón', 21900)"
             >
-              Agregar - $19,900
+              <i class="fas fa-plus"></i> Agregar
             </button>
           </div>
         </section>
 
         <section class="tarjeta combo">
-          <img src="assets/img/5.jpg" alt="Combo Venus" />
+          <button class="ver-mas-btn" onclick="toggleVerMas(this)">
+            Ver más <i class="fas fa-angle-down"></i>
+          </button>
+          <div class="imagen-contenedor oculto">
+            <img src="assets/img/5.jpg" alt="Combo Venus" style="width: 100%" />
+          </div>
           <div class="combo-content">
             <h3>Combo Venus</h3>
             <p>
@@ -584,16 +617,25 @@
             </p>
             <p>- Una opción de salsa para bañar papas.</p>
             <button
-              class="tooltip"
+              class="tooltip agregar-btn"
               onclick="agregarProducto('Combo Venus', 19900)"
             >
-              Agregar - $19,900
+              <i class="fas fa-plus"></i> Agregar
             </button>
           </div>
         </section>
 
         <section class="tarjeta combo">
-          <img src="assets/img/6.jpg" alt="Combo Júpiter" />
+          <button class="ver-mas-btn" onclick="toggleVerMas(this)">
+            Ver más <i class="fas fa-angle-down"></i>
+          </button>
+          <div class="imagen-contenedor oculto">
+            <img
+              src="assets/img/6.jpg"
+              alt="Combo Júpiter"
+              style="width: 100%"
+            />
+          </div>
           <div class="combo-content">
             <h3>Combo Júpiter</h3>
             <p>
@@ -602,10 +644,33 @@
             </p>
             <p>- Tres opciones de salsa para bañar tus papas.</p>
             <button
-              class="tooltip"
+              class="tooltip agregar-btn"
               onclick="agregarProducto('Combo Júpiter', 22000)"
             >
-              Agregar - $22,000
+              <i class="fas fa-plus"></i> Agregar
+            </button>
+          </div>
+        </section>
+        <section class="tarjeta combo">
+          <button class="ver-mas-btn" onclick="toggleVerMas(this)">
+            Ver más <i class="fas fa-angle-down"></i>
+          </button>
+          <div class="imagen-contenedor oculto">
+            <img src="assets/img/4.jpg" alt="Combo Plutón" />
+          </div>
+          <div class="combo-content">
+            <h3>Combo Plutón</h3>
+            <p>
+              Papa premium crocante acompañada de carne pulled pork (bañada en
+              salsa sweet BBQ de la casa). Queso mozzarella, maicitos, 2 huevos
+              de codorniz.
+            </p>
+            <p>- Dos opciones de salsa para bañar tus papas.</p>
+            <button
+              class="tooltip agregar-btn"
+              onclick='agregarProducto("Combo Plutón", 21900)'
+            >
+              <i class="fas fa-plus"></i> Agregar
             </button>
           </div>
         </section>
@@ -634,9 +699,25 @@
 
     <div class="envio-controles">
       <button onclick="enviarPorWhatsApp()">Enviar por WhatsApp</button>
-      <button onclick="enviarPorCorreo()">Enviar por Correo</button>
+      <textarea
+        id="observaciones"
+        placeholder="Observaciones para el pedido"
+      ></textarea>
     </div>
     <script>
+      function toggleVerMas(button) {
+        const imgContainer = button.nextElementSibling;
+        if (imgContainer.classList.contains("oculto")) {
+          imgContainer.classList.remove("oculto");
+          imgContainer.classList.add("mostrar");
+          button.innerHTML = 'Ver menos <i class="fas fa-angle-up"></i>';
+        } else {
+          imgContainer.classList.remove("mostrar");
+          imgContainer.classList.add("oculto");
+          button.innerHTML = 'Ver más <i class="fas fa-angle-down"></i>';
+        }
+      }
+
       function enviarPorWhatsApp() {
         const telefono = "+573046509039";
         const fechaActual = new Date().toLocaleDateString("es-CO", {
@@ -644,6 +725,7 @@
           month: "long",
           day: "numeric",
         });
+        const observaciones = document.getElementById("observaciones").value;
 
         let mensaje = `Pedido realizado el ${fechaActual}:\n\n`;
         document.querySelectorAll("#tabla-productos tr").forEach((fila) => {
@@ -656,40 +738,12 @@
         });
 
         const total = document.getElementById("total").textContent;
-        mensaje += `Total: ${total}`;
+        mensaje += `Total: ${total}\n\nObservaciones: ${observaciones}`;
 
         const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(
           mensaje
         )}`;
         window.open(urlWhatsApp, "_blank");
-      }
-
-      function enviarPorCorreo() {
-        const correoDestino = "prueba64moonfier.com";
-        const fechaActual = new Date().toLocaleDateString("es-CO", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
-
-        let mensaje = `Pedido realizado el ${fechaActual}:\n\n`;
-        document.querySelectorAll("#tabla-productos tr").forEach((fila) => {
-          const producto = fila.querySelector("td:first-child")?.textContent;
-          const cantidad = fila.querySelector(".cantidad-input")?.value;
-          const subtotal = fila.querySelector(".subtotal")?.textContent;
-          if (producto && cantidad && subtotal) {
-            mensaje += `Producto: ${producto}\nCantidad: ${cantidad}\nSubtotal: ${subtotal}\n\n`;
-          }
-        });
-
-        const total = document.getElementById("total").textContent;
-        mensaje += `Total: ${total}`;
-
-        const asunto = "Confirmación de Pedido Moon Sweet";
-        const mailtoLink = `mailto:${correoDestino}?subject=${encodeURIComponent(
-          asunto
-        )}&body=${encodeURIComponent(mensaje)}`;
-        window.location.href = mailtoLink;
       }
     </script>
     <script>
