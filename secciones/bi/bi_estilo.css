@@ -71,16 +71,6 @@
   align-items: center;
 }
 
-.canvas {
-  min-width: 100%;
-
-  border: 0.5px solid var(--color-hover, #ddd);
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Asegura que el canvas ocupe todo el ancho disponible */
-  height: auto; /* Mantiene la proporción adecuada */
-}
-
 /* Contenedor principal que utiliza flex-wrap */
 .contenedor-principal {
   display: flex;

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Modular</title>
+    <style>
+        /* Configuración básica */
+        :root {
+            --color-principal: #1a73e8;
+            --color-secundario: #fff;
+            --color-terciario: #f1f1f1;
+            --color-texto: #333;
+            --color-enlace: #fff;
+            --color-enlace-hover: #0f5bb5;
+            --padding-seccion: 20px;
+        }
+        /* Estilo general del footer */
+        .footer {
+            background-color: var(--color-principal);
+            color: var(--color-secundario);
+            padding: 40px 20px;
+        }
+        .footer__contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Secciones del footer */
+        .footer__seccion {
+            flex: 1;
+            min-width: 250px;
+            padding: var(--padding-seccion);
+        }
+        .footer__seccion h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .footer__seccion p,
+        .footer__seccion ul {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        /* Enlaces */
+        .footer__seccion ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer__seccion ul li {
+            margin-bottom: 5px;
+        }
+        .footer__seccion ul a {
+            text-decoration: none;
+            color: var(--color-enlace);
+            transition: color 0.3s;
+        }
+        .footer__seccion ul a:hover {
+            color: var(--color-enlace-hover);
+        }
+        /* Redes sociales */
+        .footer__redes ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            padding: 0;
+        }
+        .footer__redes img {
+            width: 30px;
+            height: 30px;
+        }
+        /* Línea inferior */
+        .footer__linea {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: var(--color-terciario);
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer__contenedor">
+            <!-- Sección 1: Información general -->
+            <div class="footer__seccion footer__informacion">
+                <h2>Sobre nosotros</h2>
+                <p>Somos una empresa dedicada a ofrecer soluciones innovadoras.</p>
+            </div>
+            <!-- Sección 2: Enlaces -->
+            <div class="footer__seccion footer__enlaces">
+                <h2>Enlaces útiles</h2>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Sección 3: Redes sociales -->
+            <div class="footer__seccion footer__redes">
+                <h2>Síguenos</h2>
+                <ul>
+                    <li><a href="#"><img src="assets/social/ws.png" alt="WhatsApp"></a></li>
+                    <li><a href="#"><img src="assets/social/in.png" alt="LinkedIn"></a></li>
+                    <li><a href="#"><img src="assets/social/ghub.png" alt="GitHub"></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Línea inferior -->
+        <div class="footer__linea">
+            <p>&copy; 2024 MiEmpresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

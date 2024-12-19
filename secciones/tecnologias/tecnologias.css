@@ -21,7 +21,8 @@
   list-style: none;
   text-align: center;
   padding: 0;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin: 1rem;
 }
 
 .tecnologias__name {
@@ -30,26 +31,28 @@
   display: flex;
   flex: 0 1 auto;
   perspective: 1000px;
-  /* Establece una perspectiva para el efecto 3D */
-  transition: all 0.4s;
+max-width: 4rem;
+  transition: all 0.5s;
 }
 
 .tecnologias__name:hover {
-  transform: scale(1.2);
-  transition: all 0.4s;
+  transform: scale(1.05);
+
   background-color: var(--color-hover);
-  color: var(--color-paleta6);
-  /* Aumenta el tamaño al pasar el mouse */
+
 }
 
 .tecnologias__name img {
-  height: 4rem;
+  max-height: 3.5rem;
   /* Tamaño fijo para las imágenes */
-  margin-bottom: 0.2rem;
+
   object-fit: contain;
-  width: 4rem;
-  border: 2px solid var(--color-hover);
-  border-radius: 6px;
+  max-width: 4rem;
+
+  border-radius: 12px;
+  padding: 0;
+  margin: 0;
+  box-decoration-break: 0px 1px 4px #fffe;
   /* Tamaño fijo para las imágenes */
 }
 
