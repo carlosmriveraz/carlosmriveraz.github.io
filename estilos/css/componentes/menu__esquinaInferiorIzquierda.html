@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Íconos de Redes Sociales</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <style>
+      .menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        z-index: 999;
+      }
+
+      .menu .compartir {
+        background-color: #fff;
+        border-radius: 2px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        width: 50px;
+      }
+
+      /* Submenú desplegable */
+      .menu .compartir:hover.abajo .submenu li {
+        opacity: 1;
+        transform: rotate(0deg);
+        transition-delay: 0.08s;
+        border-top: 1px dashed #cccccc;
+      }
+
+      .menu .compartir:hover.abajo .submenu li:nth-child(1) {
+        top: 50px;
+      }
+      .menu .compartir:hover.abajo .submenu li:nth-child(2) {
+        top: 100px;
+        transition-delay: 0.16s;
+      }
+      .menu .compartir:hover.abajo .submenu li:nth-child(3) {
+        top: 150px;
+        transition-delay: 0.24s;
+      }
+      .menu .compartir:hover.abajo .submenu li:nth-child(4) {
+        top: 200px;
+        transition-delay: 0.32s;
+      }
+      .menu .compartir:hover.abajo .submenu li:nth-child(5) {
+        top: 250px;
+        transition-delay: 0.4s;
+      }
+
+      .menu .compartir:hover.izquierda .submenu li {
+        opacity: 1;
+        transform: rotate(0deg);
+        transition-delay: 0.5s;
+        border-right: 1px dashed #cccccc;
+      }
+
+      .menu .compartir:hover.izquierda .submenu li:nth-child(1) {
+        left: -51px;
+      }
+      .menu .compartir:hover.izquierda .submenu li:nth-child(2) {
+        left: -102px;
+        transition-delay: 1s;
+      }
+      .menu .compartir:hover.izquierda .submenu li:nth-child(3) {
+        left: -153px;
+        transition-delay: 1.5s;
+      }
+      .menu .compartir:hover.izquierda .submenu li:nth-child(4) {
+        left: -204px;
+        transition-delay: 2s;
+      }
+      .menu .compartir:hover.izquierda .submenu li:nth-child(5) {
+        left: -255px;
+        transition-delay: 2.5s;
+      }
+
+      .menu .compartir:hover.derecha .submenu li {
+        opacity: 1;
+        transform: rotate(0deg);
+        transition-delay: 0.08s;
+        border-left: 1px dashed #cccccc;
+      }
+
+      .menu .compartir:hover.derecha .submenu li:nth-child(1) {
+        left: 50px;
+      }
+      .menu .compartir:hover.derecha .submenu li:nth-child(2) {
+        left: 100px;
+        transition-delay: 0.16s;
+      }
+      .menu .compartir:hover.derecha .submenu li:nth-child(3) {
+        left: 150px;
+        transition-delay: 0.24s;
+      }
+      .menu .compartir:hover.derecha .submenu li:nth-child(4) {
+        left: 200px;
+        transition-delay: 0.32s;
+      }
+      .menu .compartir:hover.derecha .submenu li:nth-child(5) {
+        left: 250px;
+        transition-delay: 0.4s;
+      }
+
+      .menu .compartir:hover.arriba .submenu li {
+        opacity: 1;
+        transform: rotateY(0deg);
+        transition-delay: 0.08s;
+        border-bottom: 1px dashed #d9d9d9;
+      }
+
+      .menu .compartir:hover.arriba .submenu li:nth-child(1) {
+        top: -51px;
+      }
+      .menu .compartir:hover.arriba .submenu li:nth-child(2) {
+        top: -102px;
+        transition-delay: 0.16s;
+      }
+      .menu .compartir:hover.arriba .submenu li:nth-child(3) {
+        top: -153px;
+        transition-delay: 0.24s;
+      }
+      .menu .compartir:hover.arriba .submenu li:nth-child(4) {
+        top: -204px;
+        transition-delay: 0.32s;
+      }
+      .menu .compartir:hover.arriba .submenu li:nth-child(5) {
+        top: -255px;
+        transition-delay: 0.4s;
+      }
+
+      .menu .submenu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu .submenu li {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all ease-in-out 0.5s;
+      }
+
+      .menu .submenu li a {
+        color: #212121;
+      }
+
+      .menu .submenu li a:hover {
+        color: #fff;
+      }
+
+      .menu .submenu li a:hover.facebook {
+        background-color: #3b5999;
+      }
+
+      .menu .submenu li a:hover.googlePlus {
+        background-color: #dd4b39;
+      }
+
+      .menu .submenu li a:hover.instagram {
+        background-color: #e4405f;
+      }
+
+      .menu .submenu li a:hover.twitter {
+        background-color: #55acee;
+      }
+
+      .menu .submenu li:nth-child(1) {
+        transform: rotateX(45deg);
+      }
+      .menu .submenu li:nth-child(2) {
+        transform: rotateX(90deg);
+      }
+      .menu .submenu li:nth-child(3) {
+        transform: rotateX(135deg);
+      }
+      .menu .submenu li:nth-child(4) {
+        transform: rotateX(180deg);
+      }
+
+      .menu.esquinaInferiorIzquierda {
+        bottom: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu esquinaInferiorIzquierda">
+      <li class="compartir derecha">
+        <i class="fa fa-share-alt"></i>
+        <ul class="submenu">
+          <li>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="container">
+      <h1>Íconos de Redes Sociales</h1>
+    </div>
+  </body>
+</html>

@@ -121,6 +121,11 @@
   margin-top: var(--margen-mediano);
 }
 
+
+.relleno {
+  padding: 1rem;
+}
+
 .sombra__texto {
   box-shadow: var(--sombra-texto);
 }

@@ -11,8 +11,8 @@
   white-space: nowrap;
   transition: all 0.8s ease;
   color: var(--color-texto);
-  font-weight: bold;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: .9rem;
 }
 
 .navbar span {
@@ -35,8 +35,9 @@
   padding: 0;
   justify-content: space-around;
   border-radius: 7px;
-  background-color: #00ffffcc;
-  border: 0.4px solid #0ff;
+  background: linear-gradient(to right, #2229, #229, #2229);
+ 
+  border: 0.4px solid #6235;
   box-shadow: inset 0 5px 10px #61dafb;
   max-width: 65%;
   color: #61dafb;
@@ -44,17 +45,26 @@
 
 .navbar__menu-item {
   border-radius: 0.5rem;
-  background-color: #0ff;
+  background-color: #5234;
 }
 
 .navbar__menu-item a {
   color: var(--color-texto);
-  margin: 0 2px;
+
   text-decoration: none;
-  border-radius: 0.5rem; /* Bordes redondeados */
-  box-shadow: var(--color-hover);
+
+  box-shadow: 0px 2px 6px var(--color-hover);
   transition: background-color 0.5s ease-in-out, color 0.7s ease-in-out,
     transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transiciones unificadas */
+}
+
+.navbar__menu-item a:hover {
+
+
+  text-decoration: dashed;
+
+  box-shadow: none;
+
 }
 
 .navbar__menu-item a::after {
@@ -63,7 +73,7 @@
   width: 0;
 
   display: block;
-  margin-top: 0.3rem;
+
   right: 0;
   background: radial-gradient(
     circle,
@@ -87,11 +97,11 @@
   flex-direction: column;
   cursor: pointer;
   margin-left: auto;
-  background: radial-gradient(circle, #009, #282c34dd);
-
+  background: linear-gradient(to right, #222a, #2299, #2225);
+ 
   border-radius: 3px;
-  border-color: #0ff;
-  box-shadow: inset 0 0 2px #61dafbaa;
+  border-color: #6234;
+  box-shadow:  0 2px 2px #61dafbaa;
 
   color: #0ff;
 }
@@ -131,6 +141,11 @@
     left: 50%;
     margin-top: 2.5rem;
     text-align: left;
+    box-shadow: 1px 4px 6px #0aa;
+  }
+
+  .navbar__menu:hover{
+    box-shadow: none;
   }
 
   .navbar__menu.active {
@@ -149,11 +164,12 @@
   /* Estilos para dispositivos móviles */
   .navbar__menu {
     position: absolute;
-    top: 1rem;
+    top: .5rem;
   }
 
   .navbar__menu-item {
     margin: 0.1rem 0;
+    min-width: 2rem;
   }
 
   .navbar__menu.show {
@@ -164,13 +180,12 @@
 .navbar__link {
   transform: translateZ(0) rotateX(10deg) rotateY(10deg); /* Agrega rotaciones para efecto 3D */
   perspective: 1000px; /* Añade perspectiva para el efecto 3D */
-  display: inline-block;
+
   transition: background-size 0.8s ease, transform 0.8s ease;
-  background: transparent;
-  background-size: 100% 100%;
+ background-size: 100% 100%;
 }
 
 .navbar__link :hover {
   background-size: 150% 150%; /* Aumenta el tamaño del fondo */
-  transform: scale(1.5); /* Escala el elemento */
+  transform: scale(1.1); /* Escala el elemento */
 }

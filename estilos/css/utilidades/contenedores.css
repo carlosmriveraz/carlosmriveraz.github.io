@@ -91,7 +91,7 @@
   gap: 1rem;
 }
 
-.contenedor__flex__columna__centrado {
+.contenedor__flex__columna__centrado__centrado {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -197,6 +197,11 @@
 
 .contenido__50 {
   max-height: 50%;
+}
+
+.contenedor__grid__2 {
+  display: grid; /* Ajusta la dirección de los elementos en pantallas más pequeñas */
+  grid-template-columns: 2fr 1fr;
 }
 
 .contenedor__grid__200 {

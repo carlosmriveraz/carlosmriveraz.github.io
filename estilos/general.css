@@ -15,8 +15,14 @@ body[data-theme="dark-theme"] {
   color: var(--color-texto) #fff;
   text-align: center;
 }
+
+.contenedor__500px {
+  display: flex;
+  margin: auto;
+  max-width: 500px;
+}
 canvas {
-  min-width: 80%;
+  max-width: 30rem;
 }
 
 body {
@@ -64,6 +70,10 @@ iframe {
   width: 100%;
 }
 
+#menu__esquinaInferiorIzquierda_apps {
+  max-width: 110px !important;
+  height: 20px;
+}
 .iframe {
   margin-top: 1rem;
   position: relative;
@@ -155,7 +165,7 @@ section:hover {
   background-color: var(--fondo-terciario); /* Color del texto del enlace */
 
   position: relative; /* Para el posicionamiento del subrayado */
-  padding: 0.2rempx 0.4rem; /* Espaciado interno del enlace */
+  padding: 0.2rem 0.4rem; /* Espaciado interno del enlace */
   transition: background-color 0.3s, color 0.3s; /* Transición suave */
 }
 
