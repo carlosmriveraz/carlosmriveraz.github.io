@@ -1,0 +1,53 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efecto de Degradado con Mouse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(0deg, #007bff, #00e5ee);
+      transition: background 0.2s ease;
+    }
+
+    h1 {
+      color: #ffffff;
+      text-align: center;
+    }
+
+    p {
+      color: #ffffff;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1>Efecto de Degradado con el Mouse</h1>
+    <p>
+      Mueve el puntero del mouse por la página para ver el efecto de degradado.
+    </p>
+    <script>
+      document.addEventListener("mousemove", function (e) {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        const color1 = `rgb(${Math.round(x * 255)},
+0, ${Math.round((1 - x) * 255)})`;
+        const color2 = `rgb(0, ${Math.round(y * 255)}, ${Math.round(
+          (1 - y) * 255
+        )})`;
+        document.body.style.background = `radial-gradient(circle at ${
+          x * 100
+        }% ${y * 100}%, ${color1}, ${color2})`;
+      });
+    </script>
+  </body>
+</html>

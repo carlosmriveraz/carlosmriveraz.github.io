@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Arcoíris Brillante</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Fondo negro para resaltar los colores neón */
+        }
+
+        .tarjeta-arcoiris {
+            background: linear-gradient(90deg, 
+                #FF073A 0%,    /* Rojo neón */
+                #FF8C00 16%,   /* Naranja fluorescente */
+                #EFFF00 33%,   /* Amarillo neón */
+                #00FF00 50%,   /* Verde neón */
+                #00FFFF 66%,   /* Cian fluorescente */
+                #0D00FF 83%,   /* Azul neón */
+                #C715FF 100%   /* Violeta fluorescente */
+            );
+            padding: 5rem;
+            border-radius: 20px;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 
+                        0 0 30px rgba(255, 255, 255, 0.5), 
+                        0 0 40px rgba(255, 255, 255, 0.3); /* Efecto de brillo */
+            animation: glow 2s infinite alternate; /* Animación de brillo */
+        }
+
+        .tarjeta-arcoiris h2 {
+            font-size: 2rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Brillo en el texto */
+        }
+
+        .tarjeta-arcoiris p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.6); /* Brillo en el texto */
+        }
+
+        /* Animación de brillo */
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 
+                            0 0 30px rgba(255, 255, 255, 0.5), 
+                            0 0 40px rgba(255, 255, 255, 0.3);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 1), 
+                            0 0 40px rgba(255, 255, 255, 0.7), 
+                            0 0 50px rgba(255, 255, 255, 0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tarjeta-arcoiris">
+        <h2>Tarjeta Arcoíris Brillante</h2>
+        <p>Esta tarjeta tiene un gradiente de arcoíris neón y un efecto brillante animado.</p>
+    </div>
+</body>
+</html>

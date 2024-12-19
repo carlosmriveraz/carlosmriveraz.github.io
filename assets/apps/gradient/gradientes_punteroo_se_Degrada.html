@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Gradientes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container,
+      .configuracion-container {
+        text-align: center;
+        background-color: #fff5;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        width: 400px;
+      }
+
+      .gradient-box {
+        width: 300px;
+        height: 150px;
+        margin-top: 20px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        background-color: #efefef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+        font-size: 18px;
+      }
+
+      .error {
+        color: red;
+        margin-top: 10px;
+        display: none;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 100px;
+        margin-bottom: 10px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .buttons {
+        margin-top: 10px;
+      }
+
+      button {
+        padding: 10px 15px;
+        margin: 5px;
+        background-color: #007bff;
+        var(--color-texto);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .codigo-container {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        text-align: left;
+      }
+
+      textarea {
+        width: 100%;
+        height: 150px;
+        margin-top: 10px;
+      }
+
+      .config-form {
+        display: none;
+      }
+
+      input[type="checkbox"] {
+        margin-left: 10px;
+      }
+
+      .color-inputs {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .valid {
+        border: 2px solid green;
+      }
+
+      .invalid {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generador de Gradientes</h1>
+
+      <label for="color1">Color 1 (Hexadecimal):</label>
+      <input type="text" id="color1" maxlength="6" placeholder="000000" />
+
+      <label for="color2">Color 2 (Hexadecimal):</label>
+      <input type="text" id="color2" maxlength="6" placeholder="FFFFFF" />
+
+      <div class="buttons">
+        <button id="linearBtn">Generar Gradiente Lineal</button>
+        <button id="radialBtn">Generar Gradiente Radial</button>
+      </div>
+
+      <div class="gradient-box" id="gradientBox">
+        El gradiente aparecerá aquí
+      </div>
+
+      <p id="errorMsg" class="error">
+        Por favor, ingresa colores válidos en formato hexadecimal (solo números
+        y letras A-F).
+      </p>
+
+      <div class="buttons">
+        <button id="toggleConfig">Configurar Gradiente</button>
+      </div>
+    </div>
+
+    <div class="configuracion-container config-form" id="configForm">
+      <h2>Configuración</h2>
+      <label for="numColores">Número de Colores (Max 10):</label>
+      <input type="number" id="numColores" value="2" min="2" max="10" />
+
+      <div class="color-inputs" id="extraColors"></div>
+
+      <label for="separarCodigo">Separar Código en HTML y CSS:</label>
+      <input type="checkbox" id="separarCodigo" />
+
+      <div class="buttons">
+        <button id="aplicarBtn">Aplicar Cambios</button>
+      </div>
+    </div>
+
+    <div class="codigo-container">
+      <h2>Código Generado:</h2>
+      <textarea id="codigoOutput" readonly></textarea>
+    </div>
+
+    <script>
+      // Validación de colores hexadecimales y autocompletado de "#"
+      function esHexadecimal(color) {
+        const regex = /^[0-9A-Fa-f]{3,6}$/; // Solo permite de 3 a 6 caracteres hexadecimales
+        return regex.test(color);
+      }
+
+      // Función para invertir color hexadecimal
+      function invertirHexadecimal(color) {
+        return (
+          "#" + (parseInt(color, 16) ^ 0xffffff).toString(16).padStart(6, "0")
+        );
+      }
+
+      // Aplicar color y borde al textbox si es un color válido
+      function aplicarEstilosInput(input) {
+        const color = input.value.trim();
+        if (esHexadecimal(color)) {
+          input.classList.add("valid");
+          input.classList.remove("invalid");
+          input.style.backgroundColor = `#${color}`;
+          input.style.color = invertirHexadecimal(color);
+        } else {
+          input.classList.add("invalid");
+          input.classList.remove("valid");
+          input.style.backgroundColor = "";
+          input.style.color = "";
+        }
+      }
+
+      // Función para actualizar el gradiente
+      function actualizarGradiente(tipo) {
+        const colores = document.querySelectorAll('input[type="text"]');
+        const errorMsg = document.getElementById("errorMsg");
+        const gradientBox = document.getElementById("gradientBox");
+        const separarCodigo = document.getElementById("separarCodigo").checked;
+
+        // Validar que todos los colores sean válidos
+        let validos = true;
+        let gradiente =
+          tipo === "linear"
+            ? "linear-gradient(to right, "
+            : "radial-gradient(circle, ";
+        let coloresValidos = [];
+
+        colores.forEach((colorInput) => {
+          const color = colorInput.value.trim();
+          if (esHexadecimal(color)) {
+            coloresValidos.push(`#${color}`);
+          } else {
+            validos = false;
+          }
+        });
+
+        if (validos) {
+          errorMsg.style.display = "none";
+          gradiente += coloresValidos.join(", ") + ")";
+          gradientBox.style.background = gradiente;
+          gradientBox.textContent = ""; // Elimina el texto de "El gradiente aparecerá aquí"
+          mostrarCodigoGenerado(gradiente, separarCodigo);
+        } else {
+          errorMsg.style.display = "block";
+        }
+      }
+
+      // Mostrar el código generado en HTML y CSS
+      function mostrarCodigoGenerado(gradiente, separar) {
+        const codigoOutput = document.getElementById("codigoOutput");
+        let html = `<div style="background: ${gradiente}; width: 300px; height: 150px;"></div>`;
+        let css = `background: ${gradiente};`;
+
+        if (separar) {
+          codigoOutput.value = `HTML:\n${html}\n\nCSS:\n${css}`;
+        } else {
+          codigoOutput.value = `<div style="${css} width: 300px; height: 150px;"></div>`;
+        }
+      }
+
+      // Eventos para los botones de generación de gradientes
+      document
+        .getElementById("linearBtn")
+        .addEventListener("click", function () {
+          actualizarGradiente("linear");
+        });
+
+      document
+        .getElementById("radialBtn")
+        .addEventListener("click", function () {
+          actualizarGradiente("radial");
+        });
+
+      // Mostrar/Ocultar formulario de configuración
+      document
+        .getElementById("toggleConfig")
+        .addEventListener("click", function () {
+          const configForm = document.getElementById("configForm");
+          configForm.style.display =
+            configForm.style.display === "none" ? "block" : "none";
+        });
+
+      // Aplicar cambios en el formulario de configuración
+      document
+        .getElementById("aplicarBtn")
+        .addEventListener("click", function () {
+          const numColores = document.getElementById("numColores").value;
+          const extraColors = document.getElementById("extraColors");
+          extraColors.innerHTML = ""; // Limpiar los campos anteriores
+
+          for (let i = 0; i < numColores - 2; i++) {
+            // Restar 2 por los colores iniciales
+            const label = document.createElement("label");
+            label.textContent = `Color ${i + 3}:`;
+            const input = document.createElement("input");
+            input.type = "text";
+            input.placeholder = "000000";
+            input.maxLength = 6;
+
+            // Agregar evento para aplicar estilos mientras se escribe
+            input.addEventListener("input", function () {
+              aplicarEstilosInput(input);
+            });
+
+            extraColors.appendChild(label);
+            extraColors.appendChild(input);
+          }
+        });
+
+      // Agregar eventos para los campos de colores existentes
+      document.querySelectorAll('input[type="text"]').forEach((input) => {
+        input.addEventListener("input", function () {
+          aplicarEstilosInput(input);
+        });
+      });
+    </script>
+
+
+<style>
+  /* Estilo del puntero láser */
+  .laser-pointer {
+    position: absolute;
+    width: 20px; /* Ajusta el tamaño del puntero */
+    height: 20px;
+    background-color: rgba(
+      255,
+      0,
+      0,
+      0.7
+    ); /* Color rojo semitransparente */
+    border-radius: 50%;
+    pointer-events: none; /* Evita que interfiera con otros elementos interactivos */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Efecto de brillo */
+    transform: translate(
+      -50%,
+      -50%
+    ); /* Centra el círculo en la posición del puntero */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+</style>
+</head>
+<body>
+<div class="container"></div>
+<h1>Resalta elementos con el puntero láser</h1>
+<p>Mueve el mouse por la pantalla para ver el efecto.</p>
+
+<script>
+  const container = document.querySelector(".container");
+
+  const cursor = document.createElement("div");
+  cursor.className = "cursor";
+  container.appendChild(cursor);
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.pageX - 50}px`; // Centrar el cursor
+    cursor.style.top = `${e.pageY - 50}px`;
+  });
+</script>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff007f, #00ff7f);
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que el puntero no interfiera */
+  }
+
+  .cursor {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 0, 255, 0.5);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script>
+  // Crear el elemento del puntero láser
+  const laserPointer = document.createElement("div");
+  laserPointer.classList.add("laser-pointer");
+  document.body.appendChild(laserPointer);
+
+  // Función para mover el puntero láser con el movimiento del mouse
+  document.addEventListener("mousemove", (event) => {
+    laserPointer.style.left = `${event.pageX}px`;
+    laserPointer.style.top = `${event.pageY}px`;
+    laserPointer.style.background = `LINEAR-gradient(to right, #5005, #0ff)`;
+  });
+</script>
+  </body>
+</html>
