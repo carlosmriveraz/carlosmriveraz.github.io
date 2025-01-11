@@ -1,0 +1,664 @@
+
+/* Variables de Colores */
+:root {
+  --fondo: #000000; /* Fondo negro */
+  --acento: #ffd700; /* Acento amarillo */
+  --ingredientes: #ffffff; /* Ingredientes en blanco */
+  --resaltado: #b8860b; /* Color de resaltado */
+  --filtro-bg: #333333; /* Fondo de los filtros */
+  --filtro-acento: #ffd700; /* Acento de los filtros */
+  --filtro-resaltado: #b8860b; /* Resaltado de los filtros */
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo);
+  margin: 0;
+  padding: 0;
+  color: var(--acento);
+}
+
+
+
+/* Estilo general para el header */
+header {
+	display: flex;
+	flex-direction: row;
+align-items: center;
+	justify-content:space-between;
+	background-color: #1a1a1a;
+	padding: 10px 20px;
+	color: var(--acento);
+	position: relative;
+	width: 100%;
+  gap: 1rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+header div{
+  width: 100%;
+}
+
+
+/* Estilo base para los detalles */
+details {
+  border: 1px solid #b8860b;
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+/* Personalización del botón de resumen */
+details summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primario, var(--acento));
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+
+/* Reemplazo de la flecha con un emoji */
+details summary::before {
+  content: "🎸";
+  margin-right: 0.5rem;
+}
+
+/* Efecto al pasar el ratón sobre el resumen */
+details summary:hover {
+  background-color: var(--color-secundario, var(--resaltado));
+}
+
+/* Contenido oculto dentro de detalles */
+details > *:not(summary) {
+  max-height: 0;
+
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1rem;
+  background-color: var(--color-principal, #3339);
+}
+
+/* Contenido visible al abrir detalles */
+details[open] > *:not(summary) {
+  max-height: 500px; /* Ajustar según el contenido */
+  padding: 1rem;
+}
+
+/* Barra de Navegación Principal */
+.nav-principal ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap; /* Permitir que los elementos se dividan en múltiples líneas */
+}
+
+.nav-principal li {
+	margin: 5px 15px;
+}
+
+.nav-principal li a {
+	color: var(--acento);
+	text-decoration: none;
+	font-size: 1em;
+	transition: color 0.3s ease;
+}
+
+.nav-principal li a:hover {
+	color: var(--resaltado);
+}
+
+/* Barra de búsqueda */
+.search-bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 15px 0;
+	width: 100%;
+}
+
+.search-bar input {
+	width: 300px;
+	padding: 10px;
+	border: 1px solid var(--acento);
+	border-radius: 5px;
+}
+
+.search-bar button {
+	padding: 10px 20px;
+	margin-left: 10px;
+	background-color: var(--acento);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+	background-color: var(--resaltado);
+}
+
+/* Navegación de licores */
+.nav-licores ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column; /* Mostrar elementos en columna */
+	overflow-y: auto; /* Habilitar scroll si es necesario */
+	max-height: 200px; /* Limitar altura máxima con scroll */
+	width: 100%;
+}
+
+.nav-licores li {
+	padding: 10px 15px;
+	border-bottom: 1px solid #333;
+}
+
+.nav-licores li a {
+	color: var(--acento);
+	text-decoration: none;
+	font-size: 1em;
+	transition: color 0.3s ease;
+	display: block;
+}
+
+.nav-licores li a:hover {
+	color: var(--resaltado);
+}
+
+/* Botón de hamburguesa para pantallas pequeñas */
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+	.menu-toggle {
+		display: block;
+	}
+
+
+
+	.nav-principal ul.active,
+	.nav-licores ul.active {
+		display: flex;
+		flex-direction: column; /* Mostrar menús en columna */
+		width: 100%;
+	}
+}
+
+
+/* Contenedor Principal */
+
+
+/* Estilo para el h1 */
+
+
+
+
+        /* Estilo del h1 */
+        h1 {
+          font-family:  'Segoe Script', 'Lucida Handwriting','Brush Script MT', cursive;
+          font-size: 6rem; /* Tamaño inicial */
+          font-weight: 900; /* Peso normal */
+          color: white; /* Texto blanco */
+          text-align: center;
+          margin: 2rem 0;
+          animation: rollingEffect 0.8s ease-in-out forwards; /* Animación suave */
+          line-height: 1.2;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+      }
+      h1:hover  {
+ color: b8860b;
+      }
+
+      h1 span {
+ color: var(--acento); /* Color de las letras */
+          font-size: 8rem; /* Tamaño de las letras */
+          transition: color 0.3s ease; /* Transición de color */
+      }
+
+      /* Animación para el efecto rolling */
+      @keyframes rollingEffect {
+          0% {
+              font-size: 6rem; /* Tamaño inicial */
+              transform: scale(1.3); /* Escalado inicial */
+              opacity: 0.6; /* Transparencia inicial */
+          }
+          50% {
+              font-size: 4rem; /* Tamaño intermedio */
+              transform: scale(1.1);
+              opacity: 0.9; /* Mayor visibilidad */
+          }
+          100% {
+              font-size: 3rem; /* Tamaño final */
+              transform: scale(1); /* Sin escalado */
+              opacity: 1; /* Totalmente visible */
+          }
+      }
+
+.contenedor__principal{
+  margin: 0 auto;
+  max-width: 1000px;
+  box-shadow: 0px 4px 4px #333;
+  background-color: #1115;
+  border-radius: 1.5rem;
+}
+
+.categoria{
+  margin: 0 auto;
+padding:2rem;
+  box-shadow: 0px 4px 8px var(--acento);
+  background-color: #2229;
+  border-radius: 1.5rem;
+}
+/* Filtros de Categoría */
+.filtros {
+  background-color: var(--filtro-bg);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtros .filtro-seccion {
+  margin: 10px 20px;
+}
+
+.filtros h3 {
+  color: var(--acento);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.filtros button,
+.filtros label {
+  background-color: var(--acento);
+  color: var(--fondo);
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 0.95em;
+  display: inline-block;
+}
+
+.filtros button:hover,
+.filtros label:hover {
+  background-color: var(--resaltado);
+  transform: scale(1.05);
+}
+
+.filtros input[type="checkbox"] {
+  display: none;
+}
+
+.filtros label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filtros label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid var(--acento);
+  border-radius: 4px;
+}
+
+.filtros input[type="checkbox"]:checked + label::before {
+  background-color: var(--resaltado);
+  border-color: var(--resaltado);
+}
+
+.filtros input[type="checkbox"]:checked + label {
+  color: var(--resaltado);
+}
+
+/* Categorías */
+.categoria {
+  margin-bottom: 60px;
+}
+
+.categoria h2 {
+  background-color: #1a1a1a;
+  color: var(--acento);
+  padding: 15px 20px;
+  border-left: 5px solid var(--acento);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1.8em;
+}
+
+/* Bebidas */
+.bebida {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #1a1a1a;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.bebida:hover {
+  transform: scale(1.02);
+  border-color: var(--resaltado);
+}
+
+.bebida .info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* Resaltado Secuencial en el Nombre de la Bebida */
+.bebida .info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.5em;
+  color: var(--acento);
+  display: inline-block;
+}
+
+/* Dividir el Nombre en Letras para Animación */
+.bebida .info h3 span {
+  display: inline-block;
+  opacity: 1;
+  transition: color 0.3s ease;
+}
+
+.bebida .info p {
+  margin: 0;
+  font-size: 1em;
+  color: var(--ingredientes);
+  padding: 5px;
+  border-left: 4px solid transparent;
+  transition: border-left 0.3s ease;
+}
+
+.bebida:hover .info p {
+  border-left: 4px solid var(--resaltado);
+}
+
+.precio {
+  font-weight: bold;
+  color: var(--acento);
+  font-size: 1.2em;
+  white-space: nowrap;
+}
+
+/* Animación de Resaltado */
+@keyframes highlight {
+  0% {
+    color: var(--acento);
+  }
+  50% {
+    color: var(--resaltado);
+  }
+  100% {
+    color: var(--acento);
+  }
+}
+
+/* Aplicar la Animación al Hover */
+.bebida:hover .info h3 span {
+  animation: highlight 0.5s forwards;
+}
+
+.bebida:hover .info h3 span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.bebida:hover .info h3 span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.bebida:hover .info h3 span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.bebida:hover .info h3 span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.bebida:hover .info h3 span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.bebida:hover .info h3 span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.bebida:hover .info h3 span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+/* Continúa según la longitud del nombre */
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .bebida {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bebida .info {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .precio {
+    font-size: 1em;
+  }
+
+  .filtros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filtros .filtro-seccion {
+    margin: 10px 0;
+  }
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #ffd700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #e0b800;
+}
+
+.filtros button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filtros button:hover {
+  background-color: #444;
+}
+
+
+
+/* Estilo para el enlace activo */
+.nav-licores a.activo {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: var(--resaltado);
+	transition: all 0.3s ease;
+}
+
+/* Estilo para el texto resaltado */
+.resaltado {
+	background-color: var(--filtro-resaltado);
+	padding: 2px 4px;
+	border-radius: 3px;
+	box-shadow: 0 0 5px var(--filtro-resaltado);
+}
+
+
+
+
+
+
+
+/* Estilos Responsivos */
+
+/* Para pantallas medianas (tablets y dispositivos de hasta 768px de ancho) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .contenedor__principal {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .bebida {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bebida .info {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .precio {
+    font-size: 1em;
+  }
+
+  .filtros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filtros .filtro-seccion {
+    margin: 10px 0;
+  }
+
+  .search-bar input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-bar button {
+    width: 100%;
+  }
+}
+
+/* Para pantallas pequeñas (smartphones de hasta 480px de ancho) */
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  .categoria h2 {
+    font-size: 1.4em;
+  }
+
+  .bebida {
+    padding: 10px;
+  }
+
+  .bebida .info h3 {
+    font-size: 1.2em;
+  }
+
+  .precio {
+    font-size: 0.9em;
+  }
+
+  .filtros {
+    padding: 15px;
+  }
+
+  .filtros h3 {
+    font-size: 1.1em;
+  }
+
+  .filtros button,
+  .filtros label {
+    font-size: 0.9em;
+    padding: 8px 10px;
+  }
+
+  .search-bar input {
+    width: calc(100% - 20px);
+    padding: 8px;
+  }
+
+  .search-bar button {
+    padding: 8px 10px;
+  }
+
+  .nav-licores a {
+    font-size: 1em;
+  }
+
+  .nav-licores a.activo {
+    font-size: 1.1em;
+  }
+}
+
+
+

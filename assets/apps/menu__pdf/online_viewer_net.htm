@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Licores</title>
+    <style>
+/* Variables de Colores */
+:root {
+    --fondo: #000000;        /* Fondo negro */
+    --acento: #FFD700;        /* Acento amarillo */
+    --ingredientes: #FFFFFF;  /* Ingredientes en blanco */
+    --resaltado: #dd5566;     /* Color de resaltado */
+    --filtro-bg: #FFD70055;     /* Fondo de los filtros */
+    --filtro-acento: #FFD700; /* Acento de los filtros */
+    --filtro-resaltado: #dd5566; /* Resaltado de los filtros */
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo);
+    margin: 0;
+    padding: 0;
+    color: var(--acento);
+}
+
+/* Barra de Navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--acento);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--resaltado);
+}
+
+/* Contenedor Principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto 40px; /* Margen superior ajustado para la barra de navegación fija */
+    padding: 20px;
+}
+
+/* Filtros de Categoría */
+.filtros {
+    background-color: var(--filtro-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filtros .filtro-seccion {
+    margin: 10px 20px;
+}
+
+.filtros h3 {
+    color: var(--acento);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.filtros button,
+.filtros label {
+    background-color: var(--acento);
+    color: var(--fondo);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 0.95em;
+    display: inline-block;
+}
+
+.filtros button:hover,
+.filtros label:hover {
+    background-color: var(--resaltado);
+    transform: scale(1.05);
+}
+
+.filtros input[type="checkbox"] {
+    display: none;
+}
+
+.filtros label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filtros label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid var(--acento);
+    border-radius: 4px;
+}
+
+.filtros input[type="checkbox"]:checked + label::before {
+    background-color: var(--resaltado);
+    border-color: var(--resaltado);
+}
+
+.filtros input[type="checkbox"]:checked + label {
+    color: var(--resaltado);
+}
+
+/* Categorías */
+.categoria {
+    margin-bottom: 60px;
+}
+
+.categoria h2 {
+    background-color: #1a1a1a;
+    color: var(--acento);
+    padding: 15px 20px;
+    border-left: 5px solid var(--acento);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.8em;
+}
+
+/* Bebidas */
+.bebida {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.bebida:hover {
+    transform: scale(1.02);
+    border-color: var(--resaltado);
+}
+
+.bebida .info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* Resaltado Secuencial en el Nombre de la Bebida */
+.bebida .info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.5em;
+    color: var(--acento);
+    display: inline-block;
+}
+
+/* Dividir el Nombre en Letras para Animación */
+.bebida .info h3 span {
+    display: inline-block;
+    opacity: 1;
+    transition: color 0.3s ease;
+}
+
+.bebida .info p {
+    margin: 0;
+    font-size: 1em;
+    color: var(--ingredientes);
+    padding: 5px;
+    border-left: 4px solid transparent;
+    transition: border-left 0.3s ease;
+}
+
+.bebida:hover .info p {
+    border-left: 4px solid var(--resaltado);
+}
+
+.precio {
+    font-weight: bold;
+    color: var(--acento);
+    font-size: 1.2em;
+    white-space: nowrap;
+}
+
+/* Animación de Resaltado */
+@keyframes highlight {
+    0% { color: var(--acento); }
+    50% { color: var(--resaltado); }
+    100% { color: var(--acento); }
+}
+
+/* Aplicar la Animación al Hover */
+.bebida:hover .info h3 span {
+    animation: highlight 0.5s forwards;
+}
+
+.bebida:hover .info h3 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.bebida:hover .info h3 span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.bebida:hover .info h3 span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.bebida:hover .info h3 span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.bebida:hover .info h3 span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.bebida:hover .info h3 span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.bebida:hover .info h3 span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+/* Continúa según la longitud del nombre */
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .bebida {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bebida .info {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .precio {
+        font-size: 1em;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filtros .filtro-seccion {
+        margin: 10px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="#margaritas">Margaritas</a></li>
+            <li><a href="#mojitos">Mojitos</a></li>
+            <li><a href="#caipirinhas">Caipirinhas</a></li>
+            <li><a href="#martinis">Martinis</a></li>
+            <li><a href="#longdrinks">Long Drinks</a></li>
+            <li><a href="#coffees">Coffees & Cremosos</a></li>
+            <li><a href="#sangrias">Sangrías</a></li>
+            <li><a href="#micheladas">Micheladas</a></li>
+            <li><a href="#mocktails">Mocktails</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container">
+
+        <!-- Filtros de Categoría -->
+        <div class="filtros">
+            <button onclick="filtrar('todos')">Todos</button>
+            <button onclick="filtrar('margaritas')">Margaritas</button>
+            <button onclick="filtrar('mojitos')">Mojitos</button>
+            <button onclick="filtrar('caipirinhas')">Caipirinhas</button>
+            <button onclick="filtrar('martinis')">Martinis</button>
+            <button onclick="filtrar('longdrinks')">Long Drinks</button>
+            <button onclick="filtrar('coffees')">Coffees & Cremosos</button>
+            <button onclick="filtrar('sangrias')">Sangrías</button>
+            <button onclick="filtrar('micheladas')">Micheladas</button>
+            <button onclick="filtrar('mocktails')">Mocktails</button>
+        </div>
+
+        <!-- Margaritas -->
+        <div class="categoria" id="margaritas" data-categoria="margaritas">
+            <h2>Margaritas</h2>
+            
+            <!-- Margarita Tradicional -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <!-- Dividir el Nombre en Letras -->
+                        <span>T</span><span>r</span><span>a</span><span>d</span><span>i</span><span>c</span><span>i</span><span>o</span><span>n</span><span>a</span>l
+                    </h3>
+                    <p>Tequila, triple sec, jarabe de goma, zumo de limón.</p>
+                </div>
+                <div class="precio">$16.000</div>
+            </div>
+
+            <!-- Blue Margarita -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>B</span><span>l</span><span>u</span><span>e</span> <span>M</span><span>a</span><span>r</span><span>g</span><span>a</span><span>r</span><span>i</span><span>t</span><span>a</span>
+                    </h3>
+                    <p>Tequila, triple sec, jarabe de goma, zumo de limón.</p>
+                </div>
+                <div class="precio">$16.000</div>
+            </div>
+
+            <!-- Margarita de Maracuyá -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>M</span><span>a</span><span>r</span><span>a</span><span>c</span><span>u</span><span>y</span><span>á</span>
+                    </h3>
+                    <p>Tequila, triple sec, jarabe de goma, zumo de limón.</p>
+                </div>
+                <div class="precio">$16.000</div>
+            </div>
+
+            <!-- Margarita de Frutos Rojos -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>F</span><span>r</span><span>u</span><span>t</span><span>o</span><span>s</span> <span>R</span><span>o</span><span>j</span><span>o</span><span>s</span>
+                    </h3>
+                    <p>Tequila, triple sec, jarabe de goma, zumo de limón.</p>
+                </div>
+                <div class="precio">$16.000</div>
+            </div>
+        </div>
+
+        <!-- Mojitos -->
+        <div class="categoria" id="mojitos" data-categoria="mojitos">
+            <h2>Mojitos</h2>
+            
+            <!-- Mojito Tradicional -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>T</span><span>r</span><span>a</span><span>d</span><span>i</span><span>c</span><span>i</span><span>o</span><span>n</span><span>a</span>l
+                    </h3>
+                    <p>Ron blanco, ron dorado, limón, hierbabuena, azúcar morena, soda.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Mojito de Frutos Rojos -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>F</span><span>r</span><span>u</span><span>t</span><span>o</span><span>s</span> <span>R</span><span>o</span><span>j</span><span>o</span><span>s</span>
+                    </h3>
+                    <p>Ron blanco, ron dorado, limón, hierbabuena, azúcar morena, soda.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Mojito de Manzana Verde -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>M</span><span>a</span><span>n</span><span>z</span><span>a</span><span>n</span><span>a</span> <span>V</span><span>e</span><span>r</span><span>d</span><span>e</span>
+                    </h3>
+                    <p>Ron blanco, ron dorado, limón, hierbabuena, azúcar morena, soda.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Mojito de Mango Biche -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>M</span><span>a</span><span>n</span><span>g</span><span>o</span> <span>B</span><span>i</span><span>c</span><span>h</span><span>e</span>
+                    </h3>
+                    <p>Ron blanco, ron dorado, limón, hierbabuena, azúcar morena, soda.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Mojito de Maracuyá -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>M</span><span>a</span><span>r</span><span>a</span><span>c</span><span>u</span><span>y</span><span>á</span>
+                    </h3>
+                    <p>Ron blanco, ron dorado, limón, hierbabuena, azúcar morena, soda.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Mojito de Café -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>C</span><span>a</span><span>f</span><span>é</span>
+                    </h3>
+                    <p>Ron blanco, ron dorado, limón, hierbabuena, azúcar morena, soda.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Bebidas Especiales de Mojitos -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>M</span><span>a</span><span>e</span><span>s</span><span>t</span><span>r</span><span>o</span> <span>C</span><span>a</span><span>z</span><span>a</span><span>d</span><span>o</span><span>r</span>
+                    </h3>
+                    <p>Jagermeister, ron blanco.</p>
+                </div>
+                <div class="precio">$19.000</div>
+            </div>
+
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>H</span><span>a</span><span>d</span><span>a</span> <span>V</span><span>e</span><span>r</span><span>d</span><span>e</span>
+                    </h3>
+                    <p>Absenta, ron blanco.</p>
+                </div>
+                <div class="precio">$19.000</div>
+            </div>
+
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>M</span><span>e</span><span>x</span><span>i</span><span>c</span><span>a</span><span>n</span> <span>M</span><span>o</span><span>j</span><span>i</span><span>t</span><span>o</span>
+                    </h3>
+                    <p>Tequila, ron blanco, tajín, salsa de ají.</p>
+                </div>
+                <div class="precio">$19.000</div>
+            </div>
+        </div>
+
+        <!-- Caipirinhas -->
+        <div class="categoria" id="caipirinhas" data-categoria="caipirinhas">
+            <h2>Caipirinhas</h2>
+            
+            <!-- Caipiroska -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>C</span><span>a</span><span>i</span><span>p</span><span>i</span><span>r</span><span>o</span><span>s</span><span>k</span><span>a</span>
+                    </h3>
+                    <p>Vodka.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Caipirísima -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>C</span><span>a</span><span>i</span><span>p</span><span>i</span><span>r</span><span>i</span><span>s</span><span>í</span><span>m</span><span>a</span>
+                    </h3>
+                    <p>Ron blanco, ron dorado.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- CaipiMexico -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>C</span><span>a</span><span>i</span><span>p</span><span>i</span><span>M</span><span>e</span><span>x</span><span>i</span><span>c</span><span>o</span>
+                    </h3>
+                    <p>Tequila, tajín, salsa de ají.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Caipirinha Tradicional -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>T</span><span>r</span><span>a</span><span>d</span><span>i</span><span>c</span><span>i</span><span>o</span><span>n</span><span>a</span>l
+                    </h3>
+                    <p>Cachaça, limón, azúcar morena, sweet & sour.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Caipirinha de Maracuyá -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>M</span><span>a</span><span>r</span><span>a</span><span>c</span><span>u</span><span>y</span><span>á</span>
+                    </h3>
+                    <p>Cachaça, limón, azúcar morena, sweet & sour.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+
+            <!-- Caipirinha de Frutos Rojos -->
+            <div class="bebida">
+                <div class="info">
+                    <h3>
+                        <span>F</span><span>r</span><span>u</span><span>t</span><span>o</span><span>s</span> <span>R</span><span>o</span><span>j</span><span>o</span><span>s</span>
+                    </h3>
+                    <p>Cachaça, limón, azúcar morena, sweet & sour.</p>
+                </div>
+                <div class="precio">$17.000</div>
+            </div>
+        </div>
+
+       <!-- Martinis -->
+<div class="categoria" id="martinis" data-tipo="vodka,gin,whisky,brandy">
+    <h2>Martinis</h2>
+    
+    <!-- Dry Martini -->
+    <div class="bebida" data-tipo="gin" data-ingredientes="gin,vermouth_dry">
+        <div class="info">
+            <h3>
+                <span>D</span><span>r</span><span>y</span> <span>M</span><span>a</span><span>r</span><span>t</span><span>i</span><span>n</span><span>i</span>
+            </h3>
+            <p>Gin, vermouth dry.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+
+    <!-- Appletini -->
+    <div class="bebida" data-tipo="vodka" data-ingredientes="vodka,licor_manzana,triple_sec,sweet_sour">
+        <div class="info">
+            <h3>
+                <span>A</span><span>p</span><span>p</span><span>l</span><span>e</span><span>t</span><span>i</span><span>n</span><span>i</span>
+            </h3>
+            <p>Vodka, licor de manzana, triple sec, sweet & sour.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+
+    <!-- Lichee Martini -->
+    <div class="bebida" data-tipo="vodka" data-ingredientes="vodka,triple_sec,licor_lichee,sweet_sour">
+        <div class="info">
+            <h3>
+                <span>L</span><span>i</span><span>c</span><span>h</span><span>e</span><span>e</span> <span>M</span><span>a</span><span>r</span><span>t</span><span>i</span><span>n</span><span>i</span>
+            </h3>
+            <p>Vodka, triple sec, sirope de lichee, sweet & sour.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+
+    <!-- Cosmopolitan -->
+    <div class="bebida" data-tipo="vodka" data-ingredientes="vodka,triple_sec,sweet_sour,jugo_arandanos">
+        <div class="info">
+            <h3>
+                <span>C</span><span>o</span><span>s</span><span>m</span><span>o</span><span>p</span><span>o</span><span>l</span><span>i</span><span>t</span><span>a</span><span>n</span>
+            </h3>
+            <p>Vodka, triple sec, sweet & sour, jugo de arándanos.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+
+    <!-- Manhattan -->
+    <div class="bebida" data-tipo="whisky,brandy" data-ingredientes="whisky,vermouth_rosso,gotas_amargas">
+        <div class="info">
+            <h3>
+                <span>M</span><span>a</span><span>n</span><span>h</span><span>a</span><span>t</span><span>t</span><span>a</span><span>n</span>
+            </h3>
+            <p>Whisky, vermouth rosso, gotas amargas.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+</div>
+
+<!-- GIN TONIC -->
+<div class="categoria" id="gin-tonic" data-tipo="gin">
+    <h2>Gin Tonic</h2>
+    
+    <!-- Gin Tonic Tradicional -->
+    <div class="bebida" data-tipo="gin" data-ingredientes="gin,zumo_limon,agua_tonica">
+        <div class="info">
+            <h3>
+                <span>T</span><span>r</span><span>a</span><span>d</span><span>i</span><span>c</span><span>i</span><span>o</span><span>n</span><span>a</span>l
+            </h3>
+            <p>Gin, zumo de limón, agua tónica.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+
+    <!-- Gin Tonic Frutos Rojos -->
+    <div class="bebida" data-tipo="gin" data-ingredientes="gin,zumo_limon,agua_tonica,frutos_rojos">
+        <div class="info">
+            <h3>
+                <span>F</span><span>r</span><span>u</span><span>t</span><span>o</span><span>s</span> <span>R</span><span>o</span><span>j</span><span>o</span><span>s</span>
+            </h3>
+            <p>Gin, zumo de limón, agua tónica, frutos rojos.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+
+    <!-- Gin Tonic Frutos Verdes -->
+    <div class="bebida" data-tipo="gin" data-ingredientes="gin,zumo_limon,agua_tonica,frutos_verdes">
+        <div class="info">
+            <h3>
+                <span>F</span><span>r</span><span>u</span><span>t</span><span>o</span><span>s</span> <span>V</span><span>e</span><span>r</span><span>d</span><span>e</span><span>s</span>
+            </h3>
+            <p>Gin, zumo de limón, agua tónica, frutos verdes.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+
+    <!-- Gin Tonic Frutos Tropicales -->
+    <div class="bebida" data-tipo="gin" data-ingredientes="gin,zumo_limon,agua_tonica,frutos_tropicales">
+        <div class="info">
+            <h3>
+                <span>F</span><span>r</span><span>u</span><span>t</span><span>o</span><span>s</span> <span>T</span><span>r</span><span>o</span><span>p</span><span>i</span><span>c</span><span>a</span><span>l</span><span>e</span><span>s</span>
+            </h3>
+            <p>Gin, zumo de limón, agua tónica, frutos tropicales.</p>
+        </div>
+        <div class="precio">$16.000</div>
+    </div>
+</div>
